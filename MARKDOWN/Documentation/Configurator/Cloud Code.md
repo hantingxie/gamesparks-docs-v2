@@ -18,7 +18,9 @@ To access the Cloud Code JavaScript editor select the name of the script from on
 
 <q>**Keyboard Shortcuts to Save!** You can also save your scripts using standard key press combinations, **CMD+S** on OSX and **CTRL+S** on Windows and Linux.</q>
 
-### Events
+<q>**Keyboard Shortcuts List!** For a list of keyboard shortcuts that you can use in the Cloud Code Editor see [below](#Cloud Code Editor Shortcuts)
+
+## Events
 
 ![](img/CloudCode/6.png)
 
@@ -27,7 +29,7 @@ The *Events* list contains an entry for each Event you have created within the G
 * You can access the current player making the request using *Spark.getPlayer()*.
 * You can quickly create a new Event by clicking the plus ![](/img/fa/plus.png) icon. This opens the same *Create Event* dialog as opened from the [Events](/Documentation/Configurator/Events.md) page.
 
-### Challenge Events
+## Challenge Events
 
 ![](img/CloudCode/6.png)
 
@@ -42,7 +44,7 @@ The *Challenge Events* list contains an entry for each Event you have created wi
 * You can also access the current player making the request using *Spark.getPlayer()*.
 * You can quickly create a new Event by clicking the plus ![](/img/fa/plus.png) icon. See the Events section above for details.
 
-### Requests
+## Requests
 
 ![](img/CloudCode/8.png)
 
@@ -52,7 +54,7 @@ The *Requests* list contains an entry for each Request you can call within the
 
 <q>**Adding Common Functionaltiy!** [LogEventRequest](/API Documentation/Request API/Player/LogEventRequest.md) and [LogChallengeEventRequest](/API Documentation/Request API/Multiplayer/LogChallengeEventRequest.md) are global scripts that will be executed for these request types before a specific script is called for each Event. This allows you to add a common functionality to all Events.</q>
 
-### Responses
+## Responses
 
 ![](img/CloudCode/9.png)
 
@@ -60,7 +62,7 @@ The *Responses* list contains an entry for each Response that can be returned 
 * When a Response is created, the corresponding script is executed before sending it to the player allowing you to run custom code on the platform.
 * You can access the current player who has generated the response using *Spark.getPlayer()*.
 
-### User Messages
+## User Messages
 
 ![](img/CloudCode/10.png)
 
@@ -68,7 +70,7 @@ The *User Messages* list contains an entry for each Message that can be return
 * Before a Message is sent out to each player within a Challenge, the corresponding script is executed allowing you to run custom code on the platform.
 * You can access the current player who has generated the response using *Spark.getPlayer()*.
 
-### Global Messages
+## Global Messages
 
 ![](img/CloudCode/11.png)
 
@@ -76,7 +78,7 @@ The *Global Messages* list contains an entry for each Message that can be ret
 * When a Message is created the corresponding script is executed allowing you to run custom code on the platform.
 * You **cannot access** the current player in a global message Cloud Code script.
 
-### Modules
+## Modules
 
 ![](img/CloudCode/12.png)
 
@@ -103,7 +105,7 @@ Modules allow you to create your own libraries of JavaScript that can be include
 
 * To create a new module, click the plus ![](/img/fa/plus.png) icon. Then, on the *Create Module* dialog, enter a *Short Code* to uniquely identify the new module script.
 
-### Callbacks
+## Callbacks
 
 ![](img/CloudCode/13.png)
 
@@ -112,7 +114,7 @@ Modules allow you to create your own libraries of JavaScript that can be include
 * Separate [Callback URLs](/Tutorials/Cloud Code and the Test Harness/Using Custom Callback Urls.md) allow users to assign different Cloud Code scripts to different callbacks for the same game.
 
 
-### Realtime Scripts
+## Realtime Scripts
 
 ![](img/CloudCode/14.png)
 
@@ -121,7 +123,7 @@ Modules allow you to create your own libraries of JavaScript that can be include
 * To create a new Realtime script, click the plus ![](/img/fa/plus.png) icon.
 * For more details on Realtime Services, see [here](/Tutorials/Real-Time Services/README.md).
 
-### System
+## System
 
 ![](img/CloudCode/15.png)
 
@@ -137,3 +139,69 @@ The *System* tab contains a number of System Events that are able to trigger som
     * On the Live stage, this script is executed once each time you publish your game.
   * *Player Connected* - This script is executed each time a player connects and is identified. *Spark.getPlayer()* is set to be the player who connected so you can query or manipulate the data related to the player.
   * *Player Disconnected* - This script is executed each time a player disconnects. *Spark.getPlayer()* is set to be the player who disconnected so you can query or manipulate the data related to the player.
+
+## Cloud Code Editor Shortcuts
+
+### Selection
+
+| Windows | Mac | Action              
+| ------| --------- | ---------
+|  Ctrl+A | Command+A | Select All
+|  Shift+Left | Command+Left | Select Left
+|  Shift+Right | Command+Right | Select Right
+|  Ctrl+Shift+Left | Option+Shift+Left | Select Word Left
+|  Ctrl+Shift+Right | Option+Shift+Right | Select Word Right
+|  Shift+Home | Shift+Home | Select Line Start
+|  Shift+End | Shift+End | Select Line End
+|  Alt+Shift+Left | Command+Shift+Left | Select to Line Start
+|  Alt+Shift+Right | Command+Shift+Right | Select to Line End
+|  Shift+Up | Shift+Up | Select Up
+|  Shift+Down | Shift+Down | Select Down
+|  Ctrl+Shift+Home | Command+Shift+Up | Select to Start
+|  Ctrl+Shift+End | Command+Shift+Down | Select to End
+|  Ctrl+Shift+D | Command+Shift+D | Duplicate Selection
+
+### Line Operation
+
+| Windows | Mac | Action              
+| ------| --------- | ---------
+|  Ctrl+D | Command+D | Remove Line
+|  Alt+Shift+Down | Command+Option+Down | Copy Lines Down
+|  Alt+Shift+Up | Command+Option+Up | Copy Lines Up
+|  Alt+Down | Option+Down | Move Lines Down
+|  Alt+Up | Option+Up | Move Lines Up
+|  Alt+Delete | Ctrl+K | Remove to Line End
+|  Alt+Backspace | Command+Backspace | Remove to Line Start
+|  Ctrl+Backspace | Option+Backspace, Ctrl+Option+Backspace | Remove Word Left
+|  Ctrl+Delete | Option+Delete | Remove Word Right
+|  --- | Ctrl+O | Split Line
+|  Ctrl+M+/ | --- | Comment/Uncomment Line
+
+
+### Go To
+
+| Windows | Mac | Action              
+| ------| --------- | ---------
+|  Ctrl+L, Ctrl+M+L | Command+L, Command+M+L | Go to Line
+|  Left | Left, Ctrl+B | Go to Left
+|  Right | Right, Ctrl+F | Go to Right
+|  Ctrl+Left | Option+Left | Go to Word Left
+|  Ctrl+Right | Option+Right | Go to Word Right
+|  Up | Up, Ctrl+P | Go to Line Up
+|  Down | Down, Ctrl+N | Go to Line Down
+|  Alt+Left, Home | Command+Left, Home, Ctrl+A | Go to Line Start
+|  Alt+Right, End | Command+Right, End, Ctrl+E | Go to Line End
+|  Ctrl+Home | Command+Home, Command+Up | Go to Start
+|  Ctrl+End | Command+End, Command+Down | Go to End
+|  Ctrl+Down | Command+Down | Scroll Line Down
+|  Ctrl+Up | --- | Scroll Line Up
+
+
+### Find/Replace
+
+| Windows | Mac | Action              
+| ------| --------- | ---------
+|  Ctrl+F, Ctrl+M+F | Command+F | Find
+|  Ctrl+H | Command+Option+F | Replace
+|  Ctrl+K,| Command+G | Find Next
+|  Ctrl+Shift+K | Command+Shift+G | Find Previous
