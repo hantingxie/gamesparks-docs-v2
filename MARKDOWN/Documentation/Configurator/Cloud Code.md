@@ -18,7 +18,7 @@ To access the Cloud Code JavaScript editor select the name of the script from on
 
 <q>**Keyboard Shortcuts to Save!** You can also save your scripts using standard key press combinations, **CMD+S** on OSX and **CTRL+S** on Windows and Linux.</q>
 
-<q>**Keyboard Shortcuts List!** For a list of keyboard shortcuts that you can use in the Cloud Code Editor see [below](#Cloud Code Editor Shortcuts)
+<q>**Keyboard Shortcuts List!** For a list of keyboard shortcuts that you can use in the Cloud Code Editor see [below](#Cloud Code Editor Keyboard Shortcuts)</q>
 
 ## Events
 
@@ -140,11 +140,13 @@ The *System* tab contains a number of System Events that are able to trigger som
   * *Player Connected* - This script is executed each time a player connects and is identified. *Spark.getPlayer()* is set to be the player who connected so you can query or manipulate the data related to the player.
   * *Player Disconnected* - This script is executed each time a player disconnects. *Spark.getPlayer()* is set to be the player who disconnected so you can query or manipulate the data related to the player.
 
-## Cloud Code Editor Shortcuts
+## Cloud Code Editor Keyboard Shortcuts
+
+This section lists keyboard shortcuts you can use when working in the Cloud Code Editor.
 
 ### Selection
 
-| Windows | Mac | Action              
+| Windows/Linux | Mac | Action              
 | ------| --------- | ---------
 |  Ctrl+A | Command+A | Select All
 |  Shift+Left | Command+Left | Select Left
@@ -163,7 +165,7 @@ The *System* tab contains a number of System Events that are able to trigger som
 
 ### Line Operation
 
-| Windows | Mac | Action              
+| Windows/Linux | Mac | Action              
 | ------| --------- | ---------
 |  Ctrl+D | Command+D | Remove Line
 |  Alt+Shift+Down | Command+Option+Down | Copy Lines Down
@@ -180,7 +182,7 @@ The *System* tab contains a number of System Events that are able to trigger som
 
 ### Go To
 
-| Windows | Mac | Action              
+| Windows/Linux | Mac | Action              
 | ------| --------- | ---------
 |  Ctrl+L, Ctrl+M+L | Command+L, Command+M+L | Go to Line
 |  Left | Left, Ctrl+B | Go to Left
@@ -199,7 +201,7 @@ The *System* tab contains a number of System Events that are able to trigger som
 
 ### Find/Replace
 
-| Windows | Mac | Action              
+| Windows/Linux | Mac | Action              
 | ------| --------- | ---------
 |  Ctrl+F, Ctrl+M+F | Command+F | Find
 |  Ctrl+H | Command+Option+F | Replace

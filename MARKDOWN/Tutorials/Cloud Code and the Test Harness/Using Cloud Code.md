@@ -53,7 +53,7 @@ The *Create Event* dialog closes and the Event is listed on the Events page.
 
 In this section, we'll create a Cloud Code script linked to the Event that we've just created.
 
-<q>**Cloud Code Editor Shortcuts?** For a list of the shortcuts you can use in the Cloud Code Editor, go [here](/Documentation/Configurator/Cloud Code.md)
+<q>**Cloud Code Editor Shortcuts?** For a list of the keyboard shortcuts you can use in the Cloud Code Editor, go [here](/Documentation/Configurator/Cloud Code.md).</q>
 
 *9.* Go to *Configurator > Cloud Code*.
 
