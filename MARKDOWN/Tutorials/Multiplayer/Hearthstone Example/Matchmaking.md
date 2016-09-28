@@ -7,7 +7,7 @@ src: /Tutorials/Multiplayer/Hearthstone Example/Matchmaking.md
 
 ## The Procedure
 
-The way we set up the matchmaking allows for the platform to automatically construct the right match, based on the players level. Once a match has been found the platform will automatically issue the correct challenge, accept it and initialize it.
+The way we set up the matchmaking allows for the platform to automatically construct the right match, based on the players level. When a match has been found, the platform will automatically issue the correct challenge, accept it, and initialize it.
 
 ## Creating the Match and Challenge Examples
 
@@ -25,7 +25,7 @@ Make sure that the challenge is turn based.
 
 ## The Match Event
 
-Make an new event. This simple event will take one string that represents the shortCode of the match it's suppose to make. We'll name this event findMatch and the Cloude code will be:
+Make a new event. This simple event will take one string that represents the shortCode of the match it's supposed to make. We'll name this event findMatch and the Cloud Code will be:
 
 ```
 //Get shortCode
@@ -56,7 +56,7 @@ else if(matchshortCode === "casualMatch"){
 }
 ```
 
-Now once the match is found, we need to allow the platform to automatically create a challenge and accept the players in. We can do this using the Match Found message in the UserMessages tab in the Cloud code section.
+Now once the match is found, we need to allow the platform to automatically create a challenge and accept the players in. We can do this using the Match Found message in the UserMessages tab in the Cloud Code section.
 
 ## Match Found Message
 
@@ -86,7 +86,7 @@ if (Spark.getData().matchShortCode === "matchRanked")
     }
 }
 ```
-After the challenge request is sent, the second participant will recieve a Message issued request. We will automatically accept the challenge request for that player by editing the Challenge Issued Message under the User messages tab.
+After the challenge request is sent, the second participant will receive a Message issued request. We will automatically accept the challenge request for that player by editing the Challenge Issued Message under the User messages tab.
 
 ## Challenge Issued Message
 
@@ -103,7 +103,7 @@ var request = new SparkRequests.AcceptChallengeRequest();
 request.challengeInstanceId = chalData.challenge.challengeId;
 request.message = "Joining";
 
-//Send the request as the player recieving this message
+//Send the request as the player receiving this message
 request.SendAs(chalData.challenge.challenged[0].id);
 
 ```
@@ -150,7 +150,7 @@ if(Spark.getPlayer().getPlayerId() === challengerId){
     }
 
 
-    //Save the contructed JSONs against the challenge's scriptData
+    //Save the constructed JSONs against the challenge's scriptData
     chal.setScriptData("playField",playField);
     chal.setScriptData("currentHand", currentHand);
     chal.setScriptData("playerStats", playerStats)
@@ -161,8 +161,8 @@ This will construct the game itself with all the details, which contains:
 
 1. The playField which will represent the game board where players battle their cards. The playField consists of two objects, one for either player.
 2. The currentHand which will represent the player's hand. Consists of two objects, one hand for either player.
-3. playerStats which will house information about mana, health, how many cards pulled, if player has pulled a card this round and if there's a taunt card protecting the player.
-4. Each player will recieve 3 starter cards which will end up in the currentHand object.
+3. playerStats which will house information about mana, health, how many cards pulled, if player has pulled a card this round, and if there's a taunt card protecting the player.
+4. Each player will receive 3 starter cards which will end up in the currentHand object.
 5. Saves all the initialized values.
 
 ## pullCard Module
@@ -198,4 +198,4 @@ Spark.setScriptData("result", randCard.type + " was pulled from deck");
 
 ```
 
-This concludes the match making part of the tutorial. Now your players will be matched and a challenge will be started and initialized ready for the game to take part. Next tutorial will walk you through getting the players to take turns and use their cards.
+This concludes the match making part of the tutorial. Now your players will be matched and a challenge will be started and initialized ready for the game to take part. The next tutorial will walk you through getting the players to take turns and use their cards.

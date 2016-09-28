@@ -5,14 +5,16 @@ src: /Tutorials/Multiplayer/Hearthstone Example/Challenge.md
 
 # Challenge
 
-This section will heavily rely on Challenge events, there will be a lot of calls to retrieve and save the cards, stats, playingField and currentHand. Player Ids and Challenge Id will constantly be values to reference the rest of the game, these two Ids will allow you to do anything with the challenge. Create 4 events:
+This section will rely heavily on Challenge events. There will be a lot of calls to retrieve and save the cards, stats, playingField, and currentHand. Player Ids and Challenge Id will constantly be values to reference the rest of the game - these two Ids will allow you to do anything with the challenge.
+
+Create 4 events:
 
 * action_pullCard
 * action_pushCard
 * action_playCard
 * action_endTurn
 
-<q>**Important!** Make sure the cloud code for these events cloud code is edited in the challenge event tab of the cloud code section *not the event's tab*.</q>
+<q>**Important!** Make sure the Cloud Code for these events is edited in the challenge event tab of the Cloud Code section *not the event's tab*.</q>
 
 ## action_pullCard
 
@@ -55,7 +57,7 @@ This event will have 2 input values:
 * challengeInstanceId - To input the challenge's Id
 * slotNum which is the name of the card (example c0,c1).
 
-This event will move cards from the currentHand to the playField if the player has enough mana to play the card. Using the unqiue Id given to the card (for example c1 or c0) we move the card from one object to another. If cards have certain effects such as charge or direct attack that will trigger a sequence of code.
+This event will move cards from the currentHand to the playField if the player has enough mana to play the card. Using the unique Id given to the card (for example c1 or c0) we move the card from one object to another. If cards have certain effects, such as charge or direct attack, that will trigger a sequence of code.
 
 ```
   //Load the challenge
@@ -287,9 +289,9 @@ Using this event a player can heal a friendly target or attack an enemy opponent
 ```
 ## action_endTurn
 
-To allow the other player to have a turn, the player's cards to be able to attack, mana to recharge and extra mana gems earned a player needs to end their turn.
+To allow the other player to have a turn, the player's cards to be able to attack, mana to recharge, and extra mana gems earned, a player needs to end their turn.
 
-This also is a challenge event because it needs to make a reference to the event, so make sure you edit the challenge event cloud code.
+This also is a challenge event because it needs to make a reference to the event, so make sure you edit the challenge event Cloud Code.
 
 ```
   //Load challenge
@@ -332,6 +334,6 @@ This also is a challenge event because it needs to make a reference to the event
       playField[pId][obj].canAtk = true;
   }
 ```
-In combination these events and structure can start and end a game the same way Hearthstone works. You can add more cards, more effects and extra functionality easily as this example was built with modularity and expansion in mind. You can test this using the two tabs that have our test harness open. Registering two players and pitting them against each other (both controlled by you).
+In combination these events and structure can start and end a game the same way Hearthstone works. You can add more cards, more effects, and extra functionality easily because this example was built with modularity and expansion in mind. You can test this using the two tabs that have our Test Harness open. Registering two players and pitting them against each other (both controlled by you).
 
-This concludes the Hearthstone example. You can customize, add, remove and reinvent this system. This is only one way of achieving this kind of game but playing around with our components and further understanding the way they work you can achieve brilliant results.
+This concludes the Hearthstone example. You can customize, add, remove, and reinvent this system. This is only one way of achieving this kind of game but by playing around with our components and further understanding the way they work you can achieve brilliant results.

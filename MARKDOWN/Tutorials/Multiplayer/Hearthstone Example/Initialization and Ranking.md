@@ -11,7 +11,7 @@ For a game like this to work we need a way to store the game's cards somewhere w
 
 First, head over to the NoSQL tab. Click the 'Create' tab and create three runtime collections. Call these collections *commonCards*, *rareCards*, and  *legendaryCards*.
 
-Once those collections are made, its time to populate them. Each card will be it's own document, and the reasons will be obvious further down the tutorial. To populate your collections, click the 'Insert' tab. And insert a document, for example: {"cardName": "Warrior", "tier": "commonCards", "attack": 1, "health": 2, "spawnCost": 1, "effect": "Charge"} which will result in our document looking like this:
+Once those collections are made, its time to populate them. Each card will be it's own document, and the reasons will be obvious further down the tutorial. To populate your collections, click the 'Insert' tab, and insert a document, for example: {"cardName": "Warrior", "tier": "commonCards", "attack": 1, "health": 2, "spawnCost": 1, "effect": "Charge"} which will result in our document looking like this:
 
 ```
 
@@ -29,11 +29,23 @@ Once those collections are made, its time to populate them. Each card will be it
 
 ```
 
-The card consists of an Id which is automatically generated, you don't have to create it. A cardName which represents the type of card, the teir which will help us find the collection a card belongs to, the base attack, base health, spawn cost and the effect of the card if any. Continue to fill the collections with cards. Our tutorial has 3 commonCards, 3 rareCards and 1 legendaryCards.
+The card consists of:
+* An Id, which is automatically generated, you don't have to create it.
+* A cardName, which represents the type of card.
+* The tier, which will help us find the collection a card belongs to.
+* The base attack.
+* The base health.
+* The spawn cost.
+* The effect of the card if any.
 
-## Player Initilisation
+Continue to fill the collections with cards. Our tutorial has:
+* 3 commonCards.
+* 3 rareCards.
+* 1 legendaryCards.
 
-We'll need to initialize our players once they're registered by giving them a basic deck and a starting rank. To do this, we need to add scriptData to the player once they register. Head over to the cloud code section under the configurator tab on the platform. Once there, navigate to the responses tab, expand it and look for the RegistrationResponse. We edited our RestrationReponse to look like this:
+## Player Initialization
+
+We'll need to initialize our players once they're registered by giving them a basic deck and a starting rank. To do this, we need to add scriptData to the player once they register. Head over to the Cloud Code section under the Configurator tab on the platform. Once there, navigate to the responses tab, expand it, and look for the RegistrationResponse. We edited our RegistrationReponse to look like this:
 
 ```
 
@@ -54,16 +66,16 @@ var doc = cardCollection.find().limit(-1).skip(randNum).next();
 //Save that card on the player's deck including default common cards
 Spark.getPlayer().setPrivateData("deck", [{"name":doc.cardName,"tier":doc.tier}, {"name":"Mage","tier":"commonCards" }, {"name":"Archer","tier":"commonCards" }, {"name":"Warrior","tier":"commonCards" }]);
 
-//Output which card was recieved
+//Output which card was received
 Spark.setScriptData("Your starter rare card", doc.cardName);
 
 ```
 
-Our registration response will set the player's rank to 25 with no stars. The response will also construct the player's deck by giving them a random rare card and all the common cards(Done manually). The deck will also be saved in privateData instead of scriptData because once the player's deck gets bigger and if later you give your players a chance to make more decks the player's details will get clogged, so we'll leave the deck in privateData and retrieve it when we want to using an event.
+Our RegistrationResponse will set the player's rank to 25 with no stars. The response will also construct the player's deck by giving them a random rare card and all the common cards(Done manually). The deck will also be saved in privateData instead of scriptData because once the player's deck gets bigger and if later you give your players a chance to make more decks, the player's details will get clogged. So we'll leave the deck in privateData and retrieve it when we want to using an event.
 
 ## Ranking
 
-When a player loses or wins in a ranked match their rank and stars will be affected. So it's only logical to place this logic in the ChallengeWon and ChallengeLost messages which can be found under the UserMessages tab in the cloud code section. Within these messages, we'll be calling a module which will process the ranking after the result of the challenge.
+When a player loses or wins in a ranked match, their rank and stars will be affected. So it's only logical to place this logic in the ChallengeWon and ChallengeLost messages, which can be found under the UserMessages tab in the Cloud Code section. Within these messages, we'll be calling a module which will process the ranking after the result of the challenge.
 
 ChallengeWonMessage:
 
@@ -120,7 +132,7 @@ if(outcome === "victory"){
 
         //Check for number of stars and if they qualify a levelup
         if (currentStars >= 2){
-            //If number is met, level up by decending down towards rank 1
+            //If number is met, level up by descending down towards rank 1
             Spark.getPlayer().setScriptData("rank", currentRank - 1);
             //Reset and save the number of current stars
             Spark.getPlayer().setScriptData("stars", 0);
@@ -130,7 +142,7 @@ if(outcome === "victory"){
     else if(currentRank >= 20 && currentRank <= 16 ){
         //Check for number of stars and if they qualify a levelup
         if (currentStars >= 3){
-            //If number is met, level up by decending down towards rank 1
+            //If number is met, level up by descending down towards rank 1
             Spark.getPlayer().setScriptData("rank", currentRank - 1);
             //Reset and save the number of current stars
             Spark.getPlayer().setScriptData("stars", 0);
@@ -139,7 +151,7 @@ if(outcome === "victory"){
     else if(currentRank >= 15 && currentRank <= 11 ){
         //Check for number of stars and if they qualify a levelup
         if (currentStars >= 4){
-            //If number is met, level up by decending down towards rank 1
+            //If number is met, level up by descending down towards rank 1
             Spark.getPlayer().setScriptData("rank", currentRank - 1);
             //Reset and save the number of current stars
             Spark.getPlayer().setScriptData("stars", 0);
@@ -152,7 +164,7 @@ if(outcome === "victory"){
         {
             //Check for number of stars and if they qualify a levelup         
             if (currentStars >= 5){
-                //If number is met, level up by decending down towards rank 1
+                //If number is met, level up by descending down towards rank 1
                 Spark.getPlayer().setScriptData("rank", currentRank - 1);
                 //Reset and save the number of current stars
                 Spark.getPlayer().setScriptData("stars", 0);
@@ -202,7 +214,12 @@ else{
 
 ## ChallengeTurnTaken Message
 
-This is a brilliant message to place a check for player's health and act upon it because it's called after every challenge event is executed. We will have three checks, whether the challenger's health is 0 or lower and the challenged player's health is over 0; whether the challenged player's health is 0 or lower and the challenger's health is over 0; and finally if both player's healths are equal to or lower than 0. Each condition will trigger a different response, either the challenger winning, the challenged winning or both drawing.
+This is a brilliant message to place a check for player's health and act upon it because it's called after every challenge event is executed. We'll have three checks:
+* Whether the challenger's health is 0 or lower and the challenged player's health is over 0.
+* Whether the challenged player's health is 0 or lower and the challenger's health is over 0.
+* If both player's health statuses are equal to or lower than 0.
+
+Each condition will trigger a different response, either the challenged winning, the challenger winning, or a draw.
 
 ```
 //Load challenge
@@ -215,7 +232,7 @@ var playerStats = Spark.getScriptData("playerStats");
 if(playerStats[chal.getChallengerId()].currentHealth <= 0 && playerStats[chal.getChallengedPlayerIds()[0]].currentHealth > 0){
     chal.winChallenge(Spark.loadPlayer(chal.getChallengedPlayerIds()[0]));
 }
-//If challenged reaches 0 or lower health whole challenger has more than 0 health, challenger wins
+//If challenged reaches 0 or lower health while challenger has more than 0 health, challenger wins
 if(playerStats[chal.getChallengedPlayerIds()[0]].currentHealth <= 0 && playerStats[chal.getChallengerId()].currentHealth > 0){
     chal.winChallenge(chal.getChallengerId());
 }
@@ -226,4 +243,4 @@ if(playerStats[chal.getChallengedPlayerIds()[0]].currentHealth <= 0 && playerSta
 
 ```
 
-And that's it for initilisation, your game is ready for the matchmaking.
+And that's it for initialization, your game is ready for the matchmaking.
