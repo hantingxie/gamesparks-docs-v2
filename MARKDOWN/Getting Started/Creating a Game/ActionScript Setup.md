@@ -74,13 +74,13 @@ import flash.utils.setInterval;
 
 ![l](img/AS/6.png)
 
-*2.* The first function you will need to make allows you to connect your game to the Portal. To do this, you must connect using the *service URL* and *API Secret*. You will find the *API Secret* on the *Overview* page:
+*2.* The first function you will need to make allows you to connect your game to the Portal. To do this, you must connect using the *service URL* and *API Secret*. You will find the *API Secret* on the *Game* page:
 
-![l](img/AS/7.png)
+![l](img/AS/11.png)
 
 The *Service URL* is located in the Test Harness:
 
-![l](img/AS/8.png)
+![l](img/AS/12.png)
 
 *3.* Now you can make your first function. This uses the URL and Key to connect to the Portal. Name this function *ConnectToPortal* and initiate the connection using:
 

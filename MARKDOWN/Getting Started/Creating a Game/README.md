@@ -28,13 +28,13 @@ When you create a game, two things happen:
 
 ## Remembering Keys and Secrets
 
-![l](img/CreatingGame/5.png)
+![](img/CreatingGame/6.png)
 
  You should take note of your game's *GameSparks API Key* and *GameSparks API Secret*, because you'll need these when you set up your chosen SDK.
 
 ## Working in Preview and Publishing for Launch
 
-![l](img/CreatingGame/3.png)
+![l](img/CreatingGame/7.png)
 
 ### Preview and Live Stages
 

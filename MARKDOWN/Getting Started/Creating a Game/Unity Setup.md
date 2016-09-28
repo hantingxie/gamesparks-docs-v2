@@ -52,9 +52,9 @@ You now need to provide the SDK details about the game you want to connect to. 
 
 ![l](img/UT/4.png)
 
-You'll update *API Key* and *API Secret* with the key and secret from your game. You can get these from the *Overview* page of the GameSparks portal:
+You'll update *API Key* and *API Secret* with the key and secret from your game. You can get these from the *Game* page of the GameSparks portal:
 
-![l](img/UT/3.png)
+![l](img/UT/5.png)
 
 *2.* Copy both the *GameSparks Api Key* and *GameSparks Api Secret* into the respective fields on the Unity *Inspector* window. Hit the *Test Configuration* button and you should see a whole load of info pop up in the dialog box, eventually including a log stating that GameSparks is available.
 
