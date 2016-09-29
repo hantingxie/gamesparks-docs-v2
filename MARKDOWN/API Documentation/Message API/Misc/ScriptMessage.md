@@ -1,6 +1,3 @@
----
-src: /API Documentation/Message API/Misc/ScriptMessage.md
----
 
 # ScriptMessage
 

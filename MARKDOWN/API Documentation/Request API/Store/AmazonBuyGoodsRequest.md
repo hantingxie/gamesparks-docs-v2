@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Store/AmazonBuyGoodsRequest.md
----
 
 # AmazonBuyGoodsRequest
 
@@ -21,6 +18,7 @@ Once verfied, the players account will be credited with the Virtual Good, or Vir
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
 amazonUserId | Yes | string | The userId obtained from the UserData within a PurchaseResponse
+analyticsData | No | AnalyticsData | Optional data used by analytics
 receiptId | Yes | string | The receiptId obtained from the Receipt within a PurchaseResponse
 uniqueTransactionByPlayer | No | boolean | If set to true, the transactionId from this receipt will not be globally valdidated, this will mean replays between players are possible.
 
@@ -85,6 +83,7 @@ verificationError | 5 | The receiptId has previously been processed
 	...
 	new AmazonBuyGoodsRequest()
 		.SetAmazonUserId(amazonUserId)
+		.SetAnalyticsData(analyticsData)
 		.SetReceiptId(receiptId)
 		.SetUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 		.Send((response) => {
@@ -114,6 +113,7 @@ verificationError | 5 | The receiptId has previously been processed
 	gs.getRequestBuilder()
 	    .createAmazonBuyGoodsRequest()
 		.setAmazonUserId(amazonUserId)
+		.setAnalyticsData(analyticsData)
 		.setReceiptId(receiptId)
 		.setUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 		.send(function(response:com.gamesparks.api.responses.BuyVirtualGoodResponse):void {
@@ -139,6 +139,7 @@ verificationError | 5 | The receiptId has previously been processed
 	...
 	GSAmazonBuyGoodsRequest* request = [[GSAmazonBuyGoodsRequest alloc] init];
 	[request setAmazonUserId:amazonUserId;
+	[request setAnalyticsData:analyticsData;
 	[request setReceiptId:receiptId;
 	[request setUniqueTransactionByPlayer:uniqueTransactionByPlayer;
 	[request setCallback:^ (GSBuyVirtualGoodResponse* response) {
@@ -184,6 +185,7 @@ verificationError | 5 | The receiptId has previously been processed
 	
 	AmazonBuyGoodsRequest request(gsInstance);
 	request.SetAmazonUserId(amazonUserId)
+	request.SetAnalyticsData(analyticsData)
 	request.SetReceiptId(receiptId)
 	request.SetUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 	request.Send(AmazonBuyGoodsRequest_Response);
@@ -199,6 +201,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 ...
 gs.getRequestBuilder().createAmazonBuyGoodsRequest()
 	.setAmazonUserId(amazonUserId)
+	.setAnalyticsData(analyticsData)
 	.setReceiptId(receiptId)
 	.setUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 	.send(new GSEventListener<BuyVirtualGoodResponse>() {
@@ -225,6 +228,7 @@ gs.getRequestBuilder().createAmazonBuyGoodsRequest()
 
 	var request = new SparkRequests.AmazonBuyGoodsRequest();
 	request.amazonUserId = ...;
+	request.analyticsData = ...;
 	request.receiptId = ...;
 	request.uniqueTransactionByPlayer = ...;
 	var response = request.Send();

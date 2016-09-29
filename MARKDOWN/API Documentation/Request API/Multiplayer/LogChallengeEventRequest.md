@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Multiplayer/LogChallengeEventRequest.md
----
 
 # LogChallengeEventRequest
 
@@ -18,6 +15,7 @@ The example below shows a request to en event with a short code of HS with 2 att
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 challengeInstanceId | Yes | string | The ID challenge instance to target
 eventKey | Yes | string | The short code of the event to trigger
 
@@ -57,6 +55,7 @@ challengeInstanceId | INVALID | The challengeInstanceId does not match a challen
 	using GameSparks.Api.Responses;
 	...
 	new LogChallengeEventRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetChallengeInstanceId(challengeInstanceId)
 		.SetEventKey(eventKey)
 		.Send((response) => {
@@ -75,6 +74,7 @@ challengeInstanceId | INVALID | The challengeInstanceId does not match a challen
 	
 	gs.getRequestBuilder()
 	    .createLogChallengeEventRequest()
+		.setAnalyticsData(analyticsData)
 		.setChallengeInstanceId(challengeInstanceId)
 		.setEventKey(eventKey)
 		.send(function(response:com.gamesparks.api.responses.LogChallengeEventResponse):void {
@@ -89,6 +89,7 @@ challengeInstanceId | INVALID | The challengeInstanceId does not match a challen
 	#import "GSAPI.h"
 	...
 	GSLogChallengeEventRequest* request = [[GSLogChallengeEventRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setChallengeInstanceId:challengeInstanceId;
 	[request setEventKey:eventKey;
 	[request setCallback:^ (GSLogChallengeEventResponse* response) {
@@ -113,6 +114,7 @@ challengeInstanceId | INVALID | The challengeInstanceId does not match a challen
 	......
 	
 	LogChallengeEventRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetChallengeInstanceId(challengeInstanceId)
 	request.SetEventKey(eventKey)
 	request.Send(LogChallengeEventRequest_Response);
@@ -127,6 +129,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createLogChallengeEventRequest()
+	.setAnalyticsData(analyticsData)
 	.setChallengeInstanceId(challengeInstanceId)
 	.setEventKey(eventKey)
 	.send(new GSEventListener<LogChallengeEventResponse>() {
@@ -142,6 +145,7 @@ gs.getRequestBuilder().createLogChallengeEventRequest()
 ```javascript
 
 	var request = new SparkRequests.LogChallengeEventRequest();
+	request.analyticsData = ...;
 	request.challengeInstanceId = ...;
 	request.eventKey = ...;
 	var response = request.Send();

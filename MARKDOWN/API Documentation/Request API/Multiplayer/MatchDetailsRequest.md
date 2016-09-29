@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Multiplayer/MatchDetailsRequest.md
----
 
 # MatchDetailsRequest
 
@@ -14,6 +11,7 @@ Find the details of an existing match this player belongs to, using the matchId
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 matchId | Yes | string | The matchId to find the details of
 realtimeEnabled | No | boolean | Adds realtime server details if the match has been created using Cloud Code and it has not been realtime enabled
 
@@ -36,6 +34,15 @@ scriptData | ScriptData | A JSON Map of any data added either to the Request or 
 
 ## Nested types
 
+### ScriptData
+
+A collection of arbitrary data that can be added to a message via a Cloud Code script.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+myKey | string | An arbitrary data key
+myValue | JSON | An arbitrary data value.
+
 ### Player
 
 A nested object that represents a player.
@@ -49,15 +56,6 @@ id | string | The id of the Player
 online | boolean | The online status of the Player
 scriptData | JSON | The script data of the Player
 virtualGoods | string[] | The virtual goods of the Player
-
-### ScriptData
-
-A collection of arbitrary data that can be added to a message via a Cloud Code script.
-
-Parameter | Type | Description
---------- | ---- | -----------
-myKey | string | An arbitrary data key
-myValue | JSON | An arbitrary data value.
 
 ## Error Codes
 
@@ -74,6 +72,7 @@ matchId | NOT_FOUND | No match found with given matchId for this player
 	using GameSparks.Api.Responses;
 	...
 	new MatchDetailsRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetMatchId(matchId)
 		.SetRealtimeEnabled(realtimeEnabled)
 		.Send((response) => {
@@ -100,6 +99,7 @@ matchId | NOT_FOUND | No match found with given matchId for this player
 	
 	gs.getRequestBuilder()
 	    .createMatchDetailsRequest()
+		.setAnalyticsData(analyticsData)
 		.setMatchId(matchId)
 		.setRealtimeEnabled(realtimeEnabled)
 		.send(function(response:com.gamesparks.api.responses.MatchDetailsResponse):void {
@@ -122,6 +122,7 @@ matchId | NOT_FOUND | No match found with given matchId for this player
 	#import "GSAPI.h"
 	...
 	GSMatchDetailsRequest* request = [[GSMatchDetailsRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setMatchId:matchId;
 	[request setRealtimeEnabled:realtimeEnabled;
 	[request setCallback:^ (GSMatchDetailsResponse* response) {
@@ -162,6 +163,7 @@ matchId | NOT_FOUND | No match found with given matchId for this player
 	......
 	
 	MatchDetailsRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetMatchId(matchId)
 	request.SetRealtimeEnabled(realtimeEnabled)
 	request.Send(MatchDetailsRequest_Response);
@@ -176,6 +178,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createMatchDetailsRequest()
+	.setAnalyticsData(analyticsData)
 	.setMatchId(matchId)
 	.setRealtimeEnabled(realtimeEnabled)
 	.send(new GSEventListener<MatchDetailsResponse>() {
@@ -199,6 +202,7 @@ gs.getRequestBuilder().createMatchDetailsRequest()
 ```javascript
 
 	var request = new SparkRequests.MatchDetailsRequest();
+	request.analyticsData = ...;
 	request.matchId = ...;
 	request.realtimeEnabled = ...;
 	var response = request.Send();

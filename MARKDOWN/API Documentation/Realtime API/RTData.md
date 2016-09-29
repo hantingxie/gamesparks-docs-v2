@@ -1,7 +1,3 @@
----
-src: /API Documentation/Realtime API/RTData.md
----
-
 # RTData
 
 The javascript representation of an RTData object

@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Admin/ListBulkJobsAdminRequest.md
----
 
 # ListBulkJobsAdminRequest
 
@@ -14,6 +11,7 @@ Lists existing bulk jobs.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 bulkJobIds | No | string[] | The IDs of existing bulk jobs to get details for
 
 ## Response Parameters
@@ -27,6 +25,15 @@ bulkJobs | [BulkJob[]](#bulkjob) | A list of JSON objects containing bulk jobs
 scriptData | ScriptData | A JSON Map of any data added either to the Request or the Response by your Cloud Code
 
 ## Nested types
+
+### ScriptData
+
+A collection of arbitrary data that can be added to a message via a Cloud Code script.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+myKey | string | An arbitrary data key
+myValue | JSON | An arbitrary data value.
 
 ### BulkJob
 
@@ -49,15 +56,6 @@ script | string | The Cloud Code script to run for each player
 started | date | The time at which the bulk job started to execute
 state | string | The current state of the bulk job
 
-### ScriptData
-
-A collection of arbitrary data that can be added to a message via a Cloud Code script.
-
-Parameter | Type | Description
---------- | ---- | -----------
-myKey | string | An arbitrary data key
-myValue | JSON | An arbitrary data value.
-
 
 ## Code Samples
 
@@ -68,6 +66,7 @@ myValue | JSON | An arbitrary data value.
 	using GameSparks.Api.Responses;
 	...
 	new ListBulkJobsAdminRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetBulkJobIds(bulkJobIds)
 		.Send((response) => {
 		GSEnumerable<var> bulkJobs = response.BulkJobs; 
@@ -86,6 +85,7 @@ myValue | JSON | An arbitrary data value.
 	
 	gs.getRequestBuilder()
 	    .createListBulkJobsAdminRequest()
+		.setAnalyticsData(analyticsData)
 		.setBulkJobIds(bulkJobIds)
 		.send(function(response:com.gamesparks.api.responses.ListBulkJobsAdminResponse):void {
 		var bulkJobs:Vector.<BulkJob> = response.getBulkJobs(); 
@@ -100,6 +100,7 @@ myValue | JSON | An arbitrary data value.
 	#import "GSAPI.h"
 	...
 	GSListBulkJobsAdminRequest* request = [[GSListBulkJobsAdminRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setBulkJobIds:bulkJobIds;
 	[request setCallback:^ (GSListBulkJobsAdminResponse* response) {
 	NSArray* bulkJobs = [response getBulkJobs]; 
@@ -125,6 +126,7 @@ myValue | JSON | An arbitrary data value.
 	......
 	
 	ListBulkJobsAdminRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetBulkJobIds(bulkJobIds)
 	request.Send(ListBulkJobsAdminRequest_Response);
 ```
@@ -138,6 +140,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createListBulkJobsAdminRequest()
+	.setAnalyticsData(analyticsData)
 	.setBulkJobIds(bulkJobIds)
 	.send(new GSEventListener<ListBulkJobsAdminResponse>() {
 		@Override
@@ -153,6 +156,7 @@ gs.getRequestBuilder().createListBulkJobsAdminRequest()
 ```javascript
 
 	var request = new SparkRequests.ListBulkJobsAdminRequest();
+	request.analyticsData = ...;
 	request.bulkJobIds = ...;
 	var response = request.Send();
 	

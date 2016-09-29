@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Player/ListAchievementsRequest.md
----
 
 # ListAchievementsRequest
 
@@ -14,6 +11,7 @@ Retrieves a list of the configured achievements in the game, along with whether 
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 
 ## Response Parameters
 
@@ -58,6 +56,7 @@ shortCode | string | The shortCode of the Achievement
 	using GameSparks.Api.Responses;
 	...
 	new ListAchievementsRequest()
+		.SetAnalyticsData(analyticsData)
 		.Send((response) => {
 		GSEnumerable<var> achievements = response.Achievements; 
 		GSData scriptData = response.ScriptData; 
@@ -75,6 +74,7 @@ shortCode | string | The shortCode of the Achievement
 	
 	gs.getRequestBuilder()
 	    .createListAchievementsRequest()
+		.setAnalyticsData(analyticsData)
 		.send(function(response:com.gamesparks.api.responses.ListAchievementsResponse):void {
 		var achievements:Vector.<Achievement> = response.getAchievements(); 
 		var scriptData:ScriptData = response.getScriptData(); 
@@ -88,6 +88,7 @@ shortCode | string | The shortCode of the Achievement
 	#import "GSAPI.h"
 	...
 	GSListAchievementsRequest* request = [[GSListAchievementsRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setCallback:^ (GSListAchievementsResponse* response) {
 	NSArray* achievements = [response getAchievements]; 
 	NSDictionary* scriptData = [response getScriptData]; 
@@ -112,6 +113,7 @@ shortCode | string | The shortCode of the Achievement
 	......
 	
 	ListAchievementsRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.Send(ListAchievementsRequest_Response);
 ```
 
@@ -124,6 +126,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createListAchievementsRequest()
+	.setAnalyticsData(analyticsData)
 	.send(new GSEventListener<ListAchievementsResponse>() {
 		@Override
 		public void onEvent(ListAchievementsResponse response) {
@@ -138,6 +141,7 @@ gs.getRequestBuilder().createListAchievementsRequest()
 ```javascript
 
 	var request = new SparkRequests.ListAchievementsRequest();
+	request.analyticsData = ...;
 	var response = request.Send();
 	
 var achievements = response.achievements; 

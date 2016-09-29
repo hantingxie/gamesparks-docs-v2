@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Authentication/DeviceAuthenticationRequest.md
----
 
 # DeviceAuthenticationRequest
 
@@ -18,6 +15,7 @@ DeviceAuthenticationRequest should not be used in conjunction with RegistrationR
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 deviceId | Yes | string | A unique device identifier. Each platform has it's own method for getting a unique id
 deviceModel | No | string | The device model
 deviceName | No | string | The device name
@@ -81,6 +79,7 @@ deviceOS | IOS|ANDROID|WP8	 | The supplied deviceOS was not in the accepted rang
 	using GameSparks.Api.Responses;
 	...
 	new DeviceAuthenticationRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetDeviceId(deviceId)
 		.SetDeviceModel(deviceModel)
 		.SetDeviceName(deviceName)
@@ -110,6 +109,7 @@ deviceOS | IOS|ANDROID|WP8	 | The supplied deviceOS was not in the accepted rang
 	
 	gs.getRequestBuilder()
 	    .createDeviceAuthenticationRequest()
+		.setAnalyticsData(analyticsData)
 		.setDeviceId(deviceId)
 		.setDeviceModel(deviceModel)
 		.setDeviceName(deviceName)
@@ -135,6 +135,7 @@ deviceOS | IOS|ANDROID|WP8	 | The supplied deviceOS was not in the accepted rang
 	#import "GSAPI.h"
 	...
 	GSDeviceAuthenticationRequest* request = [[GSDeviceAuthenticationRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setDeviceId:deviceId;
 	[request setDeviceModel:deviceModel;
 	[request setDeviceName:deviceName;
@@ -175,6 +176,7 @@ deviceOS | IOS|ANDROID|WP8	 | The supplied deviceOS was not in the accepted rang
 	......
 	
 	DeviceAuthenticationRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetDeviceId(deviceId)
 	request.SetDeviceModel(deviceModel)
 	request.SetDeviceName(deviceName)
@@ -195,6 +197,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createDeviceAuthenticationRequest()
+	.setAnalyticsData(analyticsData)
 	.setDeviceId(deviceId)
 	.setDeviceModel(deviceModel)
 	.setDeviceName(deviceName)
@@ -221,6 +224,7 @@ gs.getRequestBuilder().createDeviceAuthenticationRequest()
 ```javascript
 
 	var request = new SparkRequests.DeviceAuthenticationRequest();
+	request.analyticsData = ...;
 	request.deviceId = ...;
 	request.deviceModel = ...;
 	request.deviceName = ...;

@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Player/ListInviteFriendsRequest.md
----
 
 # ListInviteFriendsRequest
 
@@ -18,6 +15,7 @@ For example, Facebook's policies prevent this friend list being provided, wherea
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 
 ## Response Parameters
 
@@ -60,6 +58,7 @@ profilePic | string | The profile picture URL of the External Friend
 	using GameSparks.Api.Responses;
 	...
 	new ListInviteFriendsRequest()
+		.SetAnalyticsData(analyticsData)
 		.Send((response) => {
 		GSEnumerable<var> friends = response.Friends; 
 		GSData scriptData = response.ScriptData; 
@@ -77,6 +76,7 @@ profilePic | string | The profile picture URL of the External Friend
 	
 	gs.getRequestBuilder()
 	    .createListInviteFriendsRequest()
+		.setAnalyticsData(analyticsData)
 		.send(function(response:com.gamesparks.api.responses.ListInviteFriendsResponse):void {
 		var friends:Vector.<InvitableFriend> = response.getFriends(); 
 		var scriptData:ScriptData = response.getScriptData(); 
@@ -90,6 +90,7 @@ profilePic | string | The profile picture URL of the External Friend
 	#import "GSAPI.h"
 	...
 	GSListInviteFriendsRequest* request = [[GSListInviteFriendsRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setCallback:^ (GSListInviteFriendsResponse* response) {
 	NSArray* friends = [response getFriends]; 
 	NSDictionary* scriptData = [response getScriptData]; 
@@ -114,6 +115,7 @@ profilePic | string | The profile picture URL of the External Friend
 	......
 	
 	ListInviteFriendsRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.Send(ListInviteFriendsRequest_Response);
 ```
 
@@ -126,6 +128,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createListInviteFriendsRequest()
+	.setAnalyticsData(analyticsData)
 	.send(new GSEventListener<ListInviteFriendsResponse>() {
 		@Override
 		public void onEvent(ListInviteFriendsResponse response) {
@@ -140,6 +143,7 @@ gs.getRequestBuilder().createListInviteFriendsRequest()
 ```javascript
 
 	var request = new SparkRequests.ListInviteFriendsRequest();
+	request.analyticsData = ...;
 	var response = request.Send();
 	
 var friends = response.friends; 

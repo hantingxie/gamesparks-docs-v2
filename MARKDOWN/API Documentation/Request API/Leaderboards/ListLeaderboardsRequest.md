@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Leaderboards/ListLeaderboardsRequest.md
----
 
 # ListLeaderboardsRequest
 
@@ -14,6 +11,7 @@ Returns a list of all leaderboards configured in the game.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 
 ## Response Parameters
 
@@ -57,6 +55,7 @@ shortCode | string | The leaderboard's short code.
 	using GameSparks.Api.Responses;
 	...
 	new ListLeaderboardsRequest()
+		.SetAnalyticsData(analyticsData)
 		.Send((response) => {
 		GSEnumerable<var> leaderboards = response.Leaderboards; 
 		GSData scriptData = response.ScriptData; 
@@ -74,6 +73,7 @@ shortCode | string | The leaderboard's short code.
 	
 	gs.getRequestBuilder()
 	    .createListLeaderboardsRequest()
+		.setAnalyticsData(analyticsData)
 		.send(function(response:com.gamesparks.api.responses.ListLeaderboardsResponse):void {
 		var leaderboards:Vector.<Leaderboard> = response.getLeaderboards(); 
 		var scriptData:ScriptData = response.getScriptData(); 
@@ -87,6 +87,7 @@ shortCode | string | The leaderboard's short code.
 	#import "GSAPI.h"
 	...
 	GSListLeaderboardsRequest* request = [[GSListLeaderboardsRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setCallback:^ (GSListLeaderboardsResponse* response) {
 	NSArray* leaderboards = [response getLeaderboards]; 
 	NSDictionary* scriptData = [response getScriptData]; 
@@ -111,6 +112,7 @@ shortCode | string | The leaderboard's short code.
 	......
 	
 	ListLeaderboardsRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.Send(ListLeaderboardsRequest_Response);
 ```
 
@@ -123,6 +125,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createListLeaderboardsRequest()
+	.setAnalyticsData(analyticsData)
 	.send(new GSEventListener<ListLeaderboardsResponse>() {
 		@Override
 		public void onEvent(ListLeaderboardsResponse response) {
@@ -137,6 +140,7 @@ gs.getRequestBuilder().createListLeaderboardsRequest()
 ```javascript
 
 	var request = new SparkRequests.ListLeaderboardsRequest();
+	request.analyticsData = ...;
 	var response = request.Send();
 	
 var leaderboards = response.leaderboards; 

@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Authentication/PSNConnectRequest.md
----
 
 # PSNConnectRequest
 
@@ -26,6 +23,7 @@ If the PSN user is already known, the session will switch to being the previousl
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 authorizationCode | No | string | The authorization code obtained from PSN, as described here https://ps4.scedev.net/resources/documents/SDK/latest/NpAuth-Reference/0008.html
 doNotLinkToCurrentPlayer | No | boolean | Indicates that the server should not try to link the external profile with the current player.  If false, links the external profile to the currently signed in player.  If true, creates a new player and links the external profile to them.  Defaults to false.
 errorOnSwitch | No | boolean | Indicates whether the server should return an error if an account switch would have occurred, rather than switching automatically.  Defaults to false.
@@ -91,6 +89,7 @@ authorizationCode | REQUIRED | Parameter authorizationCode is required but was n
 	using GameSparks.Api.Responses;
 	...
 	new PSNConnectRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetAuthorizationCode(authorizationCode)
 		.SetDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 		.SetErrorOnSwitch(errorOnSwitch)
@@ -119,6 +118,7 @@ authorizationCode | REQUIRED | Parameter authorizationCode is required but was n
 	
 	gs.getRequestBuilder()
 	    .createPSNConnectRequest()
+		.setAnalyticsData(analyticsData)
 		.setAuthorizationCode(authorizationCode)
 		.setDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 		.setErrorOnSwitch(errorOnSwitch)
@@ -143,6 +143,7 @@ authorizationCode | REQUIRED | Parameter authorizationCode is required but was n
 	#import "GSAPI.h"
 	...
 	GSPSNConnectRequest* request = [[GSPSNConnectRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setAuthorizationCode:authorizationCode;
 	[request setDoNotLinkToCurrentPlayer:doNotLinkToCurrentPlayer;
 	[request setErrorOnSwitch:errorOnSwitch;
@@ -182,6 +183,7 @@ authorizationCode | REQUIRED | Parameter authorizationCode is required but was n
 	......
 	
 	PSNConnectRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetAuthorizationCode(authorizationCode)
 	request.SetDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 	request.SetErrorOnSwitch(errorOnSwitch)
@@ -201,6 +203,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createPSNConnectRequest()
+	.setAnalyticsData(analyticsData)
 	.setAuthorizationCode(authorizationCode)
 	.setDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 	.setErrorOnSwitch(errorOnSwitch)
@@ -226,6 +229,7 @@ gs.getRequestBuilder().createPSNConnectRequest()
 ```javascript
 
 	var request = new SparkRequests.PSNConnectRequest();
+	request.analyticsData = ...;
 	request.authorizationCode = ...;
 	request.doNotLinkToCurrentPlayer = ...;
 	request.errorOnSwitch = ...;

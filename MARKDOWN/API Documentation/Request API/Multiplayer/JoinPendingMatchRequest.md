@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Multiplayer/JoinPendingMatchRequest.md
----
 
 # JoinPendingMatchRequest
 
@@ -14,6 +11,7 @@ Requests to join a pending match (found via FindPendingMatchesRequest).
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 matchGroup | No | string | Optional. The matchGroup of the match this player previously registeredfor
 matchShortCode | Yes | string | The shortCode of the match this player previously registered for
 pendingMatchId | Yes | string | The pending match ID to join
@@ -29,6 +27,18 @@ pendingMatch | [PendingMatch](#pendingmatch) | A JSON object containing the new 
 scriptData | ScriptData | A JSON Map of any data added either to the Request or the Response by your Cloud Code
 
 ## Nested types
+
+### PendingMatch
+
+An object that represents a pending match.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+id | string | The ID for the pending match
+matchGroup | string | The match group for the pending match
+matchShortCode | string | The match shortCode for the pending match
+matchedPlayers | [MatchedPlayer[]](#matchedplayer) | The players already part of this pending match
+skill | number | The average skill of players in this pending match
 
 ### ScriptData
 
@@ -50,18 +60,6 @@ participantData | JSON | A JSON Map of any data that was associated to this user
 playerId | string | The ID for player
 skill | number | The skill of the player in this match
 
-### PendingMatch
-
-An object that represents a pending match.
-
-Parameter | Type | Description
---------- | ---- | -----------
-id | string | The ID for the pending match
-matchGroup | string | The match group for the pending match
-matchShortCode | string | The match shortCode for the pending match
-matchedPlayers | [MatchedPlayer[]](#matchedplayer) | The players already part of this pending match
-skill | number | The average skill of players in this pending match
-
 ## Error Codes
 
 Key | Value | Description
@@ -80,6 +78,7 @@ pendingMatchId | NOT_AVAILABLE | The requested pending match ID is not available
 	using GameSparks.Api.Responses;
 	...
 	new JoinPendingMatchRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetMatchGroup(matchGroup)
 		.SetMatchShortCode(matchShortCode)
 		.SetPendingMatchId(pendingMatchId)
@@ -100,6 +99,7 @@ pendingMatchId | NOT_AVAILABLE | The requested pending match ID is not available
 	
 	gs.getRequestBuilder()
 	    .createJoinPendingMatchRequest()
+		.setAnalyticsData(analyticsData)
 		.setMatchGroup(matchGroup)
 		.setMatchShortCode(matchShortCode)
 		.setPendingMatchId(pendingMatchId)
@@ -116,6 +116,7 @@ pendingMatchId | NOT_AVAILABLE | The requested pending match ID is not available
 	#import "GSAPI.h"
 	...
 	GSJoinPendingMatchRequest* request = [[GSJoinPendingMatchRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setMatchGroup:matchGroup;
 	[request setMatchShortCode:matchShortCode;
 	[request setPendingMatchId:pendingMatchId;
@@ -143,6 +144,7 @@ pendingMatchId | NOT_AVAILABLE | The requested pending match ID is not available
 	......
 	
 	JoinPendingMatchRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetMatchGroup(matchGroup)
 	request.SetMatchShortCode(matchShortCode)
 	request.SetPendingMatchId(pendingMatchId)
@@ -158,6 +160,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createJoinPendingMatchRequest()
+	.setAnalyticsData(analyticsData)
 	.setMatchGroup(matchGroup)
 	.setMatchShortCode(matchShortCode)
 	.setPendingMatchId(pendingMatchId)
@@ -175,6 +178,7 @@ gs.getRequestBuilder().createJoinPendingMatchRequest()
 ```javascript
 
 	var request = new SparkRequests.JoinPendingMatchRequest();
+	request.analyticsData = ...;
 	request.matchGroup = ...;
 	request.matchShortCode = ...;
 	request.pendingMatchId = ...;

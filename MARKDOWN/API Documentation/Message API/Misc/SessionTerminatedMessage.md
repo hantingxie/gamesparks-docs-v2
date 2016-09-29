@@ -1,6 +1,3 @@
----
-src: /API Documentation/Message API/Misc/SessionTerminatedMessage.md
----
 
 # SessionTerminatedMessage
 

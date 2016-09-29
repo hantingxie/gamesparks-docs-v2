@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Misc/GetDownloadableRequest.md
----
 
 # GetDownloadableRequest
 
@@ -14,6 +11,7 @@ Returns a secure, time sensitive url to allow the game to download a piece of do
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 shortCode | Yes | string | The short code of the Downloadable item
 
 ## Response Parameters
@@ -55,6 +53,7 @@ shortCode | INVALID | The short code does not match any Downloadable shortCode
 	using GameSparks.Api.Responses;
 	...
 	new GetDownloadableRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetShortCode(shortCode)
 		.Send((response) => {
 		DateTime? lastModified = response.LastModified; 
@@ -76,6 +75,7 @@ shortCode | INVALID | The short code does not match any Downloadable shortCode
 	
 	gs.getRequestBuilder()
 	    .createGetDownloadableRequest()
+		.setAnalyticsData(analyticsData)
 		.setShortCode(shortCode)
 		.send(function(response:com.gamesparks.api.responses.GetDownloadableResponse):void {
 		var lastModified:Date = response.getLastModified(); 
@@ -93,6 +93,7 @@ shortCode | INVALID | The short code does not match any Downloadable shortCode
 	#import "GSAPI.h"
 	...
 	GSGetDownloadableRequest* request = [[GSGetDownloadableRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setShortCode:shortCode;
 	[request setCallback:^ (GSGetDownloadableResponse* response) {
 	NSDate* lastModified = [response getLastModified]; 
@@ -124,6 +125,7 @@ shortCode | INVALID | The short code does not match any Downloadable shortCode
 	......
 	
 	GetDownloadableRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetShortCode(shortCode)
 	request.Send(GetDownloadableRequest_Response);
 ```
@@ -137,6 +139,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createGetDownloadableRequest()
+	.setAnalyticsData(analyticsData)
 	.setShortCode(shortCode)
 	.send(new GSEventListener<GetDownloadableResponse>() {
 		@Override
@@ -155,6 +158,7 @@ gs.getRequestBuilder().createGetDownloadableRequest()
 ```javascript
 
 	var request = new SparkRequests.GetDownloadableRequest();
+	request.analyticsData = ...;
 	request.shortCode = ...;
 	var response = request.Send();
 	

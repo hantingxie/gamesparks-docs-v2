@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Store/PsnBuyGoodsRequest.md
----
 
 # PsnBuyGoodsRequest
 
@@ -20,6 +17,7 @@ GampSparks platform by default will use internally saved PSN user access token
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 authorizationCode | No | string | The authorization code obtained from PSN, as described here https://ps4.scedev.net/resources/documents/SDK/latest/NpAuth-Reference/0008.html
 entitlementLabel | Yes | string | Specify the entitlement label of the entitlement to update. (Not an entitlement ID).
 redirectUri | No | string | When using the authorization code obtained from PlayStation®4/PlayStation®Vita/PlayStation®3, this is not required.
@@ -82,6 +80,7 @@ verificationError | 3 | There was an error connecting to the PSN server
 	using GameSparks.Api.Responses;
 	...
 	new PsnBuyGoodsRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetAuthorizationCode(authorizationCode)
 		.SetEntitlementLabel(entitlementLabel)
 		.SetRedirectUri(redirectUri)
@@ -113,6 +112,7 @@ verificationError | 3 | There was an error connecting to the PSN server
 	
 	gs.getRequestBuilder()
 	    .createPsnBuyGoodsRequest()
+		.setAnalyticsData(analyticsData)
 		.setAuthorizationCode(authorizationCode)
 		.setEntitlementLabel(entitlementLabel)
 		.setRedirectUri(redirectUri)
@@ -140,6 +140,7 @@ verificationError | 3 | There was an error connecting to the PSN server
 	#import "GSAPI.h"
 	...
 	GSPsnBuyGoodsRequest* request = [[GSPsnBuyGoodsRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setAuthorizationCode:authorizationCode;
 	[request setEntitlementLabel:entitlementLabel;
 	[request setRedirectUri:redirectUri;
@@ -187,6 +188,7 @@ verificationError | 3 | There was an error connecting to the PSN server
 	......
 	
 	PsnBuyGoodsRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetAuthorizationCode(authorizationCode)
 	request.SetEntitlementLabel(entitlementLabel)
 	request.SetRedirectUri(redirectUri)
@@ -204,6 +206,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createPsnBuyGoodsRequest()
+	.setAnalyticsData(analyticsData)
 	.setAuthorizationCode(authorizationCode)
 	.setEntitlementLabel(entitlementLabel)
 	.setRedirectUri(redirectUri)
@@ -232,6 +235,7 @@ gs.getRequestBuilder().createPsnBuyGoodsRequest()
 ```javascript
 
 	var request = new SparkRequests.PsnBuyGoodsRequest();
+	request.analyticsData = ...;
 	request.authorizationCode = ...;
 	request.entitlementLabel = ...;
 	request.redirectUri = ...;

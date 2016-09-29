@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Player/ListMessageRequest.md
----
 
 # ListMessageRequest
 
@@ -16,6 +13,7 @@ The list only contains un-dismissed messages, to dismiss a message see DismissMe
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 entryCount | No | number | The number of items to return in a page (default=50)
 include | No | string | An optional filter that limits the message types returned
 offset | No | number | The offset (page number) to start from (default=0)
@@ -51,6 +49,7 @@ myValue | JSON | An arbitrary data value.
 	using GameSparks.Api.Responses;
 	...
 	new ListMessageRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetEntryCount(entryCount)
 		.SetInclude(include)
 		.SetOffset(offset)
@@ -71,6 +70,7 @@ myValue | JSON | An arbitrary data value.
 	
 	gs.getRequestBuilder()
 	    .createListMessageRequest()
+		.setAnalyticsData(analyticsData)
 		.setEntryCount(entryCount)
 		.setInclude(include)
 		.setOffset(offset)
@@ -87,6 +87,7 @@ myValue | JSON | An arbitrary data value.
 	#import "GSAPI.h"
 	...
 	GSListMessageRequest* request = [[GSListMessageRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setEntryCount:entryCount;
 	[request setInclude:include;
 	[request setOffset:offset;
@@ -114,6 +115,7 @@ myValue | JSON | An arbitrary data value.
 	......
 	
 	ListMessageRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetEntryCount(entryCount)
 	request.SetInclude(include)
 	request.SetOffset(offset)
@@ -129,6 +131,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createListMessageRequest()
+	.setAnalyticsData(analyticsData)
 	.setEntryCount(entryCount)
 	.setInclude(include)
 	.setOffset(offset)
@@ -146,6 +149,7 @@ gs.getRequestBuilder().createListMessageRequest()
 ```javascript
 
 	var request = new SparkRequests.ListMessageRequest();
+	request.analyticsData = ...;
 	request.entryCount = ...;
 	request.include = ...;
 	request.offset = ...;

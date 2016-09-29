@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Teams/CreateTeamRequest.md
----
 
 # CreateTeamRequest
 
@@ -14,6 +11,7 @@ Allows a new team to be created.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 teamId | No | string | An optional teamId to use
 teamName | Yes | string | A display name to use
 teamType | Yes | string | The type of team to be created
@@ -34,6 +32,15 @@ teamType | string | The team type
 
 ## Nested types
 
+### ScriptData
+
+A collection of arbitrary data that can be added to a message via a Cloud Code script.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+myKey | string | An arbitrary data key
+myValue | JSON | An arbitrary data value.
+
 ### Player
 
 A nested object that represents a player.
@@ -47,15 +54,6 @@ id | string | The id of the Player
 online | boolean | The online status of the Player
 scriptData | JSON | The script data of the Player
 virtualGoods | string[] | The virtual goods of the Player
-
-### ScriptData
-
-A collection of arbitrary data that can be added to a message via a Cloud Code script.
-
-Parameter | Type | Description
---------- | ---- | -----------
-myKey | string | An arbitrary data key
-myValue | JSON | An arbitrary data value.
 
 ## Error Codes
 
@@ -75,6 +73,7 @@ teamId | NOT_UNIQUE | The teamId supplied already exists
 	using GameSparks.Api.Responses;
 	...
 	new CreateTeamRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetTeamId(teamId)
 		.SetTeamName(teamName)
 		.SetTeamType(teamType)
@@ -99,6 +98,7 @@ teamId | NOT_UNIQUE | The teamId supplied already exists
 	
 	gs.getRequestBuilder()
 	    .createCreateTeamRequest()
+		.setAnalyticsData(analyticsData)
 		.setTeamId(teamId)
 		.setTeamName(teamName)
 		.setTeamType(teamType)
@@ -119,6 +119,7 @@ teamId | NOT_UNIQUE | The teamId supplied already exists
 	#import "GSAPI.h"
 	...
 	GSCreateTeamRequest* request = [[GSCreateTeamRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setTeamId:teamId;
 	[request setTeamName:teamName;
 	[request setTeamType:teamType;
@@ -154,6 +155,7 @@ teamId | NOT_UNIQUE | The teamId supplied already exists
 	......
 	
 	CreateTeamRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetTeamId(teamId)
 	request.SetTeamName(teamName)
 	request.SetTeamType(teamType)
@@ -169,6 +171,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createCreateTeamRequest()
+	.setAnalyticsData(analyticsData)
 	.setTeamId(teamId)
 	.setTeamName(teamName)
 	.setTeamType(teamType)
@@ -190,6 +193,7 @@ gs.getRequestBuilder().createCreateTeamRequest()
 ```javascript
 
 	var request = new SparkRequests.CreateTeamRequest();
+	request.analyticsData = ...;
 	request.teamId = ...;
 	request.teamName = ...;
 	request.teamType = ...;

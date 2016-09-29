@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Teams/GetMyTeamsRequest.md
----
 
 # GetMyTeamsRequest
 
@@ -14,6 +11,7 @@ Get the teams that the player is in. Can be filtered on team type and also on th
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 ownedOnly | No | boolean | Set to true to only get teams owned by the player
 teamTypes | No | string[] | The type of teams to get
 
@@ -38,6 +36,18 @@ Parameter | Type | Description
 myKey | string | An arbitrary data key
 myValue | JSON | An arbitrary data value.
 
+### Team
+
+A nested object that represents the team.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+members | [Player[]](#player) | The team members
+owner | [Player](#player) | A summary of the owner
+teamId | string | The Id of the team
+teamName | string | The team name
+teamType | string | The team type
+
 ### Player
 
 A nested object that represents a player.
@@ -52,18 +62,6 @@ online | boolean | The online status of the Player
 scriptData | JSON | The script data of the Player
 virtualGoods | string[] | The virtual goods of the Player
 
-### Team
-
-A nested object that represents the team.
-
-Parameter | Type | Description
---------- | ---- | -----------
-members | [Player[]](#player) | The team members
-owner | [Player](#player) | A summary of the owner
-teamId | string | The Id of the team
-teamName | string | The team name
-teamType | string | The team type
-
 
 ## Code Samples
 
@@ -74,6 +72,7 @@ teamType | string | The team type
 	using GameSparks.Api.Responses;
 	...
 	new GetMyTeamsRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetOwnedOnly(ownedOnly)
 		.SetTeamTypes(teamTypes)
 		.Send((response) => {
@@ -93,6 +92,7 @@ teamType | string | The team type
 	
 	gs.getRequestBuilder()
 	    .createGetMyTeamsRequest()
+		.setAnalyticsData(analyticsData)
 		.setOwnedOnly(ownedOnly)
 		.setTeamTypes(teamTypes)
 		.send(function(response:com.gamesparks.api.responses.GetMyTeamsResponse):void {
@@ -108,6 +108,7 @@ teamType | string | The team type
 	#import "GSAPI.h"
 	...
 	GSGetMyTeamsRequest* request = [[GSGetMyTeamsRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setOwnedOnly:ownedOnly;
 	[request setTeamTypes:teamTypes;
 	[request setCallback:^ (GSGetMyTeamsResponse* response) {
@@ -134,6 +135,7 @@ teamType | string | The team type
 	......
 	
 	GetMyTeamsRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetOwnedOnly(ownedOnly)
 	request.SetTeamTypes(teamTypes)
 	request.Send(GetMyTeamsRequest_Response);
@@ -148,6 +150,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createGetMyTeamsRequest()
+	.setAnalyticsData(analyticsData)
 	.setOwnedOnly(ownedOnly)
 	.setTeamTypes(teamTypes)
 	.send(new GSEventListener<GetMyTeamsResponse>() {
@@ -164,6 +167,7 @@ gs.getRequestBuilder().createGetMyTeamsRequest()
 ```javascript
 
 	var request = new SparkRequests.GetMyTeamsRequest();
+	request.analyticsData = ...;
 	request.ownedOnly = ...;
 	request.teamTypes = ...;
 	var response = request.Send();

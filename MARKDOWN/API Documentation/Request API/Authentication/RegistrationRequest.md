@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Authentication/RegistrationRequest.md
----
 
 # RegistrationRequest
 
@@ -14,6 +11,7 @@ Allows a new player to be created using a username, password display name.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 displayName | Yes | string | A display name to use
 password | Yes | string | The previously registered password
 segments | No | JSON | An optional segment configuration for this request.
@@ -73,6 +71,7 @@ USERNAME | TAKEN | The userName supplied is already in use.
 	using GameSparks.Api.Responses;
 	...
 	new RegistrationRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetDisplayName(displayName)
 		.SetPassword(password)
 		.SetSegments(segments)
@@ -98,6 +97,7 @@ USERNAME | TAKEN | The userName supplied is already in use.
 	
 	gs.getRequestBuilder()
 	    .createRegistrationRequest()
+		.setAnalyticsData(analyticsData)
 		.setDisplayName(displayName)
 		.setPassword(password)
 		.setSegments(segments)
@@ -119,6 +119,7 @@ USERNAME | TAKEN | The userName supplied is already in use.
 	#import "GSAPI.h"
 	...
 	GSRegistrationRequest* request = [[GSRegistrationRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setDisplayName:displayName;
 	[request setPassword:password;
 	[request setSegments:segments;
@@ -155,6 +156,7 @@ USERNAME | TAKEN | The userName supplied is already in use.
 	......
 	
 	RegistrationRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetDisplayName(displayName)
 	request.SetPassword(password)
 	request.SetSegments(segments)
@@ -171,6 +173,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createRegistrationRequest()
+	.setAnalyticsData(analyticsData)
 	.setDisplayName(displayName)
 	.setPassword(password)
 	.setSegments(segments)
@@ -193,6 +196,7 @@ gs.getRequestBuilder().createRegistrationRequest()
 ```javascript
 
 	var request = new SparkRequests.RegistrationRequest();
+	request.analyticsData = ...;
 	request.displayName = ...;
 	request.password = ...;
 	request.segments = ...;

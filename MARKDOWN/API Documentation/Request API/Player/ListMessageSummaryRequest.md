@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Player/ListMessageSummaryRequest.md
----
 
 # ListMessageSummaryRequest
 
@@ -18,6 +15,7 @@ The full message can be retrieved using GetMessageRequest Read the section on Me
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 entryCount | No | number | The number of items to return in a page (default=50)
 offset | No | number | The offset (page number) to start from (default=0)
 
@@ -52,6 +50,7 @@ myValue | JSON | An arbitrary data value.
 	using GameSparks.Api.Responses;
 	...
 	new ListMessageSummaryRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetEntryCount(entryCount)
 		.SetOffset(offset)
 		.Send((response) => {
@@ -71,6 +70,7 @@ myValue | JSON | An arbitrary data value.
 	
 	gs.getRequestBuilder()
 	    .createListMessageSummaryRequest()
+		.setAnalyticsData(analyticsData)
 		.setEntryCount(entryCount)
 		.setOffset(offset)
 		.send(function(response:com.gamesparks.api.responses.ListMessageSummaryResponse):void {
@@ -86,6 +86,7 @@ myValue | JSON | An arbitrary data value.
 	#import "GSAPI.h"
 	...
 	GSListMessageSummaryRequest* request = [[GSListMessageSummaryRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setEntryCount:entryCount;
 	[request setOffset:offset;
 	[request setCallback:^ (GSListMessageSummaryResponse* response) {
@@ -112,6 +113,7 @@ myValue | JSON | An arbitrary data value.
 	......
 	
 	ListMessageSummaryRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetEntryCount(entryCount)
 	request.SetOffset(offset)
 	request.Send(ListMessageSummaryRequest_Response);
@@ -126,6 +128,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createListMessageSummaryRequest()
+	.setAnalyticsData(analyticsData)
 	.setEntryCount(entryCount)
 	.setOffset(offset)
 	.send(new GSEventListener<ListMessageSummaryResponse>() {
@@ -142,6 +145,7 @@ gs.getRequestBuilder().createListMessageSummaryRequest()
 ```javascript
 
 	var request = new SparkRequests.ListMessageSummaryRequest();
+	request.analyticsData = ...;
 	request.entryCount = ...;
 	request.offset = ...;
 	var response = request.Send();

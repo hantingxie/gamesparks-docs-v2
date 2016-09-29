@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Admin/CancelBulkJobAdminRequest.md
----
 
 # CancelBulkJobAdminRequest
 
@@ -14,6 +11,7 @@ Cancel one or more bulk jobs.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 bulkJobIds | Yes | string[] | The IDs of existing bulk jobs to cancel
 
 ## Response Parameters
@@ -27,6 +25,15 @@ bulkJobs | [BulkJob[]](#bulkjob) | A list of JSON objects containing bulk jobs
 scriptData | ScriptData | A JSON Map of any data added either to the Request or the Response by your Cloud Code
 
 ## Nested types
+
+### ScriptData
+
+A collection of arbitrary data that can be added to a message via a Cloud Code script.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+myKey | string | An arbitrary data key
+myValue | JSON | An arbitrary data value.
 
 ### BulkJob
 
@@ -49,15 +56,6 @@ script | string | The Cloud Code script to run for each player
 started | date | The time at which the bulk job started to execute
 state | string | The current state of the bulk job
 
-### ScriptData
-
-A collection of arbitrary data that can be added to a message via a Cloud Code script.
-
-Parameter | Type | Description
---------- | ---- | -----------
-myKey | string | An arbitrary data key
-myValue | JSON | An arbitrary data value.
-
 ## Error Codes
 
 Key | Value | Description
@@ -73,6 +71,7 @@ bulkJobIds | REQUIRED | The bulkJobIds must be an array of one or more valid bul
 	using GameSparks.Api.Responses;
 	...
 	new CancelBulkJobAdminRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetBulkJobIds(bulkJobIds)
 		.Send((response) => {
 		GSEnumerable<var> bulkJobs = response.BulkJobs; 
@@ -91,6 +90,7 @@ bulkJobIds | REQUIRED | The bulkJobIds must be an array of one or more valid bul
 	
 	gs.getRequestBuilder()
 	    .createCancelBulkJobAdminRequest()
+		.setAnalyticsData(analyticsData)
 		.setBulkJobIds(bulkJobIds)
 		.send(function(response:com.gamesparks.api.responses.CancelBulkJobAdminResponse):void {
 		var bulkJobs:Vector.<BulkJob> = response.getBulkJobs(); 
@@ -105,6 +105,7 @@ bulkJobIds | REQUIRED | The bulkJobIds must be an array of one or more valid bul
 	#import "GSAPI.h"
 	...
 	GSCancelBulkJobAdminRequest* request = [[GSCancelBulkJobAdminRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setBulkJobIds:bulkJobIds;
 	[request setCallback:^ (GSCancelBulkJobAdminResponse* response) {
 	NSArray* bulkJobs = [response getBulkJobs]; 
@@ -130,6 +131,7 @@ bulkJobIds | REQUIRED | The bulkJobIds must be an array of one or more valid bul
 	......
 	
 	CancelBulkJobAdminRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetBulkJobIds(bulkJobIds)
 	request.Send(CancelBulkJobAdminRequest_Response);
 ```
@@ -143,6 +145,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createCancelBulkJobAdminRequest()
+	.setAnalyticsData(analyticsData)
 	.setBulkJobIds(bulkJobIds)
 	.send(new GSEventListener<CancelBulkJobAdminResponse>() {
 		@Override
@@ -158,6 +161,7 @@ gs.getRequestBuilder().createCancelBulkJobAdminRequest()
 ```javascript
 
 	var request = new SparkRequests.CancelBulkJobAdminRequest();
+	request.analyticsData = ...;
 	request.bulkJobIds = ...;
 	var response = request.Send();
 	

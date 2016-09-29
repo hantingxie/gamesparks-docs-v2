@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Multiplayer/JoinChallengeRequest.md
----
 
 # JoinChallengeRequest
 
@@ -14,6 +11,7 @@ Allows a player to join an open challenge.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 challengeInstanceId | Yes | string | The ID of the challenge
 eligibility | Yes | JSON | Optional.  Allows the current player's eligibility to be overridden by what is provided here.
 message | No | string | An optional message to send with the challenge
@@ -60,6 +58,7 @@ eligibility | { "invalidSegments" :  { "actual" : {"XXX" : "YYY"}, "required" : 
 	using GameSparks.Api.Responses;
 	...
 	new JoinChallengeRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetChallengeInstanceId(challengeInstanceId)
 		.SetEligibility(eligibility)
 		.SetMessage(message)
@@ -80,6 +79,7 @@ eligibility | { "invalidSegments" :  { "actual" : {"XXX" : "YYY"}, "required" : 
 	
 	gs.getRequestBuilder()
 	    .createJoinChallengeRequest()
+		.setAnalyticsData(analyticsData)
 		.setChallengeInstanceId(challengeInstanceId)
 		.setEligibility(eligibility)
 		.setMessage(message)
@@ -96,6 +96,7 @@ eligibility | { "invalidSegments" :  { "actual" : {"XXX" : "YYY"}, "required" : 
 	#import "GSAPI.h"
 	...
 	GSJoinChallengeRequest* request = [[GSJoinChallengeRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setChallengeInstanceId:challengeInstanceId;
 	[request setEligibility:eligibility;
 	[request setMessage:message;
@@ -123,6 +124,7 @@ eligibility | { "invalidSegments" :  { "actual" : {"XXX" : "YYY"}, "required" : 
 	......
 	
 	JoinChallengeRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetChallengeInstanceId(challengeInstanceId)
 	request.SetEligibility(eligibility)
 	request.SetMessage(message)
@@ -138,6 +140,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createJoinChallengeRequest()
+	.setAnalyticsData(analyticsData)
 	.setChallengeInstanceId(challengeInstanceId)
 	.setEligibility(eligibility)
 	.setMessage(message)
@@ -155,6 +158,7 @@ gs.getRequestBuilder().createJoinChallengeRequest()
 ```javascript
 
 	var request = new SparkRequests.JoinChallengeRequest();
+	request.analyticsData = ...;
 	request.challengeInstanceId = ...;
 	request.eligibility = ...;
 	request.message = ...;

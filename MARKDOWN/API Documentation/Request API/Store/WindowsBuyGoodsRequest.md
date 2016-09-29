@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Store/WindowsBuyGoodsRequest.md
----
 
 # WindowsBuyGoodsRequest
 
@@ -18,6 +15,7 @@ Once verified, the players account will be credited with the Virtual Good, or Vi
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 platform | No | string | Allows you to specify the platform
 receipt | Yes | string | The xml reciept returned from the windows phone 8 store
 uniqueTransactionByPlayer | No | boolean | If set to true, the transactionId from this receipt will not be globally valdidated, this will mean replays between players are possible.
@@ -78,6 +76,7 @@ verificationError | 5 | The Id in the receipt xml has previously been processed
 	using GameSparks.Api.Responses;
 	...
 	new WindowsBuyGoodsRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetPlatform(platform)
 		.SetReceipt(receipt)
 		.SetUniqueTransactionByPlayer(uniqueTransactionByPlayer)
@@ -107,6 +106,7 @@ verificationError | 5 | The Id in the receipt xml has previously been processed
 	
 	gs.getRequestBuilder()
 	    .createWindowsBuyGoodsRequest()
+		.setAnalyticsData(analyticsData)
 		.setPlatform(platform)
 		.setReceipt(receipt)
 		.setUniqueTransactionByPlayer(uniqueTransactionByPlayer)
@@ -132,6 +132,7 @@ verificationError | 5 | The Id in the receipt xml has previously been processed
 	#import "GSAPI.h"
 	...
 	GSWindowsBuyGoodsRequest* request = [[GSWindowsBuyGoodsRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setPlatform:platform;
 	[request setReceipt:receipt;
 	[request setUniqueTransactionByPlayer:uniqueTransactionByPlayer;
@@ -177,6 +178,7 @@ verificationError | 5 | The Id in the receipt xml has previously been processed
 	......
 	
 	WindowsBuyGoodsRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetPlatform(platform)
 	request.SetReceipt(receipt)
 	request.SetUniqueTransactionByPlayer(uniqueTransactionByPlayer)
@@ -192,6 +194,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createWindowsBuyGoodsRequest()
+	.setAnalyticsData(analyticsData)
 	.setPlatform(platform)
 	.setReceipt(receipt)
 	.setUniqueTransactionByPlayer(uniqueTransactionByPlayer)
@@ -218,6 +221,7 @@ gs.getRequestBuilder().createWindowsBuyGoodsRequest()
 ```javascript
 
 	var request = new SparkRequests.WindowsBuyGoodsRequest();
+	request.analyticsData = ...;
 	request.platform = ...;
 	request.receipt = ...;
 	request.uniqueTransactionByPlayer = ...;

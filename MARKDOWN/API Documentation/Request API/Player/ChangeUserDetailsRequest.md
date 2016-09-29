@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Player/ChangeUserDetailsRequest.md
----
 
 # ChangeUserDetailsRequest
 
@@ -14,6 +11,7 @@ Change the display name of the currently signed in Player.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 displayName | No | string | The new display name to set in the player data.
 language | No | string | The new language code to set in the player data.
 newPassword | No | string | The new password to set in the player data.
@@ -56,6 +54,7 @@ USERNAME | TAKEN | The userName supplied is already in use.
 	using GameSparks.Api.Responses;
 	...
 	new ChangeUserDetailsRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetDisplayName(displayName)
 		.SetLanguage(language)
 		.SetNewPassword(newPassword)
@@ -77,6 +76,7 @@ USERNAME | TAKEN | The userName supplied is already in use.
 	
 	gs.getRequestBuilder()
 	    .createChangeUserDetailsRequest()
+		.setAnalyticsData(analyticsData)
 		.setDisplayName(displayName)
 		.setLanguage(language)
 		.setNewPassword(newPassword)
@@ -94,6 +94,7 @@ USERNAME | TAKEN | The userName supplied is already in use.
 	#import "GSAPI.h"
 	...
 	GSChangeUserDetailsRequest* request = [[GSChangeUserDetailsRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setDisplayName:displayName;
 	[request setLanguage:language;
 	[request setNewPassword:newPassword;
@@ -121,6 +122,7 @@ USERNAME | TAKEN | The userName supplied is already in use.
 	......
 	
 	ChangeUserDetailsRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetDisplayName(displayName)
 	request.SetLanguage(language)
 	request.SetNewPassword(newPassword)
@@ -138,6 +140,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createChangeUserDetailsRequest()
+	.setAnalyticsData(analyticsData)
 	.setDisplayName(displayName)
 	.setLanguage(language)
 	.setNewPassword(newPassword)
@@ -156,6 +159,7 @@ gs.getRequestBuilder().createChangeUserDetailsRequest()
 ```javascript
 
 	var request = new SparkRequests.ChangeUserDetailsRequest();
+	request.analyticsData = ...;
 	request.displayName = ...;
 	request.language = ...;
 	request.newPassword = ...;

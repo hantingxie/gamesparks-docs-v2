@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Multiplayer/GetChallengeRequest.md
----
 
 # GetChallengeRequest
 
@@ -14,6 +11,7 @@ Gets the details of a challenge. The current player must be involved in the chal
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 challengeInstanceId | Yes | string | The ID of the challenge
 message | No | string | An optional message to send with the challenge
 
@@ -29,15 +27,6 @@ scriptData | ScriptData | A JSON Map of any data added either to the Request or 
 
 ## Nested types
 
-### PlayerTurnCount
-
-Represents the number of turns a player has taken in a turn based challenge.
-
-Parameter | Type | Description
---------- | ---- | -----------
-count | string | The number of turns that the player has taken so far during this challenge.
-playerId | string | The unique player id.
-
 ### ScriptData
 
 A collection of arbitrary data that can be added to a message via a Cloud Code script.
@@ -47,15 +36,14 @@ Parameter | Type | Description
 myKey | string | An arbitrary data key
 myValue | JSON | An arbitrary data value.
 
-### PlayerDetail
+### PlayerTurnCount
 
-An object representing a player's id and name
+Represents the number of turns a player has taken in a turn based challenge.
 
 Parameter | Type | Description
 --------- | ---- | -----------
-externalIds | JSON | A player's external identifiers
-id | string | A player's id
-name | string | A player's name
+count | string | The number of turns that the player has taken so far during this challenge.
+playerId | string | The unique player id.
 
 ### Challenge
 
@@ -86,6 +74,16 @@ startDate | date | The date when the challenge starts.
 state | string | One of these possible state values: ISSUED, EXPIRED, ACCEPTED, DECLINED, COMPLETE, WITHDRAWN, RUNNING, WAITING, RECEIVED
 turnCount | [PlayerTurnCount[]](#playerturncount) | A collection containing the number of turns taken by each player that has accepted the challenge.
 
+### PlayerDetail
+
+An object representing a player's id and name
+
+Parameter | Type | Description
+--------- | ---- | -----------
+externalIds | JSON | A player's external identifiers
+id | string | A player's id
+name | string | A player's name
+
 ## Error Codes
 
 Key | Value | Description
@@ -101,6 +99,7 @@ challengeInstanceId | INVALID | The supplied challengeInstanceId does not match 
 	using GameSparks.Api.Responses;
 	...
 	new GetChallengeRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetChallengeInstanceId(challengeInstanceId)
 		.SetMessage(message)
 		.Send((response) => {
@@ -120,6 +119,7 @@ challengeInstanceId | INVALID | The supplied challengeInstanceId does not match 
 	
 	gs.getRequestBuilder()
 	    .createGetChallengeRequest()
+		.setAnalyticsData(analyticsData)
 		.setChallengeInstanceId(challengeInstanceId)
 		.setMessage(message)
 		.send(function(response:com.gamesparks.api.responses.GetChallengeResponse):void {
@@ -135,6 +135,7 @@ challengeInstanceId | INVALID | The supplied challengeInstanceId does not match 
 	#import "GSAPI.h"
 	...
 	GSGetChallengeRequest* request = [[GSGetChallengeRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setChallengeInstanceId:challengeInstanceId;
 	[request setMessage:message;
 	[request setCallback:^ (GSGetChallengeResponse* response) {
@@ -161,6 +162,7 @@ challengeInstanceId | INVALID | The supplied challengeInstanceId does not match 
 	......
 	
 	GetChallengeRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetChallengeInstanceId(challengeInstanceId)
 	request.SetMessage(message)
 	request.Send(GetChallengeRequest_Response);
@@ -175,6 +177,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createGetChallengeRequest()
+	.setAnalyticsData(analyticsData)
 	.setChallengeInstanceId(challengeInstanceId)
 	.setMessage(message)
 	.send(new GSEventListener<GetChallengeResponse>() {
@@ -191,6 +194,7 @@ gs.getRequestBuilder().createGetChallengeRequest()
 ```javascript
 
 	var request = new SparkRequests.GetChallengeRequest();
+	request.analyticsData = ...;
 	request.challengeInstanceId = ...;
 	request.message = ...;
 	var response = request.Send();

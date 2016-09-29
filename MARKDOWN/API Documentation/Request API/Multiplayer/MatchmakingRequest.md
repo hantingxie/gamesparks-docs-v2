@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Multiplayer/MatchmakingRequest.md
----
 
 # MatchmakingRequest
 
@@ -11,7 +8,7 @@ Players looking for a match using the same matchShortCode will be considered for
 
 Each player must match the other for the match to be found.
 
-If the matchShortCode points to a match with realtime enabled, in order to minimize latency, the location of Players and their proximity to one another takes precedence over their reciprocal skill values.
+If the matchShortCode points to a match with realtime enabled, in order to minimise latency, the location of Players and their proximity to one another takes precedence over their reciprocal skill values.
 
 
 <a href="https://api.gamesparks.net/#matchmakingrequest" target="_gsapi">View interactive version here</a>
@@ -21,6 +18,7 @@ If the matchShortCode points to a match with realtime enabled, in order to minim
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
 action | No | string | The action to take on the already in-flight request for this match. Currently supported actions are: 'cancel'
+analyticsData | No | AnalyticsData | Optional data used by analytics
 customQuery | No | JSON | The query that will be applied to the PendingMatch collection
 matchData | No | JSON | A JSON Map of any data that will be associated to the pending match
 matchGroup | No | string | Optional. Players will be grouped based on the distinct value passed in here, only players in the same group can be matched together
@@ -68,6 +66,7 @@ match | NOT_FOUND | No match was found for the current player
 	...
 	new MatchmakingRequest()
 		.SetAction(action)
+		.SetAnalyticsData(analyticsData)
 		.SetCustomQuery(customQuery)
 		.SetMatchData(matchData)
 		.SetMatchGroup(matchGroup)
@@ -75,7 +74,7 @@ match | NOT_FOUND | No match was found for the current player
 		.SetParticipantData(participantData)
 		.SetSkill(skill)
 		.Send((response) => {
-		GSData scriptData = response.ScriptData;
+		GSData scriptData = response.ScriptData; 
 		});
 
 ```
@@ -87,10 +86,11 @@ match | NOT_FOUND | No match was found for the current player
 	import com.gamesparks.api.responses.*;
 	import com.gamesparks.api.types.*;
 	...
-
+	
 	gs.getRequestBuilder()
 	    .createMatchmakingRequest()
 		.setAction(action)
+		.setAnalyticsData(analyticsData)
 		.setCustomQuery(customQuery)
 		.setMatchData(matchData)
 		.setMatchGroup(matchGroup)
@@ -98,7 +98,7 @@ match | NOT_FOUND | No match was found for the current player
 		.setParticipantData(participantData)
 		.setSkill(skill)
 		.send(function(response:com.gamesparks.api.responses.MatchmakingResponse):void {
-		var scriptData:ScriptData = response.getScriptData();
+		var scriptData:ScriptData = response.getScriptData(); 
 		});
 
 ```
@@ -110,6 +110,7 @@ match | NOT_FOUND | No match was found for the current player
 	...
 	GSMatchmakingRequest* request = [[GSMatchmakingRequest alloc] init];
 	[request setAction:action;
+	[request setAnalyticsData:analyticsData;
 	[request setCustomQuery:customQuery;
 	[request setMatchData:matchData;
 	[request setMatchGroup:matchGroup;
@@ -117,7 +118,7 @@ match | NOT_FOUND | No match was found for the current player
 	[request setParticipantData:participantData;
 	[request setSkill:skill;
 	[request setCallback:^ (GSMatchmakingResponse* response) {
-	NSDictionary* scriptData = [response getScriptData];
+	NSDictionary* scriptData = [response getScriptData]; 
 	}];
 	[gs send:request];
 
@@ -131,14 +132,15 @@ match | NOT_FOUND | No match was found for the current player
 	using namespace GameSparks::Api::Responses;
 	using namespace GameSparks::Api::Requests;
 	...
-
+	
 	void MatchmakingRequest_Response(GS& gsInstance, const MatchmakingResponse& response) {
-	GSData scriptData = response.getScriptData();
+	GSData scriptData = response.getScriptData(); 
 	}
 	......
-
+	
 	MatchmakingRequest request(gsInstance);
 	request.SetAction(action)
+	request.SetAnalyticsData(analyticsData)
 	request.SetCustomQuery(customQuery)
 	request.SetMatchData(matchData)
 	request.SetMatchGroup(matchGroup)
@@ -158,6 +160,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 ...
 gs.getRequestBuilder().createMatchmakingRequest()
 	.setAction(action)
+	.setAnalyticsData(analyticsData)
 	.setCustomQuery(customQuery)
 	.setMatchData(matchData)
 	.setMatchGroup(matchGroup)
@@ -167,7 +170,7 @@ gs.getRequestBuilder().createMatchmakingRequest()
 	.send(new GSEventListener<MatchmakingResponse>() {
 		@Override
 		public void onEvent(MatchmakingResponse response) {
-			GSData scriptData = response.getScriptData();
+			GSData scriptData = response.getScriptData(); 
 		}
 	});
 
@@ -178,6 +181,7 @@ gs.getRequestBuilder().createMatchmakingRequest()
 
 	var request = new SparkRequests.MatchmakingRequest();
 	request.action = ...;
+	request.analyticsData = ...;
 	request.customQuery = ...;
 	request.matchData = ...;
 	request.matchGroup = ...;
@@ -185,6 +189,8 @@ gs.getRequestBuilder().createMatchmakingRequest()
 	request.participantData = ...;
 	request.skill = ...;
 	var response = request.Send();
-
-var scriptData = response.scriptData;
+	
+var scriptData = response.scriptData; 
 ```
+
+

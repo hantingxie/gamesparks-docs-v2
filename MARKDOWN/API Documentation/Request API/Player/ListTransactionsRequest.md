@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Player/ListTransactionsRequest.md
----
 
 # ListTransactionsRequest
 
@@ -14,6 +11,7 @@ Returns a list of the current player's transaction history.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 dateFrom | No | date | Optional date constraint to list transactions from
 dateTo | No | date | Optional date constraint to list transactions to
 entryCount | No | number | The number of items to return in a page (default=50)
@@ -32,6 +30,15 @@ transactionList | [PlayerTransaction[]](#playertransaction) | A list of JSON obj
 
 ## Nested types
 
+### ScriptData
+
+A collection of arbitrary data that can be added to a message via a Cloud Code script.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+myKey | string | An arbitrary data key
+myValue | JSON | An arbitrary data value.
+
 ### PlayerTransaction
 
 A nested object that represents a player transaction.
@@ -48,15 +55,6 @@ script | string | The specific script in which this transaction occurred
 scriptType | string | The script type in which this transaction occurred (e.g. event)
 transactionId | string | The transaction ID of this purchase, if applicable
 when | date | The date of the transaction
-
-### ScriptData
-
-A collection of arbitrary data that can be added to a message via a Cloud Code script.
-
-Parameter | Type | Description
---------- | ---- | -----------
-myKey | string | An arbitrary data key
-myValue | JSON | An arbitrary data value.
 
 ### PlayerTransactionItem
 
@@ -78,6 +76,7 @@ type | string | The type of item
 	using GameSparks.Api.Responses;
 	...
 	new ListTransactionsRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetDateFrom(dateFrom)
 		.SetDateTo(dateTo)
 		.SetEntryCount(entryCount)
@@ -100,6 +99,7 @@ type | string | The type of item
 	
 	gs.getRequestBuilder()
 	    .createListTransactionsRequest()
+		.setAnalyticsData(analyticsData)
 		.setDateFrom(dateFrom)
 		.setDateTo(dateTo)
 		.setEntryCount(entryCount)
@@ -118,6 +118,7 @@ type | string | The type of item
 	#import "GSAPI.h"
 	...
 	GSListTransactionsRequest* request = [[GSListTransactionsRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setDateFrom:dateFrom;
 	[request setDateTo:dateTo;
 	[request setEntryCount:entryCount;
@@ -147,6 +148,7 @@ type | string | The type of item
 	......
 	
 	ListTransactionsRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetDateFrom(dateFrom)
 	request.SetDateTo(dateTo)
 	request.SetEntryCount(entryCount)
@@ -164,6 +166,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createListTransactionsRequest()
+	.setAnalyticsData(analyticsData)
 	.setDateFrom(dateFrom)
 	.setDateTo(dateTo)
 	.setEntryCount(entryCount)
@@ -183,6 +186,7 @@ gs.getRequestBuilder().createListTransactionsRequest()
 ```javascript
 
 	var request = new SparkRequests.ListTransactionsRequest();
+	request.analyticsData = ...;
 	request.dateFrom = ...;
 	request.dateTo = ...;
 	request.entryCount = ...;

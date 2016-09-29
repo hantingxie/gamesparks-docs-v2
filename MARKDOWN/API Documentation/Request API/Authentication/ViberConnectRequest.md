@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Authentication/ViberConnectRequest.md
----
 
 # ViberConnectRequest
 
@@ -29,6 +26,7 @@ If the Viber user is already known, the session will switch to being the previou
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
 accessToken | Yes | string | The accessToken represents a player's permission to share access to their account with your application.
+analyticsData | No | AnalyticsData | Optional data used by analytics
 doNotLinkToCurrentPlayer | No | boolean | Indicates that the server should not try to link the external profile with the current player.  If false, links the external profile to the currently signed in player.  If true, creates a new player and links the external profile to them.  Defaults to false.
 doNotRegisterForPush | No | boolean | Does not automatocally register this user for push notifications. Defaults to false.
 errorOnSwitch | No | boolean | Indicates whether the server should return an error if an account switch would have occurred, rather than switching automatically.  Defaults to false.
@@ -94,6 +92,7 @@ accessToken | REQUIRED | Parameter accessToken is required but was not provided
 	...
 	new ViberConnectRequest()
 		.SetAccessToken(accessToken)
+		.SetAnalyticsData(analyticsData)
 		.SetDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 		.SetDoNotRegisterForPush(doNotRegisterForPush)
 		.SetErrorOnSwitch(errorOnSwitch)
@@ -122,6 +121,7 @@ accessToken | REQUIRED | Parameter accessToken is required but was not provided
 	gs.getRequestBuilder()
 	    .createViberConnectRequest()
 		.setAccessToken(accessToken)
+		.setAnalyticsData(analyticsData)
 		.setDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 		.setDoNotRegisterForPush(doNotRegisterForPush)
 		.setErrorOnSwitch(errorOnSwitch)
@@ -146,6 +146,7 @@ accessToken | REQUIRED | Parameter accessToken is required but was not provided
 	...
 	GSViberConnectRequest* request = [[GSViberConnectRequest alloc] init];
 	[request setAccessToken:accessToken;
+	[request setAnalyticsData:analyticsData;
 	[request setDoNotLinkToCurrentPlayer:doNotLinkToCurrentPlayer;
 	[request setDoNotRegisterForPush:doNotRegisterForPush;
 	[request setErrorOnSwitch:errorOnSwitch;
@@ -185,6 +186,7 @@ accessToken | REQUIRED | Parameter accessToken is required but was not provided
 	
 	ViberConnectRequest request(gsInstance);
 	request.SetAccessToken(accessToken)
+	request.SetAnalyticsData(analyticsData)
 	request.SetDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 	request.SetDoNotRegisterForPush(doNotRegisterForPush)
 	request.SetErrorOnSwitch(errorOnSwitch)
@@ -204,6 +206,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 ...
 gs.getRequestBuilder().createViberConnectRequest()
 	.setAccessToken(accessToken)
+	.setAnalyticsData(analyticsData)
 	.setDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 	.setDoNotRegisterForPush(doNotRegisterForPush)
 	.setErrorOnSwitch(errorOnSwitch)
@@ -229,6 +232,7 @@ gs.getRequestBuilder().createViberConnectRequest()
 
 	var request = new SparkRequests.ViberConnectRequest();
 	request.accessToken = ...;
+	request.analyticsData = ...;
 	request.doNotLinkToCurrentPlayer = ...;
 	request.doNotRegisterForPush = ...;
 	request.errorOnSwitch = ...;

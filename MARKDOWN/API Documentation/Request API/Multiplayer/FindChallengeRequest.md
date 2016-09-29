@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Multiplayer/FindChallengeRequest.md
----
 
 # FindChallengeRequest
 
@@ -15,6 +12,7 @@ Allows a player to find challenges that they are eligible to join.
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
 accessType | Yes | string | The type of challenge to find, either PUBLIC or FRIENDS.  Defaults to FRIENDS
+analyticsData | No | AnalyticsData | Optional data used by analytics
 count | No | number | The number of challenges to return (MAX=50)
 eligibility | Yes | JSON | Optional.  Allows the current player's eligibility to be overridden by what is provided here.
 offset | No | number | The offset to start from when returning challenges (used for paging)
@@ -32,15 +30,6 @@ scriptData | ScriptData | A JSON Map of any data added either to the Request or 
 
 ## Nested types
 
-### PlayerTurnCount
-
-Represents the number of turns a player has taken in a turn based challenge.
-
-Parameter | Type | Description
---------- | ---- | -----------
-count | string | The number of turns that the player has taken so far during this challenge.
-playerId | string | The unique player id.
-
 ### ScriptData
 
 A collection of arbitrary data that can be added to a message via a Cloud Code script.
@@ -50,15 +39,14 @@ Parameter | Type | Description
 myKey | string | An arbitrary data key
 myValue | JSON | An arbitrary data value.
 
-### PlayerDetail
+### PlayerTurnCount
 
-An object representing a player's id and name
+Represents the number of turns a player has taken in a turn based challenge.
 
 Parameter | Type | Description
 --------- | ---- | -----------
-externalIds | JSON | A player's external identifiers
-id | string | A player's id
-name | string | A player's name
+count | string | The number of turns that the player has taken so far during this challenge.
+playerId | string | The unique player id.
 
 ### Challenge
 
@@ -89,6 +77,16 @@ startDate | date | The date when the challenge starts.
 state | string | One of these possible state values: ISSUED, EXPIRED, ACCEPTED, DECLINED, COMPLETE, WITHDRAWN, RUNNING, WAITING, RECEIVED
 turnCount | [PlayerTurnCount[]](#playerturncount) | A collection containing the number of turns taken by each player that has accepted the challenge.
 
+### PlayerDetail
+
+An object representing a player's id and name
+
+Parameter | Type | Description
+--------- | ---- | -----------
+externalIds | JSON | A player's external identifiers
+id | string | A player's id
+name | string | A player's name
+
 ## Error Codes
 
 Key | Value | Description
@@ -106,6 +104,7 @@ eligibility | { "segments" : {"XXX" : "MALFORMED"}} | The value provied for XXX 
 	...
 	new FindChallengeRequest()
 		.SetAccessType(accessType)
+		.SetAnalyticsData(analyticsData)
 		.SetCount(count)
 		.SetEligibility(eligibility)
 		.SetOffset(offset)
@@ -128,6 +127,7 @@ eligibility | { "segments" : {"XXX" : "MALFORMED"}} | The value provied for XXX 
 	gs.getRequestBuilder()
 	    .createFindChallengeRequest()
 		.setAccessType(accessType)
+		.setAnalyticsData(analyticsData)
 		.setCount(count)
 		.setEligibility(eligibility)
 		.setOffset(offset)
@@ -146,6 +146,7 @@ eligibility | { "segments" : {"XXX" : "MALFORMED"}} | The value provied for XXX 
 	...
 	GSFindChallengeRequest* request = [[GSFindChallengeRequest alloc] init];
 	[request setAccessType:accessType;
+	[request setAnalyticsData:analyticsData;
 	[request setCount:count;
 	[request setEligibility:eligibility;
 	[request setOffset:offset;
@@ -175,6 +176,7 @@ eligibility | { "segments" : {"XXX" : "MALFORMED"}} | The value provied for XXX 
 	
 	FindChallengeRequest request(gsInstance);
 	request.SetAccessType(accessType)
+	request.SetAnalyticsData(analyticsData)
 	request.SetCount(count)
 	request.SetEligibility(eligibility)
 	request.SetOffset(offset)
@@ -192,6 +194,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 ...
 gs.getRequestBuilder().createFindChallengeRequest()
 	.setAccessType(accessType)
+	.setAnalyticsData(analyticsData)
 	.setCount(count)
 	.setEligibility(eligibility)
 	.setOffset(offset)
@@ -211,6 +214,7 @@ gs.getRequestBuilder().createFindChallengeRequest()
 
 	var request = new SparkRequests.FindChallengeRequest();
 	request.accessType = ...;
+	request.analyticsData = ...;
 	request.count = ...;
 	request.eligibility = ...;
 	request.offset = ...;

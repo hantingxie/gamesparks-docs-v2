@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Misc/GetPropertySetRequest.md
----
 
 # GetPropertySetRequest
 
@@ -14,6 +11,7 @@ Get the property set for the given short Code.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 propertySetShortCode | Yes | string | The shortCode of the property set to return.
 
 ## Response Parameters
@@ -52,6 +50,7 @@ propertySet | NOT_FOUND | No propertySet with given shortCode could be found.
 	using GameSparks.Api.Responses;
 	...
 	new GetPropertySetRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetPropertySetShortCode(propertySetShortCode)
 		.Send((response) => {
 		GSData propertySet = response.PropertySet; 
@@ -70,6 +69,7 @@ propertySet | NOT_FOUND | No propertySet with given shortCode could be found.
 	
 	gs.getRequestBuilder()
 	    .createGetPropertySetRequest()
+		.setAnalyticsData(analyticsData)
 		.setPropertySetShortCode(propertySetShortCode)
 		.send(function(response:com.gamesparks.api.responses.GetPropertySetResponse):void {
 		var propertySet:Object = response.getPropertySet(); 
@@ -84,6 +84,7 @@ propertySet | NOT_FOUND | No propertySet with given shortCode could be found.
 	#import "GSAPI.h"
 	...
 	GSGetPropertySetRequest* request = [[GSGetPropertySetRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setPropertySetShortCode:propertySetShortCode;
 	[request setCallback:^ (GSGetPropertySetResponse* response) {
 	NSDictionary* propertySet = [response getPropertySet]; 
@@ -109,6 +110,7 @@ propertySet | NOT_FOUND | No propertySet with given shortCode could be found.
 	......
 	
 	GetPropertySetRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetPropertySetShortCode(propertySetShortCode)
 	request.Send(GetPropertySetRequest_Response);
 ```
@@ -122,6 +124,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createGetPropertySetRequest()
+	.setAnalyticsData(analyticsData)
 	.setPropertySetShortCode(propertySetShortCode)
 	.send(new GSEventListener<GetPropertySetResponse>() {
 		@Override
@@ -137,6 +140,7 @@ gs.getRequestBuilder().createGetPropertySetRequest()
 ```javascript
 
 	var request = new SparkRequests.GetPropertySetRequest();
+	request.analyticsData = ...;
 	request.propertySetShortCode = ...;
 	var response = request.Send();
 	

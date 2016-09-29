@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Store/SteamBuyGoodsRequest.md
----
 
 # SteamBuyGoodsRequest
 
@@ -18,6 +15,7 @@ Once verified, the players account will be credited with the Virtual Good, or Vi
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 orderId | Yes | string | Unique 64-bit ID for order
 uniqueTransactionByPlayer | No | boolean | If set to true, the transactionId from this receipt will not be globally valdidated, this will mean replays between players are possible.
 
@@ -78,6 +76,7 @@ verificationError | 4 | The order_id has been processed before
 	using GameSparks.Api.Responses;
 	...
 	new SteamBuyGoodsRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetOrderId(orderId)
 		.SetUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 		.Send((response) => {
@@ -106,6 +105,7 @@ verificationError | 4 | The order_id has been processed before
 	
 	gs.getRequestBuilder()
 	    .createSteamBuyGoodsRequest()
+		.setAnalyticsData(analyticsData)
 		.setOrderId(orderId)
 		.setUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 		.send(function(response:com.gamesparks.api.responses.BuyVirtualGoodResponse):void {
@@ -130,6 +130,7 @@ verificationError | 4 | The order_id has been processed before
 	#import "GSAPI.h"
 	...
 	GSSteamBuyGoodsRequest* request = [[GSSteamBuyGoodsRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setOrderId:orderId;
 	[request setUniqueTransactionByPlayer:uniqueTransactionByPlayer;
 	[request setCallback:^ (GSBuyVirtualGoodResponse* response) {
@@ -174,6 +175,7 @@ verificationError | 4 | The order_id has been processed before
 	......
 	
 	SteamBuyGoodsRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetOrderId(orderId)
 	request.SetUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 	request.Send(SteamBuyGoodsRequest_Response);
@@ -188,6 +190,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createSteamBuyGoodsRequest()
+	.setAnalyticsData(analyticsData)
 	.setOrderId(orderId)
 	.setUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 	.send(new GSEventListener<BuyVirtualGoodResponse>() {
@@ -213,6 +216,7 @@ gs.getRequestBuilder().createSteamBuyGoodsRequest()
 ```javascript
 
 	var request = new SparkRequests.SteamBuyGoodsRequest();
+	request.analyticsData = ...;
 	request.orderId = ...;
 	request.uniqueTransactionByPlayer = ...;
 	var response = request.Send();

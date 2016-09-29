@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Admin/BatchAdminRequest.md
----
 
 # BatchAdminRequest
 
@@ -14,6 +11,7 @@ Performs a request for multiple players.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 playerIds | Yes | string[] | The players to run the request for.
 request | Yes | DBObject | The request to be run for each player.
 
@@ -54,6 +52,7 @@ request | INVALID | You must supply a valid request in JSON format to be perform
 	using GameSparks.Api.Responses;
 	...
 	new BatchAdminRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetPlayerIds(playerIds)
 		.SetRequest(request)
 		.Send((response) => {
@@ -73,6 +72,7 @@ request | INVALID | You must supply a valid request in JSON format to be perform
 	
 	gs.getRequestBuilder()
 	    .createBatchAdminRequest()
+		.setAnalyticsData(analyticsData)
 		.setPlayerIds(playerIds)
 		.setRequest(request)
 		.send(function(response:com.gamesparks.api.responses.BatchAdminResponse):void {
@@ -88,6 +88,7 @@ request | INVALID | You must supply a valid request in JSON format to be perform
 	#import "GSAPI.h"
 	...
 	GSBatchAdminRequest* request = [[GSBatchAdminRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setPlayerIds:playerIds;
 	[request setRequest:request;
 	[request setCallback:^ (GSBatchAdminResponse* response) {
@@ -114,6 +115,7 @@ request | INVALID | You must supply a valid request in JSON format to be perform
 	......
 	
 	BatchAdminRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetPlayerIds(playerIds)
 	request.SetRequest(request)
 	request.Send(BatchAdminRequest_Response);
@@ -128,6 +130,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createBatchAdminRequest()
+	.setAnalyticsData(analyticsData)
 	.setPlayerIds(playerIds)
 	.setRequest(request)
 	.send(new GSEventListener<BatchAdminResponse>() {
@@ -144,6 +147,7 @@ gs.getRequestBuilder().createBatchAdminRequest()
 ```javascript
 
 	var request = new SparkRequests.BatchAdminRequest();
+	request.analyticsData = ...;
 	request.playerIds = ...;
 	request.request = ...;
 	var response = request.Send();

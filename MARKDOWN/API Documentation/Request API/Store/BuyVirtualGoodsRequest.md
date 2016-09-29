@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Store/BuyVirtualGoodsRequest.md
----
 
 # BuyVirtualGoodsRequest
 
@@ -14,6 +11,7 @@ Purchases a virtual good with an in game currency. Once purchased the virtual go
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 currencyType | Yes | number | Which virtual currency to use. (1 to 6)
 quantity | Yes | number | The number of items to purchase
 shortCode | Yes | string | The short code of the virtual good to be purchased
@@ -82,6 +80,7 @@ quantity | EXCEEDS_MAX_QUANTITY | The requst would cause the player to exceed to
 	using GameSparks.Api.Responses;
 	...
 	new BuyVirtualGoodsRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetCurrencyType(currencyType)
 		.SetQuantity(quantity)
 		.SetShortCode(shortCode)
@@ -111,6 +110,7 @@ quantity | EXCEEDS_MAX_QUANTITY | The requst would cause the player to exceed to
 	
 	gs.getRequestBuilder()
 	    .createBuyVirtualGoodsRequest()
+		.setAnalyticsData(analyticsData)
 		.setCurrencyType(currencyType)
 		.setQuantity(quantity)
 		.setShortCode(shortCode)
@@ -136,6 +136,7 @@ quantity | EXCEEDS_MAX_QUANTITY | The requst would cause the player to exceed to
 	#import "GSAPI.h"
 	...
 	GSBuyVirtualGoodsRequest* request = [[GSBuyVirtualGoodsRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setCurrencyType:currencyType;
 	[request setQuantity:quantity;
 	[request setShortCode:shortCode;
@@ -181,6 +182,7 @@ quantity | EXCEEDS_MAX_QUANTITY | The requst would cause the player to exceed to
 	......
 	
 	BuyVirtualGoodsRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetCurrencyType(currencyType)
 	request.SetQuantity(quantity)
 	request.SetShortCode(shortCode)
@@ -196,6 +198,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createBuyVirtualGoodsRequest()
+	.setAnalyticsData(analyticsData)
 	.setCurrencyType(currencyType)
 	.setQuantity(quantity)
 	.setShortCode(shortCode)
@@ -222,6 +225,7 @@ gs.getRequestBuilder().createBuyVirtualGoodsRequest()
 ```javascript
 
 	var request = new SparkRequests.BuyVirtualGoodsRequest();
+	request.analyticsData = ...;
 	request.currencyType = ...;
 	request.quantity = ...;
 	request.shortCode = ...;

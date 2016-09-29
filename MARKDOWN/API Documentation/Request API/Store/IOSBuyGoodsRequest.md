@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Store/IOSBuyGoodsRequest.md
----
 
 # IOSBuyGoodsRequest
 
@@ -18,6 +15,7 @@ Once verified, the players account will be credited with the Virtual Good, or Vi
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 receipt | Yes | string | The receipt obtained from SKPaymentTransaction. transactionReceipt
 sandbox | No | boolean | Should the sandbox account be used
 uniqueTransactionByPlayer | No | boolean | If set to true, the transactionId from this receipt will not be globally valdidated, this will mean replays between players are possible.
@@ -79,6 +77,7 @@ verificationError | 5 | The transaction_id has been processed before
 	using GameSparks.Api.Responses;
 	...
 	new IOSBuyGoodsRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetReceipt(receipt)
 		.SetSandbox(sandbox)
 		.SetUniqueTransactionByPlayer(uniqueTransactionByPlayer)
@@ -108,6 +107,7 @@ verificationError | 5 | The transaction_id has been processed before
 	
 	gs.getRequestBuilder()
 	    .createIOSBuyGoodsRequest()
+		.setAnalyticsData(analyticsData)
 		.setReceipt(receipt)
 		.setSandbox(sandbox)
 		.setUniqueTransactionByPlayer(uniqueTransactionByPlayer)
@@ -133,6 +133,7 @@ verificationError | 5 | The transaction_id has been processed before
 	#import "GSAPI.h"
 	...
 	GSIOSBuyGoodsRequest* request = [[GSIOSBuyGoodsRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setReceipt:receipt;
 	[request setSandbox:sandbox;
 	[request setUniqueTransactionByPlayer:uniqueTransactionByPlayer;
@@ -178,6 +179,7 @@ verificationError | 5 | The transaction_id has been processed before
 	......
 	
 	IOSBuyGoodsRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetReceipt(receipt)
 	request.SetSandbox(sandbox)
 	request.SetUniqueTransactionByPlayer(uniqueTransactionByPlayer)
@@ -193,6 +195,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createIOSBuyGoodsRequest()
+	.setAnalyticsData(analyticsData)
 	.setReceipt(receipt)
 	.setSandbox(sandbox)
 	.setUniqueTransactionByPlayer(uniqueTransactionByPlayer)
@@ -219,6 +222,7 @@ gs.getRequestBuilder().createIOSBuyGoodsRequest()
 ```javascript
 
 	var request = new SparkRequests.IOSBuyGoodsRequest();
+	request.analyticsData = ...;
 	request.receipt = ...;
 	request.sandbox = ...;
 	request.uniqueTransactionByPlayer = ...;

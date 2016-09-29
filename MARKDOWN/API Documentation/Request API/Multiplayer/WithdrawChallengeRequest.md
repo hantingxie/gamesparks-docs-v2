@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Multiplayer/WithdrawChallengeRequest.md
----
 
 # WithdrawChallengeRequest
 
@@ -16,6 +13,7 @@ This can only be done while the challenge is in the ISSUED state. Once it's been
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 challengeInstanceId | Yes | string | The ID of the challenge
 message | No | string | An optional message to send with the challenge
 
@@ -55,6 +53,7 @@ challengeInstanceId | INVALID | The ID does not match a challenge in the ISSUED 
 	using GameSparks.Api.Responses;
 	...
 	new WithdrawChallengeRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetChallengeInstanceId(challengeInstanceId)
 		.SetMessage(message)
 		.Send((response) => {
@@ -74,6 +73,7 @@ challengeInstanceId | INVALID | The ID does not match a challenge in the ISSUED 
 	
 	gs.getRequestBuilder()
 	    .createWithdrawChallengeRequest()
+		.setAnalyticsData(analyticsData)
 		.setChallengeInstanceId(challengeInstanceId)
 		.setMessage(message)
 		.send(function(response:com.gamesparks.api.responses.WithdrawChallengeResponse):void {
@@ -89,6 +89,7 @@ challengeInstanceId | INVALID | The ID does not match a challenge in the ISSUED 
 	#import "GSAPI.h"
 	...
 	GSWithdrawChallengeRequest* request = [[GSWithdrawChallengeRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setChallengeInstanceId:challengeInstanceId;
 	[request setMessage:message;
 	[request setCallback:^ (GSWithdrawChallengeResponse* response) {
@@ -115,6 +116,7 @@ challengeInstanceId | INVALID | The ID does not match a challenge in the ISSUED 
 	......
 	
 	WithdrawChallengeRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetChallengeInstanceId(challengeInstanceId)
 	request.SetMessage(message)
 	request.Send(WithdrawChallengeRequest_Response);
@@ -129,6 +131,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createWithdrawChallengeRequest()
+	.setAnalyticsData(analyticsData)
 	.setChallengeInstanceId(challengeInstanceId)
 	.setMessage(message)
 	.send(new GSEventListener<WithdrawChallengeResponse>() {
@@ -145,6 +148,7 @@ gs.getRequestBuilder().createWithdrawChallengeRequest()
 ```javascript
 
 	var request = new SparkRequests.WithdrawChallengeRequest();
+	request.analyticsData = ...;
 	request.challengeInstanceId = ...;
 	request.message = ...;
 	var response = request.Send();

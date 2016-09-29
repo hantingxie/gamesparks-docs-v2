@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Analytics/AnalyticsRequest.md
----
 
 # AnalyticsRequest
 
@@ -26,6 +23,7 @@ If a second start timer is created using a key that has already had a start time
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 data | No | JSON | Custom data payload
 end | No | boolean | Use the value true to indicate it's an end timer
 key | No | string | The key you want to track this analysis with.
@@ -61,6 +59,7 @@ myValue | JSON | An arbitrary data value.
 	using GameSparks.Api.Responses;
 	...
 	new AnalyticsRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetData(data)
 		.SetEnd(end)
 		.SetKey(key)
@@ -81,6 +80,7 @@ myValue | JSON | An arbitrary data value.
 	
 	gs.getRequestBuilder()
 	    .createAnalyticsRequest()
+		.setAnalyticsData(analyticsData)
 		.setData(data)
 		.setEnd(end)
 		.setKey(key)
@@ -97,6 +97,7 @@ myValue | JSON | An arbitrary data value.
 	#import "GSAPI.h"
 	...
 	GSAnalyticsRequest* request = [[GSAnalyticsRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setData:data;
 	[request setEnd:end;
 	[request setKey:key;
@@ -123,6 +124,7 @@ myValue | JSON | An arbitrary data value.
 	......
 	
 	AnalyticsRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetData(data)
 	request.SetEnd(end)
 	request.SetKey(key)
@@ -139,6 +141,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createAnalyticsRequest()
+	.setAnalyticsData(analyticsData)
 	.setData(data)
 	.setEnd(end)
 	.setKey(key)
@@ -156,6 +159,7 @@ gs.getRequestBuilder().createAnalyticsRequest()
 ```javascript
 
 	var request = new SparkRequests.AnalyticsRequest();
+	request.analyticsData = ...;
 	request.data = ...;
 	request.end = ...;
 	request.key = ...;

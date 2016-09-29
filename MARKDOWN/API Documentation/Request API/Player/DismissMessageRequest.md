@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Player/DismissMessageRequest.md
----
 
 # DismissMessageRequest
 
@@ -14,6 +11,7 @@ Allows a message to be dismissed. Once dismissed the message will no longer appe
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 messageId | Yes | string | The messageId of the message to dismiss
 
 ## Response Parameters
@@ -46,6 +44,7 @@ myValue | JSON | An arbitrary data value.
 	using GameSparks.Api.Responses;
 	...
 	new DismissMessageRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetMessageId(messageId)
 		.Send((response) => {
 		GSData scriptData = response.ScriptData; 
@@ -63,6 +62,7 @@ myValue | JSON | An arbitrary data value.
 	
 	gs.getRequestBuilder()
 	    .createDismissMessageRequest()
+		.setAnalyticsData(analyticsData)
 		.setMessageId(messageId)
 		.send(function(response:com.gamesparks.api.responses.DismissMessageResponse):void {
 		var scriptData:ScriptData = response.getScriptData(); 
@@ -76,6 +76,7 @@ myValue | JSON | An arbitrary data value.
 	#import "GSAPI.h"
 	...
 	GSDismissMessageRequest* request = [[GSDismissMessageRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setMessageId:messageId;
 	[request setCallback:^ (GSDismissMessageResponse* response) {
 	NSDictionary* scriptData = [response getScriptData]; 
@@ -99,6 +100,7 @@ myValue | JSON | An arbitrary data value.
 	......
 	
 	DismissMessageRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetMessageId(messageId)
 	request.Send(DismissMessageRequest_Response);
 ```
@@ -112,6 +114,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createDismissMessageRequest()
+	.setAnalyticsData(analyticsData)
 	.setMessageId(messageId)
 	.send(new GSEventListener<DismissMessageResponse>() {
 		@Override
@@ -126,6 +129,7 @@ gs.getRequestBuilder().createDismissMessageRequest()
 ```javascript
 
 	var request = new SparkRequests.DismissMessageRequest();
+	request.analyticsData = ...;
 	request.messageId = ...;
 	var response = request.Send();
 	

@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Authentication/WeChatConnectRequest.md
----
 
 # WeChatConnectRequest
 
@@ -25,6 +22,7 @@ If the WeChat user is already known, the session will switch to being the previo
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
 accessToken | No | string | The access token sould be obtained from WeChat
+analyticsData | No | AnalyticsData | Optional data used by analytics
 doNotLinkToCurrentPlayer | No | boolean | Indicates that the server should not try to link the external profile with the current player.  If false, links the external profile to the currently signed in player.  If true, creates a new player and links the external profile to them.  Defaults to false.
 errorOnSwitch | No | boolean | Indicates whether the server should return an error if an account switch would have occurred, rather than switching automatically.  Defaults to false.
 openId | No | string | The open ID corresponding to the WeChat user
@@ -90,6 +88,7 @@ openId | REQUIRED | The openId is missing
 	...
 	new WeChatConnectRequest()
 		.SetAccessToken(accessToken)
+		.SetAnalyticsData(analyticsData)
 		.SetDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 		.SetErrorOnSwitch(errorOnSwitch)
 		.SetOpenId(openId)
@@ -118,6 +117,7 @@ openId | REQUIRED | The openId is missing
 	gs.getRequestBuilder()
 	    .createWeChatConnectRequest()
 		.setAccessToken(accessToken)
+		.setAnalyticsData(analyticsData)
 		.setDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 		.setErrorOnSwitch(errorOnSwitch)
 		.setOpenId(openId)
@@ -142,6 +142,7 @@ openId | REQUIRED | The openId is missing
 	...
 	GSWeChatConnectRequest* request = [[GSWeChatConnectRequest alloc] init];
 	[request setAccessToken:accessToken;
+	[request setAnalyticsData:analyticsData;
 	[request setDoNotLinkToCurrentPlayer:doNotLinkToCurrentPlayer;
 	[request setErrorOnSwitch:errorOnSwitch;
 	[request setOpenId:openId;
@@ -181,6 +182,7 @@ openId | REQUIRED | The openId is missing
 	
 	WeChatConnectRequest request(gsInstance);
 	request.SetAccessToken(accessToken)
+	request.SetAnalyticsData(analyticsData)
 	request.SetDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 	request.SetErrorOnSwitch(errorOnSwitch)
 	request.SetOpenId(openId)
@@ -200,6 +202,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 ...
 gs.getRequestBuilder().createWeChatConnectRequest()
 	.setAccessToken(accessToken)
+	.setAnalyticsData(analyticsData)
 	.setDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 	.setErrorOnSwitch(errorOnSwitch)
 	.setOpenId(openId)
@@ -225,6 +228,7 @@ gs.getRequestBuilder().createWeChatConnectRequest()
 
 	var request = new SparkRequests.WeChatConnectRequest();
 	request.accessToken = ...;
+	request.analyticsData = ...;
 	request.doNotLinkToCurrentPlayer = ...;
 	request.errorOnSwitch = ...;
 	request.openId = ...;

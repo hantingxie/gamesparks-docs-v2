@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Player/SendFriendMessageRequest.md
----
 
 # SendFriendMessageRequest
 
@@ -14,6 +11,7 @@ Sends a message to one or more game friend(s). A game friend is someone in the p
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 friendIds | Yes | string[] | One or more friend ID's. This can be supplied as a single string, or a JSON array
 message | Yes | string | The message to send
 
@@ -53,6 +51,7 @@ friendId | INVALID | The value passed is not a valid ID
 	using GameSparks.Api.Responses;
 	...
 	new SendFriendMessageRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetFriendIds(friendIds)
 		.SetMessage(message)
 		.Send((response) => {
@@ -71,6 +70,7 @@ friendId | INVALID | The value passed is not a valid ID
 	
 	gs.getRequestBuilder()
 	    .createSendFriendMessageRequest()
+		.setAnalyticsData(analyticsData)
 		.setFriendIds(friendIds)
 		.setMessage(message)
 		.send(function(response:com.gamesparks.api.responses.SendFriendMessageResponse):void {
@@ -85,6 +85,7 @@ friendId | INVALID | The value passed is not a valid ID
 	#import "GSAPI.h"
 	...
 	GSSendFriendMessageRequest* request = [[GSSendFriendMessageRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setFriendIds:friendIds;
 	[request setMessage:message;
 	[request setCallback:^ (GSSendFriendMessageResponse* response) {
@@ -109,6 +110,7 @@ friendId | INVALID | The value passed is not a valid ID
 	......
 	
 	SendFriendMessageRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetFriendIds(friendIds)
 	request.SetMessage(message)
 	request.Send(SendFriendMessageRequest_Response);
@@ -123,6 +125,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createSendFriendMessageRequest()
+	.setAnalyticsData(analyticsData)
 	.setFriendIds(friendIds)
 	.setMessage(message)
 	.send(new GSEventListener<SendFriendMessageResponse>() {
@@ -138,6 +141,7 @@ gs.getRequestBuilder().createSendFriendMessageRequest()
 ```javascript
 
 	var request = new SparkRequests.SendFriendMessageRequest();
+	request.analyticsData = ...;
 	request.friendIds = ...;
 	request.message = ...;
 	var response = request.Send();

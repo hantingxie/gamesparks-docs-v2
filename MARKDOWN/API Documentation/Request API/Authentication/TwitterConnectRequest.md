@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Authentication/TwitterConnectRequest.md
----
 
 # TwitterConnectRequest
 
@@ -28,6 +25,7 @@ Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
 accessSecret | No | string | The accessSecret is obtained at the same time as the accessToken, and is required to sign requests to Twitter's services that require the accessToken.
 accessToken | No | string | The accessToken represents a player's permission to share access to their account with your application.
+analyticsData | No | AnalyticsData | Optional data used by analytics
 doNotLinkToCurrentPlayer | No | boolean | Indicates that the server should not try to link the external profile with the current player.  If false, links the external profile to the currently signed in player.  If true, creates a new player and links the external profile to them.  Defaults to false.
 errorOnSwitch | No | boolean | Indicates whether the server should return an error if an account switch would have occurred, rather than switching automatically.  Defaults to false.
 segments | No | JSON | An optional segment configuration for this request.
@@ -93,6 +91,7 @@ accessSecret | REQUIRED | Parameter accessSecret is required but was not provide
 	new TwitterConnectRequest()
 		.SetAccessSecret(accessSecret)
 		.SetAccessToken(accessToken)
+		.SetAnalyticsData(analyticsData)
 		.SetDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 		.SetErrorOnSwitch(errorOnSwitch)
 		.SetSegments(segments)
@@ -121,6 +120,7 @@ accessSecret | REQUIRED | Parameter accessSecret is required but was not provide
 	    .createTwitterConnectRequest()
 		.setAccessSecret(accessSecret)
 		.setAccessToken(accessToken)
+		.setAnalyticsData(analyticsData)
 		.setDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 		.setErrorOnSwitch(errorOnSwitch)
 		.setSegments(segments)
@@ -145,6 +145,7 @@ accessSecret | REQUIRED | Parameter accessSecret is required but was not provide
 	GSTwitterConnectRequest* request = [[GSTwitterConnectRequest alloc] init];
 	[request setAccessSecret:accessSecret;
 	[request setAccessToken:accessToken;
+	[request setAnalyticsData:analyticsData;
 	[request setDoNotLinkToCurrentPlayer:doNotLinkToCurrentPlayer;
 	[request setErrorOnSwitch:errorOnSwitch;
 	[request setSegments:segments;
@@ -184,6 +185,7 @@ accessSecret | REQUIRED | Parameter accessSecret is required but was not provide
 	TwitterConnectRequest request(gsInstance);
 	request.SetAccessSecret(accessSecret)
 	request.SetAccessToken(accessToken)
+	request.SetAnalyticsData(analyticsData)
 	request.SetDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 	request.SetErrorOnSwitch(errorOnSwitch)
 	request.SetSegments(segments)
@@ -203,6 +205,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 gs.getRequestBuilder().createTwitterConnectRequest()
 	.setAccessSecret(accessSecret)
 	.setAccessToken(accessToken)
+	.setAnalyticsData(analyticsData)
 	.setDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 	.setErrorOnSwitch(errorOnSwitch)
 	.setSegments(segments)
@@ -228,6 +231,7 @@ gs.getRequestBuilder().createTwitterConnectRequest()
 	var request = new SparkRequests.TwitterConnectRequest();
 	request.accessSecret = ...;
 	request.accessToken = ...;
+	request.analyticsData = ...;
 	request.doNotLinkToCurrentPlayer = ...;
 	request.errorOnSwitch = ...;
 	request.segments = ...;

@@ -1,7 +1,3 @@
----
-src: /API Documentation/Realtime API/RTPacket.md
----
-
 # RTPacket
 
 An object representing a packet sent by a client

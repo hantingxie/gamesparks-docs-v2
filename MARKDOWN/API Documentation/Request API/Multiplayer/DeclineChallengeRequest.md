@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Multiplayer/DeclineChallengeRequest.md
----
 
 # DeclineChallengeRequest
 
@@ -14,6 +11,7 @@ Declines a challenge that has been issued to the current player.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 challengeInstanceId | Yes | string | The ID of the challenge
 message | No | string | An optional message to send with the challenge
 
@@ -53,6 +51,7 @@ challengeInstanceId | INVALID | The ID does not match a challenge that has been 
 	using GameSparks.Api.Responses;
 	...
 	new DeclineChallengeRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetChallengeInstanceId(challengeInstanceId)
 		.SetMessage(message)
 		.Send((response) => {
@@ -72,6 +71,7 @@ challengeInstanceId | INVALID | The ID does not match a challenge that has been 
 	
 	gs.getRequestBuilder()
 	    .createDeclineChallengeRequest()
+		.setAnalyticsData(analyticsData)
 		.setChallengeInstanceId(challengeInstanceId)
 		.setMessage(message)
 		.send(function(response:com.gamesparks.api.responses.DeclineChallengeResponse):void {
@@ -87,6 +87,7 @@ challengeInstanceId | INVALID | The ID does not match a challenge that has been 
 	#import "GSAPI.h"
 	...
 	GSDeclineChallengeRequest* request = [[GSDeclineChallengeRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setChallengeInstanceId:challengeInstanceId;
 	[request setMessage:message;
 	[request setCallback:^ (GSDeclineChallengeResponse* response) {
@@ -113,6 +114,7 @@ challengeInstanceId | INVALID | The ID does not match a challenge that has been 
 	......
 	
 	DeclineChallengeRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetChallengeInstanceId(challengeInstanceId)
 	request.SetMessage(message)
 	request.Send(DeclineChallengeRequest_Response);
@@ -127,6 +129,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createDeclineChallengeRequest()
+	.setAnalyticsData(analyticsData)
 	.setChallengeInstanceId(challengeInstanceId)
 	.setMessage(message)
 	.send(new GSEventListener<DeclineChallengeResponse>() {
@@ -143,6 +146,7 @@ gs.getRequestBuilder().createDeclineChallengeRequest()
 ```javascript
 
 	var request = new SparkRequests.DeclineChallengeRequest();
+	request.analyticsData = ...;
 	request.challengeInstanceId = ...;
 	request.message = ...;
 	var response = request.Send();

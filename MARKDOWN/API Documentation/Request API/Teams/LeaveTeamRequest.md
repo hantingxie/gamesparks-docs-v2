@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Teams/LeaveTeamRequest.md
----
 
 # LeaveTeamRequest
 
@@ -14,6 +11,7 @@ Allows a player to leave a team.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 ownerId | No | string | The team owner to find, used in combination with teamType. If not supplied the current players id will be used
 teamId | No | string | The teamId to find (may be null if teamType supplied)
 teamType | No | string | The teamType to find, used in combination with the current player, or the player defined by ownerId
@@ -34,6 +32,15 @@ teamType | string | The team type
 
 ## Nested types
 
+### ScriptData
+
+A collection of arbitrary data that can be added to a message via a Cloud Code script.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+myKey | string | An arbitrary data key
+myValue | JSON | An arbitrary data value.
+
 ### Player
 
 A nested object that represents a player.
@@ -47,15 +54,6 @@ id | string | The id of the Player
 online | boolean | The online status of the Player
 scriptData | JSON | The script data of the Player
 virtualGoods | string[] | The virtual goods of the Player
-
-### ScriptData
-
-A collection of arbitrary data that can be added to a message via a Cloud Code script.
-
-Parameter | Type | Description
---------- | ---- | -----------
-myKey | string | An arbitrary data key
-myValue | JSON | An arbitrary data value.
 
 ## Error Codes
 
@@ -76,6 +74,7 @@ teamType&&ownerId | NOT_UNIQUE | The ownerId / teamType combination has multiple
 	using GameSparks.Api.Responses;
 	...
 	new LeaveTeamRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetOwnerId(ownerId)
 		.SetTeamId(teamId)
 		.SetTeamType(teamType)
@@ -100,6 +99,7 @@ teamType&&ownerId | NOT_UNIQUE | The ownerId / teamType combination has multiple
 	
 	gs.getRequestBuilder()
 	    .createLeaveTeamRequest()
+		.setAnalyticsData(analyticsData)
 		.setOwnerId(ownerId)
 		.setTeamId(teamId)
 		.setTeamType(teamType)
@@ -120,6 +120,7 @@ teamType&&ownerId | NOT_UNIQUE | The ownerId / teamType combination has multiple
 	#import "GSAPI.h"
 	...
 	GSLeaveTeamRequest* request = [[GSLeaveTeamRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setOwnerId:ownerId;
 	[request setTeamId:teamId;
 	[request setTeamType:teamType;
@@ -155,6 +156,7 @@ teamType&&ownerId | NOT_UNIQUE | The ownerId / teamType combination has multiple
 	......
 	
 	LeaveTeamRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetOwnerId(ownerId)
 	request.SetTeamId(teamId)
 	request.SetTeamType(teamType)
@@ -170,6 +172,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createLeaveTeamRequest()
+	.setAnalyticsData(analyticsData)
 	.setOwnerId(ownerId)
 	.setTeamId(teamId)
 	.setTeamType(teamType)
@@ -191,6 +194,7 @@ gs.getRequestBuilder().createLeaveTeamRequest()
 ```javascript
 
 	var request = new SparkRequests.LeaveTeamRequest();
+	request.analyticsData = ...;
 	request.ownerId = ...;
 	request.teamId = ...;
 	request.teamType = ...;

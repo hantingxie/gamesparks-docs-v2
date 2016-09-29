@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Misc/GetPropertyRequest.md
----
 
 # GetPropertyRequest
 
@@ -14,6 +11,7 @@ Get the property for the given short Code.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 propertyShortCode | Yes | string | The shortCode of the property to return.
 
 ## Response Parameters
@@ -52,6 +50,7 @@ property | NOT_FOUND | No property with given shortCode could be found.
 	using GameSparks.Api.Responses;
 	...
 	new GetPropertyRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetPropertyShortCode(propertyShortCode)
 		.Send((response) => {
 		GSData property = response.Property; 
@@ -70,6 +69,7 @@ property | NOT_FOUND | No property with given shortCode could be found.
 	
 	gs.getRequestBuilder()
 	    .createGetPropertyRequest()
+		.setAnalyticsData(analyticsData)
 		.setPropertyShortCode(propertyShortCode)
 		.send(function(response:com.gamesparks.api.responses.GetPropertyResponse):void {
 		var property:Object = response.getProperty(); 
@@ -84,6 +84,7 @@ property | NOT_FOUND | No property with given shortCode could be found.
 	#import "GSAPI.h"
 	...
 	GSGetPropertyRequest* request = [[GSGetPropertyRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setPropertyShortCode:propertyShortCode;
 	[request setCallback:^ (GSGetPropertyResponse* response) {
 	NSDictionary* property = [response getProperty]; 
@@ -109,6 +110,7 @@ property | NOT_FOUND | No property with given shortCode could be found.
 	......
 	
 	GetPropertyRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetPropertyShortCode(propertyShortCode)
 	request.Send(GetPropertyRequest_Response);
 ```
@@ -122,6 +124,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createGetPropertyRequest()
+	.setAnalyticsData(analyticsData)
 	.setPropertyShortCode(propertyShortCode)
 	.send(new GSEventListener<GetPropertyResponse>() {
 		@Override
@@ -137,6 +140,7 @@ gs.getRequestBuilder().createGetPropertyRequest()
 ```javascript
 
 	var request = new SparkRequests.GetPropertyRequest();
+	request.analyticsData = ...;
 	request.propertyShortCode = ...;
 	var response = request.Send();
 	

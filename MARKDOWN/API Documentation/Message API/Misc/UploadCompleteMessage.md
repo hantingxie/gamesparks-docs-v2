@@ -1,6 +1,3 @@
----
-src: /API Documentation/Message API/Misc/UploadCompleteMessage.md
----
 
 # UploadCompleteMessage
 
@@ -25,15 +22,6 @@ uploadId | No | string | The id of the upload
 
 ## Nested types
 
-### UploadData
-
-This object represents the result of uploading a file to the GameSparks platform.
-
-Parameter | Type | Description
---------- | ---- | -----------
-fileName | string | The filename of the file that was uploaded.
-playerId | string | The unique player id of the player that uploaded the file.
-
 ### ScriptData
 
 A collection of arbitrary data that can be added to a message via a Cloud Code script.
@@ -42,6 +30,15 @@ Parameter | Type | Description
 --------- | ---- | -----------
 myKey | string | An arbitrary data key
 myValue | JSON | An arbitrary data value.
+
+### UploadData
+
+This object represents the result of uploading a file to the GameSparks platform.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+fileName | string | The filename of the file that was uploaded.
+playerId | string | The unique player id of the player that uploaded the file.
 
 
 ## Code Samples

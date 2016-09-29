@@ -1,6 +1,3 @@
----
-src: /API Documentation/Message API/Multiplayer/MatchFoundMessage.md
----
 
 # MatchFoundMessage
 
@@ -31,15 +28,6 @@ title | No | string | A textual title for the message.
 
 ## Nested types
 
-### ScriptData
-
-A collection of arbitrary data that can be added to a message via a Cloud Code script.
-
-Parameter | Type | Description
---------- | ---- | -----------
-myKey | string | An arbitrary data key
-myValue | JSON | An arbitrary data value.
-
 ### Participant
 
 A nested object that represents a participant in a match.
@@ -55,6 +43,15 @@ participantData | JSON | A JSON Map of any data that was associated to this user
 peerId | number | The peerId of this participant within the match
 scriptData | JSON | The script data of the Player
 virtualGoods | string[] | The virtual goods of the Player
+
+### ScriptData
+
+A collection of arbitrary data that can be added to a message via a Cloud Code script.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+myKey | string | An arbitrary data key
+myValue | JSON | An arbitrary data value.
 
 
 ## Code Samples

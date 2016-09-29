@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Multiplayer/FindMatchRequest.md
----
 
 # FindMatchRequest
 
@@ -21,6 +18,7 @@ Each player must match the other for the match to be found.
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
 action | No | string | The action to take on the already in-flight request for this match. Currently supported actions are: 'cancel'
+analyticsData | No | AnalyticsData | Optional data used by analytics
 matchGroup | No | string | Optional. Players will be grouped based on the distinct value passed in here, only players in the same group can be matched together
 matchShortCode | Yes | string | The shortCode of the match type this player is registering for
 skill | No | number | The skill of the player looking for a match
@@ -44,6 +42,15 @@ scriptData | ScriptData | A JSON Map of any data added either to the Request or 
 
 ## Nested types
 
+### ScriptData
+
+A collection of arbitrary data that can be added to a message via a Cloud Code script.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+myKey | string | An arbitrary data key
+myValue | JSON | An arbitrary data value.
+
 ### Player
 
 A nested object that represents a player.
@@ -57,15 +64,6 @@ id | string | The id of the Player
 online | boolean | The online status of the Player
 scriptData | JSON | The script data of the Player
 virtualGoods | string[] | The virtual goods of the Player
-
-### ScriptData
-
-A collection of arbitrary data that can be added to a message via a Cloud Code script.
-
-Parameter | Type | Description
---------- | ---- | -----------
-myKey | string | An arbitrary data key
-myValue | JSON | An arbitrary data value.
 
 ## Error Codes
 
@@ -89,6 +87,7 @@ match | NO_MANUAL_MATCHMAKING | To use the manual matchmaking functionality plea
 	...
 	new FindMatchRequest()
 		.SetAction(action)
+		.SetAnalyticsData(analyticsData)
 		.SetMatchGroup(matchGroup)
 		.SetMatchShortCode(matchShortCode)
 		.SetSkill(skill)
@@ -117,6 +116,7 @@ match | NO_MANUAL_MATCHMAKING | To use the manual matchmaking functionality plea
 	gs.getRequestBuilder()
 	    .createFindMatchRequest()
 		.setAction(action)
+		.setAnalyticsData(analyticsData)
 		.setMatchGroup(matchGroup)
 		.setMatchShortCode(matchShortCode)
 		.setSkill(skill)
@@ -141,6 +141,7 @@ match | NO_MANUAL_MATCHMAKING | To use the manual matchmaking functionality plea
 	...
 	GSFindMatchRequest* request = [[GSFindMatchRequest alloc] init];
 	[request setAction:action;
+	[request setAnalyticsData:analyticsData;
 	[request setMatchGroup:matchGroup;
 	[request setMatchShortCode:matchShortCode;
 	[request setSkill:skill;
@@ -183,6 +184,7 @@ match | NO_MANUAL_MATCHMAKING | To use the manual matchmaking functionality plea
 	
 	FindMatchRequest request(gsInstance);
 	request.SetAction(action)
+	request.SetAnalyticsData(analyticsData)
 	request.SetMatchGroup(matchGroup)
 	request.SetMatchShortCode(matchShortCode)
 	request.SetSkill(skill)
@@ -199,6 +201,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 ...
 gs.getRequestBuilder().createFindMatchRequest()
 	.setAction(action)
+	.setAnalyticsData(analyticsData)
 	.setMatchGroup(matchGroup)
 	.setMatchShortCode(matchShortCode)
 	.setSkill(skill)
@@ -224,6 +227,7 @@ gs.getRequestBuilder().createFindMatchRequest()
 
 	var request = new SparkRequests.FindMatchRequest();
 	request.action = ...;
+	request.analyticsData = ...;
 	request.matchGroup = ...;
 	request.matchShortCode = ...;
 	request.skill = ...;

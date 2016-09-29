@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Store/GooglePlayBuyGoodsRequest.md
----
 
 # GooglePlayBuyGoodsRequest
 
@@ -22,6 +19,7 @@ It is critical that the signedData is sent exactly as it is returned form google
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 signature | Yes | string | The value obtained from data.getStringExtra("INAPP_DATA_SIGNATURE");
 signedData | Yes | string | The value obtained from data.getStringExtra("INAPP_PURCHASE_DATA")
 uniqueTransactionByPlayer | No | boolean | If set to true, the transactionId from this receipt will not be globally valdidated, this will mean replays between players are possible.
@@ -84,6 +82,7 @@ verificationError | 1 | No matching virtual good can be found
 	using GameSparks.Api.Responses;
 	...
 	new GooglePlayBuyGoodsRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetSignature(signature)
 		.SetSignedData(signedData)
 		.SetUniqueTransactionByPlayer(uniqueTransactionByPlayer)
@@ -113,6 +112,7 @@ verificationError | 1 | No matching virtual good can be found
 	
 	gs.getRequestBuilder()
 	    .createGooglePlayBuyGoodsRequest()
+		.setAnalyticsData(analyticsData)
 		.setSignature(signature)
 		.setSignedData(signedData)
 		.setUniqueTransactionByPlayer(uniqueTransactionByPlayer)
@@ -138,6 +138,7 @@ verificationError | 1 | No matching virtual good can be found
 	#import "GSAPI.h"
 	...
 	GSGooglePlayBuyGoodsRequest* request = [[GSGooglePlayBuyGoodsRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setSignature:signature;
 	[request setSignedData:signedData;
 	[request setUniqueTransactionByPlayer:uniqueTransactionByPlayer;
@@ -183,6 +184,7 @@ verificationError | 1 | No matching virtual good can be found
 	......
 	
 	GooglePlayBuyGoodsRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetSignature(signature)
 	request.SetSignedData(signedData)
 	request.SetUniqueTransactionByPlayer(uniqueTransactionByPlayer)
@@ -198,6 +200,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createGooglePlayBuyGoodsRequest()
+	.setAnalyticsData(analyticsData)
 	.setSignature(signature)
 	.setSignedData(signedData)
 	.setUniqueTransactionByPlayer(uniqueTransactionByPlayer)
@@ -224,6 +227,7 @@ gs.getRequestBuilder().createGooglePlayBuyGoodsRequest()
 ```javascript
 
 	var request = new SparkRequests.GooglePlayBuyGoodsRequest();
+	request.analyticsData = ...;
 	request.signature = ...;
 	request.signedData = ...;
 	request.uniqueTransactionByPlayer = ...;

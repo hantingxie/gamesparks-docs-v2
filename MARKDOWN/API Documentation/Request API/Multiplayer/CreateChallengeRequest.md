@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Multiplayer/CreateChallengeRequest.md
----
 
 # CreateChallengeRequest
 
@@ -19,6 +16,7 @@ The usersToChallenge field must be present for this request if the acessType is 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
 accessType | No | string | Who can join this challenge. Either PUBLIC, PRIVATE or FRIENDS
+analyticsData | No | AnalyticsData | Optional data used by analytics
 autoStartJoinedChallengeOnMaxPlayers | No | boolean | Whether this challenge should automatically start when a new player joins and maxPlayers is reached
 challengeMessage | No | string | An optional message to include with the challenge
 challengeShortCode | Yes | string | The short code of the challenge
@@ -77,6 +75,7 @@ eligibilityCriteria | { "segments" : {"XXX" : "MALFORMED"}} | The value provided
 	...
 	new CreateChallengeRequest()
 		.SetAccessType(accessType)
+		.SetAnalyticsData(analyticsData)
 		.SetAutoStartJoinedChallengeOnMaxPlayers(autoStartJoinedChallengeOnMaxPlayers)
 		.SetChallengeMessage(challengeMessage)
 		.SetChallengeShortCode(challengeShortCode)
@@ -113,6 +112,7 @@ eligibilityCriteria | { "segments" : {"XXX" : "MALFORMED"}} | The value provided
 	gs.getRequestBuilder()
 	    .createCreateChallengeRequest()
 		.setAccessType(accessType)
+		.setAnalyticsData(analyticsData)
 		.setAutoStartJoinedChallengeOnMaxPlayers(autoStartJoinedChallengeOnMaxPlayers)
 		.setChallengeMessage(challengeMessage)
 		.setChallengeShortCode(challengeShortCode)
@@ -145,6 +145,7 @@ eligibilityCriteria | { "segments" : {"XXX" : "MALFORMED"}} | The value provided
 	...
 	GSCreateChallengeRequest* request = [[GSCreateChallengeRequest alloc] init];
 	[request setAccessType:accessType;
+	[request setAnalyticsData:analyticsData;
 	[request setAutoStartJoinedChallengeOnMaxPlayers:autoStartJoinedChallengeOnMaxPlayers;
 	[request setChallengeMessage:challengeMessage;
 	[request setChallengeShortCode:challengeShortCode;
@@ -188,6 +189,7 @@ eligibilityCriteria | { "segments" : {"XXX" : "MALFORMED"}} | The value provided
 	
 	CreateChallengeRequest request(gsInstance);
 	request.SetAccessType(accessType)
+	request.SetAnalyticsData(analyticsData)
 	request.SetAutoStartJoinedChallengeOnMaxPlayers(autoStartJoinedChallengeOnMaxPlayers)
 	request.SetChallengeMessage(challengeMessage)
 	request.SetChallengeShortCode(challengeShortCode)
@@ -219,6 +221,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 ...
 gs.getRequestBuilder().createCreateChallengeRequest()
 	.setAccessType(accessType)
+	.setAnalyticsData(analyticsData)
 	.setAutoStartJoinedChallengeOnMaxPlayers(autoStartJoinedChallengeOnMaxPlayers)
 	.setChallengeMessage(challengeMessage)
 	.setChallengeShortCode(challengeShortCode)
@@ -252,6 +255,7 @@ gs.getRequestBuilder().createCreateChallengeRequest()
 
 	var request = new SparkRequests.CreateChallengeRequest();
 	request.accessType = ...;
+	request.analyticsData = ...;
 	request.autoStartJoinedChallengeOnMaxPlayers = ...;
 	request.challengeMessage = ...;
 	request.challengeShortCode = ...;

@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Multiplayer/ListChallengeTypeRequest.md
----
 
 # ListChallengeTypeRequest
 
@@ -14,6 +11,7 @@ Returns the list of configured challenge types.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 
 ## Response Parameters
 
@@ -58,6 +56,7 @@ tags | string | The tags for this challenge.
 	using GameSparks.Api.Responses;
 	...
 	new ListChallengeTypeRequest()
+		.SetAnalyticsData(analyticsData)
 		.Send((response) => {
 		GSEnumerable<var> challengeTemplates = response.ChallengeTemplates; 
 		GSData scriptData = response.ScriptData; 
@@ -75,6 +74,7 @@ tags | string | The tags for this challenge.
 	
 	gs.getRequestBuilder()
 	    .createListChallengeTypeRequest()
+		.setAnalyticsData(analyticsData)
 		.send(function(response:com.gamesparks.api.responses.ListChallengeTypeResponse):void {
 		var challengeTemplates:Vector.<ChallengeType> = response.getChallengeTemplates(); 
 		var scriptData:ScriptData = response.getScriptData(); 
@@ -88,6 +88,7 @@ tags | string | The tags for this challenge.
 	#import "GSAPI.h"
 	...
 	GSListChallengeTypeRequest* request = [[GSListChallengeTypeRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setCallback:^ (GSListChallengeTypeResponse* response) {
 	NSArray* challengeTemplates = [response getChallengeTemplates]; 
 	NSDictionary* scriptData = [response getScriptData]; 
@@ -112,6 +113,7 @@ tags | string | The tags for this challenge.
 	......
 	
 	ListChallengeTypeRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.Send(ListChallengeTypeRequest_Response);
 ```
 
@@ -124,6 +126,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createListChallengeTypeRequest()
+	.setAnalyticsData(analyticsData)
 	.send(new GSEventListener<ListChallengeTypeResponse>() {
 		@Override
 		public void onEvent(ListChallengeTypeResponse response) {
@@ -138,6 +141,7 @@ gs.getRequestBuilder().createListChallengeTypeRequest()
 ```javascript
 
 	var request = new SparkRequests.ListChallengeTypeRequest();
+	request.analyticsData = ...;
 	var response = request.Send();
 	
 var challengeTemplates = response.challengeTemplates; 

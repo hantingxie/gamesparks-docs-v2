@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Multiplayer/FindPendingMatchesRequest.md
----
 
 # FindPendingMatchesRequest
 
@@ -18,6 +15,7 @@ Each player must match the other for the pending match to be found.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 matchGroup | No | string | Optional. The matchGroup of the match this player previously registeredfor
 matchShortCode | Yes | string | The shortCode of the match this player previously registered for
 maxMatchesToFind | No | number | Optional. The maximum number of pending matches to return (default=10)
@@ -33,6 +31,18 @@ pendingMatches | [PendingMatch[]](#pendingmatch) | A list of JSON objects contai
 scriptData | ScriptData | A JSON Map of any data added either to the Request or the Response by your Cloud Code
 
 ## Nested types
+
+### PendingMatch
+
+An object that represents a pending match.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+id | string | The ID for the pending match
+matchGroup | string | The match group for the pending match
+matchShortCode | string | The match shortCode for the pending match
+matchedPlayers | [MatchedPlayer[]](#matchedplayer) | The players already part of this pending match
+skill | number | The average skill of players in this pending match
 
 ### ScriptData
 
@@ -54,18 +64,6 @@ participantData | JSON | A JSON Map of any data that was associated to this user
 playerId | string | The ID for player
 skill | number | The skill of the player in this match
 
-### PendingMatch
-
-An object that represents a pending match.
-
-Parameter | Type | Description
---------- | ---- | -----------
-id | string | The ID for the pending match
-matchGroup | string | The match group for the pending match
-matchShortCode | string | The match shortCode for the pending match
-matchedPlayers | [MatchedPlayer[]](#matchedplayer) | The players already part of this pending match
-skill | number | The average skill of players in this pending match
-
 ## Error Codes
 
 Key | Value | Description
@@ -83,6 +81,7 @@ match | NOT_IN_PROGRESS | There is no pending match for this player / shortCode 
 	using GameSparks.Api.Responses;
 	...
 	new FindPendingMatchesRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetMatchGroup(matchGroup)
 		.SetMatchShortCode(matchShortCode)
 		.SetMaxMatchesToFind(maxMatchesToFind)
@@ -103,6 +102,7 @@ match | NOT_IN_PROGRESS | There is no pending match for this player / shortCode 
 	
 	gs.getRequestBuilder()
 	    .createFindPendingMatchesRequest()
+		.setAnalyticsData(analyticsData)
 		.setMatchGroup(matchGroup)
 		.setMatchShortCode(matchShortCode)
 		.setMaxMatchesToFind(maxMatchesToFind)
@@ -119,6 +119,7 @@ match | NOT_IN_PROGRESS | There is no pending match for this player / shortCode 
 	#import "GSAPI.h"
 	...
 	GSFindPendingMatchesRequest* request = [[GSFindPendingMatchesRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setMatchGroup:matchGroup;
 	[request setMatchShortCode:matchShortCode;
 	[request setMaxMatchesToFind:maxMatchesToFind;
@@ -146,6 +147,7 @@ match | NOT_IN_PROGRESS | There is no pending match for this player / shortCode 
 	......
 	
 	FindPendingMatchesRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetMatchGroup(matchGroup)
 	request.SetMatchShortCode(matchShortCode)
 	request.SetMaxMatchesToFind(maxMatchesToFind)
@@ -161,6 +163,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createFindPendingMatchesRequest()
+	.setAnalyticsData(analyticsData)
 	.setMatchGroup(matchGroup)
 	.setMatchShortCode(matchShortCode)
 	.setMaxMatchesToFind(maxMatchesToFind)
@@ -178,6 +181,7 @@ gs.getRequestBuilder().createFindPendingMatchesRequest()
 ```javascript
 
 	var request = new SparkRequests.FindPendingMatchesRequest();
+	request.analyticsData = ...;
 	request.matchGroup = ...;
 	request.matchShortCode = ...;
 	request.maxMatchesToFind = ...;

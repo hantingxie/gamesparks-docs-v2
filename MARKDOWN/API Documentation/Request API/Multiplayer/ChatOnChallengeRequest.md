@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Multiplayer/ChatOnChallengeRequest.md
----
 
 # ChatOnChallengeRequest
 
@@ -16,6 +13,7 @@ As the message is sent to all players, the current player will also see details 
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 challengeInstanceId | Yes | string | The ID of the challenge
 message | No | string | An optional message to send with the challenge
 
@@ -55,6 +53,7 @@ challengeInstanceId | INVALID | The ID does not match a challenge the current pl
 	using GameSparks.Api.Responses;
 	...
 	new ChatOnChallengeRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetChallengeInstanceId(challengeInstanceId)
 		.SetMessage(message)
 		.Send((response) => {
@@ -74,6 +73,7 @@ challengeInstanceId | INVALID | The ID does not match a challenge the current pl
 	
 	gs.getRequestBuilder()
 	    .createChatOnChallengeRequest()
+		.setAnalyticsData(analyticsData)
 		.setChallengeInstanceId(challengeInstanceId)
 		.setMessage(message)
 		.send(function(response:com.gamesparks.api.responses.ChatOnChallengeResponse):void {
@@ -89,6 +89,7 @@ challengeInstanceId | INVALID | The ID does not match a challenge the current pl
 	#import "GSAPI.h"
 	...
 	GSChatOnChallengeRequest* request = [[GSChatOnChallengeRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setChallengeInstanceId:challengeInstanceId;
 	[request setMessage:message;
 	[request setCallback:^ (GSChatOnChallengeResponse* response) {
@@ -115,6 +116,7 @@ challengeInstanceId | INVALID | The ID does not match a challenge the current pl
 	......
 	
 	ChatOnChallengeRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetChallengeInstanceId(challengeInstanceId)
 	request.SetMessage(message)
 	request.Send(ChatOnChallengeRequest_Response);
@@ -129,6 +131,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createChatOnChallengeRequest()
+	.setAnalyticsData(analyticsData)
 	.setChallengeInstanceId(challengeInstanceId)
 	.setMessage(message)
 	.send(new GSEventListener<ChatOnChallengeResponse>() {
@@ -145,6 +148,7 @@ gs.getRequestBuilder().createChatOnChallengeRequest()
 ```javascript
 
 	var request = new SparkRequests.ChatOnChallengeRequest();
+	request.analyticsData = ...;
 	request.challengeInstanceId = ...;
 	request.message = ...;
 	var response = request.Send();

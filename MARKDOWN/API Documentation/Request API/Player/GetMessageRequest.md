@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Player/GetMessageRequest.md
----
 
 # GetMessageRequest
 
@@ -14,6 +11,7 @@ Returns the full details of a message.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 messageId | Yes | string | The messageId of the message retreive
 
 ## Response Parameters
@@ -47,6 +45,7 @@ myValue | JSON | An arbitrary data value.
 	using GameSparks.Api.Responses;
 	...
 	new GetMessageRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetMessageId(messageId)
 		.Send((response) => {
 		GSData message = response.Message; 
@@ -65,6 +64,7 @@ myValue | JSON | An arbitrary data value.
 	
 	gs.getRequestBuilder()
 	    .createGetMessageRequest()
+		.setAnalyticsData(analyticsData)
 		.setMessageId(messageId)
 		.send(function(response:com.gamesparks.api.responses.GetMessageResponse):void {
 		var message:Object = response.getMessage(); 
@@ -79,6 +79,7 @@ myValue | JSON | An arbitrary data value.
 	#import "GSAPI.h"
 	...
 	GSGetMessageRequest* request = [[GSGetMessageRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setMessageId:messageId;
 	[request setCallback:^ (GSGetMessageResponse* response) {
 	NSDictionary* message = [response getMessage]; 
@@ -104,6 +105,7 @@ myValue | JSON | An arbitrary data value.
 	......
 	
 	GetMessageRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetMessageId(messageId)
 	request.Send(GetMessageRequest_Response);
 ```
@@ -117,6 +119,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createGetMessageRequest()
+	.setAnalyticsData(analyticsData)
 	.setMessageId(messageId)
 	.send(new GSEventListener<GetMessageResponse>() {
 		@Override
@@ -132,6 +135,7 @@ gs.getRequestBuilder().createGetMessageRequest()
 ```javascript
 
 	var request = new SparkRequests.GetMessageRequest();
+	request.analyticsData = ...;
 	request.messageId = ...;
 	var response = request.Send();
 	

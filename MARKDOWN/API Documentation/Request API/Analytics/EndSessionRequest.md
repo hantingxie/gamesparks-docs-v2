@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Analytics/EndSessionRequest.md
----
 
 # EndSessionRequest
 
@@ -16,6 +13,7 @@ The SDK will automatically create a new session ID when the application is start
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 
 ## Response Parameters
 
@@ -47,6 +45,7 @@ myValue | JSON | An arbitrary data value.
 	using GameSparks.Api.Responses;
 	...
 	new EndSessionRequest()
+		.SetAnalyticsData(analyticsData)
 		.Send((response) => {
 		GSData scriptData = response.ScriptData; 
 		});
@@ -63,6 +62,7 @@ myValue | JSON | An arbitrary data value.
 	
 	gs.getRequestBuilder()
 	    .createEndSessionRequest()
+		.setAnalyticsData(analyticsData)
 		.send(function(response:com.gamesparks.api.responses.EndSessionResponse):void {
 		var scriptData:ScriptData = response.getScriptData(); 
 		});
@@ -75,6 +75,7 @@ myValue | JSON | An arbitrary data value.
 	#import "GSAPI.h"
 	...
 	GSEndSessionRequest* request = [[GSEndSessionRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setCallback:^ (GSEndSessionResponse* response) {
 	NSDictionary* scriptData = [response getScriptData]; 
 	}];
@@ -97,6 +98,7 @@ myValue | JSON | An arbitrary data value.
 	......
 	
 	EndSessionRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.Send(EndSessionRequest_Response);
 ```
 
@@ -109,6 +111,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createEndSessionRequest()
+	.setAnalyticsData(analyticsData)
 	.send(new GSEventListener<EndSessionResponse>() {
 		@Override
 		public void onEvent(EndSessionResponse response) {
@@ -122,6 +125,7 @@ gs.getRequestBuilder().createEndSessionRequest()
 ```javascript
 
 	var request = new SparkRequests.EndSessionRequest();
+	request.analyticsData = ...;
 	var response = request.Send();
 	
 var scriptData = response.scriptData; 

@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Teams/ListTeamChatRequest.md
----
 
 # ListTeamChatRequest
 
@@ -14,6 +11,7 @@ Get a list of the messages sent to the team (by players using SendTeamChatMessag
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 entryCount | No | number | The number of messages to return (default=50)
 offset | No | number | The offset (nth message) to start from (default=0)
 ownerId | No | string | The team owner to find, used in combination with teamType. If not supplied the current players id will be used
@@ -50,6 +48,7 @@ myValue | JSON | An arbitrary data value.
 	using GameSparks.Api.Responses;
 	...
 	new ListTeamChatRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetEntryCount(entryCount)
 		.SetOffset(offset)
 		.SetOwnerId(ownerId)
@@ -71,6 +70,7 @@ myValue | JSON | An arbitrary data value.
 	
 	gs.getRequestBuilder()
 	    .createListTeamChatRequest()
+		.setAnalyticsData(analyticsData)
 		.setEntryCount(entryCount)
 		.setOffset(offset)
 		.setOwnerId(ownerId)
@@ -88,6 +88,7 @@ myValue | JSON | An arbitrary data value.
 	#import "GSAPI.h"
 	...
 	GSListTeamChatRequest* request = [[GSListTeamChatRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setEntryCount:entryCount;
 	[request setOffset:offset;
 	[request setOwnerId:ownerId;
@@ -115,6 +116,7 @@ myValue | JSON | An arbitrary data value.
 	......
 	
 	ListTeamChatRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetEntryCount(entryCount)
 	request.SetOffset(offset)
 	request.SetOwnerId(ownerId)
@@ -132,6 +134,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createListTeamChatRequest()
+	.setAnalyticsData(analyticsData)
 	.setEntryCount(entryCount)
 	.setOffset(offset)
 	.setOwnerId(ownerId)
@@ -150,6 +153,7 @@ gs.getRequestBuilder().createListTeamChatRequest()
 ```javascript
 
 	var request = new SparkRequests.ListTeamChatRequest();
+	request.analyticsData = ...;
 	request.entryCount = ...;
 	request.offset = ...;
 	request.ownerId = ...;

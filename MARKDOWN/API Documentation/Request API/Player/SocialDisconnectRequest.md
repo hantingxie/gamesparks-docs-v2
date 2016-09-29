@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Player/SocialDisconnectRequest.md
----
 
 # SocialDisconnectRequest
 
@@ -14,7 +11,8 @@ Allows a player's internal profile to be disconnected from an external system to
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-systemId | No | string | The external system from which to disconnect this profile.
+analyticsData | No | AnalyticsData | Optional data used by analytics
+systemId | No | string | The external system from which to disconnect this profile, supplied as a two letter ID. The options are: {FACEBOOK:FB, AMAZON:AM, GAME_CENTER:GC
 
 ## Response Parameters
 
@@ -54,6 +52,7 @@ password | NOT_SET | Before disconnecting, if the player has no other connected 
 	using GameSparks.Api.Responses;
 	...
 	new SocialDisconnectRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetSystemId(systemId)
 		.Send((response) => {
 		GSData scriptData = response.ScriptData; 
@@ -71,6 +70,7 @@ password | NOT_SET | Before disconnecting, if the player has no other connected 
 	
 	gs.getRequestBuilder()
 	    .createSocialDisconnectRequest()
+		.setAnalyticsData(analyticsData)
 		.setSystemId(systemId)
 		.send(function(response:com.gamesparks.api.responses.SocialDisconnectResponse):void {
 		var scriptData:ScriptData = response.getScriptData(); 
@@ -84,6 +84,7 @@ password | NOT_SET | Before disconnecting, if the player has no other connected 
 	#import "GSAPI.h"
 	...
 	GSSocialDisconnectRequest* request = [[GSSocialDisconnectRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setSystemId:systemId;
 	[request setCallback:^ (GSSocialDisconnectResponse* response) {
 	NSDictionary* scriptData = [response getScriptData]; 
@@ -107,6 +108,7 @@ password | NOT_SET | Before disconnecting, if the player has no other connected 
 	......
 	
 	SocialDisconnectRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetSystemId(systemId)
 	request.Send(SocialDisconnectRequest_Response);
 ```
@@ -120,6 +122,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createSocialDisconnectRequest()
+	.setAnalyticsData(analyticsData)
 	.setSystemId(systemId)
 	.send(new GSEventListener<SocialDisconnectResponse>() {
 		@Override
@@ -134,6 +137,7 @@ gs.getRequestBuilder().createSocialDisconnectRequest()
 ```javascript
 
 	var request = new SparkRequests.SocialDisconnectRequest();
+	request.analyticsData = ...;
 	request.systemId = ...;
 	var response = request.Send();
 	

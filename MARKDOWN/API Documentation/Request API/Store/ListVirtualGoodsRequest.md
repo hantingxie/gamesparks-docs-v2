@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Store/ListVirtualGoodsRequest.md
----
 
 # ListVirtualGoodsRequest
 
@@ -14,6 +11,7 @@ Returns the list of configured virtual goods.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 includeDisabled | No | boolean | If true, the returned list will include disabled VirtualVoods
 tags | No | string[] | A filter to only include goods with the given tags. Each good must have all the provided tags.
 
@@ -98,6 +96,7 @@ w8StoreProductId | string | The Windows 8 productId of the item.
 	using GameSparks.Api.Responses;
 	...
 	new ListVirtualGoodsRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetIncludeDisabled(includeDisabled)
 		.SetTags(tags)
 		.Send((response) => {
@@ -117,6 +116,7 @@ w8StoreProductId | string | The Windows 8 productId of the item.
 	
 	gs.getRequestBuilder()
 	    .createListVirtualGoodsRequest()
+		.setAnalyticsData(analyticsData)
 		.setIncludeDisabled(includeDisabled)
 		.setTags(tags)
 		.send(function(response:com.gamesparks.api.responses.ListVirtualGoodsResponse):void {
@@ -132,6 +132,7 @@ w8StoreProductId | string | The Windows 8 productId of the item.
 	#import "GSAPI.h"
 	...
 	GSListVirtualGoodsRequest* request = [[GSListVirtualGoodsRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setIncludeDisabled:includeDisabled;
 	[request setTags:tags;
 	[request setCallback:^ (GSListVirtualGoodsResponse* response) {
@@ -158,6 +159,7 @@ w8StoreProductId | string | The Windows 8 productId of the item.
 	......
 	
 	ListVirtualGoodsRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetIncludeDisabled(includeDisabled)
 	request.SetTags(tags)
 	request.Send(ListVirtualGoodsRequest_Response);
@@ -172,6 +174,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createListVirtualGoodsRequest()
+	.setAnalyticsData(analyticsData)
 	.setIncludeDisabled(includeDisabled)
 	.setTags(tags)
 	.send(new GSEventListener<ListVirtualGoodsResponse>() {
@@ -188,6 +191,7 @@ gs.getRequestBuilder().createListVirtualGoodsRequest()
 ```javascript
 
 	var request = new SparkRequests.ListVirtualGoodsRequest();
+	request.analyticsData = ...;
 	request.includeDisabled = ...;
 	request.tags = ...;
 	var response = request.Send();

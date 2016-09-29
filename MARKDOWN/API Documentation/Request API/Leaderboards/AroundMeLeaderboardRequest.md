@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Leaderboards/AroundMeLeaderboardRequest.md
----
 
 # AroundMeLeaderboardRequest
 
@@ -14,6 +11,7 @@ Returns leaderboard data that is adjacent to the currently signed in player's po
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 challengeInstanceId | No | string | The challenge instance to get the leaderboard data for
 customIdFilter | No | JSON | An optional filter on the customIds.
 dontErrorOnNotSocial | No | boolean | The default behaviour on a social request is to error if the player has no friends (NOTSOCIAL).  Set this flag to suppress that error and return the player's leaderboard entry instead.
@@ -89,6 +87,7 @@ challengeInstanceVersion | INVALID | The challengeInstance predates support for 
 	using GameSparks.Api.Responses;
 	...
 	new AroundMeLeaderboardRequest()
+		.SetAnalyticsData(analyticsData)
 		.SetChallengeInstanceId(challengeInstanceId)
 		.SetCustomIdFilter(customIdFilter)
 		.SetDontErrorOnNotSocial(dontErrorOnNotSocial)
@@ -102,13 +101,13 @@ challengeInstanceVersion | INVALID | The challengeInstance predates support for 
 		.SetTeamIds(teamIds)
 		.SetTeamTypes(teamTypes)
 		.Send((response) => {
-		string challengeInstanceId = response.ChallengeInstanceId;
-		GSEnumerable<var> data = response.Data;
-		GSEnumerable<var> first = response.First;
-		GSEnumerable<var> last = response.Last;
-		string leaderboardShortCode = response.LeaderboardShortCode;
-		GSData scriptData = response.ScriptData;
-		bool? social = response.Social;
+		string challengeInstanceId = response.ChallengeInstanceId; 
+		GSEnumerable<var> data = response.Data; 
+		GSEnumerable<var> first = response.First; 
+		GSEnumerable<var> last = response.Last; 
+		string leaderboardShortCode = response.LeaderboardShortCode; 
+		GSData scriptData = response.ScriptData; 
+		bool? social = response.Social; 
 		});
 
 ```
@@ -120,9 +119,10 @@ challengeInstanceVersion | INVALID | The challengeInstance predates support for 
 	import com.gamesparks.api.responses.*;
 	import com.gamesparks.api.types.*;
 	...
-
+	
 	gs.getRequestBuilder()
 	    .createAroundMeLeaderboardRequest()
+		.setAnalyticsData(analyticsData)
 		.setChallengeInstanceId(challengeInstanceId)
 		.setCustomIdFilter(customIdFilter)
 		.setDontErrorOnNotSocial(dontErrorOnNotSocial)
@@ -136,13 +136,13 @@ challengeInstanceVersion | INVALID | The challengeInstance predates support for 
 		.setTeamIds(teamIds)
 		.setTeamTypes(teamTypes)
 		.send(function(response:com.gamesparks.api.responses.AroundMeLeaderboardResponse):void {
-		var challengeInstanceId:String = response.getChallengeInstanceId();
-		var data:Vector.<LeaderboardData> = response.getData();
-		var first:Vector.<LeaderboardData> = response.getFirst();
-		var last:Vector.<LeaderboardData> = response.getLast();
-		var leaderboardShortCode:String = response.getLeaderboardShortCode();
-		var scriptData:ScriptData = response.getScriptData();
-		var social:Boolean = response.getSocial();
+		var challengeInstanceId:String = response.getChallengeInstanceId(); 
+		var data:Vector.<LeaderboardData> = response.getData(); 
+		var first:Vector.<LeaderboardData> = response.getFirst(); 
+		var last:Vector.<LeaderboardData> = response.getLast(); 
+		var leaderboardShortCode:String = response.getLeaderboardShortCode(); 
+		var scriptData:ScriptData = response.getScriptData(); 
+		var social:Boolean = response.getSocial(); 
 		});
 
 ```
@@ -153,6 +153,7 @@ challengeInstanceVersion | INVALID | The challengeInstance predates support for 
 	#import "GSAPI.h"
 	...
 	GSAroundMeLeaderboardRequest* request = [[GSAroundMeLeaderboardRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setChallengeInstanceId:challengeInstanceId;
 	[request setCustomIdFilter:customIdFilter;
 	[request setDontErrorOnNotSocial:dontErrorOnNotSocial;
@@ -166,13 +167,13 @@ challengeInstanceVersion | INVALID | The challengeInstance predates support for 
 	[request setTeamIds:teamIds;
 	[request setTeamTypes:teamTypes;
 	[request setCallback:^ (GSAroundMeLeaderboardResponse* response) {
-	NSString* challengeInstanceId = [response getChallengeInstanceId];
-	NSArray* data = [response getData];
-	NSArray* first = [response getFirst];
-	NSArray* last = [response getLast];
-	NSString* leaderboardShortCode = [response getLeaderboardShortCode];
-	NSDictionary* scriptData = [response getScriptData];
-	BOOL social = [response getSocial];
+	NSString* challengeInstanceId = [response getChallengeInstanceId]; 
+	NSArray* data = [response getData]; 
+	NSArray* first = [response getFirst]; 
+	NSArray* last = [response getLast]; 
+	NSString* leaderboardShortCode = [response getLeaderboardShortCode]; 
+	NSDictionary* scriptData = [response getScriptData]; 
+	BOOL social = [response getSocial]; 
 	}];
 	[gs send:request];
 
@@ -186,19 +187,20 @@ challengeInstanceVersion | INVALID | The challengeInstance predates support for 
 	using namespace GameSparks::Api::Responses;
 	using namespace GameSparks::Api::Requests;
 	...
-
+	
 	void AroundMeLeaderboardRequest_Response(GS& gsInstance, const AroundMeLeaderboardResponse& response) {
-	gsstl::string challengeInstanceId = response.getChallengeInstanceId();
-	gsstl:vector<Types::LeaderboardData*> data = response.getData();
-	gsstl:vector<Types::LeaderboardData*> first = response.getFirst();
-	gsstl:vector<Types::LeaderboardData*> last = response.getLast();
-	gsstl::string leaderboardShortCode = response.getLeaderboardShortCode();
-	GSData scriptData = response.getScriptData();
-	Optional::t_BoolOptional social = response.getSocial();
+	gsstl::string challengeInstanceId = response.getChallengeInstanceId(); 
+	gsstl:vector<Types::LeaderboardData*> data = response.getData(); 
+	gsstl:vector<Types::LeaderboardData*> first = response.getFirst(); 
+	gsstl:vector<Types::LeaderboardData*> last = response.getLast(); 
+	gsstl::string leaderboardShortCode = response.getLeaderboardShortCode(); 
+	GSData scriptData = response.getScriptData(); 
+	Optional::t_BoolOptional social = response.getSocial(); 
 	}
 	......
-
+	
 	AroundMeLeaderboardRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.SetChallengeInstanceId(challengeInstanceId)
 	request.SetCustomIdFilter(customIdFilter)
 	request.SetDontErrorOnNotSocial(dontErrorOnNotSocial)
@@ -223,6 +225,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createAroundMeLeaderboardRequest()
+	.setAnalyticsData(analyticsData)
 	.setChallengeInstanceId(challengeInstanceId)
 	.setCustomIdFilter(customIdFilter)
 	.setDontErrorOnNotSocial(dontErrorOnNotSocial)
@@ -238,13 +241,13 @@ gs.getRequestBuilder().createAroundMeLeaderboardRequest()
 	.send(new GSEventListener<AroundMeLeaderboardResponse>() {
 		@Override
 		public void onEvent(AroundMeLeaderboardResponse response) {
-			String challengeInstanceId = response.getChallengeInstanceId();
-			List<LeaderboardData> data = response.getData();
-			List<LeaderboardData> first = response.getFirst();
-			List<LeaderboardData> last = response.getLast();
-			String leaderboardShortCode = response.getLeaderboardShortCode();
-			GSData scriptData = response.getScriptData();
-			Boolean social = response.getSocial();
+			String challengeInstanceId = response.getChallengeInstanceId(); 
+			List<LeaderboardData> data = response.getData(); 
+			List<LeaderboardData> first = response.getFirst(); 
+			List<LeaderboardData> last = response.getLast(); 
+			String leaderboardShortCode = response.getLeaderboardShortCode(); 
+			GSData scriptData = response.getScriptData(); 
+			Boolean social = response.getSocial(); 
 		}
 	});
 
@@ -254,6 +257,7 @@ gs.getRequestBuilder().createAroundMeLeaderboardRequest()
 ```javascript
 
 	var request = new SparkRequests.AroundMeLeaderboardRequest();
+	request.analyticsData = ...;
 	request.challengeInstanceId = ...;
 	request.customIdFilter = ...;
 	request.dontErrorOnNotSocial = ...;
@@ -267,12 +271,14 @@ gs.getRequestBuilder().createAroundMeLeaderboardRequest()
 	request.teamIds = ...;
 	request.teamTypes = ...;
 	var response = request.Send();
-
-var challengeInstanceId = response.challengeInstanceId;
-var data = response.data;
-var first = response.first;
-var last = response.last;
-var leaderboardShortCode = response.leaderboardShortCode;
-var scriptData = response.scriptData;
-var social = response.social;
+	
+var challengeInstanceId = response.challengeInstanceId; 
+var data = response.data; 
+var first = response.first; 
+var last = response.last; 
+var leaderboardShortCode = response.leaderboardShortCode; 
+var scriptData = response.scriptData; 
+var social = response.social; 
 ```
+
+

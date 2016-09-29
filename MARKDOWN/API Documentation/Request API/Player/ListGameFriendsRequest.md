@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Player/ListGameFriendsRequest.md
----
 
 # ListGameFriendsRequest
 
@@ -18,6 +15,7 @@ Against each friend, an indicator is supplied to show whether the friend is curr
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+analyticsData | No | AnalyticsData | Optional data used by analytics
 
 ## Response Parameters
 
@@ -30,6 +28,15 @@ friends | [Player[]](#player) | A list of JSON objects containing game friend da
 scriptData | ScriptData | A JSON Map of any data added either to the Request or the Response by your Cloud Code
 
 ## Nested types
+
+### ScriptData
+
+A collection of arbitrary data that can be added to a message via a Cloud Code script.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+myKey | string | An arbitrary data key
+myValue | JSON | An arbitrary data value.
 
 ### Player
 
@@ -45,15 +52,6 @@ online | boolean | The online status of the Player
 scriptData | JSON | The script data of the Player
 virtualGoods | string[] | The virtual goods of the Player
 
-### ScriptData
-
-A collection of arbitrary data that can be added to a message via a Cloud Code script.
-
-Parameter | Type | Description
---------- | ---- | -----------
-myKey | string | An arbitrary data key
-myValue | JSON | An arbitrary data value.
-
 
 ## Code Samples
 
@@ -64,6 +62,7 @@ myValue | JSON | An arbitrary data value.
 	using GameSparks.Api.Responses;
 	...
 	new ListGameFriendsRequest()
+		.SetAnalyticsData(analyticsData)
 		.Send((response) => {
 		GSEnumerable<var> friends = response.Friends; 
 		GSData scriptData = response.ScriptData; 
@@ -81,6 +80,7 @@ myValue | JSON | An arbitrary data value.
 	
 	gs.getRequestBuilder()
 	    .createListGameFriendsRequest()
+		.setAnalyticsData(analyticsData)
 		.send(function(response:com.gamesparks.api.responses.ListGameFriendsResponse):void {
 		var friends:Vector.<Player> = response.getFriends(); 
 		var scriptData:ScriptData = response.getScriptData(); 
@@ -94,6 +94,7 @@ myValue | JSON | An arbitrary data value.
 	#import "GSAPI.h"
 	...
 	GSListGameFriendsRequest* request = [[GSListGameFriendsRequest alloc] init];
+	[request setAnalyticsData:analyticsData;
 	[request setCallback:^ (GSListGameFriendsResponse* response) {
 	NSArray* friends = [response getFriends]; 
 	NSDictionary* scriptData = [response getScriptData]; 
@@ -118,6 +119,7 @@ myValue | JSON | An arbitrary data value.
 	......
 	
 	ListGameFriendsRequest request(gsInstance);
+	request.SetAnalyticsData(analyticsData)
 	request.Send(ListGameFriendsRequest_Response);
 ```
 
@@ -130,6 +132,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createListGameFriendsRequest()
+	.setAnalyticsData(analyticsData)
 	.send(new GSEventListener<ListGameFriendsResponse>() {
 		@Override
 		public void onEvent(ListGameFriendsResponse response) {
@@ -144,6 +147,7 @@ gs.getRequestBuilder().createListGameFriendsRequest()
 ```javascript
 
 	var request = new SparkRequests.ListGameFriendsRequest();
+	request.analyticsData = ...;
 	var response = request.Send();
 	
 var friends = response.friends; 
