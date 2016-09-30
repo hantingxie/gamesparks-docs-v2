@@ -23,20 +23,20 @@ The first thing you need to do is create an Event that will push the player’s
 <q>**More Details on Events?** For an in-depth guide about Events click [here](/Documentation/Configurator/Events.md).</q>
 
 
-For this tutorial, your new Event needs one Attribute, which will be the score, and you can call the Event something like *Submit Score*. You can see the options for creating an Event are as follows:
+For this tutorial, your new Event needs one Attribute, which will be the score, and you can call the Event something like *Submit Score*. The options for creating an Event are as follows:
 
 *   *Short Code* – This mandatory field is the reference by which you will call the Event. *Short Codes* are always unique.
 *   *Name* – This mandatory field is used when representing the Event in Test Harness as well as in Cloud Code.
 *   *Description* – This mandatory field is used to display what the Event is used for. You can use this field for your own benefit by entering a description of the Event's purpose.
 * For the Attribute:
-	*   *Attribute Name* - This field is the name of the Attribute you want to pass into the Event. In your case this will be *Score*.
-	*   *Attribute Short Code* – This is the reference you'll be using to pass in an Attribute into the Event from Unity. In your case this will be *SCORE*.
-	*   *Data Type* – The type of data being passed in - String, Number, JSON. In your case, select *Number*.
+	*   *Name* - This field is the name of the Attribute you want to pass into the Event. In your case this will be *Score*.
+	*   *Short Code* – This is the reference you'll be using to pass in an Attribute into the Event from Unity. In your case this will be *SCORE*.
+	*   *Data Type* – The type of data being passed in - String, Integer, JSON. In your case, select *Integer*.
 	*   *Default Value* – This would be the default value that would be used for this Event Attribute if it’s not passed into the [LogEventRequest](/API Documentation/Request API/Player/LogEventRequest.md) , that is, a score of zero would be the default.
-	*   *Default Calculation* – This determines how values are tracked in the Running Totals. In your case you want the score to record the maximum, which means the Leaderboard will only record the player’s highest score. If they submit a lower score to the board, it will not be recorded.
+	*   *Default Aggregation Type* – This determines how values are tracked in the Running Totals. In your case you want the score to record the *Maximum*, which means the Leaderboard will only record the player’s highest score. If a player submits a lower score to the board, it will not be recorded.
 
 
-![](img/UT/1.png)
+![](img/UT/15.png)
 
 
 ## Creating the Leaderboard
@@ -45,7 +45,7 @@ Next you'll need to create your Leaderboard.
 
 *1.* Navigate to *Configurator > Leaderboards*.
 
-*2.* Click the plus ![](/img/fa/plus.png) icon to add a new Leaderboard. The *Create Leaderboard* dialog appears.
+*2.* Click *Add*. The page adjust for adding a new Leaderboard.
 
 <q>**More on Leaderboards?** Most of the details you see here can be left as default for this tutorial but you can get more information about Leaderboard configuration [here](/Documentation/Configurator/Leaderboards.md).</q>
 
@@ -53,11 +53,12 @@ Next you'll need to create your Leaderboard.
 * *Short Code*
 * *Name*
 * *Description*
+* *High Score Notifications*
 
-*4.* Click the plus icon ![](/img/fa/plus.png) to add a *Running Total* to the Leaderboard:
+*4.* Under *Fields*, click *Add* to add *Running Total* to the Leaderboard:
 * If the *Submit Score* created above is the first Event you've created in your game, this will be pre-selected for the new *Running Total*. This is because it's the only applicable Event you have in your game at the moment.
 
-![](img/UT/2.png)
+![](img/UT/16.png)
 
 ## Testing the Leaderboard
 
@@ -65,11 +66,11 @@ Now you're ready to send some scores to your Leaderboard. However, before you g
 
 After authenticating yourself as a Player, find your Event in the *LogEvent* tab, enter a score, and send the Event.
 
-![](img/UT/13.png)
+![](img/UT/17.png)
 
 Immediately after you send the request, you will see an orange message appear in the *Inspector*. This is a *NewHighScoreMessage* and when you go back into Unity you are going to set up an Event listener to execute some code whenever a player gets this Message.
 
-![](img/UT/4.png)
+![](img/UT/18.png)
 
 
 ### Getting the Leaderboard Data
@@ -79,7 +80,7 @@ You can also check your Leaderboard data entries from the Test Harness using th
 * This request gives you a lot of control over the entries it will return. However, you are only concerned with the Leaderboard *Short Code* and the *entry count* (the number of entries this request will return).
 * When you send the request, you'll see the list of Leaderboard entries returned on the *Inspector* on the right:
 
-![](img/UT/14.png)
+![](img/UT/19.png)
 
 
 Now you're ready to start sending and receiving Leaderboard data in Unity.

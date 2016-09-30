@@ -24,7 +24,7 @@ In this section you'll learn how to award an Achievement using custom Cloud Code
 
 *1.* First, navigate to *Configurator > Achievements*.
 
-*2.* Click the plus ![](/img/fa/plus.png) icon. The *Create Achievement* dialog appears.
+*2.* Click *Add*. The *Add Achievement* page opens.
 
 *3.* Enter the details for the new Achievement:
 
@@ -36,16 +36,18 @@ In this section you'll learn how to award an Achievement using custom Cloud Code
 
 <q>**More on Achievements?** For an in-depth guide about Achievements click [here](/Documentation/Configurator/Achievements.md).</q>
 
-![](img/Create/8.png)
+![](img/Create/9.png)
 
 <q>**Other Configuration Options?** All other Achievement configuration options that are not listed above can be left as default for this tutorial.</q>
+
+*4.* Click *Save and Close*. The *Add Achievement* page closes and you are returned to the *Achievements* page where your new Achievement is added.
 
 ## Creating an Event
 
 Following creation of an Achievement, you'll need to create a new Event. You can reference back to [Creating a Leaderboard](/Getting Started/Creating a Leaderboard/README.md) if you need to refresh on how to do this:
 * We'll call the Event *Award Achievement*.
 
-![](img/Create/2.png)
+![](img/Create/10.png)
 
 ## Attaching Cloud Code to the Event
 
@@ -55,9 +57,9 @@ After you've created and configured the *Award Achievement* Event, you'll need t
 
 *2.* In the *Cloud Code* editor, add your custom Cloud Code for this Event.
 
-*3.* Click *Save* and you should see a *Success* alert.
+*3.* Click *Save*.
 
-![](img/Create/7.png)
+![](img/Create/11.png)
 
 * This piece of Cloud Code takes hold of the player object that is currently authenticated:
 
@@ -77,17 +79,17 @@ The Achievement is now fully configured to be awarded!
 
 *2.* At this point the Achievement you have configured awards some currency, and you need to validate that the player currently doesn't have any currency associated with their account. To do this you'll need to select Player tab and send an [AccountDetailsRequest](/API Documentation/Request API/Player/AccountDetailsRequest.md).
 
-![](img/Create/4.png)
+![](img/Create/12.png)
 
 *3.* Now you'll need to send the [LogEventRequest](/API Documentation/Request API/Player/LogEventRequest.md) for the Event you've configured earlier and using the  *Award_Achievement* Short Code you gave it as the *eventKey*:
 * This will award the Achievement to the currently authenticated player and send the [AchievementEarnedMessage](/API Documentation/Message API/Player/AchievementEarnedMessage.md).
 * Additionally, if you've enabled debug mode on your requests, the debugger should activate and you will be able to step through your Cloud Code. This only happens if your Requests/Responses/Messages have Cloud Code attached to them. You can read more about debugging Cloud Code [here](/Documentation/Test Harness/Debugger.md). After you've stepped through or exited the debugger, your player will be awarded the Achievement you've configured.
 
-![](img/Create/5.png)
+![](img/Create/13.png)
 
 *4.* Finally, you can validate that the currency was awarded by calling the [AccountDetailsRequest](/API Documentation/Request API/Player/AccountDetailsRequest.md).
 
-![](img/Create/6.png)
+![](img/Create/14.png)
    
 
 ## SDK Instructions
