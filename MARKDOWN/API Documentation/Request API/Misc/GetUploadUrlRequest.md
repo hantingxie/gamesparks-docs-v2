@@ -1,3 +1,6 @@
+---
+src: /API Documentation/Request API/Misc/GetUploadUrlRequest.md
+---
 
 # GetUploadUrlRequest
 

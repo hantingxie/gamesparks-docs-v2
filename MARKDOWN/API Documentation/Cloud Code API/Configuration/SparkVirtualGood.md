@@ -1,3 +1,7 @@
+---
+src: /API Documentation/Cloud Code API/Configuration/SparkVirtualGood.md
+---
+
 # SparkVirtualGood
 
 Contains configuration information for the virtual good

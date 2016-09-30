@@ -9,20 +9,31 @@ src: /Getting Started/Using Authentication/README.md
 
 Before a player can perform any operations they need to authenticate with the platform. There are a few authentication options, and some can be used in combination with others. The full list of Authentication Types can be found [here](/Documentation/Key Concepts/Authentication.md), however for this tutorial we'll be using basic username/password Registration and Authentication.
 
-## Authenticating and Registering
+## Registering and Authenticating
 
-![](img/UsingAuthentication/1.png)
+To test your game and see if it is ready for Authentication:
 
-To test your game and see if it is ready for Authentication, you will have to navigate to the [Test Harness](/Documentation/Test Harness/README.md), Click *Authentication* and then *RegistrationRequest*. Then simply enter the desired registration details in the JSON builder for your player and hit Play. At this point you will see GameSparks receiving the [RegistrationRequest](/API Documentation/Request API/Authentication/RegistrationRequest.md). When processed, the server will send you a RegistrationResponse.
+*1.* Navigate to the [Test Harness](/Documentation/Test Harness/README.md).
+
+*2.* Click *Authentication* and then select *RegistrationRequest*.
+
+*3.* Then simply enter the desired registration details in the JSON builder for your player and hit *Send Request*. You'll see GameSparks receiving the [RegistrationRequest](/API Documentation/Request API/Authentication/RegistrationRequest.md). When processed, the server will send you a RegistrationResponse.
+
+![](img/UsingAuthentication/3.png)
 
 <q>**Note:** You might have to remove some additional or unwanted fields (that are auto-generated) to match the example and take note of the player you've just registered. This will be required for upcoming Getting Started tutorials.</q>
 
-![](img/UsingAuthentication/2.png)
+Receiving a successful response is an indication of a successful registration.
 
-Receiving a successful response is an indication of a successful registration. To validate this:
-1. We can select the *AuthenticationRequest*.
-2. Add our players' details into the JSON builder.
-3. After clicking Play, we'll send an [AuthenticationRequest](/API Documentation/Request API/Authentication/AuthenticationRequest.md) and receive an AuthenticationResponse.
+To validate this:
+
+*1.* Click *Authentication* and select *AuthenticationRequest*.
+
+*2.* Add your player's details into the JSON builder.
+
+*3.* Click *Send request*. An [AuthenticationRequest](/API Documentation/Request API/Authentication/AuthenticationRequest.md) is sent and you'll then receive an AuthenticationResponse.
+
+![](img/UsingAuthentication/4.png)
 
 In addition to receiving a successful Response, you'll also notice that you've received an *authToken* for the current player's session.
  

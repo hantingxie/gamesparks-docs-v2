@@ -1,3 +1,6 @@
+---
+src: /API Documentation/Request API/Player/DismissMessageRequest.md
+---
 
 # DismissMessageRequest
 

@@ -1,3 +1,7 @@
+---
+src: /API Documentation/Cloud Code API/Player/SparkPlayer.md
+---
+
 # SparkPlayer
 
 Provides access to a player details

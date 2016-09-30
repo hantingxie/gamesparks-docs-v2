@@ -1,3 +1,7 @@
+---
+src: /API Documentation/Cloud Code API/Multiplayer/SparkMatchConfig.md
+---
+
 # SparkMatchConfig
 
 Contains configuration information for the match

@@ -7,6 +7,8 @@ src: /Documentation/Key Concepts/System Limits.md
 
 The following limits are applied to the GameSparks API and Portal.
 
+<q>**Fair Usage Policy!** Although the following describes the limits of the GameSparks platform, please take the time to read our [Fair Usage Policy](https://www.gamesparks.com/fair-usage-policy/).</q>
+
 ## Data Storage
 
 Data Storage  | Limit | Resource Link
