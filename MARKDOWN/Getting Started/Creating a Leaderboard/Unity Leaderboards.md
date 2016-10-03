@@ -64,11 +64,11 @@ Next you'll need to create your Leaderboard.
 
 Now you're ready to send some scores to your Leaderboard. However, before you go into Unity, you should test this Leaderboard in the *Test Harness*.
 
-After authenticating yourself as a Player, find your Event in the *LogEvent* tab, enter a score, and send the Event.
+After authenticating yourself as a Player, find your Event under *LogEvent*, enter a score, and send the Event.
 
 ![](img/UT/17.png)
 
-Immediately after you send the request, you will see an orange message appear in the *Inspector*. This is a *NewHighScoreMessage* and when you go back into Unity you are going to set up an Event listener to execute some code whenever a player gets this Message.
+Immediately after you send the request, you will see a message appear in the *Inspector*. This is a *NewHighScoreMessage* and when you go back into Unity you are going to set up an Event listener to execute some code whenever a player gets this Message.
 
 ![](img/UT/18.png)
 

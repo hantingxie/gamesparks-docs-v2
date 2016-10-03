@@ -34,7 +34,7 @@ You'll notice that from here on the tutorials will automatically connect to the 
 ```
 
 Start by creating a function that will save the player's location. This function will be logging an Event request. Similar to Authenticating and Registering, this function will build a request:
-* You will be requesting an Event that saves the player's position using the Short code *Set_Pos*. (For more information, see the [Using Cloud Code](./README.md) tutorial.)
+* You will be requesting an Event that saves the player's position using the Short Code *Set_Pos*. (For more information, see the [Using Cloud Code](./README.md) tutorial.)
 * The request builder will need an *Event Key* that looks for a *Short Code* to log the Event.
 * For the *Set_Pos* Event, the request builder will also need an *Attribute* of *Data Type* - *JSON*.
 * Declare a variable of type *Object*, which will save the location of your player. Add two properties to that variable to save the X and Y values.

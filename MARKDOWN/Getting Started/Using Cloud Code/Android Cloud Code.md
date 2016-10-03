@@ -15,7 +15,7 @@ In this tutorial, we'll follow two examples of using Cloud Code when using Andro
 
 You can create your own custom Events in the Android SDK that are called through the GamesSparks request builder. Events can have 3 types of input:
 * String
-* Number
+* Integer
 * JSON
 
 <q>**Note:** The JSON object can hold floats, booleans, strings, numbers, arrays, and other objects.</q>
@@ -32,9 +32,13 @@ In this tutorial, we'll build an example using a *set* and a *get* Event:
 
 ### setDetails Event
 
-*1.* In the portal, go to *Configurator > Cloud Code > Events* and create the *setDetails* Event with the 3 attributes given above.
+*1.* In the portal, go to *Configurator > Events* and create the *setDetails* Event with the 3 Attributes given above and save the new Event.
 
-*2.* Select the *setDetails* Event and in the Cloud Code editor, add the following Cloud Code:
+*2.* Navigate to *Configurator > Cloud Code* and under *Scripts* click *Events*.
+
+*3.* Select the *setDetails* Event. The Cloud Code Editor opens for the *setDetails* Event.
+
+*4.* In the Cloud Code editor, add the following Cloud Code:
 
 ```
     //Declare variables and set them from input
@@ -129,7 +133,7 @@ Lastly, we'll see how to add scriptData to requests from the SDK for Android cli
 
 ### Registration Request
 
-First, we'll navigate to *Configurator > Cloud Code > Requests* and open the Registration Request Cloud Code. In there we'll add:
+First, we'll navigate to *Configurator > Cloud Code > Requests* and open the Cloud Code Editor for the *RegistrationRequest*. In there we'll add:
 
 ```
 if(!Spark.getData().scriptData){
@@ -145,7 +149,7 @@ This will ensure that if the value 'email' isn't passed in through the scriptDat
 
 ### Registration Response
 
-Second, we'll navigate to *Configurator > Cloud Code > Responses* and add this to the Cloud Code:
+Second, we'll navigate to *Configurator > Cloud Code > Responses* and open the Cloud Code Editor for the *RegistrationsResponse*. In there we'll add:
 
 ```
 if(Spark.getData().scriptData){

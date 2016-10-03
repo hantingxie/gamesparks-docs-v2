@@ -39,9 +39,9 @@ Send the pawns initial spawn location from the editor to the Portal through t
 
 ![](img/UR/1.png)
 
-Use the *Set_Pos* Event to save those three coordinates on the *Test Harness* after you *authenticate*.
+Use the *Set_Pos* Event to save those three coordinates on the *Test Harness* after you *Authenticate*:
 
-![](img/UR/2.png)
+![](img/UR/7.png)
 
 ### Get Event
 

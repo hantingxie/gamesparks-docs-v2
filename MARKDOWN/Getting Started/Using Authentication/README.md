@@ -17,7 +17,7 @@ To test your game and see if it is ready for Authentication:
 
 *2.* Click *Authentication* and then select *RegistrationRequest*.
 
-*3.* Then simply enter the desired registration details in the JSON builder for your player and hit *Send Request*. You'll see GameSparks receiving the [RegistrationRequest](/API Documentation/Request API/Authentication/RegistrationRequest.md). When processed, the server will send you a RegistrationResponse.
+*3.* Then simply enter the desired registration details in the JSON builder for your player and hit *Send Request*. You'll see GameSparks receiving the [RegistrationRequest](/API Documentation/Request API/Authentication/RegistrationRequest.md). When processed, the server will send you a RegistrationResponse:
 
 ![](img/UsingAuthentication/3.png)
 
@@ -31,7 +31,7 @@ To validate this:
 
 *2.* Add your player's details into the JSON builder.
 
-*3.* Click *Send request*. An [AuthenticationRequest](/API Documentation/Request API/Authentication/AuthenticationRequest.md) is sent and you'll then receive an AuthenticationResponse.
+*3.* Click *Send request*. An [AuthenticationRequest](/API Documentation/Request API/Authentication/AuthenticationRequest.md) is sent and you'll then receive an AuthenticationResponse:
 
 ![](img/UsingAuthentication/4.png)
 

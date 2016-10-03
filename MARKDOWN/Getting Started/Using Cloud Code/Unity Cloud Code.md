@@ -15,26 +15,26 @@ In this tutorial we're going to use two Events to save and load some basic playe
 
 ## Creating an Event
 
-![](img/UT/1.png)
+![](img/UT/17.png)
 
-You can create Events in your GameSparks Portal by going to the *Events* tab. We'll create an Event that will save some player details.
+Firstly, we'll create an Event that will save some player details.
 
-*1.* Click the plus ![](/img/fa/plus.png) icon for *Events*. The *Create Event* dialog appears.
+*1.* Navigate to *Configurator > Events* and click *Add*. The *Add Events* page opens.
 
 *2.* Enter the details for the Event:
 
-1. *Short Code* - This is a unique code used to define this Event when it is called.
-2. *Name* - This is used to identify the Event within the Portal.
-3. *Description* - A few details that explain the purpose of the Event.
-4. *Attributes* - These are the values that the Event will take. Effectively the data the Event will take from the client to the server (from Unity to GameSparks).
+* *Short Code* - This is a unique code used to define this Event when it is called.
+* *Name* - This is used to identify the Event within the Portal.
+* *Description* - A few details that explain the purpose of the Event.
+* *Attributes* - These are the values that the Event will take. Effectively the data the Event will take from the client to the server (from Unity to GameSparks).
 
 In this example, we've created the Event and saved it and then opened the Event to edit it and add the required *Attributes* - we'll save the player’s experience points, position, and gold. We'll load these later using another method:
 
-![](img/UT/2.png)
+![](img/UT/18.png)
 
 ## Calling the Event Request
 
-You can call the Events in Unity using the [LogEventRequest](/API Documentation/Request API/Player/LogEventRequest.md) method. This a default method that will take some variable data depending on what you need. In contrast with the other requests you have used in previous tutorials, the *LogEventRequest* needs information about the Attributes and their Short Codes before you send the request.
+You can call the Events in Unity using the [LogEventRequest](/API Documentation/Request API/Player/LogEventRequest.md) method. This is a default method that will take some variable data depending on what you need. In contrast with the other requests you have used in previous tutorials, the *LogEventRequest* needs information about the Attributes and their Short Codes before you send the request.
 
 ### Saving Player Data
 
@@ -66,13 +66,13 @@ If you have the Sample Project open, you can enter these details in the scene an
 
 Now you've sent the *LogEventRequest* from Unity, you'll now be able to save the Players details in GameSparks. To do this, you need to set some custom Cloud Code in the GameSparks Portal.
 
-*1.* Here's how to navigate to your Event:
+*1.* Navigate to *Configurator > Cloud Code* and under *Scripts* click to open *Events* and then select the *Save Player Details* Event:
 
-![](img/UT/11.png)
+![](img/UT/19.png)
 
 *2.* In the *Cloud Code* editor on the *Save Player Details* tab, you'll be able to access the data sent via Unity:
 
-![](img/UT/12.png)
+![](img/UT/20.png)
 
 *3.* You can then add this as the Player data to your collection.
 
@@ -103,24 +103,24 @@ Now you've sent the *LogEventRequest* from Unity, you'll now be able to save the
 
 ## Testing your Cloud Code
 
-You can now head back to Unity and run your [LogEventRequest](/API Documentation/Request API/Player/LogEventRequest.md) with some XP and gold values. In the next section, you're going to get that data back from your GameSparks game. However, if you want to check that your player’s data was updated, you can select the *playerData* collection from the *NoSQL Explorer* tab, and click the *Find* button:
+You can now head back to Unity and run your [LogEventRequest](/API Documentation/Request API/Player/LogEventRequest.md) with some XP and gold values. In the next section, you're going to get that data back from your GameSparks game. However, if you want to check that your player’s data was updated, you can select the *playerData* collection under *NoSQL*, and click the *Find* button:
 
-![](img/UT/13.png)
+![](img/UT/21.png)
 
 
 ## Loading Data
 
 Loading the data will work in a similar fashion. You need to create an Event called *Load Player Details*, this Event doesn't require any Event Attributes because we'll not be passing any data into it. First you'll have to create an Event:
 
-![](img/UT/14.png)
+![](img/UT/22.png)
 
 Then, before you head back to Unity, you'll need to write some Cloud Code for this Event.
 
-*1.* Again, navigate to *Configurator > Cloud Code > Bindings > Events* and select the *Load Player Details* Event.
+*1.* Again, navigate to *Configurator > Cloud Code* and under *Scripts* click to open *Events* and then select the *Load Player Details* Event.
 
-*2.* In the *Cloud Code* editor, select the *Load Player Details* tab:
+*2.* In the *Cloud Code* editor, select the *LOAD_PLAYER* tab:
 
-![](img/UT/8.png)
+![](img/UT/23.png)
 
 *3.* All you need to do is grab the entry in your playerData collection that corresponds to the player ID of the current player, and return that player’s data via the script data:
 
@@ -130,17 +130,18 @@ var currentPlayer = playerData.findOne({
 	"playerID": Spark.getPlayer().getPlayerId()
 }); // search the collection data for the entry with the same id as the player
 Spark.setScriptData("player_Data", currentPlayer); // return the player via script-data
+
 ```
+
+*4.* Click *Save* to save the Cloud Code script you've attached to this Event.
 
 ## Testing the Load Event
 
-You can test your Events in the *Test Harness*. You can get to this section by clicking on the *Test Harness* tab on the left hand side of the GameSparks Portal. You will need to authenticate yourself as one of your registered players, then you can select your *Load Player Details* Event and submit a *LogEventRequest* and run the Event by clicking on the *Send* button:
+You can test your Events in the *Test Harness*. You can get to this section by clicking on the *Test Harness* tab on the left hand side of the GameSparks Portal. You will need to authenticate yourself as one of your registered players, then you can select your *Load Player Details* Event and submit a *LogEventRequest* and run the Event by clicking on the *Send* button.
 
-![](img/UT/9.png)
+By running the Event you should see your Script Data output in the *Inspector* window:
 
-By running the Event you should see your Script Data output in the inspector window:
-
-![](img/UT/10.png)
+![](img/UT/24.png)
 
 From this set of data you will load the information into a sorted form and output it in Unity. You can call the *LogEventRequest* for *Load Player Details* the same way you did when requesting the *Save Player* Event. In this example, you'll only be interested in the data that comes back from the Portal, specifically the *ScriptData*. There are plenty of ways to extract data from your response. However, this method has the advantage of allowing you to get the data you want using the Attribute keys, and it’s very handy when you have multiple sets of data to extract from the data bundle.
 
