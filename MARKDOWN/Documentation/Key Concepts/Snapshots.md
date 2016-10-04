@@ -9,15 +9,15 @@ The Snapshots feature allows you to *Create*, *Copy*, *Delete*, *Publish*, *Reve
 
 ## Snapshots: Creation and Basics
 
-You can create a Snapshot of the current game configuration by pressing the ![](/img/fa/plus.png) button in the *Snapshots* section on the *Overview* page.
+You can create a Snapshot of the current game configuration by clicking *Add* in the *Snapshots* section on the *Game Overview* page.
 
-![](img/Snapshot/1.png)
+![](img/Snapshot/11.png)
 
-A *Create* form appears where you can enter a meaningful description of the Snapshot.
+A *Create Game Snapshot* dialog appears where you can enter a description of the Snapshot.
 
-![](img/Snapshot/2.png)
+![](img/Snapshot/12.png)
 
-Click *Save* to create the Snapshot:
+Click *Add* to create the Snapshot:
 
 ![](img/Snapshot/9.png)
 
@@ -28,10 +28,10 @@ You can then use icon button options (highlighted):
     * Only the game configuration.
     * Both the metadata and the game configuration.
 
-<q>**Important!** Don't worry about overwriting the target games configuration. There is a fail-safe - a snapshot of the target games previous version is automatically created (called "AUTOSAVE - Pre Copy") before the copy occurs.</q>
-  * ![](/img/fa/trash.png) - Deletes the snapshot.
+<q>**Important!** Don't worry about overwriting the target game's configuration. There is a fail-safe - a Snapshot of the target game's previous version is automatically created (called "AUTOSAVE - Pre Copy") before the copy occurs.</q>
+  * ![](/img/fa/trash.png) - Deletes the Snapshot.
   * ![](/img/fa/upload.png) - Publish the configuration to the LIVE servers. The snapshot that is currently published is highlighted in green. See below for more detail on publishing.
-  * ![](/img/fa/random.png) - Revert your workspace with the selected snapshot version. There is another fail-safe - a snapshot of the previous version is automatically taken (called "AUTOSAVE - Pre Revert").
+  * ![](/img/fa/random.png) - Revert your workspace with the selected Snapshot version. There is another fail-safe - a Snapshot of the previous version is automatically taken (called "AUTOSAVE - Pre Revert").
   * ![](/img/fa/search.png) - Preview any of the Snapshots without having to revert to them, editing will be disabled when previewing.
 
 ## Copying a Snapshot

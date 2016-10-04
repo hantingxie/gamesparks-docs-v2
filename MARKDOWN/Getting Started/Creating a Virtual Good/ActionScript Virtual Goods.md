@@ -35,19 +35,23 @@ This tutorial shows you how to buy and consume goods using a shop interface:
 
 ## Creating the 'Grant Currency' Event
 
-*1.* Create an Event that credits the authenticated player with extra *currency*.
+*1.* Navigate to *Configurator > Events* and click *Add*. The *Add Event* page opens.
 
-*2.* Add an *Attribute* that will be used to indicate the amount to credit.
+*2.* Create an Event that credits the authenticated player with extra *currency*.
+
+*3.* Add an *Attribute* that will be used to indicate the amount to credit.
 
 You will log this Event whenever the authenticated player *consumes* a Gold Coin (Virtual Good).
 
-![](img/AS/1.png)
+![](img/AS/4.png)
 
-*3.* In the Event *Cloud Code* create a variable that holds the amount being passed in the Event through the *CASH* Attribute, and call it *money*:
+*4.* Save the *Grant currency* Event and navigate to *Configurator > Cloud Code* and under *Scripts* click *Events*.
 
-*4.* Next, get the player object using *Spark.getPlayer()* and credit their *currency1* with the *money* value.
+*5.* Select the *Grant currency* event to open the Cloud Code Editor. In the Cloud Code Editor create a variable that holds the amount being passed in the Event through the *CASH* Attribute, and call it *money*:
 
-![](img/AS/2.png)
+*6.* Next, get the player object using *Spark.getPlayer()* and credit their *currency1* with the *money* value.
+
+![](img/AS/5.png)
  
 Here's the Cloud Code:
 
@@ -58,9 +62,11 @@ Spark.getPlayer().credit1(money);
 
 ```
 
+*7.* Click to *Save* the Cloud Code you've added to the *Grant currency* Event.
+
 ## Creating the Buy and Consume Functions
 
-*5.* Create a function which will log a *buyRequest* when called by using [BuyVirtualGoodsRequest](/API Documentation/Request API/Store/BuyVirtualGoodsRequest.md). The *BuyVirtualGoods* request needs a *currency* type, a *quantity*, and the *Short Code* for the item to be purchased.
+*8.* Create a function which will log a *buyRequest* when called by using [BuyVirtualGoodsRequest](/API Documentation/Request API/Store/BuyVirtualGoodsRequest.md). The *BuyVirtualGoods* request needs a *currency* type, a *quantity*, and the *Short Code* for the item to be purchased.
 
 
 ```
@@ -71,7 +77,7 @@ Spark.getPlayer().credit1(money);
     			}
 ```
 
-*6.* Create a function for the consumption of *Virtual Goods*, this will use the [ConsumeVirtualGoodRequest](/API Documentation/Request API/Store/ConsumeVirtualGoodRequest.md). The *ConsumeVirtualGoodRequest* needs a *quantity* and *Short Code* of the item to be consumed.
+*9.* Create a function for the consumption of *Virtual Goods*, this will use the [ConsumeVirtualGoodRequest](/API Documentation/Request API/Store/ConsumeVirtualGoodRequest.md). The *ConsumeVirtualGoodRequest* needs a *quantity* and *Short Code* of the item to be consumed.
 
 ```
     	private function ConsumeItem():void
@@ -81,7 +87,7 @@ Spark.getPlayer().credit1(money);
     			}
 ```
 
-*7.* Now you can make the *response* *handler* functions for your *consume* and *buy* requests. Both *response handlers* will be similar. For our tutorial, we won't need them to do much:
+*10.* Now you can make the *response* *handler* functions for your *consume* and *buy* requests. Both *response handlers* will be similar. For our tutorial, we won't need them to do much:
 * Have the functions check the response for errors.
 * If the response has no errors then send a *string* to the *logger*.
 * For the *consume* *response*, if there are no errors, call the Event which accredits the player with extra *currency*.
@@ -121,7 +127,7 @@ Spark.getPlayer().credit1(money);
 
 ## Keeping Track of Player Details
 
-*8.* To update the shop details, request the *account* *details* for the currently authenticated player:
+*11.* To update the shop details, request the *account* *details* for the currently authenticated player:
 * For the *currency* it's a simple text display.
 * For the *Virtual* *Goods,* retrieve the *Virtual Goods* through *getVirtualGoods()* method, followed by the *Short Code* of your *Virtual Good* which retrieves a *Number* of the *Virtual Goods* of that type.
 

@@ -12,35 +12,36 @@ You can use Events to define custom data structures that you want to pass into t
 
 The Configurator *Events* page lists Events and allows you to create new Events and edit or delete existing ones.
 
-![](img/Events/1.jpg)
+![](img/Events/4.png)
 
-You can use icon button options (highlighted above):
+You can use the following options (highlighted above):
 
-  * ![](/img/fa/plus.png) - Add a new Event.
-  * ![](/img/fa/edit.png) - Edit Event.
-  * ![](/img/fa/trash.png) - Delete Event.
+  * *Add* - Add a new Event.
+  * ![](img/Events/5.png) - Edit Event.
+  * ![](img/Events/6.png) - Delete Event.
 
 ## Creating a new Event Configuration
 
-![](img/Events/2.jpg)
+![](img/Events/7.png)
 
 The Create/Edit screen contains the following fields:
 
-  * *Name* \- Name of the Event, which is used to identify the game in the portal if you have a number of Events.
+  * *Short Code* - Short Code of the Event, which is used by the API to allow you to identify which Event you want to call. Short Codes are always unique.
+  * *Name* \- Name of the Event, which you can use to identify the game in the portal, if you have a number of Events.
   * *Description* \- Description for the Event.
-  * *Short Code* - Short Code of the event, which is used by the API to allow you to identify which event you want to call.
+
 
 ### Creating Event Attributes
 
 Each Event can have a number of attributes associated with it.
 
-![](img/Events/3.jpg)
+![](img/Events/8.png)
 
-Add an attribute by clicking the ![](/img/fa/plus.png) icon.  Each attribute has a number of different configuration options that can be defined within the form:
+Add an Attribute by clicking *Add*.  Each Attribute has a number of different configuration options:
 
-  * *Name* \- Name of the Attribute, which is used to identify the attribute if there are several associated with an Event.
   * *Short Code* \- Short Code of the Attribute, which is used by the API to allow you to identify which Attribute you are trying to set.
-  * *Data Type* \- Each attribute needs to be defined as either String, Number or JSON.
+  * *Name* \- Name of the Attribute, which you can use to identify the Attribute if there are several associated with an Event.
+  * *Data Type* \- Each Attribute needs to be defined as either *String*, *Number*, or *JSON*.
   * *Default Value* \- Allows a specific value to be used if the user request does not contain this attribute.
   * *Default Calculation* \- Select the calculation you want to use for when the Event/Attribute is used as a running total a Leaderboard. Select *Used In Script* if you do not want to make the Event/Attribute available for a Leaderboard running total:
     * *Maximum* \- A running total will be created to track the maximum value posted.

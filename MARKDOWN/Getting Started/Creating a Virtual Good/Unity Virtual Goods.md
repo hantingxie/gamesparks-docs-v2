@@ -15,21 +15,29 @@ Before following this tutorial, make sure you have checked out the previous tuto
 
 ## Granting Currency
 
-*1.* To begin with, you'll need to create a new Event with some Cloud Code that will grant the player some currency.
+To begin with, you'll need to create a new Event with some Cloud Code that will grant the player some currency.
 
-![](img/UT/1.png)
+*1.* Navigate to *Configurator > Events* and click *Add*:
 
-Here, we've called the Event *Grant Currency*.
+![](img/UT/12.png)
 
-*2.* Then navigate to *Configurator > Cloud Code > Events > Grant Currency*. The *Cloud Code* editor opens for this Event and you can add the required Cloud Code:
+For this tutorial we've:
+* Called the Event *Grant currency*.
+* Added a *Cash* Attribute to the Event.
 
-![](img/UT/10.png)
+*2.* Click to *Save and Close* the new Event.
+
+*3.* Navigate to *Configurator > Cloud Code* and under *Scripts* click *Events*.
+
+*4.* Select the newly-created *Grant currency* Event. The *Cloud Code* editor opens for this Event and you can add the required Cloud Code:
+
+![](img/UT/13.png)
 
 This is the Cloud Code:
 
 ```
 
-  var newCash = Spark.getData().Cash; // we can get the cash we intend to grant to the player
+  var newCash = Spark.getData().CASH; // we can get the cash we intend to grant to the player
   Spark.getPlayer().credit1(newCash); //this will credit the player to currency 1
 
 
@@ -65,15 +73,13 @@ One of the details in the Response is a list of Virtual Goods. You can get tha
     });
 ```
 
-
 ### Awarding the Player some Virtual Goods
 
 So, before you can buy Virtual Goods you need make sure your player has some currency to spend. In this case, the gold coins are going to cost one *currency1* each:
-* At the start of this tutorial you created a *Grant Currency* Event that will give the player some currency. You need to call this event using the *LogEventRequest* either in Unity, or in the *Test harness* of the GameSparks platform.
+* At the start of this tutorial you created a *Grant Currency* Event that will give the player some currency. You need to call this event using the *LogEventRequest* either in Unity, or in the *Test Harness* of the GameSparks platform.
 * If you need a recap on how to use the *LogEventRequest*, check out the tutorial [here](/Getting Started/Using Cloud Code/Unity Cloud Code.md).
 
-
-![](img/UT/11.png)
+![](img/UT/14.png)
 
 Here's what we've entered in the Test Harness JSON builder for the *LogEventRequest* and submitted by clicking the play ![](/img/fa/play.png) icon:
 
