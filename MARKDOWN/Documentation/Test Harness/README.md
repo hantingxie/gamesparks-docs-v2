@@ -1,5 +1,5 @@
 ---
-nav_sort: 4
+nav_sort: 5
 src: /Documentation/Test Harness/README.md
 ---
 

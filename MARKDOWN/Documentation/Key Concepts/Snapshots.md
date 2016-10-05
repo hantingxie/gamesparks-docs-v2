@@ -9,7 +9,7 @@ The Snapshots feature allows you to *Create*, *Copy*, *Delete*, *Publish*, *Reve
 
 ## Snapshots: Creation and Basics
 
-You can create a Snapshot of the current game configuration by clicking *Add* in the *Snapshots* section on the *Game Overview* page.
+You can create a Snapshot of the current game configuration by clicking *Create* in the *Snapshots* section on the *Game Overview* page.
 
 ![](img/Snapshot/11.png)
 
@@ -17,38 +17,42 @@ A *Create Game Snapshot* dialog appears where you can enter a description of the
 
 ![](img/Snapshot/12.png)
 
-Click *Add* to create the Snapshot:
+Click *Create* to create the Snapshot:
 
-![](img/Snapshot/9.png)
+![](img/Snapshot/14.png)
 
 You can then use icon button options (highlighted):
 
-  * ![](/img/fa/copy.png) - Copies the Snapshot to create a new or overwrite an existing game. You can only overwrite a game if you are a game owner or admin for the game. You'll have the option to copy:
+  * ![](img/Snapshot/copyicon.png) - Copies the Snapshot to create a new or overwrite an existing game. You can only overwrite a game if you are a game owner or admin for the game. You'll have the option to copy:
     * Only the metadata from the original Snapshot.
     * Only the game configuration.
     * Both the metadata and the game configuration.
+    * Downloadables
+    * Collaborators
 
 <q>**Important!** Don't worry about overwriting the target game's configuration. There is a fail-safe - a Snapshot of the target game's previous version is automatically created (called "AUTOSAVE - Pre Copy") before the copy occurs.</q>
-  * ![](/img/fa/trash.png) - Deletes the Snapshot.
-  * ![](/img/fa/upload.png) - Publish the configuration to the LIVE servers. The snapshot that is currently published is highlighted in green. See below for more detail on publishing.
-  * ![](/img/fa/random.png) - Revert your workspace with the selected Snapshot version. There is another fail-safe - a Snapshot of the previous version is automatically taken (called "AUTOSAVE - Pre Revert").
-  * ![](/img/fa/search.png) - Preview any of the Snapshots without having to revert to them, editing will be disabled when previewing.
+  * ![](img/Snapshot/deleteicon.png) - Deletes the Snapshot.
+  * ![](img/Snapshot/publishicon.png) - Publish the configuration to the LIVE servers. The snapshot that is currently published is highlighted in green. See below for more detail on publishing.
+  * ![](img/Snapshot/reverticon.png) - Revert your workspace with the selected Snapshot version. There is another fail-safe - a Snapshot of the previous version is automatically taken (called "AUTOSAVE - Pre Revert").
+  * ![](img/Snapshot/previewicon.png) - Preview any of the Snapshots without having to revert to them, editing will be disabled when previewing.
 
 ## Copying a Snapshot
 
-![](img/Snapshot/4.jpg)
+![](img/Snapshot/15.png)
 
-The *Copy Snapshot* form gives you options for customizing your copy:
+The *Copy Snapshot* dialog gives you options for customizing your copy:
 
   * *Game* \- from the drop-down, you can choose to copy the Snapshot to a new game or to overwrite an existing game that you have access and permissions to edit.
   * *Include metadata collections* \- choose whether to include the metadata for the copy of the game.
   * *Include game configuration* \- choose whether to copy the game configuration onto an existing game, overwriting any existing configuration. When copying to a new game, this option is disabled because in this case the Snapshot's game configuration is always copied.
+  * *Include downloadables* - choose whether to copy the binary data content you have uploaded to the game.
+  * *Include collaborators* - choose whether to copy the game's collaborators.
 
 ## Deleting a Snapshot
 
-When you select delete, a confirmation form appears. Press *Delete* to confirm only if you are absolutely sure you want to delete the Snapshot.
+When you select delete, a warning/confirmation dialog appears. Press *Ok* to confirm *only if you are absolutely sure* you want to delete the Snapshot.
 
-![](img/Snapshot/5.jpg)
+![](img/Snapshot/16.png)
 
 ## Publishing a Snapshot
 

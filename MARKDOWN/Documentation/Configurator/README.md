@@ -1,7 +1,7 @@
 ---
 no_toc: true
 no_comment: true
-nav_sort: 2
+nav_sort: 3
 src: /Documentation/Configurator/README.md
 ---
 
@@ -9,7 +9,6 @@ src: /Documentation/Configurator/README.md
 
 The GameSparks Configurator is where you can perform the core configuration for your game:
 * [Analytics](/Documentation/Configurator/Analytics.md) - Viewing components from the analytics stack.
-* [Overview](/Documentation/Configurator/Overview.md) - Inspecting your game's top-level information, managing game versions using Snapshots, and creating game Collaborators.
 * [Events](/Documentation/Configurator/Events.md) - Using Events to define data structures you want to pass into the platform.
 * [Running Totals](/Documentation/Configurator/Running Totals.md) - Defining Running Totals to serve complex comparison scenarios for your Leaderboards.
 * [Leaderboards](/Documentation/Configurator/Leaderboards.md) - Setting up Leaderboards to compare and rank players.

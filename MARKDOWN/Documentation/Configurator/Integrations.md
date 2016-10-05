@@ -1,5 +1,5 @@
 ---
-nav_sort: 13
+nav_sort: 12
 src: /Documentation/Configurator/Integrations.md
 ---
 

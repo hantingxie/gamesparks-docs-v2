@@ -1,5 +1,5 @@
 ---
-nav_sort: 11
+nav_sort: 8
 src: /Documentation/Configurator/Messages.md
 ---
 

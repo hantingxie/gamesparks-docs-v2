@@ -1,5 +1,5 @@
 ---
-nav_sort: 12
+nav_sort: 9
 src: /Documentation/Configurator/Downloadables.md
 ---
 

@@ -20,7 +20,7 @@ Before getting started as a new user, you'll need to create an account on the D
 
 Give your game a *Name* and a *Description* and select the *Primary Region* you want for your game and then hit *Save*. You can use the name and description to identify the game in the portal and you can edit and change them at any time.
 
-After hitting *Save* you'll be taken to the [Overview](/Documentation/Configurator/Overview.md) section of the Configurator, where your game is now ready to be configured.
+After hitting *Save* you'll be taken to the [Game Overview](/Documentation/Game Overview/README.md) page, where your game is now ready to be configured.
 
 When you create a game, two things happen:
 * Your game is assigned a unique *Key* and *Secret*. You'll need these to set up your SDK.

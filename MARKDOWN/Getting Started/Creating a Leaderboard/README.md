@@ -35,7 +35,7 @@ In this tutorial, we'll go over the steps required to create an Event, attach 
 *5.* Enter the details for the Attribute:
   * *Attribute Name* - This field is referenced in the Test Harness and Leaderboards.
   * *Attribute Short Code* - This is the reference we'll be using to pass in an Attribute into the Event.
-  * *Data Type* - The type of data being passed in - String, Integer, or JSON. Select *Integer*
+  * *Data Type* - The type of data being passed in - String, Number, or JSON. Select *Number*
   * *Default Value* - The default value that would be used for this Event Attribute if it's not passed into the [LogEventRequest](/API Documentation/Request API/Player/LogEventRequest.md).
   * *Default Aggregation Type* - This determines how values are tracked in the Running Totals.
 

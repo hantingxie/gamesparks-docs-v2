@@ -1,5 +1,5 @@
 ---
-nav_sort: 5
+nav_sort: 2
 src: /Documentation/Configurator/Leaderboards.md
 ---
 
@@ -17,7 +17,7 @@ Leaderboards are typically restricted to tracking and reporting the leading play
 
 The Configurator Leaderboard page displays the list of Leaderboards and allows you to create new Leaderboards and edit or delete existing ones.
 
-![](img/Leaderboards/1.png)
+![](img/Leaderboards/4.png)
 
 You can use icons button options:
 

@@ -1,5 +1,5 @@
 ---
-nav_sort: 14
+nav_sort: 10
 src: /Documentation/Configurator/Properties.md
 ---
 

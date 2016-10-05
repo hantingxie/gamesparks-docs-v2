@@ -31,13 +31,11 @@ For this tutorial, your new Event needs one Attribute, which will be the score, 
 * For the Attribute:
 	*   *Name* - This field is the name of the Attribute you want to pass into the Event. In your case this will be *Score*.
 	*   *Short Code* – This is the reference you'll be using to pass in an Attribute into the Event from Unity. In your case this will be *SCORE*.
-	*   *Data Type* – The type of data being passed in - String, Integer, JSON. In your case, select *Integer*.
+	*   *Data Type* – The type of data being passed in - String, Number, JSON. In your case, select *Number*.
 	*   *Default Value* – This would be the default value that would be used for this Event Attribute if it’s not passed into the [LogEventRequest](/API Documentation/Request API/Player/LogEventRequest.md) , that is, a score of zero would be the default.
 	*   *Default Aggregation Type* – This determines how values are tracked in the Running Totals. In your case you want the score to record the *Maximum*, which means the Leaderboard will only record the player’s highest score. If a player submits a lower score to the board, it will not be recorded.
 
-
 ![](img/UT/15.png)
-
 
 ## Creating the Leaderboard
 

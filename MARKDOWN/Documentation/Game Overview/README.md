@@ -1,9 +1,9 @@
 ---
 nav_sort: 2
-src: /Documentation/Configurator/Overview.md
+src: /Documentation/Game Overview/README.md
 ---
 
-# Overview
+# Game Overview
 
 From the Overview page you can:
 
@@ -12,7 +12,7 @@ From the Overview page you can:
 * Inspect access secrets for your game connection types.
 * Create Collaborators for your game and configure their security settings.
 
-![](img/Overview/5.png)
+![](img/GameOverview/5.png)
 
 You can use icon button options at the top right of the top panel (highlighted above):
 
@@ -25,7 +25,7 @@ You can use icon button options at the top right of the top panel (highlighted a
 
 ## Editing Top-Level Game Information
 
-![](img/Overview/4.png)
+![](img/GameOverview/4.png)
 
 The edit form has the following fields:
 
@@ -37,7 +37,7 @@ The edit form has the following fields:
 
 ## Snapshots
 
-![](img/Overview/6.png)
+![](img/GameOverview/6.png)
 
 You can use icons button options in the Snapshots panel:
 
@@ -59,6 +59,6 @@ A number of secrets exist for different types of connections:
   * *SFTP Secret* \- Used for SFTP access for file delivery (Request access via out support system).
   * *Debug Secret* \- Used by the JavaScript remote debugger.
 
-## Collaborators
+## User Management
 
-This area allows the creation of game collaborators, these will be people that can log in with their user and view/edit the game, depending on the security settings set for them. An in-depth tutorial can be found [here](/Tutorials/Capabilities/README.md).
+This area allows the creation of game Collaborators and Groups, these will be people that can log in with their user and view/edit the game, depending on the security settings set for them. An in-depth tutorial can be found [here](/Tutorials/Capabilities/README.md).

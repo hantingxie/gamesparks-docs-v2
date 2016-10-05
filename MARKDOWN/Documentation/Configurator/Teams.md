@@ -1,5 +1,5 @@
 ---
-nav_sort: 6
+nav_sort: 4
 src: /Documentation/Configurator/Teams.md
 ---
 

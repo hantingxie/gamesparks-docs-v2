@@ -1,5 +1,5 @@
 ---
-nav_sort: 4
+nav_sort: 3
 src: /Documentation/Configurator/Running Totals.md
 ---
 
@@ -40,6 +40,7 @@ To add summary fields to your Running Total, click on the plus icon. Each runnin
     * *Sum* - The Running Total will be created to add all the values posted together.
     * *Count* - The Running Total will be created to count the number of times the player has called the Event.
     * *Last* - The Running Total will be created to track the last value posted.
+    * *Supplemental* \- A running total will be created with no value calculated. You can use this when you want to store some extra information within the game context but do not want this to affect on the Leaderboard ranking. (For example, in a racing game you can keep note of weather conditions on the track as well as player lap times but changing weather conditions do not affect the player's Leaderboard ranking.)
   * *Filter Type & Filter Value* - Allows you to control an optional filter for values tracked (<, >, * , and so on). Events posted that do not match the filter are ignored.
 
 ![](img/RunningTotals/12.png)

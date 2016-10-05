@@ -144,4 +144,4 @@ Take a look at the sample project for examples.
 
  To do so, simply navigate to the *NoSQL* tab in your GameSparks portal, select the *player* collection from the Collection list, then click on the *Find* button. In the output panel you can see the player details for any player you have authenticated. Now you are set up and connected with GameSparks and you are ready to send and receive some data. Check out the next tutorial on Events and Cloud Code [here](/Getting Started/Using Cloud Code/README.md "Using Cloud Code").
 
-![l](img/UT/6.png)
+![l](img/UT/7.png)

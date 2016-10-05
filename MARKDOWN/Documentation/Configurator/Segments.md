@@ -1,5 +1,5 @@
 ---
-nav_sort: 15
+nav_sort: 14
 src: /Documentation/Configurator/Segments.md
 ---
 

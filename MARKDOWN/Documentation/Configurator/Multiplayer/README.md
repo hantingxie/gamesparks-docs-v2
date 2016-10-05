@@ -1,5 +1,5 @@
 ---
-nav_sort: 9
+nav_sort: 7
 src: /Documentation/Configurator/Multiplayer/README.md
 ---
 
