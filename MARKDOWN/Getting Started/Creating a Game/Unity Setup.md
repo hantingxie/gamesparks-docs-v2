@@ -56,7 +56,11 @@ You'll update *API Key* and *API Secret* with the key and secret from your game.
 
 ![l](img/UT/5.png)
 
-*2.* Copy both the *GameSparks Api Key* and *GameSparks Api Secret* into the respective fields on the Unity *Inspector* window. Hit the *Test Configuration* button and you should see a whole load of info pop up in the dialog box, eventually including a log stating that GameSparks is available.
+*2.* Copy both the *GameSparks API Key* and *GameSparks API Secret* into the respective fields on the Unity *Inspector* window:
+* You can click *Copy* next to the *API Key* field.
+* The API Secret is hidden by default, but you can click on the field or click *Show* to reveal the secret and then use *Copy*.
+
+*3.* Hit the *Test Configuration* button and you should see a whole load of info pop up in the dialog box, eventually including a log stating that GameSparks is available.
 
 Congratulations, you are now connected to your GameSparks game!
 

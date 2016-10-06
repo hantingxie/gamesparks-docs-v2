@@ -10,6 +10,7 @@ src: /Tutorials/Game Engine Integrations/README.md
 The following tutorials will help you integrate your game's engine with the platform:
 * [CPP Quick Start](/Tutorials/Game Engine Integrations/CPP Quick Start.md).
 * [Unreal CPP Quick Start](/Tutorials/Game Engine Integrations/Unreal CPP Quick Start.md).
+* [Unreal CPP Leaderboard Entries](/Tutorials/Game Engine Integrations/Unreal CPP Leaderboard Entries.md).
 * Working with [Message Listeners and Handlers](/Tutorials/Game Engine Integrations/Working with Message Handlers.md).
 * Using the [SetDurable parameter](/Tutorials/Game Engine Integrations/Using the SetDurable Parameter.md) with the Unity SDK.
 * Setting up social authentication for [Unreal Engine 4 Facebook](/Tutorials/Game Engine Integrations/Setting Up UE4 Facebook Authentication.md).

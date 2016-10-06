@@ -77,7 +77,7 @@ When you've created your Leaderboard, navigate to the Test Harness. At this poi
 
 ![](img/CreatingALeaderboard/9.png)
 
-*1.* *Re-authenticate* using your *first* player. The authentication tutorial used userName: *gs_player* and password: *gs_password*.
+*1.* *Re-authenticate* using your *first* player. The authentication tutorial used userName: *gs_player_1* and password: *gs_password_1*.
 
 *2.* When this completes, you'll need to click on [LogEventRequest](/API Documentation/Request API/Player/LogEventRequest.md) and select the *Leaderboard Scorer* Event you created previously
 
