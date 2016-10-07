@@ -5,16 +5,20 @@ src: /Documentation/Game Overview/README.md
 
 # Game Overview
 
-From the Overview page you can:
+From the Game Overview page you can:
 
 * View and edit the top-level information and settings of your game.
-* Create and manage versions of your game configurations (Snapshots). Publish your game to the live servers.
+* Create and manage versions of your game configurations (Snapshots).
+* Publish Snapshots of your game to the live servers.
 * Inspect access secrets for your game connection types.
 * Create Collaborators for your game and configure their security settings.
 
-![](img/GameOverview/5.png)
+![](img/GameOverview/7.png)
 
-You can use icon button options at the top right of the top panel (highlighted above):
+You can use options at the top-right of the page:
+* *Edit* - Edit your game's details.
+* *Delete* - Delete your game and send it to the Recycle Bin.
+
 
   * ![](/img/fa/heart.png) - Set this game as your favorite. Each time you enter the portal the current game will shown without you having to select it.
   * ![](/img/fa/lock.png) - View your Games Access Secrets.
@@ -25,15 +29,29 @@ You can use icon button options at the top right of the top panel (highlighted a
 
 ## Editing Top-Level Game Information
 
-![](img/GameOverview/4.png)
+*1.* To edit your game's details, click *Edit*:
 
-The edit form has the following fields:
+![](img/GameOverview/8.png)
+
+* On the *Game Details* tab, you can edit the following:
 
   * *Name* \- The name of your game, used to identify the game in the portal if you have several games
   * *Description* \- A description of the game
-  * *Primary Region* - Select the geographical region where your game will be published.
   * *Signup Bonuses* \- The amount of each of the currencies to award a new player when a new account is created
   * *Segment Configuration* - Configure Segments for your game. For more details, see [Segments](/Documentation/Configurator/Segments.md).
+
+![](img/GameOverview/9.png)
+
+* On the *Features & Integrations* tab, you can set up what your want to use in your game:
+  * *Platform Features* - Select the GameSparks features you want to enable.
+  * *Integrations* - Select the 3rd party providers you want to integrate with.
+
+![](img/GameOverview/10.png)
+
+* On the *Geographical Setup* tab, you can configure for the geographical distribution of your game:
+  * *Primary Region* - Select the geographical region where your game will be published.
+  * *Geo Restrictions* - Etc Etc.
+
 
 ## Snapshots
 

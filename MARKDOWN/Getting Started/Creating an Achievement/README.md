@@ -75,7 +75,7 @@ The Achievement is now fully configured to be awarded!
 
 ## Running the Event in the Test Harness
 
-*1*. Since everything is set up, you now need navigate to the Test Harness and authenticate with one of the players you have previously [registered](/Getting Started/Using Authentication/README.md).
+*1*. Since everything is set up, you now need to navigate to the Test Harness and authenticate with one of the players you have previously [registered](/Getting Started/Using Authentication/README.md).
 
 *2.* At this point the Achievement you have configured awards some currency, and you need to validate that the player currently doesn't have any currency associated with their account. To do this you'll need to select Player tab and send an [AccountDetailsRequest](/API Documentation/Request API/Player/AccountDetailsRequest.md).
 

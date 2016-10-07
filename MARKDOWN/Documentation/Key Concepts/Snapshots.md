@@ -58,28 +58,28 @@ When you select delete, a warning/confirmation dialog appears. Press *Ok* to con
 
 Publishing a Snapshot places the configuration of the game into the LIVE environment, where the game can then be accessed by your players. For in-depth tutorial on versioning read [here](/Tutorials/Versioning and the Publishing Process/Versioning and Publishing a Game.md).
 
-![](img/Snapshot/6.jpg)
+![](img/Snapshot/17.png)
 
 Once you confirm your selection to publish the Snapshot, it will be highlighted in green within the list of Snapshots:
 
-![](img/Snapshot/7.jpg)
+![](img/Snapshot/18.png)
 
 ## Reverting a Snapshot
 
-You might want to revert to earlier version of your game configuration or saved metadata collections if you have accidentally removed some configuration details or if something recently went wrong. When Reverting a Snapshot you'll be prompted for a confirmation.
+You might want to revert to earlier version of your game configuration or saved metadata collections if you have accidentally removed some configuration details or if something recently went wrong. When Reverting to a Snapshot you'll be prompted for a confirmation.
 
-![](img/Snapshot/8.png)
+![](img/Snapshot/19.png)
 
 <q>**Snapshot AUTOSAVE!** When you revert a Snapshot, your current configuration is saved to create an automatic Snapshot of everything as it was before the revert:</q>
 
-![](img/Snapshot/9.jpg)
+![](img/Snapshot/20.png)
 
 ## Previewing a Snapshot
 
-You can preview a Snapshot and inspect the game configuration of that Snapshot, which saves you having to fully revert to it then having to revert back to your original state. In Snapshot Preview mode, all editing is disabled and you'll see what's being previewed at the top of GameSparks Configurator:
+You can preview a Snapshot and inspect the game configuration of that Snapshot, which saves you having to fully revert to it then having to revert back to your original state. In Snapshot Preview mode, all editing is disabled and you'll see what's being previewed at the top of the page:
 
-![](img/Snapshot/10.jpg)
+![](img/Snapshot/21.png)
 
 The Snapshot Preview header tells you what Snapshot you are currently previewing, when it was created, whether it is live or not, and who it was created by.
 
-To exit the Snapshot preview, click *Exit Preview* or navigate away from the Configurator.
+To exit the Snapshot preview, click *Exit Preview*.
