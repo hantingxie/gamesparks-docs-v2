@@ -98,7 +98,7 @@ Or through the web socket API using:
 
 ## Linking Property Sets
 
-When you've created a Property Set, you can attach it to [Leaderboards](/Documentation/Configurator/Leaderboards.md), [Achievements](/Documentation/Configurator/Achievements.md), and [Virtual Goods](/Documentation/Configurator/Virtual Goods.md). It will be available wherever you use those objects.
+When you've created a Property Set, you can attach it to [Leaderboards](/Documentation/Configurator/Leaderboards/README.md), [Achievements](/Documentation/Configurator/Achievements.md), and [Virtual Goods](/Documentation/Configurator/Virtual Goods.md). It will be available wherever you use those objects.
 
 Let's create an Achievement and add our Property Set to it.
 

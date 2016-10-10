@@ -45,7 +45,7 @@ Next you'll need to create your Leaderboard.
 
 *2.* Click *Add*. The page adjust for adding a new Leaderboard.
 
-<q>**More on Leaderboards?** Most of the details you see here can be left as default for this tutorial but you can get more information about Leaderboard configuration [here](/Documentation/Configurator/Leaderboards.md).</q>
+<q>**More on Leaderboards?** Most of the details you see here can be left as default for this tutorial but you can get more information about Leaderboard configuration [here](/Documentation/Configurator/Leaderboards/README.md).</q>
 
 *3.* The important details for us in this example are:
 * *Short Code*

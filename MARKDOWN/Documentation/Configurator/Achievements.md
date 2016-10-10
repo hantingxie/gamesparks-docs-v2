@@ -1,5 +1,5 @@
 ---
-nav_sort: 6
+nav_sort: 5
 src: /Documentation/Configurator/Achievements.md
 ---
 

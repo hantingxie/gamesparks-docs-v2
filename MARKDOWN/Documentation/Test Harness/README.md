@@ -1,5 +1,5 @@
 ---
-nav_sort: 5
+nav_sort: 6
 src: /Documentation/Test Harness/README.md
 ---
 
@@ -43,8 +43,8 @@ The *Requests* section contains a selection of buttons which will populate the 
   * Store \- contains requests relating to third party app stores such as Google play
   * Player \- contains requests relating to the Player
   * Challenges \- contains requests relating to [Challenges](/Documentation/Configurator/Multiplayer/Challenges.md)
-  * Leaderboards \- contains requests relating to [Leaderboards](/Documentation/Configurator/Leaderboards.md)
-  * Analytics \- contains requests relating to [Analytics](/Documentation/Configurator/Analytics.md)
+  * Leaderboards \- contains requests relating to [Leaderboards](/Documentation/Configurator/Leaderboards/README.md)
+  * Analytics \- contains requests relating to [Analytics](/Documentation/Analytics/README.md)
   * Misc \- contains requests that don't belong anywhere else!
   * Scenarios \- contains requests that you have saved for later use
 

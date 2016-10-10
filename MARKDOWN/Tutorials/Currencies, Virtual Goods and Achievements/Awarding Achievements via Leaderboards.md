@@ -6,7 +6,7 @@ src: /Tutorials/Currencies, Virtual Goods and Achievements/Awarding Achievements
 # How to create and award Achievements via a Leaderboard?
 
 In this exercise we'll create an [Achievement](/Documentation/Configurator/Achievements.md) that is awarded to a player when they beat their current high score in a game:
-* First, we'll need to create an [Event](/Documentation/Configurator/Events.md) and a [Leaderboard](/Documentation/Configurator/Leaderboards.md).
+* First, we'll need to create an [Event](/Documentation/Configurator/Events.md) and a [Leaderboard](/Documentation/Configurator/Leaderboards/README.md).
 * When we've completed the configuration, we'll test it via the [Test Harness](/Documentation/Test Harness/README.md).
 
 ## Creating an Event
@@ -48,7 +48,7 @@ Now fill in the Leaderboard's details and click the *Save* button.
 * The *Filter Value* field is not relevant in this exercise.
 * Finally, the *Sort* field is set to DESC (descending) to order the Leaderboard from highest player score to lowest.
 
-<q>**Note:** [Running Totals](/Documentation/Configurator/Running Totals.md) are an advanced topic that we don't need to worry about for this exercise.</q>
+<q>**Note:** [Running Totals](/Documentation/Configurator/Leaderboards/Running Totals.md) are an advanced topic that we don't need to worry about for this exercise.</q>
 
 ## Creating an Achievement
 

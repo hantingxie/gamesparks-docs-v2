@@ -1,6 +1,6 @@
 ---
-nav_sort: 1
-src: /Documentation/Configurator/Integrations/Security Credentials.md
+nav_sort: 10
+src: /Documentation/Configurator/Credentials.md
 ---
 
 # Security Credentials

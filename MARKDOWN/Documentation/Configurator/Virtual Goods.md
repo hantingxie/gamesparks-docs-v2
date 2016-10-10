@@ -1,5 +1,5 @@
 ---
-nav_sort: 5
+nav_sort: 4
 src: /Documentation/Configurator/Virtual Goods.md
 ---
 

@@ -15,68 +15,94 @@ From the Game Overview page you can:
 
 ![](img/GameOverview/7.png)
 
-You can use options at the top-right of the page:
-* *Edit* - Edit your game's details.
-* *Delete* - Delete your game and send it to the Recycle Bin.
+You can use two main options at the top-right of the page:
+* *Edit* - Edit your game's details. See section [below](#Editing Top-Level Game Information).
+* *Delete* - Delete your game and send it to the *Recycle Bin*.
 
+## Viewing and Copying Game API Key and Secrets
 
-  * ![](/img/fa/heart.png) - Set this game as your favorite. Each time you enter the portal the current game will shown without you having to select it.
-  * ![](/img/fa/lock.png) - View your Games Access Secrets.
-  * ![](/img/fa/globe.png) - Edit the Geo Restrictions for the game.
-  * ![](/img/fa/edit.png) - Edit the top level information regarding your game.
-  * ![](/img/fa/trash.png) - Delete this game.
+You can view and copy your game's *API Key* and *API Secret*:
+* Your game's *API Key* is shown and you can *Copy* this when required:
+
+![](img/GameOverview/11.png)
+
+* Your game's *API Secret* is hidden when the page first opens, but you can *Show* the secret:
+
+![](img/GameOverview/12.png)
+
+  * And then *Copy* when required:
+
+![](img/GameOverview/13.png)
+
+## Checking Security Credentials
+
+If you need to check the security Credentials for your game, you can click *All Credentials* to go directly to the *Credentials* page:
+
+![](img/GameOverview/14.png)
 
 
 ## Editing Top-Level Game Information
 
-*1.* To edit your game's details, click *Edit*:
+When you click to *Edit* your game's top-level details, you'll see three tabs:
+* [*Game Details*](#Editing Game Details)
+* [*Features & Integrations*](#Selecting Features and Integrations)
+* [*Geographical Setup*](#Configuring Geographical Setup)
+
+### Editing Game Details
+
+To edit your game's details, click *Edit*. The *Game Details* tab is selected:
 
 ![](img/GameOverview/8.png)
 
-* On the *Game Details* tab, you can edit the following:
+* On the this tab, you can edit the following:
 
   * *Name* \- The name of your game, used to identify the game in the portal if you have several games
   * *Description* \- A description of the game
-  * *Signup Bonuses* \- The amount of each of the currencies to award a new player when a new account is created
-  * *Segment Configuration* - Configure Segments for your game. For more details, see [Segments](/Documentation/Configurator/Segments.md).
+  * *Signup Bonuses* \- The amount of each of the currencies to award a new player when a new account is created:
+    * *Segment Configuration* - On the *Currencies*, click *Segment* at top-right to configure the segmentation for your game's currencies.
+
+![](img/GameOverview/15.png)
+
+For more details, see [Segments](/Documentation/Configurator/Segments.md).
+
+### Selecting Features and Integrations
+
+To select the platform features and integrations you want to use for your game, select the *Features & Integrations* tab:
 
 ![](img/GameOverview/9.png)
 
-* On the *Features & Integrations* tab, you can set up what your want to use in your game:
-  * *Platform Features* - Select the GameSparks features you want to enable.
-  * *Integrations* - Select the 3rd party providers you want to integrate with.
+* On the this tab, you can select:
+  * *Platform Features* - The GameSparks features you want to enable.
+  * *Integrations* - The 3rd party providers you want to integrate your game with.
+
+
+### Configuring Geographical Setup
+
+To select which geographical regions you want to allow access to your game, click the *Geographical Setup* tab:
 
 ![](img/GameOverview/10.png)
 
-* On the *Geographical Setup* tab, you can configure for the geographical distribution of your game:
+* On the this tab, you can configure for the geographical distribution of your game:
   * *Primary Region* - Select the geographical region where your game will be published.
-  * *Geo Restrictions* - Etc Etc.
-
+  * *Geo Restrictions* - Select by country the geographical regions that you want to allow access to your game. By default, all countries are selected under *Allow Access*. To deny access to users in a specific country, select the country to move it across to the *Deny Access* box. You can use the double arrows at the top of each box to move all in one box to the other.
 
 ## Snapshots
 
-![](img/GameOverview/6.png)
+![](img/GameOverview/16.png)
 
-You can use icons button options in the Snapshots panel:
+Click *Create* to create a new Snapshot for the current configuration of your game.
 
-  * ![](/img/fa/plus.png) - Create a new Snapshot of the configuration currently in the portal.
-  * ![](/img/fa/copy.png) - Copy this Snapshot to another game.
-  * ![](/img/fa/trash.png) - Delete this Snapshot.
-  * ![](/img/fa/upload.png) - Publish this Snapshot to the live servers.
-  * ![](/img/fa/random.png) - Revert the portal to the version contained in the Snapshot.
-  * ![](/img/fa/search.png) - Preview this Snapshot.
+You can use icon button options in the Snapshots panel:
+
+  * ![](/img/icons/copyicon.png) - Copy this Snapshot to another game.
+  * ![](/img/icons/deleteicon.png) - Delete this Snapshot.
+  * ![](/img/icons/publishicon.png) - Publish this Snapshot to the live servers.
+  * ![](/img/icons/reverticon.png) - Revert the portal to the version contained in the Snapshot.
+  * ![](/img/icons/previewicon.png) - Preview this Snapshot.
 
 Click [here](/Documentation/Key Concepts/Snapshots.md) for more information about Snapshots, Versioning and Publishing.
 
-## Access Secrets
-
-A number of secrets exist for different types of connections:
-
-  * *Device Api Secret* \- Used by your devices to connect to the service as a player.
-  * *Server Api Secret* \- Used for callback urls.
-  * *SFTP Secret* \- Used for SFTP access for file delivery (Request access via out support system).
-  * *Debug Secret* \- Used by the JavaScript remote debugger.
 
 ## User Management
 
-This area allows the creation of game Collaborators and Groups, these will be people that can log in with their user and view/edit the game, depending on the security settings set for them. An in-depth tutorial can be found [here](/Tutorials/Capabilities/README.md).
+You can use the *User Management* panel to create *Collaborators* and *Groups* for your game. Collaborators are people that can log in with their user credentials and view/edit the game, depending on the security settings you have set for them. An in-depth tutorial can be found [here](/Tutorials/Capabilities/README.md).

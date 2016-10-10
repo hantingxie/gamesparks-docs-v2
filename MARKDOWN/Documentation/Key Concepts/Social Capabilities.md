@@ -27,4 +27,4 @@ You can use [SendFriendMessageRequest](/API Documentation/Request API/Player/Sen
 
 Leaderboard data for players that are linked as friends will contain not only their global position within the Leaderboard but also a social rank, relative only to their friends. This lets players compete against their friends as well as against the wider population. Achievements can be awarded based on social rankings, which means players are competing against a much smaller population for those precious awards!
 
-For more information on Leaderboards within the GameSparks platform, see [Leaderboards](/Documentation/Configurator/Leaderboards.md).
+For more information on Leaderboards within the GameSparks platform, see [Leaderboards](/Documentation/Configurator/Leaderboards/README.md).

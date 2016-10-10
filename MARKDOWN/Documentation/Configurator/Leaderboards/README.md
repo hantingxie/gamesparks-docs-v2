@@ -1,6 +1,6 @@
 ---
 nav_sort: 2
-src: /Documentation/Configurator/Leaderboards.md
+src: /Documentation/Configurator/Leaderboards/README.md
 ---
 
 # Leaderboards
@@ -17,32 +17,34 @@ Leaderboards are typically restricted to tracking and reporting the leading play
 
 The Configurator Leaderboard page displays the list of Leaderboards and allows you to create new Leaderboards and edit or delete existing ones.
 
-![](img/Leaderboards/1.png)
+![](img/Leaderboards/5.png)
 
-You can use icons button options:
+You can use the following options (highlighted above):
 
-  * ![](/img/fa/plus.png) - Add a new Leaderboard.
-  * ![](/img/fa/edit.png) - Edit Leaderboard.
-  * ![](/img/fa/trash.png) - Delete Leaderboard.
+  * *Add* - Add a new Leaderboard.
+  * ![](/img/icons/editicon.png) - Edit Leaderboard.
+  * ![](/img/icons/deleteicon.png) - Delete Leaderboard.
 
 ## Creating a New Leaderboard Configuration
 
-Click the ![](/img/fa/plus.png) icon to create a new Leaderboard.
+Click *Add* to create a new Leaderboard.
 
-![](img/Leaderboards/2.jpg)
+![](img/Leaderboards/6.png)
 
   * *Short Code* \-The Short Code is a mandatory field used to give the Leaderboard a unique identifier for use elsewhere in the Portal and in Cloud Code.
   * *Name* \-The Name field is a mandatory field used as an identifier to help you find the Leaderboard in the Portal.
   * *Description* \-The Description is a mandatory field, which you can use to describe the purpose of the Leaderboard.
-  * *Type* \- The type of Leaderboard to be created. Leaderboards can be Team or Player based.
-  * *Update Schedule* \-Select the rate at which the GameSparks platform will update the Leaderboard data:
-    * *Real-time* \- Updated in real-time.
-    * *Reset Daily* \- Reset each day.
-    * *Reset Weekly* \- Reset each week.
-    * *Reset Monthly* \- Reset each month.
-    * *Calculate Daily* \- Updated every day.
-    * *Calculate Weekly* \- Updated every week.
-    * *Calculate Monthly* \- Updated every month.
+  * *Team* \- The type of Leaderboard to be created. Leaderboards can be Team or Player based - if a Team is not selected, then the Leaderboard is a Player Leaderboard.
+  * *Update Frequency* \- Select the rate at which the GameSparks platform will update the Leaderboard data:
+    * *Real-time* \- Updated in real-time (default).
+    * *Daily* \- Updated every day.
+    * *Weekly* \- Updated every week.
+    * *Monthly* \- Updated every month.
+  * *Reset Frequency* \- Select how often you want to reset the Leaderboard:
+    * *Never* \- Never Reset (default).
+    * *Daily* \- Reset each day.
+    * *Weekly* \- Reset each week.
+    * *Monthly* \- Reset each month.
   * *High Score Notifications* \- A flag to indicate whether a [NewHighScoreMessage](/API Documentation/Message API/Leaderboards/NewHighScoreMessage.md) should be sent to the user when they submit a new high score.
   * *Social Notifications* \- A flag to indicate whether a [SocialRankChangedMessage](/API Documentation/Message API/Leaderboards/SocialRankChangedMessage.md) should be sent to friends when their scores are beaten.
   * *Top N Notifications* \- Whether a [GlobalRankChangedMessage](/API Documentation/Message API/Leaderboards/GlobalRankChangedMessage.md) should be sent to players when their scores are beaten (if they are within the Top N Threshold).
@@ -50,19 +52,26 @@ Click the ![](/img/fa/plus.png) icon to create a new Leaderboard.
 
 ### Creating Leaderboard Fields
 
-Each Leaderboard configuration has a list of fields. Each field refers to an Event Attribute / Running Total Summary. Press the ![](/img/fa/plus.png) icon on the Edit Leaderboard dialog to add fields to a Leaderboard.
+Each Leaderboard configuration has a list of *Fields*. Each Field refers to an Event Attribute/Running Total Collector.
 
-![](img/Leaderboards/3.jpg)
+In the *Fields* panel, you can click to *Add* fields to a Leaderboard:
+
+![](img/Leaderboards/7.png)
 
   * *Running Total* \- Select from your list of Running Totals.
-  * *Summary* \- Select from a list of Running Total Summaries that are related to the chosen Running Totals.
+  * *Collector* \- Select from a list of Running Total Collectors that are related to the chosen Running Total.
   * *Filter Type* \- Select a filter which incoming Event Attribute values will be checked against before being entered into the Leaderboard.
   * *Filter Value* \- Specify a value for the given filter type.
   * *Sort* \- Select how this field affects the ordering of the Leaderboard if at all.
-  * *Group* \- If the chosen Running Total Summary has a default calculation value of *Grouped*, this field allows you to select how the Leaderboard data should be grouped. Available values are:
-    * *MIN* - Lowest entry
-    * *MAX* - Highest entry
-    * *SUM* - Sum of the entries
-    * *COUNT* - Number of entries
-    * *RANGE* - Difference between MIN and MAX
-    * *PARTITION* - Partitions the Leaderboard on this Entry, more on that [here](/Tutorials/Social Features/Partitioning Leaderboards.md).
+  * *Group* \- If the chosen Running Total Collector has a default calculation value of *Grouped*, this field allows you to select how the Leaderboard data should be grouped. Available values are:
+    * *Minimum* - Lowest entry
+    * *Maximum* - Highest entry
+    * *Sum* - Sum of the entries
+    * *Count* - Number of entries
+    * *Range* - Difference between Minimum and Maximum
+    * *ID* - By Event Attribute ID
+    * *Partition* - Partitions the Leaderboard on this Entry, more on that [here](/Tutorials/Social Features/Partitioning Leaderboards.md).
+
+### Deleting Leaderboard Fields
+
+You can click the delete ![](/img/icons/deleteicon.png) icon to remove a *Field* from your Leaderboard.

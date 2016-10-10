@@ -1,6 +1,6 @@
 ---
-nav_sort: 1
-src: /Documentation/Configurator/Analytics.md
+nav_sort: 5
+src: /Documentation/Analytics/README.md
 ---
 
 # Analytics

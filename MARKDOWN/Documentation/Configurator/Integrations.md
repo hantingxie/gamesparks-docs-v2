@@ -8,7 +8,7 @@ src: /Documentation/Configurator/Integrations.md
 The Integrations page allows you to integrate with 3rd-party external providers and configure a multitude of external, social authentications within GameSparks platform. The set up process for most Integrations is straightforward - you simply need to enter the *App Id* and the *App Secret* supplied by the external provider for your game.
 
 You can also create and configure system and user credentials from the Integrations pag:
-* [Security Credentials](/Documentation/Configurator/Integrations/Security Credentials.md)
+* [Security Credentials](/Documentation/Configurator/Credentials.md)
 
 ### Managing External Integrations
 

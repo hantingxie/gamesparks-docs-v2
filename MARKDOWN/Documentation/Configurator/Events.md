@@ -17,10 +17,10 @@ The Configurator *Events* page lists Events and allows you to create new Event
 You can use the following options (highlighted above):
 
   * *Add* - Add a new Event.
-  * ![](img/Events/5.png) - Edit Event.
-  * ![](img/Events/6.png) - Delete Event.
+  * ![](/img/icons/editicon.png) - Edit Event.
+  * ![](/img/icons/deleteicon.png) - Delete Event.
 
-## Creating a new Event Configuration
+## Creating a New Event Configuration
 
 ![](img/Events/7.png)
 
@@ -53,4 +53,4 @@ Add an Attribute by clicking *Add*.  Each Attribute has a number of different c
     * *Grouped* \- The running total will use this attribute to group other attributes. This will lead to a running total with an entry per attribute/user combination.
     * *Supplemental* \- A running total will be created with no value calculated. You can use this when you want to store some extra information within the game context but do not want this to affect on the Leaderboard ranking. (For example, in a racing game you can keep note of weather conditions on the track as well as player lap times but changing weather conditions do not affect the player's Leaderboard ranking.)
 
-<q>**Attributes for Leaderboard Running Totals!** Any Event that you create with at least one Attribute where you select any *Default Calc* for the Attribute *except Used in Script* means that the Event will be available for selection as a running total when you create and configure Leaderboards for your game. [Running Totals](/Documentation/Configurator/Running Totals.md) is further explained in the next page.</q>
+<q>**Attributes for Leaderboard Running Totals!** Any Event that you create with at least one Attribute where you select any *Default Aggregation Type* for the Attribute *except Used in Script* means that the Event will be available for selection as a Running Total when you create and configure Leaderboards for your game. Running Totals are more fully explained [here](/Documentation/Configurator/Leaderboards/Running Totals.md).</q>

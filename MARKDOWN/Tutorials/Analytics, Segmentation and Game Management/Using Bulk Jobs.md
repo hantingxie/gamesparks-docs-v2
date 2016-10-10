@@ -19,7 +19,7 @@ In this tutorial we'll learn about the two ways you can work with Bulk Jobs:
 
 ## How to Create and Execute a Bulk Job Request
 
-*1.* Before you can use Bulk Operations you'll need to ensure that your credentials have the Admin BulkJob requests enabled. For a refresher, see [Credentials](/Documentation/Configurator/Integrations/Security Credentials.md).
+*1.* Before you can use Bulk Operations you'll need to ensure that your credentials have the Admin BulkJob requests enabled. For a refresher, see [Credentials](/Documentation/Configurator/Credentials.md).
 
 *2.* In the Portal go to the Test Harness.
 
@@ -183,7 +183,7 @@ Response:
 
 We'll now look at creating the same outcome but using an Event to trigger the scheduled job.
 
-*1.* Before you can use Bulk Operations you will need to ensure that your credentials have the Admin BulkJob requests enabled. For a refresher, see [Credentials](/Documentation/Configurator/Integrations/Security Credentials.md).
+*1.* Before you can use Bulk Operations you will need to ensure that your credentials have the Admin BulkJob requests enabled. For a refresher, see [Credentials](/Documentation/Configurator/Credentials.md).
 
 *2.* In the portal, go to *Configurator > Events* and create a new Event.  The Event will need an Attribute which has:
 * A Data Type of *String*.

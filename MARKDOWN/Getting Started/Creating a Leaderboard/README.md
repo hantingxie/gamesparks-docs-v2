@@ -39,7 +39,7 @@ In this tutorial, we'll go over the steps required to create an Event, attach 
   * *Default Value* - The default value that would be used for this Event Attribute if it's not passed into the [LogEventRequest](/API Documentation/Request API/Player/LogEventRequest.md).
   * *Default Aggregation Type* - This determines how values are tracked in the Running Totals.
 
-<q>**Note:** You don't need to understand fully the concept of Running Totals for the purposes of this tutorial. For the Event Attribute, we set *Default Aggregation Type* to *Maximum* because we want to track the highest score posted for your player in the example we're setting up. Any Event that you create with an Attribute which *doesn't have* the *Default Aggregation Type* set to *Used in Script* will appear for selection as a Running Total when you configure a Leaderboard. (You can learn more about Running Totals [here](/Documentation/Configurator/Running Totals.md).)</q>
+<q>**Note:** You don't need to understand fully the concept of Running Totals for the purposes of this tutorial. For the Event Attribute, we set *Default Aggregation Type* to *Maximum* because we want to track the highest score posted for your player in the example we're setting up. Any Event that you create with an Attribute which *doesn't have* the *Default Aggregation Type* set to *Used in Script* will appear for selection as a Running Total when you configure a Leaderboard. (You can learn more about Running Totals [here](/Documentation/Configurator/Leaderboards/Running Totals.md).)</q>
 
 ![](img/CreatingALeaderboard/7.png)
 
@@ -47,7 +47,7 @@ In this tutorial, we'll go over the steps required to create an Event, attach 
 
 ## Creating a Leaderboard
 
-<q>**More Details on Leaderboards?** For an in-depth guide on Leaderboards click [here](/Documentation/Configurator/Leaderboards.md).</q>
+<q>**More Details on Leaderboards?** For an in-depth guide on Leaderboards click [here](/Documentation/Configurator/Leaderboards/README.md).</q>
 
 *1.* First, navigate to *Configurator > Leaderboards*:
 
