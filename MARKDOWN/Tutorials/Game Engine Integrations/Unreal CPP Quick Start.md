@@ -47,6 +47,11 @@ UGameSparksComponent* GameSparksComp;
 	UFUNCTION()
 	void OnGameSparksAvailable(bool available);
 
+	static void AuthenticationRequest_Response(GameSparks::Core::GS&, const GameSparks::Api::Responses::AuthenticationResponse&);
+
+	static void AccountDetailsRequest_Response(GameSparks::Core::GS&, const GameSparks::Api::Responses::AccountDetailsResponse&);
+
+
 ```
 
 ### GameMode.CPP

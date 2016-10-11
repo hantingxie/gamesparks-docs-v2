@@ -23,14 +23,14 @@ You can use the following options (highlighted above):
   * ![](/img/icons/editicon.png) - Edit Running Total.
   * ![](/img/icons/deleteicon.png) - Delete Running Total.
 
-When a player posts an Event to the platform, all Running Totals associated with the Event are processed. An important concept is that of a *Group* attribute.
+When a player posts an Event to the platform, all Running Totals associated with the Event are processed. An important concept is that of a *Group* Attribute.
 
   * Running Totals *without* a Group Attribute maintain a *single record* for each player that has submitted an Event that matches the criteria specified. This record can then be used within a Leaderboard to create various types of Leaderboards.
   * When a Running Total *has* a Group Attribute(s) set, there is a record maintained for a group of Attributes by user.
 
 ## Creating a New Running Totals
 
-Click *Add* to create a new Running Total. The page adjusts:
+Click to *Add* a new Running Total. The page adjusts:
 
 ![](img/RunningTotals/6.png)
 
@@ -40,7 +40,7 @@ The Add/Edit panel has the following fields.
   * *Name* - Enter the name of the Running Total, which is used to allow you to identify it in the portal if you have more than one Running Total.
   * *Event* - Select the Event this Running Total will process.
   * *Team* - Select the Type of Running Total (Player or Team). If a Team is not selected, then it is a Player Running Total
-  * *Group* - Select which Attributes from the Event should be used for grouping.
+  * *Group* - Select which Attributes from the Event should be used for grouping. The running total will use this Attribute to group other Attributes. This will lead to a running total with an entry per Attribute/user combination. A typical use case would be where you want to track each player's highest score relative to each level of your game, not simply each player's highest score across all game levels.
 
 ### Adding Collectors for Running Totals
 
@@ -50,7 +50,7 @@ To add *Collectors* to your Running Total, click *Add*:
 
 Each Running Total Collector has the following fields:
   * *Attribute* - Select the Event Attribute that the Running Total will capture and process.
-  * *Calculation Type*
+  * *Calculation Type*:
     * *Maximum* - The Running Total will be created to track the maximum value posted.
     * *Minimum* - The Running Total will be created to track the minimum value posted.
     * *Sum* - The Running Total will be created to add all the values posted together.
@@ -69,4 +69,4 @@ Example 1: *Only process scores over 100*
 
 Example 2: *Only include scores from levels 10 - 20.*
 
-![](img/RunningTotals/4.jpg)
+![](img/RunningTotals/9.png)

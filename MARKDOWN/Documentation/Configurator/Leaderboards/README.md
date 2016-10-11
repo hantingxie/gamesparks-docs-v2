@@ -69,7 +69,7 @@ In the *Fields* panel, you can click to *Add* fields to a Leaderboard:
     * *Sum* - Sum of the entries
     * *Count* - Number of entries
     * *Range* - Difference between Minimum and Maximum
-    * *ID* - By Event Attribute ID
+    * *ID* - Lists each Entry on a single Leaderboard.
     * *Partition* - Partitions the Leaderboard on this Entry, more on that [here](/Tutorials/Social Features/Partitioning Leaderboards.md).
 
 ### Deleting Leaderboard Fields
