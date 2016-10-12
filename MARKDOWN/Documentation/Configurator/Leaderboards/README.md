@@ -25,7 +25,7 @@ You can use the following options (highlighted above):
   * ![](/img/icons/editicon.png) - Edit Leaderboard.
   * ![](/img/icons/deleteicon.png) - Delete Leaderboard.
 
-## Creating a New Leaderboard Configuration
+## Creating a Leaderboard Configuration
 
 Click *Add* to create a new Leaderboard.
 

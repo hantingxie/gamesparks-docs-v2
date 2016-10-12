@@ -29,23 +29,24 @@ GameSparks Achievements support the rewarding of players for accomplishments wit
   * Achievement triggers are implemented through Leaderboards because all scoring events result in a Leaderboard being updated.
   * For example, to automatically award an Achievement for someone hitting a specific score, you can add a trigger and define a filter for a Leaderboard that indicates the Achievement is awarded when a score is posted to the Leaderboard with a value that meets the filter criteria.
 
-## Managing Achievements
+## Managing Achievement Configurations
 
 The *Configurator > Achievements* page displays the list of Achievements. You can create new Achievements and edit or delete existing ones:
 
-![](img/Achs/1.jpg)
+![](img/Achs/6.png)
 
-The icons (highlighted above) give you the following capabilities:
+You can use the following options (highlighted above):
 
-* ![](/img/fa/plus.png) Add a new Achievement.
-* ![](/img/fa/edit.png) Edit this Achievement.
-* ![](/img/fa/trash.png) Delete this Achievement.
+ * *Add* - Add a new Achievement.
+ * ![](/img/icons/editicon.png) - Edit Achievement.
+ * ![](/img/icons/deleteicon.png) - Delete Achievement.
 
-## Creating a New Achievement
 
-*1.* Click the ![](/img/fa/plus.png) icon to create a new Achievement. The *Create Achievement* dialog appears:
+## Creating an Achievement Configuration
 
-![](img/Achs/2.jpg)
+*1.* Click to *Add* a new Virtual Good. The page adjusts:
+
+![](img/Achs/7.png)
 
 *2.* Enter your Achievement details:
 
@@ -55,13 +56,15 @@ The icons (highlighted above) give you the following capabilities:
 * *Virtual Good Award*- The Virtual Good to award a player as a reward for gaining the Achievement.
 * *Currency Awards* \- The amount of each of the Currencies to award a player as a reward for gaining the Achievement.
 * *Leaderboard* \- Achievements can be triggered from a Leaderboard or by a Cloud Code script, if no Leaderboard was selected. Select the required Trigger here - either the Leaderboard trigger or select *None - Triggered by Script* if triggered by a Cloud Code script.
+  * In this example, we've selected the *High Score Leaderboard*.
 * *Repeatable*  \- Enabling this means the Achievement can be earned multiple times.
+* *Property Set* - Select the [Property Set](/Documentation/Configurator/Properties.md) to which you want the Achievement to belong.
 
-## Creating Achievement Triggers
+## Adding Achievement Triggers
 
-*1.* On the *Trigger Data* section, click the ![](/img/fa/plus.png) icon to add triggers for *non-scripted Achievements*:
+*1.* If you have selected a Leaderboard for an Achievement, in the *Triggers* panel you'll be able to click to *Add* a trigger for *non-scripted Achievements*:
 
-![](img/Achs/3.jpg)
+![](img/Achs/8.png)
 
 *2.* Enter the Trigger details:
 
@@ -96,12 +99,14 @@ The icons (highlighted above) give you the following capabilities:
 
 * *Filter Value* - The value of the Filter.
 
+*3.* Click to *Save and Close* the Trigger you've added to your Achievement.
+
 ## Example Triggers
 
 **Example 1:** If you want to award the user for getting a score over 100 on a Leaderboard, you would have a set up similar to this:
 
-![](img/Achs/4.jpg)
+![](img/Achs/9.png)
 
 **Example 2:** If you want to award an Achievement for being top of the global Leaderboard, you would have the following configuration:
 
-![](img/Achs/5.jpg)
+![](img/Achs/10.png)

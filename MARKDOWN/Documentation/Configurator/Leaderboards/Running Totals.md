@@ -28,7 +28,7 @@ When a player posts an Event to the platform, all Running Totals associated with
   * Running Totals *without* a Group Attribute maintain a *single record* for each player that has submitted an Event that matches the criteria specified. This record can then be used within a Leaderboard to create various types of Leaderboards.
   * When a Running Total *has* a Group Attribute(s) set, there is a record maintained for a group of Attributes by user.
 
-## Creating a New Running Totals
+## Creating a Running Total Configuration
 
 Click to *Add* a new Running Total. The page adjusts:
 
