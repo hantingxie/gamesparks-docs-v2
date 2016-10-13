@@ -80,6 +80,5 @@ You can preview a Snapshot and inspect the game configuration of that Snapshot, 
 
 ![](img/Snapshot/21.png)
 
-The Snapshot Preview header tells you what Snapshot you are currently previewing, when it was created, whether it is live or not, and who it was created by.
-
-To exit the Snapshot preview, click *Exit Preview*.
+* The Snapshot Preview header tells you what Snapshot you are currently previewing, when it was created, whether it is live or not, and who it was created by.
+* To exit the Snapshot preview, click *Exit Preview*.

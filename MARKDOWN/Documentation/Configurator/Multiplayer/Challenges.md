@@ -31,7 +31,7 @@ Click to *Add* a new Challenge. The page adjusts:
   * *Description* \- The Description is a mandatory field which should be used to describe the challenge.
   * *Tags* \- Tags associated with the Challenge.
   * *Turn Based* \- Use this switch to enable turn based games, Tic-Tac-Toe for example.
-  * *Turn/Attempt Consumers* \- If you have set the *Turn Based* switch to true (or create the challenge with a max attempt set), you can have turns/attempts consumed by any event selected in this list.
+  * *Turn/Attempt Consumers* \- If you have set the *Turn Based* switch to true (or when you create the challenge through the API you set a maximum attempt), you can have turns/attempts consumed by any event selected in this list.
   * *Leaderboard* \- The outcome of a challenge can be determined by a specially configured Leaderboard or a custom Cloud Code Script. Use this drop down to pick the appropriate option.
   * *Global* \- If this is off, only [LogChallengeEventRequests](/API Documentation/Request API/Multiplayer/LogChallengeEventRequest.md) will affect this challenge.
   * *Achievement* \- If this field is set, the winner of the Challenge will be the first to reach the selected Achievement. Note that the Achievements available for selection are those that are configured to be triggered by the Leaderboard you have selected for the Challenge.
