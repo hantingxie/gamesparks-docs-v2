@@ -51,8 +51,8 @@ You can use the following options (highlighted above):
 *2.* Enter your Achievement details:
 
 * *Short Code* \- A mandatory field used to give the Achievement a unique identifier for use elsewhere in the Portal and in Cloud Code.
-* *Name* \- A mandatory field used as an identifier to help the user find the challenge in the Portal.
-* *Description* \- A mandatory field which should be used to describe the challenge.
+* *Name* \- A mandatory field used as an identifier to help the user find the Achievement in the Portal.
+* *Description* \- A mandatory field which should be used to describe the Achievement.
 * *Virtual Good Award*- The Virtual Good to award a player as a reward for gaining the Achievement.
 * *Currency Awards* \- The amount of each of the Currencies to award a player as a reward for gaining the Achievement.
 * *Leaderboard* \- Achievements can be triggered from a Leaderboard or by a Cloud Code script, if no Leaderboard was selected. Select the required Trigger here - either the Leaderboard trigger or select *None - Triggered by Script* if triggered by a Cloud Code script.

@@ -28,6 +28,7 @@ Our real-time services provide a network communication layer which has the abili
 
 ## Tutorials
 
+* [Understanding GameSparks Real-Time](/Tutorials/Real-Time Services/Understanding GameSparks Real-Time.md) - Introductory overview of working with GameSparks Real-Time.
 * [Creating and Using Real-Time Scripts](/Tutorials/Real-Time Services/Creating and Using Real-Time Scripts.md) - Setting up a real-time script and understanding the functions available through the RTSession API.
 
 * [Setting Up Real-Time Matchmaking](/Tutorials/Real-Time Services/Setting Up Real-Time Matchmaking.md) - Integrating the real-time SDK into an existing GameSparks project in Unity3D and setting up a new real-time match through your game’s portal.

@@ -13,3 +13,5 @@ Here are some tutorials that will help you to perform common tasks involving dat
 * If you have a complex JSON document stored, you can build [partial queries or updates](/Tutorials/Database Access and Cloud Storage/Submitting JSON Document Queries.md) for specific sections of the document.
 * You can allow players to [upload binary content](/Tutorials/Database Access and Cloud Storage/Uploading Binary Content from Game.md) to host it on the GameSparks platform and share content with other players.
 * There are some best practices you can follow for [persisting data](/Tutorials/Database Access and Cloud Storage/Managing Data Persistence.md) on the GameSparks platform.
+* Some important guidelines for working with runtime collections using [NoSQL Retrieval and Persistence](/Tutorials/Database Access and Cloud Storage/Basic NoSQL Retrieval and Persistence.md) methods.
+* You might want to make some [game-specific data](/Tutorials/Database Access and Cloud Storage/Creating and Using Game Specific Data.md) available to your players.

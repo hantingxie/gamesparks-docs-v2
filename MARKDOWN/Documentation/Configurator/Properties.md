@@ -17,13 +17,37 @@ Property Sets allow you to group your Properties together. You can then segment 
 
 <q>**Tutorial!** Check out our [Segmented Properties](/Tutorials/Analytics, Segmentation and Game Management/Working with Segmented Properties.md) tutorial for details on how to create and work with Properties and Property Sets and how to add segmented values for Properties.</q>
 
-## Creating and Managing Properties
+## Managing Properties and Property Sets
 
 Use the Properties page to create and manage your Properties and Property Sets:
 
-![](img/Properties/1.png)
+![](img/Properties/8.png)
 
-Click the ![](/img/fa/plus.png) icon to create a new Property. The default editing environment is *Visual*, where you can enter fields and select the required data-type:
+The page opens with the *Property Sets* page selected and you can use the following options (highlighted above):
+
+ * *Add* - Add a new Property Set.
+ * ![](/img/icons/editicon.png) - Edit Property Set.
+ * ![](/img/icons/deleteicon.png) - Delete Property Set.
+
+Click the *Properties* tab where you can use the same options to manage your Properties.
+
+## Creating Properties
+
+*1.* Select the *Properties* tab and click *Add*. The page adjusts:
+
+![](img/Properties/9.png)
+
+*2.* Enter the details of the Property:
+* *Short Code* - A mandatory field which is a unique identifier for use elsewhere in the Portal and in Cloud Code.
+* *Name* - A mandatory field used to help identify the Property.
+* *Description* - A mandatory field which should be used to describe the Property and explain its purpose.
+* *Value* - Enter the value you want for your JSON configuration in the editor.
+
+The default editing environment is *Visual*, where you can enter fields and select the required data-type:
+
+===== Does this editor do validation as stated below?
+
+===== Is the simplification deliberate?
 
 ![](img/Properties/2.png)
 
