@@ -5,7 +5,9 @@ src: /Tutorials/Database Access and Cloud Storage/Submitting JSON Document Queri
 
 # How to do partial queries and updates to complex JSON document
 
-There are times where you want to maintain a complex JSON document in a Mongo collection that you want to use for storing state. In this example we'll assume the complete document is the full state of the game, but we do not want to pass the full document around every time we want to update it, and we may want to query for a particular section of the document without returning the full document. A good example of this may be where you are storing metadata about every level the player has ever played. When the player starts a level you want to return the current state from the server as a full document, but without the details of the other levels. We'll imagine we have a player who has already played level 1 and completed it, and has started level two but has not yet completed it. In this state the document we store against the user will look like this:
+There are times where you want to maintain a complex JSON document in a Mongo collection that you want to use for storing state.
+
+In this example we'll assume the complete document is the full state of the game, but we do not want to pass the full document around every time we want to update it, and we may want to query for a particular section of the document without returning the full document. A good example of this may be where you are storing metadata about every level the player has ever played. When the player starts a level you want to return the current state from the server as a full document, but without the details of the other levels. We'll imagine we have a player who has already played level 1 and completed it, and has started level two but has not yet completed it. In this state the document we store against the user will look like this:
 
 ```
     {
@@ -31,13 +33,15 @@ There are times where you want to maintain a complex JSON document in a Mongo co
 
 ###  Creating the Event for Updating the Document.
 
-We are creating a generic event for updating a document, this event will contain the path of the document we want to update, and the value we want to set at that path. If this sounds a little complex, bear with us and work through the example, it should be clear at then end :). We'll add a new event in the portal that looks like this:
+We're creating a generic Event for updating a document. This Event will contain the path of the document we want to update and the value we want to set at that path. If this sounds a little complex, bear with us and work through the example - it should all become clear by the time you've work through the example!
 
-![](img/Partial/1.png)
+We'll add a new Event in the portal that looks like this:
+
+![](img/Partial/3.png)
 
 ### Creating the Script to Process the Update Event
 
-We now need to bind a cloud code script to this event to access the data and make the document updates. This script uses a little bit of mongo magic to create the document if it does not already exist, and sets the value you want at the path you ask for.
+We now need to bind a Cloud Code script to this Event to access the data and make the document updates. This script uses a little bit of mongo magic to create the document if it doesn't already exist, and sets the value you want at the path you ask for.
 
   ```  
      var progressCollection = Spark.runtimeCollection("player_progress");
@@ -62,18 +66,18 @@ We now need to bind a cloud code script to this event to access the data and mak
 ```
 ### Creating the Event for Querying the Document
 
-We'll use the same pattern here for querying the document.  For the query event only one attribute is required, the path of the document you want to retrieve.
+We'll use the same pattern here for querying the document.  For the query Event only one attribute is required - the path of the document you want to retrieve.
 
-We'll add a new event in the portal that looks like this:
+We'll add a new Event in the portal that looks like this:
 
 ![](img/Partial/2.png)
 
 
 ### Creating the Script to Process the Query Event
 
-This script is a little more involved. The basic mongo find operators do not support getting a partial document, however the aggregation framework does. We are using an undocumented feature of the JavaScript API to access the aggregation framework, whilst it works ok for cases where a single document is being processed, we have not fully completed the testing cycle for multiple documents (we'll keep you posted on that).
+This script is a little more involved. The basic mongo find operators don't support getting a partial document. However, the aggregation framework does.
 
-  ```  
+```  
     var progressCollection = Spark.runtimeCollection("player_progress");
 
     //Get the value that was passed in for PATH

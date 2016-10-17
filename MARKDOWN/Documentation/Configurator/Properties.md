@@ -23,13 +23,13 @@ Use the Properties page to create and manage your Properties and Property Sets:
 
 ![](img/Properties/8.png)
 
-The page opens with the *Property Sets* page selected and you can use the following options (highlighted above):
+The page opens with the *Property Sets* tab selected and you can use the following options (highlighted above):
 
  * *Add* - Add a new Property Set.
  * ![](/img/icons/editicon.png) - Edit Property Set.
  * ![](/img/icons/deleteicon.png) - Delete Property Set.
 
-Click the *Properties* tab where you can use the same options to manage your Properties.
+Select the *Properties* tab where you can use the same options to manage your Properties.
 
 ## Creating Properties
 
@@ -38,36 +38,35 @@ Click the *Properties* tab where you can use the same options to manage your Pro
 ![](img/Properties/9.png)
 
 *2.* Enter the details of the Property:
-* *Short Code* - A mandatory field which is a unique identifier for use elsewhere in the Portal and in Cloud Code.
+* *Short Code* - A mandatory field which is a unique identifier of the Property for use elsewhere in the Portal and in Cloud Code.
 * *Name* - A mandatory field used to help identify the Property.
 * *Description* - A mandatory field which should be used to describe the Property and explain its purpose.
-* *Value* - Enter the value you want for your JSON configuration in the editor.
+* *Value* - Enter the value you want for your Property JSON configuration in the editor.
+  * The default editing environment is *Code*, where you can manually enter your JSON configuration structure.
+  * Alternatively, you can switch to the *Tree* editing environment, where you can enter fields and select the required data-type:
 
-The default editing environment is *Visual*, where you can enter fields and select the required data-type:
+![](img/Properties/10.png)
 
-===== Does this editor do validation as stated below?
-
-===== Is the simplification deliberate?
-
-![](img/Properties/2.png)
-
-Alternatively, you can switch to the *JSON* editor, where you can manually enter your JSON configuration structure with real-time validation on your input:
-
-![](img/Properties/4.png)
-
-If you want to edit or delete a Property, click the ![](/img/fa/edit.png) icon or ![](/img/fa/trash.png) icon respectively:
-
-![](img/Properties/5.png)
+*3.* Click to *Save and Close* the new Property.
 
 
-## Creating and Managing Property Sets
+## Creating Property Sets and Adding Properties
 
-Click the ![](/img/fa/plus.png) icon for Property Sets to create a new Property Set:
+*1.* Select the *Property Sets* tab and click *Add*. The page adjusts:
 
-![](img/Properties/3.png)
+![](img/Properties/11.png)
 
-In the Property Sets panel, you can click the ![](/img/fa/plus.png) icon to add Properties to your Property Set. Give a name to the Property Set member and select from existing Properties for the value:
+*2.* Enter the details of the Property Set:
+* *Short Code* - A mandatory field which is a unique identifier of the Property Set for use elsewhere in the Portal and in Cloud Code.
+* *Name* - A mandatory field used to help identify the Property Set.
+* *Description* - A mandatory field which should be used to describe the Property Set and explain its purpose.
 
-![](img/Properties/7.png)
+You can now add *Property Set Keys* to your Property Set and map these to Properties.
 
-To delete a Property Set member, click the ![](/img/fa/edit.png) icon to open Edit Property Set and click the ![](/img/fa/trash.png) icon against the unwanted Property.
+*3.* On the *Property Set Keys* panel, click *Add*:
+
+![](img/Properties/12.png)
+
+In this example, two Keys have been added and mapped to Properties.
+
+*4.* Click to *Save and Close* the new Property Set.

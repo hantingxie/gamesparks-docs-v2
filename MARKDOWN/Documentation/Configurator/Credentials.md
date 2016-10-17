@@ -8,16 +8,25 @@ src: /Documentation/Configurator/Credentials.md
 Credentials allow you to configure permissive role types for Players within the game.  You can configure each Credential to control which requests and responses are authorized for use when connecting to the GameSparks API platform:
 * Credentials are passed-in when a connection is made to the platform.
 * If you've created a Credential and set it as a Player type, when any player with this Credential connects to the platform the request/response permissions you've configured for the Credential are applied to the player's requests:
-  * For example, you might want to set up a Credential which you can use against players to block their access to finding pending Matches (FindPendingMatchesRequest) or allow them only the ability to change their details (ChangeUserDetailsRequest).
+  * For example, you might want to set up a Credential which you can use against players to block their access to finding pending Matches (*FindPendingMatchesRequest*) or allow them only the ability to change their details (*ChangeUserDetailsRequest*).
 
-To create and edit Credentials, go to *Configurator > Integrations*. Existing Credentials are listed:
+## Managing Credentials
 
-![](img/SecCred/2.png)
+To create and edit Credentials, go to *Configurator > Credentials*. Existing Credentials are listed:
 
-## Credential settings
+![](img/SecCred/7.png)
+
+You can use the following options (highlighted above):
+
+ * *Add* - Add a new Credential.
+ * ![](/img/icons/editicon.png) - Edit Credential.
+ * ![](/img/icons/deleteicon.png) - Delete Credential.
+ * ![](/img/icons/reseticon.png) - [Reset](#Resetting Credential Secret) Credential's secret.
+
+## Understanding Credential Settings
 
 There are two ways in which you can configure Credentials for your game:
-* Select Credential type.
+* Select the Credential type.
 * Enable Credential requests.
 
 ### Selecting Credential Types
@@ -31,7 +40,7 @@ There are certain rules applied to the combination of Credential types:
 * A Player Credential MUST also be a Listener type.
 * However, a Listener Credential does not necessarily need to also be a Player Credential.
 
-<q>**Note:** You cannot alter the type settings for a System Credential!</q>
+<q>**Important!** You cannot alter the type settings for a System Credential!</q>
 
 ### Enabling Credential Requests
 
@@ -41,7 +50,7 @@ When you create or edit a Credential, there are four tabs for different requests
 * *LogChallengeRequests* - All Challenge Event requests including any custom Challenge Event requests.
 * *AdminRequests* - All requests considered to be Administration tasks.
 
-<q>**Note:** *AdminRequests* cannot be enabled for a Player Credential - you will get an error if you try to do this!</q>
+<q>**Important!** *AdminRequests* cannot be enabled for a Player Credential - you will get an error if you try to do this!</q>
 
 ## System Credentials
 
@@ -62,27 +71,27 @@ There are a few important things to note about System credentials:
 
 To edit a System Credential:
 
-*1.* Click the edit ![](/img/fa/edit.png) icon. The *Edit Credential* dialog appears:
+*1.* Click the edit ![](/img/icons/editicon.png) icon. The *Edit Credential* page appears:
 
-![](img/SecCred/3.png)
+![](img/SecCred/8.png)
 
 
 *2.* Select any of the four request tabs and check the individual requests under each one for the Credentials you want to allow/disallow. In this example, the first Requests tab is selected and all requests on this tab are checked and therefore allowed.
 
-*3.* Click *Save* at the bottom of the dialog to save your changes.
+*3.* Click to *Save and Close* your editing changes.
 
 ## Creating and Editing Custom Credentials
 
 To create and edit a custom Credential:
 
-*1.* Click the plus ![](/img/fa/plus.png) icon. The *Create Credential* dialog appears:
+*1.* Click *Add*. The *Add Credential* page appears:
 
-![](img/SecCred/4.png)
+![](img/SecCred/9.png)
 
 *2.* Complete the mandatory fields for the Credential:
-* *Short Code* - Unique identifier.
-* *Name*
-* *Description*
+* *Short Code* - Enter a unique identifier for the custom Credential.
+* *Name* - Enter a name which can be used to help identify the custom Credential in the portal.
+* *Description* - Enter a description for the custom Credential that explains its purpose.
 
 *3.* Use the toggle buttons at top-right to enable the type of Credential you want - *Player*, *Listener*, or *CB*. In this example, we have selected for a *Player* Credential. When you select *Player*:
 * *Listener* is automatically selected.
@@ -92,16 +101,21 @@ To create and edit a custom Credential:
 
 <q>**AdminRequests.** Remember, *AdminRequests* cannot be selected for a Player Credential!</q>
 
-## Resetting a Credential's Secret
+## Resetting Credential Secret
 
 To reset a Credential's secret:
 
-*1.* On the *Credentials* panel, click the reset ![](/img/fa/refresh.png) icon. The *Reset Secret* dialog appears:
+*1.* Under *Credentials*, click the reset ![](/img/icons/reseticon.png) icon for the Credential whose secret you want to reset:
 
-![](img/SecCred/5.png)
+![](img/SecCred/11.png)
 
-*2.* Click *Reset* to continue with the Credential secret reset. The *Reset Secret* dialog closes and you'll see that the Credential's secret has been updated:
+A *Reset Secret* confirmation dialog appears:
 
-![](img/SecCred/6.png)
+![](img/SecCred/10.png)
 
+*2.* Click *OK* to continue with the Credential secret reset. The confirmation dialog closes and you'll see that the Credential's secret has been updated:
+
+![](img/SecCred/12.png)
+
+</br>
 <q>**Callback Example!** For an example of when you might want to create a CB Credential and use it, see the [How to Use Custom Callback Urls](/Tutorials/Cloud Code and the Test Harness/Using Custom Callback Urls.md) tutorial.</q>

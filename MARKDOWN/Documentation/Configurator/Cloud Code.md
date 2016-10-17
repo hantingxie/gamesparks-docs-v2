@@ -8,13 +8,13 @@ src: /Documentation/Configurator/Cloud Code.md
 The *Configurator > Cloud Code* page lists all the potential interception points that Cloud Code can be bound to, and has a JavaScript editor where you can write your
 interception code.
 
-The *Bindings* section is split into ten sub-categories, which are further explained in the sections below.
+The *Scripts* section is split into ten sub-categories, which are further explained in the sections below.
 
-![](img/CloudCode/5.png)
+![](img/CloudCode/17.png)
 
-To access the Cloud Code JavaScript editor select the name of the script from one of the ten drop down menus in the *Bindings* section.  Use the *Delete*, *Close*, and *Save* buttons at the bottom of the editor to manage your scripts:
+To access the Cloud Code JavaScript editor select the name of the script from one of the ten drop down menus in the *Scripts* section.  Use the *Delete*, *Close*, and *Save* buttons at the bottom of the editor to manage your scripts:
 
-![](img/CloudCode/16.png)
+![](img/CloudCode/18.png)
 
 <q>**Keyboard Shortcuts to Save!** You can also save your scripts using standard key press combinations, **CMD+S** on OSX and **CTRL+S** on Windows and Linux.</q>
 
@@ -31,7 +31,7 @@ The *Events* list contains an entry for each Event you have created within the G
 
 ## Challenge Events
 
-![](img/CloudCode/6.png)
+![](img/CloudCode/7.png)
 
 The *Challenge Events* list contains an entry for each Event you have created within the GameSparks platform:
 * When a [LogChallengeEventRequest](/API Documentation/Request API/Multiplayer/LogChallengeEventRequest.md) is received, the corresponding script is executed allowing you to run custom code on the platform.
@@ -39,6 +39,7 @@ The *Challenge Events* list contains an entry for each Event you have created wi
 
 ```    
     var myChallenge = Spark.getChallenge(Spark.data.challengeId);
+
 ```
 
 * You can also access the current player making the request using *Spark.getPlayer()*.
@@ -46,7 +47,7 @@ The *Challenge Events* list contains an entry for each Event you have created wi
 
 ## Requests
 
-![](img/CloudCode/8.png)
+![](img/CloudCode/19.png)
 
 The *Requests* list contains an entry for each Request you can call within the GameSparks platform:
 * When a Request is received, the corresponding script is executed allowing you to run custom code on the platform.
@@ -56,7 +57,7 @@ The *Requests* list contains an entry for each Request you can call within the
 
 ## Responses
 
-![](img/CloudCode/9.png)
+![](img/CloudCode/20.png)
 
 The *Responses* list contains an entry for each Response that can be returned from the GameSparks platform:
 * When a Response is created, the corresponding script is executed before sending it to the player allowing you to run custom code on the platform.
@@ -64,23 +65,48 @@ The *Responses* list contains an entry for each Response that can be returned 
 
 ## User Messages
 
-![](img/CloudCode/10.png)
+![](img/CloudCode/21.png)
 
 The *User Messages* list contains an entry for each Message that can be returned from the GameSparks platform:
 * Before a Message is sent out to each player within a Challenge, the corresponding script is executed allowing you to run custom code on the platform.
-* You can access the current player who has generated the response using *Spark.getPlayer()*.
+* You can access the current player who received the message using *Spark.getPlayer()*.
 
 ## Global Messages
 
-![](img/CloudCode/11.png)
+![](img/CloudCode/22.png)
 
 The *Global Messages* list contains an entry for each Message that can be returned from the GameSparks platform:
 * When a Message is created the corresponding script is executed allowing you to run custom code on the platform.
 * You **cannot access** the current player in a global message Cloud Code script.
 
+## System
+
+![](img/CloudCode/26.png)
+
+The *System* tab contains a number of System Events that are able to trigger some JavaScript Cloud Code:
+
+  * *Callback Url* - This script is executed whenever something hits the [Callback Url](/Tutorials/Cloud Code and the Test Harness/Implementing External HTTP Callbacks.md).
+  * *Every Day* - This script is executed at 12:00am UTC each day.
+  * *Every Hour* - This script is executed on the hour, every hour.
+  * *Every Minute* - This script is executed on the minute, every minute.
+  * *File Delivered* - This script is executed when a file is delivered via SFTP to the GameSparks platform. SFTP access to the GameSparks platform is available on request. Please raise a support ticket to request this.
+  * *Game Published* - This script is executed when your game configuration changes:
+    * On the Preview stage this script will be executed each time you save your game within the portal, you should track your own internal version number in Preview if this script is performing potentially dangerous operation.
+    * On the Live stage, this script is executed once each time you publish your game.
+  * *Player Connected* - This script is executed each time a player connects and is identified. *Spark.getPlayer()* is set to be the player who connected so you can query or manipulate the data related to the player.
+  * *Player Disconnected* - This script is executed each time a player disconnects. *Spark.getPlayer()* is set to be the player who disconnected so you can query or manipulate the data related to the player.
+
+## Callbacks
+
+![](img/CloudCode/24.png)
+
+
+* *Callbacks* contains an item for each custom *Credential* created:
+* Separate [Callback URLs](/Tutorials/Cloud Code and the Test Harness/Using Custom Callback Urls.md) allow users to assign different Cloud Code scripts to different callbacks for the same game.
+
 ## Modules
 
-![](img/CloudCode/12.png)
+![](img/CloudCode/23.png)
 
 Modules allow you to create your own libraries of JavaScript that can be included within other scripts. This allows you to separate common functionality that needs to be shared between scripts into a single module that can be included.
 
@@ -103,42 +129,17 @@ Modules allow you to create your own libraries of JavaScript that can be include
 
 ```
 
-* To create a new module, click the plus ![](/img/fa/plus.png) icon. Then, on the *Create Module* dialog, enter a *Short Code* to uniquely identify the new module script.
-
-## Callbacks
-
-![](img/CloudCode/13.png)
-
-
-* *Callbacks* contains an item for each custom *Credential* created:
-* Separate [Callback URLs](/Tutorials/Cloud Code and the Test Harness/Using Custom Callback Urls.md) allow users to assign different Cloud Code scripts to different callbacks for the same game.
+* To create a new module, click the plus ![](/img/fa/plus.png) icon. Then, on the *Create New Module* dialog, enter a *Short Code* to uniquely identify the new module script and click *Add*.
 
 
 ## Realtime Scripts
 
-![](img/CloudCode/14.png)
+![](img/CloudCode/25.png)
 
 *Realtime Scripts* are listed here:
 * You can link Realtime scripts to a Match configuration in the Multiplayer Section so that when a Match is found, the arbitrary Cloud Code script that communicates with the Real-Time client is triggered.
 * To create a new Realtime script, click the plus ![](/img/fa/plus.png) icon.
 * For more details on Realtime Services, see [here](/Tutorials/Real-Time Services/README.md).
-
-## System
-
-![](img/CloudCode/15.png)
-
-The *System* tab contains a number of System Events that are able to trigger some JavaScript Cloud Code:
-
-  * *Callback Url* - This script is executed whenever something hits the [Callback Url](/Tutorials/Cloud Code and the Test Harness/Implementing External HTTP Callbacks.md).
-  * *Every Day* - This script is executed at 12:00am UTC each day.
-  * *Every Hour* - This script is executed on the hour, every hour.
-  * *Every Minute* - This script is executed on the minute, every minute.
-  * *File Delivered* - This script is executed when a file is delivered via SFTP to the GameSparks platform. SFTP access to the GameSparks platform is available on request. Please raise a support ticket to request this.
-  * *Game Published* - This script is executed when your game configuration changes:
-    * On the Preview stage this script will be executed each time you save your game within the portal, you should track your own internal version number in Preview if this script is performing potentially dangerous operation.
-    * On the Live stage, this script is executed once each time you publish your game.
-  * *Player Connected* - This script is executed each time a player connects and is identified. *Spark.getPlayer()* is set to be the player who connected so you can query or manipulate the data related to the player.
-  * *Player Disconnected* - This script is executed each time a player disconnects. *Spark.getPlayer()* is set to be the player who disconnected so you can query or manipulate the data related to the player.
 
 ## Cloud Code Editor Keyboard Shortcuts
 
