@@ -12,7 +12,7 @@ The *Scripts* section is split into ten sub-categories, which are further explai
 
 ![](img/CloudCode/17.png)
 
-To access the Cloud Code JavaScript editor select the name of the script from one of the ten drop down menus in the *Scripts* section.  Use the *Delete*, *Close*, and *Save* buttons at the bottom of the editor to manage your scripts:
+To access the Cloud Code JavaScript editor select the name of the script from one of the ten drop down menus in the *Scripts* section.  Use the *Save*, *Close*, and *Delete* buttons at the bottom of the editor to manage your scripts:
 
 ![](img/CloudCode/18.png)
 
@@ -22,16 +22,15 @@ To access the Cloud Code JavaScript editor select the name of the script from on
 
 ## Events
 
-![](img/CloudCode/6.png)
+![](img/CloudCode/27.png)
 
 The *Events* list contains an entry for each Event you have created within the GameSparks platform:
 * When a [LogEventRequest](/API Documentation/Request API/Player/LogEventRequest.md) is received, the corresponding script is executed allowing you to run custom code on the platform. For more details, see [Events](/Documentation/Configurator/Events.md).
 * You can access the current player making the request using *Spark.getPlayer()*.
-* You can quickly create a new Event by clicking the plus ![](/img/fa/plus.png) icon. This opens the same *Create Event* dialog as opened from the [Events](/Documentation/Configurator/Events.md) page.
 
 ## Challenge Events
 
-![](img/CloudCode/7.png)
+![](img/CloudCode/28.png)
 
 The *Challenge Events* list contains an entry for each Event you have created within the GameSparks platform:
 * When a [LogChallengeEventRequest](/API Documentation/Request API/Multiplayer/LogChallengeEventRequest.md) is received, the corresponding script is executed allowing you to run custom code on the platform.
@@ -43,7 +42,6 @@ The *Challenge Events* list contains an entry for each Event you have created wi
 ```
 
 * You can also access the current player making the request using *Spark.getPlayer()*.
-* You can quickly create a new Event by clicking the plus ![](/img/fa/plus.png) icon. See the Events section above for details.
 
 ## Requests
 
@@ -129,7 +127,7 @@ Modules allow you to create your own libraries of JavaScript that can be include
 
 ```
 
-* To create a new module, click the plus ![](/img/fa/plus.png) icon. Then, on the *Create New Module* dialog, enter a *Short Code* to uniquely identify the new module script and click *Add*.
+* To create a new module, click the plus ![](/img/fa/plus-circle.png) icon. Then, on the *Create New Module* dialog, enter a *Short Code* to uniquely identify the new module script and click *Add*.
 
 
 ## Realtime Scripts
@@ -138,7 +136,7 @@ Modules allow you to create your own libraries of JavaScript that can be include
 
 *Realtime Scripts* are listed here:
 * You can link Realtime scripts to a Match configuration in the Multiplayer Section so that when a Match is found, the arbitrary Cloud Code script that communicates with the Real-Time client is triggered.
-* To create a new Realtime script, click the plus ![](/img/fa/plus.png) icon.
+* To create a new Realtime script, click the plus ![](/img/fa/plus-circle.png) icon.
 * For more details on Realtime Services, see [here](/Tutorials/Real-Time Services/README.md).
 
 ## Cloud Code Editor Keyboard Shortcuts

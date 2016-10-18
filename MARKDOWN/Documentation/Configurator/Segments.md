@@ -9,26 +9,57 @@ src: /Documentation/Configurator/Segments.md
 
 Segments allow you to create partitions for different users and apply various rules to different areas of the platform. Segments offer you an extra dimension of flexibility for customizing player experience and behavior.
 
-## Example
+## Examples
 
-Let's suppose I have an international blockbuster game with players connecting from different parts of the World. In order to offer a more personalized experience for my players, I might want to segment players by region or country. I can create a segment based on country, with segment values of the countries my players are situated in. When added to such a segment, the players will receive a different experience. For example, each segment value (or country in this case) could have different values for virtual goods, the amount of awards they receive upon obtaining an achievement, or the rates of their 6 currencies that spread across their game. What about language? A much simpler and customizable method than Geo Locations would be to introduce a language segment. Based on the users segment values for a language segment, users could receive messages for new high scores, challenges, and team invitations all in their respective native languages, as well as customizing the name and descriptions of Leaderboards, Challenges, Achievements, and so on.
+Here's two example use cases where Segmentation comes in very useful:
 
-## Creating a Segment
+1. Let's suppose I have an international blockbuster game with players connecting from different parts of the World. In order to offer a more personalized experience for my players, I might want to segment players by region or country. I can create a Segment based on country, with Segment Values of the countries my players are situated in. When added to such a Segment, the players will receive a different experience. For example, each Segment Value (or country in this case) could have different values for virtual goods, the amount of awards they receive upon obtaining an achievement, or the rates of their 6 currencies that spread across their game.
+2. What about language? A much simpler and customizable method than Geo Locations would be to introduce a language Segment. Based on the user's Segment Values for a language Segment, users could receive messages for new high scores, challenges, and team invitations all in their respective native languages, as well as customizing the name and descriptions of Leaderboards, Challenges, Achievements, and so on.
+
+## Managing Segment Configurations
+
+To create and edit Segments, go to *Configurator > Segments* and select the *Segments* tab. Existing Segments are listed:
+
+![](img/Segments/7.png)
+
+You can use the following options (highlighted above):
+
+ * *Add* - Add a new Segment.
+ * ![](/img/icons/editicon.png) - Edit Segment.
+ * ![](/img/icons/deleteicon.png) - Delete Segment.
+
+## Creating a Segment and Adding Segment Values
 
 You can create and assign multiple segments, each with their own set of values.
 
-![](img/Segments/1.png)
+*1.* On the *Segments* tab, click *Add*. The page adjusts:
 
-Segments and their respective values can be set within the Segments area:
+![](img/Segments/8.png)
 
-![](img/Segments/2.png)
+*2.* Enter the details of the new Segment:
+* *Short Code* \- A mandatory field used to give the Segment a unique identifier for use elsewhere in the Portal and in Cloud Code.
+* *Name* \- A mandatory field used as an identifier to help find the Segment in the Portal.
+* *Description* \- A mandatory field which should be used to describe the Segment and explain its purpose.
 
+*3.* To add values to the Segment, under *Values* click *Add*.
 
-Not all Segments have to be set in this area. Segments and their values can be set on-the-fly using Cloud Code. For any segment type, a player can have a single value set, and you can set (or unset) these values via Cloud Code using _SparkPlayer.setSegmentValue(TYPE, VALUE)_ or find the current value of a segment they have, using _myPlayer.getSegmentValue("TYPE")_.
+*4.* Enter a *Short Code*, *Name*, and *Description* for each Segment value that you add:
+
+![](img/Segments/9.png)
+
+In this example, we've added 6 Values to our *Country* Segment.
+
+## Setting Segments Using Cloud Code
+
+Not all Segments have to be set in through the Configurator. Segments and their Values can be set on-the-fly using Cloud Code. For any Segment type, a player can have a single Value set, and you can set (or unset) these Values via Cloud Code using _SparkPlayer.setSegmentValue(TYPE, VALUE)_ or find the current Value of a Segment they have, using _myPlayer.getSegmentValue("TYPE")_.
 
 ![](img/Segments/3.png)
 
-Within the portal, you can segment your configuration to set different parameters for different segments. For example, you can have a different price for a virtual good for a particular segment or a different virtual good award and currency reward depending on the country segment you are set to:
+## Segmenting Configuration across the Portal
+
+Within the portal, you can segment your configuration to set different parameters for different Segments. For example, you can have:
+* A different price for a virtual good for a particular Segment.
+* A different virtual good award and currency reward for an Achievement depending on the player's country Segment:
 
 ![](img/Segments/4.png)
 

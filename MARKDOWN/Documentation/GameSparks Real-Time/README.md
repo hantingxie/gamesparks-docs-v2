@@ -15,7 +15,7 @@ Our real-time services provide a network communication layer with the capability
 
 * **Lightweight and Flexible SDK.** A very lightweight SDK gives you, the developer, tight control over what is sent and received:
   * Wide flexibility on what data you send and how you wish to send the data.
-  * Data packets an be kept as small as possible making transmission much more efficient.
+  * Data packets can be kept as small as possible making transmission much more efficient.
 
 * **GameSparks Real-Time Server** Designed specifically for real-time games:
   * Low latency socket server supporting high throughput and low transmission sizes.
