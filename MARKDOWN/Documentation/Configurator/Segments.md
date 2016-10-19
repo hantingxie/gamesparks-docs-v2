@@ -13,7 +13,7 @@ Segments allow you to create partitions for different users and apply various ru
 
 Here's two example use cases where Segmentation comes in very useful:
 
-1. Let's suppose I have an international blockbuster game with players connecting from different parts of the World. In order to offer a more personalized experience for my players, I might want to segment players by region or country. I can create a Segment based on country, with Segment Values of the countries my players are situated in. When added to such a Segment, the players will receive a different experience. For example, each Segment Value (or country in this case) could have different values for virtual goods, the amount of awards they receive upon obtaining an achievement, or the rates of their 6 currencies that spread across their game.
+1. Let's suppose I have an international blockbuster game with players connecting from different parts of the World. In order to offer a more personalized experience for my players, I might want to segment players by region or country. I can create a Segment based on country, with Segment Values of the countries my players are situated in. When added to such a Segment, the players will receive a different experience. For example, each Segment Value (or country in this case) could have different values for Virtual Goods, the amount of awards they receive upon obtaining an Achievement, or the rates of their 6 currencies that spread across their game.
 2. What about language? A much simpler and customizable method than Geo Locations would be to introduce a language Segment. Based on the user's Segment Values for a language Segment, users could receive messages for new high scores, challenges, and team invitations all in their respective native languages, as well as customizing the name and descriptions of Leaderboards, Challenges, Achievements, and so on.
 
 ## Managing Segment Configurations
@@ -51,9 +51,9 @@ In this example, we've added 6 Values to our *Country* Segment.
 
 ## Setting Segments Using Cloud Code
 
-Not all Segments have to be set in through the Configurator. Segments and their Values can be set on-the-fly using Cloud Code. For any Segment type, a player can have a single Value set, and you can set (or unset) these Values via Cloud Code using _SparkPlayer.setSegmentValue(TYPE, VALUE)_ or find the current Value of a Segment they have, using _myPlayer.getSegmentValue("TYPE")_.
+Not all Segments have to be set through the Configurator. Segments and their Values can be set on-the-fly using [Cloud Code](/Documentation/Configurator/Cloud Code.md). For any Segment type, a player can have a single Value set, and you can set (or unset) these Values via Cloud Code using _SparkPlayer.setSegmentValue(TYPE, VALUE)_ or find the current Value of a Segment they have, using _myPlayer.getSegmentValue("TYPE")_.
 
-![](img/Segments/3.png)
+![](img/Segments/13.png)
 
 ## Segmenting Configuration across the Portal
 
@@ -61,14 +61,18 @@ Within the portal, you can segment your configuration to set different parameter
 * A different price for a virtual good for a particular Segment.
 * A different virtual good award and currency reward for an Achievement depending on the player's country Segment:
 
-![](img/Segments/4.png)
+![](img/Segments/10.png)
 
-Segmented values within the portal can be ordered, where the order is used to find the most appropriate value for the current player.
+In this example, we've added Segment configuration to an Achievement to award different Virtual Goods to players in Poland or Japan
 
-![](img/Segments/5.png)
+### Ordering Segment Configuration
+
+Segmented values within the portal can be ordered, where the order is used to find the most appropriate value for the current player. Simply click and hold on the *Reorder* icon and drag-and-drop a Segment to where you want it:
+
+![](img/Segments/11.png)
 
 ## Social Integration with Segments
 
 One of the most powerful features of Segmentation is that it allows for different segment types to be socially connected to different games or apps. For example, players of different nationalities or language preferences, could have segments which would socially connect them to a different version of a developer's app or game on Facebook or Twitter:
 
-![](img/Segments/6.png)
+![](img/Segments/12.png)

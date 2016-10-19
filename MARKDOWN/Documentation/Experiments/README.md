@@ -1,6 +1,6 @@
 ---
-nav_sort: 2
-src: /Documentation/Manage/Building Experiments Screens.md
+nav_sort: 6
+src: /Documentation/Experiments/README.md
 ---
 
 # Experiments

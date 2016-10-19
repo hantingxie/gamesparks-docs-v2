@@ -13,31 +13,31 @@ In this tutorial, we’ll go through setting up the necessary configuration with
 
 *1.* Go to the [Facebook developer portal](https://developers.facebook.com/) and sign in (or sign up to Facebook first).
 
-*2.* Now select the *App->Register as a Developer* menu option:
+*2.* Now select the *Register* option:
 
-![](img/AuthFB/1.png)
+![](img/AuthFB/22.png)
 
 *3.* Accept the Facebook Platform Policy and the Facebook Privacy Policy in the dialog that appears.
 
 *4.* Next, verify your account by obtaining and entering a code via your mobile phone.
 
-![](img/AuthFB/2.png)
+![](img/AuthFB/23.png)
 
 Now you’re ready to create your app.
 
-*5.* Click* Apps->Create a New App.*
+*5.* Click* My apps->Add a New App.*
 
-![](img/AuthFB/3.png)
+![](img/AuthFB/17.png)
 
-*6.* Fill in the *Display Name* and (optional) *Namespace* fields, select your *Category* and *Sub-Category* in the drop down menus then click *Create App*.
+*6.* Fill in the *Display Name* and *Contact Email* fields, select your *Category* and *Sub-Category* in the drop-down menus then click *Create App ID*.
 
-![](img/AuthFB/4.png)
+![](img/AuthFB/19.png)
 
 And that’s it, you now have a Facebook application.
 
 There are various configuration options you can play around with, but for now all you’re interested in are the *App ID* and *App Secret*.
 
-![](img/AuthFB/5.png)
+![](img/AuthFB/18.png)
 
 *7.* In a separate tab/window, head over to [the GameSparks developer portal](https://portal.gamesparks.net/) and click the *Configurator* -> *Integrations*
 
@@ -54,7 +54,7 @@ The *Edit Facebook Configuration* dialog appears:
 
 *10.* Click *Save*.
 
-Your GameSparks game is now configured to use your newly-created Facebook application: you’re setup to authenticate your players via Facebook, and the GameSparks platform can access their profile to drive its social features.
+Your GameSparks game is now configured to use your newly-created Facebook application: you’re set up to authenticate your players via Facebook, and the GameSparks platform can access their profile to drive its social features.
 
 ## Authenticating a Player Using their Facebook Account
 
@@ -66,21 +66,19 @@ For the purpose of this tutorial, you can just get hold of the access token for 
 
 *2.* Then select *Roles* from the left hand menu.
 
-*3.* Then select the* Test Users* tab and click the *Add* button:
-
-![](img/AuthFB/7.png)
+*3.* Then under *Test Users* tab, click *Add*. The *Create Test Users* dialog appears:
 
 *4.* In the *Create Test Users* dialog, select the number of test users that you require and switch *Authorize Test Users for This App* to *YES*.
 
-![](img/AuthFB/8.png)
+![](img/AuthFB/20.png)
 
-The created test user(s) will be displayed in the list.
+*5.* Click to *Create Test Users*. The created test user(s) will be displayed in the list.
 
-*5.* Click the padlock icon to get an access token for the test user.
+*6.* Click *Edit* and on the drop-down select to get the access token for the test user:
 
-![](img/AuthFB/9.png)
+![](img/AuthFB/21.png)
 
-*6.* Copy the access token.  You will use it in the GameSparks portal Test Harness in the next section.
+*7.* Copy the access token.  You will use it in the GameSparks portal Test Harness in the next section.
 
 ![](img/AuthFB/10.png)
 
@@ -106,7 +104,7 @@ If the authentication with Facebook is successful you will see a response like 
 {
  "@class": ".AuthenticationResponse",
  "authToken": "c450ed6c-98e0-41f4-af04-539ad4099151",
- "displayName": "John Amhcbedcfceb Thurnsen",
+ "displayName": "Player One",
  "requestId": "1400764433829",
  "scriptData": null,
  "userId": "537df8f1e4b01fdedfa3770f"
@@ -114,17 +112,35 @@ If the authentication with Facebook is successful you will see a response like 
 
 ```
 
-*4.* Now, create another test user in the Facebook developer portal and click the *Manage this test user's friends* icon.
+<q>**Multiple Social Authentications!** If you try to authenticate another test user through the same GameSparks user account *BEFORE* disconnecting the first linked account or *BEFORE* refreshing the session, you will receive an error because the account remains linked:</q>
 
-![](img/AuthFB/11.png)
+```
 
-*5.* Add the other test user as a friend to this user.
+{
+ "@class": ".AuthenticationResponse",
+ "error": {
+  "accessToken": "ACCOUNT_ALREADY_LINKED"
+ },
+ "newPlayer": false
+}
 
-![](img/AuthFB/12.png)
+```
 
-*6.* Now, obtain an access token for this new test user and send a *FacebookConnectRequest* to the GameSparks platform via the Test Harness.
+<q>**Use a Tab per User.** If you want to want to work with multiple Facebook accounts in the Test Harness at the same time, we recommend you use a separate browser tab for each user to avoid this error.</q>
 
-*7.* Next, in the Test Harness click on *User* -> *ListInviteFriendsRequest* and you should see that the list of friends contains the other Facebook test user.
+## Checking Facebook Friends
+
+*1.* Now, create another test user in the Facebook developer portal and under *Edit* select the *Manage this test user's friends* icon.
+
+![](img/AuthFB/15.png)
+
+*2.* Add the other test user as a friend to this user.
+
+![](img/AuthFB/16.png)
+
+*3.* Now, obtain an access token for this new test user and send a *FacebookConnectRequest* to the GameSparks platform via the Test Harness.
+
+*4.* Next, in the Test Harness click on *User* -> *ListInviteFriendsRequest* and you should see that the list of friends contains the other Facebook test user.
 
 ```
 
@@ -141,8 +157,8 @@ If the authentication with Facebook is successful you will see a response like 
  "@class": ".ListInviteFriendsResponse",
  "friends": [
   {
-   "id": "FB:100008325436352",
-   "displayName": "John Amhcbedcfceb Thurnsen",
+   "id": "FB:107131019762602",
+   "displayName": "Mark Alacigaabfjei Panditsky",
    "profilePic": "http://graph.facebook.com/100008325436352/picture"
   }
  ],
