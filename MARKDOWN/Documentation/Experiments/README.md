@@ -38,7 +38,8 @@ The form is very detailed, but divided into sections – Configuration, Player B
 ## Player Base Configuration
 
 *User Query* - The search criteria required for Player results.
-Variant Configuration
+
+## Variant Configuration
 
 *Name* - A description of the variant.
 
