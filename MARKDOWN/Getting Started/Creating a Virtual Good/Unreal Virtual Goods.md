@@ -43,7 +43,7 @@ Here's what we'll cover in this tutorial:
 
 *2.* Create an Event that credits the *authenticated* player with extra currency.
 
-*3.* Add an *Attribute* that will be used to indicate the amount to credit.
+*3.* Edit the Event to add an *Attribute* that will be used to indicate the amount to credit.
 
 This Event will be logged whenever the *authenticated* player *consumes* a Gold Coin Virtual Good:
 
@@ -55,7 +55,7 @@ This Event will be logged whenever the *authenticated* player *consumes* a Gol
 
 *6.* Now get the Player object using *getPlayer* and credit them *currency1* by the *money* value:
 
-![](img/UR/9.png)
+![](img/UR/8.png)
 
 This is the Cloud Code:
 

@@ -11,29 +11,37 @@ The GameSparks Debugger can be both enabled exclusively and in combination for R
 
 <q>**Please Note!** The Debugger panel will only display if there is some Cloud Code written against the Event, Request, Response or Message.</q>
 
-To enable the GameSparks Debugger, check any or all of the tick boxes that you wish to debug Cloud Code for, under the "Statistics" panel on the [Test Harness](/Documentation/Test Harness/README.md).
+## Enabling the Debugger
 
-![](img/GSDebugger/1.png)
+To enable the GameSparks Debugger, in the *Debug* section of the [Test Harness](/Documentation/Test Harness/README.md) select any or all of the check boxes that you wish to debug Cloud Code for:
 
-For example, checking only the Debug checkbox for Responses, will only activate the GameSparks Debugger when the Response is triggered, providing the Response has some Cloud Code written for it.
+![](img/GSDebugger/12.png)
 
-Now, when you send a request that has some Cloud Code written to it, the GameSparks Debugger will appear as an overlay on the left side of the screen:
+For example, if you only select the *Debug* checkbox for Responses, the GameSparks Debugger will activate only when the Response is triggered, providing the Response has some Cloud Code written for it.
 
-![](img/GSDebugger/2.png)
+## Working with the Debugger
 
-The Context menu (center) is where all your variables and objects will be shown.  Because your variables and objects are defined, you will see their values being populated there. The buttons on the Context menu are:
+With the Debugger enabled, when you send a request that has some Cloud Code written to it, the GameSparks Debugger will appear as an overlay on the left side of the Test Harness page:
 
-![](img/GSDebugger/3.png) **Continue** - This will continue execution of the current script until either a breakpoint is hit, or the script finishes.
+![](img/GSDebugger/13.png)
 
-![](img/GSDebugger/4.png) **Step Over** \- Proceeds to the next line in your current scope (that is, it goes to the next line), without descending into any method calls on the way. This is generally used for following the logic through a particular method without worrying about the details of its collaborators, and can be useful for finding at what point in a method the expected conditions are violated.
+The Debugger is laid out as follows:
+* *Cloud Code Tab* \- Any Cloud Code attached to the request is shown and the current line focus is highlighted.
+* *Context Menu* \- Under *Context* all your variables and objects will be shown.  Because your variables and objects are defined, you will see their values being populated there.
+* *Control* \- Icon buttons under *Control* give you debugging options:
+  * ![](/img/icons/DBcontinueicon.png) **Continue** \- Continue execution of the current script until either a breakpoint is hit, or the script finishes.
+  * ![](/img/icons/DBstepovericon.png) **Step Over** \- Proceed to the next line in your current scope (that is, it goes to the next line), without descending into any method calls on the way. This is generally used for following the logic through a particular method without worrying about the details of its collaborators, and can be useful for finding at what point in a method the expected conditions are violated.
+  * ![](/img/icons/DBstepinicon.png) **Step In** \- This will cause the debugger to descend into any method calls on the current line. If there are multiple method calls, they'll be visited in order of execution; if there are no method calls, this is same as step over. This is broadly equivalent to following every individual line of execution as would be seen by the interpreter.
+  * ![](/img/icons/DBstepouticon.png) **Step Out** \- Proceeds until the next "return" or equivalent - that is, until control has returned to the preceding stack frame. This is generally used when you've seen all you need to at this point/method and you want to bubble up the stack a few layers to where the value is actually used.
+  * ![](/img/icons/DBstopicon.png) **Stop** \- Stops the debugging session, the script will be executed and the debug session will stop.
 
-![](img/GSDebugger/5.png) **Step In** - This will cause the debugger to descend into any method calls on the current line. If there are multiple method calls, they'll be visited in order of execution; if there are no method calls, this is same as step over. This is broadly equivalent to following every individual line of execution as would be seen by the interpreter.
+### Understanding the Context Menu
 
-![](img/GSDebugger/6.png) **Step Out** - Proceeds until the next "return" or equivalent - that is, until control has returned to the preceding stack frame. This is generally used when you've seen all you need to at this point/method and you want to bubble up the stack a few layers to where the value is actually used.
+The *Context Menu* sets things out to make your debugging tasks easier:
+* Objects that you create in your Cloud Code will appear as hierarchical trees under *Context* so you can expand and minimize them to view their variables.
+* All requests are also shown as hierarchical trees in which you can check the responses by expanding them in the Context menu.
 
-![](img/GSDebugger/7.png) **Stop** - Stops the debugging session, the script will be executed and the debug session will stop.
-
-Objects that you create in your Cloud Code will appear as hierarchical trees in the context menu so you can expand and minimize them to view their variables. All requests are also shown as hierarchical trees in which you can check the responses by expanding them in the Context menu.  Responses to [SendRequests](/API Documentation/Cloud Code API/Spark.md) within Cloud Code viewed within the Debugger are displayed similar to the way the Test Harness Inspector displays them.
+Responses to [SendRequests](/API Documentation/Cloud Code API/Spark.md) within Cloud Code viewed within the Debugger are displayed similar to the way the Test Harness Inspector displays them.
 
 Here, the Cloud Code calls an [AuthenticationRequest](/API Documentation/Request API/Authentication/AuthenticationRequest.md) and an AuthenticationResponse. The values attributed to the Request and Response are shown as child properties of that object:
 

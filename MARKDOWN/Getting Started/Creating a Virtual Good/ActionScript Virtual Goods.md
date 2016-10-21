@@ -51,7 +51,7 @@ You will log this Event whenever the authenticated player *consumes* a Gold Coin
 
 *6.* Next, get the player object using *Spark.getPlayer()* and credit their *currency1* with the *money* value.
 
-![](img/AS/5.png)
+![](img/AS/10.png)
  
 Here's the Cloud Code:
 

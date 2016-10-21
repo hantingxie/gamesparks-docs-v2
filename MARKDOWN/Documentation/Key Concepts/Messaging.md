@@ -43,7 +43,8 @@ Certain events that occur within the platform will trigger a message to be sent 
 
 *3.* **Script message**
 
-Like the Request messages, this is an explicit call to the platform to send a message to the target players, but in this case it's invoked via Cloud Code using [Spark.sendMessage](/API Documentation/Cloud Code API/Spark.md). The content of the message is an argument provided to the sendMessage method.
+Like the Request messages, this is an explicit call to the platform to send a message to the target players, but in this case the message is created using [Spark.message](/API Documentation/Cloud Code API/Spark.md) and then can be sent using [SparkMessage.send](/API Documentation/Cloud Code API/Player/SparkMessage.md).
+
 
 ## Messages and Cloud Code
 

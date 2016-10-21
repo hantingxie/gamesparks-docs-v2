@@ -7,7 +7,7 @@ src: /Documentation/Test Harness/README.md
 
 The Test Harness allows you to send API requests into the GameSparks platform in their raw form to see the responses that the server returns for any given request:
 * **Mimics Connected Devices.** Because the browser uses WebSockets for communication, the Test Harness can mimic a connected device by receiving asynchronous messages when they are generated by the platform.
-* **Invaluable Tool.** The Test Harness is an invaluable tool for testing your game configuration.  We recommend that you always try out any game configuration changes that you make in the Test Harness before writing the game client code that uses it.
+* **Invaluable Test Tool.** The Test Harness is an invaluable tool for testing your game configuration.  We recommend that you always try out any game configuration changes that you make in the Test Harness before writing the game client code that uses it.
 
 ## Getting to Know the Test Harness
 
@@ -28,7 +28,7 @@ There are several sections in the Test Harness:
     * *API Requests* \- lists all the available GameSparks API requests grouped according to functional area.  Each submenu item allows you to quickly select a request and then populate the JSON entry field with a correctly formatted request.
     * *JSON* \- enter your JSON request text here. You can click:
       * ![](/img/icons/saveicon.png) to save the request.
-      * ![](/img/icons/recordicon.png) to record a scenario - that is, a sequence of requests.
+      * ![](/img/icons/recordicon.png) to record a scenario, which is a sequence of requests.
       * ![](/img/icons/calendaricon.png) to easily populate any date fields in your JSON request.
       * *Send Request* to send your request.
   * **Inspector**
@@ -44,11 +44,11 @@ There are several sections in the Test Harness:
 
 When you first access the Test Harness page within the Developer Portal it will establish a session with the GameSparks platform.  At this point the Test Harness is connected to GameSparks but no player is currently authenticated within this session.  The initial connection handshaking methods are shown in the *Inspector* section.
 
- Once you have issued one of the available authentication requests (for example, [AuthenticationRequest](/API Documentation/Request API/Authentication/AuthenticationRequest.md), [DeviceAuthenticationRequest](/API Documentation/Request API/Authentication/DeviceAuthenticationRequest.md), and so on) with valid player details you will see an *Auth Token* (authentication token) in the *Connection* section.
+ When you have issued one of the available authentication requests (for example, [AuthenticationRequest](/API Documentation/Request API/Authentication/AuthenticationRequest.md), [DeviceAuthenticationRequest](/API Documentation/Request API/Authentication/DeviceAuthenticationRequest.md), and so on) with valid player details, you will see an *Auth Token* (authentication token) in the *Connection* section.
 
 ## Issuing a Request
 
-To issue a request from the Test Harness, simply enter the JSON for the request into the *JSON* section and press *Send Request*.
+To issue a request from the Test Harness, simply enter the JSON for the request into the *JSON* section and click *Send Request*.
 
 ![](img/TestHarness/13.png)
 
@@ -99,30 +99,40 @@ You can also issue several requests at once simply by creating a JSON array of r
 
 ## Saving Requests as a Scenario
 
-To save an individual request click on the ![](/img/icons/saveicon.png) icon in the *JSON* section.
+*1.* To save an individual request as a scenario, first click on the ![](/img/icons/saveicon.png) icon in the *JSON* section.
 
 ![](img/TestHarness/17.png)
 
-Give your scenario a meaningful name and click the *Save* button.
+*2.* Give your scenario a meaningful name and click the *Save* button.
 
 ![](img/TestHarness/18.png)
 
-The scenario is saved to *Scenarios* group of the *Request* section and can be recalled to the *JSON* section in the future.
+The scenario is saved to *Scenarios* area of the *Request* section and can be recalled to the *JSON* section in the future:
 
 ![](img/TestHarness/19.png)
 
 ## Recording Multi-Request Scenarios
 
-You can also record a sequence of requests with the Test Harness. Enter the first request in to the *JSON* section then click the microphone ![](/img/fa/microphone.png) icon which will change color to red to indicate that the Test Harness is now recording subsequent requests.
+You can also record a sequence of requests with the Test Harness and then save this multi-request sequence as a scenario.
 
-![](img/TestHarness/9.png)
+*1.* Enter the first request in the *JSON* section.
 
-Issue the command as normal with the Play icon  and then choose your next command.
+*2.* Click the microphone ![](/img/icons/recordicon.png) icon, which will switch to be highlighted to indicate that the Test Harness is now recording subsequent requests.
 
-![](img/TestHarness/10.png)
+![](img/TestHarness/40.png)
 
-Once you have entered and sent all the requests in your scenario click the red microphone icon  a second time to stop recording.  The JSON section will be populated with an array of all the requests that you sent whilst recording.
+*3.* Click to *Send Request* as normal.
 
-![](img/TestHarness/11.png)
+*4.* Select the next request, in the *JSON* section enter the request details, and then *Send Request*:
 
-This scenario can now be saved as described in the previous section.
+![](img/TestHarness/41.png)
+
+Notice that the microphone ![](/img/icons/record2icon.png) icon remains *highlighted* to show that record-scenario mode is enabled.
+
+*5.* Repeat these steps until you have send all the requests you want in your scenario.
+
+*6.* When you've entered and sent all the requests you want in your multi-request scenario, click the highlighted microphone icon a second time to stop recording. The *JSON* section will be populated with an array of all the requests that you sent whilst recording.
+
+![](img/TestHarness/42.png)
+
+This multi-request scenario can now be saved as described in the previous [section](#Saving Requests as a Scenario).

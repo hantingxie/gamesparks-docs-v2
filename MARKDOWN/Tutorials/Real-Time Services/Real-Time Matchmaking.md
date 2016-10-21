@@ -625,11 +625,11 @@ So, our StartNewRTSession() Method will look like this:
         Debug.Log ("GSM| Creating New RT Session Instance...");
         sessionInfo = _info;
         gameSparksRTUnity = this.gameObject.AddComponent<GameSparksRTUnity>(); // Adds the RT script to the game
-        // In order to create a new RT game we need a 'FindMatchResponse' //
-        // This would usually come from the server directly after a sucessful FindMatchRequest //
-        // However, in our case, we want the game to be created only when the first player decides using a button //
-        // therefore, the details from the response is passed in from the gameInfo and a mock-up of a FindMatchResponse //
-        // is passed in. In normal operation this mock-response may not be needed //
+        // In order to create a new RT game we need a 'FindMatchResponse' //
+        // This would usually come from the server directly after a successful MatchmakingRequest //
+        // However, in our case, we want the game to be created only when the first player decides using a button //
+        // therefore, the details from the response is passed in from the gameInfo and a mock-up of a FindMatchResponse //
+        // is passed in. //
         GSRequestData mockedResponse = new GSRequestData()
                                             .AddNumber("port", (double)_info.GetPortID())
                                             .AddString("host", _info.GetHostURL())
@@ -637,9 +637,9 @@ So, our StartNewRTSession() Method will look like this:
 
         FindMatchResponse response = new FindMatchResponse(mockedResponse); // create a match-response from that data and pass it into the game-config
         // So in the game-config method we pass in the response which gives the instance its connection settings //
-        // In this example i use a lambda expression to pass in actions for 
+        // In this example, I use a lambda expression to pass in actions for 
         // OnPlayerConnect, OnPlayerDisconnect, OnReady and OnPacket actions //
-        // These methods are self-explanitory, but the important one is the OnPacket Method //
+        // These methods are self-explanatory, but the important one is the OnPacket Method //
         // this gets called when a packet is received //
 
         gameSparksRTUnity.Configure(response, 
