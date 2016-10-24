@@ -5,11 +5,11 @@ src: /Documentation/Test Harness/Debugger.md
 
 # GameSparks Debugger
 
-The GameSparks Debugger allows you to test your [Cloud Code](/Documentation/Key Concepts/Cloud Code.md). If you have an Event, Request, Response or Message that has custom Cloud Code written to it, by enabling the GameSparks Debugger you can step through your code to examine what's happening, as it's happening.
+The GameSparks Debugger allows you to test your [Cloud Code](/Documentation/Key Concepts/Cloud Code.md). If you have an Event, Request, Response, or Message that has custom Cloud Code written to it, by enabling the GameSparks Debugger you can step through your code to examine what's happening, as it's happening.
 
-The GameSparks Debugger can be both enabled exclusively and in combination for Requests, Responses and Messages.
+The GameSparks Debugger can be enabled separately for Requests, Responses, or Messages. Alternatively, you can enable debugging for any of these in combination.
 
-<q>**Please Note!** The Debugger panel will only display if there is some Cloud Code written against the Event, Request, Response or Message.</q>
+<q>**Please Note!** The Debugger panel will only display if there is some Cloud Code written against the Event, Request, Response, or Message.</q>
 
 ## Enabling the Debugger
 
@@ -43,36 +43,41 @@ The *Context Menu* sets things out to make your debugging tasks easier:
 
 Responses to [SendRequests](/API Documentation/Cloud Code API/Spark.md) within Cloud Code viewed within the Debugger are displayed similar to the way the Test Harness Inspector displays them.
 
-Here, the Cloud Code calls an [AuthenticationRequest](/API Documentation/Request API/Authentication/AuthenticationRequest.md) and an AuthenticationResponse. The values attributed to the Request and Response are shown as child properties of that object:
+Here, the Cloud Code calls an [AuthenticationRequest](/API Documentation/Request API/Authentication/AuthenticationRequest.md) and an AuthenticationResponse. The values attributed to the Request are shown as child properties of that object:
 
-![](img/GSDebugger/8.png)
+![](img/GSDebugger/15.png)
 
 ### Breakpoints
 
-As in standard developer IDE's, the Breakpoint feature allows you to navigate to and wait at desired steps within the Cloud Code. This is enabled by clicking to the left of the line number of the Cloud Code that you wish to set the breakpoint:
+As in standard developer IDE's, the Breakpoint feature allows you to navigate to and wait at desired steps within the Cloud Code.
 
-![](img/GSDebugger/9.png)
+To set a Breakpoint, click to the left of the line number of the Cloud Code where you want to set the breakpoint. The line number is highlighted in dark blue:
 
-The line number will be highlighted in orange. These breakpoints are persistent and will be retained, even if you exit and re-enter the Test Harness at a later date. They can be disabled by clicking again to the left of the line number.
+![](img/GSDebugger/16.png)
 
-If you have multiple Debug checkboxes enabled and your Cloud Code invokes other Cloud Code items which in turn, also have Cloud Code attributed to them, then multiple debugging panels may be opened simultaneously in the form of tabbed panels:
+Breakpoints:
+* Are persistent and will be retained, even if you exit and re-enter the Test Harness at a later date.
+* Can be disabled by clicking again to the left of the line number.
 
-![](img/GSDebugger/10.png)
+### Multiple Debug Panels
 
-### Time-outs
+If you have multiple Debug checkboxes enabled and your Cloud Code invokes other Cloud Code items which, in turn, also have Cloud Code attributed to them, then multiple debugging panels may be opened simultaneously in the form of tabbed panels.
 
-If the Debugger has been inactive or idle for 2 minutes, the GameSparks Debugger pane will automatically close.
+
+### Debugger Time-out
+
+If the Debugger has been inactive or idle for 2 minutes, the GameSparks Debugger panel will automatically close.
 
 Imposing this time-out is in everyone's interest:
 * It's reasonable to assume that you've finished debugging if there's no activity after 2 minutes.
-* Any infinite loops you may have gotten in are terminated promptly!
+* Any infinite loops you may have gotten into are terminated promptly!
 * The socket connections we keep open internally while the Debugger is in use consume a lot of platform resources. Letting these close automatically and freeing-up these resources ensures the platform's performance is optimized.
 
 
 ### Break on Error
 
-Another feature available is that of the ‘Break on Error’. There may be instances when your [Cloud Code](/Documentation/Key Concepts/Cloud Code.md) throws an error exception that is not seen within the [Test Harness](/Documentation/Test Harness/README.md) or won’t necessarily halt the rest of the event but invalidates the test.
+Another important feature you can use when debugging your Cloud Code is *Break on Error*. There may be instances when your [Cloud Code](/Documentation/Key Concepts/Cloud Code.md) throws an error exception that is not seen within the [Test Harness](/Documentation/Test Harness/README.md) or won’t necessarily halt the rest of the event but invalidates the test.
 
-The ‘Break on Error’ will display any exceptions encountered within the Context menu.
+The *Break on Error* will display any exceptions encountered within the Context menu.
 
-![](img/GSDebugger/11.png)
+![](img/GSDebugger/17.png)

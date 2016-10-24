@@ -21,14 +21,17 @@ There are several sections in the Test Harness:
     * *Details* \- Shows details of the current connection such as the *Auth Token* (authentication token) and the *Service URL*.
     * *Stage* \- Use the drop-down menu to select connection to the Preview or the Live stage of your game.
     * *Credential* \- Use the drop-down menu to select the Credential you want to use when connecting. In the above example, the Test Harness is connected using the *debug* system Credential.
-    * *Connect/Disconnect* \- Use the *Connect/Disconnect* button to connect and disconnect. Connection status will be shown - Connected is green; Disconnected is red.
+    * *Connect/Disconnect* \- Use the *Connect/Disconnect* button to connect and disconnect:
+      * Your connection status is shown: ![](img/TestHarness/44.png) or ![](img/TestHarness/43.png)
   * **Debug**
-    * *Debug Options* \- Use the checkboxes to select which Cloud Code you want to debug in the current session - the Cloud Code attached to *Requests*, *Responses*, or *Messages*. You can also enable/disable *Break On Error*. Click [here](/Documentation/Test Harness/Debugger.md) to go to the GameSparks Debugger tutorial.
+    * *Debug Options* \- Use the checkboxes to select which Cloud Code you want to debug in the current session - the Cloud Code attached to *Requests*, *Responses*, or *Messages*.
+    * You can also enable/disable *Break On Error*.
+    * Click [here](/Documentation/Test Harness/Debugger.md) to go to the GameSparks Debugger tutorial.
   * **Requests**
     * *API Requests* \- lists all the available GameSparks API requests grouped according to functional area.  Each submenu item allows you to quickly select a request and then populate the JSON entry field with a correctly formatted request.
     * *JSON* \- enter your JSON request text here. You can click:
-      * ![](/img/icons/saveicon.png) to save the request.
-      * ![](/img/icons/recordicon.png) to record a scenario, which is a sequence of requests.
+      * ![](/img/icons/saveicon.png) to [save](#Saving Requests as a Scenario) the request.
+      * ![](/img/icons/recordicon.png) to [record](#Recording Multi-Request Scenarios) a scenario, which is a sequence of requests.
       * ![](/img/icons/calendaricon.png) to easily populate any date fields in your JSON request.
       * *Send Request* to send your request.
   * **Inspector**
@@ -38,11 +41,11 @@ There are several sections in the Test Harness:
       * *Asynchronous messages received* - Shown in yellow.
     * To clear out the Inspector at any time, click the clear ![](/img/icons/clearinspecticon.png) icon.
 
-<q>**Seeing Debugger!** The Debugger is not always in view. If you have selected an event which has Cloud Code attached to it, the Debugger will automatically appear but only when you run the event.</q>
+<q>**Seeing Debugger!** The Debugger is not always in view. If you have selected an Event which has Cloud Code attached to it, the Debugger will automatically appear but only when you run the Event.</q>
 
 ## Starting a Test Harness Session
 
-When you first access the Test Harness page within the Developer Portal it will establish a session with the GameSparks platform.  At this point the Test Harness is connected to GameSparks but no player is currently authenticated within this session.  The initial connection handshaking methods are shown in the *Inspector* section.
+When you first access the Test Harness page within the Developer Portal, it will establish a session with the GameSparks platform.  At this point the Test Harness is connected to GameSparks but no player is currently authenticated within this session.  The initial connection handshaking methods are shown in the *Inspector* section.
 
  When you have issued one of the available authentication requests (for example, [AuthenticationRequest](/API Documentation/Request API/Authentication/AuthenticationRequest.md), [DeviceAuthenticationRequest](/API Documentation/Request API/Authentication/DeviceAuthenticationRequest.md), and so on) with valid player details, you will see an *Auth Token* (authentication token) in the *Connection* section.
 
@@ -67,7 +70,7 @@ The *Requests* section contains a selection of buttons which will populate the 
   * **Misc** \- Requests that don't belong anywhere else!
   * **Multiplayer** \- Requests relating to multiplayer contexts.
   * **Player** \- Requests relating to the Player.
-  * **Store** \- Requests relating to third party app stores such as Google play.
+  * **Store** \- Requests relating to 3rd-party app stores such as Google play.
   * **Teams** \- Requests relating to Teams.
   * **Log Event** \- Contains a [LogEventRequest](/API Documentation/Request API/Player/LogEventRequest.md) for each of the [Events](/Documentation/Configurator/Events.md) that you have defined in the Configurator.
   * **Log Challenge Event** \- Contains a [LogChallengeEventRequest](/API Documentation/Request API/Multiplayer/LogChallengeEventRequest.md) for each of the [Events](/Documentation/Configurator/Events.md) that you have defined in the Configurator.
@@ -87,11 +90,11 @@ The *Requests* section contains a selection of buttons which will populate the 
 
 ![](img/TestHarness/15.png)
 
-Make any changes to the request that you require, such as removing optional fields or changing the default data values and click to *Send Request*.
+Make any changes to the request that you require, such as removing optional fields or changing the default data values and then click to *Send Request*.
 
 #### Example 2
 
-You can also issue several requests at once simply by creating a JSON array of requests in the *JSON* section.  For example to authenticate a player and then query their details include the two requests in a JSON array such as this.
+You can also issue several requests at once simply by creating a JSON array of requests in the *JSON* section.  For example, to authenticate a player and then query their details include the two requests in a JSON array such as this.
 
 ![](img/TestHarness/16.png)
 
@@ -127,9 +130,9 @@ You can also record a sequence of requests with the Test Harness and then save 
 
 ![](img/TestHarness/41.png)
 
-Notice that the microphone ![](/img/icons/record2icon.png) icon remains *highlighted* to show that record-scenario mode is enabled.
+<q>**Record Mode.** The microphone ![](/img/icons/record2icon.png) icon remains *highlighted* to show that record-scenario mode is enabled.</q>
 
-*5.* Repeat these steps until you have send all the requests you want in your scenario.
+*5.* Repeat these steps for each of the requests you want to include in your scenario.
 
 *6.* When you've entered and sent all the requests you want in your multi-request scenario, click the highlighted microphone icon a second time to stop recording. The *JSON* section will be populated with an array of all the requests that you sent whilst recording.
 

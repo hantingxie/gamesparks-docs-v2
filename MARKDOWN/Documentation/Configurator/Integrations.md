@@ -5,7 +5,7 @@ src: /Documentation/Configurator/Integrations.md
 
 # Integrations
 
-The Integrations page allows you to integrate with 3rd-party external providers and configure a multitude of external, social authentications within GameSparks platform. The set up process for most Integrations is straightforward - you simply need to enter the *App Id* and the *App Secret* supplied by the external provider for your game.
+The Integrations page allows you to integrate with 3rd-party external providers and configure a multitude of external, social authentications within the GameSparks platform. The set up process for most Integrations is straightforward - you simply need to enter the *App Id* and the *App Secret* supplied by the external provider for your game.
 
 ## Managing External Integrations
 
@@ -73,7 +73,7 @@ Kongregate Integrations tab allows you to set up [Kongregate Authentication](/AP
 
 ## Other 3rd Party Integrations
 
-The GameSparks platform can be integrated with four other 3rd-party external providers:
+The GameSparks platform can be integrated with other 3rd-party external providers:
 * PSN
 * Viber
 * WeChat

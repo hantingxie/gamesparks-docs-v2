@@ -47,7 +47,7 @@ Here's what we'll cover in this tutorial:
 
 This Event will be logged whenever the *authenticated* player *consumes* a Gold Coin Virtual Good:
 
-![](img/UR/8.png)
+![](img/UR/10.png)
 
 *4.* Save the *Grant currency* Event and navigate to *Configurator > Cloud Code* and under *Scripts* click *Events*.
 

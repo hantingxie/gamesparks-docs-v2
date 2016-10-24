@@ -8,8 +8,8 @@ src: /Documentation/Configurator/Teams.md
 The Teams functionality on the GameSparks platform allows you to define different team types for grouping players:
 * **Team Types.** You can create a number of different Team Types with different rules and these rules are respected when using the team-based API Methods:
     * Once you have Teams in place, you can use them for all social requests as well as for team-based Leaderboards (where there is an entry for each Team, rather than an entry for each player).
-    * Team instances can be created by your players and will comply with your Team Type configuration settings. A tutorial on setting up teams for chat is available [here](/Tutorials/Social Features/Setting Up Chat Messages.md).
-* **Team Achievements.** A Team can earn achievements in the same way that a player can. When a Team earns an achievement, each Team member without the achievement is given the award defined against it.
+    * Team instances can be created by your players and will comply with your Team Type configuration settings. A tutorial on how to set up teams for chat is available [here](/Tutorials/Social Features/Setting Up Chat Messages.md).
+* **Team Achievements.** A Team can earn Achievements in the same way that a player can. When a Team earns an Achievement, each Team member without the Achievement is given the award defined against it.
 
 ## Managing your Team Types
 

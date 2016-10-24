@@ -5,7 +5,7 @@ src: /Documentation/Configurator/Leaderboards/Running Totals.md
 
 # Running Totals
 
-You can use *Running Totals* to process events using the GameSparks scoring and ranking systems:
+You can use *Running Totals* to process Events using the GameSparks scoring and ranking systems:
 * **Simple Leaderboards.** You *don't need* to configure a specific Running Total when you are creating simple Leaderboards, because the *Default Aggregation Type* on the Event Attribute screen will have auto-created your Running Total.
 * **Advanced Leaderboards.** For more advanced scenarios - such as a Leaderboard for "Most Improved Player in Last [x] Weeks" - you'll need to add and set up a new custom Running Totals configuration.
 

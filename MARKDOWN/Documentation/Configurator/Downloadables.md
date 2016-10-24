@@ -5,9 +5,9 @@ src: /Documentation/Configurator/Downloadables.md
 
 # Downloadables
 
-This section of the Configurator allows you to upload and manage binary data - for example, content such as new levels. You just need to upload the file and assign it a Short Code.  Once an object has been added you can then access it from within Cloud Code and do whatever you want with it - for example distribute it to certain players under certain conditions.
+This section of the Configurator allows you to upload and manage binary data - for example, content such as new levels. You just need to upload the file and assign it a Short Code.  When you've added a binary object in this way, you can then access it from within Cloud Code and do whatever you want with it - for example distribute it to certain players under certain conditions.
 
-<q>**Note:** The platform also supports the upload of binary content directly from your game using the API which allows player-created content, such as photos or custom levels, to be uploaded and stored.</q>
+<q>**Note:** The platform also supports the upload of binary content directly from your game using the API, which allows player-created content, such as photos or custom levels, to be uploaded and stored.</q>
 
 ## Managing Downloadables
 

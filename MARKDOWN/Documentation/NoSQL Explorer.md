@@ -24,17 +24,39 @@ Each game has its own *PREVIEW stage* Mongo database. If you've taken a game Sna
 
 ### What Database Collection Operation?
 
-The *Actions* panel contains a series of tabs, each of which represents the different operations you can perform against the data in the selected Mongo database. See below for a detailed account of how to work with these tabs.
+When you select a Database Collection, the *Actions* available for use with that Collection represent the different operations you can perform against the data in the selected Mongo database. See [below](#Actions) for a detailed account of how to work with these operations.
 
-## Using Collection Drop-Down Menu Filtering
+## Checking Database statistics
 
-You can use the *Collection* drop-down on each *Actions* tab to select from the list of Collections that are available in your database. If the Collections list is a long list, you can use filter switches to turn on and off sections of the Collections list and make things more manageable.
+If you want to check the database statistics for the current game's Mongo database, click the information icon on the *Collections* panel. A *Database Stats* panel opens:
 
-![](img/5.png)
+![](img/19.png)
 
-You can also filter the Collection list by starting to type the name of the Collection you want in the text entry field at the top of the drop-down. The list is dynamically updated as you type:
+Click to close the *Database Stats* panel at any time:
 
-![](img/6.png)
+![](img/20.png)
+
+## Selecting a Mongo DB Collection
+
+You can use the *Collections* panel to select the Mongo DB Collection that you want to work with - click to expand any of the headings in the listing:
+
+![](img/21.png)
+
+Here, we've selected the *System>player* Collection.
+
+### Selecting Actions
+
+When you select a Collection, the *Actions* available for use with that Collection are shown as a series of option buttons. When you select an *Action*, the panel adjusts for the entering the specific operation parameters:
+
+![](img/23.png)
+
+For details of the parameters used for each operation, see the following [section](#Actions)
+
+### Selecting Multiple Collections
+
+If you want to work with more than one Collection, you can select them and each selection you make adds a tab for a Collection:
+
+![](img/22.png)
 
 ## Working with the Output Panel
 
@@ -42,15 +64,14 @@ The results for the operations you perform against a database Collection are ret
 
 ![](img/17.png)
 
-When the panel loads, the result is single-line formatted. You can click in the panel to re-format the result into a standard form:
+When the panel loads, the result hierarchy is collapsed. You can drill-down to expand the levels and read-off details:
 
 ![](img/18.png)
 
-Click the clear ![](/img/fa/times.png) icon to clear out the content of the *Output* panel.
 
-## Actions
+## Actions for Selected Collection
 
-When you've selected the correct DB you can select one of the tabs in the *Actions* section: *Find*, *Count*, *Insert*, *Update*, *Remove*, *Index*, *Aggregate*, *Create*, *Drop*, and *Stats*.
+When you've selected the database Collection you want to work with, you can select one of the *Actions* available for that Collection: *Find*, *Count*, *Insert*, *Update*, *Remove*, *Index*, *Aggregate*, *Create*, *Drop*, and *Stats*.
 
 ### Find
 
@@ -61,7 +82,6 @@ From the *Find* tab you can execute queries against Collections:
 
 ![](img/7.png)
 
-* *Collection* : Select the Collection you want to query.
 * *Query* : The query you want to execute in JSON form:
   * To find players with displayName "testUser" the following JSON should be used {"displayName" : "testUser"}
 * *Sort* : The JSON representation of the sort for the query:
@@ -83,7 +103,6 @@ From the *Count* tab you can get a count of the number of documents in a Collect
 
 ![](img/8.png)
 
-* *Collection* : Select the Collection for which you want to get a count.
 * *Query* : The query you want to execute in JSON form:
   * To find players with displayName “testUser” the following JSON should be used {“displayName” : “testUser”}.
 * *Explain* button : Enter your query and click this button to get information about the query returned into the *Output* panel. You can review and analyze this information to optimize your query.
@@ -96,7 +115,6 @@ From the *Insert* tab you can insert documents directly into a Collection.
 
 ![](img/9.png)
 
-* *Collection* : Select the Collection into which you want to insert a document.
 * *Document* : Add the document you want to insert into the *Document* field.
   * If the document you supply does not have an \_id field, mongo will create one for you.
   * If the document you supply does have an \_id field and it is already in use within the Collection the insert will fail.
@@ -109,7 +127,6 @@ From the *Update* tab you can modify an existing document(s) in a Collection.
 
 ![](img/10.png)
 
-* *Collection* : Select the Collection which you want to update.
 * *Query* : The selection criteria for the update. Use the same query selectors as used in the Find method.
 * *Update* : The modifications to apply. 
 * *Multi* : Set to true if all documents meeting the criteria should be modified.
@@ -123,7 +140,6 @@ From the *Remove* tab you can remove all documents matching the supplied query f
 
 ![](img/11.png)
 
-* *Collection* : Select the Collection from which you want to remove documents.
 * *Query* : The selection criteria for the Remove operation. All documents matching this criteria will be removed.
 
 ### Index
@@ -134,7 +150,6 @@ From the *Index* tab, you can view the indexes that have been created for a Coll
 
 ![](img/12.png)
 
-* *Collection* : Select the Collection for which you want to get indexes.
 
 ### Aggregate
 
@@ -144,21 +159,10 @@ From the *Aggregate* tab you can calculate aggregate values for data in the Coll
 
 ![](img/13.png)
 
-* *Collection* : Select the Collection for which you want to calculate aggregate values.
 * *Pipeline* : A JSON array of pipeline commands.
   * If you are supplying more than one pipeline stage you must wrap then within a JSON array.
 * *Explain* button : Enter your query and click this button to get information about the query returned into the *Output* panel. You can review and analyze this information to optimize your query.
 
-### Create
-
-From the *Create* tab, you can create a new Collection in the database:
-* Collections can be created as *Runtime* (non-versioned) or *Metadata* (versioned).
-
-![](img/14.png)
-
-* *Name* : The name to give the Collection. Within the database:
-  * Metadata Collections are prefixed with "meta."
-  * Runtime Collections are prefixed with "script."
 
 ### Drop
 
@@ -168,7 +172,6 @@ From the *Drop* tab, you can permanently remove a Collection from the database.
 
 ![](img/15.png)
 
-* *Collection* : Select the Collection you want to permanently remove.
 
 ### Stats
 
@@ -178,6 +181,23 @@ From the *Stats* tab you can obtain statistics about the selected collection.
 
 ![](img/16.png)
 
-* *Collection* : Select the Collection for which you want to get statistics.
 * *Stats* button : Shows the Collection statistics.
-* *DB Stats* button : Shows the database statistics.
+
+## Creating a Collection
+
+From the *Collections* panel, you can create a new Collection in the database:
+
+*1.* Click the add ![](/img/icons/collectaddicon.png) icon. The *Create Collection* dialog appears:
+
+![](img/14.png)
+
+
+* Collections can be created as *Runtime* (non-versioned) or *Metadata* (versioned).
+
+*2.* Select the type of Collection you want to create and enter a name for the new Collection:
+
+* *Name* : The name to give the Collection. Within the database:
+  * Metadata Collections are prefixed with "meta."
+  * Runtime Collections are prefixed with "script."
+
+*3.* Click to *Create* the new Collection.

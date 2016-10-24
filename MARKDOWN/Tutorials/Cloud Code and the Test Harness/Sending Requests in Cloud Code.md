@@ -7,7 +7,7 @@ src: /Tutorials/Cloud Code and the Test Harness/Sending Requests in Cloud Code.m
 
 SparkRequest API allows you to send GameSparks Requests from within Cloud Code.
 
-Cloud code bound to these requests and responses are not executed when sent using this API. If you want to execute cloud code on the requests and responses you can do this by modularising your code and executing the same module before sending the request and after receiving the response. This restriction is in place to protect from infinite loops that could occur. You can see how this works [here](/Documentation/Key Concepts/Cloud Code.md).
+Cloud Code bound to these requests and responses are not executed when sent using this API. If you want to execute Cloud Code on the requests and responses, you can do this by modularising your code and executing the same module before sending the request and after receiving the response. This restriction is in place to protect from infinite loops that could occur. You can see how this works [here](/Documentation/Key Concepts/Cloud Code.md).
 
 ## Creating a Request
 

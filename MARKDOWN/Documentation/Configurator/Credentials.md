@@ -37,8 +37,8 @@ When you create or edit a custom Credential there are three key settings you can
 * *CB* - If you select this, it means that the Credential will be used exclusively for Callback scripts.
 
 There are certain rules applied to the combination of Credential types:
-* A Player Credential MUST also be a Listener type.
-* However, a Listener Credential does not necessarily need to also be a Player Credential.
+* A Player Credential *MUST* also be a Listener type.
+* However, a Listener Credential *does not necessarily*h need to also be a Player Credential.
 
 <q>**Important!** You cannot alter the type settings for a System Credential!</q>
 
@@ -55,7 +55,7 @@ When you create or edit a Credential, there are four tabs for different requests
 ## System Credentials
 
 On all games there are five default *System* credentials:
-* *Server* - An example Credential for server-to-server communication. By default, this allows a playerId to be sent with the request, and the request would be processed as if it was sent by that player. This Credential is also set up to receive any asyncronous messages sent to any players while connected to the platform.
+* *Server* - An example Credential for server-to-server communication. By default, this allows a playerId to be sent with the request, and the request would be processed as if it was sent by that player. This Credential is also set up to receive any asynchronous messages sent to any players while connected to the platform.
 * *Debug* - This Credential adds JavaScript debugging capabilities to the connection to the platform.
 * *Server-send* - Same as the *Server* Credential, except that this Credential doesn't receive asynchronous messages.
 * *SFTP* - This Credential gives access to the sftp endpoint, allowing remote systems to deliver files for processing by the platform.
