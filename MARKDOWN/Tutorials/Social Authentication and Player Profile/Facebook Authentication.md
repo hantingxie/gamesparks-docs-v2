@@ -15,35 +15,35 @@ In this tutorial, we’ll go through setting up the necessary configuration with
 
 *2.* Now select the *Register* option:
 
-![](img/AuthFB/22.png)
+![](img/AuthFB/24.jpg)
 
 *3.* Accept the Facebook Platform Policy and the Facebook Privacy Policy in the dialog that appears.
 
 *4.* Next, verify your account by obtaining and entering a code via your mobile phone.
 
-![](img/AuthFB/23.png)
+![](img/AuthFB/25.jpg)
 
 Now you’re ready to create your app.
 
 *5.* Click* My apps->Add a New App.*
 
-![](img/AuthFB/17.png)
+![](img/AuthFB/26.jpg)
 
 *6.* Fill in the *Display Name* and *Contact Email* fields, select your *Category* and *Sub-Category* in the drop-down menus then click *Create App ID*.
 
-![](img/AuthFB/19.png)
+![](img/AuthFB/27.jpg)
 
 And that’s it, you now have a Facebook application.
 
 There are various configuration options you can play around with, but for now all you’re interested in are the *App ID* and *App Secret*.
 
-![](img/AuthFB/18.png)
+![](img/AuthFB/28.jpg)
 
 *7.* In a separate tab/window, head over to [the GameSparks developer portal](https://portal.gamesparks.net/) and click the *Configurator* -> *Integrations*
 
 *8.* Under *Providers* -> *Facebook*, click *Edit*:
 
-![](img/AuthFB/13.png)
+![](img/AuthFB/29.jpg)
 
 The *Edit Facebook Configuration* dialog appears:
 
@@ -70,13 +70,13 @@ For the purpose of this tutorial, you can just get hold of the access token for 
 
 *4.* In the *Create Test Users* dialog, select the number of test users that you require and switch *Authorize Test Users for This App* to *YES*.
 
-![](img/AuthFB/20.png)
+![](img/AuthFB/30.jpg)
 
 *5.* Click to *Create Test Users*. The created test user(s) will be displayed in the list.
 
 *6.* Click *Edit* and on the drop-down select to get the access token for the test user:
 
-![](img/AuthFB/21.png)
+![](img/AuthFB/31.jpg)
 
 *7.* Copy the access token.  You will use it in the GameSparks portal Test Harness in the next section.
 
@@ -132,7 +132,7 @@ If the authentication with Facebook is successful you will see a response like 
 
 *1.* Now, create another test user in the Facebook developer portal and under *Edit* select the *Manage this test user's friends* icon.
 
-![](img/AuthFB/15.png)
+![](img/AuthFB/32.jpg)
 
 *2.* Add the other test user as a friend to this user.
 

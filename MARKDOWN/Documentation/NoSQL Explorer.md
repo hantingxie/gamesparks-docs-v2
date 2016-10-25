@@ -71,13 +71,15 @@ When the panel loads, the result hierarchy is collapsed. You can drill-down to e
 
 ## Actions for Selected Collection
 
-When you've selected the database Collection you want to work with, you can select one of the *Actions* available for that Collection: *Find*, *Count*, *Insert*, *Update*, *Remove*, *Index*, *Aggregate*, *Create*, *Drop*, and *Stats*.
+When you've selected the database Collection you want to work with, you can select one of the *Actions* available for that Collection: *Find*, *Count*, *Insert*, *Update*, *Remove*, *Index*, *Aggregate*, *Drop*, and *Stats*.
+
+<q>**Creating Collections?** For how to create a new Collection, see the [following section](#Creating a Collection).</q>
 
 ### Find
 
 [MongoDB Find Manual](http://docs.mongodb.org/manual/reference/method/db.collection.find)
 
-From the *Find* tab you can execute queries against Collections:
+Using the *Find* option, you can execute queries against Collections:
 * If you have existing Mongo experience, the Find form builds a db.<collection>.find(<query>, <fields>).sort(<sort>).limit(<limit>).skip(<skip>) command based on the data populated in the form fields:
 
 ![](img/7.png)
@@ -93,13 +95,13 @@ From the *Find* tab you can execute queries against Collections:
   * To get the 3rd page of 10 documents per page, use skip=20 and limit=10.
   * The maximum that the limit value can be set to for finds is 1000.
 * *Explain* button : Enter your query and click this button to get information about the query returned into the *Output* panel. You can review and analyze this information to optimize your query.
-* *Export* button : The *Find* tab allows you to export the results to a local file. Set up your query as normal and press the *Export* button. The maximum that the limit value can be set to for exports is 10000.
+* *Export* button : The *Find* option allows you to export the results to a local file. Set up your query as normal and press the *Export* button. The maximum that the limit value can be set to for exports is 10000.
 
 ### Count
 
 [MongoDB Find Manual](http://docs.mongodb.org/manual/reference/method/db.collection.count)
 
-From the *Count* tab you can get a count of the number of documents in a Collection that match a *Find* query.
+Using the *Count* option, you can get a count of the number of documents in a Collection that match a *Find* query.
 
 ![](img/8.png)
 
@@ -111,23 +113,23 @@ From the *Count* tab you can get a count of the number of documents in a Collect
 
 [MongoDB Insert Manual](http://docs.mongodb.org/manual/reference/method/db.collection.insert)
 
-From the *Insert* tab you can insert documents directly into a Collection.
+Using the *Insert* option, you can insert documents directly into a Collection.
 
 ![](img/9.png)
 
 * *Document* : Add the document you want to insert into the *Document* field.
-  * If the document you supply does not have an \_id field, mongo will create one for you.
+  * If the document you supply does not have an \_id field, Mongo will create one for you.
   * If the document you supply does have an \_id field and it is already in use within the Collection the insert will fail.
 
 ### Update
 
 [MongoDB Update Manual](http://docs.mongodb.org/manual/reference/method/db.collection.update)
 
-From the *Update* tab you can modify an existing document(s) in a Collection.
+Using the *Update* option, you can modify an existing document(s) in a Collection.
 
 ![](img/10.png)
 
-* *Query* : The selection criteria for the update. Use the same query selectors as used in the Find method.
+* *Query* : The selection criteria for the update. Use the same query selectors as used in the [Find](#Find) method.
 * *Update* : The modifications to apply. 
 * *Multi* : Set to true if all documents meeting the criteria should be modified.
 * *Upsert* : Set to true to create a new document when no document matches the query.
@@ -136,7 +138,7 @@ From the *Update* tab you can modify an existing document(s) in a Collection.
 
 [MongoDB Remove Manual](http://docs.mongodb.org/manual/reference/method/db.collection.remove)
 
-From the *Remove* tab you can remove all documents matching the supplied query from a Collection.
+Using the *Remove* option, you can remove all documents matching the supplied query from a Collection.
 
 ![](img/11.png)
 
@@ -146,7 +148,7 @@ From the *Remove* tab you can remove all documents matching the supplied query f
 
 [MongoDB Index Manual](https://docs.mongodb.com/manual/reference/method/db.collection.getIndexes/#db.collection.getIndexes)
 
-From the *Index* tab, you can view the indexes that have been created for a Collection.
+Using the *Index* option, you can view the indexes that have been created for a Collection.
 
 ![](img/12.png)
 
@@ -155,12 +157,12 @@ From the *Index* tab, you can view the indexes that have been created for a Coll
 
 [MongoDB Aggregate Manual](http://docs.mongodb.org/manual/reference/method/db.collection.aggregate)
 
-From the *Aggregate* tab you can calculate aggregate values for data in the Collection.
+Using the *Aggregate* option, you can calculate aggregate values for data in the Collection.
 
 ![](img/13.png)
 
 * *Pipeline* : A JSON array of pipeline commands.
-  * If you are supplying more than one pipeline stage you must wrap then within a JSON array.
+  * If you are supplying more than one pipeline stage you must wrap them within a JSON array.
 * *Explain* button : Enter your query and click this button to get information about the query returned into the *Output* panel. You can review and analyze this information to optimize your query.
 
 
@@ -168,7 +170,7 @@ From the *Aggregate* tab you can calculate aggregate values for data in the Coll
 
 [MongoDB Drop Manual](http://docs.mongodb.org/manual/reference/command/drop)
 
-From the *Drop* tab, you can permanently remove a Collection from the database.
+Using the *Drop* option, you can permanently remove a Collection from the database.
 
 ![](img/15.png)
 
@@ -177,7 +179,7 @@ From the *Drop* tab, you can permanently remove a Collection from the database.
 
 [MongoDB Stats Manual](http://docs.mongodb.org/manual/reference/method/db.collection.stats)
 
-From the *Stats* tab you can obtain statistics about the selected collection.
+Using the *Stats* option, you can obtain statistics about the selected collection.
 
 ![](img/16.png)
 

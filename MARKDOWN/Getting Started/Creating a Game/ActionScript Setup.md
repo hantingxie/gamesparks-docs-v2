@@ -96,7 +96,7 @@ import flash.utils.setInterval;
 ```
     		private function ConnectToPortal():void
     			{
-    				gs.setAvailabilityCallback(availabilityCallback).setUrl("wss://preview.gamesparks.net/ws/293711ZXWjA9").setApiSecret("DgnYnPUE2D0RetwKAy5XPUxxxN7pl36e").connect();
+    				gs.setAvailabilityCallback(availabilityCallback).setUrl("wss://preview-test.gamesparks.net/ws/debug-web/o358719xvku3").setApiSecret("g5pTDnjTrn6BakxECNlXsR9GTYUALCJD").connect();
     			}
 ```
 

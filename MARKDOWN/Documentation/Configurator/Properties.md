@@ -42,7 +42,7 @@ Select the *Properties* tab where you can use the same options to manage your Pr
 * *Name* - A mandatory field used to help identify the Property.
 * *Description* - A mandatory field which should be used to describe the Property and explain its purpose.
 * *Value* - Enter the value you want for your Property JSON configuration in the editor.
-  * The default editing environment is *Code*, where you can manually enter your JSON configuration structure.
+  * The default editing environment is *Code*, where you can manually enter your JSON configuration structure with real-time validation of your input.
   * Alternatively, you can switch to the *Tree* editing environment, where you can enter fields and select the required data-type:
 
 ![](img/Properties/10.png)
