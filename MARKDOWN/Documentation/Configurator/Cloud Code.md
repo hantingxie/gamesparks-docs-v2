@@ -5,14 +5,26 @@ src: /Documentation/Configurator/Cloud Code.md
 
 # Cloud Code
 
-The *Configurator > Cloud Code* page lists all the potential interception points that Cloud Code can be bound to, and has a JavaScript editor where you can write your
-interception code.
+## Introduction
 
-The *Scripts* section is split into ten sub-categories, which are further explained in the sections below.
+The *Configurator > Cloud Code* page lists all the potential interception points that Cloud Code can be bound to, and has a JavaScript editor where you can write your interception code.
+
+### Scripts
+
+The *Scripts* section is split into ten sub-categories, which are further explained in the [sections](#Script Categories) below.
 
 ![](img/CloudCode/17.png)
 
-To access the Cloud Code JavaScript editor select the name of the script from one of the ten drop down menus in the *Scripts* section.  Use the *Save*, *Close*, and *Delete* buttons at the bottom of the editor to manage your scripts:
+There are five main option buttons at the bottom of the *Scripts* panel:
+* ![](/img/icons/scriptsexporticon.png) - Export Cloud Code.
+* ![](/img/icons/scriptsimporticon.png) - Import Cloud Code.
+* ![](/img/icons/scriptsGHimporticon.png) - Import Cloud Code from GitHub.
+* ![](/img/icons/scriptsBBimporticon.png) - Import Cloud Code from BitBucket.
+* ![](/img/icons/scriptshistoryicon.png) - View Cloud Code history and compare the Cloud Code contained in two game Snapshots.
+
+### Accessing Cloud Code
+
+To access the Cloud Code JavaScript editor, select the name of the script from one of the ten categories in the *Scripts* section.  Use the *Save*, *Close*, and *Delete* buttons at the bottom of the editor to manage your scripts:
 
 ![](img/CloudCode/18.png)
 
@@ -20,7 +32,11 @@ To access the Cloud Code JavaScript editor select the name of the script from on
 
 <q>**Keyboard Shortcuts List!** For a list of keyboard shortcuts that you can use in the Cloud Code Editor see [below](#Cloud Code Editor Keyboard Shortcuts)</q>
 
-## Events
+## Scripts Categories
+
+Click to expand any of the Scripts categories and select the interception point to which you want to attach your Cloud Code.
+
+### Events
 
 ![](img/CloudCode/27.png)
 
@@ -28,7 +44,7 @@ The *Events* list contains an entry for each Event you have created within the G
 * When a [LogEventRequest](/API Documentation/Request API/Player/LogEventRequest.md) is received, the corresponding script is executed allowing you to run custom code on the platform. For more details, see [Events](/Documentation/Configurator/Events.md).
 * You can access the current player making the request using *Spark.getPlayer()*.
 
-## Challenge Events
+### Challenge Events
 
 ![](img/CloudCode/28.png)
 
@@ -43,7 +59,7 @@ The *Challenge Events* list contains an entry for each Event you have created wi
 
 * You can also access the current player making the request using *Spark.getPlayer()*.
 
-## Requests
+### Requests
 
 ![](img/CloudCode/19.png)
 
@@ -53,7 +69,7 @@ The *Requests* list contains an entry for each Request you can call within the
 
 <q>**Adding Common Functionaltiy!** [LogEventRequest](/API Documentation/Request API/Player/LogEventRequest.md) and [LogChallengeEventRequest](/API Documentation/Request API/Multiplayer/LogChallengeEventRequest.md) are global scripts that will be executed for these request types before a specific script is called for each Event. This allows you to add a common functionality to all Events.</q>
 
-## Responses
+### Responses
 
 ![](img/CloudCode/20.png)
 
@@ -61,7 +77,7 @@ The *Responses* list contains an entry for each Response that can be returned 
 * When a Response is created, the corresponding script is executed before sending it to the player allowing you to run custom code on the platform.
 * You can access the current player who has generated the response using *Spark.getPlayer()*.
 
-## User Messages
+### User Messages
 
 ![](img/CloudCode/21.png)
 
@@ -69,15 +85,15 @@ The *User Messages* list contains an entry for each Message that can be return
 * Before a Message is sent out to each player within a Challenge, the corresponding script is executed allowing you to run custom code on the platform.
 * You can access the current player who received the message using *Spark.getPlayer()*.
 
-## Global Messages
+### Global Messages
 
 ![](img/CloudCode/22.png)
 
 The *Global Messages* list contains an entry for each Message that can be returned from the GameSparks platform:
-* When a Message is created the corresponding script is executed allowing you to run custom code on the platform.
+* When a Message is created, the corresponding script is executed allowing you to run custom code on the platform.
 * You **cannot access** the current player in a global message Cloud Code script.
 
-## System
+### System
 
 ![](img/CloudCode/26.png)
 
@@ -94,15 +110,16 @@ The *System* tab contains a number of System Events that are able to trigger som
   * *Player Connected* - This script is executed each time a player connects and is identified. *Spark.getPlayer()* is set to be the player who connected so you can query or manipulate the data related to the player.
   * *Player Disconnected* - This script is executed each time a player disconnects. *Spark.getPlayer()* is set to be the player who disconnected so you can query or manipulate the data related to the player.
 
-## Callbacks
+### Callbacks
 
 ![](img/CloudCode/24.png)
 
 
-* *Callbacks* contains an item for each custom *Credential* created:
+* *Callbacks* contains an item for each custom *Credential* created.
+* The *server* credential is a default callback.
 * Separate [Callback URLs](/Tutorials/Cloud Code and the Test Harness/Using Custom Callback Urls.md) allow users to assign different Cloud Code scripts to different callbacks for the same game.
 
-## Modules
+### Modules
 
 ![](img/CloudCode/23.png)
 
@@ -130,7 +147,7 @@ Modules allow you to create your own libraries of JavaScript that can be include
 * To create a new module, click the plus ![](/img/fa/plus-circle.png) icon. Then, on the *Create New Module* dialog, enter a *Short Code* to uniquely identify the new module script and click *Add*.
 
 
-## Realtime Scripts
+### Realtime Scripts
 
 ![](img/CloudCode/25.png)
 

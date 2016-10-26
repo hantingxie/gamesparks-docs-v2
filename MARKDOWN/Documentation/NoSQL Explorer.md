@@ -54,7 +54,7 @@ For details of the parameters used for each operation, see the following [sectio
 
 ### Selecting Multiple Collections
 
-If you want to work with more than one Collection, you can select them and each selection you make adds a tab for a Collection:
+If you want to work with more than one Collection, each selection you make adds a tab for a Collection:
 
 ![](img/22.png)
 
@@ -90,10 +90,10 @@ Using the *Find* option, you can execute queries against Collections:
   * To sort by userName in ascending order the following JSON should be used {"userName" : 1}
 * *Fields*: Allows you to limit the fields that are returned in the results:
   * This is useful for Collections with large document.
-  * To limit the results to only contain the userName and displayName the following JSON should be used : {"userName" : 1, "displayName" : 1}. 1 indicates inclusion and 0 indicates exclusion for a field. You cannot mix inclusion and exclusion in a single query.
+  * To limit the results to only contain the userName and displayName, the following JSON should be used : {"userName" : 1, "displayName" : 1}. 1 indicates inclusion and 0 indicates exclusion for a field. You cannot mix inclusion and exclusion in a single query.
 * *Skip / Limit* : The number of documents to skip, useful for paging in combination with limit:
   * To get the 3rd page of 10 documents per page, use skip=20 and limit=10.
-  * The maximum that the limit value can be set to for finds is 1000.
+  * The maximum that the limit value can be set to for Finds is 1000.
 * *Explain* button : Enter your query and click this button to get information about the query returned into the *Output* panel. You can review and analyze this information to optimize your query.
 * *Export* button : The *Find* option allows you to export the results to a local file. Set up your query as normal and press the *Export* button. The maximum that the limit value can be set to for exports is 10000.
 
