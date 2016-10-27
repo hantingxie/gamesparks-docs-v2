@@ -36,6 +36,12 @@ You can then use icon button options (highlighted):
   * ![](img/Snapshot/reverticon.png) - Revert your workspace with the selected Snapshot version. There is another fail-safe - a Snapshot of the previous version is automatically taken (called "AUTOSAVE - Pre Revert").
   * ![](img/Snapshot/previewicon.png) - Preview any of the Snapshots without having to revert to them, editing will be disabled when previewing.
 
+### Mongo Database Collections for Snapshots
+
+When you take a Snapshot, the platform records all of your game's configuration into a configuration set:
+  * This *includes* all Metadata Collections and their content.
+  * This *excludes* all Runtime and System Collections and their content. These are created new for the Live stage when you *first publish* a game Snapshot and remain untouched when future Snapshots are published.
+
 ## Copying a Snapshot
 
 ![](img/Snapshot/15.png)
