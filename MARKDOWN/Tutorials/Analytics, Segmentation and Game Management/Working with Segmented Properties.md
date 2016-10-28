@@ -9,28 +9,30 @@ The GameSparks platform exposes various configurable objects to drive further cu
 
 Let's take a look at how to set up Properties and then how to access those values later on when we want to read them.
 
-## Properties
+## Adding Properties
 
-*1.* Go to the *GameSparks Developer Portal* and under *Configurator*, click *Properties*.
+*1.* In the portal, navigate to *Configurator>Properties*.
 
-From here you can manage your *Properties* and *Property Sets* \- more on these later. First, let's add a Property.
+From here you can use the two tabs on the page to create and manage your *Property Sets* and *Properties*.
 
-*2.* Click the icon on the Properties Panel.
+*2.* To add a Property, select the *Properties* tab and click to *Add* a new Property. The page adjusts:
 
-![](img/SegmentedProperties/1.png)
+![](img/SegmentedProperties/8.png)
 
-In the *Create Property* form, there are two styles of editor you can use to build your object.  They can be any valid JSON object, including nested objects and arrays as well.
-* The *JSON* editor allows you to manually type in your JSON structure whilst offering real-time validation on your input, only allowing you to save if your JSON configuration is correct.
-* The *Visual* editor provides an error-free method of adding your JSON configuration by entering it in fields and choosing the data types from a select range.
-* Switching back and forth between the two views will update them accordingly, allowing you to use both views when writing either simpler or more complex parts of your JSON configuration.
+*3.* Give your property a *Short Code*, *Name* and *Description*. As usual, you refer to the Property by its Short Code when you access it programmatically.
 
-*3.* Give your property a *Short Code*, *Name* and *Description*. As usual, you refer to the Property by its ShortCode when you access it programmatically.
+*4.* Add JSON in the editor for the *Value* and to build your Property object. This can be any valid JSON object, including nested objects and arrays.
 
-![](img/SegmentedProperties/2.png)
+You can work in the editor in two either of two modes to build your object:
+* *Code* - Allows you to manually type in your JSON structure whilst offering real-time validation on your input, only allowing you to save if your JSON configuration is correct.
+* *Tree* - Provides an error-free method of adding your JSON configuration by entering it in fields and choosing the data types from a select range.
+* Switching back and forth between the two modes of JSON entry will update them accordingly, allowing you to use both modes when writing either simpler or more complex parts of your JSON configuration.
 
-![](img/SegmentedProperties/3.png)
+![](img/SegmentedProperties/9.png)
 
-*4.* Once you're ready, click 'Save'.
+![](img/SegmentedProperties/10.png)
+
+*4.* When you've entered the JSON you require for your Property object, click to *Save and Close*.
 
 You can now access this Property using Cloud Code:
 
@@ -54,25 +56,27 @@ Or you can deliver it to your clients through the web socket API using:
 
 ```
 
-## Property Sets
+## Adding Property Sets
 
-Now that you've seen how to set up and use a single Property, it's time to start looking at some more powerful ways to use them. A Property Set is a configuration object that lets you pull together different, but related, properties.
+Now that you've seen how to set up and use a single Property, it's time to start looking at some more powerful ways to use them. A Property Set is a configuration object that lets you pull together different, but related, Properties.
 
 Let's create a Property Set.
 
-*1.* Click the ![](/img/fa/plus.png) icon on the Property Set Panel.
+*1.* On the *Configurator>Properties* page, select the *Property Sets* tab and click to *Add* a Property Set. The page adjusts:
 
-![](img/SegmentedProperties/4.png)
+![](img/SegmentedProperties/11.png)
 
 *2.* Give your Property Set a *Short Code*, *Name* and *Description*. Now let's add some Properties.
 
-*3.* Click the ![](/img/fa/plus.png) icon at the bottom right.
+*3.* On the *Property Set Keys* panel, click *Add*:
 
-![](img/SegmentedProperties/5.png)
+![](img/SegmentedProperties/12.png)
 
 *4.* Give the Property a name. This is how you will access the value of this property from the Property Set. Now select one of your Properties.
 
 *5.* If you haven't already, create some more Properties and come back and add them to this Property Set.
+
+![](img/SegmentedProperties/13.png)
 
 Now that you have a Property Set you can access it in a similar way to a single Property:
 

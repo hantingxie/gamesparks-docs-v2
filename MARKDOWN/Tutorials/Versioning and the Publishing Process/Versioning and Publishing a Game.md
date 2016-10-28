@@ -47,3 +47,5 @@ Once you have configured and tested your game, you will want to make it availab
 <q>**Note:** You should not launch your game using the preview servers because player devices will not be able to connect when concurrency limits are reached.</q>
 
 When you are ready to launch your game you need to save the configuration in a snapshot and then publish it to the live servers. These are designed for massive concurrency and can handle the loads generated when hundreds of thousands of players are using the game at the same time.
+
+<q>**Going Live Checklist!** Before you attempt to create a Snapshot of your game and publish it to Live, please review the [Going Live Checklist](/Getting Started/Going Live Checklist/README.md) to ensure everything runs smoothly.</q>

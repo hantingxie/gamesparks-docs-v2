@@ -23,6 +23,8 @@ To publish your game, you select the Snapshot you want to use and click the publ
 
 At this point, the configuration between the preview and live servers is separated. You can make changes to other versions in the developer portal and the Snapshot published to the live servers will not be affected. This allows you to work on the next version of your game or make a minor update to the game and test it before you go through the publish process again. If you are working on a significant update, you might be in a position where your Preview stage configuration is very different to your game's Live stage configuration.
 
+<q>**Going Live Checklist!** Before you attempt to create a Snapshot of your game and publish it to Live, please review the [Going Live Checklist](/Getting Started/Going Live Checklist/README.md) to ensure everything runs smoothly.</q>
+
 ## Reverting to Snapshots and Bug Fixing
 
 If there is an urgent bug fix that needs to be applied to the Live stage, you can do this without disrupting work-in-progress on updates or new versions.

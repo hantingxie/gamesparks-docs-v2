@@ -70,6 +70,8 @@ Once you confirm your selection to publish the Snapshot, it will be highlighted 
 
 ![](img/Snapshot/18.png)
 
+<q>**Going Live Checklist!** Before you publish your Snapshot to Live, please review the [Going Live Checklist](/Getting Started/Going Live Checklist/README.md) to ensure everything runs smoothly.</q>
+
 ## Reverting a Snapshot
 
 You might want to revert to earlier version of your game configuration or saved metadata collections if you have accidentally removed some configuration details or if something recently went wrong. When Reverting to a Snapshot you'll be prompted for a confirmation.

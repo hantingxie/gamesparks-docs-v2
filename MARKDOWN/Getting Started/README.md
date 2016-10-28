@@ -13,3 +13,4 @@ Follow these tutorials in sequence to get quickly powered-up with the GameSparks
   * [Creating a Leaderboard](/Getting Started/Creating a Leaderboard/README.md) - Creating a leaderboard, uploading a score to it and setting up listeners in the SDKs.
   * [Creating an Achievement](/Getting Started/Creating an Achievement/README.md) - Creating achievements to support the rewarding of players for accomplishments within a game.
   * [Creating a Virtual Good](/Getting Started/Creating a Virtual Good/README.md) - Creating a virtual good and using currency to buy it through the SDKs.
+  * [Going Live Checklist](/Getting Started/Going Live Checklist/README.md) - Follow the steps here to ensure your game publication runs smoothly.
