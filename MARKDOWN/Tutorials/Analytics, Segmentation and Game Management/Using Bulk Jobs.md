@@ -23,9 +23,9 @@ In this tutorial we'll learn about the two ways you can work with Bulk Jobs:
 
 *2.* In the Portal go to the Test Harness.
 
-*3.* Select *Admin* then select [ScheduleBulkJobAdminRequest](/API Documentation/Request API/Admin/ScheduleBulkJobAdminRequest.md):
+*3.* Under *Requests* select *Admin* then select [ScheduleBulkJobAdminRequest](/API Documentation/Request API/Admin/ScheduleBulkJobAdminRequest.md):
 
-![](img/BulkOps/1.png)
+![](img/BulkOps/2.png)
 
 *4.* Notice that the request is broken down into two different methods - *moduleShortCode* and *script*:
 
@@ -177,7 +177,7 @@ Response:
 *7.* When a job has been run, the results are available to be seen in NoSQL. If we want to see the results of the bulk operation, we can do this in two locations:
 
 * The *Player* collection, which will show you how much currency each player has. We can use our player query used earlier - the one we used in the Bulk Job - in NoSQL Explorer to verify just the players affected by this job.
-* The second way to see this is in the *playerTranactionAudit* collection.  This collection shows all transactions around currency and virtual goods.
+* The second way to see this is in the *playerTransactionAudit* collection.  This collection shows all transactions around currency and virtual goods.
 
 ## How to Create a Bulk Job with Cloud Code
 
@@ -186,8 +186,8 @@ We'll now look at creating the same outcome but using an Event to trigger the sc
 *1.* Before you can use Bulk Operations you will need to ensure that your credentials have the Admin BulkJob requests enabled. For a refresher, see [Credentials](/Documentation/Configurator/Credentials.md).
 
 *2.* In the portal, go to *Configurator > Events* and create a new Event.  The Event will need an Attribute which has:
-* A Data Type of *String*.
-* A Default Calc of *Used In Script*.
+* A *Data Type* of *String*.
+* A *Default Aggregation Type* of *Used In Script*.
 * For this example, we'll give the Attribute a Short Code of *VALUE_ATTRIB*.
 
 *3.* In the portal, go to *Configurator > Cloud Code* and select Modules.
@@ -213,7 +213,7 @@ Spark.getBulkScheduler().submitJobModule({"userName":{"$regex":"^player1"}}, "Cr
 
 This above method and its attributes can be broken down into the following:
 
-* *Spark.getBulkScheduler().submitJobModule* - The method to call on getBulkScheduler, which submits the bulk operation.
+* *Spark.getBulkScheduler().submitJobModule* - The method to call on *getBulkScheduler*, which submits the bulk operation.
 
 * *{"userName":{"$regex":"^player1"}}* - The Player query to use to find all Player usernames beginning with "player1"
 

@@ -7,43 +7,34 @@ src: /Tutorials/Social Authentication and Player Profile/Accessing Player record
 
 ## Introduction
 
-An important part of a back-end is the ability to access your player's info in real-time and have the ability to change it. GameSparks gives you the ability to do this using multiple approaches.
+An important capability for a back-end is that it gives you the ability to access your player's info in real-time and allows you to change this data. GameSparks gives you the ability to do this using multiple approaches.
 
-This tutorial explores how to access player records using the NoSQL Explorer, Player management screen, and cloud code.  
+This tutorial explores how to access player records using the NoSQL Explorer and Cloud Code.  
 
 ## Working with the NoSQL Explorer
 
-The NoSQL Explorer is a powerful tool you can use to access and find any collection of data you have in your game:
+The *NoSQL Explorer* is a powerful tool you can use to access and find any Collection of data you have in your game:
 
-*1.* To open the NoSQL Explorer, click *NoSQL* left side of the portal.
+*1.* To open the NoSQL Explorer, click *NoSQL* in the left-hand navigation panel.
 
-*2.* To access player data, select the *Find* tab and use the 'player' collection to query for specific players or run the search for every player:
+*2.* To access player data, under *Collections* expand the *System* heading and select *player*. An interactive panel for the *player* Mongo database Collection opens, which contains options for submitting the available database operations for this Collection. The operations panel opens with the *Find* operation selected by default.
 
-![](img/PlayerRecords/1.jpg)
+*3.* Click the *Find* button:
 
+![](img/PlayerRecords/4.png)
 
-*3.* When records are retrieved, you can click on them to expand them. Once expanded you can see all the data that are linked to the player including data you can't normally see when you call an account details request - data such as auth tokens, external IDs, reserved currency, and private data, which you may not see and use often. An example of a newly created player's record:
+You can enter a *Query* to find specific players but this runs a search for all players and the result is returned into the *Output* panel below:
 
-![](img/PlayerRecords/2.jpg)
+![](img/PlayerRecords/5.png)
 
-<q>**More Information!** For more information about the SQL Explorer, click [here](/Documentation/NoSQL Explorer.md).</q>
+*3.* When records are retrieved, you can click on them to expand them. Once expanded you can see all the data that are linked to the player including data you can't normally see when you call an account details request - data such as authentication tokens, external IDs, reserved currency, and private data, which you may not see and use often.
 
-## Using the Player Management Screen
+Here's an example of a newly created player's record:
 
-You can use the player management screen to offer a visual experience while you access player data and change variables realtime. The player management screen can be found in the manage section of the portal.
+![](img/PlayerRecords/6.png)
 
-*1.* To access player data, click *Manage>Players*.
+<q>**More Information!** For more information about using the NoSQL Explorer, click [here](/Documentation/NoSQL Explorer.md).</q>
 
-*2.* On the *Player Search* panel, build and submit a query for the player data you want. The results of the query are returned into the *Results* panel.
-
-*3.* To view the player data for a result, click the edit ![](/img/fa/edit.png) icon. The *Edit Player* screen appears:
-
-![](img/PlayerRecords/3.jpg)
-
-* You can use the dynamic forms builder to customize this screen in whatever way you like.
-* You can tailor your team's experience and design what is shown on the screen to suit different users. For example, you can offer special screens for customer service, where they are allowed to change certain values, while your programmers have access to a different screen.
-
-<q>**More Information!** For more information about dynamic forms, click [here](/Documentation/Manage/Working with Dynamic Forms.md).</q>
 
 ## Accessing Data through Cloud Code
 

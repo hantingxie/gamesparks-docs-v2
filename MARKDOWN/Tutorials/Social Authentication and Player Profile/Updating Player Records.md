@@ -21,7 +21,7 @@ Here, we'll learn how to make user account changes using the [ChangeUserDetailsR
 ## Change Details Request
 
 
-This example shows an event which takes a string input and sets it as the player's new *userName* using the *ChangeUserDetailsRequest* and outputs the response as scriptData.
+This example shows an Event which takes a string input and sets it as the player's new *userName* using the *ChangeUserDetailsRequest* and outputs the response as scriptData.
 
 ```
 

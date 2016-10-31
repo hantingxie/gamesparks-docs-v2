@@ -6,7 +6,6 @@ src: /Tutorials/Social Authentication and Player Profile/Automating User Passwor
 
 # User Password Change
 
-
 ## Introduction
 
 If one of your users loses or forgets their password, you'll want an automated way for them to retrieve it.
@@ -15,15 +14,15 @@ This tutorial shows you how to set up Cloud Code to do this. The set up describe
 
 ## Cloud Code Section
 
-### Choosing our sequence of actions and passing in scriptData
+### Choosing Our Sequence of Actions and Passing in scriptData
 
 *1.* Navigate to the *Configurator* > *Cloud Code*.
 
-*2.* Select [AuthenticationRequest](/API Documentation/Request API/Authentication/AuthenticationRequest.md) under *Bindings* > *Requests*. The *Cloud Code* editor opens for the request and you can start editing it. This will allow users to run the password recovery logic without having an authenticated account.
-* **Action.** The first thing the *Cloud Code* will need to work is the '*action*' variable. The '*action*' variable will determine which sequence of instructions to perform. In this example, we have two sequences - password recovery and password reset:
+*2.* Under *Scripts* click to expand the *Requests* area and then select [AuthenticationRequest](/API Documentation/Request API/Authentication/AuthenticationRequest.md). The *Cloud Code* editor opens for the request and you can start editing it. This will allow users to run the password recovery logic without having an authenticated account.
+* **Action.** The first thing the *Cloud Code* will need to work is the *'action'* variable. The *'action'* variable will determine which sequence of instructions to perform. In this example, we have two sequences - password recovery and password reset:
   * Password recovery will generate a token which will be sent via email.
   * Password reset will take this token and a password and change the password.
-* **Status.** The '*status*' variable will help you debug and determine whether the function was successfully completed and, if not, will help you print out why not.
+* **Status.** The *'status'* variable will help you debug and determine whether the function was successfully completed and, if not, will help you print out why not.
 
 ```    
     	var status = "Started";
@@ -53,7 +52,7 @@ This tutorial shows you how to set up Cloud Code to do this. The set up describe
 
 *4.* Next, you'll need to link the user account to an E-mail. You can do this:
 * Through the initial authentication using *scriptData*.
-* Later on through an event by saving it on the player using *setScriptData*.
+* Later on through an Event by saving it on the player using *setScriptData*.
 
 If the email passed in is linked to an account, then:
 * A unique token will be generated linked to the account.
@@ -62,7 +61,7 @@ If the email passed in is linked to an account, then:
 ```  
     function startRecovery(request){
         if(!request.email){
-            status = "email variable not passed in"; //Either email variable was not passed in pr spelt incorrect
+            status = "email variable not passed in"; //Either email variable was not passed in or spelt incorrectly
             return;
         }
         var players = Spark.systemCollection("player");
@@ -146,8 +145,8 @@ If the email passed in is linked to an account, then:
 ### Sending E-Mail
 
 *8.* For this step you'll have to allow the user to input their E-Mail:
-* When they've passed in their E-Mail, you'll need to have a function which creates an *object* (New Object, GSData, GSRequestData) which stores the '*email*' and '*action*' variables.
-* The '*action*' string variable will be set to "*passwordRecoveryRequest*".
+* When they've passed in their E-Mail, you'll need to have a function which creates an *object* (New Object, GSData, GSRequestData) which stores the *'email'* and *'action'* variables.
+* The *'action'* string variable will be set to *"passwordRecoveryRequest"*.
 * When both variables have been set and stored in the object, call the *AuthenticationRequest* and send that object as *scriptData*. Make sure you leave spaces or quotes for both Username and Password fields for the *AuthenticationRequest*.
 
 
@@ -155,5 +154,5 @@ If the email passed in is linked to an account, then:
 
 *9.* After the player has been sent a token, they'll want to be able to change their password:
 * Allow the player to input their token and a new password.
-* When the player has passed these values through, create an object which stores the variable '*token*' as a string, '*password*' as a string which will store the value of the password passed in and '*action*' as a string set as "*resetpassword*".
+* When the player has passed these values through, create an object which stores the variable '*token*' as a string, *'password'* as a string which will store the value of the password passed in and *'action'* as a string set as *"resetpassword"*.
 * When the object has been set, send it as *scriptData* using the *AuthenticationRequest*. Make sure you leave spaces or quotes for both Username and Password fields for the *AuthenticationRequest*.

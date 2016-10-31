@@ -35,11 +35,11 @@ For more details about the authentication flow, you can refer to the [Twitch doc
 
 The only configuration you will need to make in the GameSparks portal is whether to save the player's Twitch access token or not. By default, the access token is saved.
 
-*6.* If you want to change this, go to *Configurator > Integrations > Twitch*. The following screen appears:
+*6.* If you want to change this, go to *Configurator > Integrations* and select *Twitch*. The following screen appears:
 
- ![](img/AuthTwitch/4.png)
+ ![](img/AuthTwitch/5.png)
 
-*7.* You can press Edit and change this setting.
+*7.* Click *Edit* to change this default setting.
 
 ## Making a TwitchConnectRequest
 

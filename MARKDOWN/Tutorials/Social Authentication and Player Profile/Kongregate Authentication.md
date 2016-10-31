@@ -55,7 +55,7 @@ This will display your game credentials.
 
 *7.* Navigate to *your game > Configurator > Integrations > Kongregate*:
 
-![](img/AuthKon/6.png)
+![](img/AuthKon/7.png)
 
 *8.* Click *Edit* and set your API key to be the one you just copied from Kongregate.
 

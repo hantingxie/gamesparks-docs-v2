@@ -5,13 +5,13 @@ src: /Tutorials/Social Authentication and Player Profile/Twitter Authentication.
 
 # How to Authenticate a Player Using their Twitter Account
 
-You can use Twitter authentication to offer your players with a simple way to sign in with their Twitter account. The GameSparks platform can then use a player's profile to drive its social features.
+You can use Twitter authentication to offer your players a simple way to sign in with their Twitter account. The GameSparks platform can then use a player's profile to drive its social features.
 
 In this tutorial, we'll go through setting up the necessary configuration with Twitter and explain how you can then use that to connect your players.
 
 ## Setting up a Twitter Application
 
-*1.* First things first, you need a Twitter account. Head over to [Twitter's dev portal](https://dev.twitter.com/user/login?destination=home) and sign in if you have one or sign up if you don't (if you've just signed up, make sure you've clicked the link in the confirmation email or you won't be able to sign in as a dev!).
+*1.* First things first - you need a Twitter account. Head over to [Twitter's dev portal](https://dev.twitter.com/user/login?destination=home) and sign in if you have one one or sign up if you don't (if you've just signed up, make sure you've clicked the link in the confirmation email or you won't be able to sign in as a dev!).
 
 You should now be back on the [dev home page](http://dev.twitter.com): in the top right corner of the screen is a drop-down list:
 
@@ -33,15 +33,15 @@ And that's it, you now have a Twitter application!
 
 ![](img/AuthTwit/3.png)
 
-*6.* In a separate tab/window, go to [the GameSparks developer portal](https://portal.gamesparks.net) and select the Configurator > [Integrations](/Documentation/Configurator/Integrations.md) page:
+*6.* In a separate tab/window, go to [the GameSparks developer portal](https://portal.gamesparks.net) and select the *Configurator >* [Integrations](/Documentation/Configurator/Integrations.md) page:
 
-![](img/AuthTwit/6.png)
+*7.* Select *Twitter*:
 
-*7.* Under *Providers*, select *Twitter*.
+![](img/AuthTwit/7.png)
 
-*8.* Click *Edit* and enter the API Key and API Secret from the Twitter portal into the *Twitter App ID* and *Twitter App Secret* fields respectively and then click *Save*:
+*8.* Click *Edit* and enter the API Key and API Secret from the Twitter portal into the *Twitter App ID* and *Twitter Secret* fields respectively and then click *Save*:
 
-![](img/AuthTwit/4.png)
+![](img/AuthTwit/8.png)
 
 Your GameSparks game is now configured to use your newly created Twitter app - you're set up to authenticate your players via Twitter and the GameSparks platform can access their profile to drive its social features.
 
@@ -57,9 +57,9 @@ Authentication via Twitter is done using the [TwitterConnectRequest](/API Docume
 
 *11.* Back in the GameSparks developer portal, click on the *Test Harness*.
 
-*12.* Within *Authentication*, click *TwitterConnectRequest*.
+*12.* Under *Requests* select *Authentication* and click *TwitterConnectRequest*.
 
-*13* fill in the *accessToken* and *accessSecret*.
+*13.* Fill in the *accessToken* and *accessSecret*.
 
 *14.* Click *Send*. You should see an *.AuthenticationResponse* containing a *displayName* for the player that the platform has looked up from the Twitter profile.
 

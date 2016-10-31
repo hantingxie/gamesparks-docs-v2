@@ -26,7 +26,7 @@ Here, we use a [ScheduleBulkJobAdminRequest](/API Documentation/Request API/Admi
 
 You'll need to set three fields:
 
-* *playerQuery* – Takes a query that acts on the player collection. This can be anything relevant to the player document found in the player collection.
+* *playerQuery* – Takes a query that acts on the player database Collection. This can be anything relevant to the player document found in the player Collection.
 * *scheduledTime* – The time when this bulk job should take place.
 * *script* – The Cloud Code that will execute on every player.
 

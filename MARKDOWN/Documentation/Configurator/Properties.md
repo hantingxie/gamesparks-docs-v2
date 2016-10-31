@@ -7,7 +7,9 @@ src: /Documentation/Configurator/Properties.md
 
 ## What are Properties?
 
-GameSparks Properties give you a mechanism for customizing your player experience without being restricted to platform capabilities. Using Properties, you can store your own JSON configuration on the portal and attach this to GameSparks objects, such as Virtual Goods, Achievements, and Leaderboards. Secondly, you can access Properties directly through Cloud Code and assign Property Sets to players through Cloud Code.
+GameSparks Properties give you a mechanism for customizing your player experience without being restricted to platform capabilities. Using Properties, you can:
+* Store your own JSON configuration on the portal and attach this to GameSparks objects, such as Virtual Goods, Achievements, and Leaderboards.
+* Access Properties directly through Cloud Code and assign Property Sets to players through Cloud Code.
 
 When you create a Property, you create an arbitrary data set which you can then exploit for custom game configuration.
 

@@ -39,11 +39,11 @@ In this tutorial, we'll go through setting up the necessary configuration with G
 
 Now we've done that, here comes the easy part.
 
-*8.* Go into the [GameSparks Developer Portal](https://portal.gamesparks.net/) for the game, and go to *Configurator* > *Integrations*.
+*8.* Go into the [GameSparks Developer Portal](https://portal.gamesparks.net/) for the game, and go to *Configurator > Integrations*.
 
-*9.* Select the Google* tab and click *Edit*.
+*9.* Under *Integrations*, select *Google* and click *Edit*:
 
-![](img/AuthGoogle/4.png)  
+![](img/AuthGoogle/16.png)  
 
 You can view the Application Client Id through the [Google *Play* Developer Console](https://play.google.com/apps/publish/), *BUT* you can *only access* the Client Secret under the standard [Google *Developer* Console](https://console.developers.google.com):
 
@@ -51,7 +51,7 @@ You can view the Application Client Id through the [Google *Play* Developer Cons
 
 *10.* Fill in the fields *Google Application Client Id* and *Google Application Client Secret* using the *Oauth Client Id* and *Client secret* from your Google Web Application and click *Save*.
 
-![](img/AuthGoogle/6.png)  
+![](img/AuthGoogle/17.png)  
 
 That's all there is to it. Now we're ready to make a [GooglePlusConnectRequest](/API Documentation/Request API/Authentication/GooglePlusConnectRequest.md).
 
@@ -201,9 +201,9 @@ To use this alternative type of authentication, we need to create a separate Cli
 
  ![](img/AuthGoogle/14.png)  
 
- *26.* Go into the [GameSparks Developer Portal](https://portal.gamesparks.net/) and for your game, and go to *Configurator* > *Integrations*.
+ *26.* Go into the [GameSparks Developer Portal](https://portal.gamesparks.net/) and for your game, and go to *Configurator > Integrations*.
 
- *27.* Select the *Google* tab and click *Edit*.
+ *27.* Under *Integrations*, select *Google* and click *Edit*:
 
  *28.* Fill in the fields, *Service Certificate* and *Service Email Address* using the downloaded certificate key and the *Email address* from your Google Web Application and click *Save*.  Choose the downloaded .p12 certificate key to be uploaded into the *Service Certificate* *field* and select *Save.*
 

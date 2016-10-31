@@ -20,15 +20,15 @@ GameSparks offers you several ways to send messages to your players with incredi
 Messages are used to notify your players with events or information. GameSparks includes many native messages such as earning a new achievement, acquiring a new highscore, or losing a position on a Leaderboard. You can customize these messages or create new ones:
 * **Sockets.** Messages can be sent to your players through sockets, so players only receive them once they're authenticated and in-game, which would be intercepted and outputted to the player using message listeners.
 * **Push Notifications.** Messages can also be sent to your players through push-notifications.
-* **Customized Messaging.** You can update any of the native GameSparks native messages to suit your game and segment the messages depending on the player and display different message entirely. You can also format your message depending on OS and include or omit players with a specific OS.
+* **Customized Messaging.** You can update any of the GameSparks native messages to suit your game and segment the messages depending on the player and display different message entirely. You can also format your message depending on OS and include or omit players with a specific OS.
 
 
-![](img/PlayerCom/1.jpg)
+![](img/PlayerCom/2.png)
  
 
 ## Messages through Cloud Code
 
-Cloud code is a great way to dynamically change strings/images/values within your game in real time to communicate with your players. Some examples:
+Cloud Code is a great way to dynamically change strings/images/values within your game in real-time to communicate with your players. Some examples:
 * You can have a message of the day or news column in your main menu which is regularly updated by the game's development team.
 * You can also use this type of communication for version checking to ensure that online and multiplayer features are only activated if the player has the latest build.
 * Using Cloud Code to supply players with the IP address to join a server.

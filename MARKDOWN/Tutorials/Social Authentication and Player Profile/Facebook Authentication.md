@@ -41,20 +41,20 @@ There are various configuration options you can play around with, but for now al
 
 *7.* In a separate tab/window, head over to [the GameSparks developer portal](https://portal.gamesparks.net/) and click the *Configurator* -> *Integrations*
 
-*8.* Under *Providers* -> *Facebook*, click *Edit*:
+*8.* Under *Integrations*, select, *Facebook* and then click *Edit*:
 
-![](img/AuthFB/29.jpg)
+![](img/AuthFB/33.png)
 
 The *Edit Facebook Configuration* dialog appears:
 
-![](img/AuthFB/14.png)
+![](img/AuthFB/34.png)
 
 
 *9.* Go back to the Facebook application and copy and paste the *App Id* and *App Secret* (click the *Show* button to reveal the secret) values into the *Facebook App Id* and *Facebook Secret* fields respectively on the dialog.
 
-*10.* Click *Save*.
+*10.* Click to *Save and Close*.
 
-Your GameSparks game is now configured to use your newly-created Facebook application: you’re set up to authenticate your players via Facebook, and the GameSparks platform can access their profile to drive its social features.
+Your GameSparks game is now configured to use your newly-created Facebook application - you’re set up to authenticate your players via Facebook, and the GameSparks platform can access their profile to drive its social features.
 
 ## Authenticating a Player Using their Facebook Account
 
