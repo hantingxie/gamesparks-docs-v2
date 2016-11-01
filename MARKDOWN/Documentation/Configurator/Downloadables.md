@@ -32,8 +32,12 @@ You can use the following options (highlighted above):
 *2.* Next enter a *Short Code* and then click *Browse* to select the downloadable file.
 
 *3.* Click to *Save and Close*:
-* An *Upload* button appears at the top of the page and you can click this to view upload progress.
 * When the upload completes, you are taken back to the *Downloadables* page and the new Downloadable is listed.
+* An *Upload* button appears at the top of the page and you can click this to view upload progress.
+
+*4.* When you have created several *Downloadables*, you can click the *Uploading* button and review and remove your completed *Uploads*:
+
+![](img/Downloadables/5.png)
 
 
 ## API Request

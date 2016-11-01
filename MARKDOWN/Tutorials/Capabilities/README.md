@@ -5,81 +5,75 @@ src: /Tutorials/Capabilities/README.md
 
 # Capabilities and User Permissions
 
-A game Owner or Admin may wish to set specific read/write permissions for particular user for different areas of the Portal. You might want a user of your game:
+As a game Owner or Admin, you may wish to set specific read/write permissions for a particular user for different areas of the Portal. You might want a user of your game:
 * To be able to edit and make changes to Events and Leaderboards configurations.
 * To able to view the configuration of Virtual Goods and Achievements but not be able to edit them.
 * To be prevented from either editing or viewing the Integrations and Downloadables sections.
 
-You can quickly set up this sort of mixed permissions for users as a specific set of capabilities and, additionally, refine the permissions in the Manage section for Screens and Snippets.
+You can quickly set up this sort of mixed permissions for users as a specific set of capabilities.
 
 ## Collaborators and Group Permissions
 
-Previously, when adding Collaborators to a game, we had just 2 types of permissions available - an Administrator and a Read-Only user, which are referred to as *gameAdmin* and *readOnly* permissions respectively. These were not configurable to the finer granularity that we allow today.
+Previously, when adding Collaborators to a game, we had just 2 types of permissions available - an Administrator and a Read-Only user, which are called *gameAdmin* and *readOnly* permissions respectively. These were not configurable to the finer granularity that we allow today.
 
-<q>**Don't Modify!** We recommend that *you don't modify* the permissions on these default Groups (which can now be found in *Groups*), because their visibility should serve only as an intuitive template on how to configure your own Group permissions.</q>
+<q>**Don't Modify!** We recommend that *you don't modify* the permissions on the *gameAdmin* and *readOnly* default Groups (which can now be found in *Groups*), because their visibility should serve only as an intuitive template for how to configure your own Group permissions.</q>
 
 You can now set up the read/write permissions for Collaborators on your game with a high degree of precision:
 * Create a Collaborator Group.
 * Edit the Group to define the read/write permissions for the Group.
 * Assign Collaborators to that permissions Group.
-* Finally, you can go to the *Manage > Admin Screens* section and refine the overall permissions conferred by a Group for specific screens and snippets.
 
 ## Creating Group Permissions and Assigning to Collaborators
 
 By default on any game, the *gameAdmin* and *readOnly* Groups are displayed. The game author and owner will always have full read/write access to everything in the Portal, regardless of how the settings are changed for other game Admins. You can modify the *gameAdmin* and *readOnly* permissions Groups, but we strongly recommend that *you do not change* these default Groups. Instead, create your own custom Groups to impose the required access permissions on your Collaborators.
 
-*1.* To create a new Group, navigate to the *Overview* page and click the ![](/img/fa/plus.png) icon in the *Groups* tab under *Collaborators*:
+*1.* To create a new Group, go to your *Game Overview* page.
 
-![](img/1.png)
+*2.* Under *User Management* select the *Groups* tab and click *Add Group*:
 
-*2.* Provide a name and description for the Group and enable *Read* and *Write* permissions for each capability in the portal, as required:
+![](img/12.png)
 
-![](img/2.png)
+The *Add Group* page appears.
 
-*3.* Save the new *Group*. It is added in the list on the *Groups* tab:
+*3.* Enter a *Name* and *Description* for the new Group and enable *Read* and *Write* permissions for each capability in the portal, as required:
 
-![](img/3.png)
+![](img/13.png)
 
-*4.* Select the *Collaborators* tab and add a new *Collaborator*:
+You can expand headings in the *Permission* list to achieve precisely the granularity of *Read/Write* access you want for *Collaborators* that are assigned to this new *Group*:
+* Here, for example, although users will have *Read* access for all functions under *Configurator*, they are restricted to only five areas where they will have *Write* access: *Events*, *Leaderboards*, *Running Totals*, *Cloud Code*, and *Teams*.
 
-![](img/4.png)
+*4.* Click to *Save* the new *Group*. It is added in the list on the *Groups* tab:
 
-*5.* To assign the *Collaborator* to the new *Group*, select the newly-created *Group* in the drop-down menu and save your changes:
+![](img/14.png)
 
-![](img/5.png)
+*5.* Select the *Collaborators* tab and click to *Add Collaborator*:
+
+![](img/15.png)
+
+The *Add Collaborator* page appears.
+
+*6.* Enter an *Email* for the new Collaborator.
+
+<q>**Email is Unique Identifier!** Note that this will be used in the platform as the unique identifier for the Collaborator. This means that if you want to add a Collaborator who will acquire the permissions you have configured under more than one *Group*, you must add them once and assign them to those multiple *Groups*. You can't add them more than once using the same Email and each time add them to a different Group.</q>
+
+*7.* To assign the new Collaborator to one or more permission Groups, select these from the *Groups* drop-down and click to *Save* the new Collaborator:
+
+![](img/16.png)
 
 In this example, the new *Collaborator* is assigned the newly-configured *Restricted* Group permissions.
 
-*6.* Login as the *Collaborator* and navigate to the game. Immediately, you will see that not all the options available to a game Admin are available on the screen for you as a Collaborator assigned to a specific permissions Group:
+*8.* Click to *Save* the new Collaborator. The new Collaborator is added under *User Management* on the *Game Overview* page:
 
-![](img/6.png)
+![](img/17.png)
 
-Based on the Capabilities set which is defined by the *Restricted* Group permissions, they may be able to view certain things but not edit them. For example, in my configuration of Capabilities, the *Messages* Capability only has read permissions. This means I can navigate to and view the *Messages* section, but when I try to edit any Message, I will see the following:
+<q>**Editing a Collaborator?** If you click to edit the details of a Collaborator after you have added them to your game, you'll be able to change the permission Groups to which they are assigned but you won't be able to edit their Email. This is because the Email is used as the *unique identifier* for the Collaborator and therefore the field is protected and is read-only. To change a Collaborator's Email, you must delete the Collaborator and add them again.</q>
 
-![](img/7.png)
+*9.* Log in as the *Collaborator* and navigate to the game. Based on the Capabilities set which is defined by the *Restricted* Group permissions, a Collaborator will be able to view certain things but not edit them. Given the Read/Write permissions configured for this Group, the Collaborator will be able to both view and edit game *Team Types*:
 
-Based on my configuration, this is the same for Teams, Virtual Goods, Achievements and Challenges. For those Capabilities that have neither read or write permissions, they won't be visible.
+![](img/18.png)
 
-## Refining Permissions for Screens and Snippets
+But the Collaborator will only be able to view and not edit the game's *Virtual Goods*:
+* Fields will be grayed-out.
+* If a *Save* is attempted, it will be blocked.
 
-You can exploit a finer degree of access permission control to what users can see and do with Screens and Snippets. For example, access can be given to the Screen and the corresponding Snippets with the exception of the *player_virtual_good* and *player_currencies* Snippets for the newly created Group. Therefore, when a user is logged in with only that Group, they can see the Players Screen as normal, except the information displayed for Virtual Goods and Currencies.
-
-<q>**Note:** By default, all Screens and Snippets have Nothing Selected for Groups. Unless specific Groups are selected for Screens and Snippets, everyone will be able to view them.</q>
-
-*7.* As the game Admin, go to the *Manage* section and Edit the *Players* Screen. Select the newly-created Group in the *Groups* dropdown as well as for the *gameAdmin* Group so that Admins can also view it.
-
-![](img/8.png)
-
-*8.* Do the same for each corresponding Snippet. Add both the newly-created Group and the default *gameAdmin* group.
-
-![](img/9.png)
-
-*9.* For Snippets *player_virtual_goods* and *player_currencies*, select only the *gameAdmin* Group.
-
-![](img/10.png)
-
-*10.* Login as the user belonging to the newly-created Group.
-
-*11.* Load the *Players* Screen - you can see that the *player_virtual_goods* and *player_currencies* Snippets cannot be viewed.
-
-![](img/11.png)
+![](img/19.png)

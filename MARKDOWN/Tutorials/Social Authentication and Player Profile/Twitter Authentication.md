@@ -29,7 +29,7 @@ For now you can leave *Callback URL* blank, you won't be needing that for this g
 
 And that's it, you now have a Twitter application!
 
-*5.* There are various configuration options you can play around with, but for now all you're interested in are the API keys so click the tab "API Keys":
+*5.* There are various configuration options you can play around with, but for now all you're interested in are the API keys so click the *API Keys* tab:
 
 ![](img/AuthTwit/3.png)
 
@@ -49,11 +49,11 @@ Your GameSparks game is now configured to use your newly created Twitter app - y
 
 Authentication via Twitter is done using the [TwitterConnectRequest](/API Documentation/Request API/Authentication/TwitterConnectRequest.md). To do this you need to obtain an Access Token and an Access Secret for your player. Twitter authentication uses oAuth 1.0 which, when negotiated correctly, results in the client receiving an Access Token and Access Secret. There are numerous client libraries that have been written to make this easier, Twitter provide a list of some of these [here](https://dev.twitter.com/docs/twitter-libraries). What they have in common is that they provide a mechanism where you supply your Twitter API Key and API Secret, obtain a token, submit that token to Twitter. At this point, the player is prompted to allow access to your application. Once granted, they return with the Access Token and Access Secret needed for GameSparks to connect to the player's Twitter profile.
 
-*9.* For the purpose of this guide you can just get hold of the access token and access secret for the user who owns the game you created. Back on the *API Keys* tab for your Twitter app, at the bottom of the page is an option to generate your access token.
+*9.* For the purpose of this guide you can just get hold of the Access Token and Access Secret for the user who owns the game you created. Back on the *API Keys* tab for your Twitter app, at the bottom of the page is an option to generate your Access Token.
 
 ![](img/AuthTwit/5.png)
 
-*10.* Click the button. If no token has appeared wait a few seconds then refresh the page. You should now see an access token and access secret.  These will allow you to connect as your user.
+*10.* Click the button. If no token has appeared wait a few seconds then refresh the page. You should now see an Access Token and Access Secret.  These will allow you to connect as your user.
 
 *11.* Back in the GameSparks developer portal, click on the *Test Harness*.
 
