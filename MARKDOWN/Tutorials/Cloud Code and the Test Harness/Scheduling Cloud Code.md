@@ -9,7 +9,7 @@ You can schedule Cloud Code scripts on the GameSparks platform in two ways:
 * Schedule a Module script via the [SparkScheduler](/API Documentation/Cloud Code API/Utilities/SparkScheduler.md) Cloud Code object.
 * Use one of the predefined system schedulers.
 
-## Scheduling a script via the SparkScheduler object
+## Scheduling a Script via the SparkScheduler Object
 
 Suppose you want to allow your players to plant virtual seeds within the game world and for the seed to grow into a plant after a given amount of time has passed.
 
@@ -17,13 +17,13 @@ To do this, let's first create an Event that the game code can trigger to indica
 
 *1.* Log in to the GameSparks Portal and navigate to *Configurator > Events*.
 
-*2.* Click on the plus ![](/img/fa/plus.png) icon and set up the Event as follows.
+*2.* Click to *Add* a new Event and set up the Event as follows:
 
-![](img/Schedule/8.png)
+![](img/Schedule/10.png)
 
-*3.* Navigate to *Configurator > Cloud Code > Bindings > Events* and select the *Plant a seed* Event to open up the Cloud Code editor for this Event.
+*3.* Save the Event and navigate to *Configurator > Cloud Code > Scripts > Events* and select *PLANT_SEED* to open up the Cloud Code editor for this Event.
 
-![](img/Schedule/9.png)
+![](img/Schedule/11.png)
 
 *4.* Copy the following script to the editor and click the *Save* button.
 
@@ -42,9 +42,9 @@ theScheduler.inSeconds("GROW_SEED", 60, {"x" : x, "y" : y});
 
 This script schedules the GROW_SEED module script to run after 60 seconds.
 
-*5.* Now navigate to *Configurator > Cloud Code > Modules > Create New Module*.
+*5.* Click to *Save* the Cloud Code script you've added to the Event and navigate to *Configurator > Cloud Code > Modules > Create New Module*.
 
-*6.* Enter "GROW_SEED" as the Module name and click *Save*. GROW_SEED will now be listed under your *Cloud Code > Modules*.
+*6.* Enter *GROW_SEED* as the Module name and click *Save*. GROW_SEED will now be listed under your *Cloud Code > Modules*.
 
 *7.* Click to open the Cloud Code editor for the *GROW_SEED* Module.
 
@@ -71,7 +71,7 @@ Let’s test out this configuration in the *Test Harness*.
 
 *1.* Navigate to the GameSparks developer portal Test Harness.
 
-*2.* Copy the JSON request below into the JSON field and press the *Send* ![](/img/fa/play.png) icon.
+*2.* Copy the JSON request below into the JSON field and click to *Send Request*.
 
 ```
 
@@ -86,15 +86,16 @@ Let’s test out this configuration in the *Test Harness*.
 
 The GameSparks platform will return a response similar to this.
 
-```    
+```
+
 {
- "@class": ".RegistrationResponse",
- "authToken": "b10441c4-58e0-4149-bb42-6da55acf86d5",
- "displayName": "displayName",
- "newPlayer": true,
- "scriptData": null,
- "userId": "551a91dee4b0b82116bdb649"
+  "@class": ".RegistrationResponse",
+  "authToken": "59035171-bc9d-46bc-8dca-1d8598df1553",
+  "displayName": "displayName",
+  "newPlayer": true,
+  "userId": "581a0e543a32df72c7b30675"
 }
+
 ```
 
 This player is now authenticated and could sign into later sessions using these credentials with an [AuthenticationRequest](/API Documentation/Request API/Authentication/AuthenticationRequest.md).
@@ -104,10 +105,12 @@ This player is now authenticated and could sign into later sessions using these 
 ```
 
  {
+
  "@class": ".LogEventRequest",
  "eventKey": "PLANT_SEED",
  "X": 10,
  "Y": 12
+
 }
 
 ```
@@ -116,8 +119,9 @@ The GameSparks platform will return a response similar to this:
 ```
 
 {
- "@class": ".LogEventResponse",
- "scriptData": null
+
+ "@class": ".LogEventResponse"
+
 }
 
 ```
@@ -125,23 +129,25 @@ Execution of the scripts:
 * The 'Plant a Seed' Cloud Code script will execute when GameSparks receives this Event. The script schedules the GROW_SEED script to run after 60 seconds, passing in the X and Y coordinates from the Event.
 * 60 seconds later, the GROW_SEED script will execute, which will result in a document being created in the *script.field* collection.
 
-*4.* Lastly, to see the results navigate to *NoSQL > Actions > Find* and select the *script.field* collection and press the *Find* button.
+*4.* Lastly, to see the results navigate to the *NoSQL Explorer*, expand *Runtime* and select the *script.field* collection.
 
-![](img/Schedule/7.png)
+*5.* Under the *Find* Mongo database operation, click the *Find* button and expand the results returned into the *Output* panel:
 
-## Scheduling a script via a system scheduler
+![](img/Schedule/12.png)
+
+## Scheduling a Script via a System Scheduler
 
 The *Cloud Code > System* section contains three time-based triggers:
 
-* Every Minute.
-* Every Hour.
 * Every Day.
+* Every Hour.
+* Every Minute.
 
-These scripts execute at the top of every minute, every hour, and every day respectively. Continuing our "plant a seed" example from above, let's schedule a script that clears all the plants from the virtual field every hour.
+These scripts execute at the top of every day, every hour, and every minute respectively. Continuing our "plant a seed" example from above, let's schedule a script that clears all the plants from the virtual field every hour.
 
-*1.* Navigate to *Configurator > Cloud Code > System* and select *Every Hour*.
+*1.* Navigate to *Configurator > Cloud Code*, under *Scripts* expand *System*, and select *Every Hour*.
 
-![](img/Schedule/6.png)
+![](img/Schedule/13.png)
 
 *2.* Copy the following script into the Cloud Code editor and click the *Save* button:
 

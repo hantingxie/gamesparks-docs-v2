@@ -17,9 +17,9 @@ The [ChangeUserDetailsRequest](/API Documentation/Request API/Player/ChangeUserD
 
 Let's try this out using the GameSparks developer portal Test Harness.
 
-*1.* In the GameSparks portal, navigate to the *Test Harness*.
+*1.* In the GameSparks portal, navigate to the *Test Harness*, under *Requests* click *Authentication*, and click *RegistrationRequest*.
 
-*2.* Copy the JSON request below into the JSON field and click the *Send* ![](/img/fa/play.png) icon.
+*2.* Copy the JSON request below into the JSON field and click to *Send Request*:
 
 ```    
     {
@@ -35,20 +35,20 @@ The GameSparks platform will return a response similar to this.
 
 ```    
     {
-     "@class": ".RegistrationResponse",
-     "authToken": "a8c88571-31c5-4747-adb7-34f04bcd1bf4",
-     "displayName": "Nick"
-     "scriptData": null,
-     "userId": "537f755d4566a1b7eb012e92"
+  "@class": ".RegistrationResponse",
+   "authToken": "7c83262b-42ef-4400-b1bb-1de128c2f65e",
+   "displayName": "Nick",
+   "newPlayer": true,
+   "userId": "581a1c0e3a32df5fa6f1dff9"
     }
 
 ```  
 
-This player is now authenticated and could sign into later sessions using these credentials with an [AuthenticationRequest](/API Documentation/Request API/Authentication/AuthenticationRequest.md).
+This player is now registered and could sign into later sessions using these credentials with an [AuthenticationRequest](/API Documentation/Request API/Authentication/AuthenticationRequest.md).
 
 If you want to change this player's password to a new one, you make a [ChangeUserDetailsRequest](/API Documentation/Request API/Player/ChangeUserDetailsRequest.md) call that provides the new password in the 'newPassword' field.
 
-*3.* In the Test Harness, copy the JSON request below into the JSON field and press the *Send* ![](/img/fa/play.png) icon.
+*3.* In the Test Harness, under *Requests* click *Player*, and select *ChangeUserDetailsRequest*. Then the copy the JSON request below into the JSON field and click to *Send Request*:
 
 ```
 
@@ -64,15 +64,14 @@ The GameSparks platform will return a response similar to this:
 ```
 
     {
-     "@class": ".ChangeUserDetailsResponse",
-     "scriptData": null
+     "@class": ".ChangeUserDetailsResponse"
     }
 
 ```
 
 For greater security, you might require that the player enters their existing password along with the new one - the *ChangeUserDetailsRequest* call allows you to provide the old password which the GameSparks platform will verify before changing it to the new value.
 
-*4.* In the Test Harness, copy the JSON request below into the JSON field and press the *Send* ![](/img/fa/play.png) icon.
+*4.* In the Test Harness and still with the *ChangeUserDetailsRequest* selected, copy the JSON request below into the JSON field and click to *Send Request*:
 
 ```    
     {
@@ -82,13 +81,12 @@ For greater security, you might require that the player enters their existing pa
     }
 
 ```
-The GameSparks platform will return a registration response similar to this:
+The GameSparks platform will return a response similar to this:
 
 ```
 
     {
-     "@class": ".ChangeUserDetailsResponse",
-     "scriptData": null
+     "@class": ".ChangeUserDetailsResponse"
     }
 
 ```
@@ -99,15 +97,15 @@ First of all, we need to create an Event which the game client code will use to 
 
 *1.* In the GameSparks developer portal navigate to *Configurator > Events*.
 
-*2.* Click the plus icon Plus ![](/img/fa/play.png) icon to add a new Event. Enter the following details:
+*2.* Click to *Add* a new Event. Enter the following details:
 
-![](img/PassChange/1.jpg)
+![](img/PassChange/3.png)
 
-*3.* Now navigate to *Configurator > Cloud Code > Bindings > Events*.
+*3.* *Save and Close* the new Event and navigate to *Configurator > Cloud Code > Scripts > Events*.
 
-*4.* Select the *Change Password* item to open up the Javascript editor for the Cloud Code associated with this Event:
+*4.* Select the *PASSWORD* Event to open up the editor for the Cloud Code associated with this Event:
 
-![](img/PassChange/2.jpg)
+![](img/PassChange/4.png)
 
 *5.* Copy the following script to the editor and click the *Save* button:
 
@@ -124,13 +122,13 @@ First of all, we need to create an Event which the game client code will use to 
 
 ```
 
-This script reads the old password from the incoming Event, validates it against the password currently stored for this player and, if they match, changes the password to the value specified in the incoming Event.
+This script reads the old password from the incoming Event, validates it against the password currently stored for this player, and, if they match, changes the password to the value specified in the incoming Event.
 
 Let's test out this configuration in the *Test Harness*.
 
 *1.* First authenticate with the previously created player.
 
-*2.* Copy the JSON request below into the JSON field and press the *Send* ![](/img/fa/play.png) icon.
+*2.* Copy the JSON request below into the JSON field and click to *Send Request*:
 
 ```  
 
@@ -142,7 +140,7 @@ Let's test out this configuration in the *Test Harness*.
 
   ```  
 
-The GameSparks platform will return a registration response similar to this:
+The GameSparks platform will return a response similar to this:
 
 ```
 
@@ -150,7 +148,6 @@ The GameSparks platform will return a registration response similar to this:
      "@class": ".AuthenticationResponse",
      "authToken": "1c53797a-6e3f-4db7-b529-b70820c35303",
      "displayName": "displayName",
-     "scriptData": null,
      "userId": "53808a96e4b02eeeac89e23a"
     }
 
@@ -164,18 +161,17 @@ The GameSparks platform will return a registration response similar to this:
      "@class": ".LogEventRequest",
      "eventKey": "PASSWORD",
      "OLD_PASS": "password",
-     "NEW_PASS": "mynewp4ssword"
+     "NEW_PASS": "mynewpassword"
     }
 
 ```
 
-The GameSparks platform will return a registration response similar to this:
+The GameSparks platform will return a response similar to this:
 
 ```
 
     {
      "@class": ".LogEventResponse",
-     "scriptData": null
     }
 
 ```

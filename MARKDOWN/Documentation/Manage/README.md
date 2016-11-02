@@ -7,5 +7,4 @@ src: /Documentation/Manage/README.md
 
 # Manage
 
-Use Dynamic Forms to build different screens for managing your game, such as Admin, Experiments, Leaderboards, and Player screens:
-* [Working with Dynamic Forms](/Documentation/Manage/Working with Dynamic Forms.md)
+Sorry, the Manage section and Dynamic Forms are not included in this beta release, but are coming soon!

@@ -10,11 +10,11 @@ You can make HTTP calls from external servers or your own processes into the Gam
 * If you pass query string parameters on a POST request, both sets of values are accessible:
   * Single parameters are passed to JavaScript as Strings.
   * Multiple parameters with the same name are passed to JavaScript as a String array.
-* POST parameters are only interpreted into the data object when the content type of the request is "multipart/form-data". For other usages see the *Reading POST Data* section below.
+* POST parameters are only interpreted into the data object when the content type of the request is "multipart/form-data". For other usages see the [Reading POST Data](#Reading POST Data) section below.
 
 ## Creating Cloud Code to Handle Requests
 
-To create a script to handle the request, from the Cloud Code page, select the *System* submenu and use the *Callback URL* menu entry.
+To create a script to handle the request from the Cloud Code page, under *Scripts* select *System*, and use *Callback URL*.
 
 ## The Callback URL
 
@@ -24,6 +24,7 @@ To create a script to handle the request, from the Cloud Code page, select the *
   * *apiKey* : The API Key of you game.
   * *serverSecret* : The server secret of you game, accessible from the game overview page by clicking the ![](/img/fa/lock.png) icon.
   * *playerId(optional)* : The ID of the player, if this is supplied, then [Spark.getPlayer()](/API Documentation/Cloud Code API/Spark.md) will be the player specified.
+
 
 ## Adding Parameters
 

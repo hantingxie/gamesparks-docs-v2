@@ -20,7 +20,7 @@ This section describes these two data-storage options and explains the pros and 
 
 Attaching player data to the Player object in Cloud Code ensures requests for data will be as fast as possible because the Player object is stored in memory on the GameSparks platform and the Player object is always cached in memory while the player has an open socket.
 
-This data set is best used for data that is shared or stored for the lifetime of the player. You have the ability through the [SparkPlayer](/API Documentation/Cloud Code API/Player/SparkPlayer.md) object to set (this can either add or overwrite), get, and remove data stored against a key.
+This data set is best used for data that is shared or stored for the lifetime of the player. You have the ability through the [SparkPlayer](/API Documentation/Cloud Code API/Player/SparkPlayer.md) object to *set* (this can either add or overwrite), *get*, and *remove* data stored against a key.
 
 The SparkPlayer object has 2 separate data sets that differ in their accessibility.
 
