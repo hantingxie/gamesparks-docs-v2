@@ -5,7 +5,7 @@ src: /Tutorials/Cloud Code and the Test Harness/Implementing External HTTP Callb
 
 # How to Implement External HTTP Callbacks
 
-You can make HTTP calls from external servers or your own processes into the GameSparks platform. When these calls are made, you can execute some custom Cloud Code to do whatever processing you need:
+You can make HTTP calls into the GameSparks platform either from external servers or from your own processes. When these calls are made, you can execute some custom Cloud Code to do whatever processing you need:
 * The HTTP request can either be a GET or POST request, and all parameters passed to the server are accessible via the [Spark.getData()](/API Documentation/Cloud Code API/Spark.md) function.
 * If you pass query string parameters on a POST request, both sets of values are accessible:
   * Single parameters are passed to JavaScript as Strings.
@@ -22,8 +22,8 @@ To create a script to handle the request from the Cloud Code page, under *Script
 
   * *stage* : "preview" or "service" (depending on whether you are accessing the live servers or not).
   * *apiKey* : The API Key of you game.
-  * *serverSecret* : The server secret of you game, accessible from the game overview page by clicking the ![](/img/fa/lock.png) icon.
-  * *playerId(optional)* : The ID of the player, if this is supplied, then [Spark.getPlayer()](/API Documentation/Cloud Code API/Spark.md) will be the player specified.
+  * *serverSecret* : The server secret of you game, accessible from the *Configurator > Credentials* page.
+  * *playerId(optional)* : The ID of the player. If this is supplied, then [Spark.getPlayer()](/API Documentation/Cloud Code API/Spark.md) will be the player specified.
 
 
 ## Adding Parameters

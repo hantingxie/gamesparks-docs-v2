@@ -3,7 +3,7 @@ nav_sort: 3
 src: /Tutorials/Multiplayer/Sharing Data between Players.md
 ---
 
-# Sharing Data betwen Players
+# Sharing Data between Players
 
 The GameSparks platform makes it easy for developers to be able to share game data between players. You may want to use this to implement features such as ghost data replay in a racing game or for implementing the sharing of player-created game levels.
 

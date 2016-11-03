@@ -9,25 +9,23 @@ You can use Callbacks to run separate, customized Cloud Code scripts against dif
 
 <q>**Multiple Callback URLs!** Previously, only one Callback URL could be created per game.  You can now create as many custom Callback URLs as there are custom Credentials.</q>
 
-*1.* Before we can create a Callback URL script, we'll first need to create a customized Credential. In the portal, go to *Configurator > Integrations*.
+*1.* Before we can create a Callback URL script, we'll first need to create a customized Credential. In the portal, go to *Configurator > Credentials*.
 
-*2* To add two new custom Credentials, click the Plus ![](/img/fa/plus.png) icon on *Credentials*:
+*2* Click to *Add* two new custom Credentials:
 
 <q>**Creating Credentials!** For a refresher, see [Security Credentials](/Documentation/Configurator/Credentials.md).</q>
 
-![](img/CustomCallback1.png)
+![](img/CustomCallback/1.png)
 
-*2.*  When you create each Credential, ensure to switch on the *CB* checkbox.  This tells the platform that this credential is going to be exclusively used for Callback scripts:
+*2.*  When you create each Credential, make sure you turn the *Callback* switch.  This tells the platform that the Credential is going to be exclusively used for Callback scripts:
 
-![](img/CustomCallback2.png)
+![](img/CustomCallback/2.png)
 
 *3.* In the portal, select *Configurator > Cloud Code*.
 
-![](img/CustomCallback3.png)
+*4.* On the *Cloud Code* page under *Scripts* select *Callbacks* and edit one of the custom Credentials that you created in *Step 2*.
 
-*4.* Select *Callbacks* from the *Bindings* list, and edit one of the custom credentials that you created in *Step 1* or *2*.
-
-![](img/CustomCallback4.png)
+![](img/CustomCallback/3.png)
 
 *5.* Enter the Cloud Code you want to be executed for the Callback. For the purposes of our tutorial, we'll just write a Script to return a message:
 
