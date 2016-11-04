@@ -12,24 +12,29 @@ In this exercise we'll cover a few different scenarios around purchasing. We'll 
 
 ## Setting Up a Virtual Good for Purchasing with a Virtual Currency
 
-*1.* Log in to the [GameSparks Developer Portal](https://portal.gamesparks.net) and go to *Configurator > Virtual Goods*.
+*1.* Log in to the GameSparks Developer Portal and go to *Configurator > Virtual Goods*.
 
-*2.* Click ![](/img/fa/plus.png) to create a new Virtual Good.
+*2.* Click to *Add* a new Virtual Good. The *Add Virtual Good* page appears:
 
-![](img/AppPur/3.png)
+![](img/AppPur/5.png)
 
 *3.* Enter the Virtual Good details:
 * Give it a *Name* and a *Short Code* - we'll use the Short Code to refer to the item later on.
-* Leave the *Type* as 'Virtual Good'. Note that the other option here is 'Currency Pack' which, instead of adding a good to your player when awarded, grants them some configurable quantity of currencies. This is a very useful type for Virtual Goods, but for now let's focus on the 'Virtual Good' type.
-* *Currencies* - Because we're going to start with a Virtual Currency purchase, we need to specify a price for the Virtual Good here, so let's add a *Currency 1* value of 100. This means a player will be charged 100 units of Currency 1 when they buy this Virtual Good.
+* Leave the *Type* as *Virtual Good*.
+  * Note that the other option here is *Currency Pack* which, instead of adding a good to your player when awarded, grants them some configurable quantity of currencies. This can be a very useful type for to use for your Virtual Goods, but for now let's focus on the *Virtual Good* type.
+* *Currencies* - Because we're going to start with a Virtual Currency purchase, we need to specify a price for the Virtual Good here, so let's set the *Currency 1* value at 100. This means a player will be charged 100 units of *Currency 1* when they buy this Virtual Good.
+
+*4.* Click to *Save and Close* the new Virtual Good.
 
 Let's now set up a player so that they can buy your Virtual Good.
 
-*4.* Go to *Configurator > Overview*, click ![](/img/fa/edit.png) and under *Signup Bonuses* add a *Currency 1* signup bonus of 1000.
+*5.* Go to *Game Overview* page and click to edit ![](/img/icons/editicon.png) the game.
 
-![](img/AppPur/4.png)
+*6.* On the *Game Details* tab under *Currencies* add a *Signup Bonus* for *Currency 1* of 1000.
 
-Now whenever you register a player they will be granted 1000 units of Currency 1.
+![](img/AppPur/6.png)
+
+* Now, whenever you register a player, they will be granted 1000 units of Currency 1.
 
 The next steps all take place within the *Test Harness*.
 
@@ -37,7 +42,7 @@ The next steps all take place within the *Test Harness*.
 
 If you've been following along with the configuration set up above, you should be able to run these steps in the Test Harness.
 
-*1.* Firstly, we register a new player (submit *Authentication > RegistrationRequest*): "PLAYER ONE"
+*1.* Firstly, we register a new player by submitting an *Authentication > [RegistrationRequest](/API Documentation/Request API/Authentication/RegistrationRequest.md)* for "PLAYER ONE":
 
 ```
 { "@class": ".RegistrationRequest",
@@ -58,7 +63,7 @@ If you've been following along with the configuration set up above, you should b
 
 ```
 
-*2.* And if we look at their account details (submit *Player > AccountDetailsRequest*) we can see our signup bonus has been awarded:
+*2.* Now that the PLAYER ONE is registered, we can look at their account details by submitting a *Player > [AccountDetailsRequest](/API Documentation/Request API/Player/AccountDetailsRequest.md)* we can see our signup bonus has been awarded:
 
 ```
 { "@class": ".AccountDetailsResponse",
@@ -75,7 +80,7 @@ If you've been following along with the configuration set up above, you should b
 
 ```
 
-*3.* If we list the available Virtual Goods (submit *Store > ListVirtualGoodsRequest*), we see our Heart listed:
+*3.* If we list the available Virtual Goods by submitting a *Store > [ListVirtualGoodsRequest](/API Documentation/Request API/Store/ListVirtualGoodsRequest.md)*, we see our Heart listed:
 
 ```
 { "@class": ".ListVirtualGoodsResponse",
@@ -84,7 +89,7 @@ If you've been following along with the configuration set up above, you should b
 
 ```
 
-*4.* To buy a Heart we submit a [BuyVirtualGoodsRequest](/API Documentation/Request API/Store/BuyVirtualGoodsRequest.md) (*Store > BuyVirtualGoodsRequest*):
+*4.* To buy a Heart we submit a *Buy > [BuyVirtualGoodsRequest](/API Documentation/Request API/Store/BuyVirtualGoodsRequest.md)*:
 
 ```
 { "@class": ".BuyVirtualGoodsRequest",
@@ -102,7 +107,7 @@ If you've been following along with the configuration set up above, you should b
 
 ```
 
-*5.* And we submit a subsequent [AccountDetailsRequest](/API Documentation/Request API/Player/AccountDetailsRequest.md), which will show that the player now has a Heart available, and 100 less of Currency 1:
+*5.* And we submit a subsequent *Player > [AccountDetailsRequest](/API Documentation/Request API/Player/AccountDetailsRequest.md)*, which will show that the player now has a Heart available, and 100 less of Currency 1:
 
 ```
 { "@class": ".AccountDetailsResponse",
@@ -120,7 +125,7 @@ If you've been following along with the configuration set up above, you should b
 
 ```
 
-*6.* Lastly, the player can now consume a Heart using the [ConsumeVirtualGoodRequest](/API Documentation/Request API/Store/ConsumeVirtualGoodRequest.md) (submit *Store > ConsumeVirtualGoodRequest*), which will remove the Virtual Good from their profile:
+*6.* Lastly, the player can now consume a Heart using *Store > [ConsumeVirtualGoodRequest](/API Documentation/Request API/Store/ConsumeVirtualGoodRequest.md)*, which will remove the Virtual Good from their profile:
 
 ```
 
@@ -158,7 +163,9 @@ This section explains how to integrate each store type with the GameSparks platf
 * Go to *Overview > Virtual Goods* and edit your Virtual Good.
 * Insert the Product ID you gave your product within the Google Play Developer Console into the *Google Product ID* field.
 
-*3.* Finally, to verify the purchase on the server we need to set up you Google Play public key within your game. Go to the GameSparks Developer Portal under *Configurator > Notifications > Google* and in the field *Google Play Public Key* enter the key obtained by following the steps in the section "Getting an app's license key" [here](http://developer.android.com/google/play/billing/billing_admin.html).
+*3.* Finally, to verify the purchase on the server you need to set up your Google Play public key within your game:
+* In the GameSparks Developer Portal go to *Configurator > Integrations* and select *Google*.
+* Click *Edit* and in the field *Google Play Public Key* enter the key obtained by following the steps in the section "Getting an app's license key" [here](http://developer.android.com/google/play/billing/billing_admin.html).
 
 *4.* After making the purchase in the client, Google Play will invoke your response Intent as described in [Purchasing an Item](https://developer.android.com/google/play/billing/billing_integrate.html#Purchase). At this point you can get the purchase data and the signature:
 
