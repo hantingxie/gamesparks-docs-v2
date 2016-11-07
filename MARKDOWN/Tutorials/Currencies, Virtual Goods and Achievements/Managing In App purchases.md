@@ -21,12 +21,12 @@ In this exercise we'll cover a few different scenarios around purchasing. We'll 
 *3.* Enter the Virtual Good details:
 * Give it a *Name* and a *Short Code* - we'll use the Short Code to refer to the item later on.
 * Leave the *Type* as *Virtual Good*.
-  * Note that the other option here is *Currency Pack* which, instead of adding a good to your player when awarded, grants them some configurable quantity of currencies. This can be a very useful type for to use for your Virtual Goods, but for now let's focus on the *Virtual Good* type.
+  * Note that the other option here is *Currency Pack* which, instead of adding a good to your player when awarded, grants them some configurable quantity of currencies. This can be a very useful type to use for your Virtual Goods, but for now let's focus on the *Virtual Good* type.
 * *Currencies* - Because we're going to start with a Virtual Currency purchase, we need to specify a price for the Virtual Good here, so let's set the *Currency 1* value at 100. This means a player will be charged 100 units of *Currency 1* when they buy this Virtual Good.
 
 *4.* Click to *Save and Close* the new Virtual Good.
 
-Let's now set up a player so that they can buy your Virtual Good.
+Now, let's set up a player so that they can buy your Virtual Good.
 
 *5.* Go to *Game Overview* page and click to edit ![](/img/icons/editicon.png) the game.
 
@@ -160,7 +160,7 @@ This section explains how to integrate each store type with the GameSparks platf
 *1.* To make purchases using Google Play, you first need to set up your Virtual Good as a product in the Google Play Developer Console. See [Creating a Product List](https://developer.android.com/google/play/billing/billing_admin.html#billing-list-setup).
 
 *2.* Now we need to tie the Virtual Good in your game to the product in Google Play. We do this in the GameSparks Developer Portal:
-* Go to *Overview > Virtual Goods* and edit your Virtual Good.
+* Go to *Configurator > Virtual Goods* and edit your Virtual Good.
 * Insert the Product ID you gave your product within the Google Play Developer Console into the *Google Product ID* field.
 
 *3.* Finally, to verify the purchase on the server you need to set up your Google Play public key within your game:
@@ -201,8 +201,8 @@ At which point the player's profile will have been updated with the newly purcha
 *1.* To make purchases using the iOS App Store, first you need to set up your Virtual Good in iTunes Connect, as described in [Configuring a Product](https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnectInAppPurchase_Guide/Chapters/CreatingInAppPurchaseProducts.html#//apple_ref/doc/uid/TP40013727-CH3-SW3).
 
 *2.* Now we need to tie the Virtual Good in your game to the product in iTunes Connect. We do this in the GameSparks Developer Portal:
-* Go to *Overview > Virtual Goods* and edit your Virtual Good.
-* Insert the Product ID you gave your product within iTunes Connect into the *IOS Product ID* field.
+* Go to *Configurator > Virtual Goods* and edit your Virtual Good.
+* Insert the Product ID you gave your product within iTunes Connect into the *iOS Product ID* field.
 
 *3.* After a purchase is made, get hold of the receipt as described in [Read the Receipt Data](https://developer.apple.com/library/ios/releasenotes/General/ValidateAppStoreReceipt/Chapters/ValidateRemotely.html#//apple_ref/doc/uid/TP40010573-CH104-SW2).
 
@@ -244,7 +244,7 @@ At which point the player’s profile will have been updated with the newly purc
 *1.* To make purchases using the Windows Store, first you need to set up your Virtual Good in the [Windows Phone Dev Center](https://developer.microsoft.com/en-us/).
 
 *2.* Now we need to tie the Virtual Good in your game to the product in the Windows Phone Dev Center. We do this in the GameSparks Developer Portal:
-* Go to *Overview > Virtual Goods* and edit your Virtual Good.
+* Go to *Configurator > Virtual Goods* and edit your Virtual Good.
 * Insert the Product ID you gave your product within the Windows Phone Dev Center into the *WP8 Product ID* field.
 
 *3.* After a purchase is made, get hold of the receipt as described in [Use a receipt as proof of purchase on a server](http://msdn.microsoft.com/en-us/library/windowsphone/develop/jj206950.aspx#BKMK_CodeSamples).

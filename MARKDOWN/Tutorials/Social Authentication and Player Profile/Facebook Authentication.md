@@ -74,13 +74,19 @@ For the purpose of this tutorial, you can just get hold of the access token for 
 
 *5.* Click to *Create Test Users*. The created test user(s) will be displayed in the list.
 
-*6.* Click *Edit* and on the drop-down select to get the access token for the test user:
+*6.* Click *Edit* and on the drop-down select to *Get an access token for this test user*:
 
 ![](img/AuthFB/31.jpg)
 
-*7.* Copy the access token.  You will use it in the GameSparks portal Test Harness in the next section.
+A confirmation dialog for the API version for the Test User appears:
+
+![](img/AuthFB/35.png)
+
+*7.* Click *Submit*. A dialog containing the Test User's *Access Token* appears:
 
 ![](img/AuthFB/10.png)
+
+*8.* Copy the *Access Token*. You will use it in the GameSparks portal Test Harness in the next section.
 
 ## Trying out Facebook Authentication in the Test Harness
 
