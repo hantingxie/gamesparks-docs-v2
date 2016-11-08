@@ -68,7 +68,7 @@ You can use the following options (highlighted above):
 
 *2.* Enter the Trigger details:
 
-* *Trigger Data* \- If a Leaderboard is selected, the Attributes of the Leaderboard would be available for you to choose. You can also trigger a Leaderboard based on the users global or social position:
+* *Trigger Data* \- If a Leaderboard is selected, the Fields of the Leaderboard would be available for you to choose. You can also trigger a Leaderboard based on the users global or social position:
 
   * *New Global Rank* \-  A new position in the global Leaderboard.
   * *Old Global Rank* \- An old position in the global Leaderboard.
@@ -83,7 +83,7 @@ You can use the following options (highlighted above):
   * *Old Social % Rank* \- The old percentage change in the player's social Leaderboard position.
   * *Social % Rank Change* \- The percentage change in the player's social Leaderboard position.
 
-* *Filtering* \- Operators which allow you to filter the trigger:
+* *Filter Type* \- Operators which allow you to filter the trigger:
 
 | Operator | Filtering               
 | ------| ---------

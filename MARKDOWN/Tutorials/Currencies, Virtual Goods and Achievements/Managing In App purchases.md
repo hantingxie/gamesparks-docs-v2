@@ -7,18 +7,19 @@ src: /Tutorials/Currencies, Virtual Goods and Achievements/Managing In App purch
 
 In this exercise we'll cover a few different scenarios around purchasing. We'll look at:
 * Setting up a Virtual Good to be purchased using a Virtual Currency.
-* Check the purchase of the Virtual Good as an authenticated player in the Test Harness.
+* Checking the purchase of the Virtual Good as an authenticated player in the Test Harness.
 * How you set up your Virtual Goods so you can also do purchases through third-party stores (Google Play, iOS App Store, Windows Store).
 
 ## Setting Up a Virtual Good for Purchasing with a Virtual Currency
 
 *1.* Log in to the GameSparks Developer Portal and go to *Configurator > Virtual Goods*.
 
-*2.* Click to *Add* a new Virtual Good. The *Add Virtual Good* page appears:
+*2.* Click to *Add* a new Virtual Good. The *Add Virtual Good* page appears.
+
+*3.* Enter the Virtual Good details:
 
 ![](img/AppPur/5.png)
 
-*3.* Enter the Virtual Good details:
 * Give it a *Name* and a *Short Code* - we'll use the Short Code to refer to the item later on.
 * Leave the *Type* as *Virtual Good*.
   * Note that the other option here is *Currency Pack* which, instead of adding a good to your player when awarded, grants them some configurable quantity of currencies. This can be a very useful type to use for your Virtual Goods, but for now let's focus on the *Virtual Good* type.
@@ -58,7 +59,6 @@ If you've been following along with the configuration set up above, you should b
 { "@class": ".RegistrationResponse",
 "authToken": "6f19a38a-189a-43cb-b421-bd8218209c43",
 "displayName": "PLAYER ONE",
-"scriptData": null,
 "userId": "53b136cbe4b0fd9efb39a692" }
 
 ```
@@ -75,7 +75,6 @@ If you've been following along with the configuration set up above, you should b
 "displayName": "PLAYER ONE",
 "location": { "latitide": 53.966705,
 "longditute": -1.0832977, "city": "York", "country": "GB" },
-"scriptData": null,
 "userId": "53b136cbe4b0fd9efb39a692" }
 
 ```
@@ -84,7 +83,6 @@ If you've been following along with the configuration set up above, you should b
 
 ```
 { "@class": ".ListVirtualGoodsResponse",
-"scriptData": null,
 "virtualGoods": [ { "description": "An extra heart", "name": "Heart", "shortCode": "HEART", "currency1Cost": 100 } ] }
 
 ```
@@ -103,7 +101,7 @@ If you've been following along with the configuration set up above, you should b
 
 { "@class": ".BuyVirtualGoodResponse",
 "boughtItems": [ { "shortCode": "HEART", "quantity": 1 } ],
-"scriptData": null }
+}
 
 ```
 
@@ -119,7 +117,6 @@ If you've been following along with the configuration set up above, you should b
 "currency6": 0,
 "displayName": "PLAYER ONE",
 "location": { "latitide": 53.966705, "longditute": -1.0832977, "city": "York", "country": "GB" },
-"scriptData": null,
 "userId": "53b136cbe4b0fd9efb39a692",
 "virtualGoods": { "HEART": 1 } }
 
@@ -138,7 +135,7 @@ If you've been following along with the configuration set up above, you should b
 ```
 
 { "@class": ".ConsumeVirtualGoodResponse",
-"scriptData": null
+
 }
 
 ```
@@ -165,7 +162,7 @@ This section explains how to integrate each store type with the GameSparks platf
 
 *3.* Finally, to verify the purchase on the server you need to set up your Google Play public key within your game:
 * In the GameSparks Developer Portal go to *Configurator > Integrations* and select *Google*.
-* Click *Edit* and in the field *Google Play Public Key* enter the key obtained by following the steps in the section "Getting an app's license key" [here](http://developer.android.com/google/play/billing/billing_admin.html).
+* Click *Edit* and in the *Google Play Public Key* field enter the key obtained by following the steps in the section "Getting an app's license key" [here](http://developer.android.com/google/play/billing/billing_admin.html).
 
 *4.* After making the purchase in the client, Google Play will invoke your response Intent as described in [Purchasing an Item](https://developer.android.com/google/play/billing/billing_integrate.html#Purchase). At this point you can get the purchase data and the signature:
 
@@ -189,7 +186,7 @@ The GameSparks platform will validate the purchase against the signature and, if
 ```
 { "@class": ".BuyVirtualGoodResponse",
 "boughtItems": [ { "shortCode": "HEART", "quantity": 1 } ],
-"scriptData": null
+
 }
 
 ```  
@@ -232,7 +229,7 @@ The GameSparks platform will validate the purchase with the App Store and, if su
 "quantity": 1
 }
 ],
-"scriptData": null
+
 }
 
 ```
@@ -270,7 +267,7 @@ The GameSparks platform will validate the signature contained in the receipt and
 "quantity": 1
 }
 ],
-"scriptData": null
+
 }
 
 ```

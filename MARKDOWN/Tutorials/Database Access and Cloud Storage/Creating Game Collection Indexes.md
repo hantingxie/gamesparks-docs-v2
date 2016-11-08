@@ -13,15 +13,26 @@ In this tutorial, we'll create a custom collection and add an index to it via a 
 
 As a first step, let's create a runtime collection using the [NoSQL Explorer](/Documentation/NoSQL Explorer.md):
 
-*1.* Navigate to the *NoSQL* page in the developer portal and select the *Create* tab.
+*1.* In the GameSparks developer portal, navigate to the *NoSQL* page.
 
-*2.* Enter a name for your collection and select the Runtime collection type.
+*2.* Under *Collections*, click to add a new Collection:
 
-*3.* Click the *Submit* button to create your custom collection.
+![](img/CustomIndex/6.png)
 
-![](img/CustomIndex/1.png)
+A *Create Collection* dialog appears.
 
-This creates a new collection called *script.playerChatHistory*, which your game can use to store custom data. For this example, let's assume that this collection contains documents that look like this:
+*3.* Enter a *Name* for your Collection and select the *Runtime* for *Type*:
+
+*4.* Click to *Create* your custom Collection.
+
+![](img/CustomIndex/7.png)
+
+This creates a new Collection called *script.playerChatHistory*, which your game can use to store custom data and will be listed under *Runtime*:
+
+![](img/CustomIndex/8.png)
+
+
+For this example, let's assume that this collection contains documents that look like this:
 
 ```    
     {
@@ -34,16 +45,16 @@ This creates a new collection called *script.playerChatHistory*, which your game
     }
 ```
 </br>
-The next step is to write some Cloud Code that creates an index on this collection. A sensible place to attach this type of script is the *Game Published* Event:
+The next step is to write some Cloud Code that creates an index on this Collection. A sensible place to attach this type of script is the *Game Published* Event:
 
-*1.* Navigate to the *Configurator->Cloud Code* page in the developer portal.
+*1.* Navigate to the *Configurator >Cloud Code*.
 
-*2.* Select the *System* bindings menu.
+*2.* Under *Scripts* click to expand *System*.
 
 *3.* Click on the *Game Published* option to access that script:
 
 
-![](img/CustomIndex/2.png)
+![](img/CustomIndex/9.png)
 
 *4.* Enter the following Javascript in the editor window and click the *Save* button:
 
@@ -52,7 +63,7 @@ The next step is to write some Cloud Code that creates an index on this collecti
     playerChatHistoryCollection.ensureIndex({"dateOfChat" : -1});
 ```
 
-This script uses the [SparkMongoCollectionReadWrite](/API Documentation/Cloud Code API/Cloud Data/SparkMongoCollectionReadWrite.md) API *ensureIndex* method to add an index to the collection on the *chatDate* field:
+This script uses the [SparkMongoCollectionReadWrite](/API Documentation/Cloud Code API/Cloud Data/SparkMongoCollectionReadWrite.md) API *ensureIndex* method to add an index to the Collection on the *chatDate* field:
   * The *ensureIndex* method only creates an index if an index of the same specification does not already exist.
   * A value of 1 specifies that the index orders items in ascending order.
   * A value of -1 specifies an index that orders items in descending order.
@@ -69,19 +80,19 @@ This script uses the [SparkMongoCollectionReadWrite](/API Documentation/Cloud C
 
 To test our script we need to publish the game:
 
-*1.* Navigate to the *Configurator->Overview* page.
+*1.* Navigate to the *Game Overview* page.
 
-*2.* Click on the ![](/img/fa/plus.png) icon to create a new snapshot:
+*2.* Click to *Create* a new Snapshot:
 
-![](img/CustomIndex/3.png)
+![](img/CustomIndex/10.png)
 
-*3.* Enter a name for your new snapshot:
+*3.* Enter a *Name* for your new Snapshot and click to *Create* it:
 
-![](img/CustomIndex/4.png)
+![](img/CustomIndex/11.png)
 
-*4.* Publish the snapshot by clicking on the ![](/img/fa/upload.png) icon:
+*4.* Publish the Snapshot by clicking the publish ![](/img/icons/publishicon.png) icon:
 
-![](img/CustomIndex/5.png)
+![](img/CustomIndex/12.png)
 
 Publishing the game will have triggered the Cloud Code script that we attached to the *Game Published* Event.
 

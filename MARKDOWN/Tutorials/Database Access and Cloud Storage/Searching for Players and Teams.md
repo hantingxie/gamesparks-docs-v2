@@ -29,11 +29,11 @@ We'll use the NoSQL explorer to search for a specific player's display name. The
 Here's how we set up the search in the explorer:
 * *Collection* - Enter the *Player* collection to limit our search to players only.
 * *Query* - Specify what exactly we'll be looking for. In our case, the displayName "Coder".
-* *Fields* - Enter the fields for the query in the format: {displayName : "Coder"}.
+* *Fields* - Enter the fields for the query in the format: *{"displayName" : "Coder"}*.
 
-Once we submit the search (Using enter, or the 'Find' button) the players which have 'Coder' as their display name will be retrieved and all their database data are displayed including scriptData, privateData, externalIDs, external authentication, and many more fields that you may or may not want to see. However, when you search for a certain specific field you can also limit what fields come back from the player database using the format {fieldName: 1} to include fields or {fieldName: 0} to exclude fields. So, for our purpose we're going to limit the search to return displayName and userName fields only:
+Once we submit the search (Using enter, or the 'Find' button) the players which have 'Coder' as their display name will be retrieved and all their database data are displayed including scriptData, privateData, externalIDs, external authentication, and many more fields that you may or may not want to see. However, when you search for a certain specific field you can also limit what fields come back from the player database using the format *{"fieldName": 1}* to include fields or *{"fieldName": 0}* to exclude fields. So, for our purpose we're going to limit the search to return *displayName* and *userName* fields only:
 
-![](img/TeamsPlayersSearch/1.jpg)
+![](img/TeamsPlayersSearch/5.png)
 
 ### Searching the Team Collection
 
@@ -41,7 +41,7 @@ Following the search against the Player collection, by changing the collection t
 * If you submit an empty search for your Teams, you will retrieve a list of all your Teams and this will help you see the fields you can query.
 * You can search for a specific member by ID to see which team that player belongs to or which teams have earned a certain achievement.
 
-![](img/TeamsPlayersSearch/2.jpg)
+![](img/TeamsPlayersSearch/6.png)
    
 
 ## Searching with a Player Management Screen
