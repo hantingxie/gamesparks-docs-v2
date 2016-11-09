@@ -9,6 +9,8 @@ You can use Facebook authentication to offer your players a simple way to sign 
 
 In this tutorial, we’ll go through setting up the necessary configuration with Facebook and explain how you can then use that to connect your players.
 
+<q>**Working in Unity?** If you're working in Unity, please see the [Unity Facebook SDK and GameSparks](/Tutorials/Game Engine Integrations/Unity Facebook SDK.md) tutorial for how to integrate the Unity Facebook SDK with GameSparks SDK and have your users authenticate using their Facebook account.</q>
+
 ## Setting up a Facebook Application
 
 *1.* Go to the [Facebook developer portal](https://developers.facebook.com/) and sign in (or sign up to Facebook first).

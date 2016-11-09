@@ -31,8 +31,8 @@ Enter the details for your new Team type:
 
   * *Short Code* \- Short Code for the Team, to be use by API methods. Short Codes are always unique.
   * *Name* \- Name of the Team (Used within the portal only for identification).
-  * *Social* \- Team members will be regarded as friends of the friends of the owner.
-  * *Extended Social* \- Team members will be regarded as friends with each other.
+  * *Social* \- If enabled, this means every member of a team of this type is regarded as a friend of the owner.
+  * *Extended Social* \- If enabled, this means that all team members are regarded as friends with each other.
   * *Max Members* \- Maximum number of players that can be in this Team Type.
   * *Max Membership Per User* \- Maximum number of this Team Type a player can be in (Set to 0 for unbounded).
   * *Max Ownership Per User* \- The maximum number of this Team Type a player can own (Set to 0 for unbounded).

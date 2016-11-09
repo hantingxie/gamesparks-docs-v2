@@ -9,16 +9,13 @@ src: /Tutorials/Database Access and Cloud Storage/Searching for Players and Team
 
 The platform allows you to search for specific Players and Teams in your game with some very easy to use tools - no matter how big or small the collection.
 
-This tutorial explains several ways you can search for players or teams, using:
+This tutorial explains two ways you can search for players or teams, using:
 * NoSQL Explorer.
-* A Player Management screen.
 * Cloud Code to find specific entries.  
 
 ## Searching with NoSQL Explorer
 
 This powerful tool allows you to search for anything within your game, right down to the specifics of a certain index. For example, you can search for certain players who have exactly 530 ammunition in their inventory or search for players that share the same name - your search possibilities are endless!
-
-
 
 <q>**More Information:** For more information about the SQL Explorer, click [here](/Documentation/NoSQL Explorer.md).</q>
 
@@ -43,19 +40,6 @@ Following the search against the Player collection, by changing the collection t
 
 ![](img/TeamsPlayersSearch/6.png)
    
-
-## Searching with a Player Management Screen
-
-Every game you make in GameSparks comes with our native *Players* management screen, which can be found in the Manage section:
-* You can quickly query to retrieve the players you're looking for or display every single player you have in your game's database.
-* Unlike the NoSQL Explorer you can view player's details through a graphical interface that you can customize yourself through our dynamic forms builder, for more info, click [here](/Documentation/Manage/Working with Dynamic Forms.md).
-* You can also create a Team management screen that functions the same way.
-* To ensure that you get exactly what you want you can use rules or group of rules to narrow your search.
-
-![](img/TeamsPlayersSearch/3.jpg)
-
-![](img/TeamsPlayersSearch/4.jpg)
-
 
 ## Searching with Cloud Code
 

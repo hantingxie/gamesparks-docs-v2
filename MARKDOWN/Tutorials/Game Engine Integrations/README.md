@@ -16,3 +16,4 @@ The following tutorials will help you integrate your game's engine with the plat
 * Setting up social authentication for [Unreal Engine 4 Facebook](/Tutorials/Game Engine Integrations/Setting Up UE4 Facebook Authentication.md).
 * [UE4 Adding State List to GS ListChallengeRequest](/Tutorials/Game Engine Integrations/UE4 Adding State-List to GS ListChallengeRequest.md)
 * [Unity Uploading and Retrieving Images](/Tutorials/Game Engine Integrations/Unity Uploading and Retrieving Images.md)
+* [Unity Facebook SDK and GameSparks](/Tutorials/Game Engine Integrations/Unity Facebook SDK.md)
