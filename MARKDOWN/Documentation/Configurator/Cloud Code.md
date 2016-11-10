@@ -156,6 +156,39 @@ Modules allow you to create your own libraries of JavaScript that can be include
 * To create a new Realtime script, click the plus ![](/img/fa/plus-circle.png) icon.
 * For more details on Realtime Services, see [here](/Tutorials/Real-Time Services/README.md).
 
+### Realtime Modules
+
+![](img/CloudCode/29.png)
+
+Realtime Modules allow you to create your own libraries of JavaScript that can be included within other Realtime scripts. This allows you to separate common functionality that needs to be shared between scripts into a single Realtime module that can be included.
+
+Realtime modules use CommonJS module loading. A primer for CommonJS can be found [here](https://darrenderidder.github.io/talks/ModulePatterns/#/).
+
+To author a Realtime module, you must define the objects you want to export. This is done using "module.exports". You can export multiple items from a single module:
+
+```
+module.exports.fiz = function () {
+    console.log('fiz!');
+}
+
+module.exports.buzz = function () {
+    console.log('buzz!');
+}
+```
+
+To include the Realtime Module in a Realtime Script, the require function should be used as follows:
+
+```
+var theModule = require("MODULE_NAME");
+var fizResult = theModule.fiz();
+var buzzResult = theModule.buzz();
+```
+
+At this point, *theModule* represents the exports from the Realtime Module
+
+* To create a new Realtime Module, click the plus ![](/img/fa/plus-circle.png) icon. Then, on the *Create New Realtime Module* dialog, enter a *Short Code* to uniquely identify the new Realtime Module and click *Add*.
+
+
 ## Cloud Code Editor Keyboard Shortcuts
 
 This section lists keyboard shortcuts you can use when working in the Cloud Code Editor.

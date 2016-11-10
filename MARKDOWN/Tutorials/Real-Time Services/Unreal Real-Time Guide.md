@@ -65,11 +65,14 @@ This is the core replication aspect in GameSparks' real-time SDK. Unlike Unreal'
   * A packet doesn't need data in it apart from the *OpCode*, intent, and targeted peers.
   * An empty packet can be sent to other clients to represent an Event, such as the death of client's character or a move in a direction. For example, if a client receives a packet with *OpCode 50* in a head-to-head game, the client will know that means the opponent has activated their ultimate mode and that will be reflected in their game.
   * The smaller the packet, the less bandwidth it uses, which means more packets can be exchanged faster and more reliably.
+  * *OpCode* 0 does not work, do not address packets with *OpCode* 0.
 
 * **Packets with Extra Data**
   * Some packets need extra data to be translated into something useful when delivered.
   * Packets can take vectors, Fvectors, Floats, Ints, Strings, and nested Data objects.
   * Variables occupy fixed index positions in the packet. When you declare a variable, it is referenced via index number not variable name.
+
+  <q>**Server Address?** Peer ID 0 is reserved for server. If you wish to send information exclusively to the server then create an Int array with the value 0 in the first index.</q>
 
 ![](img/RTUE/5.png)
 

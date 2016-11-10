@@ -52,12 +52,15 @@ You can place logic in the script that reacts to packets, to players connecting,
 The packets sent and received have four attributes:
 
 * *OpCode* - Mandatory. Helps distinguish the packet. For example, you can reserve *OpCode 100* for movement logic so whenever the client receives a packet with the *OpCode 100* it knows to retrieve a vector and update that client’s position in game.
+
+<q>**Important!** Note that *OpCode 0* Does not work. Do not address Packets with *OpCode 0*.</q>
+
 * *Intent* - Mandatory. The Intent options we offer are:
   * *Reliable* - Makes sure that packets sent are received.
   * *Unreliable* - Doesn't ensure packets are received but can discard packets if the bandwidth cannot support them (ideal for cosmetic purposes).
   * *Unreliable_Sequenced* - Similar to Unreliable but packets will be discarded if not received in the correct sequence.
 * *Data* - Optional. Sometimes it’s enough to send a packet without data to act as a trigger. The data in packets can be a string, int, vector, float, and nested data. Each piece of data is saved in an index that you must set.
-* *Peers* - Mandatory. An int array of which peers to send to. 0 is the peer address of the server. The other peers are those sharing the session with the client.
+* *Peers* - Mandatory. An int array of which peers to send to. *Peer ID 0* is the peer address of the server. The other peers are those sharing the session with the client.
 
 
 ## Example

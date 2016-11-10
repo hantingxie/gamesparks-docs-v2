@@ -22,14 +22,14 @@ If a change has been made and this tutorial is not working for you, please let u
 <q>**Assumed Knowledge?** This tutorial assumes a working understanding of the Unity3D platform, as well as how our GameSparks [authentication](/Getting Started/Using Authentication/README.md) works.</q>
 
 In this tutorial we will look at the following topics
-* [Creating A New Facebook App](#Creating A New Facebook App)
-* [Integrating Your Facebook App with GameSparks](#Integrating Your Facebook App with GameSparks)
-* [Setting Up Your Unity Project](#Setting Up The Unity3D Project)
-* [Creating A Test-Scene](#Setting Up The Test Scene)
+* [Creating a New Facebook App](#Creating a New Facebook App)
+* [Integrating your Facebook App with GameSparks](#Integrating your Facebook App with GameSparks)
+* [Setting Up your Unity Project](#Setting Up the Unity Project)
+* [Creating a Test-Scene](#Setting Up the Test Scene)
 * [The Login Script](#Login Script)
 * [Connecting your Facebook Users with GameSparks](#Connecting your Facebook Users with GameSparks)
 
-## Creating A New Facebook App
+## Creating a New Facebook App
 
 In order to connect your users to your game via Facebook, you'll first need to set up a new Facebook app.
 
@@ -67,7 +67,7 @@ When you select to create a new app, a pop-up appears which allows you to fill o
 
 We'll come back to this page, but for now the important details are the *App ID* and the *App Secret*. We're going to need these in the next section when we set up our GameSparks game with our Facebook app.
 
-## Integrating Your Facebook App with GameSparks
+## Integrating your Facebook App with GameSparks
 
 This section of the tutorial assumes that you have already created a game on the GameSparks platform. However, if you're new to the platform, you can check out our quick start guide available [here](/Getting Started/Creating a Game/README.md).
 
@@ -89,7 +89,7 @@ So, the next thing we want to do is integrate our Facebook app with our GameSpar
 
 When you've saved these details, your GameSparks game is ready to start authenticating your Facebook users.
 
-## Setting Up The Unity Project
+## Setting Up the Unity Project
 
 In this section, we're going to use a new 2D project so we can set up a very basic interface for connecting GameSparks to Facebook.
 
@@ -113,7 +113,7 @@ The important details we need here are the *GameSparks API Key* and *Gamesparks 
 
 ![](img/UnityFB/32.png)
 
-*4.* Enter the *GameSparks API Key* and *GameSparks API Secret* into the respective fields under *GameSparksSettings* in the Unity3d editor. Once you've entered the key and secret, you can click the *Test Configuration* button - so make sure that your details are correct!
+*4.* Enter the *GameSparks API Key* and *GameSparks API Secret* into the respective fields under *GameSparksSettings* in the Unity3D editor. Once you've entered the key and secret, you can click the *Test Configuration* button - so make sure that your details are correct!
 
 If you've entered the correct details, you should see GameSparks connect properly in the test-scene.
 
@@ -141,7 +141,7 @@ You don't have to worry about everything here, the important details are the *Ap
 
 Once you've entered the details into Unity, you are good to go!
 
-## Setting Up The Test Scene
+## Setting Up the Test Scene
 
 First of all, you'll need to create a new scene. In this example we will call it *FBConnect_TestScene*.
 
@@ -150,10 +150,10 @@ In this example, we're going to use the Unity-UI system and we need to set up th
 1. Create a new empty game-object called *GameSparksManager*.
 2. Apply the *GameSparksUnity.cs* script to that object.
 3. Create a new UI/Canvas
-4. Add two text-fields to the canvas.
+4. Add two text-fields to the canvas:
   * We're calling these fields *userNameField* and *connectionInfoField* respectively.
   * We've also added a panel to the back of these fields so they stand out.
-5. Add two input-fields.
+5. Add two input-fields:
   * We've called these *userNameInput* and *passwordInput* respectively.
   * We've also added a panel behind these fields so they stand out.
 6. Add three new buttons to the panel:
@@ -167,7 +167,7 @@ So with all these elements on the main canvas, your scene should look something 
 
 Now that our test scene is set up, we need to link all the scene elements to our GameSparks and Facebook login calls and to the buttons.
 
-*1* The first thing to do is to add a script to the *GameSparksManager* object. In this tutorial,  we're calling this script *LoginUI.cs*.
+*1.* The first thing to do is to add a script to the *GameSparksManager* object. In this tutorial,  we're calling this script *LoginUI.cs*.
 
 *2.* First, we'll link the text-fields and input-fields to our *LoginUI* script. To do this, we just need to add some public variables in the *LoginUI* script.
 
@@ -181,7 +181,7 @@ public InputField userNameInput, passwordInput;
 
 ```
 
-*3.* You'll then need to link each of these variables to the UI objects we created in the scene.
+*3.* You'll then need to link each of these variables to the UI objects we created in the scene:
 
 ![](img/UnityFB/16.png)
 
@@ -189,7 +189,7 @@ public InputField userNameInput, passwordInput;
 
 At this point, the first thing we're going to code is something to give us some dialog which lets us know when GameSparks is connected. Our users should not attempt a login if GameSparks is not connected or the login will fail:
 * In order to do this we'll use the *GS.GameSparksAvailable* delegate. This is called whenever GameSparks connects or disconnects.
-* The best strategy is to put this in the *Awake()* or *Start()* methods and all we'll do for this tutorial is print out some dialog to the *connectionInfoField* that will let us know that we are connected to GameSparks.
+* The best strategy is to put this in the *Awake()* or *Start()* methods and all we'll do for this tutorial is print out some dialog to the *connectionInfoField* that will let us know that we are connected to GameSparks:
 
 ![](img/UnityFB/17.png)
 
@@ -212,7 +212,7 @@ private void OnGameSparksConnected(bool _isConnected){
 
 ```
 
-Now, if you run your scene you should see after a second or two the *connectionInfoField* will show that you have been connected to GameSparks.
+Now, if you run your scene, you should see after a second or two the *connectionInfoField* will show that you have been connected to GameSparks:
 
 ![](img/UnityFB/18.png)
 
@@ -222,13 +222,13 @@ Next, we'll set up user authentication using the *userNameInput*, *passwordInput
 
 For this tutorial, we're going to show a different approach to this authentication in order to show how registration and authentication can occur at the same time.
 
-This process works as follows
+This process works as follows:
 1. Send an [AuthenticationRequest](/API Documentation/Request API/Authentication/AuthenticationRequest.md) for the username and password entered.
 2. If the response has no errors, then we let the user know they are authenticated.
 3. If the response has the *'Details : Unrecognized'* error, then the user is not registered, so we send a registration request with the same details.
 4. If the registration response has no errors then we let the user know they are authenticated.
 
-*1.* This code will be in a public method which we'll link to the login button.
+*1.* This code will be in a public method which we'll link to the login button:
 
 ![](img/UnityFB/19.png)
 
@@ -250,7 +250,7 @@ public void UserAuthentication_Bttn(){
 			}
 			else{
 				Debug.LogWarning(auth_response.Errors.JSON); // if we have errors, print them out
-				if(auth_response.Errors.GetString("DETAILS") == "UNRECOGNISED"){ // if we get this error it means we are not registered, so lets register the user instead
+				if(auth_response.Errors.GetString("DETAILS") == "UNRECOGNISED"){ // if we get this error it means we are not registered, so let's register the user instead
 					Debug.Log("User Doesn't Exists, Registering User...");
 					new GameSparks.Api.Requests.RegistrationRequest()
 						.SetDisplayName(userNameInput.text)
@@ -275,7 +275,7 @@ public void UserAuthentication_Bttn(){
 
 ![](img/UnityFB/20.png)
 
-*3.* You should now be able to login using the username and password input fields.
+*3.* You should now be able to login using the username and password input fields:
 
 ![](img/UnityFB/21.png)
 
@@ -286,7 +286,7 @@ The next login option we're going to cover is the device-login:
 * This kind of authentication uses the device's unique identifiers to generate a profile for the user.
 * If you try to authenticate with that device from then on, GameSparks will recognize that device as a unique user.
 
-*1.* The code for this is very similar to the user authentication, except that it doesn't expect a username or password. It does, however allow you to input a display name. We'll create a method to call this request from:
+*1.* The code for this is very similar to the user authentication, except that it doesn't expect a username or password. It does, however, allow you to input a display name. We'll create a method to call this request from:
 
 ![](img/UnityFB/22.png)
 
@@ -332,7 +332,7 @@ This process will work as follows:
 
 Public void FacebookConnect_bttn(){
 	Debug.Log("Connecting Facebook With GameSparks...");// first check if FB is ready, and then login //
-	// if its not ready we just init FB and use the login method as the callback for the init method //
+	// if it's not ready we just init FB and use the login method as the callback for the init method //
 	if(!FB.IsInitialized){
 		Debug.Log("Initializing Facebook...");
 		FB.Init(ConnectGameSparksToGameSparks, null);
@@ -384,7 +384,8 @@ Once you connect this method up to the Facebook login button, you should be able
 
 ![](img/UnityFB/25.png)
 
-This is a Facebook prompt, which is used for testing logins through the editor. This will not appear when the app is deployed to your device, but it does let you simulate a login from the editor while running the game off a desktop (remember that Facebook does not support desktop platforms). In order to login you'll need an access token.
+This is a Facebook prompt, which is used for testing logins through the editor. This will not appear when the app is deployed to your device, but it does let you simulate a login from the editor while running the game off a desktop (remember that Facebook does not support desktop platforms):
+* In order to login you'll need an access token.
 
 *1.* Click on the *Find Access Token* button and you'll be brought to your Facebook developer profile and you'll be told you need to grant permissions to your app in order to get an access token:
 

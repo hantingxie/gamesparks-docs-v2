@@ -55,7 +55,7 @@ This Event will be logged whenever the *authenticated* player *consumes* a Gol
 
 *6.* Now get the Player object using *getPlayer* and credit them *currency1* by the *money* value:
 
-![](img/UR/8.png)
+![](img/UR/11.png)
 
 This is the Cloud Code:
 
