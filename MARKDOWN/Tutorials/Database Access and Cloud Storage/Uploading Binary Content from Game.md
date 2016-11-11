@@ -3,21 +3,20 @@ nav_sort: 4
 src: /Tutorials/Database Access and Cloud Storage/Uploading Binary Content from Game.md
 ---
 
-# How to upload binary content directly from your game
+# How to Upload Binary Content Directly from your Game
 
-The GameSparks platform provides the capability for you to allow players to upload binary content, to be hosted on the GameSparks platform and from there shareable with other players. To do so is fairly simple, but requires a few steps to be completed as follows:
-
+You can give your players the ability to upload binary content to be hosted on the GameSparks platform and, from there, shareable with other players. The way to do this is fairly straightforward and you must complete the following steps:
 1. Request a URL from the platform to which you can upload the content.
-2. Upload the content to the URL obtained in the previous step.
-3. Once uploaded you will want the player (or other players) to be able to retrieve the content for use.
+2. Upload the content to the URL provided by the platform.
+3. Once content has been uploaded, you'll want the player (or other players) to be able to retrieve the content for use.
 
-In this exercise we'll run through how you do each of the above with the GameSparks API, demonstrated using the [Test Harness](/Documentation/Test Harness/README.md). To finish, there is a brief note on using the GameSparks SDKs to perform these steps (which we've streamlined behind the scenes to make your life easier).
+In this exercise we'll run through how you complete each of these steps with the GameSparks API and demonstrate this using the [Test Harness](/Documentation/Test Harness/README.md). To finish, there is a brief note on using the GameSparks SDKs to perform these steps (which we've streamlined behind the scenes to make your life easier).
 
 ## Get an Upload URL
 
-The first step is to get an upload URL, after all you need somewhere to post your content. If you're following these steps in the Test Harness, these requests are available under the 'Misc' category (make sure you've authenticated as a player before making the first request).
+The first step is to get an upload URL - you need somewhere to post your content. If you're following these steps in the Test Harness, these requests are available under the *Misc* category (make sure you've authenticated as a player before making the first request).
 
-A [GetUploadUrlRequest](/API Documentation/Request API/Misc/GetUploadUrlRequest.md) made by an authenticated player will result in a response containing a 'url' attribute. This is your upload URL, these are one-shot URLs that expire after a matter of minutes so don't hang onto them - if you don't use it right away throw it away and request another one.
+A [GetUploadUrlRequest](/API Documentation/Request API/Misc/GetUploadUrlRequest.md) made by an authenticated player will result in a response containing a *url* attribute. This is your upload URL, these are one-shot URLs that expire after a matter of minutes so don't hang onto them - if you don't use it right away throw it away and request another one.
 
 ```
 {

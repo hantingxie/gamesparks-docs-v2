@@ -3,11 +3,17 @@ nav_sort: 3
 src: /Tutorials/Database Access and Cloud Storage/Submitting JSON Document Queries.md
 ---
 
-# How to do partial queries and updates to complex JSON document
+# How to do Partial Queries and Updates to a Complex JSON Document
 
 There are times where you want to maintain a complex JSON document in a Mongo collection that you want to use for storing state.
 
-In this example we'll assume the complete document is the full state of the game, but we do not want to pass the full document around every time we want to update it, and we may want to query for a particular section of the document without returning the full document. A good example of this may be where you are storing metadata about every level the player has ever played. When the player starts a level you want to return the current state from the server as a full document, but without the details of the other levels. We'll imagine we have a player who has already played level 1 and completed it, and has started level two but has not yet completed it. In this state the document we store against the user will look like this:
+In this example:
+* We'll assume the complete document is the full state of the game, but we don't want to pass the full document around every time we want to update it.
+* We might want to query for a particular section of the document without returning the full document.
+
+A concrete example of this sort of case might be where you are storing metadata about every level the player has ever played:
+* When the player starts a level you want to return the current state from the server as a full document, but without the details of the other levels.
+* We'll imagine we have a player who has already played level 1 and completed it, and has started level two but has not yet completed it. In this state the document we store against the user will look like this:
 
 ```
     {
@@ -37,11 +43,11 @@ We're creating a generic Event for updating a document. This Event will contain 
 
 We'll add a new Event in the portal that looks like this:
 
-![](img/Partial/3.png)
+![](img/Partial/4.png)
 
 ### Creating the Script to Process the Update Event
 
-We now need to bind a Cloud Code script to this Event to access the data and make the document updates. This script uses a little bit of mongo magic to create the document if it doesn't already exist, and sets the value you want at the path you ask for.
+We now need to bind a Cloud Code script to this Event to access the data and make the document updates. This script uses a little bit of Mongo magic to create the document if it doesn't already exist, and sets the value you want at the path you ask for:
 
   ```  
      var progressCollection = Spark.runtimeCollection("player_progress");
@@ -59,7 +65,7 @@ We now need to bind a Cloud Code script to this Event to access the data and mak
     //Now do the mongo update.
     progressCollection.update(
       {"_id": Spark.getPlayer().getPlayerId()}, //Looks for a doc with the _id of the current player
-      {"$set" : updateObject}, // Uses the $set mongo modifier to set value at a path
+      {"$set" : updateObject}, // Uses the $set Mongo modifier to set value at a path
       true, // Create the document if it does not exist (upsert)
       false // This query will only affect a single object (multi)
     );
@@ -70,12 +76,12 @@ We'll use the same pattern here for querying the document.  For the query Event
 
 We'll add a new Event in the portal that looks like this:
 
-![](img/Partial/2.png)
+![](img/Partial/5.png)
 
 
 ### Creating the Script to Process the Query Event
 
-This script is a little more involved. The basic mongo find operators don't support getting a partial document. However, the aggregation framework does.
+This script is a little more involved. The basic Mongo find operators don't support getting a partial document. However, the aggregation framework does:
 
 ```  
     var progressCollection = Spark.runtimeCollection("player_progress");
@@ -131,13 +137,12 @@ This script is a little more involved. The basic mongo find operators don't supp
         "authToken": "...",
         "displayName": "GameSparks Test",
         "requestId": "1392894961229",
-        "scriptData": null,
         "userId": "5305e40f1c26ac2a6576c389"
     }
 ```
 ### Start Playing Level 1
 
-We'll first check if the user has any data for level 1
+We'll first check if the user has any data for level 1:
 
 ```  
     {
@@ -162,7 +167,7 @@ We can see now that the user has no data for level 1.
 
 ### Reach a Checkpoint on Level 1
 
-We want to update the document to put the checkpoint reached into the document.
+We want to update the document to put the checkpoint reached into the document:
 
 ```  
     {
@@ -177,12 +182,11 @@ We want to update the document to put the checkpoint reached into the document.
 ```
     {
         "@class": ".LogEventResponse",
-        "requestId": "1392895516999",
-        "scriptData": null
+        "requestId": "1392895516999"
     }
 ```
 
-Once this request has been passed in, we can query the document to get the progress in the future if required
+Once this request has been passed in, we can query the document to get the progress in the future if required:
 
 ```    
     {
@@ -211,34 +215,32 @@ Once this request has been passed in, we can query the document to get the progr
 
 ### Completing Level 1
 
-We'll assume the player has already reached every checkpoint, now we just need to update the "complete" attribute in the document.
+We'll assume the player has already reached every checkpoint, now we just need to update the "complete" attribute in the document:
 
 ```  
     {
-    "@class": ".LogEventRequest",
-    "eventKey": "PROG_UPDATE",
-    "PATH": "LEVEL_1.complete",
-    "VAL": 1,
-    "requestId": "1392895719046"
+      "@class": ".LogEventRequest",
+      "eventKey": "PROG_UPDATE",
+      "PATH": "LEVEL_1.complete",
+      "VAL": 1,
+      "requestId": "1392895719046"
     }
 ```
 
 ```
     {
-    {
-    "@class": ".LogEventResponse",
-    "requestId": "1392895719046",
-    "scriptData": null
+      "@class": ".LogEventResponse",
+      "requestId": "1392895719046"
     }
 ```
-Again, we can now query the level 1 data for the user at any point and get the full details
+Again, we can now query the level 1 data for the user at any point and get the full details:
 
 ```  
     {
-    "@class": ".LogEventRequest",
-    "eventKey": "PROGRESS_QUERY",
-    "PATH": "LEVEL_1",
-    "requestId": "1392895355079"
+      "@class": ".LogEventRequest",
+      "eventKey": "PROGRESS_QUERY",
+      "PATH": "LEVEL_1",
+      "requestId": "1392895355079"
     }
 
 ```

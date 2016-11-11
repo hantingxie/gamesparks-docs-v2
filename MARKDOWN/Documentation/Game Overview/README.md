@@ -137,12 +137,12 @@ To select which geographical regions you want to allow access to your game, clic
 Click *Create* to create a new Snapshot for the current configuration of your game.
 
 You can use icon button options in the Snapshots panel:
-
+  * ![](/img/icons/previewicon.png) - Preview this Snapshot.
   * ![](/img/icons/copyicon.png) - Copy this Snapshot to another game.
   * ![](/img/icons/deleteicon.png) - Delete this Snapshot.
   * ![](/img/icons/publishicon.png) - Publish this Snapshot to the live servers.
   * ![](/img/icons/reverticon.png) - Revert the portal to the version contained in the Snapshot.
-  * ![](/img/icons/previewicon.png) - Preview this Snapshot.
+
 
 Click [here](/Documentation/Key Concepts/Snapshots.md) for more information about Snapshots, Versioning and Publishing.
 
