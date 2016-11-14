@@ -43,3 +43,9 @@ var response = changeDetailsRequest.Send();
 Spark.setScriptData("response", response);
 
 ```
+
+## Deleting players
+
+You can delete players through Cloud Code using the [SparkPlayer.deletePlayer()](/API Documentation/Cloud Code API/Player/SparkPlayer.md) method. This will delete the data for a player from all system collections.
+
+<q>**Delete with Caution!** To avoid any unexpected and disruptive consequences when deleting players, we strongly recommend that you use this method with caution and check first for any Challenges, Teams, Matches, and so on to which the player you intend to delete might belong.</q>

@@ -37,7 +37,9 @@ To validate this:
 
 In addition to receiving a successful Response, you'll also notice that you've received an *Auth Token* for the current player's session.
  
-You have now successfully Registered and Authenticated a player. The next tutorial will show you how to set up the SDK of your choice for authentication with GameSparks.      
+You have now successfully Registered and Authenticated a player. The next tutorial will show you how to set up the SDK of your choice for authentication with GameSparks.
+
+<q>**Deleting Players!** You can delete registered players through Cloud Code using the *SparkPlayer.deletePlayer* method, but we urge you to exercise caution when doing this - see [Updating Player Records](/Tutorials/Social Authentication and Player Profile/Updating Player Records.md).</q> 
 
 ## SDK Instructions
 
