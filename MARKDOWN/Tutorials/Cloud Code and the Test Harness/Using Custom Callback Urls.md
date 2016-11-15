@@ -17,9 +17,10 @@ You can use Callbacks to run separate, customized Cloud Code scripts against dif
 
 ![](img/CustomCallback/1.png)
 
-*2.*  When you create each Credential, make sure you turn the *Callback* switch.  This tells the platform that the Credential is going to be exclusively used for Callback scripts:
+*2.*  When you create each Credential, make sure you turn on the *Callback* switch.  This tells the platform that the Credential is going to be exclusively used for Callback scripts:
 
-![](img/CustomCallback/2.png)
+![](img/CustomCallback/4.png)
+
 
 *3.* In the portal, select *Configurator > Cloud Code*.
 
