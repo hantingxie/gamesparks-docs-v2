@@ -103,3 +103,4 @@ When you've created your Leaderboard, navigate to the Test Harness. At this poi
 * [Unity](/Getting Started/Creating a Leaderboard/Unity Leaderboards.md)
 * [Unreal](/Getting Started/Creating a Leaderboard/Unreal Leaderboards.md)
 * [ActionScript](/Getting Started/Creating a Leaderboard/ActionScript Leaderboards.md)
+* [Lua](/Getting Started/Creating a Leaderboard/Lua Leaderboards.md)

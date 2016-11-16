@@ -97,3 +97,4 @@ The Achievement is now fully configured to be awarded!
 * [Unity](/Getting Started/Creating an Achievement/Unity Achievements.md)
 * [Unreal](/Getting Started/Creating an Achievement/Unreal Achievements.md)
 * [ActionScript](/Getting Started/Creating an Achievement/ActionScript Achievements.md)
+* [Lua](/Getting Started/Creating an Achievement/Lua Achievements.md)

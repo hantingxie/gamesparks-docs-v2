@@ -60,3 +60,4 @@ Publishing your game via the use of a *Snapshot* allows you to easily manage you
 * [Unreal](/Getting Started/Creating a Game/Unreal Setup.md)
 * [ActionScript](/Getting Started/Creating a Game/ActionScript Setup.md)
 * [Android](/Getting Started/Creating a Game/AndroidSDK Setup.md)
+* [Corona](/Getting Started/Creating a Game/Corona Setup.md)

@@ -66,3 +66,4 @@ Receiving a successful *BuyVirtualGoodsResponse* is a good indication everythin
 * [Unity](/Getting Started/Creating a Virtual Good/Unity Virtual Goods.md)
 * [Unreal](/Getting Started/Creating a Virtual Good/Unreal Virtual Goods.md)
 * [ActionScript](/Getting Started/Creating a Virtual Good/ActionScript Virtual Goods.md)
+* [Lua](/Getting Started/Creating a Virtual Good/Lua Virtual Goods.md)

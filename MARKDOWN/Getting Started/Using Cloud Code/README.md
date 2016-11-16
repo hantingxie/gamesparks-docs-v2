@@ -128,3 +128,4 @@ In this example, you can see that we've submiited an *AuthenticationRequest* wit
 * [Unreal](/Getting Started/Using Cloud Code/Unreal Cloud Code.md)
 * [ActionScript](/Getting Started/Using Cloud Code/ActionScript Cloud Code.md)
 * [Android](/Getting Started/Using Cloud Code/Android Cloud Code.md)
+* [Lua](/Getting Started/Using Cloud Code/Lua Cloud Code.md)
