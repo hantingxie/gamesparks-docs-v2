@@ -10,7 +10,6 @@ Credentials allow you to configure permissive role types for Players within the 
 * If you've created a Credential and set it as a Player type, when any player with this Credential connects to the platform the request/response permissions you've configured for the Credential are applied to the player's requests:
   * For example, you might want to set up a Credential which you can use against players to block their access to finding pending Matches (*FindPendingMatchesRequest*) or allow them only the ability to change their details (*ChangeUserDetailsRequest*).
 
-
 ## Managing Credentials
 
 To create and edit Credentials, go to *Configurator > Credentials*. Existing Credentials are listed:
@@ -43,7 +42,7 @@ When you create or edit a custom Credential there are three key settings you can
 
 There are certain rules applied to the combination of Credential types:
 * A Player Credential *MUST* also be a Listener type.
-* However, a Listener Credential *does not necessarily*h need to also be a Player Credential.
+* However, a Listener Credential *does not necessarily* need to also be a Player Credential.
 
 <q>**Important!** You cannot alter the type settings for a System Credential!</q>
 
@@ -59,12 +58,14 @@ When you create or edit a Credential, there are four tabs for different requests
 
 ### Enabling COPPA Compliance
 
-If you enable a Credential as COPPA compliant, then certain data defined by the Children's Online Privacy Protection Act of 1998 will not be stored on the GameSparks platform. Any player with this Credential connecting to the platform will not be allowed to authenticate through a 3rd-party social account. Blocking social account authentication for COPPA Credentials in this way ensures no Personally Identifiable Information (PII) will be stored on the platform.
+If you enable a Credential as COPPA compliant:
+* Certain data defined by the Children's Online Privacy Protection Act of 1998 will not be stored on the GameSparks platform. Any player with this Credential connecting to the platform will not be allowed to authenticate through a 3rd-party social account. Blocking social account authentication for COPPA Credentials in this way ensures no Personally Identifiable Information (PII) will be stored on the platform.
+* Secondly, the latitude/longitude information will not be stored on the platform for players connecting with a COPPA Credential.
 
 ### Selecting REST Policy
 
 Select to allow or forbid the Credential to accept REST requests:
-* If you allow REST requests for a Credential, you can specify that an authorization token is or is not required when making REST requests.
+* If you allow REST requests for a Credential, you can specify that an authorization token is required for added security when REST requests.
 
 ## System Credentials
 
@@ -89,12 +90,12 @@ To edit a System Credential:
 
 ![](img/SecCred/13.png)
 
-*2.* Use the *REST Policy* drop-down to select whether or not you want this Credential to allow REST requests:
+*2.* Use the *REST Policy* drop-down to select whether or not you want this Credential to allow [REST requests](#Selecting REST Policy):
 * *Allowed*
 * *Require Auth Token* - REST requests are allowed but Auth Token is required.
 * *Forbidden*
 
-*3.* Switch *COPPA Compliant* to *ON*, if you want the Credential to impose COPPA compliance.
+*3.* Switch *COPPA Compliant* to *ON*, if you want the Credential to impose [COPPA compliance](#Enabling COPPA Compliance).
 
 *4.* Select any of the four request tabs and check the individual requests under each one for the Credentials you want to allow/disallow. In this example, the first Requests tab is selected and all requests on this tab are checked and therefore allowed.
 

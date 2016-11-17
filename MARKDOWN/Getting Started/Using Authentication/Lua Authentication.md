@@ -15,9 +15,9 @@ In this tutorial we'll only cover GameSparks and Device authentication because S
 
 ## GameSparks Authentication
 
-First you will need to register your user by providing *DisplayName*, *Username* and *Password*.
+First you'll need to register your user by providing *DisplayName*, *Username* and *Password*.
 
-Create a registration request and set the values necessary for registration. This example has hard set values and for your game you'll need to have your players input these values:
+Create a [RegistrationRequest](/API Documentation/Request API/Authentication/RegistrationRequest.md) and set the values necessary for registration. This example has hard set values and for your game you'll need to have your players input these values:
 
 ```
 --Build request
@@ -38,9 +38,9 @@ end)
 
 ```
 
-Once registered, the player can now use their credentials to log in. When a player registers they are automatically signed in, there's no need to authenticate again. However, in this tutorial we'll demonstrate the authentication request.
+Once registered, the player can now use their credentials to log in. When a player registers they are automatically signed in, there's no need to authenticate again. However, in this tutorial we'll demonstrate the [AuthenticationRequest](/API Documentation/Request API/Authentication/AuthenticationRequest.md).
 
-To set this up, create an authentication request and input the values you used to register:
+To set this up, create an *AuthenticationRequest* and input the values you used to register:
 
 ```
 --Build request
@@ -62,7 +62,7 @@ end)
 
 ## Device Authentication
 
-Device authentication doesn't need registration and relies on the Device ID (Needs to be unique) and the Device OS - can also be used as for other things - in this example we mark the OS as Corona:
+Device authentication doesn't need registration and relies on the *Device ID* (which must be unique) and the *Device OS*. However, the *Device OS* is not restricted to designating operating systems and for this example we mark the OS as *Corona*:
 
 ```
 --Build request
@@ -79,8 +79,8 @@ writeText("token: "..authenticationResponse:getAuthToken().."\n")
 end)
 ```
 
-Authenticated players can also be linked to social accounts once created. A player that authenticated via Device Authentication can decide to link their social account to their user and use their social credential to login in the future.
+* Once a player authenticates they can now make requests and use GameSparks.
+* Authenticated players can also be linked to social accounts once created.
+* A player that authenticated via Device Authentication can decide to link their social account to their user and use their social credential to login in the future.
 
-Once a player authenticates they can now make requests and use GameSparks.
-
-The [next tutorial](/Getting Started/Using Cloud Code/Lua Cloud Code.md) will demonstrate creating and using custom functions and using persistent data.
+The tutorials in the [next section](/Getting Started/Using Cloud Code/README.md) will demonstrate creating and using custom functions and using persistent data.

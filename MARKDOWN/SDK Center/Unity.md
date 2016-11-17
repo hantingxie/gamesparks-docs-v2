@@ -5,7 +5,15 @@ src: /SDK Center/Unity.md
 
 # Unity3D SDK
 
-Download the GameSparks [Unity SDK v5.4 package](http://repo.gamesparks.net.s3-eu-west-1.amazonaws.com/unity-sdk/Gamesparks_Unity_5.4.0.59.unitypackage)
+Download the GameSparks <a href="javascript:function readTextFile(file, callback) { var rawFile = new XMLHttpRequest; rawFile.overrideMimeType('application/json'); rawFile.open('GET', file, true); rawFile.onreadystatechange = function() { if (rawFile.readyState === 4 && rawFile.status == '200') { callback(rawFile.responseText); } }; rawFile.send(null); } readTextFile('http://repo.gamesparks.net.s3-eu-west-1.amazonaws.com/unity-sdk/latest.json', function(text) { var data = JSON.parse(text); var str1 = 'http://repo.gamesparks.net.s3-eu-west-1.amazonaws.com/unity-sdk/Gamesparks_Unity_'; var str2 = data.version; var str3 = '.unitypackage'; var res = str1.concat(str2, str3); document.location.href = res; });">Unity SDK package</a>
+
+
+## V5.4.0.91
+
+* Resolved tendency to hang in Windows Unity Editor
+* Fixed IPv6
+* Addressed other minor bugs
+
 
 ## V5.4.0
 

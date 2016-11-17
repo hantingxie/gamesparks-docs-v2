@@ -46,4 +46,4 @@ awardAchievementRequest:send()
 ```
 Once sent, the player will receive a message congratulating them on their new Achievement if it's the first time they've earned it.
 
-In the [next tutorial](/Getting Started/Creating a Virtual Good/README.md) we'll demonstrate Virtual Goods and how to retrieve a player's record and display their Achievements and Virtual Goods.  
+In the [next section's](/Getting Started/Creating a Virtual Good/README.md) tutorials we'll demonstrate Virtual Goods and how to retrieve a player's record and display their Achievements and Virtual Goods.  

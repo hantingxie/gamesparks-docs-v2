@@ -11,7 +11,7 @@ This tutorial will demonstrate Virtual Goods purchases and viewing player record
 
 Create a function that will build and send the [BuyVirtualGoodsRequest](/API Documentation/Request API/Store/BuyVirtualGoodsRequest.md). We'll be buying the Gold_Coin we created in the [previous tutorial](/Getting Started/Creating a Virtual Good/README.md). Set the quantity and currency type to 1 and set the ShortCode to the name of the item.
 
-The response will help you confirm the item that's been purchased and if any errors occurred.
+The response will help you confirm the item that's been purchased and if any errors occurred:
 
 ```
 
@@ -38,7 +38,9 @@ end
 
 ```
 
-If the player doesn't have the needed funds, the response will come back with a useful error message. These messages can be relayed to players to inform them that they need to earn a little more to be able to afford this item. For full list of errors please check the [API documentation](/API Documentation/Request API/Store/BuyVirtualGoodsRequest.md).
+If the player doesn't have the needed funds, the response will come back with a useful error message:
+* These messages can be relayed to players to inform them that they need to earn a little more to be able to afford this item.
+* For full list of errors please check the [API documentation](/API Documentation/Request API/Store/BuyVirtualGoodsRequest.md).
 
 ## Account Details Request
 

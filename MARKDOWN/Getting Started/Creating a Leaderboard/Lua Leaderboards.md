@@ -5,13 +5,13 @@ src: /Getting Started/Creating a Leaderboard/Lua Leaderboards.md
 
 # Lua Leaderboards
 
-This tutorial will demonstrate sending a score from your game, creating a Leaderboard entry from it, and setting up a message interceptor/listener to process specific messages sent to the currently authenticated player.
+This tutorial shows how to send a score from your game, create a Leaderboard entry from it, and set up a message interceptor/listener to process specific messages sent to the currently authenticated player.
 
 ## Setting Up your Listener
 
-We'll be listening in for the newHighScore message which will trigger when our player submits a high score for the Leaderboard.
+We'll be listening in for the *newHighScore* message, which will trigger when our player submits a high score for the Leaderboard.
 
-First we'll create the function which will handle the message:
+First we'll create the function that will handle the message:
 
 ```
 local function onNewHighScoreMessage(newHighScoreMessage)
@@ -21,7 +21,7 @@ end
 ```
 The message is received and the Leaderboard name is retrieved then used in a print function.
 
-Bind the function you just made to be invoked everytime a newHighScore message is received by the game.
+Bind the function you just made to be invoked each time a newHighScore message is received by the game.
 
 ```
 gs.getMessageHandler().setNewHighScoreMessageHandler(onNewHighScoreMessage)

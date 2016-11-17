@@ -18,7 +18,7 @@ The two main aspects of this tutorial are the *Set* and *Get* functions:
 The *Set* function is composed of three parts:
 
 * Create a [LogEventRequest](/API Documentation/Request API/Player/LogEventRequest.md).
-* Using the *Set_Pos* eventKey for the *Set Position* Event that was configured in the previous [tutorial](/Getting Started/Using Cloud Code/README.md), set the values for the X, Y, and Z variables. In a real example this function would find the location of your player and send it instead of having hard-set values.
+* Using the *Set_Pos* eventKey for the *Set Position* Event that was configured in the previous [tutorial](/Getting Started/Using Cloud Code/README.md), set the values for the X, Y, and Z variables. Note that in a real example, this function would find the location of your player and send it instead of having hard-set values.
 * Send the request and check for errors.
 
 ```
@@ -41,7 +41,7 @@ end)
 
 ```
 
-Now the player will have a position variable saved in their scriptData object. You can double check this by calling an [AccountDetailsRequest](/API Documentation/Request API/Player/AccountDetailsRequest.md):
+Now the player will have a position variable saved in their scriptData object. You can double-check this by calling an [AccountDetailsRequest](/API Documentation/Request API/Player/AccountDetailsRequest.md):
 
 1. Through your game and printing out the value of scriptData's 'POS' variable.
 2. Through the Test Harness and checking the scriptData object's contents.
@@ -77,4 +77,6 @@ if response:hasErrors() then
 
 ```
 
-These are the basics for data exchange between backend(GameSparks) and frontend(Corona Game) using the GameSparks SDK. The next [tutorial](/Getting Started/Creating a Leaderboard/README.md) will demonstrate basic Leaderboard creation and use.
+These are the basics for data exchange between backend(GameSparks) and frontend(Corona Game) using the GameSparks SDK.
+
+The tutorials in the [next section](/Getting Started/Creating a Leaderboard/README.md) will demonstrate basic Leaderboard creation and use.
