@@ -50,7 +50,11 @@ In the output log, you'll also see the form you send to the game. This should lo
 
 ![](img/UE4StateList/7.png)
 
-![](img/UE4StateList/8.png)
+
+In the Test Harness, you can select the *ListChallengeRequest* under *Multiplayer* and submit the request and then check the response in the *Inspector* window:
+
+![](img/UE4StateList/10.png)
+
 
 ## Cannot Find Create GameSparksRequestArray?
 

@@ -7,13 +7,13 @@ src: /Tutorials/Multiplayer/Sharing Data between Players.md
 
 The GameSparks platform makes it easy for developers to be able to share game data between players. You may want to use this to implement features such as ghost data replay in a racing game or for implementing the sharing of player-created game levels.
 
-In this article, we will examine how to share ghost race data that would allow a game to display another player's previous attempt at a track/level within a simple racing game. To do this, we will create Event and Cloud Code scripts within the GameSparks Developer Portal and then test the configuration using the developer portal Test Harness.
+In this article, we'll examine how to share ghost race data that would allow a game to display another player's previous attempt at a track/level within a simple racing game. To do this, we'll create Event and Cloud Code scripts within the GameSparks Developer Portal and then test the configuration using the developer portal Test Harness.
 
 ## Key concepts
 
 We will need to create an Event which we can use to post the ghost data into GameSparks when a player completes a race on a given track. This Event will have a Cloud Code script attached to it that stores the ghost data in the Mongo database. A second Event and Cloud Code script will be used to allow the game to query the ghost data collection for a given track and retrieve the player's ghost that represents the fastest time on this track.
 
-For the purpose of this article we will assume that the ghost race data can be represented by the following JSON document. The 'tick' field is the game's animation counter, ''xPosition'' and ''yPosition'' are the coordinates of the player in the game world and the 'heading' field represents the direction that the player is facing within the game world.
+For the purpose of this article we will assume that the ghost race data can be represented by the following JSON document. The *tick* field is the game's animation counter, *xPosition* and *yPosition* are the coordinates of the player in the game world, and the *heading* field represents the direction that the player is facing within the game world.
 
 ```    
 [
@@ -29,19 +29,21 @@ For the purpose of this article we will assume that the ghost race data can be r
 ## Creating the Event and Cloud Code Script for Storing Ghost Data
 
 *1.* Create an Event that allows the game to submit the JSON ghost race data, the track name and the race time (how long the race took):
-* Log in to the GameSparks Portal and navigate to Configurator-> Events.
-* Click on the plus icon to add a new Event.
+* Log in to the GameSparks Portal and navigate to *Configurator > Events*.
+* Click to *Add* a new Event.
 * Set up the Event as follows:
 
-![](img/PlayerDataSharing/1.jpg)
+![](img/PlayerDataSharing/5.png)
 
-*2.* Create the Cloud Code script to store this data in a MongoDB collection:
-* In the Portal navigate to Configurator->Cloud Code->Bindings->Events
-* Select the Event we created in the previous section called 'Store race data':
+*2.* Click to *Save and Close* the new Event.
 
-![](img/PlayerDataSharing/2.jpg)
+*3.* Create the Cloud Code script to store this data in a MongoDB collection:
+* In the Portal navigate to *Configurator > Cloud Code > Scripts > Events*.
+* Select the *STORE_RACE_DATA* Event we created in the previous section:
 
-* Copy and paste in the following Cloud Code script in to the JavaScript editor and click the 'Save' button.
+![](img/PlayerDataSharing/6.png)
+
+* Copy and paste in the following Cloud Code script in to the Cloud Code editor and click *Save*.
 
 ```    
   // Get the incoming Event Attributes
@@ -55,6 +57,7 @@ For the purpose of this article we will assume that the ghost race data can be r
   // Store the Event data along with the playerId
   var playerId = Spark.getPlayer().getPlayerId();
   raceData.save({"ghostData":ghostData, "trackName":trackName, "timeTaken":timeTaken, "playerId":playerId});
+
 ```    
 
 ### Testing the configuration
@@ -68,11 +71,11 @@ We will now use the Portal Test Harness and NoSQL Explorer to test the configura
    "@class": ".RegistrationRequest",
    "displayName": "Player One",
    "password": "password",
-   "userName": "player1"
+   "userName": "playerN1"
   }
 ```
 
-*2.* Now send a 'Store race data' Event by sending the following *LogEventRequest*.
+*2.* Now click *LogEvent* under *Scripts* and select the *Store race data* Event and send the following *LogEventRequest*.
 
 * Note that for simplicity in this example we are only sending an array of ghost data containing three items in this article but in reality this array would be much larger.
 
@@ -103,23 +106,29 @@ We will now use the Portal Test Harness and NoSQL Explorer to test the configura
    "TRACK": "Track1",
    "TIME": "90"
   }
+
 ```
-If successful you will have received a LogEventResponse similar to this.
+
+If successful you will have received a *LogEventResponse* similar to this.
 
 ```    
   {
    "@class": ".LogEventResponse",
-   "scriptData": null
   }
 ```
 
-*3.* Navigate to the Developer Portal NoSQL Explorer and select the 'script.raceData' collection from the collection drop down then press the 'Submit' button. You will see the document that was saved as a result of our Cloud Code script executing when the Event was received. You can click on the document to expand, edit or delete it.
+*3.* In the portal, navigate to the *NoSQL Explorer* and under *Collections* expand *Runtime* and select *script.raceData*.
 
-![](img/PlayerDataSharing/3.jpg)
 
-*4.* Repeat the sending of the 'Store race data' Event but change the data each time, especially the TIME field. This will result in several documents being stored in MongoDB for Player1.
+*4.* Click *Find*:
+* You'll see the document that was saved as a result of our Cloud Code script executing when the Event was received - this is returned into the *Output*.
+* You can click on the document to expand, edit or delete it.
 
-*5.* Now register a second player, Player2, by sending a *RegistrationRequest* and repeat the sending of the 'Store race data' Event. Change the data each time, especially the TIME field. This will result in several documents being stored in MongoDB for Player2.
+![](img/PlayerDataSharing/7.png)
+
+*5.* Repeat the sending of the *Store race data* Event but change the data each time, especially the *TIME* field. This will result in several documents being stored in MongoDB for Player1.
+
+*6.* Now register a second player, Player2, by sending a *RegistrationRequest* and repeat the sending of the *Store race data* Event. Change the data each time, especially the *TIME* field. This will result in several documents being stored in MongoDB for Player2.
 
 ## Creating the Event and Cloud Code Script for Retrieving Ghost Data
 

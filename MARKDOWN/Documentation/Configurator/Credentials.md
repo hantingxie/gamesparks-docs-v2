@@ -54,8 +54,6 @@ When you create or edit a Credential, there are four tabs for different requests
 * *LogChallengeRequests* - All Challenge Event requests including any custom Challenge Event requests.
 * *AdminRequests* - All requests considered to be Administration tasks.
 
-<q>**Important!** *AdminRequests* cannot be enabled for a Player Credential - you will get an error if you try to do this!</q>
-
 ### Enabling COPPA Compliance
 
 If you enable a Credential as COPPA compliant:
