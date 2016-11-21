@@ -15,3 +15,4 @@ This section describes some of the key concepts you should be aware of when usin
 * [Snapshots](/Documentation/Key Concepts/Snapshots.md)
 * [Social Capabilities](/Documentation/Key Concepts/Social Capabilities.md)
 * [System Limits](/Documentation/Key Concepts/System Limits.md)
+* [HTTP Regional Proxies](/Documentation/Key Concepts/HTTP Regional Proxies.md)

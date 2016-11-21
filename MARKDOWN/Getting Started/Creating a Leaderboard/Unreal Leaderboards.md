@@ -64,3 +64,17 @@ Finally, you can play the game.
 Here you can authenticate, play the game, and, if you beat the High Score, you'll receive a message saying you did so:
 
 ![l](img/UR/3.png)
+
+## Retrieving Leaderboard Entries
+
+One way to retrieve entries from a Leaderboard is the [LeaderboardDataRequest](/API Documentation/Request API/Leaderboards/LeaderboardDataRequest.md). The *LeaderboardDataRequest* retrieves a list of entries from top of the Leaderboard to a stated number set in the Entry Count input. For our example we'll be using this request.
+
+Another useful request is [AroundMeLeaderboardRequest](/API Documentation/Request API/Leaderboards/AroundMeLeaderboardRequest.md), which retrieves a number of entries above and below the current player's entry in a specified Leaderboard. Both requests return Leaderboard entry structures that can be used in the same way.
+
+For our example, we'll be calling a *LeaderboardDataRequest* and looping through every entry in the 'Data' array.
+
+![l](img/UR/8.png)
+
+We'll get the Rank, Username, and our custom value used to rank the entries 'SCORE'.
+
+![l](img/UR/9.png)
