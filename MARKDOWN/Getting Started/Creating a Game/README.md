@@ -12,19 +12,53 @@ The GameSparks platform delivers a broad range of capabilities, making it a litt
 Before getting started as a new user, you'll need to create an account on the Developer Portal. To register, click **+ Register** on the login screen or at top-right from here. You are taken to the [Register](https://portal.gamesparks.net/register.htm) screen, where you can enter your account details.
 
 ## Creating the Game
-![l](img/CreatingGame/4.png)
 
  When registered, you can login:
- * If this is your first time using the Portal, you'll be greeted by the *Welcome!* screen. Click the ![](/img/fa/plus.png) icon in the middle of the screen to create your first game.
- * If you've used GameSparks before, click *Add Game* from the drop-down menu in the top-left of the screen.
+ * If this is your first time using the Portal, you'll be taken straight to the first stage of the game-creation process to create your first game.
+ * If you've used GameSparks before, click *Add Game* from the drop-down menu in the top-right of the screen.
 
-Give your game a *Name* and a *Description* and select the *Primary Region* you want for your game and then hit *Save*. You can use the name and description to identify the game in the portal and you can edit and change them at any time.
+Adding a game is a 3-stage process:
+* *Game Details* - Enter a name and description for your game.
+* *Features & Integrations* - Select the currencies, platform features, and 3rd-party integrations you want for your game.
+* *Geographical Setup* - Configure the Geographical Setup for your game.
 
-After hitting *Save* you'll be taken to the [Game Overview](/Documentation/Game Overview/README.md) page, where your game is now ready to be configured.
+<q>**Note!** In this section, we'll assume you've used Gamesparks before and have already created a game.</q>
 
-When you create a game, two things happen:
-* Your game is assigned a unique *Key* and *Secret*. You'll need these to set up your SDK.
+*1.* Log in to the portal. You'll be taken to the last game you had open.
+
+*2.* Using the *Games Menu* at top-right, select *Add New Game*. The *Add New Game* page opens at the first stage of the game-creation process.
+
+![](img/CreatingGame/8.png)
+
+*3.* Enter a *Name* and *Description* for your new game and click *Next*. The *Add New Game* page moves you to the second stage of the game-creation process.
+
+*4.* Use this second stage to define some baseline settings for your new game:
+
+![](img/CreatingGame/9.png)
+
+* Set *Signup Bonuses* for any of six currencies. Each new player will be credited with the currency amounts when they first register for your game.
+* Select the *Platform Features* you want for your game - by default, all are selected.
+* Under *Integrations*, select the 3rd-party providers you want to integrate your game with - by default, none are selected.
+
+<q>**Selections are not Final!** You'll be able to edit these settings later after you have created your game.</q>
+
+*5.* Click *Next*. The *Add New Game* page moves you to the third stage of the game-creation process.
+
+
+*6.* You can use this third stage for the *Geographical Setup* of your new game:
+
+![](img/CreatingGame/10.png)
+
+* Select the *Primary Region* you want for your game. In this example, we've chosen the Americas as the game's *Primary Region*.
+* Define the *Geo Restrictions* you want to impose on players of your game:
+  * Select which countries where you want to players to be allowed access to your game - the default is to allow players in all countries to have access.
+  * To block access for players in a country, select the country in the *Allow Access* list and use the arrows to move the country into the *Deny Access* list.
+
+*7.* When you have completed the third stage of the game creation process, click *Create*. You are taken to the *Game Overview* page of your new game:
+* Your game is assigned a unique *GameSparks API Key* and *GameSparks API Secret*. You'll need these to set up your SDK.
 * Your game is put into *Preview* stage. This is the stage where you build your game. When you are ready to publish your game, you can push it to the *Live* stage.
+
+<q>**Working with Game Overview?** For more details of how to work with the *Game Overview* page, you can review this [page](/Documentation/Game Overview/README.md).</q>
 
 ## Remembering Keys and Secrets
 

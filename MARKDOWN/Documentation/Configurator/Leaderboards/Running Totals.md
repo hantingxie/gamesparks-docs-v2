@@ -40,7 +40,7 @@ The Add/Edit panel has the following fields.
   * *Name* - Enter the name of the Running Total, which is used to allow you to identify it in the portal if you have more than one Running Total.
   * *Event* - Select the Event this Running Total will process.
   * *Team* - Select the Type of Running Total (Player or Team). If a Team is not selected, then it is a Player Running Total
-  * *Group* - Select which Attributes from the Event should be used for grouping. The running total will use this Attribute to group other Attributes. This will lead to a running total with an entry per Attribute/user combination. A typical use case would be where you want to track each player's highest score relative to each level of your game, not simply each player's highest score across all game levels.
+  * *Group By* - Select which Attributes from the Event should be used for grouping. The running total will use this Attribute to group other Attributes. This will lead to a running total with an entry per Attribute/user combination. A typical use case would be where you want to track each player's highest score relative to each level of your game, not simply each player's highest score across all game levels.
 
 ### Adding Collectors for Running Totals
 
