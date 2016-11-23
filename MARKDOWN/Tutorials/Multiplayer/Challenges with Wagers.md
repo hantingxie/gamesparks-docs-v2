@@ -7,28 +7,30 @@ src: /Tutorials/Multiplayer/Challenges with Wagers.md
 
 ## Introduction
 
-Having an incentive to win a challenge spices things up, that is why the create challenge request comes built with the ability to wager any of the 6 default currencies but what if that is not enough? This tutorial will teach you how to wager virtual goods through cloud code.  
+Having an incentive to win a Challenge spices things up and that's why the [CreateChallengeRequest](/API Documentation/Request API/Multiplayer/CreateChallengeRequest.md) comes built with the ability to wager any of the 6 default currencies. But what if that is not enough?
+
+This tutorial shows you how to wager Virtual Goods through Cloud Code.
 
 ## The Setup
 
-This tutorial will demonstrate adding extra cloud code to the existing requests and responses that our platform offers to provide extra functionality.  
+More generally, this tutorial demonstrates how to add extra Cloud Code to the existing requests and responses that our platform offers to provide extra functionality.  
 
-## Create Challenge Request
+### Create Challenge Request
 
-When the player creates the challenge, we want to be able to check that the virtual good wager they're placing is valid: that they have enough quantity to wager. In this example we're only ever wagering one virtual good of one type.
+When the player creates the Challenge using a *CreateChallengeRequest*, we want to be able to check that the Virtual Good wager they're placing is valid - that is, check the player has enough quantity to wager. In this example we're only ever wagering one Virtual Good of one type:
 
 ```    
-    //Check if we have scriptData
-    if(Spark.getData().scriptData){
+  //Check if we have scriptData
+  if(Spark.getData().scriptData){
 
-        //Set value of virtualGoodWager
-        var virtualGoodWager = Spark.data.scriptData.virtualGoodWager;
-        //Load up the player's inventory
-        var Vgoods = Spark.getPlayer().getVirtualGoods();
+  //Set value of virtualGoodWager
+  var virtualGoodWager = Spark.data.scriptData.virtualGoodWager;
+  //Load up the player's inventory
+  var Vgoods = Spark.getPlayer().getVirtualGoods();
 
 
-        //Does player have enough?
-        if(Spark.getPlayer().hasVGood(virtualGoodWager) > 0)
+  //Does player have enough?
+  if(Spark.getPlayer().hasVGood(virtualGoodWager) > 0)
         {
             //if yes, then setScript code for the response to use
             Spark.setScriptData("virtualGoodWager", virtualGoodWager);
@@ -39,13 +41,14 @@ When the player creates the challenge, we want to be able to check that the virt
             Spark.setScriptError("Error", "Don't have the right virtual good to wager");
         }
     }
+
 ```    
 
-## Create Challenge Response
+### Create Challenge Response
 
-The response will save the wager's shortcode for future reference as scriptData linked to the challenge.
+The *CreateChallengeResponse* will save the wager's *Short Code* for future reference as *scriptData* linked to the Challenge:
 
-  ```
+```
     if(Spark.getData().scriptData.virtualGoodWager){
 
         //Get the scriptdata from the request
@@ -55,13 +58,14 @@ The response will save the wager's shortcode for future reference as scriptData 
         //Set scriptData
         currentChallenge.setScriptData("virtualGoodWager", virtualGoodWager);   
     }
-    ```
 
-## Join Challenge Request
+```
 
-When joining a challenge with a virtual good wager a player will be reviewed to see if they're eligible by checking their inventory to see if they have the virtual good. If the player has the virtual good, then they are allowed to join. If the player isn't eligible then we'll force a scriptError to terminate the request.
+### Join Challenge Request
 
-    ```
+When joining a Challenge with a Virtual Good wager, a player will be reviewed to see if they're eligible by checking their inventory to see if they have the virtual good. If the player has the Virtual Good, then they are allowed to join. If the player isn't eligible to join, then we'll force a *scriptError* to terminate the request:
+
+```
     //Save instance ID
     var challengeInstanceIdVar = Spark.getData().challengeInstanceId;
 
@@ -82,13 +86,15 @@ When joining a challenge with a virtual good wager a player will be reviewed to 
         }
 
     }
-    ```
 
-## Challenge Won Message
+```
 
-When a player wins, we want to give them the spoils of their victory. To do this, we will count how many players accepted the challenge and then award the player that amount of virtual goods.
+### Challenge Won Message
 
-    ```
+When a player wins, we want to give them the spoils of their victory. To do this, we'll count how many players accepted the Challenge and then award the player that amount of Virtual Goods:
+
+```
+
     //Check for scriptData
     if(Spark.getData().challenge.scriptData.virtualGoodWager){
 
@@ -101,11 +107,12 @@ When a player wins, we want to give them the spoils of their victory. To do this
         //Award the winner the wager of the losers
         Spark.getPlayer().addVGood(itemWager, playerCount);
     }
-    ```
 
-## Challenge Lost Message
+```
 
-Losing players will lose their wagered virtual good. We will manually consume these virtual goods using an instance of the ConsumeVirtualGood request.
+### Challenge Lost Message
+
+Losing players will lose their wagered Virtual Good. We'll manually consume these Virtual Goods using an instance of the [ConsumeVirtualGoodRequest](/API Documentation/Request API/Store/ConsumeVirtualGoodRequest.md):
 
 ```
     //Does the challange have any scriptData
