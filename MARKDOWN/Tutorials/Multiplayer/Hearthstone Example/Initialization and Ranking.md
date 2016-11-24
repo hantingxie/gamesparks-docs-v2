@@ -7,7 +7,7 @@ src: /Tutorials/Multiplayer/Hearthstone Example/Initialization and Ranking.md
 
 ## First, the Cards
 
-For a game like this to work we need a way to store the game's cards somewhere where it will be easy to access, manage, and edit them. For this, we'll use the platform's mongo database.
+For a game like this to work we need a way to store the game's cards somewhere where it will be easy to access, manage, and edit them. For this, we'll use the platform's Mongo database.
 
 First, head over to the NoSQL tab. Click the 'Create' tab and create three runtime collections. Call these collections *commonCards*, *rareCards*, and  *legendaryCards*.
 

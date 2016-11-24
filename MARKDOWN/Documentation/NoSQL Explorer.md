@@ -85,9 +85,10 @@ Using the *Find* option, you can execute queries against Collections:
 ![](img/7.png)
 
 * *Query* : The query you want to execute in JSON form:
-  * To find players with displayName "testUser" the following JSON should be used {"displayName" : "testUser"}
+  * To find players with displayName "testUser" the following valid JSON must be used {"displayName" : "testUser"}
 * *Sort* : The JSON representation of the sort for the query:
-  * To sort by userName in ascending order the following JSON should be used {"userName" : 1}
+  * To sort by userName in ascending order the following valid JSON must be used {"userName" : 1}
+  * To sort by id, the following valid JSON must be used {"\_id": -1} or {"\_id": 1}
 * *Fields*: Allows you to limit the fields that are returned in the results:
   * This is useful for Collections with large document.
   * To limit the results to only contain the userName and displayName, the following JSON should be used : {"userName" : 1, "displayName" : 1}. 1 indicates inclusion and 0 indicates exclusion for a field. You cannot mix inclusion and exclusion in a single query.
@@ -96,6 +97,8 @@ Using the *Find* option, you can execute queries against Collections:
   * The maximum that the limit value can be set to for Finds is 1000.
 * *Explain* button : Enter your query and click this button to get information about the query returned into the *Output* panel. You can review and analyze this information to optimize your query.
 * *Export* button : The *Find* option allows you to export the results to a local file. Set up your query as normal and press the *Export* button. The maximum that the limit value can be set to for exports is 10000.
+
+<q>**You Must Use Valid JSON!** If you want to use *Query*, *Sort*, or *Fields*, you must use valid JSON syntax and only valid JSON syntax, as shown in the examples given above. Importantly, JavaScript syntax is *NOT VALID*.</q>
 
 ### Count
 

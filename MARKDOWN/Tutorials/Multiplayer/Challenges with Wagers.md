@@ -63,7 +63,7 @@ The *CreateChallengeResponse* will save the wager's *Short Code* for future refe
 
 ### Join Challenge Request
 
-When joining a Challenge with a Virtual Good wager, a player will be reviewed to see if they're eligible by checking their inventory to see if they have the virtual good. If the player has the Virtual Good, then they are allowed to join. If the player isn't eligible to join, then we'll force a *scriptError* to terminate the request:
+When joining a Challenge with a Virtual Good wager, a player will be reviewed to see if they're eligible by checking their inventory to see if they have the Virtual Good. If the player has the Virtual Good, then they are allowed to join. If the player isn't eligible to join, then we'll force a *scriptError* to terminate the request:
 
 ```
     //Save instance ID

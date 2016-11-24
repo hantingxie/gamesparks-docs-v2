@@ -5,11 +5,13 @@ nav_sort: 11
 src: /Tutorials/Multiplayer/Hearthstone Example/README.md
 ---
 
-# Hearthstone example
+# Hearthstone Example
 
-These tutorials provide a worked example of how to create a Hearthstone style card game on the GameSparks platform using already existing components and combining them to produce a fully functioning game on the cloud. We'll use the NoSQL database, matches, challenges, cloud code, events, modules, and the test harness to ensure the game is developed and functions the way we want it to.
+These tutorials provide a worked example of how to create a Hearthstone-style card game on the GameSparks platform using already existing components and combining them to produce a fully functioning game on the cloud. We'll use the NoSQL database, Matches, Challenges, Cloud Code, Events, Modules, and the Test Harness to ensure the game is developed and functions the way we want it to.
 
-We'll create a card game where each card represents a pre-defined type of card with attack, hit points, tier and effect stats. Two players are pitted against each other and use the cards to lower each other's health to 0. First player to reach 0 loses.
+For the worked example, we'll create a card game where each card represents a pre-defined type of card with attack, hit points, tier, and effect stats. Two players are pitted against each other and use the cards to lower each other's health to 0. First player to reach 0 loses.
+
+The example is broken down into three parts:
 
 * First, how to set up [player initialization and the ranking system](/Tutorials/Multiplayer/Hearthstone Example/Initialization and Ranking.md).
 
