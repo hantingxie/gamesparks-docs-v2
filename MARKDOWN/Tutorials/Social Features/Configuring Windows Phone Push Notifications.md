@@ -52,8 +52,8 @@ The Authenticating your service page provides your SID and client secret.
 
 To edit a message select the edit option next to the desired message.
 
-![](img/WinPush/6.jpg)
+![](img/WinPush/8.png)
 
 You can then toggle if you want the messages to be sent as push notifications:
 
-![](img/WinPush/7.jpg)
+![](img/WinPush/9.png)
