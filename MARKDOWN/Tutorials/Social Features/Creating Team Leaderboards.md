@@ -13,27 +13,31 @@ In this example, we'll create a team type called *Squad*. When a player posts a 
 
 *1.* Navigate to *Configurator > Teams*.
 
-*2.* Click the plus ![](/img/fa/plus.png) icon. The *Create Team Type* dialog appears:
+*2.* Click to *Add* a new Team Type. The *Add Team Type* page opens.
 
-![](img/TeamLDR/5.png)
+*3.* Enter the details for the new Team Type:
+
+![](img/TeamLDR/9.png)
 
 Here we've called the team type *Squad* and set the team to have a maximum of 5 members (*Max Members*).
 
-*3.* Click *Save*.
+*4.* Click to *Save and Close* the new Team Type.
 
 ## Creating the Event
 
-We'll create a simple high score Event that takes a single score parameter.
+We'll create a simple high score Event that takes a single score Attribute.
 
 *1.* Navigate to *Configurator > Events*.
 
-*2.* Click the plus ![](/img/fa/plus.png) icon. The *Create Event* dialog appears:
+*2.* Click to *Add* a new Event. The *Add Event* page opens.
 
-![](img/TeamLDR/6.png)
+*3.* Enter the details for the new Event:
 
-In this example, the score we are passing should be added to all the previous scores submitted towards that team. So we've set the *Default Calc* to sum them up. This will create the default Running Total for the Event, allowing us to track the score for a player.
+![](img/TeamLDR/10.png)
 
-*3.* Click *Save*.
+* In this example, the score we are passing should be added to all the previous scores submitted towards that team. So we've set the *Default Aggregation Type* for the Event Attribute to *SUM* them up. This will create the default Running Total for the Event, allowing us to track the score for a player.
+
+*4.* Click to *Save and Close* the new Event.
 
 ## Creating the Team Running Total
 
@@ -43,26 +47,35 @@ We also want to track the score for the team. We'll need to create another Runni
 
 *2.* Select the *Running Totals* tab.
 
-*3.* Click the plus ![](/img/fa/plus.png) icon. The *Create Running Total* dialog appears:
+*3.* Click to *Add* a new Running Total. The *Add Running Total* page opens.
 
+*4.* Enter the details for the new Running Total:
 
-![](img/TeamLDR/7.png)
+![](img/TeamLDR/11.png)
 
-We select the *High Score* Event but the key change in this Running Total is that we have set the *Type* parameter to the team type we want this running total to track - *Squad*. We are now in a position where the GameSparks platform is going to track a Running Total for each Squad and will sum each score submitted by each team member.
+* We select the *High Score* Event but the key change in this Running Total is that we have set the *Team* parameter to the team type we want this running total to track - *Squad*. We are now in a position where the GameSparks platform is going to track a Running Total for each Squad and will sum each score submitted by each team member.
 
-*4.* Click *Save*.
+*5.* Click to *Save and Close* the Running Total.
 
 ## Creating the Leaderboard
 
 *1.* Navigate to *Configurator > Leaderboards*.
 
-*2.* On the *Leaderboards* tab, click the plus ![](/img/fa/plus.png) icon. The *Create Leaderboard* dialog appears:
+*2.* On the *Leaderboards* tab, click to *Add* a new Leaderboard. The *Add Leaderboard* page opens.
 
-![](img/TeamLDR/8.png)
+*3.* Enter the details for the new Leaderboard:
 
-We create the Leaderboard in the same way we would for personal Leaderboards, but we specify the team type that the Leaderboard is for in the *Type* parameter.
+* We create the Leaderboard in the same way we would for personal Leaderboards, but we specify the team type that the Leaderboard is for in the *Type* parameter.
 
-*3.* Click *Save*.
+*4.* Under Fields, click to *Add* a Running Total for the new Squad Leaderboard:
+
+![](img/TeamLDR/12.png)
+
+* We use the *Squad High Score* Running Total we created proviously:
+  * Note that the *Collector* is referenced using this Running Total's *Short Code* of *SQUAD_SCORE*.
+  * Note also the *all* suffix that is appended to the *Collector* reference string - this shows that the filter we used was to include *all values* posted by the Team's members.
+
+*5.* Click to *Save and Close* the new Leaderboard.
 
 ## Team Notifications
 
@@ -97,7 +110,6 @@ Notifications are processed slightly differently for personal Leaderboards and t
      "authToken": "406da13f-a124-43cb-ac96-b545aab0245a",
      "displayName": "Test User 1",
      "requestId": "1403266652739",
-     "scriptData": null,
      "userId": "53a426ea79b42ce7ea4c4570"
     }
 ```
@@ -162,7 +174,6 @@ The response contains the team details, notice the current player is automatica
      "authToken": "23ec1f1a-ca15-4a2c-b7fa-3d2d28cfd643",
      "displayName": "Test User 2",
      "requestId": "1403266652739",
-     "scriptData": null,
      "userId": "53a4274479b42ce7ea4c459b"
     }
 
@@ -210,6 +221,7 @@ The response contains the new team details, you'll see that the current player h
       }
      ]
     }
+
 ```
 ### Post a Score as Player 2
 
@@ -224,6 +236,7 @@ We post a score of 10 into the platform.
      "SCORE": "10",
      "requestId": "1403267110914"
     }
+
 ```
 
 #### Response
@@ -235,6 +248,7 @@ We post a score of 10 into the platform.
      "SCORE": "10",
      "requestId": "1403267110914"
     }
+
 ```
 
 #### Message
@@ -262,6 +276,7 @@ Because we know this is the first score posted for this team, we receive a *NewT
      "leaderboardName": "Team LB",
      "leaderboardShortCode": "SQUAD_LB"
     }
+
 ```
 ### Authenticate as Player 1
 
@@ -274,6 +289,7 @@ Because we know this is the first score posted for this team, we receive a *NewT
      "password": "password",
      "requestId": "1403267256818"
     }
+
 ```
 
 #### Response
@@ -284,9 +300,9 @@ Because we know this is the first score posted for this team, we receive a *NewT
      "authToken": "baaeef21-d4f3-4354-83ad-3fb39097e0bb",
      "displayName": "Test User 1",
      "requestId": "1403267256818",
-     "scriptData": null,
      "userId": "53a426ea79b42ce7ea4c4570"
     }
+
 ```
 
 ### Post a Score as Player 1
@@ -302,6 +318,7 @@ This time we'll post a score of 15.
      "SCORE": 15,
      "requestId": "1403267448095"
     }
+
 ```
 
 #### Response
@@ -310,8 +327,8 @@ This time we'll post a score of 15.
 {
  "@class": ".LogEventResponse",
  "requestId": "1403267448095",
- "scriptData": null
 }
+
 ```
 
 #### Message
