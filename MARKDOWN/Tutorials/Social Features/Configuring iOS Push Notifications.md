@@ -7,11 +7,11 @@ src: /Tutorials/Social Features/Configuring iOS Push Notifications.md
 
 ## Introduction
 
-When an event fires, the server-side component can send the app a push notification. If your game is not currently in use, you can still notify the user when an event takes place. For example ‘Challenge Received’ or when someone on the user’s friends list has beaten their high score. There are three things a push notification can do:
+When an Event fires, the server-side component can send the app a push notification. If your game is not currently in use, you can still notify the user when an Event takes place. For example, *Challenge Received* or when someone on the user’s friends list has beaten their high score. There are three things a push notification can do:
 
-  * Display a short text message
-  * Play a brief sound
-  * Set a number in a badge on the game’s icon
+  * Display a short text message..
+  * Play a brief sound.
+  * Set a number in a badge on the game’s icon.
 
 ## Provisioning Profiles and Certificates
 
@@ -21,6 +21,7 @@ Apps use different provisioning profiles for development and distribution. Each 
 
   * *Development* If your app is running in Debug mode and is signed with the Development provisioning profile (Code Signing Identity is “iPhone Developer”), then your server must be using the Development certificate.
   * *Production* Apps that are distributed as Ad Hoc or on the App Store (when Code Signing Identity is “iPhone Distribution”) must talk to a server that uses the Production certificate.
+  
 If there is a mismatch between the profile and certificate, push notifications cannot be delivered to your app.
 
 <q>**Note:** The following tutorial is based on using Mac OSX. If you use a different operating system such as Linux or Windows, some of the steps will differ slightly.</q>
