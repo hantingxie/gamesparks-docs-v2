@@ -9,61 +9,49 @@ If you're using GitHub for your repositories, Good News! It's possible to synchr
 
 In this tutorial, we assume that you already know what [GitHub](http://www.github.com) is and that you have a Git repository already created.
 
-![](img/GitSynch/1.png)
+![](img/GitSynch/14.png)
 
 ## Exporting Cloud Code
 
 The first thing we can do is export our Cloud Code to our local machine.
 
- *1.* In your game, navigate to *Cloud Code* and select the *Export* button at the top of the *Bindings* section.
+ *1.* In your game, navigate to *Cloud Code* and select the *Export* button at the bottom of the *Scripts* section.
 
- ![](img/GitSynch/2.png)
+ ![](img/GitSynch/15.png)
 
  The entire Cloud Code for the game will be downloaded as a *.zip* file to your local machine.
 
  The contents of the .zip archive is structured on folders which resemble the categories as seen in the Portal's *Cloud Code* section. The contents of the .zip can look something like this:
 
- */event*
+![](img/GitSynch/20.png)
 
- */event-challenge*
 
- */message-global*
+You will only see the directories in which you have created Cloud Code for. For example, if you only have code for *Events*, *User Messages* and *Modules*, you will only be able to see those directories in your export.
 
- */message-user*
+In each directory where Cloud Code exists, you will see a JavaScript .js file for every Cloud Code Event, Message or Module:
 
- */modules*
-
- */request*
-
- */response*
-
- */system*
-
- You will only see the directories in which you have created Cloud Code for. For example, if you only have code for *Events*, *User Messages* and *Modules*, you will only be able to see those directories in your export.
-
- In each directory where Cloud Code exists, you will see a JavaScript .js file for every Cloud Code Event, Message or Module:
-
- */event/deleteLBEntry_evt.js*
-
- */event/helloWorld_evt.js*
-
- */event-challenge/challenge_evt.js*
-
- */modules/STORE_CREDIT.js*
-
- */response/AuthenticationResponse.js*
-
- */system/GS_CALLBACK_URL.js*
+![](img/GitSynch/21.png)
 
 This is the exported Cloud Code and it's structural layout.
 
-*2.* Navigate back to the *Overview* page and create a Snapshot of the existing game.
+*2.* Navigate back to the *Game Overview* page and click to *Create* a Snapshot of the existing game.
 
-![](img/GitSynch/3.png)
+*3.* Click to copy ![](/img/icons/copyicon.png) the Snapshot:
 
-*3.* Copy the new Snapshot to a new game. Include the game configuration so that we can retain the corresponding events and Cloud Code that was created for the source game.
+![](img/GitSynch/16.png)
 
-![](img/GitSynch/4.png)
+A *Copy Snapshot* dialog appears:
+
+![](img/GitSynch/19.png)
+
+* Make sure you select to include the game configuration so that we can retain the corresponding Events and Cloud Code that was created for the source game.
+* You can select to copy:
+  * Over an existing game - the game configuration of the Snapshot will be copied over the existing game's configuration.
+  * To a *New Game* - a new game will be created using the saved Snapshot configuration and the new game will be named using the convention: *COPY-<<name of current game>>*.
+
+*4.* Click *Copy*. When the Snapshot copy process has successfully completed, you'll get a message to that effect and you can click to be taken straight to the new game you have created:
+
+![](img/GitSynch/17.png)
 
 ## Merging Cloud Code into a GitHub Repository
 
@@ -71,19 +59,22 @@ In the following steps, some type of versioning control application may be usefu
 
 *4.* Extract the contents of the .zip archive into the local working directory that is the path of your GitHub repository.
 
-*5.* Edit some of the Cloud Code in the .js files with an IDE or text editor. You can also delete some of the .js files from the local machine. in this example, some files have been renamed with invalid characters as a result of what can happen if the correct file naming convention is not used.
+*5.* Make changes to the overall collection of Cloud Code files you exported earlier:
+* Edit some of the Cloud Code in the .js files with an IDE or text editor.
+* You can also delete some of the .js files from the local machine.
+* In this example, some files have been renamed with invalid characters as a result of what can happen if the correct file naming convention is not used.
 
 *6.* Commit and push the changes that include the exported Cloud Code into the remote repository.
 
 *7.* Navigate to your project on [GitHub](http://www.github.com). You will notice that the Cloud Code changes have been successfully pushed to your remote repository.
 
- ![](img/GitSynch/5.png)
+ ![](img/GitSynch/22.png)
 
 ## Importing Cloud Code
 
 *8.* In the Portal, go to the *Cloud Code* section and select *Get from Git*.
 
-![](img/GitSynch/6.png)
+![](img/GitSynch/23.png)
 
 If this is the first time using *Get from Git* within the platform, you will be navigated to the GitHub sign-in page.
 
