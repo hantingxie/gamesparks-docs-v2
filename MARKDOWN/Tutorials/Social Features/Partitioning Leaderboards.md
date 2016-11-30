@@ -34,7 +34,7 @@ HSBC.<< PARTITION_1_CODE >>.<< PARTITION_1_VALUE >>.<< PARTITION_2_CODE >>.<< PA
 
 ## Testing the Configuration.
 
-After authenticating pass the following [LogEventRequest]((/API Documentation/Request API/Player/LogEventRequest.md).
+After authenticating pass the following [LogEventRequest](/API Documentation/Request API/Player/LogEventRequest.md).
 
 ```    
     {
