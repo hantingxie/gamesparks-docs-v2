@@ -3,7 +3,7 @@ nav_sort: 9
 src: /Documentation/GameSparks Real-Time/README.md
 ---
 
-# GameSparks Real-Time Services
+# GameSparks Real-Time Services for Multiplayer Contexts
 
 Our real-time services provide a network communication layer with the capability to send and receive data in real-time:
 

@@ -168,6 +168,8 @@ Using the *Aggregate* option, you can calculate aggregate values for data in the
   * If you are supplying more than one pipeline stage you must wrap them within a JSON array.
 * *Explain* button : Enter your query and click this button to get information about the query returned into the *Output* panel. You can review and analyze this information to optimize your query.
 
+<q>**You Must Use Valid JSON!** You must use valid JSON syntax and only valid JSON syntax for the *Aggregate* field. Importantly, JavaScript syntax is *NOT VALID*.</q>
+
 
 ### Drop
 
