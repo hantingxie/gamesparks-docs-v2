@@ -9,13 +9,13 @@ src: /Tutorials/Analytics, Segmentation and Game Management/Creating a Player Pr
 
 Gamespark's platform comes complete with many conveniences for developers. One of these conveniences is pre-made management screens for leaderboards and player records. The screens are user friendly, customizable and visual ways of searching, accessing and editing records.
 
-Screens are made to be easy to use without need for code, knowing how to code or access and edit the NoSQL database making it an excellent tool for non-dev members of the team such as customer service.
+Screens are made to be easy to use without the need for code, knowing how to code, or knowing how to access and edit the NoSQL database, all of which make them an excellent tool for non-dev members of the team, such as customer service.
 
 This tutorial will offer a brief introduction and highlight the aspects of the player profile management screen.
 
 ## Searching for players
 
-Once you navigate to the Players tab in the Manage section of the platform you'll be greeted with a 'Player Search' query builder which you can use to build queries to search for specific players or a group of players that fit a certain query. You can add rules with the combination of 'AND' and 'OR' operators as well as include a whole new group of rules.
+Once you navigate to the Players tab in the Manage section of the platform you'll be greeted with a *Player Search* query builder, which you can use to build queries to search for specific players or a group of players that fit a certain query. You can add rules with the combination of *AND* and *OR* operators as well as include a whole new group of rules.
 
 ![](img/PlayerProfileScreen/1.jpg)
 
@@ -23,9 +23,9 @@ Once you navigate to the Players tab in the Manage section of the platform you'l
 |  ![](img/PlayerProfileScreen/2.png)  | ![](img/PlayerProfileScreen/3.png)    |
 |---|---|
 
-You can query everything that is linked to your players, this can be custom values such as segments, achievements, virtual goods or pre-defined data such as usernames, display names, country, last seen etc.
+* You can query everything that is linked to your players, this can be custom values such as Segments, Achievements, Virtual Goods, or pre-defined data items, such as *usernames*, *display names*, *country*, *last seen*, and so on.
 
-You can also remove the queries using the delete button and hit the 'submit' button to retrieve every single player record in your player collection.
+* You can also remove the queries using the *Delete* button and hit the *Submit* button to retrieve every single player record in your player collection.
 
 |  ![](img/PlayerProfileScreen/4.png)  | ![](img/PlayerProfileScreen/5.png)    |
 |---|---|
