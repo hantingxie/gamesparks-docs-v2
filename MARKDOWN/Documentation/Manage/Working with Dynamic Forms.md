@@ -20,7 +20,7 @@ This section covers:
 ### Creating a Screen
 
 Whenever you want to create a Dynamic Form, you should start with a Screen:
-* A Screen is powered by the structure of Snippets that you create.
+* A Screen is powered by the structure of Snippets that you create and then link to the Screen.
 * You can have as many Screens as you want, however a Screen should have a meaningful name. In this section, we'll call the Screen we create *Tutorial Players*.
 
 *1.* To create a Screen, navigate to *Manage > Admin Screens*. The *Admin Screens* page contains two panels:
@@ -84,7 +84,7 @@ This is Dummy Data
 
 *4.* Click to *Save and Close* the changes to your Screen.
 
-*5.* Click for the *Tutorial Players* screen in *Manage* menu. You'll see the same rendered output as seen in the screen builder preview section:
+*5.* Click for the *Tutorial Players* screen in the *Manage* menu. You'll see the same rendered output as seen in the screen builder preview section:
 
 ![](img/DynamicForms/37.png)  
 
@@ -142,14 +142,14 @@ The Snippet creation workflow typically breaks down into 4 steps:
 * To ensure we are getting the right data that we require for the Snippet at this stage, we can preview the Cloud Code using the ![](/img/icons/screenplayicon.png)  icon.
 * This will generate a JSON formatted response in the bottom-left JSON response quadrant **4**.
 
-*3.* *Step 3* - **Design Snippet Screen Presentation.**
+*3.* **Design Snippet Screen Presentation.**
 * Once we are happy that we have all the required data for the Snippet, we can design how it will be presented to the Screen by adding the HTML / GSML code for the elements we want to see in quadrant **2**.
 * Using Handlebars, we can also access and manipulate the data from the JSON response.
 
-*4.* *Step 4* - **Test Snippet Presentation.**
+*4.* **Test Snippet Presentation.**
 * To test all of this, we can use the ![](/img/icons/screenplayicon.png) icon in quadrant **3** to preview the rendering of the Snippet.
 
-However, this order may not always be the preferred way. For example, we might design a Screen using the Handlebars quadrant first, then realize we need to retrieve some more Script Data by then calling that information using the JavaScript quadrant. As mentioned earlier, there are many routes to creating Snippets.
+However, this order may not always be the preferred sequence. For example, we might design a Screen using the Handlebars quadrant first, then realize we need to retrieve some more Script Data by then calling that information using the JavaScript quadrant. As mentioned earlier, there are many routes to creating Snippets.
 
 ### Linking the Screen to the Snippet
 
@@ -166,21 +166,21 @@ The next step is to remove the logic from the Screen itself, retaining only this
 
 ```
 
-*4.* Click the Click the play ![](/img/icons/screenplayicon.png) icon to render the GSML into the right panel and preview it:
+*4.* Click the play ![](/img/icons/screenplayicon.png) icon to render the GSML into the right panel and preview it:
 
 ![](img/DynamicForms/41.png)
 
-The Screen no longer contains any logic. It simply calls the Snippet using the *<gs-snippet>* tag with the value pointing at the *players_search* Snippet. The content of the Screen is now determined by what we have built into the Snippet!
+The Screen no longer contains any logic. It simply calls the Snippet using the *<gs-snippet>* tag with the value pointing at the *players_search* Snippet. The content of the Screen is now determined by what we have built into the Snippet.
 
 ### Master Snippets
 
 A Master Snippet is a Snippet that can hold multiple Snippets that both manipulate data and render forms. Typically, a Master Snippet is a collection of Snippets. It doesn't hold much logic of it's own, and merely serves as a container for other self-contained Snippets.
 
-## Dynamic Forms Player Search
+## Dynamic Forms Player Search - Worked Example
 
 Now that we have seen how to build a Dynamic Form by creating Screens and linking them to Snippets, we'll run through a concrete example of how to build a Dynamic Form for searching players in a game.
 
-### Tutorial Players Screen
+### The Tutorial Players Screen
 
 Our *Tutorial Players* Screen will contain the code to execute the *players_search* Snippet as well as including a placeholder for the *player_results* Snippet that will serve as a target where we want to render our search results.
 
@@ -203,7 +203,7 @@ Our *Tutorial Players* Screen will contain the code to execute the *players_sear
 
 The above code gives us two rows, one containing the yet-to-be-implemented Tutorial Player Search title bar and another row that will contain the results of whatever our Snippets submit.
 
-### players_search Snippet
+### The players_search Snippet
 
 This Snippet will be solely responsible for displaying the *gs-query* and passing on the query input to the next "processing" Snippet once the Submit button is pressed.
 
@@ -225,11 +225,13 @@ As seen above, the Snippet contains a form that will execute the *player_search_
 
 We can see our Submit button but we also see that the Screen is not complete. This is because our Snippet is trying to execute the *user_query* Snippet, which does not yet exist.
 
-It's important to implement Dynamic Forms this way, treating them as modular units that you can independently test before moving on and making them more complex. At this point, we know that we have a working *Tutorial Players* Screen that executes a working *players_search* Snippet, which in turn tries to execute an undefined *user_query* Snippet.  
+There's two import things to note at this point:
 
-It's also worth noting that in the code, *user_query* is contained within a form, so whatever output the Snippet renders, it will be submitted together with the form.
+* **Modular Method** - It's important to implement Dynamic Forms this way, treating them as modular units that you can independently test before moving on and making them more complex. At this point, we know that we have a working *Tutorial Players* Screen that executes a working *players_search* Snippet, which in turn tries to execute an undefined *user_query* Snippet.  
 
-### user_query Snippet
+* **Form Containment** - It's also worth noting that in the code, *user_query* is contained within a form, so whatever output the Snippet renders, it will be submitted together with the form.
+
+### The user_query Snippet
 
 We now want to create a *user_query* Snippet which we refer to in our *players_search* Snippet.
 
@@ -406,13 +408,13 @@ The search feature is now complete.
 
 *7.* Select *Tutorial Players* on the GameSparks Management navigation bar. This will display the following rendered output:
 
-![](img/DynamicForms/10.png)
+![](img/DynamicForms/45.png)
 
 You can see that the *user_query* has been rendered within the Tutorial Players form. This allows you to create form Snippets that you can re-use in any form.
 
-### player_search_results Snippet
+### The player_search_results Snippet
 
-When we click the Submit button on the Players Screen, all the data input into the form that was built using *player_search* Snippet will be collected and passed to the *player_search_results* Snippet, which does not yet exist. As the target of the form is defined as *player_results*, the output of this Snippet will be rendered there. We can now test that the query we've built is submitted correctly into the *player_search_results* Snippet.
+When we click the Submit button on the Tutorial Players Screen, all the data input into the form that was built using *players_search* Snippet will be collected and passed to the *player_search_results* Snippet, which does not yet exist. Because the target of the form is defined as *player_results*, the output of this Snippet will be rendered there. We can now test that the query we've built is submitted correctly into the *player_search_results* Snippet.
 
 *8.* Create a new Snippet called *player_search_results* and enter the following into the JavaScript quadrant:
 
@@ -426,7 +428,7 @@ Spark.setScriptData("query", JSON.stringify(query));
 
 *Spark.data.scriptData.*{_variable_} allows us to access the variable that's been passed into the Snippet.  
 
-<q>**Note:** At this point, because the *player_search* Snippet hasn't been executed on our Players Screen, the variable in the example above (gsUserQuery) is null. Previewing ![](/img/icons/screenplayicon.png) the *user_query* Snippet at this point, would not produce any results.</q>  
+<q>**Note:** At this point, because the *player_search* Snippet hasn't been executed on our Tutorial Players Screen, the variable in the example above (gsUserQuery) is null. Previewing ![](/img/icons/screenplayicon.png) the *user_query* Snippet at this point, would not produce any results.</q>  
 
 *Spark.setScriptData* allows Script Data to be produced that will be later used in GSML / Handlebars code without requiring other Snippets to be executed.   
 
@@ -443,15 +445,16 @@ Your query was: {{query}}
 
 This will simply output a title block containing our query data.
 
-*10.* Go to the *Players* Screen and submit a search. Note how we're accessing the data that was set in the JavaScript quadrant of the *player_search_results* Snippet, using the Handlebars notation *{{variable}}*:
+*10.* Go to the *Tutorial Players* Screen and submit a search. Note how we're accessing the data that was set in the JavaScript quadrant of the *player_search_results* Snippet, using the Handlebars notation *{{variable}}*:
 
-![](img/DynamicForms/11.png)
+![](img/DynamicForms/46.png)
 
-Now that we've validated that our query is being passed in with the form into *player_search_results* Snippet, we should query the mongo database and display the results.
+Now that we've validated that our query is being passed in with the form into *player_search_results* Snippet, we should query the Mongo database and display the results.
 
 *11.* Add the following code to the JavaScript quadrant of the *player_search_results* Snippet:  
 
 ```
+
 Spark.setScriptData("results", SnippetProcessor(Spark.getData().scriptData))
 
 function SnippetProcessor(data){
@@ -488,9 +491,9 @@ function view(data){
 
 ```
 
-*playerCount* will contain the count of how how many records matched our query.  
+* *playerCount* will contain the count of how how many records matched our query.  
 
-*results* will have all of the data associated with each player that matched the query, limited to 5 search results for the tutorial.  
+* *results* will have all of the data associated with each player that matched the query, limited to 5 search results for the tutorial.  
 
 *12.* Append the following GSML code to the *player_search_results* Handlebars quadrant:
 
@@ -520,15 +523,15 @@ function view(data){
 
 ```
 
-*13.* Go to the *Players* Screen and submit another search.
+*13.* Go to the *Tutorial Players* Screen and submit another search.
 
 The above code will display the number of records that were found, and if there are any results, it will iterate through them displaying basic information and adding a link to each of the results:   
 
-![](img/DynamicForms/12.png)
+![](img/DynamicForms/47.png)
 
-When the link is clicked, it will execute the yet-to-be-implemented *player_master* Snippet, passing in the PlayerId of that player and rendering the results from the Snippet in a wide modal form.  
+When you click the edit ![](/img/fa/edit.png) link for a found player, the yet-to-be-implemented *player_master* Snippet is excuted, passing in the *PlayerId* of that player and rendering the results from the Snippet in a wide modal form.  
 
-### player_master Snippet
+### The player_master Snippet
 
 *14.* Create a new Snippet called *player_master* and enter the following into the JavaScript quadrant:  
 
@@ -594,9 +597,9 @@ We could pass in the userName of the player from the *player_search_results* Sni
 
 The *player_master* Snippet contains 4 other Snippets (*player_details*, *player_achievements*, *player_virtual_goods* and *player_currencies*) and their respective placeholders wrapped around them. The Snippets will target these placeholders, re-rendering them after an update is made:  
 
-![](img/DynamicForms/13.png)
+![](img/DynamicForms/48.png)
 
-### player_currencies Snippet
+### The player_currencies Snippet
 
 This Snippet is responsible for displaying the currencies for the given player.  
 
@@ -632,6 +635,7 @@ function view(data){
     return form;
 }
 }
+
 ```
 
 When the Currencies are set we can then display them using GSML.  
@@ -763,18 +767,23 @@ function getDifference(balance, toSet){
 
 The code above will check if the action has been performed, and, if so, it will edit the currencies that were passed in.  
 
-*19.* Go back to the *Players* Screen, run the search, choose a result and ensure that the *player_currencies* placeholder has been populated:  
+*19.* Go back to the *Tutorial Players* Screen, run the search, choose a result and ensure that the *player_currencies* placeholder has been populated:  
 
-![](img/DynamicForms/14.png)
+![](img/DynamicForms/49.png)
 
 
-### player_virtual_goods, player_achievements, and player_details Snippets
+### The Remaining Three Snippets
 
-The remaining three Snippets behave just like the *player_currencies* Snippet, in that they all obtain their own respective Script Data that is required to be displayed for that particular player.  They then allow the editing of that data, by invoking themselves with additional variables and finally rendering the changes in the placeholders which are located within the *player_master* Master Snippet.   
+To complete our Dynamic Forms worked example, there are three remaining Snippets we require. The *player_virtual_goods*, *player_achievements*, and *player_details* Snippets behave just like the *player_currencies* Snippet:
+* They all obtain their own respective Script Data that is required to be displayed for that particular player.
+* They then allow the editing of that data, by invoking themselves with additional variables.
+* Finally, they render the changes in the placeholders which are located within the *player_master* Master Snippet.   
 
-<q>**Congratulations!** If you have successfully followed everything up to this point, you should have a firm understanding of the Dynamic Forms workflow.</q>   
+<q>**Congratulations!** If you have successfully followed everything up to this point, you should have a firm understanding of the Dynamic Forms workflow.</q>
 
-The following steps are the final portions of code to be entered for the remaining Snippets that will fill the placeholders for the *player_master* Master Snippet.  
+The following steps are the final portions of code to be entered for the remaining Snippets that will fill the placeholders for the *player_master* Master Snippet.
+
+#### The player_virtual_goods Snippet
 
 *20.* Enter the following Cloud Code into the JavaScript quadrant for the *player_virtual_goods* Snippet:
 
@@ -855,7 +864,9 @@ function setVGoods(shortCode, owned, toSet){
     }
 }
 }
+
 ```
+
 
 *21.* Enter the following GSML into the Handlebars quadrant for the *player_virtual_goods* Snippet:
 
@@ -885,7 +896,10 @@ function setVGoods(shortCode, owned, toSet){
     {{/if}}
 </gs-title-block>
 </gs-form>
+
 ```
+
+#### The player_achievements Snippet
 
 *22.* Enter the following Cloud Code into the JavaScript quadrant for the *player_achievements* Snippet:
 
@@ -958,6 +972,7 @@ function update(data){
     form.updated = true;
 }
 }
+
 ```
 
 *23.* Enter the following GSML into the Handlebars quadrant for the *player_achievements* Snippet:
@@ -1023,6 +1038,9 @@ function update(data){
 </gs-title-block>
 
 ```
+
+#### The player_details Snippet
+
 
 *24.* Enter the following Cloud Code into the JavaScript quadrant for the *player_details* Snippet:
 
@@ -1156,11 +1174,11 @@ function update(data){
 
 The complete *player_master* Master Snippet with all sub-Snippets:
 
-![](img/DynamicForms/15.png)
+![](img/DynamicForms/50.png)
 
 ## Dynamic Forms - Pop-Up Example
 
-*1.* First, we have a snippet called *popup_bttn_view* with a button where we can call this popup modal. Here we send the variable *action=view* to the *popup_example* snippet when the button is pressed:
+*1.* First, we have a Snippet called *popup_bttn_view* with a button where we can call this popup modal. Here we send the variable *action=view* to the *popup_example* Snippet when the button is pressed:
 
 ```
 
@@ -1170,19 +1188,19 @@ The complete *player_master* Master Snippet with all sub-Snippets:
 
 ```
 
-![](img/DynamicForms/16.png)
+![](img/DynamicForms/51.png)
 
-*2.* Then in the snippet called *popup_example* we use that variable to let the pop-up snippet know when to show the pop-up and when to go back to the last screen
+*2.* Then in the Snippet called *popup_example* we use that variable to let the pop-up Snippet know when to show the pop-up and when to go back to the last screen:
 
-![](img/DynamicForms/17.png)
+![](img/DynamicForms/52.png)
 
-*3.* We can follow the steps for this snippet:
+*3.* We can follow the steps for this Snippet:
 
-![](img/DynamicForms/18.png)
+![](img/DynamicForms/53.png)
 
 1. We sent *action=view* from the previous screen, so we can check this in a switch-case to see if we should view or exit the pop-up.
 2. If there is other data you want to send with the form, you can do that in the view method.
 3. In html we use handlebars to check if *exit* was sent in the form and, if not, we draw a simple title with some text and a button.
 4. The button triggers the same snippet, only this time we pass in the *action=exit* and the target is our original placeholder screen.
-5. The snippet runs again, only instead of view, we'll run the exit method which adds the exit variable to the form.
+5. The Snippet runs again, only instead of view, we'll run the exit method which adds the exit variable to the form.
 6. Now when we run the html we close the modal and bring up the last screen again.

@@ -5,7 +5,9 @@ src: /Getting Started/Going Live Checklist/README.md
 
 # Going Live Checklist
 
-When you have completed your game configuration, created a Snapshot, and you are ready to publish the Snapshot to Live, follow these steps:
+When you have completed your game configuration, created a Snapshot, and you are ready to publish the Snapshot to Live, follow the steps below.
+
+<q>**Please Let us Know about your Game Launch!** When you're approaching live launch of your game, please let us know with an advance notice email to: <a href="mailto:david.anderson@gamesparks.com;Anthony.mulhall@gamesparks.com?Subject=Going%20Live!">going live</a>. We'd like to make absolutely sure your game launch goes as smoothly as possible!</q>
 
 *1.*	Have you previously published a game Snapshot?
 * **Yes.**	Go to Step 3.
