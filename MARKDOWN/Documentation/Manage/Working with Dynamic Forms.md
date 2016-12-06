@@ -94,7 +94,7 @@ This is Dummy Data
 
 Snippets contain the logic of how your Dynamic Forms behave. Snippets should have meaningful names and Short Codes because they are accessed by their Short Code. Following the design principle where Screens should contain as little logic as possible, we'll create a custom *players_search* Snippet that will execute the same Dummy Data as the Screen we updated in the previous section.
 
-*1.* On the *Admin Screens* page, select the *Snippets* tab:
+*1.* On the *Admin Screens* page, select the *Snippets* tab.
 
 *2.* Click to *Add* a new Snippet. The *New Snippet* page appears:
 
@@ -115,7 +115,9 @@ Enter the details for the new Snippet:
 
 The *Snippet Builder* is divided into 4 quadrants:
 
-**1** - The top-left quadrant is for JavaScript or Cloud Code that provides the logic and behavior of the Dynamic Form.
+**1** - The top-left quadrant is for JavaScript or Cloud Code that provides the logic and behavior of the Dynamic Form. This quadrant is divided into two parts:
+  * **1a** - The lower main *JavaScript* section is where you enter your JavaScript/Cloud Code.
+  * **1b** - Allows you to define the input data for your script. This is useful when developing and debugging your script if it uses input data to change it's behaviour. The data set in this section is available through your script using *Spark.getData().scriptData*. See [example](#Debugging Scripts for Input Data) below.
 
 **2** - The top-right quadrant is for adding HTML/GSML or Handlebars code that renders the view.
 
@@ -123,7 +125,7 @@ The *Snippet Builder* is divided into 4 quadrants:
 
 **4** - The bottom-left quadrant represents the JSON formatted response to the JavaScript / Cloud Code provided in the quadrant above it.
 
-*2.* Edit the *Snippet* code using the same GSML that we set for the Players Screen previously. Put this in the top-right, *Handlebars* quadrant and save the changes.
+*2.* Edit the *Snippet* code using the same GSML that we set for the Tutorial Players Screen previously. Put this in the top-right, *Handlebars* quadrant and save the changes.
 
 <q>**Self-Contained Snippets!** Although there are many ways of writing the logic in Snippets, one of the more important things to consider when creating Snippets is that ideally they should be self-contained and not dependent on other Snippets. This logic will be explained in more detail later on.</q>
 
@@ -151,9 +153,21 @@ The Snippet creation workflow typically breaks down into 4 steps:
 
 However, this order may not always be the preferred sequence. For example, we might design a Screen using the Handlebars quadrant first, then realize we need to retrieve some more Script Data by then calling that information using the JavaScript quadrant. As mentioned earlier, there are many routes to creating Snippets.
 
+### Debugging Scripts for Input Data
+
+If the script you're using to drive your Screen takes input data and its behavior is dependent on the value of that data, then the Snippet Builder has very useful debugging capability for this sort of case. You can use **1b** to define different input values and the data set in this sub-section is available through your script in **1a** using *Spark.getData().scriptData*. When this is rendered through the GSML logic in **2** we can preview each input to test the resultant outcomes in **3**. Here's a simple example to illustrate this useful function.  
+
+* In the first case, we enter *value* for *key* in **1b** and see the expected outcome in **3**:
+
+![](img/DynamicForms/54.png)
+
+* In the second case, we enter *value1* for *key* in **1b** and see the expected alternative outcome in **3**:
+
+![](img/DynamicForms/55.png)
+
 ### Linking the Screen to the Snippet
 
-The next step is to remove the logic from the Screen itself, retaining only this code within the Snippet. Instead, we want to use the Players Screen to call the Snippet.
+The next step is to remove the logic from the Screen itself, retaining only this code within the Snippet. Instead, we want to use the Tutorial Players Screen to call the Snippet.
 
 *1.* Select the *Screens* tab.
 
@@ -225,7 +239,7 @@ As seen above, the Snippet contains a form that will execute the *player_search_
 
 We can see our Submit button but we also see that the Screen is not complete. This is because our Snippet is trying to execute the *user_query* Snippet, which does not yet exist.
 
-There's two import things to note at this point:
+There's two important things to note at this point:
 
 * **Modular Method** - It's important to implement Dynamic Forms this way, treating them as modular units that you can independently test before moving on and making them more complex. At this point, we know that we have a working *Tutorial Players* Screen that executes a working *players_search* Snippet, which in turn tries to execute an undefined *user_query* Snippet.  
 
@@ -529,7 +543,7 @@ The above code will display the number of records that were found, and if there 
 
 ![](img/DynamicForms/47.png)
 
-When you click the edit ![](/img/fa/edit.png) link for a found player, the yet-to-be-implemented *player_master* Snippet is excuted, passing in the *PlayerId* of that player and rendering the results from the Snippet in a wide modal form.  
+When you click the edit ![](/img/fa/edit.png) link for a found player, the yet-to-be-implemented *player_master* Snippet is executed, passing in the *PlayerId* of that player and rendering the results from the Snippet in a wide modal form.  
 
 ### The player_master Snippet
 
@@ -554,7 +568,7 @@ function view(data){
 
 ```
 
-We could pass in the userName of the player from the *player_search_results* Snippet, however it's best practice to pass in as little data as possible into the Snippet and make it self-contained. This allows re-use of the Snippet in different Dynamic Forms without requiring any changes to be made in the code.  
+We could pass in the userName of the player from the *player_search_results* Snippet. However, it's best practice to pass in as little data as possible into the Snippet and make it self-contained. This allows re-use of the Snippet in different Dynamic Forms without requiring any changes to be made in the code.  
 
 *15.* Enter the following GSML code into the Handlebars quadrant:
 

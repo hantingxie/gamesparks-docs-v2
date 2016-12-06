@@ -20,7 +20,11 @@ When you open the *NoSQL Explorer*, there are two main things to note:
 
 Each game has its own *PREVIEW stage* Mongo database. If you've taken a game Snapshot and published the game to LIVE stage, the game will also have a *LIVE stage* Mongo database:
 * The PREVIEW stage and the LIVE stage Mongo databases are *entirely distinct and separate databases*.
-* You can select the database you wish to look at from the drop-down in the top-left of the page. In the example above, only one game - *Test Game 1* - has been published to LIVE.
+* You can select the database you wish to look at using the *Stage* switch at the top-right of the page and the *Collection* panel adjust accordingly:
+
+![](img/24.png)
+
+<q>**Note** The *Stage* switch appears *only if* you have already published a Snapshot of your game to Live. The default selection is *Preview* stage.</q>
 
 ### What Database Collection Operation?
 

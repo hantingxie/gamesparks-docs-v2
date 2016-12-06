@@ -15,8 +15,8 @@ The Configurator *Analytics Overview* page contains four tabs:
 * **Overview**
   * Shows "Big Numbers" listing your game's key performance metrics.
   * Contains graphs tracking player engagement with your game.
-* **Custom** - Contains graphs for data gathered on usage of the *AnalyticsRequest* against the GameSparks platform.
 * **Performance** - Contains performance-related graphs.
+* **Custom** - Contains graphs for data gathered on usage of the *AnalyticsRequest* against the GameSparks platform.
 * **Export** - Export analytics data collections as JSON.
 
 <q>**UTC Time Zone.** All of the analytics graphs are set to Coordinated Universal Time (UTC).</q>
@@ -127,3 +127,7 @@ Analytics graphs that track more than one metric can be difficult to read:
 * You can click to *Toggle Stacked Charts* and view these multi-measure graphs in a more accessible stacked format:
 
   ![](img/Analytics/26.png)
+
+## Customizing Analytics Reporting
+
+If you have any special needs for analytics reporting, you can build custom screens for querying the NoSQL database through the [Manage](/Documentation/Manage/README.md) section of the portal. From here, you can build ad hoc queries for analysis against raw request and response data.
