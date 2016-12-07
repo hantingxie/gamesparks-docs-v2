@@ -4,18 +4,51 @@ src: /Documentation/Experiments/README.md
 ---
 
 # Experiments
+
 Experiments allow users to A/B test certain configuration changes on a selective range of Players within the game.  For example, a user could experiment with the costs of Virtual Goods for a small range of Players on the game for a specified period of time.  The costs could be increased or decreased marginally or drastically, to see how Players would respond to these changes.  This allows the user to fine-tune their configuration to make their Players more responsive to it.
 
 ## Creating Experiments
-The Experiments feature lies within the Manage section, in the form of an Admin Screen.
 
+*1.* To create an Experiment, click *Experiments* in the main navigation bar. The *Experiments* page opens:
 
-![](img/Experiments/1.png)
+![](img/Experiments/7.png)
 
-
-The Experiments Screen is the main area where all Experiments are created and managed.  It consists of Future, Running and Complete Experiments.  As they are created in the Future Experiments section and scheduled to run, they move from left to right in the flow process until they are completed.
+This is the page where you can create and manage your Experiments Screen:
+* There are three panels for the different stages of an Experiment - *Upcoming*, *Running*, and *Completed*.
+* As your Experiments are created in *Upcoming* and are scheduled to run, then start *Running*, and finally are *Completed*, they move through these three stages.
 
 ![](img/Experiments/2.png)
+
+## Adding and Configuring an Experiment
+
+*1.* On the *Upcoming Experiments* panel, click to *Add* a new Experiment. The page adjusts for the step 1 for creating a new Experiment - *Experiment Period*:
+
+![](img/Experiments/8.png)
+
+Use this first step to enter:
+* *Experiment Name* - The Name field is a mandatory field used to describe the Experiment but does not uniquely identify it.
+* *Start and End dates* - A start date and time and an end date and time to define the period the Experiment will run for.
+
+*2.* Click *Next*. You are taken to step 2 for creating an Experiment - *Variants*:
+
+![](img/Experiments/9.png)
+
+Use this second step to select whatyou want to vary for the purpose of the Experiment:
+* In this example, we've added *GOLD_COIN* and *SILVER_COIN* as experimental variants.
+
+*3.* Click *Next*. You are taken to step 3 for creating an Experiment - *Player Segments*:
+
+![](img/Experiments/10.png)
+
+<< NOT CLEAR ON THESE SETTINGS? >>
+
+*4.* Click *Next*. You are taken to step 4 for creating and Experiment - *Measurements*:
+
+![](img/Experiments/11.png)
+
+
+
+ORIG >>>>
 
 Adding a new Experiment brings up a new form:
 

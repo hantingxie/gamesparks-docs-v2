@@ -20,17 +20,17 @@ When you open the *NoSQL Explorer*, there are two main things to note:
 
 Each game has its own *PREVIEW stage* Mongo database. If you've taken a game Snapshot and published the game to LIVE stage, the game will also have a *LIVE stage* Mongo database:
 * The PREVIEW stage and the LIVE stage Mongo databases are *entirely distinct and separate databases*.
-* You can select the database you wish to look at using the *Stage* switch at the top-right of the page and the *Collection* panel adjust accordingly:
+* You can select the database you wish to look at using the *Stage* switch at the top-right of the page and the *Collections* panel adjusts accordingly:
 
 ![](img/24.png)
 
-<q>**Note** The *Stage* switch appears *only if* you have already published a Snapshot of your game to Live. The default selection is *Preview* stage.</q>
+<q>**Note** The *Stage* switch appears *only if* you have already published a Snapshot of your game to *Live*. The default selection is *Preview* stage.</q>
 
 ### What Database Collection Operation?
 
 When you select a Database Collection, the *Actions* available for use with that Collection represent the different operations you can perform against the data in the selected Mongo database. See [below](#Actions) for a detailed account of how to work with these operations.
 
-## Checking Database statistics
+## Checking Database Statistics
 
 If you want to check the database statistics for the current game's Mongo database, click the information icon on the *Collections* panel. A *Database Stats* panel opens:
 
