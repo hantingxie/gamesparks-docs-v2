@@ -109,7 +109,7 @@ Enter the details for the new Snippet:
 
 *1.* On the *Snippets* tab, click to edit our new *players_search* Snippet:
 
-![](img/DynamicForms/40.png)
+![](img/DynamicForms/56.png)
 
 The *Snippet Builder* is divided into 4 quadrants:
 
