@@ -19,35 +19,72 @@ Using Dynamic Forms you can quickly and easily build a Custom Analytics Dashboar
 
 ### New Players Chart
 
-This chart was created in the Charts tab of the management section and we used *new_players* shortCode:
-* The chart represents the new players entering the game. This is done by grabbing a successful [RegistrationRequest](/API Documentation/Request API/Authentication/RegistrationRequest.md) as well as a successful [DeviceAuthenticationRequest](/API Documentation/Request API/Authentication/DeviceAuthenticationRequest.md) that has been done by a new player (Device Authentication, as well as External Authentications act as a registration for new players).
-* We'll display the chart as a histogram, without a grouping, counting only unique player Ids, showing a tool tip, and displaying the results spread out daily.
+This chart was created in the *Charts* tab of the *Manage>Admin Screens* section and we used *new_players* Short Code:
+* The chart represents the new players entering the game. This is done by grabbing a successful [RegistrationRequest](/API Documentation/Request API/Authentication/RegistrationRequest.md) as well as a successful [DeviceAuthenticationRequest](/API Documentation/Request API/Authentication/DeviceAuthenticationRequest.md) that has been done by a new player (Device Authentication, as well as External Authentications act as a registration for new players):
 
-![](img/CustomAnalyticsDashboards/1.jpg)
+![](img/CustomAnalyticsDashboards/6.png)
 
-As seen, clicking *Test* will generate the chart preview as well as the GSML code, that can be copied and pasted into our Screen later on.
+* On the *Test Query* panel, we can define how the chart will display. We'll:
+  * *Output* - Display the chart as a histogram.
+  * *Group By* - Select for no grouping.
+  * *Calculation* - Counting only unique players.
+  * *Annotate* - Show a tool tip.
+  * *Chart Period* - Set the period to *Day*.
+
+We then click *Test* to preview the chart:
+
+![](img/CustomAnalyticsDashboards/7.png)
+
+The chart preview is generated as well as the GSML code, which you can copy and paste into a Screen using the chart later on.
 
 ### Total Players Chart
 
-Much like New Players, but here we want to keep track of daily total player logins for the game. For this we need to create a chart with shortCode *total_players*:
-* Get all different types of authentication and make sure the calculation is set to count unique players.
-* Bear in mind that you will most likely have different Authentications, again, this is per-game basis.
+Much like New Players, but here we want to keep track of daily total player logins for the game. For this we need to create a chart with a Short Code of *total_players*:
+* Configure the chart to get all different types of authentication - bear in mind that you'll most likely have different Authentications, again, this is per-game basis.
 
-![](img/CustomAnalyticsDashboards/2.jpg)
+![](img/CustomAnalyticsDashboards/8.png)
+
+* On the *Test Query* panel, we can define how the chart will display. We'll:
+  * *Output* - Display the chart as a histogram.
+  * *Group By* - Select for no grouping.
+  * *Calculation* - Counting only unique players.
+  * *Annotate* - Show a tool tip.
+  * *Chart Period* - Set the period to *Day*.
+
+We then click *Test* to preview the chart:
+
+![](img/CustomAnalyticsDashboards/9.png)
+
+The chart preview is generated as well as the GSML code, which you can copy and paste into a Screen using the chart later on.
 
 ### Errors Chart
 
 This chart will be used to display a pie chart and a data table of the error responses for some of the Requests we care about. All we do here is create a chart with *errors* shortCode:
-* Find the Responses we're interested in.
-* Filter them by the *response.error* value.  
+* Find the Responses we're interested in and filter them by the *response.error* value:
 
-The first chart will display the visual representation of the error count that has occurred:  
+![](img/CustomAnalyticsDashboards/10.png)
 
-![](img/CustomAnalyticsDashboards/3.jpg)
+* On the *Test Query* panel, we can define how the chart will display. We'll:
+  * *Output* - Display the chart as a pie chart.
+  * *Group By* - Select for grouping by type.
+  * *Calculation* - Count of Requests.
+  * *Annotate* - Show a legend.
+  * *Chart Period* - Set the period to *Day*.
 
-The second chart will display and allow viewing of the actual error responses:
+We then click *Test* to preview the chart, which will display the visual representation of the error count that has occurred:
 
-![](img/CustomAnalyticsDashboards/4.jpg)
+![](img/CustomAnalyticsDashboards/11.png)
+
+* Alternatively, on the *Test Query* panel, we can define how the chart will display. We'll:
+  * *Output* - Display the chart as a data table.
+  * *Group By* - Select for grouping by type.
+  * *Calculation* - Count of Requests.
+  * *Annotate* - Show a legend.
+  * *Chart Period* - Set the period to *Day*.
+
+We then click *Test* to preview the chart, which will display display and allow viewing of the actual error responses:
+
+![](img/CustomAnalyticsDashboards/12.png)
 
 <q>**Note:** The only difference between these two charts, is how the chart will be accessed by our GSML.</q>
 
