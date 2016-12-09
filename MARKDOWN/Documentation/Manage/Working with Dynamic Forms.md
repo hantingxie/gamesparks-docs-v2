@@ -23,9 +23,9 @@ Whenever you want to create a Dynamic Form, you should start with a Screen:
 * A Screen is powered by the structure of Snippets that you create and then link to the Screen.
 * You can have as many Screens as you want, however a Screen should have a meaningful name. In this section, we'll call the Screen we create *Tutorial Players*.
 
-*1.* To create a Screen, navigate to *Manage > Admin Screens*. The *Admin Screens* page contains two panels:
+*1.* To create a Screen, navigate to *Manage > Admin Screens*. The *Screen Builder* page appears:
 
-![](img/DynamicForms/30.png)
+![](img/DynamicForms/30A.png)
 
 * A main panel containing the *Screens*, *Snippets*, and *Charts* tabs where you can build your screens:
   * *Screens* - Create and configure Screens for your Dynamic Forms.
@@ -37,9 +37,11 @@ Whenever you want to create a Dynamic Form, you should start with a Screen:
 
 <q>**Note:** The *Screen Snapshots* you create here are separate and distinct from the *Game Snapshots* you create from the *Overview* page.</q>
 
+<q>**Import from Library?** Several pre-build Screens and their constituent Snippets are available for import from the platform usng the *Import from Library* button on the Screen Builder. For details see [Importing Screens from Library](/Documentation/Manage/Importing Screens from Library.md).</q>
+
 *2.* Select the *Screens* tab and click to *Add* a new Screen. The *New Screen* page opens:
 
-![](img/DynamicForms/31.png)
+![](img/DynamicForms/31A.png)
 
 Enter the details for the new Screen:
 * *Short Code* - Mandatory field used to uniquely identify the Screen.
@@ -59,9 +61,9 @@ Enter the details for the new Screen:
 
 Here we'll open the default *Tutorial Players* screen and put in some dummy GSML code and test that the output is rendered as expected.
 
-*1.* On the *Screens* tab, click the to edit the *Tutorial Players* screen:
+*1.* On the *Screen Builder* page, select the *Screens* tab and click to edit the *Tutorial Players* screen:
 
-![](img/DynamicForms/33.png)
+![](img/DynamicForms/33A.png)
 
 <q>**Hotlink to Edit!** You can also click the Screen Short Code orange hotlink text to edit the Screen.</q>
 
@@ -94,7 +96,7 @@ Snippets contain the logic of how your Dynamic Forms behave. Snippets should hav
 
 *1.* On the *Admin Screens* page, select the *Snippets* tab.
 
-*2.* Click to *Add* a new Snippet. The *New Snippet* page appears:
+*2.* Click to *Add* a new Snippet. The *Add Snippet* page appears:
 
 ![](img/DynamicForms/39.png)
 

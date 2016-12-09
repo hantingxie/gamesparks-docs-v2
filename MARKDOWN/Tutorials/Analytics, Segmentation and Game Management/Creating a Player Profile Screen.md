@@ -7,11 +7,11 @@ src: /Tutorials/Analytics, Segmentation and Game Management/Creating a Player Pr
 
 ## Introduction
 
-Gamespark's platform comes complete with many conveniences for developers. One of these conveniences is pre-made management screens for leaderboards and player records. The screens are user friendly, customizable and visual ways of searching, accessing and editing records.
+The Gamesparks platform comes complete with many conveniences for developers. One of these is pre-made management Screens for Leaderboards and Player records. The Screens are user friendly, customizable, and offer very useful ways of visually searching for, accessing, and editing records.
 
-Screens are made to be easy to use without the need for code, knowing how to code, or knowing how to access and edit the NoSQL database, all of which make them an excellent tool for non-dev members of the team, such as customer service.
+Screens are made to be easy to use without the need for code, knowing how to code, or knowing how to access and edit the NoSQL database and makes them an excellent tool for non-dev members of your team, such as customer service.
 
-This tutorial will offer a brief introduction and highlight the aspects of the player profile management screen.
+This tutorial offers a brief introduction to using these Screens and highlights the main features you'll find on the Player Management screen.
 
 ## Searching for players
 

@@ -24,7 +24,7 @@ This chart was created in the *Charts* tab of the *Manage>Admin Screens* section
 
 ![](img/CustomAnalyticsDashboards/6.png)
 
-* On the *Test Query* panel, we can define how the chart will display. We'll:
+* On the *Test Query* panel, we can define how the chart will display:
   * *Output* - Display the chart as a histogram.
   * *Group By* - Select for no grouping.
   * *Calculation* - Counting only unique players.
@@ -44,7 +44,7 @@ Much like New Players, but here we want to keep track of daily total player logi
 
 ![](img/CustomAnalyticsDashboards/8.png)
 
-* On the *Test Query* panel, we can define how the chart will display. We'll:
+* On the *Test Query* panel, we can define how the chart will display:
   * *Output* - Display the chart as a histogram.
   * *Group By* - Select for no grouping.
   * *Calculation* - Counting only unique players.
@@ -64,8 +64,8 @@ This chart will be used to display a pie chart and a data table of the error res
 
 ![](img/CustomAnalyticsDashboards/10.png)
 
-* On the *Test Query* panel, we can define how the chart will display. We'll:
-  * *Output* - Display the chart as a pie chart.
+* On the *Test Query* panel, we can define how the chart will display as a Pie Chart:
+  * *Output* - Display the chart as a Pie Chart.
   * *Group By* - Select for grouping by type.
   * *Calculation* - Count of Requests.
   * *Annotate* - Show a legend.
@@ -75,18 +75,17 @@ We then click *Test* to preview the chart, which will display the visual represe
 
 ![](img/CustomAnalyticsDashboards/11.png)
 
-* Alternatively, on the *Test Query* panel, we can define how the chart will display. We'll:
-  * *Output* - Display the chart as a data table.
-  * *Group By* - Select for grouping by type.
-  * *Calculation* - Count of Requests.
-  * *Annotate* - Show a legend.
-  * *Chart Period* - Set the period to *Day*.
+* Alternatively, on the *Test Query* panel, we can select to display a Data Table:
+  * *Output* - Display the chart as a Data Table.
+  * *Page Size* - Select for 5 results per page.
+
+Note that the other display settings for this type of chart are diabled.
 
 We then click *Test* to preview the chart, which will display display and allow viewing of the actual error responses:
 
 ![](img/CustomAnalyticsDashboards/12.png)
 
-<q>**Note:** The only difference between these two charts, is how the chart will be accessed by our GSML.</q>
+<q>**Note:** The only difference between these two charts is in how the chart will be accessed by our GSML.</q>
 
 ### Analytics Screen
 
@@ -121,7 +120,7 @@ The GSML in the *Analytics* Screen:
             </gs-col>
             <gs-col width="6">
                 <gs-title-block title="Errors Table" padding="5" margin="0" height="360">
-                    <gs-chart chartType='data' pageSize='10' query='errors'></gs-chart>
+                    <gs-chart chartType='data' pageSize='5' query='errors'></gs-chart>
                 </gs-title-block>
             </gs-col>
         </gs-row>
