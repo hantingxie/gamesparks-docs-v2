@@ -17,30 +17,30 @@ This tutorial offers a brief introduction to using these Screens and highlights 
 
 Once you navigate to the Players tab in the Manage section of the platform you'll be greeted with a *Player Search* query builder, which you can use to build queries to search for specific players or a group of players that fit a certain query. You can add rules with the combination of *AND* and *OR* operators as well as include a whole new group of rules.
 
-![](img/PlayerProfileScreen/1.jpg)
+![](img/PlayerProfileScreen/10.png)
 
 
-|  ![](img/PlayerProfileScreen/2.png)  | ![](img/PlayerProfileScreen/3.png)    |
+|  ![](img/PlayerProfileScreen/11.png)  | ![](img/PlayerProfileScreen/12.png)    |
 |---|---|
 
 * You can query everything that is linked to your players, this can be custom values such as Segments, Achievements, Virtual Goods, or pre-defined data items, such as *usernames*, *display names*, *country*, *last seen*, and so on.
 
 * You can also remove the queries using the *Delete* button and hit the *Submit* button to retrieve every single player record in your player collection.
 
-|  ![](img/PlayerProfileScreen/4.png)  | ![](img/PlayerProfileScreen/5.png)    |
+|  ![](img/PlayerProfileScreen/13.png)  | ![](img/PlayerProfileScreen/14.png)    |
 |---|---|
 
 For this example we'll query players with 'Gold Coin' virtual good greater than 0 in quantity and have earned the 'Cloud' Achievement.
 
-![](img/PlayerProfileScreen/6.jpg)
+![](img/PlayerProfileScreen/15.png)
 
-Once we hit 'submit' this will pull three records that match from our collection. We'll go ahead and click the edit ![](/img/fa/edit.png) icon to access the player profile screen.
+Once we hit *Submit* this will pull two records that match from our collection. We'll go ahead and click the edit ![](/img/fa/edit.png) icon to access the player profile screen.
 
 
 
 ## Player Profile Screen
 
-![](img/PlayerProfileScreen/8.png)
+![](img/PlayerProfileScreen/16.png)
 
 The default player profile screen has 7 sections. Those are:
 
