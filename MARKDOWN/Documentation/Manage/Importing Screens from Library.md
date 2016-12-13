@@ -17,7 +17,7 @@ These Screens have been built with ease of use and convenience very much in mind
 
 This topic shows you how to download any of the pre-configured Screens and introduces you to the functionality each Screen offers.
 
-<q>**Player Profile Screen!** For a detailed account of importing and building a Player Profile Screen, check out this tutorial.</q>
+<q>**Player Profile Screen!** For a detailed account of importing and building a Player Profile Screen, check out this [tutorial](/Tutorials/Analytics, Segmentation and Game Management/Creating a Player Profile Screen.md).</q>
 
 ## Importing a Pre-Built Screen
 
@@ -61,7 +61,7 @@ When you have imported a Screen from the library, you'll see it available for se
 
 ![](img/ImportScreens/6.png)
 
-Imported library Screens and their supportive Snippets and Charts are designed for common game management and monitoring tasks and this section introduces each of the screens. You can also modify and extend imported Screens, Snippets, and Charts to suit your own specific requirements - see [Working with Dynamic Forms](/Documentation/Manage/Working with Dynamic Forms.md).
+Imported library Screens and their supportive Snippets and Charts are designed for common game management and monitoring tasks and this section introduces each of the Screens. You can also modify and extend imported Screens, Snippets, and Charts to suit your own specific requirements - see [Working with Dynamic Forms](/Documentation/Manage/Working with Dynamic Forms.md).
 
 ### Player Management
 
@@ -113,7 +113,7 @@ You can use the *Script Log Viewer* Screen to search for and review the logs for
 
 * You can click to *Edit logging level*.
 
-In this example, our query searches for log entries at the *Debug* level against the *ChallengeStartedMessage* script.
+In this example, we've built a query that searches for log entries at the *Debug* level against the *ChallengeStartedMessage* script.
 
 *2.* Click *Submit*. The log entries for your game that satisfy the search query criteria are returned:
 

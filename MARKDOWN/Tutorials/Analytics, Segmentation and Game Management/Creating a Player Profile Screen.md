@@ -7,15 +7,21 @@ src: /Tutorials/Analytics, Segmentation and Game Management/Creating a Player Pr
 
 ## Introduction
 
-The Gamesparks platform comes complete with many conveniences for developers. One of these is pre-made management Screens for Leaderboards and Player records. The Screens are user friendly, customizable, and offer very useful ways of visually searching for, accessing, and editing records.
+The Gamesparks platform comes complete with many conveniences for developers. One of these is pre-built management Screens for Leaderboards and Player records. The Screens are user friendly, customizable, and offer very useful ways of visually searching for, accessing, and editing records.
 
-Screens are made to be easy to use without the need for code, knowing how to code, or knowing how to access and edit the NoSQL database and makes them an excellent tool for non-dev members of your team, such as customer service.
+These Screens are easy to use making them very suited to non-technical members of your team, such as Customer Service:
+* No coding skills required.
+* No knowledge of how to access the NoSQL database and edit records.
 
 This tutorial offers a brief introduction to using these Screens and highlights the main features you'll find on the Player Management screen.
 
-## Searching for players
+<q>**Importing Pre-Built Screens!** Before commencing this tutorial, you must import the *Player Management* Screen from the library. For details on how to import any of the pre-built Screens, see [Importing Screens from Library](/Documentation/Manage/Importing Screens from Library.md).
 
-Once you navigate to the Players tab in the Manage section of the platform you'll be greeted with a *Player Search* query builder, which you can use to build queries to search for specific players or a group of players that fit a certain query. You can add rules with the combination of *AND* and *OR* operators as well as include a whole new group of rules.
+## Searching for Players
+
+When you open the *Player Management* Screen from the *Manage* menu, you'll see a *Player Search* query builder:
+* Build queries to search for specific players or a group of players.
+* Add rules with the combination of *AND* and *OR* operators as well as include a whole new group of rules.
 
 ![](img/PlayerProfileScreen/10.png)
 
@@ -25,29 +31,27 @@ Once you navigate to the Players tab in the Manage section of the platform you'l
 
 * You can query everything that is linked to your players, this can be custom values such as Segments, Achievements, Virtual Goods, or pre-defined data items, such as *usernames*, *display names*, *country*, *last seen*, and so on.
 
-* You can also remove the queries using the *Delete* button and hit the *Submit* button to retrieve every single player record in your player collection.
-
 |  ![](img/PlayerProfileScreen/13.png)  | ![](img/PlayerProfileScreen/14.png)    |
 |---|---|
 
-For this example we'll query players with 'Gold Coin' virtual good greater than 0 in quantity and have earned the 'Cloud' Achievement.
+* You can also remove the queries using the *Delete* button and click *Submit* to retrieve every single player record in your player collection.
+
+For this example, we'll query players with *Gold Coin* Virtual Goods greater than 0 in quantity and who have earned the *Cloud Achievement*:
 
 ![](img/PlayerProfileScreen/15.png)
 
-Once we hit *Submit* this will pull two records that match from our collection. We'll go ahead and click the edit ![](/img/fa/edit.png) icon to access the player profile screen.
-
-
+When we click *Submit*, this returns two records that match from our collection. We'll go ahead and click the edit ![](/img/fa/edit.png) icon to access the player profile screen.
 
 ## Player Profile Screen
 
 ![](img/PlayerProfileScreen/16.png)
 
-The default player profile screen has 7 sections. Those are:
+The default player profile screen has 7 sections, where you can review and edit a player's details:
 
-1. *Player Details* - where the ID, Username, Displayname and the toggle between hidden on leaderboards are,
-2. *Achievements* - where the achievements are accessed and edited.
-3. *Virtual Goods* - Which and and quantity of owned virtual goods.
-4. *Currencies* - where currency quantity and the ability to edit them are.
-5. *Total Requests* - How many and what type of requests were called throughout the timeline. When hovered shows the type of requests made.
-6. *Total Requests* - A chart version of the total requests section but shows percentage of request calls in comparision to each other instead of how many on a timeline.
-7. *The Request Log* - Where requests and responses can be reviewed. You can click the inspect ![](/img/fa/search.png) icon to review individual requests from the history.
+1. *Player Details* - *ID*, *Username*, *Displayname* and a toggle for *Hidden On Leaderboards*.
+2. *Achievements* - *Earned* and *Unearned* Achievements.
+3. *Virtual Goods* - Virtual Goods owned.
+4. *Currencies* - Currencies and amounts.
+5. *Total Requests* - Histogram for number and type of requests made throughout the timeline - tool tip shows each request type and number.
+6. *Total Requests* - Pie-chart for number and type of requests made throughout the timeline - shows each request type as percentage of total number of requests.
+7. *Request Log* - Review requests history - click the inspect ![](/img/fa/search.png) icon to review individual requests from the history.

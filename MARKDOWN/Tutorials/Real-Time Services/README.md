@@ -41,4 +41,6 @@ Our real-time services provide a network communication layer which has the abili
 
 * [Clock Synchronization and Network Programming](/Tutorials/Real-Time Services/Clock Synchronization and Network Programming.md) - This tutorial explores further key concepts in multiplayer network programming, such as clock-synchronization and packet analytics.
 
+* [Calling Log Event Requests in RT Scripts](/Tutorials/Real-Time Services/Calling Log Event Requests in RT Scripts.md) - This tutorial explains how to call Log Event Requests in your Real-Time scripts.
+
 * [Unreal Real-Time Guide](/Tutorials/Real-Time Services/Unreal Real-Time Guide.md) - This tutorial is written for game developers working in Unreal and explains how to get the most out of GameSparks Real-Time services.

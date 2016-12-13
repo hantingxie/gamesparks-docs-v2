@@ -10,7 +10,7 @@ This tutorial explains how to set up a basic customer feedback interface that wi
 You'll create:
 * A feedback collection where entries will be saved.
 * An Event which users will use to post their feedback.
-* A screen to help you search and view feedback entries.
+* A Screen to help you search and view feedback entries.
 
 ## Creating a Runtime Collection
 
@@ -41,11 +41,11 @@ feedbackCollection.insert({"message":Spark.getData().message,
 
 ## The Screens 1 - Snippets
 
-Now we need to design the parts of the screen that will display the feedback to us. So far we have the collection that will save the submissions and the Event which allows our users to submit their feedback.
+Now we need to design the parts of the Screen that will display the feedback to us. So far we have the collection that will save the submissions and the Event which allows our users to submit their feedback.
 
-In this section, we'll set up four snippets for our feedback screen.
+In this section, we'll set up four Snippets for our feedback Screen.
 
-<q>**More Information?** For more details on how to work with screens and snippets see [Dynamic Forms](/Documentation/Manage/Working with Dynamic Forms.md).</q>
+<q>**More Information?** For more details on how to work with Screens and Snippets see [Dynamic Forms](/Documentation/Manage/Working with Dynamic Forms.md).</q>
 
 ### Building the Feedback Query
 
@@ -77,7 +77,7 @@ Handlebars:
 
 ### Displaying the Feedback Results
 
-The results screen will display the feedback we wish to display. The message, level, star rating, and player will be available to see. The results screen will also have a button which expands the message into a pop-up screen.
+The results Screen will display the feedback we wish to display. The message, level, star rating, and player will be available to see. The results Screen will also have a button which expands the message into a pop-up screen.
 
 Javascript:
 
@@ -138,7 +138,7 @@ Handlebars:
 
 ### Creating a Feedback Search
 
-This will combine our query and results snippets together in one screen.
+This will combine our query and results Snippets together in one Screen.
 
 Handlebars:
 
@@ -155,7 +155,7 @@ Handlebars:
 
 ### Displaying the Feedback Message
 
-Our final snippet will be a pop-up that displays the feedback on its own.
+Our final Snippet will be a pop-up that displays the feedback on its own.
 
 Javascript:
 
@@ -188,16 +188,16 @@ Handlebars:
 
 ```
 </br>
-So to recap, we have 4 snippets.
+So to recap, we have 4 Snippets.
 
-1. Query snippet.
-2. Results snippet.
-3. Search snippet, which is a combination of 1 and 2.
-4. Message snippet.
+1. Query Snippet.
+2. Results Snippet.
+3. Search Snippet, which is a combination of 1 and 2.
+4. Message Snippet.
 
 ## The Screens 2 - Screen
 
-The screen will house our snippets to allow us to view the feedback. Create a screen and add the following code:
+The Screen will house our Snippets to allow us to view the feedback. Create a Screen and add the following code:
 
 ```
 
@@ -218,4 +218,4 @@ The screen will house our snippets to allow us to view the feedback. Create a sc
 Your feedback feature is now ready to use:
 * Authenticate and use the feedback event to post a mock feedback.
 * Check your collection using NoSQL to see if the submission was successful.
-* If the submission is successful, check your screen in the manage section to see if the dynamic forms were created successfully.
+* If the submission is successful, check your Screen in the Manage section to see if the dynamic forms were created successfully.
