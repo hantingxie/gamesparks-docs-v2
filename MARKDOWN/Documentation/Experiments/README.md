@@ -19,7 +19,7 @@ This is the page where you can create and manage your Experiments Screen:
 
 ## Adding and Configuring an Experiment
 
-When you click to *Add* an upcoming experiment, you are taken through a series of four steps to build the experiment's configuration:
+When you click to *Add* an Upcoming Experiment, you're taken through a series of four steps to build the Experiment's configuration:
 
 *1.* On the *Upcoming Experiments* panel, click to *Add* a new Experiment. The page adjusts step 1 - *Experiment Period*:
 
@@ -37,7 +37,7 @@ Use this second step to select what you want to vary for the purpose of the Expe
 * In this example, we've added *GOLD_COIN* and *SILVER_COIN* Virtual Goods as experimental variants.
 * For both, we've selected the *Currency 1* and *Currency 2* fields.
 
-*3.* Click *Next*. You are taken to step 3 - *Player Segments*:
+*3.* Click *Next*. You are taken to step 3 - *Player Pool & Variant Config*:
 
 ![](img/Experiments/10.png)
 
@@ -51,47 +51,34 @@ You can use this step to configure several aspects of the Experiment:
     * In this example, we've added two percentile ranges.
   * Give the *Variants* a name, which will be visible only to those players to which the Experiment is applied.
   * Set the alternative values for the Variant fields we selected for each of the Variants we added to the Experiment in step 2.
-    * In this example, we increase both the Gold and Silver coin values for Currencies 1 and 2.
+    * In this example:
+      * For the *50-60* percentile range of the player pool we've *decreased* both the Gold and Silver coin values for Currencies 1 and 2 (as seen above).
+      * For the *5-15* percentile range of the player pool, we've *increased* both the Gold and Silver coin values for Currencies 1 and 2:
 
-These combined settings are designed to ensure that when your Experiment is run, the set of players to which the Experiment is applied is a randomly chosen set. Any behavioral changes observed in the players subjected to the Experiment with respect to the Variants - here Virtual Goods whose currency values have been increased - are therefore less likely to be biased and unrepresentative. This means, in turn, that any decisions you make for *actual changes* you go on to make to your game configuration and which are based on experimental outcomes are much more likely to be predictive of the general behavior of your full game player pool in reaction to these actual changes.
+![](img/Experiments/10A.png)
+
+These combined settings are designed to ensure that when your Experiment is run, the set of players to which the Experiment is applied is a randomly chosen set. Any behavioral changes observed in the players subjected to the Experiment with respect to the Variants - here Virtual Goods whose currency values have been increased or decreased - are therefore less likely to be biased and unrepresentative. This means, in turn, that any decisions you make for *actual changes* you go on to make to your game configuration and which are based on experimental outcomes are much more likely to be predictive of the general behavior of your full game player pool in reaction to these actual changes.
+
+<q>**Note:** We make a best effort to calculate the percentage ranges, however for smaller sample sets of players you might not be returned the exact number of players as anticipated.</q>
 
 *4.* Click *Next*. You are taken to step 4 - *Measurements*:
 
 ![](img/Experiments/11.png)
 
+In this example, we want to measure the number of *BuyVirtualGoodsRequest* calls made by the players chosen for the Experiment during the period of the Experiment.
 
+*5.* Click to *Save* the Experiment. The new Experiment is added to the *Upcoming Experiments* panel.
 
-ORIG >>>>
+![](img/Experiments/12.png)
 
-Adding a new Experiment brings up a new form:
+This shows the *Start* and *End* date you have configured for the Experiment and under *Actions* there are several options:
+* ![](/img/icons/starticon.png) - Manually start the Experiment.
+* ![](/img/icons/editicon.png) - Edit the Experiment:
+  * You can step through the 4 configuration steps and save your changes at each step.
+  * You cannot edit an Experiment after it has started.
+* ![](/img/icons/copyicon.png) - Copy the Experiment.
+* ![](/img/icons/publishicon.png) - Publish the Experiment.
 
-![](img/Experiments/3.png)
-
-The form is very detailed, but divided into sections – Configuration, Player Base, Variant Configuration and Measurements.
-
-## Experiment Configuration
-
-*Name* - The Name field is a mandatory field used to describe the Experiment but does not uniquely identify it.
-
-*Start Date* – Start date and time for the Experiment to start.
-
-*End Date* - Time and date for the Experiment to end.
-
-*Percentage Hash* - This field is optional. If you supply it, the value is used as part of the hashing calculation when we determine which percentile each Player is randomly provided. The longer and more unique the value is, the higher likelihood that the randomisation of the Player and the percentile is.  For example, If you want to run two Experiments and be sure that the same Player for both the 1st and 2nd experiment has the same percentile, you should set this hash value to be the same on each experiment
-
-<q>**Note:** We make a best effort to calculate the percentage ranges, however for smaller sample sets of players, you may not be returned the exact number of Players as anticipated.</q>
-
-## Player Base Configuration
-
-*User Query* - The search criteria required for Player results.
-
-## Variant Configuration
-
-*Name* - A description of the variant.
-
-*From/To %* - The percentile range of the Player results, from which the Experiment participants will be chosen.  For example, of the Players returned in the User Query results, those  assigned the 0 to 50 percentiles, are part of this variant of the Experiment.  Other variants could be created for 51 to 75 and 76 to 100, to maximize coverage of the Player results across all the variants of the Experiment.
-
-*Variant Data* – Here, you can select the configuration that will be part of the Experiment.  You can give it a discernible name that will be visible only to those who are part of the Experiment, as well as the differing configuration values.
 
 ## Measurements
 
@@ -99,9 +86,11 @@ The form is very detailed, but divided into sections – Configuration, Player B
 
 
 ## Starting / Stopping Experiments
+
 Experiments will either start at their scheduled time or can be started immediately using the Play button.  Similarly, they can also be stopped using the Stop button. NOTE:  Once Experiments have been created or have passed their Start Date, they cannot be edited.  They can, however, be modified up until that Start Date. All stopped or expired Experiments will move to the Complete section.
 
-## Viewing the Results
+## Viewing Experiment Results
+
 Once your Experiment has completed, you can check the results of your Experiment and the impact it has had on the pool of Players who were affected by this Experiment:
 
 ![](img/Experiments/4.png)
