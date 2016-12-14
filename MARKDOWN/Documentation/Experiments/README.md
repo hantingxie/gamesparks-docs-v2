@@ -5,7 +5,7 @@ src: /Documentation/Experiments/README.md
 
 # Experiments
 
-Experiments allow users to A/B test certain configuration changes on a selective range of Players within the game.  For example, a user could experiment with the costs of Virtual Goods for a small range of Players on the game for a specified period of time.  The costs could be increased or decreased marginally or drastically, to see how Players would respond to these changes.  This allows the user to fine-tune their configuration to make their Players more responsive to it.
+You can create *Experiments* to A/B test certain configuration changes on a selective range of Players within your game. For example, you could experiment with the costs of Virtual Goods for a small range of Players on your game for a specified period of time. You might increase or decrease the costs of some Virtual Goods to see how Players would respond to these different degrees of cost change. By reviewing the outcome of such experimental adjustments in Virtual Goods costs, you will be very well-placed to fine-tune your game configuration to make Players more responsive to and more engaged with your game.
 
 ## Creating Experiments
 
@@ -17,11 +17,11 @@ This is the page where you can create and manage your Experiments Screen:
 * There are three panels for the different stages of an Experiment - *Upcoming*, *Running*, and *Completed*.
 * As your Experiments are created in *Upcoming* and are scheduled to run, then start *Running*, and finally are *Completed*, they move through these three stages.
 
-![](img/Experiments/2.png)
-
 ## Adding and Configuring an Experiment
 
-*1.* On the *Upcoming Experiments* panel, click to *Add* a new Experiment. The page adjusts for the step 1 for creating a new Experiment - *Experiment Period*:
+When you click to *Add* an upcoming experiment, you are taken through a series of four steps to build the experiment's configuration:
+
+*1.* On the *Upcoming Experiments* panel, click to *Add* a new Experiment. The page adjusts step 1 - *Experiment Period*:
 
 ![](img/Experiments/8.png)
 
@@ -29,20 +29,33 @@ Use this first step to enter:
 * *Experiment Name* - The Name field is a mandatory field used to describe the Experiment but does not uniquely identify it.
 * *Start and End dates* - A start date and time and an end date and time to define the period the Experiment will run for.
 
-*2.* Click *Next*. You are taken to step 2 for creating an Experiment - *Variants*:
+*2.* Click *Next*. You are taken to step 2 - *Variants*:
 
 ![](img/Experiments/9.png)
 
-Use this second step to select whatyou want to vary for the purpose of the Experiment:
-* In this example, we've added *GOLD_COIN* and *SILVER_COIN* as experimental variants.
+Use this second step to select what you want to vary for the purpose of the Experiment:
+* In this example, we've added *GOLD_COIN* and *SILVER_COIN* Virtual Goods as experimental variants.
+* For both, we've selected the *Currency 1* and *Currency 2* fields.
 
-*3.* Click *Next*. You are taken to step 3 for creating an Experiment - *Player Segments*:
+*3.* Click *Next*. You are taken to step 3 - *Player Segments*:
 
 ![](img/Experiments/10.png)
 
-<< NOT CLEAR ON THESE SETTINGS? >>
+You can use this step to configure several aspects of the Experiment:
+* *Player Segments* - Build a filter rule that will determine which players will form the overall group from which the set of players subjected to the Experiment are chosen:
+  * In this example, players from Australia or the United Kingdom will form the overall group of players for the Experiment.
+* *Seed* - This field is optional. You can use it to tighten the degree of randomization of choice of players to which the experimental variants will be applied:
+  * If you supply it, the value is used as part of the hashing calculation when we determine to which percentile each player is randomly assigned. The longer and more unique the value is, the higher the likelihood that the randomization of the Player and the percentile is. For example, If you want to run two Experiments and be sure that the same Player for both the 1st and 2nd Experiment has the same percentile, you should set this Seed hash value to be the same on each Experiment.
+* *Variants* - There are several parts to this section:
+  * Add percentile ranges from which the player participants for the Experiment will be chosen. A hashing calculation is applied to the overall group of players to distribute them randomly. The Experiment will then be applied only to those players that are placed in any of the percentile ranges you add here for the Experiment.
+    * In this example, we've added two percentile ranges.
+  * Give the *Variants* a name, which will be visible only to those players to which the Experiment is applied.
+  * Set the alternative values for the Variant fields we selected for each of the Variants we added to the Experiment in step 2.
+    * In this example, we increase both the Gold and Silver coin values for Currencies 1 and 2.
 
-*4.* Click *Next*. You are taken to step 4 for creating and Experiment - *Measurements*:
+These combined settings are designed to ensure that when your Experiment is run, the set of players to which the Experiment is applied is a randomly chosen set. Any behavioral changes observed in the players subjected to the Experiment with respect to the Variants - here Virtual Goods whose currency values have been increased - are therefore less likely to be biased and unrepresentative. This means, in turn, that any decisions you make for *actual changes* you go on to make to your game configuration and which are based on experimental outcomes are much more likely to be predictive of the general behavior of your full game player pool in reaction to these actual changes.
+
+*4.* Click *Next*. You are taken to step 4 - *Measurements*:
 
 ![](img/Experiments/11.png)
 
