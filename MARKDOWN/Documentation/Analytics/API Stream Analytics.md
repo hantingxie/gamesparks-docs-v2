@@ -18,7 +18,7 @@ In this topic, we'll work through an example of building an API Stream query and
 
 * Range and scope of data?
 * Clarify just what data can be queried - is it only requests calls?
-* Data purge?
+* Data purge - frequency?
 
 <<<<<<<<<<<<<<<<<<<<
 
