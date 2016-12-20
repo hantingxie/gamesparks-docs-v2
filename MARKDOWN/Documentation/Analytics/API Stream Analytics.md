@@ -8,19 +8,13 @@ src: /Documentation/Analytics/API Stream Analytics.md
 You can use the *API Stream* Analytics page to build custom queries against the API calls that have been made into the platform:
 * A *Query Builder* gives you virtually limitless scope to quickly add and refine query rules to obtain the specific data you want to review and analyze.
 * The data returned for your query is displayed in three chart formats: a histogram, pie-chart, and data table, where each format gives you further tools for analyzing the data.
-* You can use settings to control how your query data is organised within these charts.
+* You can use control how your query data are organised within these charts.
+
+There are some constraints for this Analytics tool:
+* You can only query against requests and messages.
+* Data purge frequency.
 
 In this topic, we'll work through an example of building an API Stream query and reviewing and analyzing the data returned.
-
-<<<<<<<<<<<<<<<<<<<<<
-
-## Any Constraints?
-
-* Range and scope of data?
-* Clarify just what data can be queried - is it only requests calls?
-* Data purge - frequency?
-
-<<<<<<<<<<<<<<<<<<<<
 
 ## Example - Connection Requests Analytics
 
@@ -36,7 +30,7 @@ In this example, we pull API Stream analytics for connection request calls into 
 * For displaying the returned data, we've selected to group by *Type*, calculate for *Count of Request*, and use a daily period for charts.
 
 
-*3.* Click *Update*. The current API Stream data is queried and the data is returned and displayed:
+*3.* Click *Update*. The current API Stream data is queried and the data are returned and displayed:
 
 ![](img/APIStream/2.png)
 

@@ -131,6 +131,6 @@ The GSML in the *Analytics* Screen:
 
 The final view:
 
-![](img/CustomAnalyticsDashboards/5.jpg)
+![](img/CustomAnalyticsDashboards/14.png)
 
 <q>**Note:** All data shown within these forms is time-limited.  Player request data isn't kept forever and it's very likely that when a player has been inactive for a certain amount of time, the above form can appear empty.</q>

@@ -27,7 +27,7 @@ To create and configure an Upcoming Experiment, you must work through a series o
 
 Use this first step to enter:
 * *Experiment Name* - The Name field is a mandatory field used to describe the Experiment but does not uniquely identify it.
-* *Start and End dates* - A start date and time and an end date and time to define the period the Experiment will run for.
+* *Start and End dates* - A start date and time and an end date and time to define the period of the Experiment.
 
 *2.* Click *Next*. You're taken to step 2 - *Variants*:
 
