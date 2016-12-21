@@ -8,7 +8,7 @@ src: /Documentation/Analytics/API Stream Analytics.md
 You can use the *API Stream* Analytics page to build custom queries against the API calls that have been made into the platform:
 * A *Query Builder* gives you virtually limitless scope to quickly add and refine query rules to obtain the specific data you want to review and analyze.
 * The data returned for your query is displayed in three chart formats: a histogram, pie-chart, and data table, where each format gives you further tools for analyzing the data.
-* You can use control how your query data are organised within these charts.
+* You can control how your query data are organized within these charts.
 
 There are some constraints for this Analytics tool:
 * You can only query against requests and messages.
@@ -47,6 +47,6 @@ In this example, we pull API Stream analytics for connection request calls into 
 
 ![](img/APIStream/5.png)
 
-* A *LogEntryDetails* panel appears, which shows the individual *Request* and *Response* details:
+* A *Log Entry Details* panel appears, which shows the individual *Request* and *Response* details:
 
 ![](img/APIStream/6.png)

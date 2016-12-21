@@ -59,7 +59,7 @@ The chart preview is generated as well as the GSML code, which you can copy and 
 
 ### Errors Chart
 
-This chart will be used to display a pie chart and a data table of the error responses for some of the Requests we care about. All we do here is create a chart with *errors* shortCode:
+This chart will be used to display a pie chart and a data table of the error responses for some of the Requests we care about. All we do here is create a chart with *errors* Short Code:
 * Find the Responses we're interested in and filter them by the *response.error* value:
 
 ![](img/CustomAnalyticsDashboards/10.png)
@@ -79,9 +79,9 @@ We then click *Test* to preview the chart, which will display the visual represe
   * *Output* - Display the chart as a Data Table.
   * *Page Size* - Select for 5 results per page.
 
-Note that the other display settings for this type of chart are diabled.
+Note that the other display settings for this type of chart are disabled.
 
-We then click *Test* to preview the chart, which will display display and allow viewing of the actual error responses:
+We then click *Test* to preview the chart, which will display and allow viewing of the actual error responses:
 
 ![](img/CustomAnalyticsDashboards/12.png)
 
