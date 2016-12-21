@@ -7,6 +7,8 @@ src: /Documentation/Key Concepts/Snapshots.md
 
 The Snapshots feature allows you to *Create*, *Copy*, *Delete*, *Publish*, *Revert* and *Preview* the configuration of your Game, allowing for in-depth management of each stage of the release.
 
+<q>**Game Snapshots vs. Screen Snapshots!** Game Snapshots *do not contain* any of the Manage section configuration you've built up for your Admin Screens. You can create separate *Screen Snapshots* for the Manage configuration and publish these to the Live environment independently of your game Snapshots. For details, see [Creating and Managing Screen Snapshots](/Documentation/Manage/Creating and Managing Screen Snapshots.md).
+
 ## Snapshots: Creation and Basics
 
 You can create a Snapshot of the current game configuration by clicking *Create* in the *Snapshots* section on the *Game Overview* page.

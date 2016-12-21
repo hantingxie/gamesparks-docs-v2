@@ -49,23 +49,22 @@ You can use this step to configure several aspects of the Experiment:
 
 * *Seed* - This field is optional. You can use it to tighten the degree of randomization of choice of players to which the experimental variants will be applied:
   * If you supply it, the value is used as part of the hashing calculation when we determine to which percentile each player is randomly assigned. The longer and more unique the value is, the higher the likelihood that the randomization of the Player and the percentile is. For example, If you want to run two Experiments and be sure that the same Player for both the 1st and 2nd Experiment has the same percentile, you should set this Seed hash value to be the same on each Experiment.
-* *Variants Configuration* - There are several parts to this section:
-  * Add percentile ranges:
+* *Variants Configuration* - There are two parts to this section:
+  * First, add percentile ranges:
     * Click in the percentile bar to add percentile ranges for your experimental Variants.
     * A hashing calculation is applied to the overall player pool to distribute them randomly. The Experiment will then be applied only to those players that are placed in any of the percentile ranges you've added here for the experimental Variants.
     * In this example, we've added two percentile ranges for experimental Variants.
     * If you wanted to conduct A/B testing, you can add two percentile ranges - 0 to 50% and 50 to 100%.
-
-<q>**Browser Zoom!** Please maintain your browser at normal zoom level when you are adding your percentile ranges.</q>
-
-  * You can now configure specific experimental Variants for each of the percentile ranges you've added:
-    * Give each Variant a name, which will be visible only to those players who have been placed in the percentile range to which the experimental Variant is applied.
-    * Set the alternative values for the fields we selected when we added the each of the Variants to the Experiment in step 2.
-    * In this example:
-      * For the *50-60* percentile range of the player pool we've *decreased* both the Gold and Silver coin values for Currencies 1 and 2 (as seen above).
-      * For the *5-15* percentile range of the player pool, we've *increased* both the Gold and Silver coin values for Currencies 1 and 2:
+  * Second, configure specific Variant values for each of the percentile ranges you've added:
+      * Give each Variant a name, which will be visible only to those players who have been placed in the percentile range to which the experimental Variant is applied.
+      * Set the alternative values for the fields we selected when we added the each of the Variants to the Experiment in step 2.
+      * In this example:
+        * For the *50-60* percentile range of the player pool we've *decreased* both the Gold and Silver coin values for Currencies 1 and 2 (as seen above).
+        * For the *5-15* percentile range of the player pool, we've *increased* both the Gold and Silver coin values for Currencies 1 and 2:
 
 ![](img/Experiments/10A.png)
+
+<q>**Browser Zoom!** Please maintain your browser at normal zoom level when you are adding your percentile ranges.</q>
 
 These combined settings are designed to ensure that when your Experiment runs, the set of players to which the Experiment is applied is a randomly chosen set. Any behavioral changes observed in the players subjected to the Experiment with respect to the Variants - here Virtual Goods whose currency values have been increased or decreased - are therefore less likely to be biased and unrepresentative. This means, in turn, that any decisions you make for *actual changes* you go on to make to your game configuration and which are based on experimental outcomes are much more likely to be predictive of the general behavior of all game players in reaction to these actual changes.
 
