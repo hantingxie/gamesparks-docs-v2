@@ -77,7 +77,7 @@ These combined settings are designed to ensure that when your Experiment runs, t
 Our measurements could be based on a request that we expect the players subjected to the Experiment to use. If they have used it during the Experiment, we can see the percentage of users that were in the Experiment and how many from each variant of the Experiment submitted the request:
 * In this example, we want to measure the number of *BuyVirtualGoodsRequest* calls made by the players chosen for the Experiment during the experimental period.
 
-*5.* Click to *Save* the Experiment. The new Experiment is added to the *Upcoming Experiments* panel.
+*5.* Click to *Save and Close* the Experiment. The new Experiment is added to the *Upcoming Experiments* panel.
 
 ![](img/Experiments/12.png)
 
@@ -116,29 +116,36 @@ Under *Actions* there are several options:
 * ![](/img/icons/copyicon.png) - Copy the Experiment.
 * ![](/img/icons/deleteicon.png) - Delete the Experiment.
 
-
-
-
-<<<<  ORIGINAL  >>>>>
-
-
 ## Viewing Experiment Results
 
 Once your Experiment has completed, you can check the results of your Experiment and the impact it has had on the pool of Players who were affected by this Experiment:
 
-![](img/Experiments/4.png)
+*1.* In the *Completed Experiments* panel click to view the results of an Experiment:
 
+![](img/Experiments/15.png)
 
+* Here, we're going to open and review the results of the *Coin Experiment* we set up earlier.
 
-The results page displays graphs which are based on the time duration of the running Experiment and how many Players interacted with the variants on that Experiment Screen:
+The *Results* page opens:
 
+![](img/Experiments/16.png)
 
+* The top of this page shows the *PLayer Pool* and *Variant Configuration* for the Experiment and the *Measurements* sought for players subjected to the Experiment.
 
-This is shown in two different graphs:
-* One which show both the impact of the Experiment on the entire Player population:
+*2.* Scroll down the page to review and analyze the results, which are shown in two different panels:
 
-![](img/Experiments/5.png)
+* *Population Impact*. This is designed to show the impact on the entire experimental player population - it shows the activity logged over the experimental period for the configured measure by percentage of all the players who participated in the Experiment, relative to each of the Variants you set up:
 
-* A second which shows the number of Players that interacted with each variant on the Experiment:
+![](img/Experiments/17.png)
 
-![](img/Experiments/6.png)
+* For the current example:
+  * We can see from the *line graph* data that 100% of those players randomly assigned to the *Coin Variants Low* Variant submitted a *BuyVirtualGoodsRequest* to purchase a gold or silver coin Virtual Good at the reduced cost; whereas only 33% of those players randomly assigned to the *Coin Variants High* Variant purchased either of the Virtual Goods at the increased cost.
+  * The pie-chart then presents these same results - of all purchases made by players assigned to either of the two Variants, 75% of the purchases were down to players from the *Coin Variants Low* Variants and 25% from the *Coin Variants High*.
+
+* *Player Count*. This is designed to show results by counts of players - it shows the actual numbers of players whose activity was logged during the experimental period for the configured Measure, again relative to each experimental Variant that you set up:
+
+![](img/Experiments/18.png)
+
+* For the current example:
+  * We can see from the *line graph* data that 2 players randomly assigned to the *Coin Variants Low* Variant purchased a Virtual Good at the reduced cost; whereas only 1 player assigned to the *Coin Variants High* Variant purchased a Virtual Good at the increased cost.
+  * The pie-chart presents these results as a percentage distribution over the sum of all players assigned to either of the two Variants who made a Virtual Good purchase.

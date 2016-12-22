@@ -28,7 +28,7 @@ The Configurator *Analytics Overview* page contains four tabs:
 There are several graphs on the *Overview* tab:
 
   * *New / Returning players* - Shows the number of new (in blue), returning players (in orange).
-  * *Average Session Duration* - Shows the average session duration in seconds.
+  * *Average Session Duration* - Shows the average session duration in seconds. Note that this chart is driven by *EndSessionRequest* submissions and will only build if some have been made.
   * *Retention % by day* - Shows the number of returning players as a percentage of the total players for a each day over the last 30 days.
   * *Average DAU / MAU* - Shows the average *Daily Active* player count over the *Monthly Active* player count. This is a measure of 'engagement'.
   * *Devices* - Shows the different devices that your players are using to play your game.
@@ -59,7 +59,7 @@ These numbers provide key aggregated analytics data metrics about how well your�
 
 The *Performance* tab displays a number of performance-related graphs:
 
-  * *Average Requests per Player* - Shows the average number of requests generated per player within you game.
+  * *Average Requests per Player* - Shows the average number of requests generated per player within your game.
   * *Average Response Time (ms)* - Shows the average response time (in milliseconds) that the GameSparks platform has taken to respond to API request calls.
   * *Average Javascript Execution Time (ms)* - Shows the average time (in milliseconds) that the GameSparks platform has spent executing your Cloud Code.
   * *Average Storage per Player (bytes)* - Shows the average amount of cloud data per player that your game is using.
@@ -98,7 +98,7 @@ When you are viewing analytics graphs, you can use several options to adjust the
 
 ![](img/Analytics/21.png)
 
-Use the three drop-down menus at top-right to control the data displayed in the analytics graphs.
+Use the two drop-down menus at top-right to control the data displayed in the analytics graphs.
 
   * *Date Range* - Select from a defined date range or select specific start and end dates for the data set displayed:
 
@@ -108,9 +108,15 @@ Use the three drop-down menus at top-right to control the data displayed in the 
 
   ![](img/Analytics/23.png)
 
-  * *Stage* - Select which stage analytics data are displayed for - Preview or Live:
+You can use the switch at the top of the page to select which stage analytics data are displayed for:
+* Preview:
 
   ![](img/Analytics/24.png)
+
+* Live:
+
+  ![](img/Analytics/24A.png)
+
 
 ### Exporting Analytics Data from Graphs
 
