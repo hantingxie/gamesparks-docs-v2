@@ -130,7 +130,7 @@ The *Results* page opens:
 
 ![](img/Experiments/16.png)
 
-* The top of this page shows the *PLayer Pool* and *Variant Configuration* for the Experiment and the *Measurements* sought for players subjected to the Experiment.
+* The top of this page shows the *Player Pool* and *Variant Configuration* for the Experiment and the *Measurements* sought for players subjected to the Experiment.
 
 *2.* Scroll down the page to review and analyze the results, which are shown in two different panels:
 
