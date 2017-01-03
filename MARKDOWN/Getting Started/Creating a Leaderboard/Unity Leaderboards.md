@@ -60,13 +60,11 @@ Next you'll need to create your Leaderboard.
 
 ## Testing the Leaderboard
 
-Now you're ready to send some scores to your Leaderboard. However, before you go into Unity, you should test this Leaderboard in the *Test Harness*.
+Now you're ready to send some scores to your Leaderboard. However, before you go into Unity, you should test this Leaderboard in the *Test Harness*:
 
-After authenticating yourself as a Player, find your Event under *LogEvent*, enter a score, and send the Event.
+*1.* After authenticating yourself as a Player, find your Event under *LogEvent*, enter a score, and send the Event.
 
-![](img/UT/17.png)
-
-Immediately after you send the request, you will see a message appear in the *Inspector*. This is a *NewHighScoreMessage* and when you go back into Unity you are going to set up an Event listener to execute some code whenever a player gets this Message.
+*2.* Immediately after you send the request, you will see a message appear in the *Inspector*. This is a *NewHighScoreMessage* and when you go back into Unity you are going to set up an Event listener to execute some code whenever a player gets this Message.
 
 ![](img/UT/18.png)
 
@@ -80,6 +78,7 @@ You can also check your Leaderboard data entries from the Test Harness using th
 
 ![](img/UT/19.png)
 
+* We see that our player with a score of 120 is ranked 3rd on the Leaderboard.
 
 Now you're ready to start sending and receiving Leaderboard data in Unity.
 
