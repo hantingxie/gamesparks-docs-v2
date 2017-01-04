@@ -6,18 +6,11 @@ src: /API Documentation/Cloud Code API/Cloud Data/SparkMongoCursor.md
 
 An iterator over database results. Doing a find() query on a collection returns a SparkMongoCursor thus:
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var cursor = collection.find( query );</br>if( cursor.hasNext() ) </br>{var obj = cursor.next();}</pre>
-
-Warning: Calling toArray() on a SparkMongoCursor will irrevocably turn it into an array. This means that, if the cursor was iterating over ten million results (which it was lazily fetching from the database), suddenly there will be a ten-million element array in memory. Before converting to an array, make sure that there are a reasonable number of results using skip() and limit().
-
-For example, to get an array of the 1000-1100th elements of a cursor, use
-
-<pre rel="highlighter" code-brush="js" contenteditable="false">var obj = collection.find( query ).skip( 1000 ).limit( 100 ).toArray();</pre>
-
-e.g.
-
-<pre rel="highlighter" code-brush="js" contenteditable="false">var myMetaCollection = Spark.runtimeCollection('metatest');</pre>
-
+<pre rel="highlighter" code-brush="js" contenteditable="false">
+var cursor = collection.find( query );
+if( cursor.hasNext() ) {
+  var obj = cursor.next();
+}</pre>
 
 ## limit
 _signature_ limit(number count)</p>
@@ -31,7 +24,7 @@ count - the limit to set
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var obj = collection.find( query ).skip( 1000 ).limit( 100 ).toArray();</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">var cursor = collection.find( query ).skip( 1000 ).limit( 100 );</pre>
 
 ## skip
 _signature_ skip(number count)</p>
@@ -45,13 +38,13 @@ count - the limit to set
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var obj = collection.find( query ).skip( 1000 ).limit( 100 ).toArray();</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">var cursor = collection.find( query ).skip( 1000 ).limit( 100 );</pre>
 
 ## size
 _signature_ size()</p>
 _returns_ number</p>
 
-Counts the number of objects matching the query this does take limit/skip into consideration.
+Counts the number of objects matching the query. Takes limit/skip into consideration.
 
 <b>example</b>
 
@@ -61,7 +54,7 @@ Counts the number of objects matching the query this does take limit/skip into c
 _signature_ count()</p>
 _returns_ number</p>
 
-Counts the number of objects matching the query this does take limit/skip into consideration.
+Counts the number of objects matching the query. Takes limit/skip into consideration.
 
 <b>example</b>
 
@@ -75,7 +68,7 @@ Sorts this cursor's elements. This method must be called before getting any obje
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var obj = collection.find( query ).sort( {"field" : 1} ).limit( 100 ).toArray();</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">var cursor = collection.find( query ).sort( {"field" : 1} ).limit( 100 )</pre>
 
 ## hasNext
 _signature_ hasNext()</p>
@@ -114,4 +107,3 @@ a JSON object
 <b>example</b>
 
 <pre rel="highlighter" code-brush="js" contenteditable="false">var cursor = collection.find( query ); if( cursor.hasNext() ) {cursor.next(); var obj = cursor.curr();}</pre>
-
