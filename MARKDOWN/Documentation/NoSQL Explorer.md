@@ -72,6 +72,41 @@ When the panel loads, the result hierarchy is collapsed. You can drill-down to e
 
 ![](img/18.png)
 
+You can [edit](#Editing a Document) or [delete](#Deleting a Document) individual Documents in a Collection from the *Output* panel:
+
+<q>**NOT SYSTEM COLLECTIONS!**. Do not attempt to edit or delete any System Collection Documents manually. Caching operations which are managed by the platform will end up with invalid data if you do this!</q>
+
+<q>**RUNTIME or META COLLECTIONS?** You can manually edit or delete Documents from these Collections, but only update **META** Collections in **PREVIEW**. You can update **RUNTIME** Collections in both **PREVIEW** and **LIVE**.</q>
+
+### Editing a Document
+
+*1.* Select a Collection and submit a [Find](#Find) to return results into the *Output* panel:
+
+*2.* Expand the individual Document returned for your query and that you want to edit:
+
+![](img/25.png)
+
+* In this example, we've submitted a *Find* against the *Runtime>script.playerData* Collection.
+
+*3.* Click to edit ![](/img/icons/editicon.png) the Document you've expanded. An *Edit Document* dialog appears.
+
+*4.* Use the editor in the dialog to make your editing changes to the Document and click *Save*:
+
+![](img/26.png)
+
+### Deleting a Document
+
+*1.* Select a Collection and submit a [Find](#Find) to return results into the *Output* panel:
+
+*2.* Expand the individual Document returned for your query and that you want to delete.
+
+*3.* Click to delete ![](/img/icons/deleteicon.png) the Document you've expanded. A confirmation dialog appears with details of the Document you're about to delete from the Collection:
+
+![](img/27.png)
+
+*4.* Click *Delete* again, if you want to continue and delete the Document.
+
+
 
 ## Actions for Selected Collection
 

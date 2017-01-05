@@ -110,7 +110,7 @@ You can also issue several requests at once simply by creating a JSON array of r
 
 ![](img/TestHarness/16.png)
 
-<q>**Note:** You will need outer square brackets and comma separator between each request to build a well-formed JSON array.</q>
+<q>**Note:** You'll need outer square brackets and comma separator between each request to build a well-formed JSON array.</q>
 
 ## Saving Requests as a Scenario
 

@@ -34,7 +34,7 @@ Whenever you want to create a Dynamic Form, you should start with a Screen:
 
 * A *Screen Snapshots* panel:
   * The *Screen Snapshots* panel works in a similar way to the *Snapshots* feature on the *Game Overview* page - you can use it to backup and restore the state of the Screens and Snippets you've created for your game.
-  * For more details, see [Creating and Managing Screen Snapshots](/Documentation/Manage/Creating and Managing Screen Snapshots.md). 
+  * For more details, see [Creating and Managing Screen Snapshots](/Documentation/Manage/Creating and Managing Screen Snapshots.md).
 
 <q>**Note:** The *Screen Snapshots* you create here are separate and distinct from the *Game Snapshots* you create from the *Overview* page.</q>
 
@@ -495,7 +495,7 @@ function view(data){
     // find and return id, userName and displayName of the players matching query
     form.players = playerCollection.find(query, {"userName" : 1, "displayName" : 1}).limit(limit);
 
-    // if count is lower that the limit
+    // if count is lower than the limit
     if(count < limit){
         form.limit = count;
     } else{

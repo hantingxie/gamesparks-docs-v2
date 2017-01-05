@@ -82,7 +82,7 @@ Our measurements could be based on a request that we expect the players subjecte
 ![](img/Experiments/12.png)
 
 This shows the *Start* and *End* date you have configured for the Experiment and under *Actions* there are several options:
-* ![](/img/icons/starticon.png) - Manually start the Experiment.
+* ![](/img/icons/starticon.png) - Manually start the Experiment. The Experiment will be moved to *Running Experiments*.
 * ![](/img/icons/editicon.png) - Edit the Experiment:
   * You can step through each of the 4 configuration steps again and save any changes at each step.
   * You cannot edit an Experiment after it has started.
@@ -98,8 +98,7 @@ When the start date for an Upcoming Experiment has passed or you have started th
 ![](img/Experiments/13.png)
 
 Under *Actions* there are several options:
-* ![](/img/icons/stopicon.png) - Manually stop the Experiment:
-  * All stopped or expired Experiments move to *Completed Experiments*.
+* ![](/img/icons/stopicon.png) - Manually stop the Experiment. All stopped or expired Experiments move to *Completed Experiments*.
 * ![](/img/icons/resultsicon.png) - View the results of the Experiment so far (see [below](#Viewing Experiment Results))
 * ![](/img/icons/copyicon.png) - Copy the Experiment.
 * ![](/img/icons/deleteicon.png) - Delete the Experiment.

@@ -88,9 +88,9 @@ If you need to check the security Credentials for your game, you can click *All 
 ## Editing Top-Level Game Information
 
 When you click to *Edit* your game's top-level details, you'll see three tabs:
-* [*Game Details*](#Editing Game Details)
-* [*Features & Integrations*](#Selecting Features and Integrations)
-* [*Geographical Setup*](#Configuring Geographical Setup)
+* [Game Details](#Editing Game Details)
+* [Features & Integrations](#Selecting Features and Integrations)
+* [Geographical Setup](#Configuring Geographical Setup)
 
 ### Editing Game Details
 
