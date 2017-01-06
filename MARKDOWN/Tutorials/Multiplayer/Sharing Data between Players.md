@@ -127,7 +127,7 @@ If successful you'll get a *LogEventResponse* similar to this.
 
 *4.* Click *Find*:
 * You'll see the document that was saved as a result of our Cloud Code script executing when the Event was received - this is returned into the *Output* panel.
-* You can click on the document to expand, edit or delete it.
+* You can click on the document to expand, edit, or delete it.
 
 ![](img/PlayerDataSharing/7.png)
 

@@ -14,18 +14,14 @@ You can quickly set up this sort of mixed permissions for users as a specific se
 
 ## Collaborators and Group Permissions
 
-Previously, when adding Collaborators to a game, we had just 2 types of permissions available - an Administrator and a Read-Only user, which are called *gameAdmin* and *readOnly* permissions respectively. These were not configurable to the finer granularity that we allow today.
-
-<q>**Don't Modify!** We recommend that *you don't modify* the permissions on the *gameAdmin* and *readOnly* default Groups (which can now be found in *Groups*), because their visibility should serve only as an intuitive template for how to configure your own Group permissions.</q>
-
-You can now set up the read/write permissions for Collaborators on your game with a high degree of precision:
+You can set up the read/write permissions for Collaborators on your game with a high degree of precision:
 * Create a Collaborator Group.
 * Edit the Group to define the read/write permissions for the Group.
 * Assign Collaborators to that permissions Group.
 
 ## Creating Group Permissions and Assigning to Collaborators
 
-By default on any game, the *gameAdmin* and *readOnly* Groups are displayed. The game author and owner will always have full read/write access to everything in the Portal, regardless of how the settings are changed for other game Admins. You can modify the *gameAdmin* and *readOnly* permissions Groups, but we strongly recommend that *you do not change* these default Groups. Instead, create your own custom Groups to impose the required access permissions on your Collaborators.
+A game author and owner always has full read/write access to everything in the Portal, regardless of how the settings are changed for other game Admins. You can create your own custom Groups to impose the required access permissions on your Collaborators.
 
 *1.* To create a new Group, go to your *Game Overview* page.
 
@@ -45,6 +41,8 @@ You can expand headings in the *Permission* list to achieve precisely the granul
 *4.* Click to *Save* the new *Group*. It is added in the list on the *Groups* tab:
 
 ![](img/14.png)
+
+<q>**Editing Groups?** You can edit or delete a Group. However, when you edit a Group - most likely to change the permissions for the Group - you will NOT be able to rename the Group.</q>
 
 *5.* Select the *Collaborators* tab and click to *Add Collaborator*:
 
