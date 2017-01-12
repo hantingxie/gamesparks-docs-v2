@@ -34,7 +34,7 @@ We'll first need to create a custom-callback script, which will be the endpoint 
 
 For this tutorial, let's call this callback *lbRequests*. It's not important what you call your callback. However, you'll have to keep track of the name and secret of your callback:
 
-![](img/PullLBoard/1.png)
+![](img/PullLBoard/6.png)
 
 
 ## Leaderboard Request Script

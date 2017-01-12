@@ -1,7 +1,12 @@
 # SparkMongoCursor
 
 An iterator over database results. Doing a find() query on a collection returns a SparkMongoCursor thus:
-<pre rel="highlighter" code-brush="js" contenteditable="false">var cursor = collection.find( query );</br>if( cursor.hasNext() ) </br>{var obj = cursor.next();}</pre>
+
+<pre rel="highlighter" code-brush="js" contenteditable="false">
+var cursor = collection.find( query );
+if( cursor.hasNext() ) {
+  var obj = cursor.next();
+}</pre>
 
 ## limit
 _signature_ limit(number count)</p>
@@ -11,7 +16,13 @@ Limits the number of elements returned.
 <b>params</b>
 count - the limit to set
 <b>example</b>
+<<<<<<< HEAD
 <pre rel="highlighter" code-brush="js" contenteditable="false">var cursor = collection.find( query ).skip( 1000 ).limit( 100 );</pre>
+=======
+
+<pre rel="highlighter" code-brush="js" contenteditable="false">var cursor = collection.find( query ).skip( 1000 ).limit( 100 );</pre>
+
+>>>>>>> 19b14c895f126eb5928c99809a4d1b3f6267fdc4
 ## skip
 _signature_ skip(number count)</p>
 _returns_ [SparkMongoCursor](/API Documentation/Cloud Code API/Cloud Data/SparkMongoCursor.md)</p>
@@ -20,12 +31,22 @@ Discards a given number of elements at the beginning of the cursor.
 <b>params</b>
 count - the limit to set
 <b>example</b>
+<<<<<<< HEAD
 <pre rel="highlighter" code-brush="js" contenteditable="false">var cursor = collection.find( query ).skip( 1000 ).limit( 100 );</pre>
+=======
+
+<pre rel="highlighter" code-brush="js" contenteditable="false">var cursor = collection.find( query ).skip( 1000 ).limit( 100 );</pre>
+
+>>>>>>> 19b14c895f126eb5928c99809a4d1b3f6267fdc4
 ## size
 _signature_ size()</p>
 _returns_ number</p>
 
 Counts the number of objects matching the query. Takes limit/skip into consideration.
+<<<<<<< HEAD
+=======
+
+>>>>>>> 19b14c895f126eb5928c99809a4d1b3f6267fdc4
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var size = collection.find( query ).size();</pre>
 ## count
@@ -33,6 +54,10 @@ _signature_ count()</p>
 _returns_ number</p>
 
 Counts the number of objects matching the query. Takes limit/skip into consideration.
+<<<<<<< HEAD
+=======
+
+>>>>>>> 19b14c895f126eb5928c99809a4d1b3f6267fdc4
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var count = collection.find( query ).count();</pre>
 ## sort
@@ -41,7 +66,13 @@ _returns_ [SparkMongoCursor](/API Documentation/Cloud Code API/Cloud Data/SparkM
 
 Sorts this cursor's elements. This method must be called before getting any object from the cursor.
 <b>example</b>
+<<<<<<< HEAD
 <pre rel="highlighter" code-brush="js" contenteditable="false">var cursor = collection.find( query ).sort( {"field" : 1} ).limit( 100 )</pre>
+=======
+
+<pre rel="highlighter" code-brush="js" contenteditable="false">var cursor = collection.find( query ).sort( {"field" : 1} ).limit( 100 )</pre>
+
+>>>>>>> 19b14c895f126eb5928c99809a4d1b3f6267fdc4
 ## hasNext
 _signature_ hasNext()</p>
 _returns_ boolean</p>

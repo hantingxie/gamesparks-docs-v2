@@ -14,9 +14,11 @@ In this exercise we'll run through how you complete each of these steps with the
 
 ## Get an Upload URL
 
-The first step is to get an upload URL - you need somewhere to post your content. If you're following these steps in the Test Harness, these requests are available under the *Misc* category (make sure you've authenticated as a player before making the first request).
+The first step is to get an upload URL - you need somewhere to post your content. If you're following these steps in the Test Harness, the *GetUploadUrlRequest* is available under the *Upload* category (make sure you've authenticated as a player before making the first request).
 
-A [GetUploadUrlRequest](/API Documentation/Request API/Misc/GetUploadUrlRequest.md) made by an authenticated player will result in a response containing a *url* attribute. This is your upload URL, these are one-shot URLs that expire after a matter of minutes so don't hang onto them - if you don't use it right away throw it away and request another one.
+A [GetUploadUrlRequest](/API Documentation/Request API/Misc/GetUploadUrlRequest.md) made by an authenticated player will result in a response containing a *url* attribute.
+
+<q>**URL Attribute has limited Lifespan!** Upload URLs are one-shot URLs that expire after a matter of minutes so don't hang onto them - if you don't use it right away, throw it away and request another one.</q>
 
 ```
 {
@@ -29,73 +31,99 @@ A [GetUploadUrlRequest](/API Documentation/Request API/Misc/GetUploadUrlRequest.
 ```
 {
  "@class": ".GetUploadUrlResponse",
- "scriptData": null,
  "url": "https://gsp-aeu000-se04.gamesparks.net/upload/288934CFkBXg/16fc457d-656e-47ea-ad28-00595ec04054/3d3cbd17d2584e8295756d021dd0888b"
 }
 
 ```
 
+
 ## Upload the Content
 
-Now that you have the upload URL you need to post the file. This is done using a multipart/form-data post - we'd recommend checking it out in the Test Harness as we've provided a widget that will do this for you, and when using the SDKs see the section further down on SDK Usage.
+Now that you have the upload URL you need to post the file. This is done using a multipart/form-data post - we'd recommend checking it out in the Test Harness because we've provided a widget that will do this for you. When using the SDKs, see [SDK Usage](#SDK Usage) section below.
 
-In the Test Harness, once you've made a GetUploadUrlRequest, you should see the upload URL populated within the Requests area. Now click 'Choose File', and select the file you want to upload. Once selected click 'Upload File'.
+*1.* In the portal, navigate to *Configurator > Test Harness*.
 
-![](img/Binary/1.png)
+*2.* Authenticate as a player you've registered previously.
 
-Being an HTTP POST, this is not done through the WebSocket, but once complete the authenticated WebSocket that was used to request the upload URL will receive an [UploadCompleteMessage](/API Documentation/Message API/Misc/UploadCompleteMessage.md) indicating that the upload was successful.
+*3.* Under *Requests*, click on *Upload* and select [GetUploadUrlRequest](/API Documentation/Request API/Misc/GetUploadUrlRequest.md).
+
+<q>**Metadata?** Note that the *GetUploadUrlRequest* has an *uploadData* parameter. You can use this to enter some metadata, which will be stored against the player's uploaded binary content. For this example, you can remove this parameter before submitting the request.</q>
+
+*4.* Remove the *uploadData* parameter and submit the *GetUploadUrlRequest*. You'll see a *GetUploadUrlResponse* in the *Inspector* window and the upload Url is automatically entered into the *URL* field:
+
+![](img/Binary/2.png)
+
+*5.* Under *File*, click *Browse* to select the file you want to upload as binary content to the platform.
+
+*6.* When you've selected the file you want to upload, click *Upload*:
+* An *UploadCompleteMessage* shows in the *Inspector* window.
+* An *Uploading* button appears at the top of the page and when the upload completes, you can click on this to review your uploads to the platform:
+
+![](img/Binary/3.png)
+
+
+Being an HTTP POST, this is not done through the WebSocket, but once complete the authenticated WebSocket that was used to request the upload URL will receive an [UploadCompleteMessage](/API Documentation/Message API/Misc/UploadCompleteMessage.md) indicating that the upload was successful:
 
 ```
 {
- "@class": ".UploadCompleteMessage",
- "messageId": "55db13cce4b0548f701b3d66",
- "notification": true,
- "summary": "Your upload is complete",
- "playerId": "552bd84ce4b0e4d939d05899",
- "uploadData": {
-  "fileSize": 250011,
-  "playerId": "552bd84ce4b0e4d939d05899",
-  "uploadId": "3d3cbd17d2584e8295756d021dd0888b",
-  "origFileName": "test.jpg",
-  "fileName": "3d3cbd17d2584e8295756d021dd0888b-test.jpg"
- },
- "uploadId": "3d3cbd17d2584e8295756d021dd0888b"
+  "@class": ".UploadCompleteMessage",
+  "messageId": "5832edaf3a32df04983a8960",
+  "notification": true,
+  "playerId": "5818aef23a32df04ae8d53ed",
+  "summary": "Your upload is complete",
+  "uploadData": {
+    "fileName": "634c80176da1458d965692c87c3a8e68-My Document.txt",
+    "uploadId": "634c80176da1458d965692c87c3a8e68",
+    "fileSize": 30,
+    "origFileName": "My Document.txt",
+    "playerId": "5818aef23a32df04ae8d53ed"
+  },
+  "uploadId": "634c80176da1458d965692c87c3a8e68"
 }
+
 
 ```
 
-Within the message is an attribute 'uploadData' which contains all the data about the upload. Hold onto the uploadId, as we'll need it in the next step.
+Within the message is an *uploadData* attribute which contains all the data about the upload:
+* If you had used the *uploadData* parameter to submit some metadata with the *GetUploadedRequest*, this would be shown in the *UploadCompleteMessage*. However, you cannot use the *uploadData* parameter to overwrite the system attributes returned in the *UploadCompleteMessage* - even if you had submitted, for example, an *origFileName* with the request, this will not overwrite the system-generated value for this attribute.
+* Make sure you hold on to the *uploadId*, because we'll need it in the [next step](#Retrieve the Content).
+
+
 
 ## Retrieve the Content
 
-The final step is to actually retrieve the content that has been uploaded. This is achieved using a [GetUploadedRequest](/API Documentation/Request API/Misc/GetUploadedRequest.md) which takes an uploadId (which we received from the UploadCompleteMessage).
+The final step is to actually retrieve the content that has been uploaded.
+
+*1.* In the *Test Harness* click *Misc* under *Requests* and select [GetUploadedRequest](/API Documentation/Request API/Misc/GetUploadedRequest.md) which takes an uploadId (which we received from the UploadCompleteMessage):
 
 ```
-
 {
- "@class": ".GetUploadedRequest",
- "uploadId": "3d3cbd17d2584e8295756d021dd0888b"
+  "@class": ".GetUploadUrlRequest",
+  "uploadId":"635ec5dda1bc40b9b53e30618e1d8fff"
 }
 
 ```
 
-The response to this request contains a URL we can use to download the content. As before, this URL is time-sensitive so don't hang onto it for long - request one as you need it.
+A *GetUploadedResponse* is returned, which contains a URL we can use to download the content. As before, this URL is time-sensitive so don't hang onto it for long - request one as you need it.
 
 ```
+
 {
- "@class": ".GetUploadedResponse",
- "scriptData": null,
- "size": 250011,
- "url": "https://gamesparksbetabinaries.blob.core.windows.net/upload-288934/3d3cbd17d2584e8295756d021dd0888b-test.jpg?sp=r&sr=b&sv=2012-02-12&se=2015-08-24T13%3A04%3A42Z&st=2015-08-24T12%3A49%3A42Z&sig=fFFWxoNmmt0tdSjd8uTRTOkYn0zWWEOg7UVIbEvABpo%3D"
+  "@class": ".GetUploadedResponse",
+  "size": 30,
+  "url": "https://gamesparkstestbinaries.blob.core.windows.net/upload-358719/635ec5dda1bc40b9b53e30618e1d8fff-My%20Document4.txt?sig=AP7P%2BttABetqCBxeq9TfmUL0E5jYa1bVaNFh6WoTYqg%3D&st=2016-11-21T13%3A47%3A21Z&se=2016-11-21T14%3A02%3A21Z&sv=2015-04-05&sp=r&sr=b&gsstage=preview"
 }
 
 ```
 
-Go ahead and test the URL you receive by pasting it into your address bar in the browser. You should be able to download the content you uploaded in the earlier step. The uploadId is not tied to a specific player, so if you were to send that uploadId to another player they too could use it to request a download URL. This means you can allow your players to share content by sending the uploadIds to other players.
+
+*2.* Go ahead and test the URL you receive by pasting it into your address bar in the browser. You should be able to download the content you uploaded in the earlier step.
+
+<q>**uploadId not Tied to One Player!** The *uploadId* is not tied to a specific player, so if you were to send that *uploadId* to another player, the other player could also use it to request a download URL. This means you can allow your players to share content by sending the *uploadIds* to other players.</q>
 
 ## Deleting Uploaded Files
 
-When managing your uploaded files, you can use the [deleteUploadedFile](/API Documentation/Cloud Code API/Cloud Data/SparkFiles.md) *SparkFiles* method to delete uploaded files.</q>
+When managing your uploaded files, you can use the [deleteUploadedFile](/API Documentation/Cloud Code API/Cloud Data/SparkFiles.md) *SparkFiles* method to delete uploaded files.
 
 ## SDK Usage
 
@@ -103,12 +131,12 @@ When managing your uploaded files, you can use the [deleteUploadedFile](/API Doc
 
 #### Upload
 
-For completeness we expose the method getUploadUrlRequest to build the request object to get a URL to post the upload to, however there is an additional method we provide called uploadFile that takes a file, fileName and optional metadata about the upload. This wraps the request to get an upload URL and the subsequent upload of the file and presents them as a single operation.
+For completeness we expose the method *getUploadUrlRequest* to build the request object to get a URL to post the upload to. However, there's an additional method we provide called *uploadFile* that takes a file, fileName, and optional metadata about the upload. This wraps the request to get an upload URL and the subsequent upload of the file and presents them as a single operation.
 
 #### Download
 
-As with the upload we expose the method getUploadedRequest to build the request object to get a URL to download the file however there is an additional method getUploadedFile which takes the uploadId and wraps up requesting the download URL and performing the download itself and presents them as a single operation.
+As with the upload, we expose the method *getUploadedRequest* to build the request object to get a URL to download the file. However, there's an additional method *getUploadedFile* which takes the *uploadId* and wraps up requesting the download URL and performing the download itself and presents them as a single operation.
 
 ### Others
 
-We haven't yet added the above convenience methods for any of the SDKs apart from the Android and Unity SDKs, so for now you'll need to implement the multipart post yourself. We won't go into the details of exactly how to implement this here as there are many great resources already available that cover this. What you do need to know is that the parameter name against which the binary content is posted is file.
+We haven't yet added the above convenience methods for any of the SDKs apart from the Android and Unity SDKs, so for now you'll need to implement the multipart post yourself. We won't go into the details of exactly how to implement this here because there are many great resources already available that cover this. What you do need to know is that the parameter name against which the binary content is posted is *file*.

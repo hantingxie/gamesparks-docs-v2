@@ -8,10 +8,9 @@ src: /Tutorials/Real-Time Services/Setting Up Real-Time Matchmaking.md
 ## Setting Up the SDK
 
 Before we begin you will need a project with the main GameSparks SDK integrated and set up. The real-time services SDK is bundled in with the Unity SDK:
-* [Unity SDK Package download](http://repo.gamesparks.net/unity-sdk/Gamesparks_Unity_5.3.5.209.unitypackage)
+* [Unity SDK Package download](https://s3-eu-west-1.amazonaws.com/repo.gamesparks.net/unity-sdk/GameSparks_Unity.unitypackage)
 
 You can find a tutorial on how to setup the Unity SDK [here](/SDK Center/Unity.md). Once you have set up the Unity SDK, you are ready to go.
-
 
 ## Setting Up Real-Time Matches
 
@@ -25,7 +24,7 @@ To set up a real-time match, you follow the same steps as for normal matches:
 3. Enter the match details as normal and select the *RealTime* check box.
 4. Click the plus ![](/img/fa/plus.png) icon to add a threshold to the Match. If you do not have at least one Threshold in the Match, when you try to matchmake from the client you will get this error: "matchShortCode: NOT_FOUND"
 
-![](img/RTSDK/3.png)
+![](img/RTSDK/4.png)
 
 For this example:
 * You have the option to add a *Realtime Script* to the match. However, in this example we will not be covering real-time scripts.

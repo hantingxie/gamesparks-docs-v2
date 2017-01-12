@@ -15,31 +15,43 @@ You can open the Test Harness directly from the main left-hand navigation menu i
 
 ![](img/TestHarness/12.png)
 
-There are several sections in the Test Harness:
+There are several sections in the Test Harness page:
 
-  * **Connection**
-    * *Details* \- Shows details of the current connection such as the *Auth Token* (authentication token) and the *Service URL*.
-    * *Stage* \- Use the drop-down menu to select connection to the Preview or the Live stage of your game.
+* **Connection**
+    * *Details* \- Shows details of the current connection - you can hover your cursor on these fields and click to *Copy*:
+      * *Service URL*
+      * *Auth Token* (authentication token)
+      * *Player ID*
+      * *Stage* \- Use the drop-down menu to select connection to the Preview or the Live stage of your game.
     * *Credential* \- Use the drop-down menu to select the Credential you want to use when connecting. In the above example, the Test Harness is connected using the *debug* system Credential.
     * *Connect/Disconnect* \- Use the *Connect/Disconnect* button to connect and disconnect:
       * Your connection status is shown: ![](img/TestHarness/44.png) or ![](img/TestHarness/43.png)
-  * **Debug**
+* **Debug**
     * *Debug Options* \- Use the checkboxes to select which Cloud Code you want to debug in the current session - the Cloud Code attached to *Requests*, *Responses*, or *Messages*.
     * You can also enable/disable *Break On Error*.
     * Click [here](/Documentation/Test Harness/Debugger.md) to go to the GameSparks Debugger tutorial.
-  * **Requests**
+* **Requests**
     * *API Requests* \- lists all the available GameSparks API requests grouped according to functional area.  Each submenu item allows you to quickly select a request and then populate the JSON entry field with a correctly formatted request.
     * *JSON* \- enter your JSON request text here. You can click:
       * ![](/img/icons/saveicon.png) to [save](#Saving Requests as a Scenario) the request.
       * ![](/img/icons/recordicon.png) to [record](#Recording Multi-Request Scenarios) a scenario, which is a sequence of requests.
       * ![](/img/icons/calendaricon.png) to easily populate any date fields in your JSON request.
       * *Send Request* to send your request.
-  * **Inspector**
+* **Inspector**
     * Keep track of the requests, responses, and asynchronous messages in your Test Harness session:
       * *Requests sent* - Shown in green.
       * *Responses received* - Shown in blue.
       * *Asynchronous messages received* - Shown in yellow.
     * To clear out the Inspector at any time, click the clear ![](/img/icons/clearinspecticon.png) icon.
+* **Stage**
+  * You can use the switch at the top of the page to use the Test Harness for the Preview or Live stage of your game:
+    * Preview:
+
+    ![](img/TestHarness/45.png)
+
+    * Live:
+
+    ![](img/TestHarness/46.png)
 
 <q>**Seeing Debugger!** The Debugger is not always in view. If you have selected an Event which has Cloud Code attached to it, the Debugger will automatically appear but only when you run the Event.</q>
 
@@ -98,7 +110,7 @@ You can also issue several requests at once simply by creating a JSON array of r
 
 ![](img/TestHarness/16.png)
 
-<q>**Note:** You will need outer square brackets and comma separator between each request to build a well-formed JSON array.</q>
+<q>**Note:** You'll need outer square brackets and comma separator between each request to build a well-formed JSON array.</q>
 
 ## Saving Requests as a Scenario
 

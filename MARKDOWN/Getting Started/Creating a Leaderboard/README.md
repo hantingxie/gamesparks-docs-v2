@@ -77,15 +77,15 @@ When you've created your Leaderboard, navigate to the Test Harness. At this poi
 
 ![](img/CreatingALeaderboard/9.png)
 
-*1.* *Re-authenticate* using your *first* player. The authentication tutorial used userName: *gs_player_1* and password: *gs_password_1*.
+*1.* *Re-authenticate* using your *first* player. The authentication tutorial used userName: *gs_player1* and password: *gs_password1*.
 
 *2.* When this completes, you'll need to click on [LogEventRequest](/API Documentation/Request API/Player/LogEventRequest.md) and select the *Leaderboard Scorer* Event you created previously
 
-*3.* In the JSON builder, change the *SCORER* Attribute of the Event to *1* and click *Send request*. This will log an Event, and since the Event is attached to a Leaderboard, it will post a score into that Leaderboard. The player will then receive a [NewHighScoreMessage](/API Documentation/Message API/Leaderboards/NewHighScoreMessage.md) indicating that their score has been updated in the Leaderboard:
+*3.* In the JSON builder, change the *SCORER* Attribute of the Event to *10* and click *Send request*. This will log an Event, and since the Event is attached to a Leaderboard, it will post a score into that Leaderboard. The player will then receive a [NewHighScoreMessage](/API Documentation/Message API/Leaderboards/NewHighScoreMessage.md) indicating that their score has been updated in the Leaderboard:
 
 ![](img/CreatingALeaderboard/10.png)
 
-*4.* Repeat this process for the *second* player, but this time entering a score of *2*.
+*4.* Repeat this process for the *second* player, but this time entering a score of *11*.
 
 *5.* You can now validate that the Leaderboard has worked correctly, that our sorting has taken place, and that both player scores have been logged by calling a [LeaderboardDataRequest](/API Documentation/Request API/Leaderboards/LeaderboardDataRequest.md), passing in the Leaderboard *Short Code* and the *Entry Count*.
 

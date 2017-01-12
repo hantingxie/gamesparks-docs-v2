@@ -20,13 +20,17 @@ When you open the *NoSQL Explorer*, there are two main things to note:
 
 Each game has its own *PREVIEW stage* Mongo database. If you've taken a game Snapshot and published the game to LIVE stage, the game will also have a *LIVE stage* Mongo database:
 * The PREVIEW stage and the LIVE stage Mongo databases are *entirely distinct and separate databases*.
-* You can select the database you wish to look at from the drop-down in the top-left of the page. In the example above, only one game - *Test Game 1* - has been published to LIVE.
+* You can select the database you wish to look at using the *Stage* switch at the top-right of the page and the *Collections* panel adjusts accordingly:
+
+![](img/24.png)
+
+<q>**Note** The *Stage* switch appears *only if* you have already published a Snapshot of your game to *Live*. The default selection is *Preview* stage.</q>
 
 ### What Database Collection Operation?
 
 When you select a Database Collection, the *Actions* available for use with that Collection represent the different operations you can perform against the data in the selected Mongo database. See [below](#Actions) for a detailed account of how to work with these operations.
 
-## Checking Database statistics
+## Checking Database Statistics
 
 If you want to check the database statistics for the current game's Mongo database, click the information icon on the *Collections* panel. A *Database Stats* panel opens:
 
@@ -68,6 +72,41 @@ When the panel loads, the result hierarchy is collapsed. You can drill-down to e
 
 ![](img/18.png)
 
+You can [edit](#Editing a Document) or [delete](#Deleting a Document) individual Documents in a Collection from the *Output* panel:
+
+<q>**NOT SYSTEM COLLECTIONS!**. Do not attempt to edit or delete any System Collection Documents manually. Caching operations which are managed by the platform will end up with invalid data if you do this!</q>
+
+<q>**RUNTIME or META COLLECTIONS?** You can manually edit or delete Documents from these Collections, but only update **META** Collections in **PREVIEW**. You can update **RUNTIME** Collections in both **PREVIEW** and **LIVE**.</q>
+
+### Editing a Document
+
+*1.* Select a Collection and submit a [Find](#Find) to return results into the *Output* panel:
+
+*2.* Expand the individual Document returned for your query and that you want to edit:
+
+![](img/25.png)
+
+* In this example, we've submitted a *Find* against the *Runtime>script.playerData* Collection.
+
+*3.* Click to edit ![](/img/icons/editicon.png) the Document you've expanded. An *Edit Document* dialog appears.
+
+*4.* Use the editor in the dialog to make your editing changes to the Document and click *Save*:
+
+![](img/26.png)
+
+### Deleting a Document
+
+*1.* Select a Collection and submit a [Find](#Find) to return results into the *Output* panel:
+
+*2.* Expand the individual Document returned for your query and that you want to delete.
+
+*3.* Click to delete ![](/img/icons/deleteicon.png) the Document you've expanded. A confirmation dialog appears with details of the Document you're about to delete from the Collection:
+
+![](img/27.png)
+
+*4.* Click *Delete* again, if you want to continue and delete the Document.
+
+
 
 ## Actions for Selected Collection
 
@@ -85,9 +124,10 @@ Using the *Find* option, you can execute queries against Collections:
 ![](img/7.png)
 
 * *Query* : The query you want to execute in JSON form:
-  * To find players with displayName "testUser" the following JSON should be used {"displayName" : "testUser"}
+  * To find players with displayName "testUser" the following valid JSON must be used {"displayName" : "testUser"}
 * *Sort* : The JSON representation of the sort for the query:
-  * To sort by userName in ascending order the following JSON should be used {"userName" : 1}
+  * To sort by userName in ascending order the following valid JSON must be used {"userName" : 1}
+  * To sort by id, the following valid JSON must be used {"\_id": -1} or {"\_id": 1}
 * *Fields*: Allows you to limit the fields that are returned in the results:
   * This is useful for Collections with large document.
   * To limit the results to only contain the userName and displayName, the following JSON should be used : {"userName" : 1, "displayName" : 1}. 1 indicates inclusion and 0 indicates exclusion for a field. You cannot mix inclusion and exclusion in a single query.
@@ -96,6 +136,8 @@ Using the *Find* option, you can execute queries against Collections:
   * The maximum that the limit value can be set to for Finds is 1000.
 * *Explain* button : Enter your query and click this button to get information about the query returned into the *Output* panel. You can review and analyze this information to optimize your query.
 * *Export* button : The *Find* option allows you to export the results to a local file. Set up your query as normal and press the *Export* button. The maximum that the limit value can be set to for exports is 10000.
+
+<q>**You Must Use Valid JSON!** If you want to use *Query*, *Sort*, or *Fields*, you must use valid JSON syntax and only valid JSON syntax, as shown in the examples given above. Importantly, JavaScript syntax is *NOT VALID*.</q>
 
 ### Count
 
@@ -164,6 +206,8 @@ Using the *Aggregate* option, you can calculate aggregate values for data in the
 * *Pipeline* : A JSON array of pipeline commands.
   * If you are supplying more than one pipeline stage you must wrap them within a JSON array.
 * *Explain* button : Enter your query and click this button to get information about the query returned into the *Output* panel. You can review and analyze this information to optimize your query.
+
+<q>**You Must Use Valid JSON!** You must use valid JSON syntax and only valid JSON syntax for the *Aggregate* field. Importantly, JavaScript syntax is *NOT VALID*.</q>
 
 
 ### Drop

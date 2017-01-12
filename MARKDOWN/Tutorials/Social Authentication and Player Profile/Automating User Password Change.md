@@ -50,7 +50,7 @@ This tutorial shows you how to set up Cloud Code to do this. The set up describe
 
 ### Password Recovery Sequence
 
-*4.* Next, you'll need to link the user account to an E-mail. You can do this:
+*3.* Next, you'll need to link the user account to an E-mail. You can do this:
 * Through the initial authentication using *scriptData*.
 * Later on through an Event by saving it on the player using *setScriptData*.
 
@@ -81,7 +81,7 @@ If the email passed in is linked to an account, then:
 
 ### Token Generation
 
-*5.* This is our example of a token generating function. Yours could be anything you want it to be, but be careful that there aren't any duplicates because that would cause you a lot of problems. This is a simple string, which retrieves the date combined with *randomlyGeneratedToken-*, which can easily be taken advantage of.
+*4.* This is our example of a token generating function. Yours could be anything you want it to be, but be careful that there aren't any duplicates because that would cause you a lot of problems. This is a simple string, which retrieves the date combined with *randomlyGeneratedToken-*, which can easily be taken advantage of.
 
 
     	function generateRecoveryToken(){
@@ -90,7 +90,7 @@ If the email passed in is linked to an account, then:
 
 ### Sending out the E-Mail
 
-*6.* We have full integration with *SendGrid* services. If you plan to use it to send your E-Mails, then create an account with them and wait for their E-Mail confirming that: *"Your SendGrid account has been provisioned!"*, which then allows you to start sending emails. It might take up to 24 hours to receive it. You'll need:
+*5.* We have full integration with *SendGrid* services. If you plan to use it to send your E-Mails, then create an account with them and wait for their E-Mail confirming that: *"Your SendGrid account has been provisioned!"*, which then allows you to start sending emails. It might take up to 24 hours to receive it. You'll need:
 * The E-Mail to send to.
 * The E-Mail sent from.
 * The E-mail Subject.
@@ -116,7 +116,7 @@ If the email passed in is linked to an account, then:
 
 ### Password Reset Sequence
 
-*7.* Finally, you have the password reset function, which takes a token and password parameter and checks to see if the Token is linked to an account. If it is, then it sets the password of that account to the new password passed in.
+*6.* Finally, you have the password reset function, which takes a token and password parameter and checks to see if the Token is linked to an account. If it is, then it sets the password of that account to the new password passed in.
 
 ```    
     	function resetPassword(request){
@@ -144,7 +144,7 @@ If the email passed in is linked to an account, then:
 
 ### Sending E-Mail
 
-*8.* For this step you'll have to allow the user to input their E-Mail:
+*7.* For this step you'll have to allow the user to input their E-Mail:
 * When they've passed in their E-Mail, you'll need to have a function which creates an *object* (New Object, GSData, GSRequestData) which stores the *'email'* and *'action'* variables.
 * The *'action'* string variable will be set to *"passwordRecoveryRequest"*.
 * When both variables have been set and stored in the object, call the *AuthenticationRequest* and send that object as *scriptData*. Make sure you leave spaces or quotes for both Username and Password fields for the *AuthenticationRequest*.
@@ -152,7 +152,7 @@ If the email passed in is linked to an account, then:
 
 ### Changing Password
 
-*9.* After the player has been sent a token, they'll want to be able to change their password:
+*8.* After the player has been sent a token, they'll want to be able to change their password:
 * Allow the player to input their token and a new password.
 * When the player has passed these values through, create an object which stores the variable '*token*' as a string, *'password'* as a string which will store the value of the password passed in and *'action'* as a string set as *"resetpassword"*.
 * When the object has been set, send it as *scriptData* using the *AuthenticationRequest*. Make sure you leave spaces or quotes for both Username and Password fields for the *AuthenticationRequest*.

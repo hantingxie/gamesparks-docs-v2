@@ -5,125 +5,145 @@ src: /Tutorials/Third Party Integrations/Synchronizing Cloud Code with GitHub.md
 
 # Git Synchronization with Cloud Code Import / Export
 
-If you're using GitHub for your repositories, Good News! It is possible to synchronize your Cloud Code with GitHub via the Import / Export features available in the platform.
+If you're using GitHub for your repositories, Good News! It's possible to synchronize your Cloud Code with GitHub via the Import / Export features available in the platform.
 
-In this article, we assume that you already know what [Git](http://www.github.com) is and that you have a Git repository already created.
+In this tutorial, we assume that you already know what [GitHub](http://www.github.com) is and that you have a Git repository already created.
 
-![](img/GitSynch/1.png)
+![](img/GitSynch/14.png)
 
 ## Exporting Cloud Code
 
 The first thing we can do is export our Cloud Code to our local machine.
 
- *1.* In your game, navigate to *Cloud Code* and select the *Export* button at the top of the *Bindings* section.
+ *1.* In your game, navigate to *Cloud Code* and select the *Export* button at the bottom of the *Scripts* section.
 
- ![](img/GitSynch/2.png)
+ ![](img/GitSynch/15.png)
 
  The entire Cloud Code for the game will be downloaded as a *.zip* file to your local machine.
 
  The contents of the .zip archive is structured on folders which resemble the categories as seen in the Portal's *Cloud Code* section. The contents of the .zip can look something like this:
 
- */event*
+![](img/GitSynch/20.png)
 
- */event-challenge*
 
- */message-global*
+You will only see the directories in which you have created Cloud Code for. For example, if you only have code for *Events*, *User Messages*, and *Modules*, you'll only be able to see those directories in your export.
 
- */message-user*
+In each directory where Cloud Code exists, you will see a JavaScript (.js) file for every Cloud Code Event, Message, or Module:
 
- */modules*
-
- */request*
-
- */response*
-
- */system*
-
- You will only see the directories in which you have created Cloud Code for. For example, if you only have code for *Events*, *User Messages* and *Modules*, you will only be able to see those directories in your export.
-
- In each directory where Cloud Code exists, you will see a JavaScript .js file for every Cloud Code Event, Message or Module:
-
- */event/deleteLBEntry_evt.js*
-
- */event/helloWorld_evt.js*
-
- */event-challenge/challenge_evt.js*
-
- */modules/STORE_CREDIT.js*
-
- */response/AuthenticationResponse.js*
-
- */system/GS_CALLBACK_URL.js*
+![](img/GitSynch/21.png)
 
 This is the exported Cloud Code and it's structural layout.
 
-*2.* Navigate back to the *Overview* page and create a Snapshot of the existing game.
+*2.* Navigate back to the *Game Overview* page and click to *Create* a Snapshot of the existing game.
 
-![](img/GitSynch/3.png)
+*3.* Click to copy ![](/img/icons/copyicon.png) the Snapshot:
 
-*3.* Copy the new Snapshot to a new game. Include the game configuration so that we can retain the corresponding events and Cloud Code that was created for the source game.
+![](img/GitSynch/16.png)
 
-![](img/GitSynch/4.png)
+A *Copy Snapshot* dialog appears:
+
+![](img/GitSynch/19.png)
+
+* Make sure you select to include the game configuration so that we can retain the corresponding Events and Cloud Code that was created for the source game.
+* You can select to copy:
+  * Over an existing game - the game configuration of the Snapshot will be copied over the existing game's configuration.
+  * To a *New Game* - a new game will be created using the saved Snapshot configuration and the new game will be named using the convention: *COPY- << name of current game >>*.
+
+*4.* Click *Copy*. When the Snapshot copy process has successfully completed, you'll get a message to that effect and you can click to be taken straight to the new game you have created:
+
+![](img/GitSynch/17.png)
 
 ## Merging Cloud Code into a GitHub Repository
 
-In the following steps, some type of versioning control application may be useful in adding the Cloud Code to your choice of repository.
+In the following steps, some type of versioning control application will be useful in adding the Cloud Code to your choice of repository.
 
 *4.* Extract the contents of the .zip archive into the local working directory that is the path of your GitHub repository.
 
-*5.* Edit some of the Cloud Code in the .js files with an IDE or text editor. You can also delete some of the .js files from the local machine. in this example, some files have been renamed with invalid characters as a result of what can happen if the correct file naming convention is not used.
+*5.* Make changes to the overall collection of Cloud Code files you exported earlier:
+* Edit some of the Cloud Code in the .js files with an IDE or text editor.
+* You can also delete some of the .js files from the local machine.
 
 *6.* Commit and push the changes that include the exported Cloud Code into the remote repository.
 
 *7.* Navigate to your project on [GitHub](http://www.github.com). You will notice that the Cloud Code changes have been successfully pushed to your remote repository.
 
- ![](img/GitSynch/5.png)
+ ![](img/GitSynch/22.png)
 
 ## Importing Cloud Code
 
-*8.* In the Portal, go to the *Cloud Code* section and select *Get from Git*.
+*8.* In the Portal, go to the *Cloud Code* section and select *GitHub Import*.
 
-![](img/GitSynch/6.png)
+![](img/GitSynch/23.png)
 
-If this is the first time using *Get from Git* within the platform, you will be navigated to the GitHub sign-in page.
+A page opens where you can connect the gamesparks platform to your GitHub account:
 
-*9.* Sign in to your existing GitHub account and link it to the platform, or create a new one.*
+![](img/GitSynch/24.png)
 
-![](img/GitSynch/7.png)
+*9.* Click the red *Connect GitHub*. A GitHub *Authorize* page opens:
 
-*10.* Authorize the application to link to your GitHub account by selecting *Authorize application.*
+![](img/GitSynch/25.png)
 
-![](img/GitSynch/8.png)
+*10.* Click to *Authorize application*. This will allow the GameSparks platform to link to your GitHub account.
+* You might have to confirm you GitHub account password:
 
-By doing this, you will now be able to select your data from your GitHub account as it will be accessible within the platform.
+![](img/GitSynch/26.png)
 
-*11.* Once the GitHub account is linked to the platform, the modal form will be displayed. This form has 3 selections that need to be made before being able to import successfully from GitHub. A project Repository must be chosen, as well as a Branch of that Repository, and finally, the root folder of where where the Cloud Code is stored. *
+When the connection completes, you'll see that GitHub button has changed to green:
 
-![](img/GitSynch/9.png)
+![](img/GitSynch/27.png)
 
-*12* Choose the *Repository* that has the imported Cloud Code from earlier. It will be available from the *Repository* dropdown menu.
+* You can use this to disconnect the platform from your GitHub account at any time.
 
-![](img/GitSynch/10.png)
+Now that the platform is connected to your GitHub account, you'll be able to select your data from your GitHub account repositories.
 
-*13* Choose the *Branch* of your repository. For this example, I only have the master branch. If you have more branches for your project, they will displayed in the dropdown list.
+*11.* Click the blue *Configure Your Games* button:
 
-*14* Choose the *root folder* of your repository. Ideally, this should be the location of where the directories of Cloud Code are located in your account. In this example, they were included at the top-level so my root folder selection would be *'/'*. If I wanted to only synchronize what is in the Events category, I would choose *event*.
+![](img/GitSynch/28.png)
 
-![](img/GitSynch/11.png)
+You are taken to the *GitHub Import* page:
 
-*15.* Once the selections are made, select *Preview*. The modal form will close and another window will open where you can review what is to be imported. The items listed will be color coded based on what their status will be after the import. Here are some examples:
+![](img/GitSynch/29.png)
 
-* Green : *Cloud Code that does not already exist in the game.*
-* Blue : *Cloud Code that has changed since the import.*
-* Yellow : *Cloud Code that is removed as a result of the import.*
-* Red : *Cloud Code that is invalid to import or created an error during the import.*
+* You will see all of the repositories for your GitHub account listed.
+* You can now follow a 4-step process to pull Cloud Code changes you want from your Git repositories into your game configuration.
 
-![](img/GitSynch/12.png)
+*12.* Step 1: Select the repository from which you want import. The page shows the commits to the selected repository:
 
-*16.* Review the items within the import. Select or de-select the items that you want confirmed by their status. For example, if an item is described as *Removed*, if the check-box is not checked, the item won't be removed.
+![](img/GitSynch/30.png)
 
-*17.* Press *Save*. The changes will be imported.
+*13.* Step 2: Select the commit you want to import from. The commit is loaded:
 
-<q>**Note:** After your first previewing of an import, the form to select the Repository, Branch and root folder will be slightly different. It will remember your chosen settings from your previous visit. These drop-down menus will be locked until you select the *Change Selection* button. You will then be able to make your changes to which Repository, Branch, or folder you want to import from.</q>
+![](img/GitSynch/31.png)
 
-![](img/GitSynch/13.png)
+* You'll see that the directory structure from the commit is replicated
+
+*14.* Step 3: Select the **root directory**. The changes are loaded for ALL directories:
+
+![](img/GitSynch/32.png)
+
+<q>**Select ROOT Directory!** Although the directory structure is shown, you must select the root directory.</q>
+
+*15.* Step 4: Select the changes you want to import. You can scroll down to inspect the changes made to Cloud Code in all directories and decide which changes you want to import:
+
+* Any *ADDED* Cloud Code is shown in green:
+
+![](img/GitSynch/33.png)
+
+* Any *DELETED* Cloud Code is shown in red:
+
+![](img/GitSynch/34.png)
+
+* For any eidted and *CHANGED* Cloud Code, the location of the editing change is identified and the before/after Cloud Code is shown:
+
+![](img/GitSynch/35.png)
+
+<q>**All Changes Selected!** All Cloud Code changes are selected by default for import - unselect the check box for any changes that you don't want import.</q>
+
+*16.* If you want to create a Snapshot of your game before you import the Cloud Code changes, select the *Create Game Snapshot* at the bottom of the page:
+
+![](img/GitSynch/36.png)
+
+* Creating a Snapshot before importing Cloud Code changes from your Git repository will allow you to revert to the current game configuration, should anything go wrong after you import the changes.
+
+*17.* Click *Import* to import the selected Cloud Code changes.
+* When the import process has successfully completed, you'll see a message.

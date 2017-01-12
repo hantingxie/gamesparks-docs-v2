@@ -8,48 +8,73 @@ src: /Tutorials/Multiplayer/Score Based Challenges.md
 
 ## Introduction
 
-One of the most basic ways to win the challenge is to score the highest, or the lowest depending on what your score represents. In this tutorial, we will show examples of how to set up a challenge which:
+One of the most basic ways to win a Challenge is to score the highest, or the lowest depending on what your score represents. In this tutorial, we will show examples of how to set up a Challenge which:
 * Ranks players on highest score.
 * Ranks players on lowest score.  
 
 ## The Setup
 
-### Event
+### Creating an Event
 
-1. Create an event.
-2. In that event create an attribute of data type Number.  If you want the challenge to be won for:
+First, we create an Event for the Challenge.
 
-  * Highest Score: Set the attribute's *Default Calc* to Maximum.
-  * Lowest Score: Set the attribute's *Default Calc* to Minimum.
+*1.* Navigate to *Configurator >Events*.
 
-![](img/ScoreBasedChallenges/1.jpg)
+*2.* Click to *Add* a new Event and configure the Event as shown below:
+* Add an Attribute with A *Data Type* of *Number*.
+* If you want the Challenge we're going to use this Event for to be won for highest score, set the *Default Aggregation Type* to Maximum.
+* If you want the Challenge we're going to use this Event for to be won for lowest score, set the *Default Aggregation Type* to Minimum.
+
+![](img/ScoreBasedChallenges/5.png)
+
+*3.* Click to *Save and Close* the new Event.
  
 
-### Running Total (For Lowest score ONLY)
+### Creating a Running Total (For Lowest score ONLY)
 
-1. Create a running total.
-2. Link the running total to the event that you created for the challenge using the event drop down list.
-3. Add a new attribute and from the drop down list select the attribute you created for the event.
-4. From the summary type drop down menu select Minimum.
+In this next stage, we're going to create a Running Total for lowest score.
 
-![](img/ScoreBasedChallenges/2.jpg)
+*4.* Navigate to *Configurator > Leaderboards*. The page opens with the *Leaderboards* tab selected.
+
+*5.* Select the *Running Totals* tab, click to *Add* a new Running Total, and configure this as shown below:
+* Use the *Event* drop-down to link the Running Total to the *Time Spent* Event that we created earlier for the Challenge.
+* Under *Collectors* add a new Attribute:
+  * Use the drop-down to select the attribute we added to the *Time Spent* Event.
+  * Set the *Calculation Type* to *Minimum*.
+
+![](img/ScoreBasedChallenges/6.png)
  
+*6.* Click to *Save and Close* the new Running Total.
 
-### Leaderboard
+### Creating a Leaderboard
 
-Create a leaderboard for your challenge.  If you want the challenge to be won for:
+For this stage, we create a Leaderboard for your Challenge. 
 
-  * Highest Score: Don't do anything else to the leaderboard.
-  * Lowest Score: Add a new running total. From the drop down list. Change the sorting to ASC.
+*7.* Navigate to *Configurator > Leaderboards* and click to *Add* a new Leaderboard.
 
-![](img/ScoreBasedChallenges/3.jpg)
+*8.* Configure the Leaderboard as shown below.
+
+*9.* If you want the Challenge to be won for:
+* Highest Score: Don't do anything else to the Leaderboard.
+* Lowest Score: Under *Fields* add a new Running Total and use the *Sort* drop-down to change the sorting to *ASC*.
+
+![](img/ScoreBasedChallenges/7.png)
  
+*10.* Click to *Save and Close* the new Leaderboard.
 
-### The Challenge
 
-Select your leaderboard from the leaderboard drop down list.  Optionally you can:
+### Creating the Challenge
 
-  * Make the challenge turn-based by switching the *Turn Based* button on and assigning a *Turn/Attempt Consumers* event. (When this event is called using challenge event log it will consume a turn for the player which called it.)
-  * Make the challenge achievement-based by choosing an achievement from the *First to achievement* drop down list.
+The last stage of our setting up is to create the Challenge.
 
-![](img/ScoreBasedChallenges/4.jpg)
+*11.* Navigate to *Configurator > Multiplayer*. The page opens with the *Challenges* tab selected.
+
+*12.* Click to *Add* a new Challenge and configure it as shown below:
+* Select your *Time Leaderboard* using the Leaderboard drop-down.
+* Optionally you can:
+  * Make the Challenge turn-based by switching the *Turn Based* button on and assigning a *Turn/Attempt Consumers* Event. (When this Event is called using Challenge event log, it will consume a turn for the player which called it.)
+  * Make the Challenge Achievement-based by choosing an Achievement from the *First To Achievement* drop-down.
+
+![](img/ScoreBasedChallenges/8.png)
+
+*13.* Click to *Save and Close* the new Challenge.

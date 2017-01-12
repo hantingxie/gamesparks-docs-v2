@@ -9,74 +9,82 @@ You can manage your Cloud Code revisions between Snapshots. This allows you to r
 
 ## Accessing Cloud Code History
 
-*1.* To access Cloud Code History, navigate to the *Cloud Code* section in the *Configurator* and select the *History* button:
+*1.* To access Cloud Code History, navigate to *Configurator > Cloud Code* and at the bottom of the *Scripts* panel, click *History*:
 
-![](img/CloudHistory/1.png)
+![](img/CloudHistory/14.png)
 
-This opens the Cloud Code History tool:
+This opens the Cloud Code History tool.
 
-![](img/CloudHistory/2.png)
+*2.* The Cloud Code History tool is designed to allow you to quickly compare the Cloud Code contained in the two Snapshots - one you've selected from the *Base* drop-down and one you've selected from the *Compare With* drop-down - and, if there are Cloud Code differences allow you to quickly review the differences:
 
-The Cloud Code History tool is designed to allow you to select one Snapshot - from the *Base* column - then select a second Snapshot - from the *Compare to* column - and compare the Cloud Code contained in the two Snapshots.
+![](img/CloudHistory/15.png)
 
-## Comparing Snapshots
+In this example, we've selected *Workspace* for the *Base*, which is the current game configuration, and an earlier Snapshot, *Test Snapshot 10*, for the *Compare With* selection.
 
-The Cloud Code History tool is designed to be read right-to-left:
-* The left column - *Base* - shows the current Workspace Configuration and latest saved Snapshot of the game.
-* The right column - *Compare to* - shows all other Snapshots that pre-date the one that is selected in the *Base* and that are not Cloud Code equivalent to the selected *Base* Snapshot.
+## Selecting and Comparing Snapshots
 
-**Left Column**  | **Right Column**
+*1.* Use the *Base* and *Compare With* drop-downs to select the two Snapshots which you want to compare for Cloud Code differences.
+
+The Cloud Code History tool is designed to compare the right-hand Snapshot to the left-hand Snapshot:
+* The left column - *Base* - shows the current Workspace Configuration - *Workspace* - as the default selection and all your other saved game Snapshots for selection.
+* The right column - *Compare With* - does not show *Workspace* but all your other saved game Snapshots for selection.
+
+**Left Drop-Down**  | **Right Drop-Down**
 -----  | -----------
-  ![](img/CloudHistory/3.png)  | ![](img/CloudHistory/4.png)
-   Selecting Snapshot *8* in *Base*... | ...shows all Snapshots older than Snapshot *8* in *Compare to*
+  ![](img/CloudHistory/16.png)  | ![](img/CloudHistory/17.png)
+   Default *Workspace* selection in *Base*... | ...shows all other saved Snapshots in *Compare With*
 
-</br>
-<q>**Green is LIVE!** Any Snapshot highlighted in green is the one published to LIVE.</q>
+*2.* Click *Compare*.
+* If there are no Cloud Code differences between the two Snapshots, then you'll see a message to tell you this:
 
-## Identifying Differences
+![](img/CloudHistory/18.png)
 
-### Using the Differences Drop-Down
+* If there are Cloud Code differences between the two Snapshots, then the differences are listed:
 
-In the far-right of the screen, there is a drop-down labeled *Differences.* Depending on the comparison of Snapshots, it will show the items (and their location) that differ between those Snapshots. For example, new events added, edited events, and ones that have been removed:
+![](img/CloudHistory/19.png)
 
-![](img/CloudHistory/8.png)
+In this example, we see that if we take the right-hand selection - *Test Snapshot 5* (an earlier Snapshot) - and compare its Cloud Code with the left-hand selection - *Test Snapshot 10* (the most recent Snapshot) - Cloud Code has been added for 4 Events since *Test Snapshot 5* was taken.
+
+*3.* On the other hand, if we switch the selections, we see that comparing *Test Snapshot 10* - in right-hand - with *Test Snapshot 5* - in left-hand - and click *Compare*, the differences show as deletions:
+
+![](img/CloudHistory/20.png)
+
+
+## Reviewing Differences
+
+Once you have run a compare of two Snapshots and differences are returned, you can use several features built into the Cloud Code History Tool to help you quickly find and review specific differences in Cloud Code.
+
+### Types of Difference
+
+Differences are listed as one of three kinds:
 
 **Differences Icon**  | **Indicates**
 -----  | -----------
-![](img/CloudHistory/5.png)  | Newly added item since *Compare to* Snapshot version.
-![](img/CloudHistory/6.png) | Edited item since *Compare to* Snapshot version.
-![](img/CloudHistory/7.png) | Removed item since *Compare to* Snapshot version.
+![](img/CloudHistory/22.png)  | Newly added item.
+![](img/CloudHistory/24.png) | Edited item.
+![](img/CloudHistory/23.png) | Removed item.
 
-### Checking Lines of Cloud Code
 
-Lines of Cloud Code highlighted in blue depict the difference for that module or event where the Cloud Code differs:
+### Finding Differences
 
-![](img/CloudHistory/9.png)
+You can scroll down to inspect the Cloud Code differences or you can click the hotlink text for the identified change to jump straight to that Cloud Code. This is particularly useful if the compare returns many differences:
 
-### Trying to Compare Cloud Code Equivalent Snapshots
+![](img/CloudHistory/21.png)
 
-When you select a Snapshot in the *Base* column, the *Compare to* column will only show Snapshots with Cloud Code differences from one selected in *Base*.
+### Reviewing Edit Differences
 
-**Left Column**  | **Right Column**
------  | -----------
-  ![](img/CloudHistory/10.png)  | ![](img/CloudHistory/11.png)
-   Selecting Workspace Configuration in *Base*... | ...shows all Snapshots older than Snapshot *11* in *Compare to*
+The example in the [earlier section](#Selecting and Comparing Snapshots) showed Cloud Code differences for the addition or deletion of entire items between Snapshots. More typically, the differences will be the result of you having edited a few lines of Cloud Code across saved Snapshots.
 
-However, if Snapshots *5* and *6* are Cloud Code equivalent and we select Snapshot *6* in Base:
+Editing differences are presented in the Cloud Code History Tool in a way that is designed to help you quickly recognize and understand the changes made:
 
-**Left Column**  | **Right Column**
------  | -----------
-  ![](img/CloudHistory/12.png)  | ![](img/CloudHistory/13.png)
-   Selecting Snapshot *6* in *Base*... | ...shows Snapshot *4* and older in *Compare to*
+![](img/CloudHistory/25.png)
 
-We can see that selecting Snapshot *6* in *Base* let's us compare only to Snapshot *4* and earlier - Snapshot *5* is omitted from the list. This makes sense, because *5* and *6* are Cloud Code equivalent, which would make trying to compare them pointless!
+Compare in this example shows that there are editing differences between the selected Snapshots for *RACE_EVENT*. When we click to inspect the differences:
 
-Let's review this example more closely. In terms of Cloud Code:
-* Snapshots *1*, *2*, *3*, and *4* (including the AUTOSAVE Snapshot) are the same as each other.
-* Snapshots *5* and *6* are the same as each other (we saw that we can't therefore compare them.)
+![](img/CloudHistory/26.png)
 
-In terms of comparing Snapshots, we would find:
-* If we select Snapshot *5* in *Base*, *we can* compare it to Snapshots *1*, *2*, *3*, or *4*.
-* If we select Snapshot *4* in *Base*, *we can't* compare it to Snapshots *1*, *2*, or *3*.
-* If we select Snapshot *6* in *Base*, *we can* compare it to Snapshots *1*, *2*, *3*, or *4*.
-* If we select Snapshot *6* in *Base*, *we can't* compare it to Snapshot *5*.
+... we see that the editing differences are clearly pinpointed:
+* Each line where a difference is identified is highlighted.
+* Several lines above and below the difference are shown to help you find just where the difference exists.
+* Specific difference for values and terms within a highlighted difference line are strongly highlighted.
+* The values for the currently selected *Base* Snapshot are shown in green on the right and the corresponding values in the currently selected *Compare With* Snapshot are shown in red on the left.

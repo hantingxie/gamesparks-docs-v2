@@ -15,3 +15,4 @@ Here are some tutorials that will help you to perform common tasks involving dat
 * There are some best practices you can follow for [persisting data](/Tutorials/Database Access and Cloud Storage/Managing Data Persistence.md) on the GameSparks platform.
 * Some important guidelines for working with runtime collections using [NoSQL Retrieval and Persistence](/Tutorials/Database Access and Cloud Storage/Basic NoSQL Retrieval and Persistence.md) methods.
 * You might want to make some [game-specific data](/Tutorials/Database Access and Cloud Storage/Creating and Using Game Specific Data.md) available to your players.
+* You can use [C# object serialization](/Tutorials/Database Access and Cloud Storage/C Sharp Object Serialization for GameSparks.md) to save game-state objects to disk locally and to GameSparks and synchronize the data.

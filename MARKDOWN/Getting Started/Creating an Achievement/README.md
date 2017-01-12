@@ -15,10 +15,10 @@ GameSparks Achievements support the rewarding of players for accomplishments wit
   * Based on some custom logic defined in Cloud Code.
 
 In this section you'll learn how to award an Achievement using custom Cloud Code. To do this, you'll need to:
-* Create an Achievement.
-* Create an Event.
-* Attach Custom Cloud Code to the Event.
-* Finally, run the Event.
+* [Create an Achievement](#Creating an Achievement).
+* [Create an Event](#Creating an Event).
+* [Attach Custom Cloud Code to the Event](#Attaching Cloud Code to the Event).
+* Finally, [run the Event](#Running the Event in the Test Harness).
 
 ## Creating an Achievement
 
@@ -77,17 +77,17 @@ The Achievement is now fully configured to be awarded!
 
 *1*. Since everything is set up, you now need to navigate to the Test Harness and authenticate with one of the players you have previously [registered](/Getting Started/Using Authentication/README.md).
 
-*2.* At this point the Achievement you have configured awards some currency, and you need to validate that the player currently doesn't have any currency associated with their account. To do this you'll need to select Player tab and send an [AccountDetailsRequest](/API Documentation/Request API/Player/AccountDetailsRequest.md).
+*2.* At this point the Achievement you have configured awards some currency, and you need to validate that the player currently doesn't have any currency associated with their account. To do this you'll need to select Player tab and send an [AccountDetailsRequest](/API Documentation/Request API/Player/AccountDetailsRequest.md):
 
 ![](img/Create/12.png)
 
 *3.* Now you'll need to send the [LogEventRequest](/API Documentation/Request API/Player/LogEventRequest.md) for the Event you've configured earlier and using the  *Award_Achievement* Short Code you gave it as the *eventKey*:
 * This will award the Achievement to the currently authenticated player and send the [AchievementEarnedMessage](/API Documentation/Message API/Player/AchievementEarnedMessage.md).
-* Additionally, if you've enabled debug mode on your requests, the debugger should activate and you will be able to step through your Cloud Code. This only happens if your Requests/Responses/Messages have Cloud Code attached to them. You can read more about debugging Cloud Code [here](/Documentation/Test Harness/Debugger.md). After you've stepped through or exited the debugger, your player will be awarded the Achievement you've configured.
+* Additionally, if you've enabled debug mode on your requests, the debugger should activate and you will be able to step through your Cloud Code. This only happens if your Requests/Responses/Messages have Cloud Code attached to them. You can read more about debugging Cloud Code [here](/Documentation/Test Harness/Debugger.md). After you've stepped through or exited the debugger, your player will be awarded the Achievement you've configured:
 
 ![](img/Create/13.png)
 
-*4.* Finally, you can validate that the currency was awarded by calling the [AccountDetailsRequest](/API Documentation/Request API/Player/AccountDetailsRequest.md).
+*4.* Finally, you can validate that the currency was awarded by calling the [AccountDetailsRequest](/API Documentation/Request API/Player/AccountDetailsRequest.md) again:
 
 ![](img/Create/14.png)
    

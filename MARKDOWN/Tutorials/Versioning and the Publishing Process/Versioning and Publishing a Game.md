@@ -11,29 +11,39 @@ You can create versions of your game configuration whenever you like. There are 
 
   * You'll need to create a version when you publish your game to the live servers.
   * You've just finished a feature and the game is working exactly as you like. You're moving on to something new but want to be able to fall back on the existing configuration in case anything goes wrong.
-  * You want to maintain a couple of configurations and publish them at different times (e.g. you have a weekend configuration of the game with 'weekend offer' prices).
+  * You want to maintain a couple of configurations and publish them at different times (for example, you have a weekend configuration of the game with 'weekend offer' prices).
 
-You create a version by taking a 'snapshot' of the configuration. The process collects all your configuration information and stores it into a configuration set. This set also contains any data you have in your metadata collections. To create a snapshot, go to Configurator/Overview and click the plus icon in the Snapshots section.
+You create a version by taking a *Snapshot* of your game's configuration:
+* The process collects all your configuration information and stores it into a configuration set.
+* This set also contains any data you have in your metadata collections.
 
-![](img/Versioning/1.jpg)
+To create a Snapshot:
 
-You'll then be prompted to give a description to your snapshot. Choose something meaningful so you will be able to identify it in future when you may have several available.
+*1.* Go to the *Game Overview* page.
 
-![](img/Versioning/2.png)
+*2.* In the Snapshots panel, click to *Create* a new Snapshot:
 
-Once you've saved the snapshot it's available in the Snapshots list in Configurator/Overview.
+![](img/Versioning/4.png)
 
-![](img/Versioning/3.jpg)
+A *Create Game Snapshot* dialog appears.
 
-From here you can perform the following actions (by clicking on the icons to the right of the description):
+*3.* Enter a description for the Snapshot - choose something meaningful so you'll be able to identify it in future when you might have multiple Snapshots.
 
-  * *Copy* \- copies the snapshot and then you can choose to either use it to overwrite an existing game or create a new one (which will appear in the top left drop-down). If you are overwriting there is a fail-safe - a snapshot of the previous version is automatically created (called "AUTOSAVE - Pre Copy") which can then be deleted if all is in order.
-  * *Delete* \- this will delete the snapshot
-  * *Publish* \- this will take the snapshot and publish the configuration to the live servers. The snapshot that is currently published is highlighted in green. See below for more detail on publishing.
-  * *Revert* \- updates your workspace with the snapshot version. There is a fail-safe - a snapshot of the previous version is automatically taken (called "AUTOSAVE - Pre Revert") which can then be deleted if all is in order.
-  * *Preview* \- allows previewing any of the Snapshots without having to revert to them, editing will be disabled when previewing.
+![](img/Versioning/5.png)
 
-### Mongo Database Collections for Snapshots
+*4.* Click to *Create* the new Snapshot under the entered *Description*. When you've created the Snapshot, it's listed in the *Snapshots* panel in the *Game Overview*:
+
+![](img/Versioning/6.png)
+
+*5.* From here you can perform the following actions (by clicking on the icons to the right of the description):
+
+* ![](/img/icons/previewicon.png) - Preview the Snapshot - allows previewing any of the Snapshots without having to revert to them, editing will be disabled when previewing.
+* ![](/img/icons/copyicon.png) - Copy the Snapshot - copies the Snapshot and then you can choose to use it either to overwrite an existing game or create a new one. If you are overwriting, there is a fail-safe - a Snapshot of the previous version is automatically created (called "AUTOSAVE - Pre Copy") which can then be deleted if all is in order.
+* ![](/img/icons/publishicon.png) - Publish the Snapshot - this will take the Snapshot and publish the configuration to the live servers. The Snapshot that is currently published is highlighted in green. See [below](#Publishing) for more detail on publishing
+* ![](/img/icons/reverticon.png) - Revert the portal to the version contained in the Snapshot - updates your workspace with the Snapshot version. There is a fail-safe - a Snapshot of the previous version is automatically taken (called "AUTOSAVE - Pre Revert") which can then be deleted if all is in order.
+* ![](/img/icons/deleteicon.png) - Delete the Snapshot.
+
+## Mongo Database Collections for Snapshots
 
 When you take a Snapshot, the platform records all of your game's configuration into a configuration set:
   * This *includes* all Metadata Collections and their content.

@@ -81,7 +81,7 @@ So, before you can buy Virtual Goods you need make sure your player has some 
 
 ![](img/UT/14.png)
 
-Here's what we've entered in the Test Harness JSON builder for the *LogEventRequest* and submitted by clicking the play ![](/img/fa/play.png) icon:
+Here's what we've entered in the Test Harness JSON builder for the *LogEventRequest* and submitted by clicking to *Send Request*:
 
 ```
 {

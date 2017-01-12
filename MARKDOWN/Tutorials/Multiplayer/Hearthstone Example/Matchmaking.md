@@ -11,21 +11,21 @@ The way we set up the matchmaking allows for the platform to automatically const
 
 ## Creating the Match and Challenge Examples
 
-Before we can continue we need to create a match and a challenge. These will be very simple.
+Before we can continue we need to create a Match and a Challenge. These will be very simple.
 
-The match:
+The Match:
 
-![](img/1.jpg)
+![](img/3.png)
 
-The challenge:
+The Challenge:
 
-![](img/2.jpg)
+![](img/4.png)
 
-Make sure that the challenge is turn based.
+Make sure that the Challenge is turn based.
 
 ## The Match Event
 
-Make a new event. This simple event will take one string that represents the shortCode of the match it's supposed to make. We'll name this event findMatch and the Cloud Code will be:
+Make a new Event. This simple Event will take one string that represents the Short Code of the Match it's supposed to make. We'll name this Event *findMatch* and the Cloud Code will be:
 
 ```
 //Get shortCode

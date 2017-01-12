@@ -11,14 +11,15 @@ Real-Time scripts are designed to be used alongside GameSpark’s Real-Time serv
 
 In this tutorial, we'll go through setting up a new Real-Time script and explain what each of the functions available through the [RTSession](/API Documentation/Realtime API/RTSession.md) API do, along with examples of how to use them.
 
+<q>**Calling Log Event Requests in RT Scripts?** If you're planning to call Log Event Requests from your Real-Time scripts, please make sure you read this [tutorial](/Tutorials/Real-Time Services/Calling Log Event Requests in RT Scripts.md) first for guidelines on how to do this.</q>
 
 ## Creating Real-Time Scripts
 
-*1.* In the portal, go to *Configurator > Cloud Code* and select *Realtime Scripts*.
+*1.* In the portal, go to *Configurator > Cloud Code* and under *Scripts* select *Realtime Scripts*.
 
-*2.* Click the plus ![](/img/fa/plus.png) icon to create a new Real-Time script:
+*2.* Click the plus ![](/img/fa/plus-circle.png) icon to create a new Real-Time script:
 
-![](img/RTScripts/1.png)
+![](img/RTScripts/4.png)
 
 ## RTSession API
 
@@ -244,10 +245,7 @@ RTSession.onPacket(100, function(packet){
 
 ```
 
-You can then access these logs from the *NoSQL Explorer* in the portal. All RT-logs are stored in a collection called ‘realtime.log’:
-
-![](img/RTScripts/3.png)
-
+You can then access these logs from the *NoSQL Explorer* in the portal. All RT-logs are stored in a collection called *realtime.log* under *Runtime*.
 
 ## Get Player(s)
 

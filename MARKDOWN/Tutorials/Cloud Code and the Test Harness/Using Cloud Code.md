@@ -97,7 +97,7 @@ In this section, we'll:
 
 ![](img/CreateCloud/23.png)
 
-*3.* To send this JSON request to the GameSparks platform, click *Send Request*. In this example for *Player Six*:
+*3.* To send this JSON request to the GameSparks platform, click *Send Request*. In this example for *Player Ten*:
 
 ![](img/CreateCloud/24.png)
 

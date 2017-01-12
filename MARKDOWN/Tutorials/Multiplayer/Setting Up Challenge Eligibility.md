@@ -7,208 +7,237 @@ src: /Tutorials/Multiplayer/Setting Up Challenge Eligibility.md
 
 ## Introduction
 
-In this tutorial, we'll look at setting up matchmaking based on a player's segments. To do this, we'll use segmentation to group players together and we'll use eligibility criteria to filter challenges for those players. We'll also see how we can override a current player's settings to allow the client to determine what available challenges to show at any time, and allow the player to join them. To start with, let's set up a simple challenge. We can then look at how to match players up.
+In this tutorial, we'll look at setting up matchmaking based on a player's segments. To do this, we'll use segmentation to group players together and we'll use eligibility criteria to filter Challenges for those players. We'll also see how we can override a current player's settings to allow the client to determine what available Challenges to show at any time, and allow the player to join them.
 
-1. Navigate to *Configurator > Challenges*.
+To start with, let's set up a simple Challenge. We can then look at how to match players up.
 
-2. Add a new Challenge.
+*1.* Navigate to *Configurator > Multiplayer*. The page opens with the *Challenges* tab selected.
 
-3. Give it a *Short Code* of *SC1*.
+*2.* Click to *Add* a new Challenge.
 
-4. Give it a name. Let's just call it *Simple Challenge*:
+*3.* Give it a *Short Code* of *SC1*.
 
- ![](img/ChallengeEligibility/1.png)
+*4.* Give it a *Name* - let's just call it *Simple Challenge*:
 
-That's all we need for the purposes of this tutorial, so let's head over to the Test Harness and get our players set up.
+ ![](img/ChallengeEligibility/2.png)
+
+*5.* Click to *Save and Close* the new Challenge.
+
+That's all we need for the purposes of this tutorial, so let's head over to the [Test Harness](/Documentation/Test Harness/README.md) and get our players set up.
 
 ## Using a Player's Segments
 
-We're going to segment our players based on *level*, with the aim of matching players who are the same level as each other to play against. Let's register our first two players, setting their level to "Newbie".
+We're going to segment our players based on *level*, with the aim of matching only those players who are the same level as each other to play against each other.
+
+*1.* First, let's register our first two players, setting their level to *Newbie*:
 
 ```
-[{
-"@class": ".RegistrationRequest",
-"displayName": "challengePlayer1",
-"password": "password",
-"segments": {
-"level": "Newbie"
-},
-"userName": "challengePlayer1"
-},{
-"@class": ".RegistrationRequest",
-"displayName": "challengePlayer2",
-"password": "password",
-"segments": {
-"level": "Newbie"
-},
-"userName": "challengePlayer2"
-}]
+[
+  {
+    "@class": ".RegistrationRequest",
+    "displayName": "challengePlayer1",
+    "password": "password",
+    "segments": {
+      "level": "Newbie"
+                },
+    "userName": "challengePlayer1"
+  },
+  {
+    "@class": ".RegistrationRequest",
+    "displayName": "challengePlayer2",
+    "password": "password",
+    "segments": {
+      "level": "Newbie"
+                },
+    "userName": "challengePlayer2"
+  }
+]
+
 ```
 
-Leave yourself authenticated as *challengePlayer2* and let's create the Challenge instance. Since *challengePlayer2* and *challengePlayer1* don't yet know each other, we want to create a PUBLIC challenge and, importantly, we'll specify our eligibility criteria:
+*2.* Leave yourself authenticated as *challengePlayer2* and let's create the Challenge instance. Since *challengePlayer2* and *challengePlayer1* don't yet know each other, we want to create a *PUBLIC* challenge and, importantly, we'll specify our eligibility criteria.
+
+Here's the [CreateChallengeRequest](/API Documentation/Request API/Multiplayer/CreateChallengeRequest.md) we use to do this:
 
 ```
 {
-"@class": ".CreateChallengeRequest",
-"accessType": "PUBLIC",
-"challengeShortCode": "SC1",
-"eligibilityCriteria": {
-"segments": {
-"level": "Newbie"
+  "@class": ".CreateChallengeRequest",
+  "accessType": "PUBLIC",
+  "challengeShortCode": "SC1",
+  "eligibilityCriteria": {
+    "segments": {
+        "level": "Newbie"
+                }
+                          },
+  "endTime": "2015-03-25T12:00Z"
 }
-},
-"endTime": "2015-03-25T12:00Z"
-}
+
 ```
 
-What this means is that to be eligible to find or join this challenge you must have a segment called *level*, with the value *Newbie*. The eligibility criteria can be more complex than this and we'll go into some more detail on this later.
+What this means is that to be eligible to find or join this Challenge you must have a segment called *level*, with the value *Newbie*. The eligibility criteria can be more complex than this and we'll go into some more detail on this later.
 
-Now we have our Challenge instance, let's authenticate as *challengePlayer1* and find it.
+*3.* Now we have our Challenge instance, let's authenticate as *challengePlayer1* and find it.
 
 Make a [FindChallengeRequest](/API Documentation/Request API/Multiplayer/FindChallengeRequest.md) specifying an *accessType* of *PUBLIC* and our Challenge Short Code of *SC1*:
-```
-{
-"@class": ".FindChallengeRequest",
-"accessType": "PUBLIC",
-"shortCode": "SC1"
-}
-```
-And you should see the Challenge instance we just created:
 
 ```
 {
-"@class": ".FindChallengeResponse",
-"challengeInstances": [
-{
-"challengeId": "5510136de4b08269846ec481",
-"state": "ISSUED",
-"scriptData": {},
-"shortCode": "SC1",
-"accepted": [
-{
-"name": "challengePlayer2",
-"id": "55100e8ce4b0a0e0ea03291b"
+  "@class": ".FindChallengeRequest",
+  "accessType": "PUBLIC",
+  "shortCode": "SC1"
 }
-],
-"startDate": null,
-"challenger": {
-"name": "challengePlayer2",
-"id": "55100e8ce4b0a0e0ea03291b"
-},
-"expiryDate": null,
-"turnCount": {
-"55100e8ce4b0a0e0ea03291b": 0
-},
-"endDate": "2015-03-25T12:00Z",
-"challengeName": "Simple Challenge"
-}
-],
-"scriptData": null
-}
-```
 
-Now we can send a [JoinChallengeRequest](/API Documentation/Request API/Multiplayer/JoinChallengeRequest.md) with this *challengeInstanceId*:
 ```
-{
-"@class": ".JoinChallengeRequest",
-"challengeInstanceId": "5510136de4b08269846ec481"
-}
-```
-And we've just matched *challengePlayer1* and *challengePlayer2* based on their level. It really is that simple!
-
-Let's add a new player, *challengePlayer3*. This player is a bit more experienced than our first two players, so their level is *Advanced*.
+And you should see the Challenge instance we just created showing in the Test Harness *Inspector* window:
 
 ```
 {
-"@class": ".RegistrationRequest",
-"displayName": "challengePlayer3",
-"password": "password",
-"segments": {
-"level": "Advanced"
-},
-"userName": "challengePlayer3"
+  "@class": ".FindChallengeResponse",
+  "challengeInstances": [
+    {
+      "challengeId": "5510136de4b08269846ec481",
+      "state": "ISSUED",
+      "scriptData": {},
+        "shortCode": "SC1",
+        "accepted": [
+        {
+          "name": "challengePlayer2",
+          "id": "55100e8ce4b0a0e0ea03291b"
+        }
+                        ],
+  "startDate": null,
+  "challenger": {
+    "name": "challengePlayer2",
+    "id": "55100e8ce4b0a0e0ea03291b"
+                },
+  "expiryDate": null,
+  "turnCount": {
+    "55100e8ce4b0a0e0ea03291b": 0
+                },
+  "endDate": "2015-03-25T12:00Z",
+  "challengeName": "Simple Challenge"
+                }
+                      ],
+  "scriptData": null
 }
-```
-
-Create a Challenge with *challengePlayer3* as we did above, but this time set the level to be *Advanced*:
 
 ```
-{
-"@class": ".CreateChallengeRequest",
-"accessType": "PUBLIC",
-"challengeShortCode": "SC1",
-"eligibilityCriteria": {
-"segments": {
-"level": "Advanced"
-}
-},
-"endTime": "2015-03-25T12:00Z"
-}
-```
 
- Now authenticate as *challengePlayer1* and let's see if we can find this Challenge to join.
+*4.* Now we can send a [JoinChallengeRequest](/API Documentation/Request API/Multiplayer/JoinChallengeRequest.md) with this *challengeInstanceId*:
 
-```
-{
-"@class": ".FindChallengeRequest",
-"accessType": "PUBLIC",
-"shortCode": "SC1"
-}
-```
-
- We can see that the *Advanced* Challenge created by *challengePlayer3* doesn't show up here. However, we can register another *Advanced* player:
 
 ```
 {
-"@class": ".RegistrationRequest",
-"displayName": "challengePlayer4",
-"password": "password",
-"segments": {
-"level": "Advanced"
-},
-"userName": "challengePlayer4"
+  "@class": ".JoinChallengeRequest",
+  "challengeInstanceId": "5510136de4b08269846ec481"
 }
-```
 
- And now do a [FindChallengeRequest](/API Documentation/Request API/Multiplayer/FindChallengeRequest.md):
+```
+And we've just matched *challengePlayer1* and *challengePlayer2* based on their level - they're both *Newbies*. It really is that simple!
+
+*5.* Now, let's add a new player, *challengePlayer3*. This player is a bit more experienced than our first two players, so their level is *Advanced*:
 
 ```
 {
-"@class": ".FindChallengeRequest",
-"accessType": "PUBLIC",
-"shortCode": "SC1"
+  "@class": ".RegistrationRequest",
+  "displayName": "challengePlayer3",
+  "password": "password",
+  "segments": {
+    "level": "Advanced"
+              },
+  "userName": "challengePlayer3"
+
 }
+
 ```
+
+*6.* Submit a nes *CreateChallengeRequest* using *challengePlayer3* as we did above, but this time set the level to be *Advanced*:
+
 ```
 {
-"@class": ".FindChallengeResponse",
-"challengeInstances": [
+  "@class": ".CreateChallengeRequest",
+  "accessType": "PUBLIC",
+  "challengeShortCode": "SC1",
+  "eligibilityCriteria": {
+      "segments": {
+        "level": "Advanced"
+                  }
+                          },
+  "endTime": "2015-03-25T12:00Z"
+}
+
+```
+
+*7.* Now authenticate as *challengePlayer1* and let's see if we can find this Challenge to join:
+
+```
 {
-"challengeId": "55102540e4b08269846f0952",
-"state": "ISSUED",
-"scriptData": {},
-"shortCode": "SC1",
-"accepted": [
+  "@class": ".FindChallengeRequest",
+  "accessType": "PUBLIC",
+  "shortCode": "SC1"
+}
+
+```
+
+We can see that the *Advanced* Challenge created by *challengePlayer3* doesn't show up here.
+
+*8.* However, we can register another *Advanced* player:
+
+```
 {
-"name": "challengePlayer3",
-"id": "551010d7e4b08269846eb7b4"
+  "@class": ".RegistrationRequest",
+  "displayName": "challengePlayer4",
+  "password": "password",
+    "segments": {
+      "level": "Advanced"
+                },
+  "userName": "challengePlayer4"
 }
-],
-"startDate": null,
-"challenger": {
-"name": "challengePlayer3",
-"id": "551010d7e4b08269846eb7b4"
-},
-"expiryDate": null,
-"turnCount": {
-"551010d7e4b08269846eb7b4": 0
-},
-"endDate": "2015-03-25T12:00Z",
-"challengeName": "Simple Challenge"
+
+```
+
+*9.* And now do a [FindChallengeRequest](/API Documentation/Request API/Multiplayer/FindChallengeRequest.md):
+
+```
+{
+  "@class": ".FindChallengeRequest",
+  "accessType": "PUBLIC",
+  "shortCode": "SC1"
 }
-],
-"scriptData": null
+
+```
+
+```
+{
+  "@class": ".FindChallengeResponse",
+  "challengeInstances": [
+  {
+    "challengeId": "55102540e4b08269846f0952",
+    "state": "ISSUED",
+    "scriptData": {},
+      "shortCode": "SC1",
+      "accepted": [
+      {
+        "name": "challengePlayer3",
+        "id": "551010d7e4b08269846eb7b4"
+      }
+                  ],
+  "startDate": null,
+  "challenger": {
+  "name": "challengePlayer3",
+  "id": "551010d7e4b08269846eb7b4"
+  },
+    "expiryDate": null,
+    "turnCount": {
+      "551010d7e4b08269846eb7b4": 0
+  },
+    "endDate": "2015-03-25T12:00Z",
+    "challengeName": "Simple Challenge"
+  }
+                      ],
+    "scriptData": null
 }
+
 ```
 
  Not only do they see the *Advanced* Challenge, but they don't see the *Newbie* Challenge.
@@ -219,59 +248,66 @@ We've seen that we can use segments to categorize players, and match players bas
 
 Let's go back to using *challengePlayer1* and *challengePlayer2*. We're not going to be using *level* any more, so it doesn't actually matter which players we use for this.
 
-Authenticate as *challengePlayer2* and let's create another Challenge. This time specify some other segment name, let's call it "category" - this is an arbitrary choice, it could be anything:
+*1.* Authenticate as *challengePlayer2* and let's create another Challenge. This time specify some other segment name, let's call it *category* - this is an arbitrary choice, it could be anything:
 
 ```
-  {
-"@class": ".CreateChallengeRequest",
-"accessType": "PUBLIC",
-"challengeShortCode": "SC1",
-"eligibilityCriteria": {
-"segments": {
-"category": "friendly"
+{
+  "@class": ".CreateChallengeRequest",
+  "accessType": "PUBLIC",
+  "challengeShortCode": "SC1",
+  "eligibilityCriteria": {
+    "segments": {
+      "category": "friendly"
 }
 },
-"endTime": "2015-03-25T12:00Z"
+  "endTime": "2015-03-25T12:00Z"
 }
 ```
 
-Now authenticate as *challengePlayer1* and let's try and find that Challenge:
-
-```
-{
-"@class": ".FindChallengeRequest",
-"accessType": "PUBLIC",
-"shortCode": "SC1"
-}
-```
-
-You can see the Challenge we have just created doesn't show up. Let's modify that request slightly. Since we're using eligibility criteria to categorize Challenges rather than to group players, the client is going to own what the eligibility for the request is:
+*2.* Now authenticate as *challengePlayer1* and let's try and find that Challenge:
 
 ```
 {
-"@class": ".FindChallengeRequest",
-"accessType": "PUBLIC",
-"shortCode": "SC1",
-"eligibility" : {
-"segments" : {
-"category" : "friendly"
-}
-}
+  "@class": ".FindChallengeRequest",
+  "accessType": "PUBLIC",
+  "shortCode": "SC1"
 }
 
 ```
- Here you can see we're specifying the eligibility for this request, which means the platform will use that value rather than taking the segments from the player. Now we can indeed see the Challenge we created. As before, we will not be able to join this Challenge unless we're eligible, and the same mechanism applies:
+
+You can see the Challenge we have just created doesn't show up.
+
+*3.* Let's modify that request slightly. Since we're using eligibility criteria to categorize Challenges rather than to group players, the client is going to own what the eligibility for the request is:
 
 ```
 {
-"@class": ".JoinChallengeRequest",
-"challengeInstanceId": "55102a77e4b08269846f1d2a",
-"eligibility" : {
-"segments" : {
-"category" : "friendly"
+  "@class": ".FindChallengeRequest",
+  "accessType": "PUBLIC",
+  "shortCode": "SC1",
+  "eligibility" : {
+    "segments" : {
+      "category" : "friendly"
+                }
+                  }
 }
+
+```
+
+Here you can see we're specifying the eligibility for this request, which means the platform will use that value rather than taking the segments from the player. Now we can indeed see the Challenge we created.
+
+*4.* As before, we'll not be able to join this Challenge unless we're eligible, and the same mechanism applies:
+
+```
+{
+  "@class": ".JoinChallengeRequest",
+  "challengeInstanceId": "55102a77e4b08269846f1d2a",
+  "eligibility" : {
+    "segments" : {
+        "category" : "friendly"
+                }
+                  }
 }
-}
+
 ```
 
 We're telling the server what the eligibility should be, without it the player's segments would again be used.
@@ -282,58 +318,62 @@ The eligibility criteria specified in the [CreateChallengeRequest](/API Document
 
 ```
 {
-"@class": ".CreateChallengeRequest",
-"accessType": "PUBLIC",
-"challengeShortCode": "SC1",
-"eligibilityCriteria": {
-"segments": {
-"level": ["Newbie", "Advanced"],
-"country" : "UK"
+  "@class": ".CreateChallengeRequest",
+  "accessType": "PUBLIC",
+  "challengeShortCode": "SC1",
+  "eligibilityCriteria": {
+    "segments": {
+      "level": ["Newbie", "Advanced"],
+        "country" : "UK"
+                }
+                        },
+  "endTime": "2015-03-25T12:00Z"
 }
-},
-"endTime": "2015-03-25T12:00Z"
-}
+
 ```
 
 When multiple segments are specified a player must match **ALL** of them. In the above example, our player would need to have both *level* AND *country* segments. When multiple segment values are specified, a player must match **ONE** of them (a player can only have one value for a segment, after all). So we could join the above Challenge with the player:
 
 ```
 {
-"segments" : {
-"level" : "Advanced",
-"country" : "UK"
+  "segments" : {
+    "level" : "Advanced",
+    "country" : "UK"
+              }
 }
-}
+
 ```
 
 or player:
 
 ```
 {
-"segments" : {
-"level" : "Newbie",
-"country" : "UK"
+  "segments" : {
+    "level" : "Newbie",
+    "country" : "UK"
+              }
 }
-}
-```
-
-but not:
 
 ```
-{
-"segments" : {
-"level" : "Newbie",
-"country" : "US"
-}
-}
-```
 
-or:
+but *NOT*:
 
 ```
 {
-"segments" : {
-"level" : "Newbie"
+  "segments" : {
+    "level" : "Newbie",
+    "country" : "US"
+              }
 }
+```
+
+*NOR*:
+
+```
+{
+  "segments" : {
+    "level" : "Newbie"
+              }
 }
+
 ```

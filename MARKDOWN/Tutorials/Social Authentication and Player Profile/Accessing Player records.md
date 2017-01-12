@@ -35,6 +35,22 @@ Here's an example of a newly created player's record:
 
 <q>**More Information!** For more information about using the NoSQL Explorer, click [here](/Documentation/NoSQL Explorer.md).</q>
 
+## Using the Player Management Screen
+
+You can use the player management screen to offer a visual experience while you access player data and change variables realtime. The player management screen can be found in the manage section of the portal.
+
+*1.* To access player data, click *Manage>Players*.
+
+*2.* On the *Player Search* panel, build and submit a query for the player data you want. The results of the query are returned into the *Results* panel.
+
+*3.* To view the player data for a result, click the edit ![](/img/fa/edit.png) icon. The *Edit Player* screen appears:
+
+![](img/PlayerRecords/3.jpg)
+
+* You can use the dynamic forms builder to customize this screen in whatever way you like.
+* You can tailor your team's experience and design what is shown on the screen to suit different users. For example, you can offer special screens for customer service, where they are allowed to change certain values, while your programmers have access to a different screen.
+
+<q>**More Information!** For more information about dynamic forms, click [here](/Documentation/Manage/Working with Dynamic Forms.md).</q>
 
 ## Accessing Data through Cloud Code
 

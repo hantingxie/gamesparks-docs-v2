@@ -13,8 +13,12 @@ Segments allow you to create partitions for different users and apply various ru
 
 Here's two example use cases where Segmentation comes in very useful:
 
-1. Let's suppose I have an international blockbuster game with players connecting from different parts of the World. In order to offer a more personalized experience for my players, I might want to segment players by region or country. I can create a Segment based on country, with Segment Values of the countries my players are situated in. When added to such a Segment, the players will receive a different experience. For example, each Segment Value (or country in this case) could have different values for Virtual Goods, the amount of awards they receive upon obtaining an Achievement, or the rates of their 6 currencies that spread across their game.
-2. What about language? A much simpler and customizable method than Geo Locations would be to introduce a language Segment. Based on the user's Segment Values for a language Segment, users could receive messages for new high scores, challenges, and team invitations all in their respective native languages, as well as customizing the name and descriptions of Leaderboards, Challenges, Achievements, and so on.
+*1.* Let's suppose I have an international blockbuster game with players connecting from different parts of the World. In order to offer a more personalized experience for my players, I might want to segment players by region or country. I can create a Segment based on country, with Segment Values of the countries my players are situated in. When added to such a Segment, the players will receive a different experience. For example, each Segment Value (country in this case) could have assign values for:
+* Virtual Goods.
+* The awards players receive upon obtaining an Achievement.
+* The rates of 6 currencies that spread across their game.
+
+*2.* What about language? A much simpler and customizable method than Geo Locations would be to introduce a language Segment. Based on the user's Segment Values for a language Segment, users could receive messages for new high scores, challenges, and team invitations all in their respective native languages, as well as customizing the name and descriptions of Leaderboards, Challenges, Achievements, and so on.
 
 ## Managing Segment Configurations
 
@@ -63,7 +67,8 @@ Within the portal, you can segment your configuration to set different parameter
 
 ![](img/Segments/10.png)
 
-In this example, we've added Segment configuration to an Achievement to award different Virtual Goods to players in Poland or Japan
+In this example, we've added Segment configuration to an Achievement to award different Virtual Goods to players in Poland or Japan:
+* Here we can see that the currency amounts awarded for the *500 Achievement* for Japanese players are higher than the amounts awarded under the base configuration for the Achievement.
 
 ### Ordering Segment Configuration
 
@@ -73,6 +78,6 @@ Segmented values within the portal can be ordered, where the order is used to fi
 
 ## Social Integration with Segments
 
-One of the most powerful features of Segmentation is that it allows for different segment types to be socially connected to different games or apps. For example, players of different nationalities or language preferences, could have segments which would socially connect them to a different version of a developer's app or game on Facebook or Twitter:
+One of the most powerful features of Segmentation is that it allows for different segment types to be socially connected to different games or apps. For example, players of different nationalities or language preferences could have segments which would socially connect them to a different version of a developer's app or game on Facebook or Twitter:
 
 ![](img/Segments/12.png)

@@ -32,9 +32,11 @@ You can use the following options (highlighted above):
   * *Description* \- The Description is a mandatory field which should be used to describe the Challenge.
   * *Tags* \- Tags associated with the Challenge.
   * *Turn Based* \- Use this switch to enable turn based games, Tic-Tac-Toe for example.
-  * *Turn/Attempt Consumers* \- If you have set the *Turn Based* switch to true (or when you create the Challenge through the API you set a maximum attempt), you can have turns/attempts consumed by any event selected in this list.
-  * *Leaderboard* \- The outcome of a Challenge can be determined by a specially configured Leaderboard or a custom Cloud Code Script. Use this drop down to pick the appropriate option.
-  * *Global* \- If this is off, only [LogChallengeEventRequests](/API Documentation/Request API/Multiplayer/LogChallengeEventRequest.md) will affect this challenge.
+  * *Turn/Attempt Consumers* \- If you have set the *Turn Based* switch to true (or when you create the Challenge through the API you set a maximum attempt), you can have turns/attempts consumed by any Event selected in this list.
+  * *Leaderboard* \- The outcome of a Challenge can be determined by a specially configured Leaderboard or a custom Cloud Code Script. Use this drop-down to pick the appropriate option.
+  * *Global* \- If this is off, only [LogChallengeEventRequests](/API Documentation/Request API/Multiplayer/LogChallengeEventRequest.md) will affect this Challenge.
   * *Achievement* \- If this field is set, the winner of the Challenge will be the first to reach the selected Achievement. Note that the Achievements available for selection are those that are configured to be triggered by the Leaderboard you have selected for the Challenge.
 
 *3.* Click to *Save and Close* the new Challenge.
+
+<q>**More on Challenges?** For more details on understanding all aspects of Challenges and how to test them, see this [tutorial](/Tutorials/Multiplayer/Understanding and Testing Challenges.md).
