@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Authentication/FacebookConnectRequest.md
----
 
 # FacebookConnectRequest
 
@@ -27,7 +24,6 @@ If the Facebook user is already known, the session will switch to being the prev
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
 accessToken | No | string | The access token is used by the client to make authenticated requests on behalf of the end user.
-analyticsData | No | AnalyticsData | Optional data used by analytics
 code | No | string | An authorization code is a short-lived token representing the user's access grant, created by the authorization server and passed to the client application via the browser.
 doNotLinkToCurrentPlayer | No | boolean | Indicates that the server should not try to link the external profile with the current player.  If false, links the external profile to the currently signed in player.  If true, creates a new player and links the external profile to them.  Defaults to false.
 errorOnSwitch | No | boolean | Indicates whether the server should return an error if an account switch would have occurred, rather than switching automatically.  Defaults to false.
@@ -82,6 +78,7 @@ accessToken | ACCOUNT_ALREADY_LINKED | The current user has a Facebook profile a
 code | NOTAUTHENTICATED | The system was unable to authenticate the code
 accessToken | NOTAUTHENTICATED | The system was unable to authenticate the token
 accessToken | REQUIRED | Both the code and the accessToken are missing
+authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
 
 ## Code Samples
 
@@ -93,7 +90,6 @@ accessToken | REQUIRED | Both the code and the accessToken are missing
 	...
 	new FacebookConnectRequest()
 		.SetAccessToken(accessToken)
-		.SetAnalyticsData(analyticsData)
 		.SetCode(code)
 		.SetDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 		.SetErrorOnSwitch(errorOnSwitch)
@@ -122,7 +118,6 @@ accessToken | REQUIRED | Both the code and the accessToken are missing
 	gs.getRequestBuilder()
 	    .createFacebookConnectRequest()
 		.setAccessToken(accessToken)
-		.setAnalyticsData(analyticsData)
 		.setCode(code)
 		.setDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 		.setErrorOnSwitch(errorOnSwitch)
@@ -147,7 +142,6 @@ accessToken | REQUIRED | Both the code and the accessToken are missing
 	...
 	GSFacebookConnectRequest* request = [[GSFacebookConnectRequest alloc] init];
 	[request setAccessToken:accessToken;
-	[request setAnalyticsData:analyticsData;
 	[request setCode:code;
 	[request setDoNotLinkToCurrentPlayer:doNotLinkToCurrentPlayer;
 	[request setErrorOnSwitch:errorOnSwitch;
@@ -187,7 +181,6 @@ accessToken | REQUIRED | Both the code and the accessToken are missing
 	
 	FacebookConnectRequest request(gsInstance);
 	request.SetAccessToken(accessToken)
-	request.SetAnalyticsData(analyticsData)
 	request.SetCode(code)
 	request.SetDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 	request.SetErrorOnSwitch(errorOnSwitch)
@@ -207,7 +200,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 ...
 gs.getRequestBuilder().createFacebookConnectRequest()
 	.setAccessToken(accessToken)
-	.setAnalyticsData(analyticsData)
 	.setCode(code)
 	.setDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 	.setErrorOnSwitch(errorOnSwitch)
@@ -233,7 +225,6 @@ gs.getRequestBuilder().createFacebookConnectRequest()
 
 	var request = new SparkRequests.FacebookConnectRequest();
 	request.accessToken = ...;
-	request.analyticsData = ...;
 	request.code = ...;
 	request.doNotLinkToCurrentPlayer = ...;
 	request.errorOnSwitch = ...;

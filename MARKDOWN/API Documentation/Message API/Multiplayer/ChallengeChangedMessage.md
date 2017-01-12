@@ -1,6 +1,3 @@
----
-src: /API Documentation/Message API/Multiplayer/ChallengeChangedMessage.md
----
 
 # ChallengeChangedMessage
 
@@ -26,23 +23,15 @@ who | No | string | Indicates which player has changed the challenge
 
 ## Nested types
 
-### ScriptData
+### PlayerDetail
 
-A collection of arbitrary data that can be added to a message via a Cloud Code script.
-
-Parameter | Type | Description
---------- | ---- | -----------
-myKey | string | An arbitrary data key
-myValue | JSON | An arbitrary data value.
-
-### PlayerTurnCount
-
-Represents the number of turns a player has taken in a turn based challenge.
+An object representing a player's id and name
 
 Parameter | Type | Description
 --------- | ---- | -----------
-count | string | The number of turns that the player has taken so far during this challenge.
-playerId | string | The unique player id.
+externalIds | JSON | A player's external identifiers
+id | string | A player's id
+name | string | A player's name
 
 ### Challenge
 
@@ -73,15 +62,14 @@ startDate | date | The date when the challenge starts.
 state | string | One of these possible state values: ISSUED, EXPIRED, ACCEPTED, DECLINED, COMPLETE, WITHDRAWN, RUNNING, WAITING, RECEIVED
 turnCount | [PlayerTurnCount[]](#playerturncount) | A collection containing the number of turns taken by each player that has accepted the challenge.
 
-### PlayerDetail
+### ScriptData
 
-An object representing a player's id and name
+A collection of arbitrary data that can be added to a message via a Cloud Code script.
 
 Parameter | Type | Description
 --------- | ---- | -----------
-externalIds | JSON | A player's external identifiers
-id | string | A player's id
-name | string | A player's name
+myKey | string | An arbitrary data key
+myValue | JSON | An arbitrary data value.
 
 ### LeaderboardData
 
@@ -98,6 +86,15 @@ rank | number | The players rank.
 userId | string | The unique player id for this leaderboard entry.
 userName | string | The players display name.
 when | string | The date when this leaderboard entry was created.
+
+### PlayerTurnCount
+
+Represents the number of turns a player has taken in a turn based challenge.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+count | string | The number of turns that the player has taken so far during this challenge.
+playerId | string | The unique player id.
 
 
 ## Code Samples

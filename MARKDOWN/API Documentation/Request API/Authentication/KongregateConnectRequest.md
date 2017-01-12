@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Authentication/KongregateConnectRequest.md
----
 
 # KongregateConnectRequest
 
@@ -24,7 +21,6 @@ If the Kongregate user is already known, the session will switch to being the pr
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 doNotLinkToCurrentPlayer | No | boolean | Indicates that the server should not try to link the external profile with the current player.  If false, links the external profile to the currently signed in player.  If true, creates a new player and links the external profile to them.  Defaults to false.
 errorOnSwitch | No | boolean | Indicates whether the server should return an error if an account switch would have occurred, rather than switching automatically.  Defaults to false.
 gameAuthToken | No | string | The gameAuthToken, together with the userID are used by the client to make authenticated requests on behalf of the end user.
@@ -81,6 +77,7 @@ gameAuthToken | NOTAUTHENTICATED | The system was unable to authenticate the use
 gameAuthToken | NOTAUTHENTICATED | The system was unable to authenticate the user
 userId | REQUIRED | The userId is required but not provided
 gameAuthToken | REQUIRED | The gameAuthToken is required but not provided
+authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
 
 ## Code Samples
 
@@ -91,7 +88,6 @@ gameAuthToken | REQUIRED | The gameAuthToken is required but not provided
 	using GameSparks.Api.Responses;
 	...
 	new KongregateConnectRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 		.SetErrorOnSwitch(errorOnSwitch)
 		.SetGameAuthToken(gameAuthToken)
@@ -120,7 +116,6 @@ gameAuthToken | REQUIRED | The gameAuthToken is required but not provided
 	
 	gs.getRequestBuilder()
 	    .createKongregateConnectRequest()
-		.setAnalyticsData(analyticsData)
 		.setDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 		.setErrorOnSwitch(errorOnSwitch)
 		.setGameAuthToken(gameAuthToken)
@@ -145,7 +140,6 @@ gameAuthToken | REQUIRED | The gameAuthToken is required but not provided
 	#import "GSAPI.h"
 	...
 	GSKongregateConnectRequest* request = [[GSKongregateConnectRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setDoNotLinkToCurrentPlayer:doNotLinkToCurrentPlayer;
 	[request setErrorOnSwitch:errorOnSwitch;
 	[request setGameAuthToken:gameAuthToken;
@@ -185,7 +179,6 @@ gameAuthToken | REQUIRED | The gameAuthToken is required but not provided
 	......
 	
 	KongregateConnectRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 	request.SetErrorOnSwitch(errorOnSwitch)
 	request.SetGameAuthToken(gameAuthToken)
@@ -205,7 +198,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createKongregateConnectRequest()
-	.setAnalyticsData(analyticsData)
 	.setDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 	.setErrorOnSwitch(errorOnSwitch)
 	.setGameAuthToken(gameAuthToken)
@@ -231,7 +223,6 @@ gs.getRequestBuilder().createKongregateConnectRequest()
 ```javascript
 
 	var request = new SparkRequests.KongregateConnectRequest();
-	request.analyticsData = ...;
 	request.doNotLinkToCurrentPlayer = ...;
 	request.errorOnSwitch = ...;
 	request.gameAuthToken = ...;

@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Authentication/GameCenterConnectRequest.md
----
 
 # GameCenterConnectRequest
 
@@ -26,7 +23,6 @@ This API call requires the output details from GKLocalPlayer.generateIdentityVer
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 displayName | No | string | The display of the current player from GameCenter. This will be used as the displayName of the gamesparks player if created (or syncDisplayname is true)
 doNotLinkToCurrentPlayer | No | boolean | Indicates that the server should not try to link the external profile with the current player.  If false, links the external profile to the currently signed in player.  If true, creates a new player and links the external profile to them.  Defaults to false.
 errorOnSwitch | No | boolean | Indicates whether the server should return an error if an account switch would have occurred, rather than switching automatically.  Defaults to false.
@@ -92,6 +88,7 @@ signature | REQUIRED | The signature is required but not provided
 salt | REQUIRED | The salt is required but not provided
 externalPlayerId | REQUIRED | The externalPlayerId is required but not provided
 displayName | REQUIRED | The displayName is required but not provided
+authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
 
 ## Code Samples
 
@@ -102,7 +99,6 @@ displayName | REQUIRED | The displayName is required but not provided
 	using GameSparks.Api.Responses;
 	...
 	new GameCenterConnectRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetDisplayName(displayName)
 		.SetDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 		.SetErrorOnSwitch(errorOnSwitch)
@@ -135,7 +131,6 @@ displayName | REQUIRED | The displayName is required but not provided
 	
 	gs.getRequestBuilder()
 	    .createGameCenterConnectRequest()
-		.setAnalyticsData(analyticsData)
 		.setDisplayName(displayName)
 		.setDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 		.setErrorOnSwitch(errorOnSwitch)
@@ -164,7 +159,6 @@ displayName | REQUIRED | The displayName is required but not provided
 	#import "GSAPI.h"
 	...
 	GSGameCenterConnectRequest* request = [[GSGameCenterConnectRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setDisplayName:displayName;
 	[request setDoNotLinkToCurrentPlayer:doNotLinkToCurrentPlayer;
 	[request setErrorOnSwitch:errorOnSwitch;
@@ -208,7 +202,6 @@ displayName | REQUIRED | The displayName is required but not provided
 	......
 	
 	GameCenterConnectRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetDisplayName(displayName)
 	request.SetDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 	request.SetErrorOnSwitch(errorOnSwitch)
@@ -232,7 +225,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createGameCenterConnectRequest()
-	.setAnalyticsData(analyticsData)
 	.setDisplayName(displayName)
 	.setDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 	.setErrorOnSwitch(errorOnSwitch)
@@ -262,7 +254,6 @@ gs.getRequestBuilder().createGameCenterConnectRequest()
 ```javascript
 
 	var request = new SparkRequests.GameCenterConnectRequest();
-	request.analyticsData = ...;
 	request.displayName = ...;
 	request.doNotLinkToCurrentPlayer = ...;
 	request.errorOnSwitch = ...;

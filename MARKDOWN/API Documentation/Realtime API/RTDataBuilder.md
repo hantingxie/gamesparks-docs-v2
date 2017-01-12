@@ -1,7 +1,3 @@
----
-src: /API Documentation/Realtime API/RTDataBuilder.md
----
-
 # RTDataBuilder
 
 A builder object to construct RTData objects

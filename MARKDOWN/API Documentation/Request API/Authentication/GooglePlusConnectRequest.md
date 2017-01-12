@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Authentication/GooglePlusConnectRequest.md
----
 
 # GooglePlusConnectRequest
 
@@ -27,7 +24,6 @@ If the Google Plus user is already known, the session will switch to being the p
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
 accessToken | No | string | The access token is used when using the service id and certificate.
-analyticsData | No | AnalyticsData | Optional data used by analytics
 code | No | string | The access code is used by the client to make authenticated requests on behalf of the end user. Requires clientId and clientsecret to be set
 doNotLinkToCurrentPlayer | No | boolean | Indicates that the server should not try to link the external profile with the current player.  If false, links the external profile to the currently signed in player.  If true, creates a new player and links the external profile to them.  Defaults to false.
 errorOnSwitch | No | boolean | Indicates whether the server should return an error if an account switch would have occurred, rather than switching automatically.  Defaults to false.
@@ -82,6 +78,7 @@ Key | Value | Description
 code | NOTAUTHENTICATED | The system was unable to authenticate the code
 accessToken&#124;code | REQUIRED | Both the code and the accessToken are missing
 GOOGLE_PLUS | NOT_CONFIGURED | The game has not been configured with the required Google Plus integration credentials
+authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
 
 ## Code Samples
 
@@ -93,7 +90,6 @@ GOOGLE_PLUS | NOT_CONFIGURED | The game has not been configured with the require
 	...
 	new GooglePlusConnectRequest()
 		.SetAccessToken(accessToken)
-		.SetAnalyticsData(analyticsData)
 		.SetCode(code)
 		.SetDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 		.SetErrorOnSwitch(errorOnSwitch)
@@ -123,7 +119,6 @@ GOOGLE_PLUS | NOT_CONFIGURED | The game has not been configured with the require
 	gs.getRequestBuilder()
 	    .createGooglePlusConnectRequest()
 		.setAccessToken(accessToken)
-		.setAnalyticsData(analyticsData)
 		.setCode(code)
 		.setDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 		.setErrorOnSwitch(errorOnSwitch)
@@ -149,7 +144,6 @@ GOOGLE_PLUS | NOT_CONFIGURED | The game has not been configured with the require
 	...
 	GSGooglePlusConnectRequest* request = [[GSGooglePlusConnectRequest alloc] init];
 	[request setAccessToken:accessToken;
-	[request setAnalyticsData:analyticsData;
 	[request setCode:code;
 	[request setDoNotLinkToCurrentPlayer:doNotLinkToCurrentPlayer;
 	[request setErrorOnSwitch:errorOnSwitch;
@@ -190,7 +184,6 @@ GOOGLE_PLUS | NOT_CONFIGURED | The game has not been configured with the require
 	
 	GooglePlusConnectRequest request(gsInstance);
 	request.SetAccessToken(accessToken)
-	request.SetAnalyticsData(analyticsData)
 	request.SetCode(code)
 	request.SetDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 	request.SetErrorOnSwitch(errorOnSwitch)
@@ -211,7 +204,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 ...
 gs.getRequestBuilder().createGooglePlusConnectRequest()
 	.setAccessToken(accessToken)
-	.setAnalyticsData(analyticsData)
 	.setCode(code)
 	.setDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 	.setErrorOnSwitch(errorOnSwitch)
@@ -238,7 +230,6 @@ gs.getRequestBuilder().createGooglePlusConnectRequest()
 
 	var request = new SparkRequests.GooglePlusConnectRequest();
 	request.accessToken = ...;
-	request.analyticsData = ...;
 	request.code = ...;
 	request.doNotLinkToCurrentPlayer = ...;
 	request.errorOnSwitch = ...;

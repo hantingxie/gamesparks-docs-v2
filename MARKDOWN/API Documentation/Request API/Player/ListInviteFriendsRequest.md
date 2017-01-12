@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Player/ListInviteFriendsRequest.md
----
 
 # ListInviteFriendsRequest
 
@@ -18,7 +15,6 @@ For example, Facebook's policies prevent this friend list being provided, wherea
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 
 ## Response Parameters
 
@@ -32,15 +28,6 @@ scriptData | ScriptData | A JSON Map of any data added either to the Request or 
 
 ## Nested types
 
-### ScriptData
-
-A collection of arbitrary data that can be added to a message via a Cloud Code script.
-
-Parameter | Type | Description
---------- | ---- | -----------
-myKey | string | An arbitrary data key
-myValue | JSON | An arbitrary data value.
-
 ### InvitableFriend
 
 A nested object that represents the invitable friend.
@@ -50,6 +37,15 @@ Parameter | Type | Description
 displayName | string | The display name of the External Friend
 id | string | The ID of the External Friend
 profilePic | string | The profile picture URL of the External Friend
+
+### ScriptData
+
+A collection of arbitrary data that can be added to a message via a Cloud Code script.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+myKey | string | An arbitrary data key
+myValue | JSON | An arbitrary data value.
 
 
 ## Code Samples
@@ -61,7 +57,6 @@ profilePic | string | The profile picture URL of the External Friend
 	using GameSparks.Api.Responses;
 	...
 	new ListInviteFriendsRequest()
-		.SetAnalyticsData(analyticsData)
 		.Send((response) => {
 		GSEnumerable<var> friends = response.Friends; 
 		GSData scriptData = response.ScriptData; 
@@ -79,7 +74,6 @@ profilePic | string | The profile picture URL of the External Friend
 	
 	gs.getRequestBuilder()
 	    .createListInviteFriendsRequest()
-		.setAnalyticsData(analyticsData)
 		.send(function(response:com.gamesparks.api.responses.ListInviteFriendsResponse):void {
 		var friends:Vector.<InvitableFriend> = response.getFriends(); 
 		var scriptData:ScriptData = response.getScriptData(); 
@@ -93,7 +87,6 @@ profilePic | string | The profile picture URL of the External Friend
 	#import "GSAPI.h"
 	...
 	GSListInviteFriendsRequest* request = [[GSListInviteFriendsRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setCallback:^ (GSListInviteFriendsResponse* response) {
 	NSArray* friends = [response getFriends]; 
 	NSDictionary* scriptData = [response getScriptData]; 
@@ -118,7 +111,6 @@ profilePic | string | The profile picture URL of the External Friend
 	......
 	
 	ListInviteFriendsRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.Send(ListInviteFriendsRequest_Response);
 ```
 
@@ -131,7 +123,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createListInviteFriendsRequest()
-	.setAnalyticsData(analyticsData)
 	.send(new GSEventListener<ListInviteFriendsResponse>() {
 		@Override
 		public void onEvent(ListInviteFriendsResponse response) {
@@ -146,7 +137,6 @@ gs.getRequestBuilder().createListInviteFriendsRequest()
 ```javascript
 
 	var request = new SparkRequests.ListInviteFriendsRequest();
-	request.analyticsData = ...;
 	var response = request.Send();
 	
 var friends = response.friends; 

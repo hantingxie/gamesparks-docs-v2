@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Misc/SocialStatusRequest.md
----
 
 # SocialStatusRequest
 
@@ -14,7 +11,6 @@ Returns detials of the current social connections of this player. Each connectio
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 
 ## Response Parameters
 
@@ -28,15 +24,6 @@ statuses | [SocialStatus[]](#socialstatus) | A list of social statuses.
 
 ## Nested types
 
-### ScriptData
-
-A collection of arbitrary data that can be added to a message via a Cloud Code script.
-
-Parameter | Type | Description
---------- | ---- | -----------
-myKey | string | An arbitrary data key
-myValue | JSON | An arbitrary data value.
-
 ### SocialStatus
 
 A the details of a social connection
@@ -46,6 +33,15 @@ Parameter | Type | Description
 active | boolean | When the token is still active.
 expires | date | When the token expires (if available).
 systemId | string | The identifier of the external platform.
+
+### ScriptData
+
+A collection of arbitrary data that can be added to a message via a Cloud Code script.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+myKey | string | An arbitrary data key
+myValue | JSON | An arbitrary data value.
 
 
 ## Code Samples
@@ -57,7 +53,6 @@ systemId | string | The identifier of the external platform.
 	using GameSparks.Api.Responses;
 	...
 	new SocialStatusRequest()
-		.SetAnalyticsData(analyticsData)
 		.Send((response) => {
 		GSData scriptData = response.ScriptData; 
 		GSEnumerable<var> statuses = response.Statuses; 
@@ -75,7 +70,6 @@ systemId | string | The identifier of the external platform.
 	
 	gs.getRequestBuilder()
 	    .createSocialStatusRequest()
-		.setAnalyticsData(analyticsData)
 		.send(function(response:com.gamesparks.api.responses.SocialStatusResponse):void {
 		var scriptData:ScriptData = response.getScriptData(); 
 		var statuses:Vector.<SocialStatus> = response.getStatuses(); 
@@ -89,7 +83,6 @@ systemId | string | The identifier of the external platform.
 	#import "GSAPI.h"
 	...
 	GSSocialStatusRequest* request = [[GSSocialStatusRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setCallback:^ (GSSocialStatusResponse* response) {
 	NSDictionary* scriptData = [response getScriptData]; 
 	NSArray* statuses = [response getStatuses]; 
@@ -114,7 +107,6 @@ systemId | string | The identifier of the external platform.
 	......
 	
 	SocialStatusRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.Send(SocialStatusRequest_Response);
 ```
 
@@ -127,7 +119,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createSocialStatusRequest()
-	.setAnalyticsData(analyticsData)
 	.send(new GSEventListener<SocialStatusResponse>() {
 		@Override
 		public void onEvent(SocialStatusResponse response) {
@@ -142,7 +133,6 @@ gs.getRequestBuilder().createSocialStatusRequest()
 ```javascript
 
 	var request = new SparkRequests.SocialStatusRequest();
-	request.analyticsData = ...;
 	var response = request.Send();
 	
 var scriptData = response.scriptData; 

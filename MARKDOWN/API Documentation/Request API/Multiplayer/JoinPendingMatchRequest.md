@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Multiplayer/JoinPendingMatchRequest.md
----
 
 # JoinPendingMatchRequest
 
@@ -14,7 +11,6 @@ Requests to join a pending match (found via FindPendingMatchesRequest).
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 matchGroup | No | string | Optional. The matchGroup of the match this player previously registeredfor
 matchShortCode | Yes | string | The shortCode of the match this player previously registered for
 pendingMatchId | Yes | string | The pending match ID to join
@@ -81,7 +77,6 @@ pendingMatchId | NOT_AVAILABLE | The requested pending match ID is not available
 	using GameSparks.Api.Responses;
 	...
 	new JoinPendingMatchRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetMatchGroup(matchGroup)
 		.SetMatchShortCode(matchShortCode)
 		.SetPendingMatchId(pendingMatchId)
@@ -102,7 +97,6 @@ pendingMatchId | NOT_AVAILABLE | The requested pending match ID is not available
 	
 	gs.getRequestBuilder()
 	    .createJoinPendingMatchRequest()
-		.setAnalyticsData(analyticsData)
 		.setMatchGroup(matchGroup)
 		.setMatchShortCode(matchShortCode)
 		.setPendingMatchId(pendingMatchId)
@@ -119,7 +113,6 @@ pendingMatchId | NOT_AVAILABLE | The requested pending match ID is not available
 	#import "GSAPI.h"
 	...
 	GSJoinPendingMatchRequest* request = [[GSJoinPendingMatchRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setMatchGroup:matchGroup;
 	[request setMatchShortCode:matchShortCode;
 	[request setPendingMatchId:pendingMatchId;
@@ -147,7 +140,6 @@ pendingMatchId | NOT_AVAILABLE | The requested pending match ID is not available
 	......
 	
 	JoinPendingMatchRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetMatchGroup(matchGroup)
 	request.SetMatchShortCode(matchShortCode)
 	request.SetPendingMatchId(pendingMatchId)
@@ -163,7 +155,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createJoinPendingMatchRequest()
-	.setAnalyticsData(analyticsData)
 	.setMatchGroup(matchGroup)
 	.setMatchShortCode(matchShortCode)
 	.setPendingMatchId(pendingMatchId)
@@ -181,7 +172,6 @@ gs.getRequestBuilder().createJoinPendingMatchRequest()
 ```javascript
 
 	var request = new SparkRequests.JoinPendingMatchRequest();
-	request.analyticsData = ...;
 	request.matchGroup = ...;
 	request.matchShortCode = ...;
 	request.pendingMatchId = ...;

@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Admin/RevokePurchaseGoodsRequest.md
----
 
 # RevokePurchaseGoodsRequest
 
@@ -14,7 +11,6 @@ Revokes the purchase of a good. The items aquired will be removed from remaining
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 playerId | Yes | string | The playerId for which to revoke the transaction
 storeType | Yes | string | The store type for which to revoke these transactions
 transactionIds | Yes | string[] | The list of transactionIds to revoke
@@ -57,7 +53,6 @@ playerId | REQUIRED | The playerId is missing
 	using GameSparks.Api.Responses;
 	...
 	new RevokePurchaseGoodsRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetPlayerId(playerId)
 		.SetStoreType(storeType)
 		.SetTransactionIds(transactionIds)
@@ -78,7 +73,6 @@ playerId | REQUIRED | The playerId is missing
 	
 	gs.getRequestBuilder()
 	    .createRevokePurchaseGoodsRequest()
-		.setAnalyticsData(analyticsData)
 		.setPlayerId(playerId)
 		.setStoreType(storeType)
 		.setTransactionIds(transactionIds)
@@ -95,7 +89,6 @@ playerId | REQUIRED | The playerId is missing
 	#import "GSAPI.h"
 	...
 	GSRevokePurchaseGoodsRequest* request = [[GSRevokePurchaseGoodsRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setPlayerId:playerId;
 	[request setStoreType:storeType;
 	[request setTransactionIds:transactionIds;
@@ -123,7 +116,6 @@ playerId | REQUIRED | The playerId is missing
 	......
 	
 	RevokePurchaseGoodsRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetPlayerId(playerId)
 	request.SetStoreType(storeType)
 	request.SetTransactionIds(transactionIds)
@@ -139,7 +131,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createRevokePurchaseGoodsRequest()
-	.setAnalyticsData(analyticsData)
 	.setPlayerId(playerId)
 	.setStoreType(storeType)
 	.setTransactionIds(transactionIds)
@@ -157,7 +148,6 @@ gs.getRequestBuilder().createRevokePurchaseGoodsRequest()
 ```javascript
 
 	var request = new SparkRequests.RevokePurchaseGoodsRequest();
-	request.analyticsData = ...;
 	request.playerId = ...;
 	request.storeType = ...;
 	request.transactionIds = ...;

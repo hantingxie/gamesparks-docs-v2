@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Admin/ListBulkJobsAdminRequest.md
----
 
 # ListBulkJobsAdminRequest
 
@@ -14,7 +11,6 @@ Lists existing bulk jobs.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 bulkJobIds | No | string[] | The IDs of existing bulk jobs to get details for
 
 ## Response Parameters
@@ -69,7 +65,6 @@ state | string | The current state of the bulk job
 	using GameSparks.Api.Responses;
 	...
 	new ListBulkJobsAdminRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetBulkJobIds(bulkJobIds)
 		.Send((response) => {
 		GSEnumerable<var> bulkJobs = response.BulkJobs; 
@@ -88,7 +83,6 @@ state | string | The current state of the bulk job
 	
 	gs.getRequestBuilder()
 	    .createListBulkJobsAdminRequest()
-		.setAnalyticsData(analyticsData)
 		.setBulkJobIds(bulkJobIds)
 		.send(function(response:com.gamesparks.api.responses.ListBulkJobsAdminResponse):void {
 		var bulkJobs:Vector.<BulkJob> = response.getBulkJobs(); 
@@ -103,7 +97,6 @@ state | string | The current state of the bulk job
 	#import "GSAPI.h"
 	...
 	GSListBulkJobsAdminRequest* request = [[GSListBulkJobsAdminRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setBulkJobIds:bulkJobIds;
 	[request setCallback:^ (GSListBulkJobsAdminResponse* response) {
 	NSArray* bulkJobs = [response getBulkJobs]; 
@@ -129,7 +122,6 @@ state | string | The current state of the bulk job
 	......
 	
 	ListBulkJobsAdminRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetBulkJobIds(bulkJobIds)
 	request.Send(ListBulkJobsAdminRequest_Response);
 ```
@@ -143,7 +135,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createListBulkJobsAdminRequest()
-	.setAnalyticsData(analyticsData)
 	.setBulkJobIds(bulkJobIds)
 	.send(new GSEventListener<ListBulkJobsAdminResponse>() {
 		@Override
@@ -159,7 +150,6 @@ gs.getRequestBuilder().createListBulkJobsAdminRequest()
 ```javascript
 
 	var request = new SparkRequests.ListBulkJobsAdminRequest();
-	request.analyticsData = ...;
 	request.bulkJobIds = ...;
 	var response = request.Send();
 	

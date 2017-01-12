@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Multiplayer/MatchmakingRequest.md
----
 
 # MatchmakingRequest
 
@@ -21,7 +18,6 @@ If the matchShortCode points to a match with realtime enabled, in order to minim
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
 action | No | string | The action to take on the already in-flight request for this match. Currently supported actions are: 'cancel'
-analyticsData | No | AnalyticsData | Optional data used by analytics
 customQuery | No | JSON | The query that will be applied to the PendingMatch collection
 matchData | No | JSON | A JSON Map of any data that will be associated to the pending match
 matchGroup | No | string | Optional. Players will be grouped based on the distinct value passed in here, only players in the same group can be matched together
@@ -69,7 +65,6 @@ match | NOT_FOUND | No match was found for the current player
 	...
 	new MatchmakingRequest()
 		.SetAction(action)
-		.SetAnalyticsData(analyticsData)
 		.SetCustomQuery(customQuery)
 		.SetMatchData(matchData)
 		.SetMatchGroup(matchGroup)
@@ -93,7 +88,6 @@ match | NOT_FOUND | No match was found for the current player
 	gs.getRequestBuilder()
 	    .createMatchmakingRequest()
 		.setAction(action)
-		.setAnalyticsData(analyticsData)
 		.setCustomQuery(customQuery)
 		.setMatchData(matchData)
 		.setMatchGroup(matchGroup)
@@ -113,7 +107,6 @@ match | NOT_FOUND | No match was found for the current player
 	...
 	GSMatchmakingRequest* request = [[GSMatchmakingRequest alloc] init];
 	[request setAction:action;
-	[request setAnalyticsData:analyticsData;
 	[request setCustomQuery:customQuery;
 	[request setMatchData:matchData;
 	[request setMatchGroup:matchGroup;
@@ -143,7 +136,6 @@ match | NOT_FOUND | No match was found for the current player
 	
 	MatchmakingRequest request(gsInstance);
 	request.SetAction(action)
-	request.SetAnalyticsData(analyticsData)
 	request.SetCustomQuery(customQuery)
 	request.SetMatchData(matchData)
 	request.SetMatchGroup(matchGroup)
@@ -163,7 +155,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 ...
 gs.getRequestBuilder().createMatchmakingRequest()
 	.setAction(action)
-	.setAnalyticsData(analyticsData)
 	.setCustomQuery(customQuery)
 	.setMatchData(matchData)
 	.setMatchGroup(matchGroup)
@@ -184,7 +175,6 @@ gs.getRequestBuilder().createMatchmakingRequest()
 
 	var request = new SparkRequests.MatchmakingRequest();
 	request.action = ...;
-	request.analyticsData = ...;
 	request.customQuery = ...;
 	request.matchData = ...;
 	request.matchGroup = ...;

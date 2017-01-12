@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Misc/GetUploadUrlRequest.md
----
 
 # GetUploadUrlRequest
 
@@ -14,7 +11,6 @@ Returns a secure, time sensitive URL to allow the game to upload a piece of play
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 uploadData | No | JSON[] | Optional meta data which is stored against the player's uploaded content
 
 ## Response Parameters
@@ -48,7 +44,6 @@ myValue | JSON | An arbitrary data value.
 	using GameSparks.Api.Responses;
 	...
 	new GetUploadUrlRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetUploadData(uploadData)
 		.Send((response) => {
 		GSData scriptData = response.ScriptData; 
@@ -67,7 +62,6 @@ myValue | JSON | An arbitrary data value.
 	
 	gs.getRequestBuilder()
 	    .createGetUploadUrlRequest()
-		.setAnalyticsData(analyticsData)
 		.setUploadData(uploadData)
 		.send(function(response:com.gamesparks.api.responses.GetUploadUrlResponse):void {
 		var scriptData:ScriptData = response.getScriptData(); 
@@ -82,7 +76,6 @@ myValue | JSON | An arbitrary data value.
 	#import "GSAPI.h"
 	...
 	GSGetUploadUrlRequest* request = [[GSGetUploadUrlRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setUploadData:uploadData;
 	[request setCallback:^ (GSGetUploadUrlResponse* response) {
 	NSDictionary* scriptData = [response getScriptData]; 
@@ -108,7 +101,6 @@ myValue | JSON | An arbitrary data value.
 	......
 	
 	GetUploadUrlRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetUploadData(uploadData)
 	request.Send(GetUploadUrlRequest_Response);
 ```
@@ -122,7 +114,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createGetUploadUrlRequest()
-	.setAnalyticsData(analyticsData)
 	.setUploadData(uploadData)
 	.send(new GSEventListener<GetUploadUrlResponse>() {
 		@Override
@@ -138,7 +129,6 @@ gs.getRequestBuilder().createGetUploadUrlRequest()
 ```javascript
 
 	var request = new SparkRequests.GetUploadUrlRequest();
-	request.analyticsData = ...;
 	request.uploadData = ...;
 	var response = request.Send();
 	

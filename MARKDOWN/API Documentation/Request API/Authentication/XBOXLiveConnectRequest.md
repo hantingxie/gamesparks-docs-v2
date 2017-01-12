@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Authentication/XBOXLiveConnectRequest.md
----
 
 # XBOXLiveConnectRequest
 
@@ -26,7 +23,7 @@ If the Xbox user is already known, the session will switch to being the previous
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
+displayName | No | string | The displayName to set for the player in GameSparks
 doNotLinkToCurrentPlayer | No | boolean | Indicates that the server should not try to link the external profile with the current player.  If false, links the external profile to the currently signed in player.  If true, creates a new player and links the external profile to them.  Defaults to false.
 errorOnSwitch | No | boolean | Indicates whether the server should return an error if an account switch would have occurred, rather than switching automatically.  Defaults to false.
 segments | No | JSON | An optional segment configuration for this request.
@@ -80,6 +77,7 @@ Key | Value | Description
 accessToken | ACCOUNT_ALREADY_LINKED | The current user has a Xbox profile and it's not the profile they have just tried to log in with
 code | NOTAUTHENTICATED | The system was unable to authenticate the code
 accessToken | NOTAUTHENTICATED | The system was unable to authenticate the token
+authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
 
 ## Code Samples
 
@@ -90,7 +88,7 @@ accessToken | NOTAUTHENTICATED | The system was unable to authenticate the token
 	using GameSparks.Api.Responses;
 	...
 	new XBOXLiveConnectRequest()
-		.SetAnalyticsData(analyticsData)
+		.SetDisplayName(displayName)
 		.SetDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 		.SetErrorOnSwitch(errorOnSwitch)
 		.SetSegments(segments)
@@ -118,7 +116,7 @@ accessToken | NOTAUTHENTICATED | The system was unable to authenticate the token
 	
 	gs.getRequestBuilder()
 	    .createXBOXLiveConnectRequest()
-		.setAnalyticsData(analyticsData)
+		.setDisplayName(displayName)
 		.setDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 		.setErrorOnSwitch(errorOnSwitch)
 		.setSegments(segments)
@@ -142,7 +140,7 @@ accessToken | NOTAUTHENTICATED | The system was unable to authenticate the token
 	#import "GSAPI.h"
 	...
 	GSXBOXLiveConnectRequest* request = [[GSXBOXLiveConnectRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
+	[request setDisplayName:displayName;
 	[request setDoNotLinkToCurrentPlayer:doNotLinkToCurrentPlayer;
 	[request setErrorOnSwitch:errorOnSwitch;
 	[request setSegments:segments;
@@ -181,7 +179,7 @@ accessToken | NOTAUTHENTICATED | The system was unable to authenticate the token
 	......
 	
 	XBOXLiveConnectRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
+	request.SetDisplayName(displayName)
 	request.SetDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 	request.SetErrorOnSwitch(errorOnSwitch)
 	request.SetSegments(segments)
@@ -200,7 +198,7 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createXBOXLiveConnectRequest()
-	.setAnalyticsData(analyticsData)
+	.setDisplayName(displayName)
 	.setDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 	.setErrorOnSwitch(errorOnSwitch)
 	.setSegments(segments)
@@ -225,7 +223,7 @@ gs.getRequestBuilder().createXBOXLiveConnectRequest()
 ```javascript
 
 	var request = new SparkRequests.XBOXLiveConnectRequest();
-	request.analyticsData = ...;
+	request.displayName = ...;
 	request.doNotLinkToCurrentPlayer = ...;
 	request.errorOnSwitch = ...;
 	request.segments = ...;

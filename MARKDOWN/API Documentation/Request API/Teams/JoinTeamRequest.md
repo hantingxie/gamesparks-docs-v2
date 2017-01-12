@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Teams/JoinTeamRequest.md
----
 
 # JoinTeamRequest
 
@@ -14,7 +11,6 @@ Allows a player to join a team or a team to be retrieved.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 ownerId | No | string | The team owner to find, used in combination with teamType. If not supplied the current players id will be used
 teamId | No | string | The teamId to find (may be null if teamType supplied)
 teamType | No | string | The teamType to find, used in combination with the current player, or the player defined by ownerId
@@ -68,6 +64,7 @@ members | ALREADY_JOINED | The current player is already a mamber of the specifi
 members | MAX_MEMBERS_REACHED | The team already has the maximum number of members in it
 teamType | MAX_MEMBERSHIP_REACHED | The current player has already reached the membership limit of this team type
 teamType | NOT_SINGULAR_USE_TEAMID | A player can own more than one of the specified teamType, therefore joining by ownerId and teamType is not sufficient to uniquely identify the team to join. Specify the team by teamId instead.
+teamType | INVALID | The specified team type is invalid.
 teamType&&ownerId | NOT_UNIQUE | The ownerId / teamType combination has multiple teams related to it
 
 ## Code Samples
@@ -79,7 +76,6 @@ teamType&&ownerId | NOT_UNIQUE | The ownerId / teamType combination has multiple
 	using GameSparks.Api.Responses;
 	...
 	new JoinTeamRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetOwnerId(ownerId)
 		.SetTeamId(teamId)
 		.SetTeamType(teamType)
@@ -104,7 +100,6 @@ teamType&&ownerId | NOT_UNIQUE | The ownerId / teamType combination has multiple
 	
 	gs.getRequestBuilder()
 	    .createJoinTeamRequest()
-		.setAnalyticsData(analyticsData)
 		.setOwnerId(ownerId)
 		.setTeamId(teamId)
 		.setTeamType(teamType)
@@ -125,7 +120,6 @@ teamType&&ownerId | NOT_UNIQUE | The ownerId / teamType combination has multiple
 	#import "GSAPI.h"
 	...
 	GSJoinTeamRequest* request = [[GSJoinTeamRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setOwnerId:ownerId;
 	[request setTeamId:teamId;
 	[request setTeamType:teamType;
@@ -161,7 +155,6 @@ teamType&&ownerId | NOT_UNIQUE | The ownerId / teamType combination has multiple
 	......
 	
 	JoinTeamRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetOwnerId(ownerId)
 	request.SetTeamId(teamId)
 	request.SetTeamType(teamType)
@@ -177,7 +170,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createJoinTeamRequest()
-	.setAnalyticsData(analyticsData)
 	.setOwnerId(ownerId)
 	.setTeamId(teamId)
 	.setTeamType(teamType)
@@ -199,7 +191,6 @@ gs.getRequestBuilder().createJoinTeamRequest()
 ```javascript
 
 	var request = new SparkRequests.JoinTeamRequest();
-	request.analyticsData = ...;
 	request.ownerId = ...;
 	request.teamId = ...;
 	request.teamType = ...;

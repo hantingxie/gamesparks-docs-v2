@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Authentication/AuthenticationRequest.md
----
 
 # AuthenticationRequest
 
@@ -16,7 +13,6 @@ The username will have been previously created using a RegistrationRequest.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 password | Yes | string | The previously registered password
 userName | Yes | string | The previously registered player name
 
@@ -75,7 +71,6 @@ DETAILS | LOCKED | There have been too many failed login attempts with these det
 	using GameSparks.Api.Responses;
 	...
 	new AuthenticationRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetPassword(password)
 		.SetUserName(userName)
 		.Send((response) => {
@@ -99,7 +94,6 @@ DETAILS | LOCKED | There have been too many failed login attempts with these det
 	
 	gs.getRequestBuilder()
 	    .createAuthenticationRequest()
-		.setAnalyticsData(analyticsData)
 		.setPassword(password)
 		.setUserName(userName)
 		.send(function(response:com.gamesparks.api.responses.AuthenticationResponse):void {
@@ -119,7 +113,6 @@ DETAILS | LOCKED | There have been too many failed login attempts with these det
 	#import "GSAPI.h"
 	...
 	GSAuthenticationRequest* request = [[GSAuthenticationRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setPassword:password;
 	[request setUserName:userName;
 	[request setCallback:^ (GSAuthenticationResponse* response) {
@@ -154,7 +147,6 @@ DETAILS | LOCKED | There have been too many failed login attempts with these det
 	......
 	
 	AuthenticationRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetPassword(password)
 	request.SetUserName(userName)
 	request.Send(AuthenticationRequest_Response);
@@ -169,7 +161,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createAuthenticationRequest()
-	.setAnalyticsData(analyticsData)
 	.setPassword(password)
 	.setUserName(userName)
 	.send(new GSEventListener<AuthenticationResponse>() {
@@ -190,7 +181,6 @@ gs.getRequestBuilder().createAuthenticationRequest()
 ```javascript
 
 	var request = new SparkRequests.AuthenticationRequest();
-	request.analyticsData = ...;
 	request.password = ...;
 	request.userName = ...;
 	var response = request.Send();

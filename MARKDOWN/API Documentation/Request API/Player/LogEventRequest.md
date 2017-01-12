@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Player/LogEventRequest.md
----
 
 # LogEventRequest
 
@@ -18,7 +15,6 @@ The example below shows a request to an event with a short code of HS with 2 att
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 eventKey | Yes | string | The short code of the event to trigger
 
 ## Response Parameters
@@ -51,7 +47,6 @@ myValue | JSON | An arbitrary data value.
 	using GameSparks.Api.Responses;
 	...
 	new LogEventRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetEventKey(eventKey)
 		.Send((response) => {
 		GSData scriptData = response.ScriptData; 
@@ -69,7 +64,6 @@ myValue | JSON | An arbitrary data value.
 	
 	gs.getRequestBuilder()
 	    .createLogEventRequest()
-		.setAnalyticsData(analyticsData)
 		.setEventKey(eventKey)
 		.send(function(response:com.gamesparks.api.responses.LogEventResponse):void {
 		var scriptData:ScriptData = response.getScriptData(); 
@@ -83,7 +77,6 @@ myValue | JSON | An arbitrary data value.
 	#import "GSAPI.h"
 	...
 	GSLogEventRequest* request = [[GSLogEventRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setEventKey:eventKey;
 	[request setCallback:^ (GSLogEventResponse* response) {
 	NSDictionary* scriptData = [response getScriptData]; 
@@ -107,7 +100,6 @@ myValue | JSON | An arbitrary data value.
 	......
 	
 	LogEventRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetEventKey(eventKey)
 	request.Send(LogEventRequest_Response);
 ```
@@ -121,7 +113,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createLogEventRequest()
-	.setAnalyticsData(analyticsData)
 	.setEventKey(eventKey)
 	.send(new GSEventListener<LogEventResponse>() {
 		@Override
@@ -136,7 +127,6 @@ gs.getRequestBuilder().createLogEventRequest()
 ```javascript
 
 	var request = new SparkRequests.LogEventRequest();
-	request.analyticsData = ...;
 	request.eventKey = ...;
 	var response = request.Send();
 	

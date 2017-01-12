@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Player/AccountDetailsRequest.md
----
 
 # AccountDetailsRequest
 
@@ -14,7 +11,6 @@ Retrieves the details of the current authenticated player.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 
 ## Response Parameters
 
@@ -65,7 +61,6 @@ longditute | Float | The longditute
 	using GameSparks.Api.Responses;
 	...
 	new AccountDetailsRequest()
-		.SetAnalyticsData(analyticsData)
 		.Send((response) => {
 		IList<string> achievements = response.Achievements; 
 		long? currency1 = response.Currency1; 
@@ -99,7 +94,6 @@ longditute | Float | The longditute
 	
 	gs.getRequestBuilder()
 	    .createAccountDetailsRequest()
-		.setAnalyticsData(analyticsData)
 		.send(function(response:com.gamesparks.api.responses.AccountDetailsResponse):void {
 		var achievements:Vector.<String> = response.getAchievements(); 
 		var currency1:Number = response.getCurrency1(); 
@@ -129,7 +123,6 @@ longditute | Float | The longditute
 	#import "GSAPI.h"
 	...
 	GSAccountDetailsRequest* request = [[GSAccountDetailsRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setCallback:^ (GSAccountDetailsResponse* response) {
 	NSArray* achievements = [response getAchievements]; 
 	NSNumber* currency1 = [response getCurrency1]; 
@@ -186,7 +179,6 @@ longditute | Float | The longditute
 	......
 	
 	AccountDetailsRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.Send(AccountDetailsRequest_Response);
 ```
 
@@ -199,7 +191,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createAccountDetailsRequest()
-	.setAnalyticsData(analyticsData)
 	.send(new GSEventListener<AccountDetailsResponse>() {
 		@Override
 		public void onEvent(AccountDetailsResponse response) {
@@ -230,7 +221,6 @@ gs.getRequestBuilder().createAccountDetailsRequest()
 ```javascript
 
 	var request = new SparkRequests.AccountDetailsRequest();
-	request.analyticsData = ...;
 	var response = request.Send();
 	
 var achievements = response.achievements; 

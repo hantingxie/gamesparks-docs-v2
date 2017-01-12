@@ -1,7 +1,3 @@
----
-src: /API Documentation/Realtime API/RTSession.md
----
-
 # RTSession
 
 The main entry point into the GameSparksRT API

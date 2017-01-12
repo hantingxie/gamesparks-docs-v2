@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Multiplayer/ListChallengeRequest.md
----
 
 # ListChallengeRequest
 
@@ -30,7 +27,6 @@ DECLINED : The challenge has been issued by the current player and has been decl
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 entryCount | No | number | The number of items to return in a page (default=50)
 offset | No | number | The offset (page number) to start from (default=0)
 shortCode | No | string | The type of challenge to return
@@ -49,23 +45,15 @@ scriptData | ScriptData | A JSON Map of any data added either to the Request or 
 
 ## Nested types
 
-### ScriptData
+### PlayerDetail
 
-A collection of arbitrary data that can be added to a message via a Cloud Code script.
-
-Parameter | Type | Description
---------- | ---- | -----------
-myKey | string | An arbitrary data key
-myValue | JSON | An arbitrary data value.
-
-### PlayerTurnCount
-
-Represents the number of turns a player has taken in a turn based challenge.
+An object representing a player's id and name
 
 Parameter | Type | Description
 --------- | ---- | -----------
-count | string | The number of turns that the player has taken so far during this challenge.
-playerId | string | The unique player id.
+externalIds | JSON | A player's external identifiers
+id | string | A player's id
+name | string | A player's name
 
 ### Challenge
 
@@ -96,15 +84,23 @@ startDate | date | The date when the challenge starts.
 state | string | One of these possible state values: ISSUED, EXPIRED, ACCEPTED, DECLINED, COMPLETE, WITHDRAWN, RUNNING, WAITING, RECEIVED
 turnCount | [PlayerTurnCount[]](#playerturncount) | A collection containing the number of turns taken by each player that has accepted the challenge.
 
-### PlayerDetail
+### ScriptData
 
-An object representing a player's id and name
+A collection of arbitrary data that can be added to a message via a Cloud Code script.
 
 Parameter | Type | Description
 --------- | ---- | -----------
-externalIds | JSON | A player's external identifiers
-id | string | A player's id
-name | string | A player's name
+myKey | string | An arbitrary data key
+myValue | JSON | An arbitrary data value.
+
+### PlayerTurnCount
+
+Represents the number of turns a player has taken in a turn based challenge.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+count | string | The number of turns that the player has taken so far during this challenge.
+playerId | string | The unique player id.
 
 
 ## Code Samples
@@ -116,7 +112,6 @@ name | string | A player's name
 	using GameSparks.Api.Responses;
 	...
 	new ListChallengeRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetEntryCount(entryCount)
 		.SetOffset(offset)
 		.SetShortCode(shortCode)
@@ -139,7 +134,6 @@ name | string | A player's name
 	
 	gs.getRequestBuilder()
 	    .createListChallengeRequest()
-		.setAnalyticsData(analyticsData)
 		.setEntryCount(entryCount)
 		.setOffset(offset)
 		.setShortCode(shortCode)
@@ -158,7 +152,6 @@ name | string | A player's name
 	#import "GSAPI.h"
 	...
 	GSListChallengeRequest* request = [[GSListChallengeRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setEntryCount:entryCount;
 	[request setOffset:offset;
 	[request setShortCode:shortCode;
@@ -188,7 +181,6 @@ name | string | A player's name
 	......
 	
 	ListChallengeRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetEntryCount(entryCount)
 	request.SetOffset(offset)
 	request.SetShortCode(shortCode)
@@ -206,7 +198,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createListChallengeRequest()
-	.setAnalyticsData(analyticsData)
 	.setEntryCount(entryCount)
 	.setOffset(offset)
 	.setShortCode(shortCode)
@@ -226,7 +217,6 @@ gs.getRequestBuilder().createListChallengeRequest()
 ```javascript
 
 	var request = new SparkRequests.ListChallengeRequest();
-	request.analyticsData = ...;
 	request.entryCount = ...;
 	request.offset = ...;
 	request.shortCode = ...;

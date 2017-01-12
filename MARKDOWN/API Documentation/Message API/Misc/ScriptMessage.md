@@ -1,6 +1,3 @@
----
-src: /API Documentation/Message API/Misc/ScriptMessage.md
----
 
 # ScriptMessage
 
@@ -17,7 +14,7 @@ See the Spark.sendMessage function in the Cloud Code - Java Script API documenta
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
 data | No | JSON | JSON data sent from a Cloud Code script.
-extCode | No | string | The extension code used wen creating this script message
+extCode | No | string | The extension code used when creating this script message
 messageId | No | string | A unique identifier for this message.
 notification | No | boolean | Flag indicating whether this message could be sent as a push notification or not.
 scriptData | No | ScriptData[] | ScriptData is arbitrary data that can be stored in a message by a Cloud Code script.

@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Store/WindowsBuyGoodsRequest.md
----
 
 # WindowsBuyGoodsRequest
 
@@ -18,7 +15,6 @@ Once verified, the players account will be credited with the Virtual Good, or Vi
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 platform | No | string | Allows you to specify the platform
 receipt | Yes | string | The xml reciept returned from the windows phone 8 store
 uniqueTransactionByPlayer | No | boolean | If set to true, the transactionId from this receipt will not be globally valdidated, this will mean replays between players are possible.
@@ -39,19 +35,11 @@ currency5Added | number | How much currency type 5 was added
 currency6Added | number | How much currency type 6 was added
 currencyConsumed | number | For a buy with currency request, how much currency was used
 currencyType | number | For a buy with currency request, which currency type was used
+invalidItems | string[] | A list of invalid items for this purchase (if any). This field is populated only for store buys
 scriptData | ScriptData | A JSON Map of any data added either to the Request or the Response by your Cloud Code
 transactionIds | string[] | The list of transactionIds, for this purchase, if they exist. This field is populated only for store buys
 
 ## Nested types
-
-### ScriptData
-
-A collection of arbitrary data that can be added to a message via a Cloud Code script.
-
-Parameter | Type | Description
---------- | ---- | -----------
-myKey | string | An arbitrary data key
-myValue | JSON | An arbitrary data value.
 
 ### Boughtitem
 
@@ -61,6 +49,15 @@ Parameter | Type | Description
 --------- | ---- | -----------
 quantity | number | The quantity of the bought item
 shortCode | string | The short code of the bought item
+
+### ScriptData
+
+A collection of arbitrary data that can be added to a message via a Cloud Code script.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+myKey | string | An arbitrary data key
+myValue | JSON | An arbitrary data value.
 
 ## Error Codes
 
@@ -79,7 +76,6 @@ verificationError | 5 | The Id in the receipt xml has previously been processed
 	using GameSparks.Api.Responses;
 	...
 	new WindowsBuyGoodsRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetPlatform(platform)
 		.SetReceipt(receipt)
 		.SetUniqueTransactionByPlayer(uniqueTransactionByPlayer)
@@ -93,6 +89,7 @@ verificationError | 5 | The Id in the receipt xml has previously been processed
 		long? currency6Added = response.Currency6Added; 
 		long? currencyConsumed = response.CurrencyConsumed; 
 		int? currencyType = response.CurrencyType; 
+		IList<string> invalidItems = response.InvalidItems; 
 		GSData scriptData = response.ScriptData; 
 		IList<string> transactionIds = response.TransactionIds; 
 		});
@@ -109,7 +106,6 @@ verificationError | 5 | The Id in the receipt xml has previously been processed
 	
 	gs.getRequestBuilder()
 	    .createWindowsBuyGoodsRequest()
-		.setAnalyticsData(analyticsData)
 		.setPlatform(platform)
 		.setReceipt(receipt)
 		.setUniqueTransactionByPlayer(uniqueTransactionByPlayer)
@@ -123,6 +119,7 @@ verificationError | 5 | The Id in the receipt xml has previously been processed
 		var currency6Added:Number = response.getCurrency6Added(); 
 		var currencyConsumed:Number = response.getCurrencyConsumed(); 
 		var currencyType:Number = response.getCurrencyType(); 
+		var invalidItems:Vector.<String> = response.getInvalidItems(); 
 		var scriptData:ScriptData = response.getScriptData(); 
 		var transactionIds:Vector.<String> = response.getTransactionIds(); 
 		});
@@ -135,7 +132,6 @@ verificationError | 5 | The Id in the receipt xml has previously been processed
 	#import "GSAPI.h"
 	...
 	GSWindowsBuyGoodsRequest* request = [[GSWindowsBuyGoodsRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setPlatform:platform;
 	[request setReceipt:receipt;
 	[request setUniqueTransactionByPlayer:uniqueTransactionByPlayer;
@@ -149,6 +145,7 @@ verificationError | 5 | The Id in the receipt xml has previously been processed
 	NSNumber* currency6Added = [response getCurrency6Added]; 
 	NSNumber* currencyConsumed = [response getCurrencyConsumed]; 
 	NSNumber* currencyType = [response getCurrencyType]; 
+	NSArray* invalidItems = [response getInvalidItems]; 
 	NSDictionary* scriptData = [response getScriptData]; 
 	NSArray* transactionIds = [response getTransactionIds]; 
 	}];
@@ -175,13 +172,13 @@ verificationError | 5 | The Id in the receipt xml has previously been processed
 	Optional::t_LongOptional currency6Added = response.getCurrency6Added(); 
 	Optional::t_LongOptional currencyConsumed = response.getCurrencyConsumed(); 
 	Optional::t_LongOptional currencyType = response.getCurrencyType(); 
+	gsstl:vector<gsstl::string> invalidItems = response.getInvalidItems(); 
 	GSData scriptData = response.getScriptData(); 
 	gsstl:vector<gsstl::string> transactionIds = response.getTransactionIds(); 
 	}
 	......
 	
 	WindowsBuyGoodsRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetPlatform(platform)
 	request.SetReceipt(receipt)
 	request.SetUniqueTransactionByPlayer(uniqueTransactionByPlayer)
@@ -197,7 +194,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createWindowsBuyGoodsRequest()
-	.setAnalyticsData(analyticsData)
 	.setPlatform(platform)
 	.setReceipt(receipt)
 	.setUniqueTransactionByPlayer(uniqueTransactionByPlayer)
@@ -213,6 +209,7 @@ gs.getRequestBuilder().createWindowsBuyGoodsRequest()
 			Long currency6Added = response.getCurrency6Added(); 
 			Long currencyConsumed = response.getCurrencyConsumed(); 
 			Integer currencyType = response.getCurrencyType(); 
+			List<String> invalidItems = response.getInvalidItems(); 
 			GSData scriptData = response.getScriptData(); 
 			List<String> transactionIds = response.getTransactionIds(); 
 		}
@@ -224,7 +221,6 @@ gs.getRequestBuilder().createWindowsBuyGoodsRequest()
 ```javascript
 
 	var request = new SparkRequests.WindowsBuyGoodsRequest();
-	request.analyticsData = ...;
 	request.platform = ...;
 	request.receipt = ...;
 	request.uniqueTransactionByPlayer = ...;
@@ -239,6 +235,7 @@ var currency5Added = response.currency5Added;
 var currency6Added = response.currency6Added; 
 var currencyConsumed = response.currencyConsumed; 
 var currencyType = response.currencyType; 
+var invalidItems = response.invalidItems; 
 var scriptData = response.scriptData; 
 var transactionIds = response.transactionIds; 
 ```

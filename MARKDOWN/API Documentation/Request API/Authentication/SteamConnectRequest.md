@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Authentication/SteamConnectRequest.md
----
 
 # SteamConnectRequest
 
@@ -26,7 +23,6 @@ If the Steam user is already known, the session will switch to being the previou
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 doNotLinkToCurrentPlayer | No | boolean | Indicates that the server should not try to link the external profile with the current player.  If false, links the external profile to the currently signed in player.  If true, creates a new player and links the external profile to them.  Defaults to false.
 errorOnSwitch | No | boolean | Indicates whether the server should return an error if an account switch would have occurred, rather than switching automatically.  Defaults to false.
 segments | No | JSON | An optional segment configuration for this request.
@@ -80,6 +76,7 @@ Key | Value | Description
 sessionTicket | ACCOUNT_ALREADY_LINKED | The current user has a Steam profile and it's not the profile they have just tried to log in with
 sessionTicket | NOTAUTHENTICATED | The system was unable to authenticate the sessionTicket
 sessionTicket | REQUIRED | Parameter sessionTicket is required but was not provided
+authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
 
 ## Code Samples
 
@@ -90,7 +87,6 @@ sessionTicket | REQUIRED | Parameter sessionTicket is required but was not provi
 	using GameSparks.Api.Responses;
 	...
 	new SteamConnectRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 		.SetErrorOnSwitch(errorOnSwitch)
 		.SetSegments(segments)
@@ -118,7 +114,6 @@ sessionTicket | REQUIRED | Parameter sessionTicket is required but was not provi
 	
 	gs.getRequestBuilder()
 	    .createSteamConnectRequest()
-		.setAnalyticsData(analyticsData)
 		.setDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 		.setErrorOnSwitch(errorOnSwitch)
 		.setSegments(segments)
@@ -142,7 +137,6 @@ sessionTicket | REQUIRED | Parameter sessionTicket is required but was not provi
 	#import "GSAPI.h"
 	...
 	GSSteamConnectRequest* request = [[GSSteamConnectRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setDoNotLinkToCurrentPlayer:doNotLinkToCurrentPlayer;
 	[request setErrorOnSwitch:errorOnSwitch;
 	[request setSegments:segments;
@@ -181,7 +175,6 @@ sessionTicket | REQUIRED | Parameter sessionTicket is required but was not provi
 	......
 	
 	SteamConnectRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 	request.SetErrorOnSwitch(errorOnSwitch)
 	request.SetSegments(segments)
@@ -200,7 +193,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createSteamConnectRequest()
-	.setAnalyticsData(analyticsData)
 	.setDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 	.setErrorOnSwitch(errorOnSwitch)
 	.setSegments(segments)
@@ -225,7 +217,6 @@ gs.getRequestBuilder().createSteamConnectRequest()
 ```javascript
 
 	var request = new SparkRequests.SteamConnectRequest();
-	request.analyticsData = ...;
 	request.doNotLinkToCurrentPlayer = ...;
 	request.errorOnSwitch = ...;
 	request.segments = ...;

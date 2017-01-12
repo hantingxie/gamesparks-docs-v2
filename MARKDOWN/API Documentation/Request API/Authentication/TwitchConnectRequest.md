@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Authentication/TwitchConnectRequest.md
----
 
 # TwitchConnectRequest
 
@@ -25,7 +22,6 @@ If the Twitch user is already known, the session will switch to being the previo
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
 accessToken | No | string | The access token is used by the client to make authenticated requests on behalf of the end user.
-analyticsData | No | AnalyticsData | Optional data used by analytics
 doNotLinkToCurrentPlayer | No | boolean | Indicates that the server should not try to link the external profile with the current player.  If false, links the external profile to the currently signed in player.  If true, creates a new player and links the external profile to them.  Defaults to false.
 errorOnSwitch | No | boolean | Indicates whether the server should return an error if an account switch would have occurred, rather than switching automatically.  Defaults to false.
 segments | No | JSON | An optional segment configuration for this request.
@@ -78,6 +74,7 @@ Key | Value | Description
 accessToken | ACCOUNT_ALREADY_LINKED | The current user has a Twitch profile and it's not the profile they have just tried to log in with
 accessToken | NOTAUTHENTICATED | The system was unable to authenticate the token
 accessToken | REQUIRED | The accessToken is required but not provided
+authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
 
 ## Code Samples
 
@@ -89,7 +86,6 @@ accessToken | REQUIRED | The accessToken is required but not provided
 	...
 	new TwitchConnectRequest()
 		.SetAccessToken(accessToken)
-		.SetAnalyticsData(analyticsData)
 		.SetDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 		.SetErrorOnSwitch(errorOnSwitch)
 		.SetSegments(segments)
@@ -117,7 +113,6 @@ accessToken | REQUIRED | The accessToken is required but not provided
 	gs.getRequestBuilder()
 	    .createTwitchConnectRequest()
 		.setAccessToken(accessToken)
-		.setAnalyticsData(analyticsData)
 		.setDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 		.setErrorOnSwitch(errorOnSwitch)
 		.setSegments(segments)
@@ -141,7 +136,6 @@ accessToken | REQUIRED | The accessToken is required but not provided
 	...
 	GSTwitchConnectRequest* request = [[GSTwitchConnectRequest alloc] init];
 	[request setAccessToken:accessToken;
-	[request setAnalyticsData:analyticsData;
 	[request setDoNotLinkToCurrentPlayer:doNotLinkToCurrentPlayer;
 	[request setErrorOnSwitch:errorOnSwitch;
 	[request setSegments:segments;
@@ -180,7 +174,6 @@ accessToken | REQUIRED | The accessToken is required but not provided
 	
 	TwitchConnectRequest request(gsInstance);
 	request.SetAccessToken(accessToken)
-	request.SetAnalyticsData(analyticsData)
 	request.SetDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 	request.SetErrorOnSwitch(errorOnSwitch)
 	request.SetSegments(segments)
@@ -199,7 +192,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 ...
 gs.getRequestBuilder().createTwitchConnectRequest()
 	.setAccessToken(accessToken)
-	.setAnalyticsData(analyticsData)
 	.setDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
 	.setErrorOnSwitch(errorOnSwitch)
 	.setSegments(segments)
@@ -224,7 +216,6 @@ gs.getRequestBuilder().createTwitchConnectRequest()
 
 	var request = new SparkRequests.TwitchConnectRequest();
 	request.accessToken = ...;
-	request.analyticsData = ...;
 	request.doNotLinkToCurrentPlayer = ...;
 	request.errorOnSwitch = ...;
 	request.segments = ...;

@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Multiplayer/AcceptChallengeRequest.md
----
 
 # AcceptChallengeRequest
 
@@ -14,7 +11,6 @@ Accepts a challenge that has been issued to the current player.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 challengeInstanceId | Yes | string | The ID of the challenge
 message | No | string | An optional message to send with the challenge
 
@@ -54,7 +50,6 @@ challengeInstanceId | INVALID | The ID does not match a challenge the user is in
 	using GameSparks.Api.Responses;
 	...
 	new AcceptChallengeRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetChallengeInstanceId(challengeInstanceId)
 		.SetMessage(message)
 		.Send((response) => {
@@ -74,7 +69,6 @@ challengeInstanceId | INVALID | The ID does not match a challenge the user is in
 	
 	gs.getRequestBuilder()
 	    .createAcceptChallengeRequest()
-		.setAnalyticsData(analyticsData)
 		.setChallengeInstanceId(challengeInstanceId)
 		.setMessage(message)
 		.send(function(response:com.gamesparks.api.responses.AcceptChallengeResponse):void {
@@ -90,7 +84,6 @@ challengeInstanceId | INVALID | The ID does not match a challenge the user is in
 	#import "GSAPI.h"
 	...
 	GSAcceptChallengeRequest* request = [[GSAcceptChallengeRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setChallengeInstanceId:challengeInstanceId;
 	[request setMessage:message;
 	[request setCallback:^ (GSAcceptChallengeResponse* response) {
@@ -117,7 +110,6 @@ challengeInstanceId | INVALID | The ID does not match a challenge the user is in
 	......
 	
 	AcceptChallengeRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetChallengeInstanceId(challengeInstanceId)
 	request.SetMessage(message)
 	request.Send(AcceptChallengeRequest_Response);
@@ -132,7 +124,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createAcceptChallengeRequest()
-	.setAnalyticsData(analyticsData)
 	.setChallengeInstanceId(challengeInstanceId)
 	.setMessage(message)
 	.send(new GSEventListener<AcceptChallengeResponse>() {
@@ -149,7 +140,6 @@ gs.getRequestBuilder().createAcceptChallengeRequest()
 ```javascript
 
 	var request = new SparkRequests.AcceptChallengeRequest();
-	request.analyticsData = ...;
 	request.challengeInstanceId = ...;
 	request.message = ...;
 	var response = request.Send();

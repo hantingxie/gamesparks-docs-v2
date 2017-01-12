@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Leaderboards/SocialLeaderboardDataRequest.md
----
 
 # SocialLeaderboardDataRequest
 
@@ -18,7 +15,6 @@ The entry count defines how many player should be returned both ahead and behind
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 challengeInstanceId | No | string | The challenge instance to get the leaderboard data for
 dontErrorOnNotSocial | No | boolean | The default behaviour on a social request is to error if the player has no friends (NOTSOCIAL).  Set this flag to suppress that error and return the player's leaderboard entry instead.
 entryCount | Yes | number | The number of items to return in a page (default=50)
@@ -93,7 +89,6 @@ challengeInstanceId	 | INVALID | The challengeInstanceId supplied did not match 
 	using GameSparks.Api.Responses;
 	...
 	new SocialLeaderboardDataRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetChallengeInstanceId(challengeInstanceId)
 		.SetDontErrorOnNotSocial(dontErrorOnNotSocial)
 		.SetEntryCount(entryCount)
@@ -127,7 +122,6 @@ challengeInstanceId	 | INVALID | The challengeInstanceId supplied did not match 
 	
 	gs.getRequestBuilder()
 	    .createSocialLeaderboardDataRequest()
-		.setAnalyticsData(analyticsData)
 		.setChallengeInstanceId(challengeInstanceId)
 		.setDontErrorOnNotSocial(dontErrorOnNotSocial)
 		.setEntryCount(entryCount)
@@ -157,7 +151,6 @@ challengeInstanceId	 | INVALID | The challengeInstanceId supplied did not match 
 	#import "GSAPI.h"
 	...
 	GSSocialLeaderboardDataRequest* request = [[GSSocialLeaderboardDataRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setChallengeInstanceId:challengeInstanceId;
 	[request setDontErrorOnNotSocial:dontErrorOnNotSocial;
 	[request setEntryCount:entryCount;
@@ -202,7 +195,6 @@ challengeInstanceId	 | INVALID | The challengeInstanceId supplied did not match 
 	......
 	
 	SocialLeaderboardDataRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetChallengeInstanceId(challengeInstanceId)
 	request.SetDontErrorOnNotSocial(dontErrorOnNotSocial)
 	request.SetEntryCount(entryCount)
@@ -227,7 +219,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createSocialLeaderboardDataRequest()
-	.setAnalyticsData(analyticsData)
 	.setChallengeInstanceId(challengeInstanceId)
 	.setDontErrorOnNotSocial(dontErrorOnNotSocial)
 	.setEntryCount(entryCount)
@@ -258,7 +249,6 @@ gs.getRequestBuilder().createSocialLeaderboardDataRequest()
 ```javascript
 
 	var request = new SparkRequests.SocialLeaderboardDataRequest();
-	request.analyticsData = ...;
 	request.challengeInstanceId = ...;
 	request.dontErrorOnNotSocial = ...;
 	request.entryCount = ...;

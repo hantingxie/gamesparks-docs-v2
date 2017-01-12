@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Store/GooglePlayBuyGoodsRequest.md
----
 
 # GooglePlayBuyGoodsRequest
 
@@ -22,7 +19,6 @@ It is critical that the signedData is sent exactly as it is returned form google
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 signature | Yes | string | The value obtained from data.getStringExtra("INAPP_DATA_SIGNATURE");
 signedData | Yes | string | The value obtained from data.getStringExtra("INAPP_PURCHASE_DATA")
 uniqueTransactionByPlayer | No | boolean | If set to true, the transactionId from this receipt will not be globally valdidated, this will mean replays between players are possible.
@@ -43,19 +39,11 @@ currency5Added | number | How much currency type 5 was added
 currency6Added | number | How much currency type 6 was added
 currencyConsumed | number | For a buy with currency request, how much currency was used
 currencyType | number | For a buy with currency request, which currency type was used
+invalidItems | string[] | A list of invalid items for this purchase (if any). This field is populated only for store buys
 scriptData | ScriptData | A JSON Map of any data added either to the Request or the Response by your Cloud Code
 transactionIds | string[] | The list of transactionIds, for this purchase, if they exist. This field is populated only for store buys
 
 ## Nested types
-
-### ScriptData
-
-A collection of arbitrary data that can be added to a message via a Cloud Code script.
-
-Parameter | Type | Description
---------- | ---- | -----------
-myKey | string | An arbitrary data key
-myValue | JSON | An arbitrary data value.
 
 ### Boughtitem
 
@@ -65,6 +53,15 @@ Parameter | Type | Description
 --------- | ---- | -----------
 quantity | number | The quantity of the bought item
 shortCode | string | The short code of the bought item
+
+### ScriptData
+
+A collection of arbitrary data that can be added to a message via a Cloud Code script.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+myKey | string | An arbitrary data key
+myValue | JSON | An arbitrary data value.
 
 ## Error Codes
 
@@ -85,7 +82,6 @@ verificationError | 1 | No matching virtual good can be found
 	using GameSparks.Api.Responses;
 	...
 	new GooglePlayBuyGoodsRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetSignature(signature)
 		.SetSignedData(signedData)
 		.SetUniqueTransactionByPlayer(uniqueTransactionByPlayer)
@@ -99,6 +95,7 @@ verificationError | 1 | No matching virtual good can be found
 		long? currency6Added = response.Currency6Added; 
 		long? currencyConsumed = response.CurrencyConsumed; 
 		int? currencyType = response.CurrencyType; 
+		IList<string> invalidItems = response.InvalidItems; 
 		GSData scriptData = response.ScriptData; 
 		IList<string> transactionIds = response.TransactionIds; 
 		});
@@ -115,7 +112,6 @@ verificationError | 1 | No matching virtual good can be found
 	
 	gs.getRequestBuilder()
 	    .createGooglePlayBuyGoodsRequest()
-		.setAnalyticsData(analyticsData)
 		.setSignature(signature)
 		.setSignedData(signedData)
 		.setUniqueTransactionByPlayer(uniqueTransactionByPlayer)
@@ -129,6 +125,7 @@ verificationError | 1 | No matching virtual good can be found
 		var currency6Added:Number = response.getCurrency6Added(); 
 		var currencyConsumed:Number = response.getCurrencyConsumed(); 
 		var currencyType:Number = response.getCurrencyType(); 
+		var invalidItems:Vector.<String> = response.getInvalidItems(); 
 		var scriptData:ScriptData = response.getScriptData(); 
 		var transactionIds:Vector.<String> = response.getTransactionIds(); 
 		});
@@ -141,7 +138,6 @@ verificationError | 1 | No matching virtual good can be found
 	#import "GSAPI.h"
 	...
 	GSGooglePlayBuyGoodsRequest* request = [[GSGooglePlayBuyGoodsRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setSignature:signature;
 	[request setSignedData:signedData;
 	[request setUniqueTransactionByPlayer:uniqueTransactionByPlayer;
@@ -155,6 +151,7 @@ verificationError | 1 | No matching virtual good can be found
 	NSNumber* currency6Added = [response getCurrency6Added]; 
 	NSNumber* currencyConsumed = [response getCurrencyConsumed]; 
 	NSNumber* currencyType = [response getCurrencyType]; 
+	NSArray* invalidItems = [response getInvalidItems]; 
 	NSDictionary* scriptData = [response getScriptData]; 
 	NSArray* transactionIds = [response getTransactionIds]; 
 	}];
@@ -181,13 +178,13 @@ verificationError | 1 | No matching virtual good can be found
 	Optional::t_LongOptional currency6Added = response.getCurrency6Added(); 
 	Optional::t_LongOptional currencyConsumed = response.getCurrencyConsumed(); 
 	Optional::t_LongOptional currencyType = response.getCurrencyType(); 
+	gsstl:vector<gsstl::string> invalidItems = response.getInvalidItems(); 
 	GSData scriptData = response.getScriptData(); 
 	gsstl:vector<gsstl::string> transactionIds = response.getTransactionIds(); 
 	}
 	......
 	
 	GooglePlayBuyGoodsRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetSignature(signature)
 	request.SetSignedData(signedData)
 	request.SetUniqueTransactionByPlayer(uniqueTransactionByPlayer)
@@ -203,7 +200,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createGooglePlayBuyGoodsRequest()
-	.setAnalyticsData(analyticsData)
 	.setSignature(signature)
 	.setSignedData(signedData)
 	.setUniqueTransactionByPlayer(uniqueTransactionByPlayer)
@@ -219,6 +215,7 @@ gs.getRequestBuilder().createGooglePlayBuyGoodsRequest()
 			Long currency6Added = response.getCurrency6Added(); 
 			Long currencyConsumed = response.getCurrencyConsumed(); 
 			Integer currencyType = response.getCurrencyType(); 
+			List<String> invalidItems = response.getInvalidItems(); 
 			GSData scriptData = response.getScriptData(); 
 			List<String> transactionIds = response.getTransactionIds(); 
 		}
@@ -230,7 +227,6 @@ gs.getRequestBuilder().createGooglePlayBuyGoodsRequest()
 ```javascript
 
 	var request = new SparkRequests.GooglePlayBuyGoodsRequest();
-	request.analyticsData = ...;
 	request.signature = ...;
 	request.signedData = ...;
 	request.uniqueTransactionByPlayer = ...;
@@ -245,6 +241,7 @@ var currency5Added = response.currency5Added;
 var currency6Added = response.currency6Added; 
 var currencyConsumed = response.currencyConsumed; 
 var currencyType = response.currencyType; 
+var invalidItems = response.invalidItems; 
 var scriptData = response.scriptData; 
 var transactionIds = response.transactionIds; 
 ```

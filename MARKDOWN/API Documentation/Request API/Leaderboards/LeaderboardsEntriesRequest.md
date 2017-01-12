@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Leaderboards/LeaderboardsEntriesRequest.md
----
 
 # LeaderboardsEntriesRequest
 
@@ -16,7 +13,6 @@ For each leaderboard it returns the array of leaderboard entries that the player
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 challenges | No | string[] | The challenge leaderboards to return entries for
 inverseSocial | No | boolean | Returns the leaderboard excluding the player's social friends
 leaderboards | No | string[] | The list of leaderboards shortcodes
@@ -55,7 +51,6 @@ myValue | JSON | An arbitrary data value.
 	using GameSparks.Api.Responses;
 	...
 	new LeaderboardsEntriesRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetChallenges(challenges)
 		.SetInverseSocial(inverseSocial)
 		.SetLeaderboards(leaderboards)
@@ -79,7 +74,6 @@ myValue | JSON | An arbitrary data value.
 	
 	gs.getRequestBuilder()
 	    .createLeaderboardsEntriesRequest()
-		.setAnalyticsData(analyticsData)
 		.setChallenges(challenges)
 		.setInverseSocial(inverseSocial)
 		.setLeaderboards(leaderboards)
@@ -99,7 +93,6 @@ myValue | JSON | An arbitrary data value.
 	#import "GSAPI.h"
 	...
 	GSLeaderboardsEntriesRequest* request = [[GSLeaderboardsEntriesRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setChallenges:challenges;
 	[request setInverseSocial:inverseSocial;
 	[request setLeaderboards:leaderboards;
@@ -130,7 +123,6 @@ myValue | JSON | An arbitrary data value.
 	......
 	
 	LeaderboardsEntriesRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetChallenges(challenges)
 	request.SetInverseSocial(inverseSocial)
 	request.SetLeaderboards(leaderboards)
@@ -149,7 +141,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createLeaderboardsEntriesRequest()
-	.setAnalyticsData(analyticsData)
 	.setChallenges(challenges)
 	.setInverseSocial(inverseSocial)
 	.setLeaderboards(leaderboards)
@@ -170,7 +161,6 @@ gs.getRequestBuilder().createLeaderboardsEntriesRequest()
 ```javascript
 
 	var request = new SparkRequests.LeaderboardsEntriesRequest();
-	request.analyticsData = ...;
 	request.challenges = ...;
 	request.inverseSocial = ...;
 	request.leaderboards = ...;

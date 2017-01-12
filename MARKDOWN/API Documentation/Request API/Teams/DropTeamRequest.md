@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Teams/DropTeamRequest.md
----
 
 # DropTeamRequest
 
@@ -14,7 +11,6 @@ Allows a player to drop a team.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 ownerId | No | string | The team owner to find, used in combination with teamType. If not supplied the current players id will be used
 teamId | No | string | The teamId to find (may be null if teamType supplied)
 teamType | No | string | The teamType to find, used in combination with the current player, or the player defined by ownerId
@@ -58,7 +54,6 @@ teamType&&ownerId | NOT_UNIQUE | The ownerId / teamType combination has multiple
 	using GameSparks.Api.Responses;
 	...
 	new DropTeamRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetOwnerId(ownerId)
 		.SetTeamId(teamId)
 		.SetTeamType(teamType)
@@ -78,7 +73,6 @@ teamType&&ownerId | NOT_UNIQUE | The ownerId / teamType combination has multiple
 	
 	gs.getRequestBuilder()
 	    .createDropTeamRequest()
-		.setAnalyticsData(analyticsData)
 		.setOwnerId(ownerId)
 		.setTeamId(teamId)
 		.setTeamType(teamType)
@@ -94,7 +88,6 @@ teamType&&ownerId | NOT_UNIQUE | The ownerId / teamType combination has multiple
 	#import "GSAPI.h"
 	...
 	GSDropTeamRequest* request = [[GSDropTeamRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setOwnerId:ownerId;
 	[request setTeamId:teamId;
 	[request setTeamType:teamType;
@@ -120,7 +113,6 @@ teamType&&ownerId | NOT_UNIQUE | The ownerId / teamType combination has multiple
 	......
 	
 	DropTeamRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetOwnerId(ownerId)
 	request.SetTeamId(teamId)
 	request.SetTeamType(teamType)
@@ -136,7 +128,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createDropTeamRequest()
-	.setAnalyticsData(analyticsData)
 	.setOwnerId(ownerId)
 	.setTeamId(teamId)
 	.setTeamType(teamType)
@@ -153,7 +144,6 @@ gs.getRequestBuilder().createDropTeamRequest()
 ```javascript
 
 	var request = new SparkRequests.DropTeamRequest();
-	request.analyticsData = ...;
 	request.ownerId = ...;
 	request.teamId = ...;
 	request.teamType = ...;

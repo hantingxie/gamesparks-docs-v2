@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Teams/SendTeamChatMessageRequest.md
----
 
 # SendTeamChatMessageRequest
 
@@ -14,7 +11,6 @@ Send a message to all the players who are member of the given team
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 message | No | string | The message to send
 ownerId | No | string | The team owner to find, used in combination with teamType. If not supplied the current players id will be used
 teamId | No | string | The teamId to find (may be null if teamType supplied)
@@ -56,7 +52,6 @@ team | NOT_A_MEMBER | The current player is not a member of the team they are tr
 	using GameSparks.Api.Responses;
 	...
 	new SendTeamChatMessageRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetMessage(message)
 		.SetOwnerId(ownerId)
 		.SetTeamId(teamId)
@@ -77,7 +72,6 @@ team | NOT_A_MEMBER | The current player is not a member of the team they are tr
 	
 	gs.getRequestBuilder()
 	    .createSendTeamChatMessageRequest()
-		.setAnalyticsData(analyticsData)
 		.setMessage(message)
 		.setOwnerId(ownerId)
 		.setTeamId(teamId)
@@ -94,7 +88,6 @@ team | NOT_A_MEMBER | The current player is not a member of the team they are tr
 	#import "GSAPI.h"
 	...
 	GSSendTeamChatMessageRequest* request = [[GSSendTeamChatMessageRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setMessage:message;
 	[request setOwnerId:ownerId;
 	[request setTeamId:teamId;
@@ -121,7 +114,6 @@ team | NOT_A_MEMBER | The current player is not a member of the team they are tr
 	......
 	
 	SendTeamChatMessageRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetMessage(message)
 	request.SetOwnerId(ownerId)
 	request.SetTeamId(teamId)
@@ -138,7 +130,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createSendTeamChatMessageRequest()
-	.setAnalyticsData(analyticsData)
 	.setMessage(message)
 	.setOwnerId(ownerId)
 	.setTeamId(teamId)
@@ -156,7 +147,6 @@ gs.getRequestBuilder().createSendTeamChatMessageRequest()
 ```javascript
 
 	var request = new SparkRequests.SendTeamChatMessageRequest();
-	request.analyticsData = ...;
 	request.message = ...;
 	request.ownerId = ...;
 	request.teamId = ...;

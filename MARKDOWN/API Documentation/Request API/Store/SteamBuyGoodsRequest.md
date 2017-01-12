@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Store/SteamBuyGoodsRequest.md
----
 
 # SteamBuyGoodsRequest
 
@@ -18,7 +15,6 @@ Once verified, the players account will be credited with the Virtual Good, or Vi
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 orderId | Yes | string | Unique 64-bit ID for order
 uniqueTransactionByPlayer | No | boolean | If set to true, the transactionId from this receipt will not be globally valdidated, this will mean replays between players are possible.
 
@@ -38,19 +34,11 @@ currency5Added | number | How much currency type 5 was added
 currency6Added | number | How much currency type 6 was added
 currencyConsumed | number | For a buy with currency request, how much currency was used
 currencyType | number | For a buy with currency request, which currency type was used
+invalidItems | string[] | A list of invalid items for this purchase (if any). This field is populated only for store buys
 scriptData | ScriptData | A JSON Map of any data added either to the Request or the Response by your Cloud Code
 transactionIds | string[] | The list of transactionIds, for this purchase, if they exist. This field is populated only for store buys
 
 ## Nested types
-
-### ScriptData
-
-A collection of arbitrary data that can be added to a message via a Cloud Code script.
-
-Parameter | Type | Description
---------- | ---- | -----------
-myKey | string | An arbitrary data key
-myValue | JSON | An arbitrary data value.
 
 ### Boughtitem
 
@@ -60,6 +48,15 @@ Parameter | Type | Description
 --------- | ---- | -----------
 quantity | number | The quantity of the bought item
 shortCode | string | The short code of the bought item
+
+### ScriptData
+
+A collection of arbitrary data that can be added to a message via a Cloud Code script.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+myKey | string | An arbitrary data key
+myValue | JSON | An arbitrary data value.
 
 ## Error Codes
 
@@ -79,7 +76,6 @@ verificationError | 4 | The order_id has been processed before
 	using GameSparks.Api.Responses;
 	...
 	new SteamBuyGoodsRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetOrderId(orderId)
 		.SetUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 		.Send((response) => {
@@ -92,6 +88,7 @@ verificationError | 4 | The order_id has been processed before
 		long? currency6Added = response.Currency6Added; 
 		long? currencyConsumed = response.CurrencyConsumed; 
 		int? currencyType = response.CurrencyType; 
+		IList<string> invalidItems = response.InvalidItems; 
 		GSData scriptData = response.ScriptData; 
 		IList<string> transactionIds = response.TransactionIds; 
 		});
@@ -108,7 +105,6 @@ verificationError | 4 | The order_id has been processed before
 	
 	gs.getRequestBuilder()
 	    .createSteamBuyGoodsRequest()
-		.setAnalyticsData(analyticsData)
 		.setOrderId(orderId)
 		.setUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 		.send(function(response:com.gamesparks.api.responses.BuyVirtualGoodResponse):void {
@@ -121,6 +117,7 @@ verificationError | 4 | The order_id has been processed before
 		var currency6Added:Number = response.getCurrency6Added(); 
 		var currencyConsumed:Number = response.getCurrencyConsumed(); 
 		var currencyType:Number = response.getCurrencyType(); 
+		var invalidItems:Vector.<String> = response.getInvalidItems(); 
 		var scriptData:ScriptData = response.getScriptData(); 
 		var transactionIds:Vector.<String> = response.getTransactionIds(); 
 		});
@@ -133,7 +130,6 @@ verificationError | 4 | The order_id has been processed before
 	#import "GSAPI.h"
 	...
 	GSSteamBuyGoodsRequest* request = [[GSSteamBuyGoodsRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setOrderId:orderId;
 	[request setUniqueTransactionByPlayer:uniqueTransactionByPlayer;
 	[request setCallback:^ (GSBuyVirtualGoodResponse* response) {
@@ -146,6 +142,7 @@ verificationError | 4 | The order_id has been processed before
 	NSNumber* currency6Added = [response getCurrency6Added]; 
 	NSNumber* currencyConsumed = [response getCurrencyConsumed]; 
 	NSNumber* currencyType = [response getCurrencyType]; 
+	NSArray* invalidItems = [response getInvalidItems]; 
 	NSDictionary* scriptData = [response getScriptData]; 
 	NSArray* transactionIds = [response getTransactionIds]; 
 	}];
@@ -172,13 +169,13 @@ verificationError | 4 | The order_id has been processed before
 	Optional::t_LongOptional currency6Added = response.getCurrency6Added(); 
 	Optional::t_LongOptional currencyConsumed = response.getCurrencyConsumed(); 
 	Optional::t_LongOptional currencyType = response.getCurrencyType(); 
+	gsstl:vector<gsstl::string> invalidItems = response.getInvalidItems(); 
 	GSData scriptData = response.getScriptData(); 
 	gsstl:vector<gsstl::string> transactionIds = response.getTransactionIds(); 
 	}
 	......
 	
 	SteamBuyGoodsRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetOrderId(orderId)
 	request.SetUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 	request.Send(SteamBuyGoodsRequest_Response);
@@ -193,7 +190,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createSteamBuyGoodsRequest()
-	.setAnalyticsData(analyticsData)
 	.setOrderId(orderId)
 	.setUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 	.send(new GSEventListener<BuyVirtualGoodResponse>() {
@@ -208,6 +204,7 @@ gs.getRequestBuilder().createSteamBuyGoodsRequest()
 			Long currency6Added = response.getCurrency6Added(); 
 			Long currencyConsumed = response.getCurrencyConsumed(); 
 			Integer currencyType = response.getCurrencyType(); 
+			List<String> invalidItems = response.getInvalidItems(); 
 			GSData scriptData = response.getScriptData(); 
 			List<String> transactionIds = response.getTransactionIds(); 
 		}
@@ -219,7 +216,6 @@ gs.getRequestBuilder().createSteamBuyGoodsRequest()
 ```javascript
 
 	var request = new SparkRequests.SteamBuyGoodsRequest();
-	request.analyticsData = ...;
 	request.orderId = ...;
 	request.uniqueTransactionByPlayer = ...;
 	var response = request.Send();
@@ -233,6 +229,7 @@ var currency5Added = response.currency5Added;
 var currency6Added = response.currency6Added; 
 var currencyConsumed = response.currencyConsumed; 
 var currencyType = response.currencyType; 
+var invalidItems = response.invalidItems; 
 var scriptData = response.scriptData; 
 var transactionIds = response.transactionIds; 
 ```

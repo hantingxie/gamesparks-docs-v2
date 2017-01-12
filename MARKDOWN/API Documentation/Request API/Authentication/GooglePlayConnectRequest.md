@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Authentication/GooglePlayConnectRequest.md
----
 
 # GooglePlayConnectRequest
 
@@ -27,7 +24,6 @@ If the Google Play user is already known, the session will switch to being the p
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
 accessToken | No | string | The access token is used when using the service id and certificate.
-analyticsData | No | AnalyticsData | Optional data used by analytics
 code | No | string | The access code is used by the client to make authenticated requests on behalf of the end user. Requires clientId and clientsecret to be set
 displayName | No | string | The display of the current player from Google Play. This will be used as the displayName of the gamesparks player if created (or syncDisplayname is true)
 doNotLinkToCurrentPlayer | No | boolean | Indicates that the server should not try to link the external profile with the current player.  If false, links the external profile to the currently signed in player.  If true, creates a new player and links the external profile to them.  Defaults to false.
@@ -88,6 +84,7 @@ displayName | REQUIRED | The displayName is missing
 GOOGLE_PLAY | NOT_CONFIGURED | The game has not been configured with the required Google Play App ID
 GOOGLE_PLUS | NOT_CONFIGURED | Google+ scope is requested, but the game has not been configured with the required Google Plus integration credentials: the client ID and the client secret
 redirectUri | REQUIRED | The redirectUri is required when using a code rather than an accessToken
+authentication | COPPA restricted | Social authentications are not allowed on COPPA compliant credentials due to social accounts containing personally identifiable information
 
 ## Code Samples
 
@@ -99,7 +96,6 @@ redirectUri | REQUIRED | The redirectUri is required when using a code rather th
 	...
 	new GooglePlayConnectRequest()
 		.SetAccessToken(accessToken)
-		.SetAnalyticsData(analyticsData)
 		.SetCode(code)
 		.SetDisplayName(displayName)
 		.SetDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
@@ -132,7 +128,6 @@ redirectUri | REQUIRED | The redirectUri is required when using a code rather th
 	gs.getRequestBuilder()
 	    .createGooglePlayConnectRequest()
 		.setAccessToken(accessToken)
-		.setAnalyticsData(analyticsData)
 		.setCode(code)
 		.setDisplayName(displayName)
 		.setDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
@@ -161,7 +156,6 @@ redirectUri | REQUIRED | The redirectUri is required when using a code rather th
 	...
 	GSGooglePlayConnectRequest* request = [[GSGooglePlayConnectRequest alloc] init];
 	[request setAccessToken:accessToken;
-	[request setAnalyticsData:analyticsData;
 	[request setCode:code;
 	[request setDisplayName:displayName;
 	[request setDoNotLinkToCurrentPlayer:doNotLinkToCurrentPlayer;
@@ -205,7 +199,6 @@ redirectUri | REQUIRED | The redirectUri is required when using a code rather th
 	
 	GooglePlayConnectRequest request(gsInstance);
 	request.SetAccessToken(accessToken)
-	request.SetAnalyticsData(analyticsData)
 	request.SetCode(code)
 	request.SetDisplayName(displayName)
 	request.SetDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
@@ -229,7 +222,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 ...
 gs.getRequestBuilder().createGooglePlayConnectRequest()
 	.setAccessToken(accessToken)
-	.setAnalyticsData(analyticsData)
 	.setCode(code)
 	.setDisplayName(displayName)
 	.setDoNotLinkToCurrentPlayer(doNotLinkToCurrentPlayer)
@@ -259,7 +251,6 @@ gs.getRequestBuilder().createGooglePlayConnectRequest()
 
 	var request = new SparkRequests.GooglePlayConnectRequest();
 	request.accessToken = ...;
-	request.analyticsData = ...;
 	request.code = ...;
 	request.displayName = ...;
 	request.doNotLinkToCurrentPlayer = ...;

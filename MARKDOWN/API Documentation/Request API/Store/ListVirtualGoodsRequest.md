@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Store/ListVirtualGoodsRequest.md
----
 
 # ListVirtualGoodsRequest
 
@@ -14,7 +11,6 @@ Returns the list of configured virtual goods.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 includeDisabled | No | boolean | If true, the returned list will include disabled VirtualVoods
 tags | No | string[] | A filter to only include goods with the given tags. Each good must have all the provided tags.
 
@@ -38,15 +34,6 @@ Parameter | Type | Description
 --------- | ---- | -----------
 myKey | string | An arbitrary data key
 myValue | JSON | An arbitrary data value.
-
-### BundledGood
-
-A collection of arbitrary data that can be added to a message via a Cloud Code script.
-
-Parameter | Type | Description
---------- | ---- | -----------
-qty | number | The number of items bundled
-shortCode | string | The shortCode of the bundled good
 
 ### VirtualGood
 
@@ -89,6 +76,15 @@ tags | string | The tags of the Virtual Good
 type | string | The type of the virtual good, "VGOOD" or "CURRENCY"
 w8StoreProductId | string | The Windows 8 productId of the item.
 
+### BundledGood
+
+A collection of arbitrary data that can be added to a message via a Cloud Code script.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+qty | number | The number of items bundled
+shortCode | string | The shortCode of the bundled good
+
 
 ## Code Samples
 
@@ -99,7 +95,6 @@ w8StoreProductId | string | The Windows 8 productId of the item.
 	using GameSparks.Api.Responses;
 	...
 	new ListVirtualGoodsRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetIncludeDisabled(includeDisabled)
 		.SetTags(tags)
 		.Send((response) => {
@@ -119,7 +114,6 @@ w8StoreProductId | string | The Windows 8 productId of the item.
 	
 	gs.getRequestBuilder()
 	    .createListVirtualGoodsRequest()
-		.setAnalyticsData(analyticsData)
 		.setIncludeDisabled(includeDisabled)
 		.setTags(tags)
 		.send(function(response:com.gamesparks.api.responses.ListVirtualGoodsResponse):void {
@@ -135,7 +129,6 @@ w8StoreProductId | string | The Windows 8 productId of the item.
 	#import "GSAPI.h"
 	...
 	GSListVirtualGoodsRequest* request = [[GSListVirtualGoodsRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setIncludeDisabled:includeDisabled;
 	[request setTags:tags;
 	[request setCallback:^ (GSListVirtualGoodsResponse* response) {
@@ -162,7 +155,6 @@ w8StoreProductId | string | The Windows 8 productId of the item.
 	......
 	
 	ListVirtualGoodsRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetIncludeDisabled(includeDisabled)
 	request.SetTags(tags)
 	request.Send(ListVirtualGoodsRequest_Response);
@@ -177,7 +169,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createListVirtualGoodsRequest()
-	.setAnalyticsData(analyticsData)
 	.setIncludeDisabled(includeDisabled)
 	.setTags(tags)
 	.send(new GSEventListener<ListVirtualGoodsResponse>() {
@@ -194,7 +185,6 @@ gs.getRequestBuilder().createListVirtualGoodsRequest()
 ```javascript
 
 	var request = new SparkRequests.ListVirtualGoodsRequest();
-	request.analyticsData = ...;
 	request.includeDisabled = ...;
 	request.tags = ...;
 	var response = request.Send();

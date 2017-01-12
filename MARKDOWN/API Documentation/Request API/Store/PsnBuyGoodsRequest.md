@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Store/PsnBuyGoodsRequest.md
----
 
 # PsnBuyGoodsRequest
 
@@ -20,7 +17,6 @@ GampSparks platform by default will use internally saved PSN user access token
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 authorizationCode | No | string | The authorization code obtained from PSN, as described here https://ps4.scedev.net/resources/documents/SDK/latest/NpAuth-Reference/0008.html
 entitlementLabel | Yes | string | Specify the entitlement label of the entitlement to update. (Not an entitlement ID).
 redirectUri | No | string | When using the authorization code obtained from PlayStation®4/PlayStation®Vita/PlayStation®3, this is not required.
@@ -43,19 +39,11 @@ currency5Added | number | How much currency type 5 was added
 currency6Added | number | How much currency type 6 was added
 currencyConsumed | number | For a buy with currency request, how much currency was used
 currencyType | number | For a buy with currency request, which currency type was used
+invalidItems | string[] | A list of invalid items for this purchase (if any). This field is populated only for store buys
 scriptData | ScriptData | A JSON Map of any data added either to the Request or the Response by your Cloud Code
 transactionIds | string[] | The list of transactionIds, for this purchase, if they exist. This field is populated only for store buys
 
 ## Nested types
-
-### ScriptData
-
-A collection of arbitrary data that can be added to a message via a Cloud Code script.
-
-Parameter | Type | Description
---------- | ---- | -----------
-myKey | string | An arbitrary data key
-myValue | JSON | An arbitrary data value.
 
 ### Boughtitem
 
@@ -65,6 +53,15 @@ Parameter | Type | Description
 --------- | ---- | -----------
 quantity | number | The quantity of the bought item
 shortCode | string | The short code of the bought item
+
+### ScriptData
+
+A collection of arbitrary data that can be added to a message via a Cloud Code script.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+myKey | string | An arbitrary data key
+myValue | JSON | An arbitrary data value.
 
 ## Error Codes
 
@@ -83,7 +80,6 @@ verificationError | 3 | There was an error connecting to the PSN server
 	using GameSparks.Api.Responses;
 	...
 	new PsnBuyGoodsRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetAuthorizationCode(authorizationCode)
 		.SetEntitlementLabel(entitlementLabel)
 		.SetRedirectUri(redirectUri)
@@ -99,6 +95,7 @@ verificationError | 3 | There was an error connecting to the PSN server
 		long? currency6Added = response.Currency6Added; 
 		long? currencyConsumed = response.CurrencyConsumed; 
 		int? currencyType = response.CurrencyType; 
+		IList<string> invalidItems = response.InvalidItems; 
 		GSData scriptData = response.ScriptData; 
 		IList<string> transactionIds = response.TransactionIds; 
 		});
@@ -115,7 +112,6 @@ verificationError | 3 | There was an error connecting to the PSN server
 	
 	gs.getRequestBuilder()
 	    .createPsnBuyGoodsRequest()
-		.setAnalyticsData(analyticsData)
 		.setAuthorizationCode(authorizationCode)
 		.setEntitlementLabel(entitlementLabel)
 		.setRedirectUri(redirectUri)
@@ -131,6 +127,7 @@ verificationError | 3 | There was an error connecting to the PSN server
 		var currency6Added:Number = response.getCurrency6Added(); 
 		var currencyConsumed:Number = response.getCurrencyConsumed(); 
 		var currencyType:Number = response.getCurrencyType(); 
+		var invalidItems:Vector.<String> = response.getInvalidItems(); 
 		var scriptData:ScriptData = response.getScriptData(); 
 		var transactionIds:Vector.<String> = response.getTransactionIds(); 
 		});
@@ -143,7 +140,6 @@ verificationError | 3 | There was an error connecting to the PSN server
 	#import "GSAPI.h"
 	...
 	GSPsnBuyGoodsRequest* request = [[GSPsnBuyGoodsRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setAuthorizationCode:authorizationCode;
 	[request setEntitlementLabel:entitlementLabel;
 	[request setRedirectUri:redirectUri;
@@ -159,6 +155,7 @@ verificationError | 3 | There was an error connecting to the PSN server
 	NSNumber* currency6Added = [response getCurrency6Added]; 
 	NSNumber* currencyConsumed = [response getCurrencyConsumed]; 
 	NSNumber* currencyType = [response getCurrencyType]; 
+	NSArray* invalidItems = [response getInvalidItems]; 
 	NSDictionary* scriptData = [response getScriptData]; 
 	NSArray* transactionIds = [response getTransactionIds]; 
 	}];
@@ -185,13 +182,13 @@ verificationError | 3 | There was an error connecting to the PSN server
 	Optional::t_LongOptional currency6Added = response.getCurrency6Added(); 
 	Optional::t_LongOptional currencyConsumed = response.getCurrencyConsumed(); 
 	Optional::t_LongOptional currencyType = response.getCurrencyType(); 
+	gsstl:vector<gsstl::string> invalidItems = response.getInvalidItems(); 
 	GSData scriptData = response.getScriptData(); 
 	gsstl:vector<gsstl::string> transactionIds = response.getTransactionIds(); 
 	}
 	......
 	
 	PsnBuyGoodsRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetAuthorizationCode(authorizationCode)
 	request.SetEntitlementLabel(entitlementLabel)
 	request.SetRedirectUri(redirectUri)
@@ -209,7 +206,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createPsnBuyGoodsRequest()
-	.setAnalyticsData(analyticsData)
 	.setAuthorizationCode(authorizationCode)
 	.setEntitlementLabel(entitlementLabel)
 	.setRedirectUri(redirectUri)
@@ -227,6 +223,7 @@ gs.getRequestBuilder().createPsnBuyGoodsRequest()
 			Long currency6Added = response.getCurrency6Added(); 
 			Long currencyConsumed = response.getCurrencyConsumed(); 
 			Integer currencyType = response.getCurrencyType(); 
+			List<String> invalidItems = response.getInvalidItems(); 
 			GSData scriptData = response.getScriptData(); 
 			List<String> transactionIds = response.getTransactionIds(); 
 		}
@@ -238,7 +235,6 @@ gs.getRequestBuilder().createPsnBuyGoodsRequest()
 ```javascript
 
 	var request = new SparkRequests.PsnBuyGoodsRequest();
-	request.analyticsData = ...;
 	request.authorizationCode = ...;
 	request.entitlementLabel = ...;
 	request.redirectUri = ...;
@@ -255,6 +251,7 @@ var currency5Added = response.currency5Added;
 var currency6Added = response.currency6Added; 
 var currencyConsumed = response.currencyConsumed; 
 var currencyType = response.currencyType; 
+var invalidItems = response.invalidItems; 
 var scriptData = response.scriptData; 
 var transactionIds = response.transactionIds; 
 ```

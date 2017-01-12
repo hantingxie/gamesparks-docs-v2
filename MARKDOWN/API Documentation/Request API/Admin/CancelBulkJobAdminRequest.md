@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Admin/CancelBulkJobAdminRequest.md
----
 
 # CancelBulkJobAdminRequest
 
@@ -14,7 +11,6 @@ Cancel one or more bulk jobs.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 bulkJobIds | Yes | string[] | The IDs of existing bulk jobs to cancel
 
 ## Response Parameters
@@ -74,7 +70,6 @@ bulkJobIds | REQUIRED | The bulkJobIds must be an array of one or more valid bul
 	using GameSparks.Api.Responses;
 	...
 	new CancelBulkJobAdminRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetBulkJobIds(bulkJobIds)
 		.Send((response) => {
 		GSEnumerable<var> bulkJobs = response.BulkJobs; 
@@ -93,7 +88,6 @@ bulkJobIds | REQUIRED | The bulkJobIds must be an array of one or more valid bul
 	
 	gs.getRequestBuilder()
 	    .createCancelBulkJobAdminRequest()
-		.setAnalyticsData(analyticsData)
 		.setBulkJobIds(bulkJobIds)
 		.send(function(response:com.gamesparks.api.responses.CancelBulkJobAdminResponse):void {
 		var bulkJobs:Vector.<BulkJob> = response.getBulkJobs(); 
@@ -108,7 +102,6 @@ bulkJobIds | REQUIRED | The bulkJobIds must be an array of one or more valid bul
 	#import "GSAPI.h"
 	...
 	GSCancelBulkJobAdminRequest* request = [[GSCancelBulkJobAdminRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setBulkJobIds:bulkJobIds;
 	[request setCallback:^ (GSCancelBulkJobAdminResponse* response) {
 	NSArray* bulkJobs = [response getBulkJobs]; 
@@ -134,7 +127,6 @@ bulkJobIds | REQUIRED | The bulkJobIds must be an array of one or more valid bul
 	......
 	
 	CancelBulkJobAdminRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetBulkJobIds(bulkJobIds)
 	request.Send(CancelBulkJobAdminRequest_Response);
 ```
@@ -148,7 +140,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createCancelBulkJobAdminRequest()
-	.setAnalyticsData(analyticsData)
 	.setBulkJobIds(bulkJobIds)
 	.send(new GSEventListener<CancelBulkJobAdminResponse>() {
 		@Override
@@ -164,7 +155,6 @@ gs.getRequestBuilder().createCancelBulkJobAdminRequest()
 ```javascript
 
 	var request = new SparkRequests.CancelBulkJobAdminRequest();
-	request.analyticsData = ...;
 	request.bulkJobIds = ...;
 	var response = request.Send();
 	

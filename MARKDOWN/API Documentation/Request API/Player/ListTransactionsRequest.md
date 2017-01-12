@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Player/ListTransactionsRequest.md
----
 
 # ListTransactionsRequest
 
@@ -14,7 +11,6 @@ Returns a list of the current player's transaction history.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 dateFrom | No | date | Optional date constraint to list transactions from
 dateTo | No | date | Optional date constraint to list transactions to
 entryCount | No | number | The number of items to return in a page (default=50)
@@ -79,7 +75,6 @@ type | string | The type of item
 	using GameSparks.Api.Responses;
 	...
 	new ListTransactionsRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetDateFrom(dateFrom)
 		.SetDateTo(dateTo)
 		.SetEntryCount(entryCount)
@@ -102,7 +97,6 @@ type | string | The type of item
 	
 	gs.getRequestBuilder()
 	    .createListTransactionsRequest()
-		.setAnalyticsData(analyticsData)
 		.setDateFrom(dateFrom)
 		.setDateTo(dateTo)
 		.setEntryCount(entryCount)
@@ -121,7 +115,6 @@ type | string | The type of item
 	#import "GSAPI.h"
 	...
 	GSListTransactionsRequest* request = [[GSListTransactionsRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setDateFrom:dateFrom;
 	[request setDateTo:dateTo;
 	[request setEntryCount:entryCount;
@@ -151,7 +144,6 @@ type | string | The type of item
 	......
 	
 	ListTransactionsRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetDateFrom(dateFrom)
 	request.SetDateTo(dateTo)
 	request.SetEntryCount(entryCount)
@@ -169,7 +161,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createListTransactionsRequest()
-	.setAnalyticsData(analyticsData)
 	.setDateFrom(dateFrom)
 	.setDateTo(dateTo)
 	.setEntryCount(entryCount)
@@ -189,7 +180,6 @@ gs.getRequestBuilder().createListTransactionsRequest()
 ```javascript
 
 	var request = new SparkRequests.ListTransactionsRequest();
-	request.analyticsData = ...;
 	request.dateFrom = ...;
 	request.dateTo = ...;
 	request.entryCount = ...;

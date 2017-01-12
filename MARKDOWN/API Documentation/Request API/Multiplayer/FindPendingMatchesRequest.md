@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Multiplayer/FindPendingMatchesRequest.md
----
 
 # FindPendingMatchesRequest
 
@@ -18,7 +15,6 @@ Each player must match the other for the pending match to be found.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 matchGroup | No | string | Optional. The matchGroup of the match this player previously registeredfor
 matchShortCode | Yes | string | The shortCode of the match this player previously registered for
 maxMatchesToFind | No | number | Optional. The maximum number of pending matches to return (default=10)
@@ -84,7 +80,6 @@ match | NOT_IN_PROGRESS | There is no pending match for this player / shortCode 
 	using GameSparks.Api.Responses;
 	...
 	new FindPendingMatchesRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetMatchGroup(matchGroup)
 		.SetMatchShortCode(matchShortCode)
 		.SetMaxMatchesToFind(maxMatchesToFind)
@@ -105,7 +100,6 @@ match | NOT_IN_PROGRESS | There is no pending match for this player / shortCode 
 	
 	gs.getRequestBuilder()
 	    .createFindPendingMatchesRequest()
-		.setAnalyticsData(analyticsData)
 		.setMatchGroup(matchGroup)
 		.setMatchShortCode(matchShortCode)
 		.setMaxMatchesToFind(maxMatchesToFind)
@@ -122,7 +116,6 @@ match | NOT_IN_PROGRESS | There is no pending match for this player / shortCode 
 	#import "GSAPI.h"
 	...
 	GSFindPendingMatchesRequest* request = [[GSFindPendingMatchesRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setMatchGroup:matchGroup;
 	[request setMatchShortCode:matchShortCode;
 	[request setMaxMatchesToFind:maxMatchesToFind;
@@ -150,7 +143,6 @@ match | NOT_IN_PROGRESS | There is no pending match for this player / shortCode 
 	......
 	
 	FindPendingMatchesRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetMatchGroup(matchGroup)
 	request.SetMatchShortCode(matchShortCode)
 	request.SetMaxMatchesToFind(maxMatchesToFind)
@@ -166,7 +158,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createFindPendingMatchesRequest()
-	.setAnalyticsData(analyticsData)
 	.setMatchGroup(matchGroup)
 	.setMatchShortCode(matchShortCode)
 	.setMaxMatchesToFind(maxMatchesToFind)
@@ -184,7 +175,6 @@ gs.getRequestBuilder().createFindPendingMatchesRequest()
 ```javascript
 
 	var request = new SparkRequests.FindPendingMatchesRequest();
-	request.analyticsData = ...;
 	request.matchGroup = ...;
 	request.matchShortCode = ...;
 	request.maxMatchesToFind = ...;

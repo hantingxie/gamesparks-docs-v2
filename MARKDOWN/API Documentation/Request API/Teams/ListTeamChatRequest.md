@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Teams/ListTeamChatRequest.md
----
 
 # ListTeamChatRequest
 
@@ -14,7 +11,6 @@ Get a list of the messages sent to the team (by players using SendTeamChatMessag
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 entryCount | No | number | The number of messages to return (default=50)
 offset | No | number | The offset (nth message) to start from (default=0)
 ownerId | No | string | The team owner to find, used in combination with teamType. If not supplied the current players id will be used
@@ -28,6 +24,7 @@ A response to a list team messages request.
 
 Parameter | Type | Description
 --------- | ---- | -----------
+messages | [ChatMessage[]](#chatmessage) | The collection of team chat messages
 scriptData | ScriptData | A JSON Map of any data added either to the Request or the Response by your Cloud Code
 
 ## Nested types
@@ -41,6 +38,18 @@ Parameter | Type | Description
 myKey | string | An arbitrary data key
 myValue | JSON | An arbitrary data value.
 
+### ChatMessage
+
+A message from a group chat
+
+Parameter | Type | Description
+--------- | ---- | -----------
+fromId | string | The id of the player who sent this message
+id | string | The id of this chat message
+message | string | The text sent in this message
+when | date | A date representing the time this message was sent
+who | string | The displayName of the player who sent this message
+
 
 ## Code Samples
 
@@ -51,13 +60,13 @@ myValue | JSON | An arbitrary data value.
 	using GameSparks.Api.Responses;
 	...
 	new ListTeamChatRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetEntryCount(entryCount)
 		.SetOffset(offset)
 		.SetOwnerId(ownerId)
 		.SetTeamId(teamId)
 		.SetTeamType(teamType)
 		.Send((response) => {
+		GSEnumerable<var> messages = response.Messages; 
 		GSData scriptData = response.ScriptData; 
 		});
 
@@ -73,13 +82,13 @@ myValue | JSON | An arbitrary data value.
 	
 	gs.getRequestBuilder()
 	    .createListTeamChatRequest()
-		.setAnalyticsData(analyticsData)
 		.setEntryCount(entryCount)
 		.setOffset(offset)
 		.setOwnerId(ownerId)
 		.setTeamId(teamId)
 		.setTeamType(teamType)
 		.send(function(response:com.gamesparks.api.responses.ListTeamChatResponse):void {
+		var messages:Vector.<ChatMessage> = response.getMessages(); 
 		var scriptData:ScriptData = response.getScriptData(); 
 		});
 
@@ -91,13 +100,13 @@ myValue | JSON | An arbitrary data value.
 	#import "GSAPI.h"
 	...
 	GSListTeamChatRequest* request = [[GSListTeamChatRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setEntryCount:entryCount;
 	[request setOffset:offset;
 	[request setOwnerId:ownerId;
 	[request setTeamId:teamId;
 	[request setTeamType:teamType;
 	[request setCallback:^ (GSListTeamChatResponse* response) {
+	NSArray* messages = [response getMessages]; 
 	NSDictionary* scriptData = [response getScriptData]; 
 	}];
 	[gs send:request];
@@ -114,12 +123,12 @@ myValue | JSON | An arbitrary data value.
 	...
 	
 	void ListTeamChatRequest_Response(GS& gsInstance, const ListTeamChatResponse& response) {
+	gsstl:vector<Types::ChatMessage*> messages = response.getMessages(); 
 	GSData scriptData = response.getScriptData(); 
 	}
 	......
 	
 	ListTeamChatRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetEntryCount(entryCount)
 	request.SetOffset(offset)
 	request.SetOwnerId(ownerId)
@@ -137,7 +146,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createListTeamChatRequest()
-	.setAnalyticsData(analyticsData)
 	.setEntryCount(entryCount)
 	.setOffset(offset)
 	.setOwnerId(ownerId)
@@ -146,6 +154,7 @@ gs.getRequestBuilder().createListTeamChatRequest()
 	.send(new GSEventListener<ListTeamChatResponse>() {
 		@Override
 		public void onEvent(ListTeamChatResponse response) {
+			List<ChatMessage> messages = response.getMessages(); 
 			GSData scriptData = response.getScriptData(); 
 		}
 	});
@@ -156,7 +165,6 @@ gs.getRequestBuilder().createListTeamChatRequest()
 ```javascript
 
 	var request = new SparkRequests.ListTeamChatRequest();
-	request.analyticsData = ...;
 	request.entryCount = ...;
 	request.offset = ...;
 	request.ownerId = ...;
@@ -164,6 +172,7 @@ gs.getRequestBuilder().createListTeamChatRequest()
 	request.teamType = ...;
 	var response = request.Send();
 	
+var messages = response.messages; 
 var scriptData = response.scriptData; 
 ```
 

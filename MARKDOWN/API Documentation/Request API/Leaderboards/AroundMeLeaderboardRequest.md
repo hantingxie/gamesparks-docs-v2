@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Leaderboards/AroundMeLeaderboardRequest.md
----
 
 # AroundMeLeaderboardRequest
 
@@ -14,7 +11,6 @@ Returns leaderboard data that is adjacent to the currently signed in player's po
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 challengeInstanceId | No | string | The challenge instance to get the leaderboard data for
 customIdFilter | No | JSON | An optional filter on the customIds.
 dontErrorOnNotSocial | No | boolean | The default behaviour on a social request is to error if the player has no friends (NOTSOCIAL).  Set this flag to suppress that error and return the player's leaderboard entry instead.
@@ -90,7 +86,6 @@ challengeInstanceVersion | INVALID | The challengeInstance predates support for 
 	using GameSparks.Api.Responses;
 	...
 	new AroundMeLeaderboardRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetChallengeInstanceId(challengeInstanceId)
 		.SetCustomIdFilter(customIdFilter)
 		.SetDontErrorOnNotSocial(dontErrorOnNotSocial)
@@ -125,7 +120,6 @@ challengeInstanceVersion | INVALID | The challengeInstance predates support for 
 	
 	gs.getRequestBuilder()
 	    .createAroundMeLeaderboardRequest()
-		.setAnalyticsData(analyticsData)
 		.setChallengeInstanceId(challengeInstanceId)
 		.setCustomIdFilter(customIdFilter)
 		.setDontErrorOnNotSocial(dontErrorOnNotSocial)
@@ -156,7 +150,6 @@ challengeInstanceVersion | INVALID | The challengeInstance predates support for 
 	#import "GSAPI.h"
 	...
 	GSAroundMeLeaderboardRequest* request = [[GSAroundMeLeaderboardRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setChallengeInstanceId:challengeInstanceId;
 	[request setCustomIdFilter:customIdFilter;
 	[request setDontErrorOnNotSocial:dontErrorOnNotSocial;
@@ -203,7 +196,6 @@ challengeInstanceVersion | INVALID | The challengeInstance predates support for 
 	......
 	
 	AroundMeLeaderboardRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetChallengeInstanceId(challengeInstanceId)
 	request.SetCustomIdFilter(customIdFilter)
 	request.SetDontErrorOnNotSocial(dontErrorOnNotSocial)
@@ -228,7 +220,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createAroundMeLeaderboardRequest()
-	.setAnalyticsData(analyticsData)
 	.setChallengeInstanceId(challengeInstanceId)
 	.setCustomIdFilter(customIdFilter)
 	.setDontErrorOnNotSocial(dontErrorOnNotSocial)
@@ -260,7 +251,6 @@ gs.getRequestBuilder().createAroundMeLeaderboardRequest()
 ```javascript
 
 	var request = new SparkRequests.AroundMeLeaderboardRequest();
-	request.analyticsData = ...;
 	request.challengeInstanceId = ...;
 	request.customIdFilter = ...;
 	request.dontErrorOnNotSocial = ...;

@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Leaderboards/ListLeaderboardsRequest.md
----
 
 # ListLeaderboardsRequest
 
@@ -14,7 +11,6 @@ Returns a list of all leaderboards configured in the game.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 
 ## Response Parameters
 
@@ -28,15 +24,6 @@ scriptData | ScriptData | A JSON Map of any data added either to the Request or 
 
 ## Nested types
 
-### ScriptData
-
-A collection of arbitrary data that can be added to a message via a Cloud Code script.
-
-Parameter | Type | Description
---------- | ---- | -----------
-myKey | string | An arbitrary data key
-myValue | JSON | An arbitrary data value.
-
 ### Leaderboard
 
 A nested object that represents the leaderboard configuration data.
@@ -48,6 +35,15 @@ name | string | The leaderboard's name.
 propertySet | JSON | The custom property set configured on this Leaderboard
 shortCode | string | The leaderboard's short code.
 
+### ScriptData
+
+A collection of arbitrary data that can be added to a message via a Cloud Code script.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+myKey | string | An arbitrary data key
+myValue | JSON | An arbitrary data value.
+
 
 ## Code Samples
 
@@ -58,7 +54,6 @@ shortCode | string | The leaderboard's short code.
 	using GameSparks.Api.Responses;
 	...
 	new ListLeaderboardsRequest()
-		.SetAnalyticsData(analyticsData)
 		.Send((response) => {
 		GSEnumerable<var> leaderboards = response.Leaderboards; 
 		GSData scriptData = response.ScriptData; 
@@ -76,7 +71,6 @@ shortCode | string | The leaderboard's short code.
 	
 	gs.getRequestBuilder()
 	    .createListLeaderboardsRequest()
-		.setAnalyticsData(analyticsData)
 		.send(function(response:com.gamesparks.api.responses.ListLeaderboardsResponse):void {
 		var leaderboards:Vector.<Leaderboard> = response.getLeaderboards(); 
 		var scriptData:ScriptData = response.getScriptData(); 
@@ -90,7 +84,6 @@ shortCode | string | The leaderboard's short code.
 	#import "GSAPI.h"
 	...
 	GSListLeaderboardsRequest* request = [[GSListLeaderboardsRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setCallback:^ (GSListLeaderboardsResponse* response) {
 	NSArray* leaderboards = [response getLeaderboards]; 
 	NSDictionary* scriptData = [response getScriptData]; 
@@ -115,7 +108,6 @@ shortCode | string | The leaderboard's short code.
 	......
 	
 	ListLeaderboardsRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.Send(ListLeaderboardsRequest_Response);
 ```
 
@@ -128,7 +120,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createListLeaderboardsRequest()
-	.setAnalyticsData(analyticsData)
 	.send(new GSEventListener<ListLeaderboardsResponse>() {
 		@Override
 		public void onEvent(ListLeaderboardsResponse response) {
@@ -143,7 +134,6 @@ gs.getRequestBuilder().createListLeaderboardsRequest()
 ```javascript
 
 	var request = new SparkRequests.ListLeaderboardsRequest();
-	request.analyticsData = ...;
 	var response = request.Send();
 	
 var leaderboards = response.leaderboards; 

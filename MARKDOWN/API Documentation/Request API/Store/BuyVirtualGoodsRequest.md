@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Store/BuyVirtualGoodsRequest.md
----
 
 # BuyVirtualGoodsRequest
 
@@ -14,7 +11,6 @@ Purchases a virtual good with an in game currency. Once purchased the virtual go
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 currencyType | Yes | number | Which virtual currency to use. (1 to 6)
 quantity | Yes | number | The number of items to purchase
 shortCode | Yes | string | The short code of the virtual good to be purchased
@@ -35,19 +31,11 @@ currency5Added | number | How much currency type 5 was added
 currency6Added | number | How much currency type 6 was added
 currencyConsumed | number | For a buy with currency request, how much currency was used
 currencyType | number | For a buy with currency request, which currency type was used
+invalidItems | string[] | A list of invalid items for this purchase (if any). This field is populated only for store buys
 scriptData | ScriptData | A JSON Map of any data added either to the Request or the Response by your Cloud Code
 transactionIds | string[] | The list of transactionIds, for this purchase, if they exist. This field is populated only for store buys
 
 ## Nested types
-
-### ScriptData
-
-A collection of arbitrary data that can be added to a message via a Cloud Code script.
-
-Parameter | Type | Description
---------- | ---- | -----------
-myKey | string | An arbitrary data key
-myValue | JSON | An arbitrary data value.
 
 ### Boughtitem
 
@@ -57,6 +45,15 @@ Parameter | Type | Description
 --------- | ---- | -----------
 quantity | number | The quantity of the bought item
 shortCode | string | The short code of the bought item
+
+### ScriptData
+
+A collection of arbitrary data that can be added to a message via a Cloud Code script.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+myKey | string | An arbitrary data key
+myValue | JSON | An arbitrary data value.
 
 ## Error Codes
 
@@ -83,7 +80,6 @@ quantity | EXCEEDS_MAX_QUANTITY | The requst would cause the player to exceed to
 	using GameSparks.Api.Responses;
 	...
 	new BuyVirtualGoodsRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetCurrencyType(currencyType)
 		.SetQuantity(quantity)
 		.SetShortCode(shortCode)
@@ -97,6 +93,7 @@ quantity | EXCEEDS_MAX_QUANTITY | The requst would cause the player to exceed to
 		long? currency6Added = response.Currency6Added; 
 		long? currencyConsumed = response.CurrencyConsumed; 
 		int? currencyType = response.CurrencyType; 
+		IList<string> invalidItems = response.InvalidItems; 
 		GSData scriptData = response.ScriptData; 
 		IList<string> transactionIds = response.TransactionIds; 
 		});
@@ -113,7 +110,6 @@ quantity | EXCEEDS_MAX_QUANTITY | The requst would cause the player to exceed to
 	
 	gs.getRequestBuilder()
 	    .createBuyVirtualGoodsRequest()
-		.setAnalyticsData(analyticsData)
 		.setCurrencyType(currencyType)
 		.setQuantity(quantity)
 		.setShortCode(shortCode)
@@ -127,6 +123,7 @@ quantity | EXCEEDS_MAX_QUANTITY | The requst would cause the player to exceed to
 		var currency6Added:Number = response.getCurrency6Added(); 
 		var currencyConsumed:Number = response.getCurrencyConsumed(); 
 		var currencyType:Number = response.getCurrencyType(); 
+		var invalidItems:Vector.<String> = response.getInvalidItems(); 
 		var scriptData:ScriptData = response.getScriptData(); 
 		var transactionIds:Vector.<String> = response.getTransactionIds(); 
 		});
@@ -139,7 +136,6 @@ quantity | EXCEEDS_MAX_QUANTITY | The requst would cause the player to exceed to
 	#import "GSAPI.h"
 	...
 	GSBuyVirtualGoodsRequest* request = [[GSBuyVirtualGoodsRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setCurrencyType:currencyType;
 	[request setQuantity:quantity;
 	[request setShortCode:shortCode;
@@ -153,6 +149,7 @@ quantity | EXCEEDS_MAX_QUANTITY | The requst would cause the player to exceed to
 	NSNumber* currency6Added = [response getCurrency6Added]; 
 	NSNumber* currencyConsumed = [response getCurrencyConsumed]; 
 	NSNumber* currencyType = [response getCurrencyType]; 
+	NSArray* invalidItems = [response getInvalidItems]; 
 	NSDictionary* scriptData = [response getScriptData]; 
 	NSArray* transactionIds = [response getTransactionIds]; 
 	}];
@@ -179,13 +176,13 @@ quantity | EXCEEDS_MAX_QUANTITY | The requst would cause the player to exceed to
 	Optional::t_LongOptional currency6Added = response.getCurrency6Added(); 
 	Optional::t_LongOptional currencyConsumed = response.getCurrencyConsumed(); 
 	Optional::t_LongOptional currencyType = response.getCurrencyType(); 
+	gsstl:vector<gsstl::string> invalidItems = response.getInvalidItems(); 
 	GSData scriptData = response.getScriptData(); 
 	gsstl:vector<gsstl::string> transactionIds = response.getTransactionIds(); 
 	}
 	......
 	
 	BuyVirtualGoodsRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetCurrencyType(currencyType)
 	request.SetQuantity(quantity)
 	request.SetShortCode(shortCode)
@@ -201,7 +198,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createBuyVirtualGoodsRequest()
-	.setAnalyticsData(analyticsData)
 	.setCurrencyType(currencyType)
 	.setQuantity(quantity)
 	.setShortCode(shortCode)
@@ -217,6 +213,7 @@ gs.getRequestBuilder().createBuyVirtualGoodsRequest()
 			Long currency6Added = response.getCurrency6Added(); 
 			Long currencyConsumed = response.getCurrencyConsumed(); 
 			Integer currencyType = response.getCurrencyType(); 
+			List<String> invalidItems = response.getInvalidItems(); 
 			GSData scriptData = response.getScriptData(); 
 			List<String> transactionIds = response.getTransactionIds(); 
 		}
@@ -228,7 +225,6 @@ gs.getRequestBuilder().createBuyVirtualGoodsRequest()
 ```javascript
 
 	var request = new SparkRequests.BuyVirtualGoodsRequest();
-	request.analyticsData = ...;
 	request.currencyType = ...;
 	request.quantity = ...;
 	request.shortCode = ...;
@@ -243,6 +239,7 @@ var currency5Added = response.currency5Added;
 var currency6Added = response.currency6Added; 
 var currencyConsumed = response.currencyConsumed; 
 var currencyType = response.currencyType; 
+var invalidItems = response.invalidItems; 
 var scriptData = response.scriptData; 
 var transactionIds = response.transactionIds; 
 ```

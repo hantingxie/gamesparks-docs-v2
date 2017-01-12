@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Admin/ScheduleBulkJobAdminRequest.md
----
 
 # ScheduleBulkJobAdminRequest
 
@@ -14,7 +11,6 @@ Schedules a bulk job to be run against multiple players.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 data | No | DBObject | Optional data to be passed into the script
 moduleShortCode | No | string | The short code of the cloud code module to be executed against each player
 playerQuery | Yes | DBObject | The query to be run against the player collection to identify which players to execute the cloud code for
@@ -60,7 +56,6 @@ scheduledTime | INVALID | The date/time for scheduled jobs must not be in the pa
 	using GameSparks.Api.Responses;
 	...
 	new ScheduleBulkJobAdminRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetData(data)
 		.SetModuleShortCode(moduleShortCode)
 		.SetPlayerQuery(playerQuery)
@@ -84,7 +79,6 @@ scheduledTime | INVALID | The date/time for scheduled jobs must not be in the pa
 	
 	gs.getRequestBuilder()
 	    .createScheduleBulkJobAdminRequest()
-		.setAnalyticsData(analyticsData)
 		.setData(data)
 		.setModuleShortCode(moduleShortCode)
 		.setPlayerQuery(playerQuery)
@@ -104,7 +98,6 @@ scheduledTime | INVALID | The date/time for scheduled jobs must not be in the pa
 	#import "GSAPI.h"
 	...
 	GSScheduleBulkJobAdminRequest* request = [[GSScheduleBulkJobAdminRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setData:data;
 	[request setModuleShortCode:moduleShortCode;
 	[request setPlayerQuery:playerQuery;
@@ -136,7 +129,6 @@ scheduledTime | INVALID | The date/time for scheduled jobs must not be in the pa
 	......
 	
 	ScheduleBulkJobAdminRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetData(data)
 	request.SetModuleShortCode(moduleShortCode)
 	request.SetPlayerQuery(playerQuery)
@@ -154,7 +146,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createScheduleBulkJobAdminRequest()
-	.setAnalyticsData(analyticsData)
 	.setData(data)
 	.setModuleShortCode(moduleShortCode)
 	.setPlayerQuery(playerQuery)
@@ -175,7 +166,6 @@ gs.getRequestBuilder().createScheduleBulkJobAdminRequest()
 ```javascript
 
 	var request = new SparkRequests.ScheduleBulkJobAdminRequest();
-	request.analyticsData = ...;
 	request.data = ...;
 	request.moduleShortCode = ...;
 	request.playerQuery = ...;

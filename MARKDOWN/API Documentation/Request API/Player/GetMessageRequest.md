@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Player/GetMessageRequest.md
----
 
 # GetMessageRequest
 
@@ -14,7 +11,6 @@ Returns the full details of a message.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 messageId | Yes | string | The messageId of the message retreive
 
 ## Response Parameters
@@ -26,6 +22,7 @@ Parameter | Type | Description
 --------- | ---- | -----------
 message | JSON | The message data
 scriptData | ScriptData | A JSON Map of any data added either to the Request or the Response by your Cloud Code
+status | string | The message status
 
 ## Nested types
 
@@ -48,11 +45,11 @@ myValue | JSON | An arbitrary data value.
 	using GameSparks.Api.Responses;
 	...
 	new GetMessageRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetMessageId(messageId)
 		.Send((response) => {
 		GSData message = response.Message; 
 		GSData scriptData = response.ScriptData; 
+		string status = response.Status; 
 		});
 
 ```
@@ -67,11 +64,11 @@ myValue | JSON | An arbitrary data value.
 	
 	gs.getRequestBuilder()
 	    .createGetMessageRequest()
-		.setAnalyticsData(analyticsData)
 		.setMessageId(messageId)
 		.send(function(response:com.gamesparks.api.responses.GetMessageResponse):void {
 		var message:Object = response.getMessage(); 
 		var scriptData:ScriptData = response.getScriptData(); 
+		var status:String = response.getStatus(); 
 		});
 
 ```
@@ -82,11 +79,11 @@ myValue | JSON | An arbitrary data value.
 	#import "GSAPI.h"
 	...
 	GSGetMessageRequest* request = [[GSGetMessageRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setMessageId:messageId;
 	[request setCallback:^ (GSGetMessageResponse* response) {
 	NSDictionary* message = [response getMessage]; 
 	NSDictionary* scriptData = [response getScriptData]; 
+	NSString* status = [response getStatus]; 
 	}];
 	[gs send:request];
 
@@ -104,11 +101,11 @@ myValue | JSON | An arbitrary data value.
 	void GetMessageRequest_Response(GS& gsInstance, const GetMessageResponse& response) {
 	GSData message = response.getMessage(); 
 	GSData scriptData = response.getScriptData(); 
+	gsstl::string status = response.getStatus(); 
 	}
 	......
 	
 	GetMessageRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetMessageId(messageId)
 	request.Send(GetMessageRequest_Response);
 ```
@@ -122,13 +119,13 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createGetMessageRequest()
-	.setAnalyticsData(analyticsData)
 	.setMessageId(messageId)
 	.send(new GSEventListener<GetMessageResponse>() {
 		@Override
 		public void onEvent(GetMessageResponse response) {
 			GSData message = response.getMessage(); 
 			GSData scriptData = response.getScriptData(); 
+			String status = response.getStatus(); 
 		}
 	});
 
@@ -138,12 +135,12 @@ gs.getRequestBuilder().createGetMessageRequest()
 ```javascript
 
 	var request = new SparkRequests.GetMessageRequest();
-	request.analyticsData = ...;
 	request.messageId = ...;
 	var response = request.Send();
 	
 var message = response.message; 
 var scriptData = response.scriptData; 
+var status = response.status; 
 ```
 
 

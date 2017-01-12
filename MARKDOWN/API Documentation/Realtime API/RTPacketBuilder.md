@@ -1,7 +1,3 @@
----
-src: /API Documentation/Realtime API/RTPacketBuilder.md
----
-
 # RTPacketBuilder
 
 A builder object to construct RTPacket objects

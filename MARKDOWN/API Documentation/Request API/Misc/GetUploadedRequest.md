@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Misc/GetUploadedRequest.md
----
 
 # GetUploadedRequest
 
@@ -14,7 +11,6 @@ Returns a secure, time sensitive URL to a piece of content that was previously u
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 uploadId | No | string | The system generated id of the uploaded item
 
 ## Response Parameters
@@ -54,7 +50,6 @@ uploadId | INVALID | The upload id was invalid
 	using GameSparks.Api.Responses;
 	...
 	new GetUploadedRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetUploadId(uploadId)
 		.Send((response) => {
 		GSData scriptData = response.ScriptData; 
@@ -74,7 +69,6 @@ uploadId | INVALID | The upload id was invalid
 	
 	gs.getRequestBuilder()
 	    .createGetUploadedRequest()
-		.setAnalyticsData(analyticsData)
 		.setUploadId(uploadId)
 		.send(function(response:com.gamesparks.api.responses.GetUploadedResponse):void {
 		var scriptData:ScriptData = response.getScriptData(); 
@@ -90,7 +84,6 @@ uploadId | INVALID | The upload id was invalid
 	#import "GSAPI.h"
 	...
 	GSGetUploadedRequest* request = [[GSGetUploadedRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setUploadId:uploadId;
 	[request setCallback:^ (GSGetUploadedResponse* response) {
 	NSDictionary* scriptData = [response getScriptData]; 
@@ -118,7 +111,6 @@ uploadId | INVALID | The upload id was invalid
 	......
 	
 	GetUploadedRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetUploadId(uploadId)
 	request.Send(GetUploadedRequest_Response);
 ```
@@ -132,7 +124,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createGetUploadedRequest()
-	.setAnalyticsData(analyticsData)
 	.setUploadId(uploadId)
 	.send(new GSEventListener<GetUploadedResponse>() {
 		@Override
@@ -149,7 +140,6 @@ gs.getRequestBuilder().createGetUploadedRequest()
 ```javascript
 
 	var request = new SparkRequests.GetUploadedRequest();
-	request.analyticsData = ...;
 	request.uploadId = ...;
 	var response = request.Send();
 	

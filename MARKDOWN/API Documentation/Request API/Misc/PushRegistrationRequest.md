@@ -1,11 +1,8 @@
----
-src: /API Documentation/Request API/Misc/PushRegistrationRequest.md
----
 
 # PushRegistrationRequest
 
 
-Registers the current device for push notifications. Currently GameSparks supports iOS, GCM & Microsoft Push notifications.
+Registers the current device for push notifications. Currently GameSparks supports iOS, Android (GCM), FCM, Kindle, Viber & Microsoft Push notifications.
 
 Supply the device type, and the push notification identifier for the device.
 
@@ -16,8 +13,7 @@ Supply the device type, and the push notification identifier for the device.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
-deviceOS | Yes | string | The type of id, valid values are ios, android, wp8, w8, kindle or viber
+deviceOS | Yes | string | The type of id, valid values are ios, android, fcm, wp8, w8, kindle or viber
 pushId | Yes | string | The push notification identifier for the device
 
 ## Response Parameters
@@ -45,7 +41,7 @@ myValue | JSON | An arbitrary data value.
 
 Key | Value | Description
 --------- | ----------- | -----------
-deviceOS | IOS|ANDROID|WP8|W8|KINDLE|VIBER | deviceOS is not a valid value
+deviceOS | IOS|ANDROID|WP8|W8|KINDLE|VIBER|FCM | deviceOS is not a valid value
 
 ## Code Samples
 
@@ -56,7 +52,6 @@ deviceOS | IOS|ANDROID|WP8|W8|KINDLE|VIBER | deviceOS is not a valid value
 	using GameSparks.Api.Responses;
 	...
 	new PushRegistrationRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetDeviceOS(deviceOS)
 		.SetPushId(pushId)
 		.Send((response) => {
@@ -76,7 +71,6 @@ deviceOS | IOS|ANDROID|WP8|W8|KINDLE|VIBER | deviceOS is not a valid value
 	
 	gs.getRequestBuilder()
 	    .createPushRegistrationRequest()
-		.setAnalyticsData(analyticsData)
 		.setDeviceOS(deviceOS)
 		.setPushId(pushId)
 		.send(function(response:com.gamesparks.api.responses.PushRegistrationResponse):void {
@@ -92,7 +86,6 @@ deviceOS | IOS|ANDROID|WP8|W8|KINDLE|VIBER | deviceOS is not a valid value
 	#import "GSAPI.h"
 	...
 	GSPushRegistrationRequest* request = [[GSPushRegistrationRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setDeviceOS:deviceOS;
 	[request setPushId:pushId;
 	[request setCallback:^ (GSPushRegistrationResponse* response) {
@@ -119,7 +112,6 @@ deviceOS | IOS|ANDROID|WP8|W8|KINDLE|VIBER | deviceOS is not a valid value
 	......
 	
 	PushRegistrationRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetDeviceOS(deviceOS)
 	request.SetPushId(pushId)
 	request.Send(PushRegistrationRequest_Response);
@@ -134,7 +126,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createPushRegistrationRequest()
-	.setAnalyticsData(analyticsData)
 	.setDeviceOS(deviceOS)
 	.setPushId(pushId)
 	.send(new GSEventListener<PushRegistrationResponse>() {
@@ -151,7 +142,6 @@ gs.getRequestBuilder().createPushRegistrationRequest()
 ```javascript
 
 	var request = new SparkRequests.PushRegistrationRequest();
-	request.analyticsData = ...;
 	request.deviceOS = ...;
 	request.pushId = ...;
 	var response = request.Send();

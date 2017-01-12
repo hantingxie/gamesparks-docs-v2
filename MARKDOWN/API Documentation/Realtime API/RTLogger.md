@@ -1,7 +1,3 @@
----
-src: /API Documentation/Realtime API/RTLogger.md
----
-
 # RTLogger
 
 Allows log records to be written to the realtime.log collection

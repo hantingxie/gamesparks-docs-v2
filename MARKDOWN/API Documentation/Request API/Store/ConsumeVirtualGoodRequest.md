@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Store/ConsumeVirtualGoodRequest.md
----
 
 # ConsumeVirtualGoodRequest
 
@@ -14,7 +11,6 @@ Consumes a given amount of the specified virtual good.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 quantity | Yes | number | The amount of virtual goods to be consumed
 shortCode | Yes | string | The short code of the virtual good to be consumed
 
@@ -53,7 +49,6 @@ qty | INSUFFICIENT | The player does not have sufficient virtual goods for short
 	using GameSparks.Api.Responses;
 	...
 	new ConsumeVirtualGoodRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetQuantity(quantity)
 		.SetShortCode(shortCode)
 		.Send((response) => {
@@ -72,7 +67,6 @@ qty | INSUFFICIENT | The player does not have sufficient virtual goods for short
 	
 	gs.getRequestBuilder()
 	    .createConsumeVirtualGoodRequest()
-		.setAnalyticsData(analyticsData)
 		.setQuantity(quantity)
 		.setShortCode(shortCode)
 		.send(function(response:com.gamesparks.api.responses.ConsumeVirtualGoodResponse):void {
@@ -87,7 +81,6 @@ qty | INSUFFICIENT | The player does not have sufficient virtual goods for short
 	#import "GSAPI.h"
 	...
 	GSConsumeVirtualGoodRequest* request = [[GSConsumeVirtualGoodRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setQuantity:quantity;
 	[request setShortCode:shortCode;
 	[request setCallback:^ (GSConsumeVirtualGoodResponse* response) {
@@ -112,7 +105,6 @@ qty | INSUFFICIENT | The player does not have sufficient virtual goods for short
 	......
 	
 	ConsumeVirtualGoodRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetQuantity(quantity)
 	request.SetShortCode(shortCode)
 	request.Send(ConsumeVirtualGoodRequest_Response);
@@ -127,7 +119,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createConsumeVirtualGoodRequest()
-	.setAnalyticsData(analyticsData)
 	.setQuantity(quantity)
 	.setShortCode(shortCode)
 	.send(new GSEventListener<ConsumeVirtualGoodResponse>() {
@@ -143,7 +134,6 @@ gs.getRequestBuilder().createConsumeVirtualGoodRequest()
 ```javascript
 
 	var request = new SparkRequests.ConsumeVirtualGoodRequest();
-	request.analyticsData = ...;
 	request.quantity = ...;
 	request.shortCode = ...;
 	var response = request.Send();

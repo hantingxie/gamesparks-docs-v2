@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Teams/GetMyTeamsRequest.md
----
 
 # GetMyTeamsRequest
 
@@ -14,7 +11,6 @@ Get the teams that the player is in. Can be filtered on team type and also on th
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-analyticsData | No | AnalyticsData | Optional data used by analytics
 ownedOnly | No | boolean | Set to true to only get teams owned by the player
 teamTypes | No | string[] | The type of teams to get
 
@@ -75,7 +71,6 @@ virtualGoods | string[] | The virtual goods of the Player
 	using GameSparks.Api.Responses;
 	...
 	new GetMyTeamsRequest()
-		.SetAnalyticsData(analyticsData)
 		.SetOwnedOnly(ownedOnly)
 		.SetTeamTypes(teamTypes)
 		.Send((response) => {
@@ -95,7 +90,6 @@ virtualGoods | string[] | The virtual goods of the Player
 	
 	gs.getRequestBuilder()
 	    .createGetMyTeamsRequest()
-		.setAnalyticsData(analyticsData)
 		.setOwnedOnly(ownedOnly)
 		.setTeamTypes(teamTypes)
 		.send(function(response:com.gamesparks.api.responses.GetMyTeamsResponse):void {
@@ -111,7 +105,6 @@ virtualGoods | string[] | The virtual goods of the Player
 	#import "GSAPI.h"
 	...
 	GSGetMyTeamsRequest* request = [[GSGetMyTeamsRequest alloc] init];
-	[request setAnalyticsData:analyticsData;
 	[request setOwnedOnly:ownedOnly;
 	[request setTeamTypes:teamTypes;
 	[request setCallback:^ (GSGetMyTeamsResponse* response) {
@@ -138,7 +131,6 @@ virtualGoods | string[] | The virtual goods of the Player
 	......
 	
 	GetMyTeamsRequest request(gsInstance);
-	request.SetAnalyticsData(analyticsData)
 	request.SetOwnedOnly(ownedOnly)
 	request.SetTeamTypes(teamTypes)
 	request.Send(GetMyTeamsRequest_Response);
@@ -153,7 +145,6 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createGetMyTeamsRequest()
-	.setAnalyticsData(analyticsData)
 	.setOwnedOnly(ownedOnly)
 	.setTeamTypes(teamTypes)
 	.send(new GSEventListener<GetMyTeamsResponse>() {
@@ -170,7 +161,6 @@ gs.getRequestBuilder().createGetMyTeamsRequest()
 ```javascript
 
 	var request = new SparkRequests.GetMyTeamsRequest();
-	request.analyticsData = ...;
 	request.ownedOnly = ...;
 	request.teamTypes = ...;
 	var response = request.Send();
