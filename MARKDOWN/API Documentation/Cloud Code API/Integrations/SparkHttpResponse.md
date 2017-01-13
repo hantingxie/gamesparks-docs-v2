@@ -1,3 +1,7 @@
+---
+src: /API Documentation/Cloud Code API/Integrations/SparkHttpResponse.md
+---
+
 # SparkHttpResponse
 
 Represents the response form the HTTP call.

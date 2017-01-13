@@ -1,3 +1,6 @@
+---
+src: /API Documentation/Message API/Teams/TeamChatMessage.md
+---
 
 # TeamChatMessage
 

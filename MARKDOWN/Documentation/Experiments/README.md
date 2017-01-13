@@ -148,3 +148,5 @@ The *Results* page opens:
 * For the current example:
   * We can see from the *line graph* data that 2 players randomly assigned to the *Coin Variants Low* Variant purchased a Virtual Good at the reduced cost; whereas only 1 player assigned to the *Coin Variants High* Variant purchased a Virtual Good at the increased cost.
   * The pie-chart presents these results as a percentage distribution over the sum of all players assigned to either of the two Variants who made a Virtual Good purchase.
+
+<q>**Results Delay!** If you stop an Experiment and try to view results straightaway, you will not get the finalized results. This is because there is a slight delay of approximately ten minutes before the data for the activity being measured in the Experiment becomes available to build the results charts.</q>

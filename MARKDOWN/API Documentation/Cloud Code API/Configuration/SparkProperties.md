@@ -1,3 +1,7 @@
+---
+src: /API Documentation/Cloud Code API/Configuration/SparkProperties.md
+---
+
 # SparkProperties
 
 Provides access to the properties for the current game.

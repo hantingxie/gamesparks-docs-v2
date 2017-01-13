@@ -1,3 +1,7 @@
+---
+src: /API Documentation/Cloud Code API/Cloud Data/SparkRedis.md
+---
+
 # SparkRedis
 
 Provides access to the Games Redis Instance.

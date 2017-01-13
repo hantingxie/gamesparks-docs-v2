@@ -1,3 +1,6 @@
+---
+src: /API Documentation/Message API/Multiplayer/ChallengeLostMessage.md
+---
 
 # ChallengeLostMessage
 
