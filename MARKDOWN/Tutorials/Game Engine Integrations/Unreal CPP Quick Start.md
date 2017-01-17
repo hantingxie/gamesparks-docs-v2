@@ -5,6 +5,16 @@ src: /Tutorials/Game Engine Integrations/Unreal CPP Quick Start.md
 
 # Unreal CPP QuickStart
 
+## Project.build.cs
+
+In your build file include the following:
+
+```
+PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "GameSparks", "OnlineSubsystem" });
+```
+
+Make sure GameSparks and OnlineSubsystem are both included.
+
 ## Initialization
 
 To integrate the GameSparks platform into your C++ project, perform the following two initialization stages:
@@ -18,9 +28,9 @@ To integrate the GameSparks platform into your C++ project, perform the followin
 
 ```
 #include "GameSparks/Private/GameSparksComponent.h"
+#include "GameSparksModule.h"
 #include <GameSparks/GS.h>
 #include <GameSparks/generated/GSResponses.h>
-#include "GameSparks/Private/GameSparksModule.h"
 #include <GameSparks/generated/GSRequests.h>
 
 ```
@@ -48,9 +58,6 @@ UGameSparksComponent* GameSparksComp;
 	void OnGameSparksAvailable(bool available);
 
 	static void AuthenticationRequest_Response(GameSparks::Core::GS&, const GameSparks::Api::Responses::AuthenticationResponse&);
-
-	static void AccountDetailsRequest_Response(GameSparks::Core::GS&, const GameSparks::Api::Responses::AccountDetailsResponse&);
-
 
 ```
 
@@ -118,7 +125,7 @@ void AMyGameMode::AuthenticationRequest_Response(GameSparks::Core::GS&, const Ga
 		GameSparks::Core::GS& gs = UGameSparksModule::GetModulePtr()->GetGSInstance();
 		GameSparks::Api::Requests::AccountDetailsRequest accDetRequest(gs);
 		//If no errors then send an accounts details request
-		accDetRequest.Send(AccountDetailsRequest_Response);
+		accDetRequest.Send();
 
 	}
 }

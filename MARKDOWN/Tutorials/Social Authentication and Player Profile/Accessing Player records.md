@@ -23,7 +23,7 @@ The *NoSQL Explorer* is a powerful tool you can use to access and find any Colle
 
 ![](img/PlayerRecords/4.png)
 
-You can enter a *Query* to find specific players but this runs a search for all players and the result is returned into the *Output* panel below:
+You can enter a *Query* to find specific players but simply clicking *Find* runs a search for all players and the result is returned into the *Output* panel below:
 
 ![](img/PlayerRecords/5.png)
 

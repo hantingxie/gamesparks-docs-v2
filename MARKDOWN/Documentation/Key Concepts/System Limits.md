@@ -26,6 +26,8 @@ Uploadable asset    | maximum file size of 3.5MB
 POST (REST API and NoSQL Explorer)    | 4MB
 Packet Size    | 1400 bytes
 
+<q>**Real-Time Recommendations?** For recommended bandwidth usage and maximum players for Real-Time games, please see [here](/Tutorials/Real-Time Services/Real-Time Best Practices.md).
+
 ## Concurrent Users - Preview only
 
 No concurrency limit is applied to our Live API. Because Preview is only intended for development and internal testing purposes, the following limit is applied:

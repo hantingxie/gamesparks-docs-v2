@@ -205,9 +205,11 @@ To use this alternative type of authentication, we need to create a separate Cli
 
  *27.* Under *Integrations*, select *Google* and click *Edit*:
 
- *28.* Fill in the fields, *Service Certificate* and *Service Email Address* using the downloaded certificate key and the *Email address* from your Google Web Application and click *Save*.  Choose the downloaded .p12 certificate key to be uploaded into the *Service Certificate* *field* and select *Save.*
+ *28.* Fill in the fields, *Service Certificate* and *Service E-mail Address* using the downloaded certificate key and the *Email address* from your Google Web Application and click *Save*:
 
- ![](img/AuthGoogle/15.png)  
+ ![](img/AuthGoogle/18.png)
+
+ * Choose the downloaded .p12 certificate key to be uploaded into the *Service Certificate* field.
 
 <q>**Note:** If this type of authentication is to be used always, the *Application Client Secret* is no longer required.  You can remove it from the form if desired.</q>  
 
