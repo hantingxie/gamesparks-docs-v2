@@ -3,7 +3,9 @@
 Provides access to the bulk scheduler.
 <pre rel="highlighter" code-brush="js" contenteditable="false">var bulkScheduler = Spark.getBulkScheduler();</pre>
 
+
 ## submitJobModule
+
 _signature_ submitJobModule(JSON playerQuery, string module, JSON data, number delaySeconds)</p>
 _returns_ string</p>
 
@@ -18,7 +20,9 @@ delaySeconds - The number of seconds in the future to execute the job
 The jobId if the job was accepted, or null
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var jobId = Spark.getBulkScheduler().submitJobModule(query, module, data, delaySeconds);</pre>
+
 ## submitJobScript
+
 _signature_ submitJobScript(JSON playerQuery, string script, JSON data, number delaySeconds)</p>
 _returns_ string</p>
 
@@ -33,7 +37,9 @@ delaySeconds - The number of seconds in the future to execute the job
 The jobId if the job was accepted, or null
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var jobId = Spark.getBulkScheduler().submitJobScript(query, script, data, delaySeconds);</pre>
+
 ## cancelJob
+
 _signature_ cancelJob(string jobId)</p>
 _returns_ boolean</p>
 
@@ -45,7 +51,9 @@ jobId - The ID of the job to cancel
 true if the job was cancelled, false otherwise
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var cancelled = Spark.getBulkScheduler().cancelJob(jobIdToCancel);</pre>
+
 ## listBulkJobs
+
 _signature_ listBulkJobs(string[] jobIds)</p>
 _returns_ SparkBulkJob[]</p>
 

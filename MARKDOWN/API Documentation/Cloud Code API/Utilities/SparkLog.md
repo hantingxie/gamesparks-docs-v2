@@ -6,7 +6,9 @@ The object passed can either be complex JSON or simple javascript values.
 e.g.
 <pre rel="highlighter" code-brush="js" contenteditable="false">var logger = Spark.getLog();</pre>
 
+
 ## debug
+
 _signature_ debug(JSON msg)</p>
 _returns_ void</p>
 
@@ -15,7 +17,9 @@ Records value into the spark.log table with the level set to debug.
 msg - the message to log
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getLog().debug("Simple string logging");</pre>
+
 ## info
+
 _signature_ info(JSON msg)</p>
 _returns_ void</p>
 
@@ -24,7 +28,9 @@ Records value into the spark.log table with the level set to info.
 msg - the message to log
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getLog().info({type:"JSON logging"});</pre>
+
 ## warn
+
 _signature_ warn(JSON msg)</p>
 _returns_ void</p>
 
@@ -33,7 +39,9 @@ Records value into the spark.log table with the level set to warn.
 msg - the message to log
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getLog().warn({type:"JSON logging"})</pre>
+
 ## error
+
 _signature_ error(JSON msg)</p>
 _returns_ void</p>
 
@@ -42,14 +50,18 @@ Records value into the spark.log table with the level set to info.
 msg - the message to log
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getLog().error({type:"JSON logging"})</pre>
+
 ## getLevel
+
 _signature_ getLevel()</p>
 _returns_ string</p>
 
 Returns the currently configured log level.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getLog().getLevel()</pre>
+
 ## setLevel
+
 _signature_ setLevel(string level)</p>
 _returns_ void</p>
 

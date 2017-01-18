@@ -5,7 +5,9 @@ Utility to schedule execution of a module in the future
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var theScheduler = Spark.getScheduler();</pre>
 
+
 ## inSeconds
+
 _signature_ inSeconds(string shortCode, number delaySeconds, JSON data)</p>
 _returns_ boolean</p>
 
@@ -28,7 +30,9 @@ data - The data to pass to the module. This will be available as Spark.getData()
 key - The id of the scheduled item. If schedule already exists for the given key it's details will be updated
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">theScheduler.inSeconds("SHORT_CODE", 15, {"myData" : myData}, "logTimeout-" + Spark.getPlayer().getPlayerId());</pre>
+
 ## cancel
+
 _signature_ cancel(string key)</p>
 _returns_ void</p>
 

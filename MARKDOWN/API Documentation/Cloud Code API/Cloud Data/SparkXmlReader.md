@@ -6,7 +6,9 @@ e.g.
 or
 <pre rel="highlighter" code-brush="js" contenteditable="false">var myXmlReader = Spark.downloadableXml("SHORTCODE");</pre>
 
+
 ## registerCallback
+
 _signature_ registerCallback(string path, Function startCallback)</p>
 _returns_ void</p>
 
@@ -16,14 +18,18 @@ path - A dot notated path representing the element to attach to
 function - Your javascript function that should be called when the element is found
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">uploadedXml.registerCallback("catalog.book", processBookElement);</pre>
+
 ## process
+
 _signature_ process()</p>
 _returns_ void</p>
 
 Processes each document element and triggers any registered callback
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">uploadedXml.process();</pre>
+
 ## getElement
+
 _signature_ getElement()</p>
 _returns_ JSON</p>
 
@@ -33,7 +39,9 @@ The returned element only contains the element name and any attributes, it does 
 The current element
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var element = uploadedXml.element;</pre>
+
 ## getXml
+
 _signature_ getXml()</p>
 _returns_ JSON</p>
 

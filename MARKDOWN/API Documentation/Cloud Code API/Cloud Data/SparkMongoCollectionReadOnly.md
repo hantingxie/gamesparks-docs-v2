@@ -4,7 +4,9 @@ Provides read only access to a mongo collection.
 e.g.
 <pre rel="highlighter" code-brush="js" contenteditable="false">var myMetaCollection = Spark.metaCollection('metatest');</pre>
 
+
 ## count
+
 _signature_ count()</p>
 _returns_ number</p>
 
@@ -22,7 +24,9 @@ Returns the number of documents that match the supplied query
 the number of documents
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var count = Spark.metaCollection('metatest').count({"metafield" : "metavalue"});</pre>
+
 ## distinct
+
 _signature_ distinct(string key)</p>
 _returns_ JSON</p>
 
@@ -45,7 +49,9 @@ query - the Mongo query
 an object array
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var keys = Spark.metaCollection('metatest').distinct("metafield", {"metafield1":{"$gte" : 5}});</pre>
+
 ## dropIndex
+
 _signature_ dropIndex(JSON keys)</p>
 _returns_ void</p>
 
@@ -54,7 +60,9 @@ Drops or removes the specified index from a collection.
 keys - the index definition used in ensureIndex.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.metaCollection('metatest').dropIndex({"metafield" : 1});</pre>
+
 ## dropIndexByName
+
 _signature_ dropIndexByName(string name)</p>
 _returns_ void</p>
 
@@ -63,7 +71,9 @@ Drops or removes the specified index from a collection.
 name - the name of the index to drop.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.metaCollection('metatest').dropIndexByName("myIndex");</pre>
+
 ## ensureIndex
+
 _signature_ ensureIndex(JSON keys)</p>
 _returns_ void</p>
 
@@ -82,7 +92,9 @@ keys - the index definition used in ensureIndex.
 optionsIN - index options
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.metaCollection('metatest').ensureIndex({"metafield" : 1, "metafield1" : 1}, {"name":"myIndex"});</pre>
+
 ## find
+
 _signature_ find()</p>
 _returns_ [SparkMongoCursor](/API Documentation/Cloud Code API/Cloud Data/SparkMongoCursor.md)</p>
 
@@ -110,7 +122,9 @@ query -  a Mongo query
 fields - the fields to return
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var results = Spark.metaCollection('metatest').find({"metatest1" : {"$gt" : 1}}, {"metatest" : 1});</pre>
+
 ## findOne
+
 _signature_ findOne()</p>
 _returns_ JSON</p>
 
@@ -154,12 +168,16 @@ fields - the fields to return
 orderBy - the order clause
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var result = Spark.metaCollection('metatest').findOne({"metatest1" : {"$gt" : 1}}, {"metatest" : 1});</pre>
+
 ## aggregate
+
 _signature_ aggregate(JSON firstOp, JSON[] additionalOps)</p>
 _returns_ JSON</p>
 
 
+
 ## getIndexInfo
+
 _signature_ getIndexInfo()</p>
 _returns_ JSON</p>
 
@@ -168,7 +186,9 @@ Return a list of the indexes for this collection. Each object in the list is the
 list of index documents
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var indexes = Spark.metaCollection('metatest').getIndexInfo();</pre>
+
 ## getLastError
+
 _signature_ getLastError()</p>
 _returns_ JSON</p>
 

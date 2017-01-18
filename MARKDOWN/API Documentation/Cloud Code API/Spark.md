@@ -11,7 +11,9 @@ e.g.
 To return a JSON representation of the Object being acted upon
 <pre rel="highlighter" code-brush="js" contenteditable="false">var data = Spark.getData();</pre>
 
+
 ## getPlayer
+
 _signature_ getPlayer()</p>
 _returns_ [SparkPlayer](/API Documentation/Cloud Code API/Player/SparkPlayer.md)</p>
 
@@ -19,7 +21,9 @@ _returns_ [SparkPlayer](/API Documentation/Cloud Code API/Player/SparkPlayer.md)
 Returns a SparkPlayer object that represents the player who either sent, or is going to receive the object that is invoking this script.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var player = Spark.getPlayer();</pre>
+
 ## loadPlayer
+
 _signature_ loadPlayer(string playerId)</p>
 _returns_ [SparkPlayer](/API Documentation/Cloud Code API/Player/SparkPlayer.md)</p>
 
@@ -29,7 +33,9 @@ Returns a SparkPlayer object that represents the player that has the supplied Ga
 playerId - the unique player identifier.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var player = Spark.loadPlayer(myplayerid);</pre>
+
 ## loadPlayerByExternalId
+
 _signature_ loadPlayerByExternalId(string externalSystem, string externalId)</p>
 _returns_ [SparkPlayer](/API Documentation/Cloud Code API/Player/SparkPlayer.md)</p>
 
@@ -41,7 +47,9 @@ GOOGLE_PLAY:GY , GOOGLE_PLUS:GP, KONGREGATE:KO, PSN:PS, QQ:QQ, STEAM:ST, TWITCH:
 externalId - the player identifier in the external system.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var player = Spark.loadPlayerByExternalId("FB",myplayerexternalid);</pre>
+
 ## getChallenge
+
 _signature_ getChallenge(string challengeInstanceId)</p>
 _returns_ [SparkChallenge](/API Documentation/Cloud Code API/Multiplayer/SparkChallenge.md)</p>
 
@@ -52,7 +60,9 @@ This is mainly used on LogChallengeEventRequests where the ID of the SparkChalle
 challengeInstanceId - the unique challenge identifier.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var myChallenge = Spark.getChallenge(Spark.data.challengeId);</pre>
+
 ## sendMessage
+
 _signature_ sendMessage(JSON data, [SparkPlayer](/API Documentation/Cloud Code API/Player/SparkPlayer.md)[] players)</p>
 _returns_ void</p>
 
@@ -65,7 +75,9 @@ data - the JSON Data to send.
 players - the SparkPlayer array to send the message to.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.sendMessage({"alert" : "You've just won a car!"}, myplayers);</pre>
+
 ## sendMessageExt
+
 _signature_ sendMessageExt(JSON data, string extCode, [SparkPlayer](/API Documentation/Cloud Code API/Player/SparkPlayer.md)[] players)</p>
 _returns_ void</p>
 
@@ -80,7 +92,9 @@ extCode - The short code of the ScriptMessage extension, if not found, the defau
 players - the SparkPlayer array to send the message to. If empty or null no message will be sent.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.sendMessageExt({"alert" : "You've just won a car!"},"CODE1" ,myplayers);</pre>
+
 ## sendMessageWithoutPush
+
 _signature_ sendMessageWithoutPush(JSON data, [SparkPlayer](/API Documentation/Cloud Code API/Player/SparkPlayer.md)[] players)</p>
 _returns_ void</p>
 
@@ -93,7 +107,9 @@ data - the JSON Data to send.
 players - the SparkPlayer array to send the message to.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.sendMessage({"alert" : "You've just won a car!"}, myplayers);</pre>
+
 ## sendMessageById
+
 _signature_ sendMessageById(JSON data, string[] playerIds)</p>
 _returns_ void</p>
 
@@ -106,7 +122,9 @@ data - the JSON Data to send.
 playerIds - An array of player id strings to send the message to.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.sendMessage({"alert" : "You've just won a car!"}, myplayerids);</pre>
+
 ## sendMessageByIdExt
+
 _signature_ sendMessageByIdExt(JSON data, string extCode, string[] playerIds)</p>
 _returns_ void</p>
 
@@ -121,7 +139,9 @@ extCode - The short code of the ScriptMessage extension, if not found, the defau
 playerIds - An array of player id strings to send the message to.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.sendMessage({"alert" : "You've just won a car!"}, myplayerids);</pre>
+
 ## sendMessageByIdWithoutPush
+
 _signature_ sendMessageByIdWithoutPush(JSON data, string[] playerIds)</p>
 _returns_ void</p>
 
@@ -134,7 +154,9 @@ data - the JSON Data to send.
 playerIds - An array of player id strings to send the message to.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.sendMessage({"alert" : "You've just won a car!"}, myplayerids);</pre>
+
 ## message
+
 _signature_ message(string extCode)</p>
 _returns_ [SparkMessage](/API Documentation/Cloud Code API/Player/SparkMessage.md)</p>
 
@@ -147,7 +169,9 @@ extCode - (Optional) The extCode of a scriptMessageExtension, if null or not fou
 a SparkMessageobject
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.message("myExtCode"));</pre>
+
 ## save
+
 _signature_ save(string collectionName, JSON document)</p>
 _returns_ boolean</p>
 
@@ -160,7 +184,9 @@ document - the document to save. If the document contains and _id field, and the
 true if the save was successful, false if there was an error
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.save("myCollection", {"key":"value"});</pre>
+
 ## remove
+
 _signature_ remove(string collectionName, JSON query)</p>
 _returns_ boolean</p>
 
@@ -173,7 +199,9 @@ query - the query that determines what documents to remove
 true if the save was successful, false if there was an error
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.remove("myCollection", {"key":"value"});</pre>
+
 ## find
+
 _signature_ find(string collectionName, JSON query)</p>
 _returns_ JSON</p>
 
@@ -202,7 +230,9 @@ projection - the projection,
 The result of the query, can be a simple document or a list
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.find("myCollection", {"key":"value"}, {"projectionKey":"projectionValue"});</pre>
+
 ## lock
+
 _signature_ lock([SparkChallenge](/API Documentation/Cloud Code API/Multiplayer/SparkChallenge.md) challenge)</p>
 _returns_ void</p>
 
@@ -215,7 +245,9 @@ If a Script gains a lock to the object, it will be released once the release met
 challenge - the challenge to lock
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.lock(mychallenge);</pre>
+
 ## unlock
+
 _signature_ unlock([SparkChallenge](/API Documentation/Cloud Code API/Multiplayer/SparkChallenge.md) challenge)</p>
 _returns_ void</p>
 
@@ -226,7 +258,9 @@ This makes it available for other scripts to acquire a lock on it.
 challenge - the challenge to unlock
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.unlock(mychallenge);</pre>
+
 ## lockKey
+
 _signature_ lockKey(string lockName, number tryMillis)</p>
 _returns_ boolean</p>
 
@@ -243,7 +277,9 @@ tryMillis - if another thread has the lock, how long to block and attempt to acq
 <pre rel="highlighter" code-brush="js" contenteditable="false">var gotLock = Spark.lockKey(lockName, 0);</pre>
 <b>returns</b>
 true if the lock was acquired, false otherwise
+
 ## unlockKey
+
 _signature_ unlockKey(string lockName)</p>
 _returns_ boolean</p>
 
@@ -257,7 +293,9 @@ lockKey - the key that was previously locked
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.unlock(lockName);</pre>
 <b>returns</b>
 true if the lock was released, false otherwise
+
 ## unlockKeyFully
+
 _signature_ unlockKeyFully(string lockName)</p>
 _returns_ boolean</p>
 
@@ -270,7 +308,9 @@ lockKey - the key that was previously locked
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.unlockKeyFully(lockName);</pre>
 <b>returns</b>
 true if the lock was released, false otherwise
+
 ## hasScriptErrors
+
 _signature_ hasScriptErrors()</p>
 _returns_ boolean</p>
 
@@ -278,7 +318,9 @@ _returns_ boolean</p>
 Allows the script to detect if there have been any script errors set during the request or response.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var hasErrors = Spark.hasScriptErrors();</pre>
+
 ## setScriptError
+
 _signature_ setScriptError(string key, JSON value)</p>
 _returns_ void</p>
 
@@ -291,7 +333,9 @@ key - the key to the data
 value - the data, can be either complex JSON or simple types
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.setScriptError("myerrorkey", {"test":12345});</pre>
+
 ## getScriptError
+
 _signature_ getScriptError(string key)</p>
 _returns_ JSON</p>
 
@@ -302,7 +346,9 @@ name - The name in the name value pair
 a JSON object
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var error = Spark.getScriptError("name");</pre>
+
 ## removeScriptError
+
 _signature_ removeScriptError(string key)</p>
 _returns_ void</p>
 
@@ -311,14 +357,18 @@ Removes a value from a name value pair structure containing any script errors th
 name - The name in the name value pair
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.removeScriptError("name");</pre>
+
 ## removeAllScriptErrors
+
 _signature_ removeAllScriptErrors()</p>
 _returns_ void</p>
 
 Removes all script errors that have been set
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.removeAllScriptErrors();</pre>
+
 ## getLog
+
 _signature_ getLog()</p>
 _returns_ [SparkLog](/API Documentation/Cloud Code API/Utilities/SparkLog.md)</p>
 
@@ -326,7 +376,9 @@ _returns_ [SparkLog](/API Documentation/Cloud Code API/Utilities/SparkLog.md)</p
 Provides access to a SparkLog interface
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var logger = Spark.getLog();</pre>
+
 ## getPlayerIds
+
 _signature_ getPlayerIds()</p>
 _returns_ string[]</p>
 
@@ -339,7 +391,9 @@ The ID's can in turn be used with getPlayer to access the player details
  An array of Id's
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var playerIds = Spark.getPlayerIds();</pre>
+
 ## logEvent
+
 _signature_ logEvent(string eventKey, JSON values)</p>
 _returns_ void</p>
 
@@ -349,7 +403,9 @@ Can be useful to post a score to a global leaderboard when a score has been post
 <b>params</b>
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.logEvent("HS", {"HS":234});</pre>
+
 ## getHttp
+
 _signature_ getHttp(string url)</p>
 _returns_ [SparkHttp](/API Documentation/Cloud Code API/Integrations/SparkHttp.md)</p>
 
@@ -359,7 +415,9 @@ Provides access to a SparkHttp interface
 url - the URL of the service to connect to
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var httpSender = Spark.getHttp();</pre>
+
 ## dismissMessage
+
 _signature_ dismissMessage(string messageId)</p>
 _returns_ boolean</p>
 
@@ -372,7 +430,9 @@ messageId - the id of the message to dismiss
 true if the message was dismissed
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.dismissMessage("528b3411e4b09c9ee8497949");</pre>
+
 ## runtimeCollection
+
 _signature_ runtimeCollection(string collectionName)</p>
 _returns_ [SparkMongoCollectionReadWrite](/API Documentation/Cloud Code API/Cloud Data/SparkMongoCollectionReadWrite.md)</p>
 
@@ -382,7 +442,9 @@ Gets a runtime collection by name, this collection has bot read and write access
 collectionName - the name of the collection you wish to access
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var myRuntimeCollection = Spark.runtimeCollection("runtimetest");</pre>
+
 ## metaCollection
+
 _signature_ metaCollection(string collectionName)</p>
 _returns_ [SparkMongoCollectionReadOnly](/API Documentation/Cloud Code API/Cloud Data/SparkMongoCollectionReadOnly.md)</p>
 
@@ -392,7 +454,9 @@ Gets a metadata collection by name, this collection is read only and can be quer
 collectionName - the name of the collection you wish to access
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var myMetaCollection = Spark.metaCollection("metatest");</pre>
+
 ## getFiles
+
 _signature_ getFiles()</p>
 _returns_ [SparkFiles](/API Documentation/Cloud Code API/Cloud Data/SparkFiles.md)</p>
 
@@ -400,7 +464,9 @@ _returns_ [SparkFiles](/API Documentation/Cloud Code API/Cloud Data/SparkFiles.m
 Provides access to file operations via a SparkFiles interface
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var files = Spark.getFiles();</pre>
+
 ## uploadedXml
+
 _signature_ uploadedXml(string uploadId)</p>
 _returns_ [SparkXmlReader](/API Documentation/Cloud Code API/Cloud Data/SparkXmlReader.md)</p>
 
@@ -411,7 +477,9 @@ Provides access to an uploaded file via a SparkXmlReader interface
 uploadId - the id of the uploaded file
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var reader = Spark.uploadedXml("myUploadId");</pre>
+
 ## uploadedJson
+
 _signature_ uploadedJson(string uploadId)</p>
 _returns_ JSON</p>
 
@@ -424,7 +492,9 @@ uploadId - the id of the uploaded file
 A JSON object
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var reader = Spark.uploadedJson("myUploadId");</pre>
+
 ## downloadableXml
+
 _signature_ downloadableXml(string shortCode)</p>
 _returns_ [SparkXmlReader](/API Documentation/Cloud Code API/Cloud Data/SparkXmlReader.md)</p>
 
@@ -436,7 +506,9 @@ shortCode - the short code for the downloadable file
 <b>returns</b>
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var reader = Spark.downloadableXml("shortCode");</pre>
+
 ## downloadableJson
+
 _signature_ downloadableJson(string shortCode)</p>
 _returns_ JSON</p>
 
@@ -448,7 +520,9 @@ shortCode - the short code for the downloadable file
 <b>returns</b>
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var reader = Spark.downloadableJson("shortCode");</pre>
+
 ## sendGrid
+
 _signature_ sendGrid(string username, string password)</p>
 _returns_ [SendGrid](/API Documentation/Cloud Code API/Integrations/SendGrid.md)</p>
 
@@ -459,7 +533,9 @@ username - your SendGrid accounet username
 password - your SendGrid account password
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.sendGrid(username, password);</pre>
+
 ## getScheduler
+
 _signature_ getScheduler()</p>
 _returns_ [SparkScheduler](/API Documentation/Cloud Code API/Utilities/SparkScheduler.md)</p>
 
@@ -467,7 +543,9 @@ _returns_ [SparkScheduler](/API Documentation/Cloud Code API/Utilities/SparkSche
 Utility to schedule execution of a module in the future
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getScheduler();</pre>
+
 ## getCache
+
 _signature_ getCache()</p>
 _returns_ [SparkCache](/API Documentation/Cloud Code API/Cloud Data/SparkCache.md)</p>
 
@@ -475,7 +553,9 @@ _returns_ [SparkCache](/API Documentation/Cloud Code API/Cloud Data/SparkCache.m
 Utility to cache complex objects in memory
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getCache();</pre>
+
 ## sendRequest
+
 _signature_ sendRequest(JSON request)</p>
 _returns_ JSON</p>
 
@@ -485,7 +565,9 @@ The request is sent as the current player, if there is no current player the met
 returns - The response as would be returned to the client
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.sendRequest({"@class": ".LogEventRequest", "eventKey": "SOT", "SC": "1000"});</pre>
+
 ## sendRequestAs
+
 _signature_ sendRequestAs(JSON request, string playerId)</p>
 _returns_ JSON</p>
 
@@ -495,7 +577,9 @@ The request is sent as the player identified by playerId, if there playerId is i
 returns - The response as would be returned to the client
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.sendRequestAs({"@class": ".LogEventRequest", "eventKey": "SOT", "SC": "1000"}, "1234567890");</pre>
+
 ## getRedis
+
 _signature_ getRedis()</p>
 _returns_ [SparkRedis](/API Documentation/Cloud Code API/Cloud Data/SparkRedis.md)</p>
 
@@ -503,7 +587,9 @@ _returns_ [SparkRedis](/API Documentation/Cloud Code API/Cloud Data/SparkRedis.m
 Returns a reference to a SparkRedis object
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getRedis();</pre>
+
 ## getLeaderboards
+
 _signature_ getLeaderboards()</p>
 _returns_ [SparkLeaderboards](/API Documentation/Cloud Code API/leaderboards/SparkLeaderboards.md)</p>
 
@@ -511,7 +597,9 @@ _returns_ [SparkLeaderboards](/API Documentation/Cloud Code API/leaderboards/Spa
 Returns a reference to a SparkLeaderboards object, used to access the leaderboards for this game.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getLeaderboards();</pre>
+
 ## getConfig
+
 _signature_ getConfig()</p>
 _returns_ [SparkConfig](/API Documentation/Cloud Code API/Configuration/SparkConfig.md)</p>
 
@@ -519,7 +607,9 @@ _returns_ [SparkConfig](/API Documentation/Cloud Code API/Configuration/SparkCon
 Returns configuration information about the currently published game.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var myGameConfig = Spark.getConfig();</pre>
+
 ## getTeams
+
 _signature_ getTeams()</p>
 _returns_ [SparkTeams](/API Documentation/Cloud Code API/Player/SparkTeams.md)</p>
 
@@ -527,7 +617,9 @@ _returns_ [SparkTeams](/API Documentation/Cloud Code API/Player/SparkTeams.md)</
 Returns a reference to a SparkTeams object, used to access the teams for this game.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getTeams();</pre>
+
 ## getMultiplayer
+
 _signature_ getMultiplayer()</p>
 _returns_ [SparkMultiplayer](/API Documentation/Cloud Code API/Multiplayer/SparkMultiplayer.md)</p>
 
@@ -535,7 +627,9 @@ _returns_ [SparkMultiplayer](/API Documentation/Cloud Code API/Multiplayer/Spark
 Returns a reference to a SparkMultiplayer object, used to access the platform's multiplayer capabilities.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getMultiplayer();</pre>
+
 ## getProperties
+
 _signature_ getProperties()</p>
 _returns_ [SparkProperties](/API Documentation/Cloud Code API/Configuration/SparkProperties.md)</p>
 
@@ -543,7 +637,9 @@ _returns_ [SparkProperties](/API Documentation/Cloud Code API/Configuration/Spar
 Returns a reference to a SparkProperties object, used to access the Properties and Property Sets configured against a game.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getProperties();</pre>
+
 ## getBulkScheduler
+
 _signature_ getBulkScheduler()</p>
 _returns_ [SparkBulkScheduler](/API Documentation/Cloud Code API/Utilities/SparkBulkScheduler.md)</p>
 
@@ -551,7 +647,9 @@ _returns_ [SparkBulkScheduler](/API Documentation/Cloud Code API/Utilities/Spark
 Returns a reference to a SparkBulkScheduler object, used to perform operations on multiple players at once.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getBulkScheduler();</pre>
+
 ## getDigester
+
 _signature_ getDigester()</p>
 _returns_ [SparkDigest](/API Documentation/Cloud Code API/Utilities/SparkDigest.md)</p>
 
@@ -559,7 +657,9 @@ _returns_ [SparkDigest](/API Documentation/Cloud Code API/Utilities/SparkDigest.
 Returns a reference to a SparkDigest object.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getDigester();</pre>
+
 ## getCredentialType
+
 _signature_ getCredentialType()</p>
 _returns_ string</p>
 
@@ -567,7 +667,19 @@ _returns_ string</p>
 Returns the type of the credential used for the current connection (if any).
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var credentialType = Spark.getCredentialType();</pre>
+
+## getSessionId
+
+_signature_ getSessionId()</p>
+_returns_ string</p>
+
+<b>validity</b> All Scripts
+Returns the session ID of the current player (if any).
+<b>example</b>
+<pre rel="highlighter" code-brush="js" contenteditable="false">var sessionId = Spark.getSessionId();</pre>
+
 ## getUploadableUtils
+
 _signature_ getUploadableUtils()</p>
 _returns_ SparkUploadableUtils</p>
 
@@ -575,14 +687,18 @@ _returns_ SparkUploadableUtils</p>
 Returns a utility class to enable uploading and retrieval of uploadables from cloud code.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var util = Spark.getUploadableUtils();</pre>
+
 ## exit
+
 _signature_ exit()</p>
 _returns_ void</p>
 
 Terminates execution of the current script
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.exit();</pre>
+
 ## getScriptData
+
 _signature_ getScriptData(string name)</p>
 _returns_ JSON</p>
 
@@ -593,7 +709,9 @@ name - The name in the name value pair
 a JSON object
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().getScriptData("name");</pre>
+
 ## setScriptData
+
 _signature_ setScriptData(string name, JSON value)</p>
 _returns_ void</p>
 
@@ -607,7 +725,9 @@ name - The name in the name value pair
 value - The value to set in the name value pair
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().setScriptData("name", "value");</pre>
+
 ## removeScriptData
+
 _signature_ removeScriptData(string name)</p>
 _returns_ void</p>
 
@@ -616,19 +736,25 @@ Removes a value from a name value pair structure that allows custom data to be a
 name - The name in the name value pair
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().removeScriptData("name");</pre>
+
 ## removeAllScriptData
+
 _signature_ removeAllScriptData()</p>
 _returns_ void</p>
 
 Removes all script data that has been set
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.removeAllScriptData();</pre>
+
 ## getRemainingMilliseconds
+
 _signature_ getRemainingMilliseconds()</p>
 _returns_ number</p>
 
 Gets the number of milliseconds this script has left to run before a longRunningScriptError is thrown
+
 ## getData
+
 _signature_ getData()</p>
 _returns_ JSON</p>
 

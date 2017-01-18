@@ -2,7 +2,9 @@
 
 An object that represents a pending match.
 
+
 ## getId
+
 _signature_ getId()</p>
 _returns_ string</p>
 
@@ -10,7 +12,9 @@ _returns_ string</p>
 The ID for the pending match.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">pendingMatch.getId();</pre>
+
 ## getMatchShortCode
+
 _signature_ getMatchShortCode()</p>
 _returns_ string</p>
 
@@ -18,7 +22,9 @@ _returns_ string</p>
 The match shortCode for the pending match.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">pendingMatch.getMatchShortCode();</pre>
+
 ## getMatchGroup
+
 _signature_ getMatchGroup()</p>
 _returns_ string</p>
 
@@ -26,7 +32,9 @@ _returns_ string</p>
 The match group for the pending match.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">pendingMatch.getMatchGroup();</pre>
+
 ## getSkill
+
 _signature_ getSkill()</p>
 _returns_ number</p>
 
@@ -34,7 +42,9 @@ _returns_ number</p>
 The average skill of players in this pending match.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">pendingMatch.getSkill();</pre>
+
 ## getMatchedPlayers
+
 _signature_ getMatchedPlayers()</p>
 _returns_ SparkMatchedPlayer[]</p>
 
@@ -42,7 +52,9 @@ _returns_ SparkMatchedPlayer[]</p>
 The players already part of this pending match.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">pendingMatch.getMatchedPlayers();</pre>
+
 ## joinPendingMatch
+
 _signature_ joinPendingMatch([PendingMatch](/API Documentation/Cloud Code API/Multiplayer/PendingMatch.md) pendingMatchToJoin)</p>
 _returns_ [PendingMatch](/API Documentation/Cloud Code API/Multiplayer/PendingMatch.md)</p>
 
@@ -53,7 +65,9 @@ The merged SparkPendingMatch if it was joined successfully,
 or null if the pendingMatch could not be joined.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">pendingMatch.joinPendingMatch(otherPendingMatch);</pre>
+
 ## findPendingMatches
+
 _signature_ findPendingMatches(number maxMatchesToFind)</p>
 _returns_ SparkPendingMatch[]</p>
 

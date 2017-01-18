@@ -5,7 +5,9 @@ You need to have already set up a SendGrid account, when acessing send grid via 
 e.g.
 <pre rel="highlighter" code-brush="js" contenteditable="false">var mySendGrid = Spark.sendGrid("userName", "password");</pre>
 
+
 ## addTo
+
 _signature_ addTo(string email, string name)</p>
 _returns_ [SendGrid](/API Documentation/Cloud Code API/Integrations/SendGrid.md)</p>
 
@@ -17,7 +19,9 @@ query - The name of the recipient (optional)
 This SendGrid object
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">mySendGrid.addTo("info@gamesparks.com", "GameSparks")</pre>
+
 ## send
+
 _signature_ send()</p>
 _returns_ string</p>
 
@@ -26,7 +30,9 @@ Sends this email, this step should be performed after configuring the email full
 The response from SendGrid
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">mySendGrid.send();</pre>
+
 ## setFrom
+
 _signature_ setFrom(string email, string name)</p>
 _returns_ [SendGrid](/API Documentation/Cloud Code API/Integrations/SendGrid.md)</p>
 
@@ -38,7 +44,9 @@ query - The name of the sender (optional)
 This SendGrid object
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">mySendGrid.setFrom("info@gamesparks.com", "GameSparks")</pre>
+
 ## setReplyTo
+
 _signature_ setReplyTo(string email)</p>
 _returns_ [SendGrid](/API Documentation/Cloud Code API/Integrations/SendGrid.md)</p>
 
@@ -49,7 +57,9 @@ email - The email address to replyTo
 This SendGrid object
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">mySendGrid.setReplyTo("info@gamesparks.com")</pre>
+
 ## setBcc
+
 _signature_ setBcc(string bcc)</p>
 _returns_ [SendGrid](/API Documentation/Cloud Code API/Integrations/SendGrid.md)</p>
 
@@ -60,7 +70,9 @@ email - The email address to add as bcc
 This SendGrid object
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">mySendGrid.setBcc("info@gamesparks.com")</pre>
+
 ## setSubject
+
 _signature_ setSubject(string subject)</p>
 _returns_ [SendGrid](/API Documentation/Cloud Code API/Integrations/SendGrid.md)</p>
 
@@ -71,7 +83,9 @@ subject - The subject of the email
 This SendGrid object
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">mySendGrid.setSubject("Hello from GameSparks")</pre>
+
 ## setText
+
 _signature_ setText(string text)</p>
 _returns_ [SendGrid](/API Documentation/Cloud Code API/Integrations/SendGrid.md)</p>
 
@@ -82,7 +96,9 @@ text - The body of the email
 This SendGrid object
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">mySendGrid.setText("Welcome to using SendGrid via GameSparks")</pre>
+
 ## setHtml
+
 _signature_ setHtml(string html)</p>
 _returns_ [SendGrid](/API Documentation/Cloud Code API/Integrations/SendGrid.md)</p>
 
@@ -93,7 +109,9 @@ html - The html body of the email
 This SendGrid object
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">mySendGrid.setHtml("<b>Welcome to using SendGrid via GameSparks</b>")</pre>
+
 ## addUploaded
+
 _signature_ addUploaded(string uploadId)</p>
 _returns_ [SendGrid](/API Documentation/Cloud Code API/Integrations/SendGrid.md)</p>
 
@@ -104,7 +122,9 @@ uploadId - The id of the uploaded file
 This SendGrid object
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">mySendGrid.addUploaded("7359237762da4245add41e44bc994cdd")</pre>
+
 ## addDownloadable
+
 _signature_ addDownloadable(string shortCode)</p>
 _returns_ [SendGrid](/API Documentation/Cloud Code API/Integrations/SendGrid.md)</p>
 
@@ -115,7 +135,9 @@ shortCode - The shortCode of the downloadable
 This SendGrid object
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">mySendGrid.addDownloadable("SHORTCODE")</pre>
+
 ## addHeader
+
 _signature_ addHeader(string key, string value)</p>
 _returns_ [SendGrid](/API Documentation/Cloud Code API/Integrations/SendGrid.md)</p>
 

@@ -8,14 +8,18 @@ Using this for player data or having a large amount of objects could slow down y
 e.g.
 <pre rel="highlighter" code-brush="js" contenteditable="false">var theCache = Spark.getCache();</pre>
 
+
 ## put
+
 _signature_ put(string key, JSON object)</p>
 _returns_ void</p>
 
 Adds an object to the cache
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">theCache.put("key", myObject);</pre>
+
 ## get
+
 _signature_ get(string key)</p>
 _returns_ JSON</p>
 
@@ -24,7 +28,9 @@ Gets an objects from the cache
 A JavaScipt object, or null depending on whether put has ben called for the given key 
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var myObject = theCache.get("key");</pre>
+
 ## remove
+
 _signature_ remove(string key)</p>
 _returns_ void</p>
 
@@ -32,7 +38,9 @@ Remove an object from the cache
 The object will be removed form the cache, and form the database. Subsequent calls to get will return null
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false"> theCache.remove("key")</pre>
+
 ## removeAll
+
 _signature_ removeAll()</p>
 _returns_ void</p>
 

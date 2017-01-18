@@ -2,7 +2,9 @@
 
 Provides access uploaded files along with downloadables
 
+
 ## deleteUploadedFile
+
 _signature_ deleteUploadedFile(string uploadId)</p>
 _returns_ boolean</p>
 
@@ -12,7 +14,9 @@ Deletes a previously uploaded file by uploadId
 uploadId - the id of the uploaded file
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getFiles().deleteUploadedFile("myUploadId");</pre>
+
 ## uploadedXml
+
 _signature_ uploadedXml(string uploadId)</p>
 _returns_ [SparkXmlReader](/API Documentation/Cloud Code API/Cloud Data/SparkXmlReader.md)</p>
 
@@ -22,7 +26,9 @@ Provides access to an uploaded file via a SparkXmlReader interface
 uploadId - the id of the uploaded file
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var reader = Spark.getFiles().uploadedXml("myUploadId");</pre>
+
 ## uploadedJson
+
 _signature_ uploadedJson(string uploadId)</p>
 _returns_ JSON</p>
 
@@ -34,7 +40,9 @@ uploadId - the id of the uploaded file
 A JSON object
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var reader = Spark.getFiles().uploadedJson("myUploadId");</pre>
+
 ## downloadableXml
+
 _signature_ downloadableXml(string shortCode)</p>
 _returns_ [SparkXmlReader](/API Documentation/Cloud Code API/Cloud Data/SparkXmlReader.md)</p>
 
@@ -45,7 +53,9 @@ shortCode - the short code for the downloadable file
 <b>returns</b>
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var reader = Spark.getFiles().downloadableXml("shortCode");</pre>
+
 ## downloadableJson
+
 _signature_ downloadableJson(string shortCode)</p>
 _returns_ JSON</p>
 

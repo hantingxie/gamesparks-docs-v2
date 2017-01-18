@@ -5,7 +5,9 @@ All methods defined in  SparkMongoCollectionReadOnly are available in this objec
 e.g.
 <pre rel="highlighter" code-brush="js" contenteditable="false">var myRuntimeCollection = Spark.runtimeCollection('runtimetest');</pre>
 
+
 ## count
+
 _signature_ count()</p>
 _returns_ number</p>
 
@@ -23,7 +25,9 @@ Returns the number of documents that match the supplied query
 the number of documents
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var count = Spark.metaCollection('metatest').count({"metafield" : "metavalue"});</pre>
+
 ## distinct
+
 _signature_ distinct(string key)</p>
 _returns_ JSON</p>
 
@@ -46,7 +50,9 @@ query - the Mongo query
 an object array
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var keys = Spark.metaCollection('metatest').distinct("metafield", {"metafield1":{"$gte" : 5}});</pre>
+
 ## dropIndex
+
 _signature_ dropIndex(JSON keys)</p>
 _returns_ void</p>
 
@@ -55,7 +61,9 @@ Drops or removes the specified index from a collection.
 keys - the index definition used in ensureIndex.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.metaCollection('metatest').dropIndex({"metafield" : 1});</pre>
+
 ## dropIndexByName
+
 _signature_ dropIndexByName(string name)</p>
 _returns_ void</p>
 
@@ -64,7 +72,9 @@ Drops or removes the specified index from a collection.
 name - the name of the index to drop.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.metaCollection('metatest').dropIndexByName("myIndex");</pre>
+
 ## ensureIndex
+
 _signature_ ensureIndex(JSON keys)</p>
 _returns_ void</p>
 
@@ -83,7 +93,9 @@ keys - the index definition used in ensureIndex.
 optionsIN - index options
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.metaCollection('metatest').ensureIndex({"metafield" : 1, "metafield1" : 1}, {"name":"myIndex"});</pre>
+
 ## find
+
 _signature_ find()</p>
 _returns_ [SparkMongoCursor](/API Documentation/Cloud Code API/Cloud Data/SparkMongoCursor.md)</p>
 
@@ -111,7 +123,9 @@ query -  a Mongo query
 fields - the fields to return
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var results = Spark.metaCollection('metatest').find({"metatest1" : {"$gt" : 1}}, {"metatest" : 1});</pre>
+
 ## findOne
+
 _signature_ findOne()</p>
 _returns_ JSON</p>
 
@@ -155,7 +169,9 @@ fields - the fields to return
 orderBy - the order clause
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var result = Spark.metaCollection('metatest').findOne({"metatest1" : {"$gt" : 1}}, {"metatest" : 1});</pre>
+
 ## findAndModify
+
 _signature_ findAndModify(JSON query, JSON update)</p>
 _returns_ JSON</p>
 
@@ -197,7 +213,9 @@ upsert - used in conjunction with the update field. When true, the findAndModify
 a JSON object
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var doc = myRuntimeCollection.findAndModify({"field" : "value"},{"field" : 1},false,{"field" : "value1"},true, {"field" : 1},false);</pre>
+
 ## findAndRemove
+
 _signature_ findAndRemove(JSON query)</p>
 _returns_ JSON</p>
 
@@ -208,7 +226,9 @@ query - a Mongo query
 a JSON object
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var doc = myRuntimeCollection.findAndRemove({"field" : "value"});</pre>
+
 ## insert
+
 _signature_ insert(JSON[] documents)</p>
 _returns_ boolean</p>
 
@@ -219,12 +239,16 @@ documents - A document or array of documents to insert into the collection.
 true if the operation was successful
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var success = myRuntimeCollection.insert({"field" : "value"}, {"field" : "value1"}, {"field" : "value2"});</pre>
+
 ## aggregate
+
 _signature_ aggregate(JSON firstOp, JSON[] additionalOps)</p>
 _returns_ JSON</p>
 
 
+
 ## applyChanges
+
 _signature_ applyChanges(JSON existingDocument, JSON newDocument)</p>
 _returns_ boolean</p>
 
@@ -236,7 +260,9 @@ existingDocument - A document perviously retrieved from the database. The _id fi
 newDocument - The new state to persist in the database, and _id field in this document will be ignored.
 <b>returns</b>
 true if the operation was successful
+
 ## getIndexInfo
+
 _signature_ getIndexInfo()</p>
 _returns_ JSON</p>
 
@@ -245,7 +271,9 @@ Return a list of the indexes for this collection. Each object in the list is the
 list of index documents
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var indexes = Spark.metaCollection('metatest').getIndexInfo();</pre>
+
 ## getLastError
+
 _signature_ getLastError()</p>
 _returns_ JSON</p>
 
@@ -254,7 +282,9 @@ Gets the error (if there is one) from the previous operation on this connection.
 a JSON object with error and status information
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var errors = Spark.metaCollection('metatest').getLastError();</pre>
+
 ## save
+
 _signature_ save(JSON document)</p>
 _returns_ boolean</p>
 
@@ -265,7 +295,9 @@ If the document contains an _id field, then the save() method performs an upsert
 document - the document to save
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var success = myRuntimeCollection.save({"field" : "value"});</pre>
+
 ## remove
+
 _signature_ remove(JSON query)</p>
 _returns_ boolean</p>
 
@@ -277,14 +309,18 @@ query - the query
 true if the operation was successful
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var success = myRuntimeCollection.remove({"field" : "value"});</pre>
+
 ## drop
+
 _signature_ drop()</p>
 _returns_ void</p>
 
 Drop the collection
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">myRuntimeCollection.drop();</pre>
+
 ## update
+
 _signature_ update(JSON query, JSON update)</p>
 _returns_ boolean</p>
 
@@ -311,7 +347,9 @@ multi - multi (boolean) Optional. If set to true, updates multiple documents tha
 true if the operation was successful
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var success = myRuntimeCollection.update({"field" : "value"}, {"field" : "value1"}, false, false);</pre>
+
 ## updateMulti
+
 _signature_ updateMulti(JSON query, JSON update)</p>
 _returns_ boolean</p>
 

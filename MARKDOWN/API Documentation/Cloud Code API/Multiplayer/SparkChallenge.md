@@ -4,7 +4,9 @@ Provides access to a challenge's details.
 e.g.
 <pre rel="highlighter" code-brush="js" contenteditable="false">var challenge = Spark.getChallenge(mychallengeid);</pre>
 
+
 ## getRunState
+
 _signature_ getRunState()</p>
 _returns_ string</p>
 
@@ -20,14 +22,18 @@ WITHDRAWN - The challenger has withdrawn the challenge
 LAPSED - The end time of this challenge has passed before the challenge was started
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var runState = Spark.getChallenge(mychallengeid).getRunState();</pre>
+
 ## getId
+
 _signature_ getId()</p>
 _returns_ string</p>
 
 Gets the ID of this challenge.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var id = Spark.getChallenge(mychallengeid).getId();</pre>
+
 ## getShortCode
+
 _signature_ getShortCode()</p>
 _returns_ string</p>
 
@@ -35,7 +41,9 @@ Returns the shortCode of the challenge
 Can be useful when block or code should only run for a particular challenge type.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var shortCode = Spark.getChallenge(mychallengeid).getShortCode();</pre>
+
 ## winChallenge
+
 _signature_ winChallenge([SparkPlayer](/API Documentation/Cloud Code API/Player/SparkPlayer.md) winner)</p>
 _returns_ void</p>
 
@@ -45,21 +53,27 @@ If the supplied SparkPlayer is not part of the challenge this call will be ignor
 winner - the SparkPlayer to set as the winner
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getChallenge(mychallengeid).winChallenge(aPlayer);</pre>
+
 ## drawChallenge
+
 _signature_ drawChallenge()</p>
 _returns_ void</p>
 
 Complete the challenge with no winner.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getChallenge(mychallengeid).drawChallenge();</pre>
+
 ## startChallenge
+
 _signature_ startChallenge()</p>
 _returns_ void</p>
 
 Starts the challenge in the current state. This method only checks that the state is ISSUED or WAITING and that there is at least 2 players in the challenge 
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getChallenge(mychallengeid).startChallenge();</pre>
+
 ## getChallengedPlayerIds
+
 _signature_ getChallengedPlayerIds()</p>
 _returns_ string[]</p>
 
@@ -68,7 +82,9 @@ Returns a list of Players ID's that can be used to load the player details using
 The array of player Ids this challenge was issued to
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var players = Spark.getChallenge(mychallengeid).getChallengedPlayerIds();</pre>
+
 ## getAcceptedPlayerIds
+
 _signature_ getAcceptedPlayerIds()</p>
 _returns_ string[]</p>
 
@@ -77,7 +93,9 @@ Returns a list of Players ID's that can be used to load the player details using
 The array of player Ids who have accepted this challenge
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var players = Spark.getChallenge(mychallengeid).getAcceptedPlayerIds();</pre>
+
 ## getDeclinedPlayerIds
+
 _signature_ getDeclinedPlayerIds()</p>
 _returns_ string[]</p>
 
@@ -86,35 +104,45 @@ Returns a list of Players ID's that can be used to load the player details using
 The array of player Ids who have declined this challenge
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var players = Spark.getChallenge(mychallengeid).getDeclinedPlayerIds()</pre>
+
 ## getChallengerId
+
 _signature_ getChallengerId()</p>
 _returns_ string</p>
 
 Gets the player id of whoever issued the challenge.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var challengerId = Spark.getChallenge(mychallengeid).getChallengerId();</pre>
+
 ## getEndDate
+
 _signature_ getEndDate()</p>
 _returns_ date</p>
 
 Gets the end date of the challenge.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var endDate = Spark.getChallenge(mychallengeid).getEndDate();</pre>
+
 ## getExpiryDate
+
 _signature_ getExpiryDate()</p>
 _returns_ date</p>
 
 Gets the expiry date of the challenge.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var expiryDate = Spark.getChallenge(mychallengeid).getExpiryDate();</pre>
+
 ## getStartDate
+
 _signature_ getStartDate()</p>
 _returns_ date</p>
 
 Gets the start date of the challenge.
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var startDate = Spark.getChallenge(mychallengeid).getStartDate();</pre>
+
 ## consumeTurn
+
 _signature_ consumeTurn(string playerId)</p>
 _returns_ boolean</p>
 
@@ -124,7 +152,9 @@ Takes a turn for a player in a turn based challenge, without sending a Challenge
 playerId - the id of the player who has taken their turn
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var challenge = Spark.getChallenge(mychallengeid).consumeTurn(playerId);</pre>
+
 ## takeTurn
+
 _signature_ takeTurn(string playerId)</p>
 _returns_ boolean</p>
 
@@ -134,7 +164,9 @@ Takes a turn for a player in a turn based challenge, and sends a ChallengeTurnTa
 playerId - the id of the player who has taken their turn
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var challenge = Spark.getChallenge(mychallengeid).takeTurn(playerId);</pre>
+
 ## removePlayer
+
 _signature_ removePlayer(string playerId)</p>
 _returns_ boolean</p>
 
@@ -144,7 +176,9 @@ Removes a player from this challenge.
 playerId - the id of the player to remove
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var challenge = Spark.getChallenge(mychallengeid).removePlayer(playerId);</pre>
+
 ## getPrivateData
+
 _signature_ getPrivateData(string name)</p>
 _returns_ JSON</p>
 
@@ -156,7 +190,9 @@ a JSON object
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().getPrivateData("name");</pre>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getChallenge().getPrivateData("name");</pre>
+
 ## setPrivateData
+
 _signature_ setPrivateData(string name, JSON value)</p>
 _returns_ void</p>
 
@@ -169,7 +205,9 @@ value - The value to set in the name value pair
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().setPrivateData("name", "value");</pre>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getChallenge().setPrivateData("name", "value");</pre>
+
 ## removePrivateData
+
 _signature_ removePrivateData(string name)</p>
 _returns_ void</p>
 
@@ -179,7 +217,9 @@ name - The name in the name value pair
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().removePrivateData("name");</pre>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getChallenge().removePrivateData("name");</pre>
+
 ## getScriptData
+
 _signature_ getScriptData(string name)</p>
 _returns_ JSON</p>
 
@@ -190,7 +230,9 @@ name - The name in the name value pair
 a JSON object
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().getScriptData("name");</pre>
+
 ## setScriptData
+
 _signature_ setScriptData(string name, JSON value)</p>
 _returns_ void</p>
 
@@ -204,7 +246,9 @@ name - The name in the name value pair
 value - The value to set in the name value pair
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().setScriptData("name", "value");</pre>
+
 ## removeScriptData
+
 _signature_ removeScriptData(string name)</p>
 _returns_ void</p>
 

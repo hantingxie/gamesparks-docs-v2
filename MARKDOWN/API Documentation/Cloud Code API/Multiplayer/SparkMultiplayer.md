@@ -4,7 +4,9 @@ Provides access to the platform's multiplayer capabilities.
 e.g.
 <pre rel="highlighter" code-brush="js" contenteditable="false">var multiplayer = Spark.getMultiplayer();</pre>
 
+
 ## createMatch
+
 _signature_ createMatch([SparkPlayer](/API Documentation/Cloud Code API/Player/SparkPlayer.md)[] players)</p>
 _returns_ string</p>
 
@@ -16,7 +18,9 @@ players - An array of players to include in the match
 The matchId if a match was successfully created, or null
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var matchId = Spark.getMultiplayer().createMatch(player1, player2);</pre>
+
 ## createMatchById
+
 _signature_ createMatchById(string[] playerIds)</p>
 _returns_ string</p>
 
@@ -28,7 +32,9 @@ playerIds - An array of playerIds to include in the match
 The matchId if a match was successfully created, or null
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var matchId = Spark.getMultiplayer().createMatchById(playerId1, playerId2);</pre>
+
 ## createMatchWithMatchId
+
 _signature_ createMatchWithMatchId(string matchId, [SparkPlayer](/API Documentation/Cloud Code API/Player/SparkPlayer.md)[] players)</p>
 _returns_ string</p>
 
@@ -41,7 +47,9 @@ players - An array of players to include in the match
 The matchId if a match was successfully created, or null
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var matchId = Spark.getMultiplayer().createMatchWithMatchId("myId", player1, player2);</pre>
+
 ## createMatchByIdWithMatchId
+
 _signature_ createMatchByIdWithMatchId(string matchId, string[] playerIds)</p>
 _returns_ string</p>
 
@@ -54,7 +62,9 @@ playerIds - An array of playerIds to include in the match
 The matchId if a match was successfully created, or null
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var matchId = Spark.getMultiplayer().createMatchById("myId", playerId1, playerId2);</pre>
+
 ## loadMatch
+
 _signature_ loadMatch(string matchId)</p>
 _returns_ [SparkMatch](/API Documentation/Cloud Code API/Multiplayer/SparkMatch.md)</p>
 
@@ -66,7 +76,9 @@ matchId - The id of the match to load
 The match if a match was found with the given id
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var matchId = Spark.getMultiplayer().loadMatch(matchId);</pre>
+
 ## getMatchConfig
+
 _signature_ getMatchConfig(string shortCode)</p>
 _returns_ [SparkMatchConfig](/API Documentation/Cloud Code API/Multiplayer/SparkMatchConfig.md)</p>
 
@@ -78,7 +90,9 @@ shortCode - The shortCode of the match configuration to load
 The match configuration if a one was found with the given shortCode
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var matchConfig = Spark.getMultiplayer().getMatchConfig(shortCode);</pre>
+
 ## loadPendingMatchById
+
 _signature_ loadPendingMatchById(string pendingMatchId)</p>
 _returns_ [PendingMatch](/API Documentation/Cloud Code API/Multiplayer/PendingMatch.md)</p>
 
@@ -90,7 +104,9 @@ pendingMatchId - The id of the pending match to load
 The pending match if one was found with the given id
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var pendingMatch = Spark.getMultiplayer().loadPendingMatchById(pendingMatchId);</pre>
+
 ## loadPendingMatchByPlayer
+
 _signature_ loadPendingMatchByPlayer([SparkPlayer](/API Documentation/Cloud Code API/Player/SparkPlayer.md) player, string shortCode, string matchGroup)</p>
 _returns_ [PendingMatch](/API Documentation/Cloud Code API/Multiplayer/PendingMatch.md)</p>
 
@@ -104,7 +120,9 @@ matchGroup - The matchGroup for the pending match
 The pending match if one was found with the given id
 <b>example</b>
 <pre rel="highlighter" code-brush="js" contenteditable="false">var pendingMatch = Spark.getMultiplayer().loadPendingMatchByPlayer(player, matchShortCode, matchGroup);</pre>
+
 ## cancelMatchmaking
+
 _signature_ cancelMatchmaking([SparkPlayer](/API Documentation/Cloud Code API/Player/SparkPlayer.md) player, string shortCode, string matchGroup)</p>
 _returns_ void</p>
 
