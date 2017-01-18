@@ -1,5 +1,5 @@
 ---
-nav_sort: 6
+nav_sort: 7
 src: /Tutorials/Real-Time Services/Real-Time Game Example.md
 ---
 
@@ -8,6 +8,8 @@ src: /Tutorials/Real-Time Services/Real-Time Game Example.md
 In the previous tutorial, we looked at how to set up a simple chat-system so that players found through the match-making process can communicate with each other. It included a simple introduction to how packets are sent and received using our real-time services.
 
 In this final tutorial, we follow the previous one and use the real-time services to create a simple multiplayer game based on Atari’s Tank! (1974).
+
+<q>**RT Project so far?** You can [download and review](http://repo.gamesparks.net.s3.amazonaws.com/docs/tutorial-assets/NetworkingTools_UnityProject_GameSparks_tut5.zip) the completed project so far and covering the previous tutorials in this section before you attempt this next tutorial.</q>
 
 ## Introduction
 

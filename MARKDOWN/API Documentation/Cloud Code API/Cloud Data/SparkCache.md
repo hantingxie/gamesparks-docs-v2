@@ -1,3 +1,7 @@
+---
+src: /API Documentation/Cloud Code API/Cloud Data/SparkCache.md
+---
+
 # SparkCache
 
 Provides the ability to cache javascript objects. This includes complex objects with functions. Any javascript object can be cached. This allows you to create objects of a particular structure from your JSON data in mongo that can speed up access.

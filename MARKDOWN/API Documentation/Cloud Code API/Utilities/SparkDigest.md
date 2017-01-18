@@ -1,3 +1,7 @@
+---
+src: /API Documentation/Cloud Code API/Utilities/SparkDigest.md
+---
+
 # SparkDigest
 
 Returns a reference to a SparkDigest object.

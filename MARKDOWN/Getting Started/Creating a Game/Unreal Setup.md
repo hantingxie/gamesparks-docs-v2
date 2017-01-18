@@ -63,7 +63,7 @@ In your project's build file (Located under *Source> ProjectFolder* folder) add 
 
 ```
 
-PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "GameSparks" });
+PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "GameSparks", "OnlineSubsystem" });
 
 ```
 

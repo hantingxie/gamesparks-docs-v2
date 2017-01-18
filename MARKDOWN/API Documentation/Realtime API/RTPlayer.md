@@ -1,3 +1,7 @@
+---
+src: /API Documentation/Realtime API/RTPlayer.md
+---
+
 # RTPlayer
 
 An object representing a player

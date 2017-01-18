@@ -1,3 +1,7 @@
+---
+src: /API Documentation/Cloud Code API/Configuration/SparkSegmentValue.md
+---
+
 # SparkSegmentValue
 
 Contains configuration information for the segment value

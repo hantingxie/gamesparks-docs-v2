@@ -1,3 +1,7 @@
+---
+src: /API Documentation/Cloud Code API/Leaderboards/SparkLeaderboardCursor.md
+---
+
 # SparkLeaderboardCursor
 
 A cursor over entries within a leaderboard.

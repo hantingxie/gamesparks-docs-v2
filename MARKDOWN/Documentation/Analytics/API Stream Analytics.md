@@ -52,3 +52,5 @@ In this example, we pull API Stream analytics data for connection request calls 
 * A *Log Entry Details* panel appears, which shows the individual *Request* and *Response* details:
 
 ![](img/APIStream/6.png)
+
+<q>**Data Delay!** When you query the API Stream, the data used to build the charts and display the query results will not be right up to date. This is because there is a slight delay of approximately ten minutes before the data for the request or message activity being queried becomes available to build the charts.</q>

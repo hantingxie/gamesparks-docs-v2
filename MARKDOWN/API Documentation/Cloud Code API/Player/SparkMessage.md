@@ -1,3 +1,7 @@
+---
+src: /API Documentation/Cloud Code API/Player/SparkMessage.md
+---
+
 # SparkMessage
 
 Provides the ability to send a ScriptMessage and provide the configuration in code rather than from within the portal 

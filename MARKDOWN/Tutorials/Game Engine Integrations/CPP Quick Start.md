@@ -3,7 +3,7 @@ nav_sort: 1
 src: /Tutorials/Game Engine Integrations/CPP Quick Start.md
 ---
 
-# Cpp Quick Start
+# CPP Quick Start
 
 ## Initialization
 
@@ -92,7 +92,7 @@ To authenticate a player in C++ you have three options for authentication:
 
 You can use the GameSparks username and password system - when a players use a registration request to register on the platform, they can use their credentials to log in.
 
-Registration Request:
+**Registration Request:**
 
 ```
 
@@ -107,7 +107,7 @@ request.Send(RegistrationRequest_Response);
 
 ```
 
-Registration Response:
+**Registration Response:**
 
 ```
 
@@ -125,7 +125,7 @@ void RegistrationRequest_Response(GameSparks::Core::GS& gsInstance, const GameSp
 
 ```
 
-Authentication Request:
+**Authentication Request:**
 
 ```
 
@@ -138,7 +138,7 @@ request.Send(AuthenticationRequest_Response);
 
 ```
 
-Authentication Response:
+**Authentication Response:**
 
 ```
 

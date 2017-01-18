@@ -1,3 +1,7 @@
+---
+src: /API Documentation/Cloud Code API/Cloud Data/SparkMongoCollectionReadOnly.md
+---
+
 # SparkMongoCollectionReadOnly
 
 Provides read only access to a mongo collection.
