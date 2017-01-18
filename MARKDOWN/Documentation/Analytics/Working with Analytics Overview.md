@@ -108,7 +108,9 @@ Use the two drop-down menus at top-right to control the data displayed in the an
 
   ![](img/Analytics/23.png)
 
-You can use the switch at the top of the page to select which stage analytics data are displayed for:
+### Switching between Preview and Live
+
+You can use the *Preview/Live* switch at the top of the page to select which stage analytics data are displayed for:
 * Preview:
 
   ![](img/Analytics/24.png)

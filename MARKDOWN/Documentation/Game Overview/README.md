@@ -8,6 +8,7 @@ src: /Documentation/Game Overview/README.md
 The Game Overview is designed to help you perform your initial game set up and any continuing game management tasks through the life of your game - from here you can:
 
 * Log out from the portal and manage your GameSparks account.
+* Switch between dark and light UI themes.
 * Quickly open another game you've created on the portal, add a game, or open the game Recycle Bin.
 * Check daily log summaries for both the Preview and Live stages of your game.
 * View and edit the top-level information and settings of your game.
@@ -25,6 +26,9 @@ You can use the drop-down *Account* menu at top-right:
 ![](img/GameOverview/17.png)
 
 * *Game Owner* - The game-owner e-mail address is shown.
+* *Feedback* - Click to report a problem or give us feedback on the portal.
+* *Dark/Light Theme* - Click to change the UI theme.
+* *Manage Account* - Click to manage your GameSparks account.
 * *Change Password* - Click to change your GameSparks account password.
 * *Log Out* - Click to log out of the platform.
 

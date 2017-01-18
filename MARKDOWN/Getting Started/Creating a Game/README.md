@@ -76,6 +76,8 @@ When you create a game, the game is put into *Preview* stage.  There are two st
 * *Preview* is the stage where you develop your game - build up your game configuration, add required Cloud Code, and test out the game using a small number of test players in the Test Harness.
 * *Live* is the stage for a published game and you should only move a game to this stage when it is ready to launch.
 
+<q>**Switching to Live?** As you develop your game in Preview, publish to Live at some point, and then continue to develop the game in Preview, there are several places in the portal where you can switch between the Preview an Live stages of your game. See [below](#Switching between Preview and Live). </q>
+
 ### Publishing via Snapshots
 
 You should remain in *Preview* as you develop and test your game. When you are happy with the state of your game, you can create a *Snapshot*.  A game *Snapshot* takes a copy of everything you've created up to that point in the game's development.  You can then publish the *Snapshot*.  Publishing the *Snapshot* will copy the game as it was when the *Snapshot* was taken and moves the game from *Preview* stage into *Live* stage.
@@ -87,6 +89,20 @@ You should remain in *Preview* as you develop and test your game. When you are h
 Publishing your game via the use of a *Snapshot* allows you to easily manage your game's life cycle. You can continue development of your game in *Preview* while your customers can safely play on the *Live* stage and you know exactly what state the *Live* game is in.  When you are ready to upgrade your game and publish it with any new features, you can create another *Snapshot*, publish the new *Snapshot*, and the whole process repeats again.  Simple!
 
 <q>**Really Important!** Use the *Live* stage when you are ready to release your game to the public - this should be the **ONLY** stage your players use, because the number of concurrent users that can connect to the *Preview* stage at any given time is limited to 100. If your game was left in *Preview* and more than 100 concurrent players try to access your game, they won't all be able to connect successfully.  Obviously, this is not what you want, so remember to take a *Snapshot* then publish through to *Live*!</q>
+
+### Switching between Preview and Live
+
+Several pages in the portal provide a *Preview/Live* switch for areas where it's useful to be able to view Preview or Live data as you continue to develop your game beyond its publication to Live. On most of these pages, the *Preview/Live* switch will be enabled only if you've already published a game configuration Snapshot to Live:
+
+Page  | Enabled
+-----  | -----------
+NoSQL Explorer   | Only if a game configuration Snapshot has been published.
+Manage Screens    | Only if a game configuration Snapshot has been published.
+Experiment Results    | Only if a game configuration Snapshot has been published.
+Analytics Overview    | Always.
+Analytics API Stream    | Only if a game configuration Snapshot has been published.
+Test Harness    | Always.
+
 
 ## SDK Instructions
 
