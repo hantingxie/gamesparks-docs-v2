@@ -1,5 +1,5 @@
 ---
 swagger_auth: service
-swagger: https://portal.gamesparks.net/swagger/restRequestApiDocs
+swagger: https://api.gamesparks.net/restRequestApiDocs.json
 src: /API Documentation/REST APIs/Requests.md
 ---
