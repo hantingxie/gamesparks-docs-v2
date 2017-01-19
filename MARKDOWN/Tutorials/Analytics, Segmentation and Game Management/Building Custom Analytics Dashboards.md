@@ -81,7 +81,7 @@ We then click *Test* to preview the chart, which will display the visual represe
 
 Note that the other display settings for this type of chart are disabled.
 
-We then click *Test* to preview the chart, which will display and allow viewing of the actual error responses:
+We then click *Test* to preview the data table, which will display and allow viewing of the actual error responses:
 
 ![](img/CustomAnalyticsDashboards/12.png)
 

@@ -7,7 +7,7 @@ src: /Documentation/Analytics/API Stream Analytics.md
 
 You can use the *API Stream* Analytics page to build custom queries against the API calls that have been made into the platform:
 * A *Query Builder* gives you virtually limitless scope to quickly add and refine query rules to obtain the specific data you want to review and analyze.
-* The data returned for your query is displayed in three chart formats: a histogram, pie-chart, and data table, where each format gives you further tools for analyzing the data.
+* The data returned for your query are displayed in three chart formats: a histogram, pie-chart, and data table, where each format gives you further tools for analyzing the data.
 * You can control how your query data are organized within these charts.
 * You can use the *Preview/Live* switch to select either Preview or Live game data to query against:
   * *Preview/Live* will be enabled only if you have published a game configuration Snapshot to Live.
