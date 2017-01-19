@@ -1,5 +1,5 @@
 ---
 swagger_auth: nosql
-swagger: https://gsp-muw000-cluster.gamesparks.net/restv2/nosql/api/schema
+swagger: https://api.gamesparks.net/nosqlRestApi.json
 src: /API Documentation/REST APIs/NoSQL.md
 ---

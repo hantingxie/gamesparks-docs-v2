@@ -1,7 +1,7 @@
 ---
 no_toc: true
 no_comment: true
-nav_sort: 3
+nav_sort: 4
 src: /Documentation/Configurator/README.md
 ---
 
