@@ -1,5 +1,5 @@
 ---
-nav_sort: 2
+nav_sort: 3
 src: /Documentation/Game Overview/README.md
 ---
 
