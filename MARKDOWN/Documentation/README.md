@@ -8,7 +8,7 @@ banner: true
 
 This section provides a detailed account of the GameSparks platform:
 
-* [Portal2 Overview](/Documentation/Key Concepts/README.md) - Introduction to Portal2 with advice on functional changes.
+* [Portal2 Overview](/Documentation/Portal2 Overview/README.md) - Introduction to Portal2 with advice on functional changes.
 * [Key Concepts](/Documentation/Key Concepts/README.md) - Understanding key GameSparks design concepts.
 * [Game Overview](/Documentation/Game Overview/README.md) - Inspecting your game's top-level information, managing game versions using Snapshots, and creating game Collaborators.
 * [Working with Configurator](/Documentation/Configurator/README.md) - Building the core configuration for your game.
