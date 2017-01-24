@@ -82,20 +82,20 @@ You can exploit a finer degree of access permission to control what users can se
 
 <q>**Note:** By default, all Screens and Snippets have no Groups selected. Unless specific Groups are selected for Screens and Snippets, users in any Group will be able to view them.</q>
 
-*7.* As the game Admin, go to the *Manage* section and Edit the *Players* Screen. Select the newly-created Group in the *Groups* dropdown as well as for the *gameAdmin* Group so that Admins can also view it.
+*7.* As the game Admin, go to the *Manage* section and Edit the *Players* Screen. Select the newly-created Group in the *Groups* dropdown as well as for the *gameAdmin* Group so that Admins can also view it:
 
-![](img/8.png)
+![](img/20.png)
 
 *8.* Do the same for each corresponding Snippet. Add both the newly-created Group and the default *gameAdmin* group.
 
-![](img/9.png)
+![](img/21.png)
 
 *9.* For Snippets *player_virtual_goods* and *player_currencies*, select only the *gameAdmin* Group.
 
-![](img/10.png)
+![](img/22.png)
 
-*10.* Login as the user belonging to the newly-created Group.
+*10.* Login as the user belonging to the newly-created *Restricted* Group.
 
 *11.* Load the *Players* Screen - you can see that the *player_virtual_goods* and *player_currencies* Snippets cannot be viewed.
 
-![](img/11.png)
+![](img/23.png)
