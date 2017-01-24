@@ -6,9 +6,11 @@ src: /API Documentation/REST APIs/README.md
 # REST APIs Overview
 
 ## Usage
-The GameSparks API is a RESTful API that can be used to access game configuration, management, and service requests:
-* [Game Admin](/API Documentation/REST APIs/Game Admin.md)
+The GameSparks API is a RESTful API that can be used to access authentication, game administration and configuration, NoSQL, and service requests:
+* [Authentication](/API Documentation/REST APIs/Authentication.md)
+* [Game Administration](/API Documentation/REST APIs/Game Admin.md)
 * [Game Configuration](/API Documentation/REST APIs/Game Configuration.md)
+* [NoSQL](/API Documentation/REST APIs/NoSQL.md)
 * [Service Requests](/API Documentation/REST APIs/Requests.md)
 
 ## Schema

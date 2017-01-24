@@ -10,7 +10,7 @@ As a game Owner or Admin, you may wish to set specific read/write permissions fo
 * To able to view the configuration of Virtual Goods and Achievements but not be able to edit them.
 * To be prevented from either editing or viewing the Integrations and Downloadables sections.
 
-You can quickly set up this sort of mixed permissions for users as a specific set of capabilities.
+You can quickly set up this sort of mixed permissions for users as a specific set of capabilities and, additionally, refine the permissions in the Manage section for Screens and Snippets.
 
 ## Collaborators and Group Permissions
 
@@ -75,3 +75,27 @@ But the Collaborator will only be able to view and not edit the game's *Virtual 
 * If a *Save* is attempted, it will be blocked.
 
 ![](img/19.png)
+
+## Refining Permissions for Screens and Snippets
+
+You can exploit a finer degree of access permission to control what users can see and do with *Screens* and *Snippets*. For example, access can be given to the Screen and the corresponding Snippets with the exception of the *player_virtual_good* and *player_currencies* Snippets for the newly created Group. Therefore, when a user is logged in with only that Group, they can see the *Players* Screen as normal, except that the information displayed for Virtual Goods and Currencies will not be displayed.
+
+<q>**Note:** By default, all Screens and Snippets have no Groups selected. Unless specific Groups are selected for Screens and Snippets, users in any Group will be able to view them.</q>
+
+*7.* As the game Admin, go to the *Manage* section and Edit the *Players* Screen. Select the newly-created Group in the *Groups* dropdown as well as for the *gameAdmin* Group so that Admins can also view it.
+
+![](img/8.png)
+
+*8.* Do the same for each corresponding Snippet. Add both the newly-created Group and the default *gameAdmin* group.
+
+![](img/9.png)
+
+*9.* For Snippets *player_virtual_goods* and *player_currencies*, select only the *gameAdmin* Group.
+
+![](img/10.png)
+
+*10.* Login as the user belonging to the newly-created Group.
+
+*11.* Load the *Players* Screen - you can see that the *player_virtual_goods* and *player_currencies* Snippets cannot be viewed.
+
+![](img/11.png)
