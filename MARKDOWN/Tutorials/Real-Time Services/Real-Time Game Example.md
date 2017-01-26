@@ -1452,37 +1452,32 @@ Now that we have our tanks broadcasting their collisions, we need to use the *Re
 This goes in our *GameController.cs* class:
 
 ```
-
 /// <summary>
 /// This is called when an opponent has registered a collision.
 /// It will remove the shell that hit, reset the opponent's tank and update the
 /// score of the owner of the shell that hit.
 /// </summary>
-/// <param name="_packet">Packet Receieved From Opponetn Player</param>
+/// <param name="_packet">Packet Received From Opponent Player</param>
 public void RegisterOpponentCollision(RTPacket _packet){
 
     for (int i = 0; i < playerTanksList.Length; i++) {
         // if the tank is the tank that just got hit, reset it //
         if (playerTanksList [i].name == _packet.Data.GetString (1)) {
             playerTanksList [i].ResetTank ();
-        }
-        if (playerTanksList [i].name == _packet.Data.GetString (2)) { // find the tank that scored the hit and update the score
+          }
+          if ((_packet.Sender != GameSparksManager.Instance().GetRTSession().PeerId) && playerTanksList [i].name == _packet.Data.GetString (2)) { // find the tank that scored the hit and update the score
             playerTanksList [i].UpdateScore ();
+          }
         }
-    }
 
-    for (int i = 0; i < shellPool.Length; i++) {
-        if (_packet.Data.GetString (3) == shellPool [i].gameObject.name) { // find the shell with the name of the one involved in the collision
+        for (int i = 0; i < shellPool.Length; i++) {
+          if (_packet.Data.GetString (3) == shellPool [i].gameObject.name) { // find the shell with the name of the one involved in the collision
             shellPool [i].gameObject.SetActive (false); // and remove it from the scene
+          }
         }
-    }
 }
 
-
-
 ```
-
-
 
 ### Testing Updates and Scores
 

@@ -62,8 +62,24 @@ If you enable a Credential as COPPA compliant:
 
 ### Selecting REST Policy
 
-Select to allow or forbid the Credential to accept REST requests:
-* If you allow REST requests for a Credential, you can specify that an authorization token is required for added security when REST requests.
+Select to allow or forbid the Credential to accept *REST Service Requests*:
+* If you allow REST Service Requests for a Credential, you can specify that an authorization token is required for added security when making these requests:
+
+![](img/SecCred/15.png)
+
+* If you select this option, you must ensure that for any REST Service Requests made by players using the Credential their Auth Token is included in the body of their requests. For example:
+
+```
+{
+  "@class": ".AccountDetailsRequest",
+  "playerId": "5849655e16c047eb048bc585",
+  "authToken": "a321c1ea-e48d-45ea-8370-6161eb1e84db",
+  "requestId": "12897"
+}
+
+```
+
+<q>**REST Service Requests?** For more detail on Service Requests made through the REST API, see [here](/API Documentation/REST APIs/Requests.md).
 
 ## System Credentials
 
