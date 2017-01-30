@@ -29,7 +29,7 @@ After the application was created, you'll be redirected to a page where you can 
 
 *5.* You'll need the highlighted details for obtaining an access token from Twitch and that you will later need to pass as parameter to the [TwitchConnectRequest](/API Documentation/Request API/Authentication/TwitchConnectRequest.md).
 
-For more details about the authentication flow, you can refer to the [Twitch documentation](https://github.com/justintv/Twitch-API/blob/master/authentication.md).
+For more details about the authentication flow, select the *authenitcation.md* file on the *Twitch-API* site at [Twitch documentation](https://github.com/justintv/Twitch-API).
 
 ## Configuring your GameSparks Game
 

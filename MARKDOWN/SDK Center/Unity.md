@@ -7,6 +7,12 @@ src: /SDK Center/Unity.md
 
 Download the GameSparks [Unity SDK Package](https://s3-eu-west-1.amazonaws.com/repo.gamesparks.net/unity-sdk/GameSparks_Unity.unitypackage).
 
+## V5.5.1.198
+
+* Fixed a crash that occurred when a user sent requests after a disconnection event on Win8/10
+* Updated API
+* Added pdb files
+
 ## V5.5.0.189
 
 * Added ApiDomain and ApiCredential support
