@@ -22,6 +22,7 @@ Here's some key points to note for the new UI design:
 * **Segmentation Enhanced** - This key feature now presents much more strongly and clearly within configuration objects across the UI, making it much more accessible and easier to understand.
 * **Game Management** - The Game Overview page has been pulled out from the Configurator workspace and re-worked to give improved workflows for all your game management tasks.
 * **Experiments** - This extremely powerful feature has been promoted to its own top-level area and the main workflow unpacked into an intuitive configuration wizard.
+* **NoSQL Explorer** - You can now open multiple Mongo DB Collections tabs and query and work with several Collections at the same time.
 
 
 ## Portal2 Functional Changes

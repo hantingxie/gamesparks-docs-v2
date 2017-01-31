@@ -36,6 +36,8 @@ When you open the *Player Management* Screen from the *Manage* menu, you'll see 
 
 * You can also remove the queries using the *Delete* button and click *Submit* to retrieve every single player record in your player collection.
 
+<q>**Lowercase for User Name Search!** If you use a player search query against player usernames, you must use a lowercase alpha-numeric string in the query. For example, if you want to return the players registered as "PLAYer1", "PLAYer2", and "PLAYer3" in your query results, you must use the query: "User Name begins with play". If you use "User Name begins with PLAY", they will not be returned. This is because usernames are always saved into the Mongo DB in lowercase.</q>
+
 For this example, we'll query players with *Gold Coin* Virtual Goods greater than 0 in quantity and who have earned the *Cloud Achievement*:
 
 ![](img/PlayerProfileScreen/15.png)

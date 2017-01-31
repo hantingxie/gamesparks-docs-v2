@@ -33,7 +33,7 @@ The Integrations page allows you to integrate with 3rd-party external providers 
 
 *Integrations>Google* allows you to set up [Google Plus Authentication](/API Documentation/Request API/Authentication/GooglePlusConnectRequest.md) for your game, an in-depth tutorial can be found [here](/Tutorials/Social Authentication and Player Profile/Google+ Authentication.md).
 
-![](img/Integrations/15.png)
+![](img/Integrations/24.png)
 
 ### Apple Integration
 

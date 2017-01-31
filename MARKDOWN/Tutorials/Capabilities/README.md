@@ -33,10 +33,12 @@ The *Add Group* page appears.
 
 *3.* Enter a *Name* and *Description* for the new Group and enable *Read* and *Write* permissions for each capability in the portal, as required:
 
-![](img/13.png)
+![](img/24.png)
 
 You can expand headings in the *Permission* list to achieve precisely the granularity of *Read/Write* access you want for *Collaborators* that are assigned to this new *Group*:
 * Here, for example, although users will have *Read* access for all functions under *Configurator*, they are restricted to only five areas where they will have *Write* access: *Events*, *Leaderboards*, *Running Totals*, *Cloud Code*, and *Teams*.
+
+<q>**Default Permissions?** Note that you can also set the default permissions for a Group for any new features that are added to the portal.</q>
 
 *4.* Click to *Save* the new *Group*. It is added in the list on the *Groups* tab:
 
