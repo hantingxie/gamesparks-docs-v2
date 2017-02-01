@@ -20,7 +20,7 @@ Here's some key points to note for the new UI design:
   * **Consistency of User Experience** - Standardized visual cues and affordances have been adopted, like red buttons for destructive actions, green for create actions, all contributing to a more intuitive interactive experience.
 * **Alternative Themes** - You can quickly switch between a *Dark* or *Light* UI theme to suit your working preference.
 * **Segmentation Enhanced** - This key feature now presents much more strongly and clearly within configuration objects across the UI, making it much more accessible and easier to understand.
-* **Game Management** - The Game Overview page has been pulled out from the Configurator workspace and re-worked to give improved workflows for all your game management tasks.
+* **Game Management** - The Game Overview page has been re-worked to give improved workflows for all your game management tasks.
 * **Experiments** - This extremely powerful feature has been promoted to its own top-level area and the main workflow unpacked into an intuitive configuration wizard.
 * **NoSQL Explorer** - You can now open multiple Mongo DB Collections tabs and query and work with several Collections at the same time.
 
@@ -47,6 +47,10 @@ Here's a list of the main functional changes from the original portal:
 * Group Permissions for Games between the old portal and Portal2 will not be synchronized:
   * For Groups in existing games: up to the point where a user opens a Group in Portal2 and edits and saves the permissions, they will agree. After the Save, the permissions will not agree — the save will not happen in the old portal.
   * To ensure permissions remain the same on both the old portal and Portal2, you must change and save in both (either way).
+
+### Integrations
+
+* Firebase Cloud Messaging (FCM) is now supported in the portal, allowing push notifications to be sent to Android and iOS devices. With Firebase, players will receive these notifications even if a game is backgrounded on their device.
 
 ### Test Harness
 * You can now select which Credential you want to use when working in the [Test Harness](/Documentation/Test Harness/README.md).

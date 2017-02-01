@@ -21,29 +21,31 @@ From here you can create and manage your Experiments:
 
 To create and configure an Upcoming Experiment, you must work through a series of four steps:
 
-*1.* On the *Upcoming Experiments* panel, click to *Add* a new Experiment. You're taken to step 1 - *Experiment Period*:
+*1.* On the *Upcoming Experiments* panel, click to *Add* a new Experiment. You're taken to *Step 1 - Experiment Period*:
 
 ![](img/Experiments/8.png)
 
 Use this first step to enter:
-* *Experiment Name* - The Name field is a mandatory field used to describe the Experiment but does not uniquely identify it.
+* *Experiment Name* - A Name for your Experiment, whish is a mandatory field used to describe the Experiment but does not uniquely identify it.
 * *Start and End dates* - A start date and time and an end date and time to define the period of the Experiment.
 
-*2.* Click *Next*. You're taken to step 2 - *Variants*:
+*2.* Click *Next*. You're taken to *Step 2 - Variants*:
 
 ![](img/Experiments/9.png)
 
 Use this second step to select what you want to vary for the purpose of the Experiment:
 * In this example, we've added *GOLD_COIN* and *SILVER_COIN* Virtual Goods as experimental Variants.
-* For both, we've selected the *Currency 1* and *Currency 2* fields.
+* For both Variants, we've selected the *Currency 1* and *Currency 2* fields.
 
-*3.* Click *Next*. You're taken to step 3 - *Player Pool*:
+This means that any players who become participants in the Experiment will be charged Currency 1 & 2 amounts that vary from the regular costs when they purchase either a gold or silver coin Virtual Good.
+
+*3.* Click *Next*. You're taken to *Step 3 - Player Pool and Variant Configuration*:
 
 ![](img/Experiments/10.png)
 
 You can use this step to configure several aspects of the Experiment:
-* *Player Pool* - Build a filter rule that will determine which players will form the *overall player pool* from which the set of players subjected to the Experiment are chosen:
-  * In this example, players from Australia or the United Kingdom will form the overall player pool for the Experiment.
+* *Player Pool* - Build a filter rule that will determine which players will form the *overall player pool* from which the players who will become participants in the Experiment are chosen:
+  * In this example, only players from Australia or the United Kingdom will form the overall player pool for the Experiment.
 
 <q>**Player Inclusion!** Only players registered at the time the Experiment starts running are included in the overall player pool - any players that register after the Experiment starts are not included. </q>
 
@@ -57,7 +59,7 @@ You can use this step to configure several aspects of the Experiment:
     * If you wanted to conduct A/B testing, you can add two percentile ranges - 0 to 50% and 50 to 100%.
   * Second, configure specific Variant values for each of the percentile ranges you've added:
       * Give each Variant a name, which will be visible only to those players who have been placed in the percentile range to which the experimental Variant is applied.
-      * Set the alternative values for the fields we selected when we added the each of the Variants to the Experiment in step 2.
+      * Set the alternative values for the fields we selected when we added each of the Variants to the Experiment in Step 2.
       * In this example:
         * For the *50-60* percentile range of the player pool we've *decreased* both the Gold and Silver coin values for Currencies 1 and 2 (as seen above).
         * For the *5-15* percentile range of the player pool, we've *increased* both the Gold and Silver coin values for Currencies 1 and 2:
@@ -66,16 +68,16 @@ You can use this step to configure several aspects of the Experiment:
 
 <q>**Browser Zoom!** Please maintain your browser at normal zoom level when you are adding your percentile ranges.</q>
 
-These combined settings are designed to ensure that when your Experiment runs, the set of players to which the Experiment is applied is a randomly chosen set. Any behavioral changes observed in the players subjected to the Experiment with respect to the Variants - here Virtual Goods whose currency values have been increased or decreased - are therefore less likely to be biased and unrepresentative. This means, in turn, that any decisions you make for *actual changes* you go on to make to your game configuration and which are based on experimental outcomes are much more likely to be predictive of the general behavior of all game players in reaction to these actual changes.
+These combined settings are designed to ensure that when your Experiment runs, the set of players who become participants in the Experiment is a randomly chosen set. This random selection of participants means that any behavioral changes observed in the players subjected to the Experiment with respect to the Variants - here Virtual Goods whose currency values have been increased or decreased - are therefore less likely to be biased and unrepresentative. This means, in turn, that any decisions you make for *actual changes* you go on to make to your game configuration and which are based on the observed results of the Experiment are much more likely to be predictive of the general behavior of all game players in reaction to these actual changes.
 
 <q>**Note:** We make a best effort to calculate the percentage ranges, however for smaller sample sets of players you might not be returned the exact number of players as anticipated.</q>
 
-*4.* Click *Next*. You are taken to step 4 - *Measurements*:
+*4.* Click *Next*. You are taken to *Step 4 - Measurements*:
 
 ![](img/Experiments/11.png)
 
-Our measurements could be based on a request that we expect the players subjected to the Experiment to use. If they have used it during the Experiment, we can see the percentage of users that were in the Experiment and how many from each variant of the Experiment submitted the request:
-* In this example, we want to measure the number of *BuyVirtualGoodsRequest* calls made by the players chosen for the Experiment during the experimental period.
+Your measurements for the Experiment could be based on a request that you expect the participant players to use. If they've used it during the Experiment, we can see the percentage of players that were in the Experiment and how many from each Variant of the Experiment submitted the request:
+* In this example, we want to measure the number of *BuyVirtualGoodsRequest* calls made by the players chosen as participants for the Experiment during the experimental period.
 
 *5.* Click to *Save and Close* the Experiment. The new Experiment is added to the *Upcoming Experiments* panel.
 
@@ -84,7 +86,7 @@ Our measurements could be based on a request that we expect the players subjecte
 This shows the *Start* and *End* date you have configured for the Experiment and under *Actions* there are several options:
 * ![](/img/icons/starticon.png) - Manually start the Experiment. The Experiment will be moved to *Running Experiments*.
 * ![](/img/icons/editicon.png) - Edit the Experiment:
-  * You can step through each of the 4 configuration steps again and save any changes at each step.
+  * You can step through each of the 4 configuration steps again and save any changes you make to the Experiment set up.
   * You cannot edit an Experiment after it has started.
 * ![](/img/icons/copyicon.png) - Copy the Experiment.
 * ![](/img/icons/publishicon.png) - Publish the Experiment.
@@ -106,7 +108,7 @@ Under *Actions* there are several options:
 
 ## Completed Experiments
 
-When a Running Experiment has gone past its end date or you have stopped it, it moves to *Completed Experiments*:
+When a Running Experiment has gone past its end date or you have stopped it manually, it moves to *Completed Experiments*:
 
 ![](img/Experiments/14.png)
 
@@ -129,9 +131,9 @@ The *Results* page opens:
 
 ![](img/Experiments/16.png)
 
-* The top of this page shows the *Player Pool* and *Variant Configuration* for the Experiment and the *Measurements* sought for players subjected to the Experiment.
+* As a useful reminder, the top of this page shows the *Player Pool* and *Variant Configuration* for the Experiment and the *Measurements* taken for participant players.
 * You can use the *Preview/Live* switch at the top of the page to view the results for the Experiment ran against Preview or Live data:
-  * *Preview/Live* will be enabled only if you have published a game configuration Snapshot to Live.
+  * **Important!** - *Preview/Live* will be enabled only if you have published a game configuration Snapshot to Live.
 
 *2.* Scroll down the page to review and analyze the results, which are shown in two different panels:
 

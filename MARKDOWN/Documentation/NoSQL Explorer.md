@@ -8,7 +8,7 @@ src: /Documentation/NoSQL Explorer.md
 
 ## Introduction
 
-From the *NoSQL* tab you have the ability to interact with the data stored on the platform.
+From *NoSQL* you have the ability to interact with the data stored on the platform:
 
 ![](img/4.png)
 
@@ -62,13 +62,25 @@ If you want to work with more than one Collection, each selection you make adds 
 
 ![](img/22.png)
 
+### Collapsing the Collections panel
+
+When you've selected a Collection and submitted a query, you can quickly collapse the *Collections* panel:
+
+![](img/28.png)
+
+This gives you more space to work in the Output panel and inspect the results.
+
+To reinstate the Collections panel, click the collections icon ![](/img/icons/collections.png):
+
+![](img/29.png)
+
 ## Working with the Output Panel
 
 The results for the operations you perform against a database Collection are returned into the *Output* panel - you can click *Find* or *Explain* to get results. For example, here is the result for *Explain* for the *Find* tab:
 
 ![](img/17.png)
 
-When the panel loads, the result hierarchy is collapsed. You can drill-down to expand the levels and read-off details:
+When the panel loads, the results hierarchy is collapsed. You can drill-down to expand the levels and read-off details:
 
 ![](img/18.png)
 

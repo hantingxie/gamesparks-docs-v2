@@ -125,7 +125,7 @@ You can use the *Preview/Live* switch at the top of the page to select which sta
 You can export the analytics data collection on which any of the analytics graphs are based as a JSON file:
 * Click the *Export as JSON* button at the top-right of the graph canvas
 
- ![](img/Analytics/25.png)
+![](img/Analytics/25.png)
 
 A *Save/Open file* dialog appears and you can save or view the JSON text file.
 
@@ -134,7 +134,17 @@ A *Save/Open file* dialog appears and you can save or view the JSON text file.
 Analytics graphs that track more than one metric can be difficult to read:
 * You can click to *Toggle Stacked Charts* and view these multi-measure graphs in a more accessible stacked format:
 
-  ![](img/Analytics/26.png)
+![](img/Analytics/26.png)
+
+### Toggling Chart Legends
+
+If a chart contains many data sets, the legend below the chart can become cluttered and might prevent the chart rendering correctly. For example, if your game has players located in many countries worldwide, the legend on the *Players by Country* chart on Overview, might become cluttered:
+* If a chart has more that 20 data sets, the legend below the chart is automatically toggled off.
+* You can click to manually toggle a chart legend off and on:
+
+![](img/Analytics/28.png)
+
+* Here we've toggled off the legend on the Count chart on the Custom tab.
 
 ## Customizing Analytics Reporting
 
