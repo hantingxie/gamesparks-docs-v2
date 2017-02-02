@@ -20,7 +20,7 @@ You can use the following options (highlighted above):
   * ![](/img/icons/editicon.png) - Edit Event.
   * ![](/img/icons/deleteicon.png) - Delete Event.
 
-<q>**Events with Cloud Code!** You cannot delete an Event that has Cloud Code script attached to it - you'll get and error message if you attempt to delete the Event.</q>
+<q>**Events with Cloud Code!** You cannot delete an Event that has Cloud Code script attached to it. To fully delete an Event's Cloud Code, you must open the Cloud Editor for the Event and click *Delete*. </q>
 
 ## Creating a New Event Configuration
 

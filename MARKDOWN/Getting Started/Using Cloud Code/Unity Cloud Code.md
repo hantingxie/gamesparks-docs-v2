@@ -68,7 +68,7 @@ Now you've sent the *LogEventRequest* from Unity, you'll now be able to save the
 
 *1.* Navigate to *Configurator > Cloud Code* and under *Scripts* click to open *Events* and then select the *Save Player Details* Event:
 
-*2.* In the *Cloud Code* editor on the *Save Player Details* tab, you'll be able to access the data sent via Unity:
+*2.* In the *Cloud Code* editor on the *SAVE_PLAYER* tab, you'll be able to access the data sent via Unity:
 
 ![](img/UT/20.png)
 

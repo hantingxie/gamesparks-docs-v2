@@ -15,7 +15,7 @@ You can manage your Cloud Code revisions between Snapshots. This allows you to r
 
 This opens the Cloud Code History tool.
 
-*2.* The Cloud Code History tool is designed to allow you to quickly compare the Cloud Code contained in the two Snapshots - one you've selected from the *Base* drop-down and one you've selected from the *Compare With* drop-down - and, if there are Cloud Code differences allow you to quickly review the differences:
+*2.* The Cloud Code History tool is designed to allow you to quickly compare the Cloud Code contained in two Snapshots - one you've selected from the *Base* drop-down and one you've selected from the *Compare With* drop-down - and, if there are Cloud Code differences allow you to quickly review the differences:
 
 ![](img/CloudHistory/15.png)
 

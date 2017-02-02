@@ -11,6 +11,8 @@ In this tutorial, we'll create a custom collection and add an index to it via a 
 
 ## Creating an Index
 
+### Creating a Runtime Collection
+
 As a first step, let's create a runtime collection using the [NoSQL Explorer](/Documentation/NoSQL Explorer.md):
 
 *1.* In the GameSparks developer portal, navigate to the *NoSQL* page.
@@ -45,6 +47,9 @@ For this example, let's assume that this collection contains documents that look
     }
 ```
 </br>
+
+### Using Cloud Code to Create an Index on the Collection
+
 The next step is to write some Cloud Code that creates an index on this Collection. A sensible place to attach this type of script is the *Game Published* Event:
 
 *1.* Navigate to the *Configurator >Cloud Code*.

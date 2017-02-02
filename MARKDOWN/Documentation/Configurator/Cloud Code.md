@@ -7,11 +7,11 @@ src: /Documentation/Configurator/Cloud Code.md
 
 ## Introduction
 
-The *Configurator > Cloud Code* page lists all the potential interception points that Cloud Code can be bound to, and has a JavaScript editor where you can write your interception code.
+The *Configurator > Cloud Code* page lists all the potential interception points that Cloud Code can be bound to in the *Scripts* panel and has a JavaScript editor where you can write your interception code.
 
 ### Scripts
 
-The *Scripts* section is split into ten sub-categories, which are further explained in the [sections](#Script Categories) below.
+The *Scripts* section is split into separate categories, which are [further explained](#Scripts Categories) below. You can expand a category to select an individual item to which you want to attach your Cloud Code script, such as an Event or Request.
 
 ![](img/CloudCode/17.png)
 
@@ -32,6 +32,12 @@ To access the Cloud Code JavaScript editor, select the name of the script from o
 
 <q>**Keyboard Shortcuts List!** For a list of keyboard shortcuts that you can use in the Cloud Code Editor see [below](#Cloud Code Editor Keyboard Shortcuts)</q>
 
+### Refreshing the Scripts Panel
+
+For some Scripts categories, you can use the plus ![](/img/fa/plus-circle.png) icon to quickly add a new item, such as adding a new Event. This saves you having to navigate away from the Cloud Code page and then come back to the page to add your Cloud Code script.
+
+However, you might be working on your game in several tabs at once or you might be developing your game along with several Collaborators. If you've added a new Event using the plus icon in one tab and switch to another, you must click the refresh ![](/img/icons/refreshicon.png) icon button to see the added Event in the Script list. Similarly, if one of your Collaborators has added an Event, you must refresh the Scripts panel to see that Event.
+
 ## Scripts Categories
 
 Click to expand any of the Scripts categories and select the interception point to which you want to attach your Cloud Code.
@@ -43,6 +49,7 @@ Click to expand any of the Scripts categories and select the interception point 
 The *Events* list contains an entry for each Event you have created within the GameSparks platform:
 * When a [LogEventRequest](/API Documentation/Request API/Player/LogEventRequest.md) is received, the corresponding script is executed allowing you to run custom code on the platform. For more details, see [Events](/Documentation/Configurator/Events.md).
 * You can access the current player making the request using *Spark.getPlayer()*.
+* To create a new Event, click the plus ![](/img/fa/plus-circle.png) icon. Then, on the *Add Event* dialog, enter the details of the new Event and click to *Save and Close*.
 
 ### Challenge Events
 
@@ -58,6 +65,7 @@ The *Challenge Events* list contains an entry for each Event you have created wi
 ```
 
 * You can also access the current player making the request using *Spark.getPlayer()*.
+* To create a new Event, click the plus ![](/img/fa/plus-circle.png) icon. Then, on the *Add Event* dialog, enter the details of the new Event and click to *Save and Close*.
 
 ### Requests
 
