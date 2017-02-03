@@ -73,7 +73,7 @@ In the following steps, some type of versioning control application will be usef
 
 *8.* In the Portal, go to the *Cloud Code* section and select *GitHub Import*.
 
-![](img/GitSynch/23.png)
+![](img/GitSynch/14.png)
 
 A page opens where you can connect the gamesparks platform to your GitHub account:
 
