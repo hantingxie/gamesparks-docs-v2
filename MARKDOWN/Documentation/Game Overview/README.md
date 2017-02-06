@@ -104,9 +104,10 @@ To edit your game's details, click ![](img/GameOverview/19.png). The page adjust
 
 * On the this tab, you can edit the following:
 
-  * *Name* \- The name of your game, used to identify the game in the portal if you have several games
-  * *Description* \- A description of the game
+  * *Name* \- The name of your game, used to identify the game in the portal if you have several games.
+  * *Description* \- A description of the game.
   * *Signup Bonuses* \- The amount of each of the currencies to award a new player when a new account is created:
+    * *Hiding/Showing* - If you clear the checkbox for a currency, it's hidden in the portal. Note that this capability doesn't disable the currency in your game but simply hides it across the portal interface - for example, you will not see the currency when you Create/Edit a Virtual Good.
     * *Segment Configuration* - On the *Currencies*, click *Segment* at top-right to configure the segmentation for your game's currencies.
 
 ![](img/GameOverview/15.png)

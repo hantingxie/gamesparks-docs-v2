@@ -26,7 +26,7 @@ To create and configure an Upcoming Experiment, you must work through a series o
 ![](img/Experiments/8.png)
 
 Use this first step to enter:
-* *Experiment Name* - A Name for your Experiment, whish is a mandatory field used to describe the Experiment but does not uniquely identify it.
+* *Experiment Name* - A Name for your Experiment, which is a mandatory field used to describe the Experiment but does not uniquely identify it.
 * *Start and End dates* - A start date and time and an end date and time to define the period of the Experiment.
 
 *2.* Click *Next*. You're taken to *Step 2 - Variants*:
@@ -125,32 +125,50 @@ Once your Experiment has completed, you can check the results of your Experiment
 
 ![](img/Experiments/15.png)
 
-* Here, we're going to open and review the results of the *Coin Experiment* we set up earlier.
+* Here, we're going to open and review the results of a *Coin Experiment* we set up earlier, have copied, and re-ran at a later date.
 
 The *Results* page opens:
 
 ![](img/Experiments/16.png)
 
 * As a useful reminder, the top of this page shows the *Player Pool* and *Variant Configuration* for the Experiment and the *Measurements* taken for participant players.
-* You can use the *Preview/Live* switch at the top of the page to view the results for the Experiment ran against Preview or Live data:
-  * **Important!** - *Preview/Live* will be enabled only if you have published a game configuration Snapshot to Live.
+* You can use the *Preview/Live* switch at the top of the page to view the results for the Experiment ran against Preview or Live data.
+<q>**Important!** - *Preview/Live* will be enabled only if you have published a game configuration Snapshot to Live.</q>
 
 *2.* Scroll down the page to review and analyze the results, which are shown in two different panels:
 
-* *Population Impact*. This is designed to show the impact on the entire experimental player population - it shows the activity logged over the experimental period for the configured measure by percentage of all the players who participated in the Experiment, relative to each of the Variants you set up:
+* *Population Impact*. This is designed to show the impact on the entire experimental player population - it shows the activity logged over the experimental period for the configured Measure by percentage of all the players who participated in the Experiment, relative to each of the Variants you set up:
 
 ![](img/Experiments/17.png)
 
 * For the current example:
-  * We can see from the *line graph* data that 100% of those players randomly assigned to the *Coin Variants Low* Variant submitted a *BuyVirtualGoodsRequest* to purchase a gold or silver coin Virtual Good at the reduced cost; whereas only 33% of those players randomly assigned to the *Coin Variants High* Variant purchased either of the Virtual Goods at the increased cost.
-  * The pie-chart then presents these same results - of all purchases made by players assigned to either of the two Variants, 75% of the purchases were down to players from the *Coin Variants Low* Variants and 25% from the *Coin Variants High*.
+  * We can see from the *line graph* data that 100% of those players randomly assigned to the *Coin Variants Low* Variant submitted a *BuyVirtualGoodsRequest* to purchase a gold or silver coin at the reduced cost; whereas only 66% of those players randomly assigned to the *Coin Variants High* Variant purchased either a gold or silver coin at the increased cost.
 
 * *Player Count*. This is designed to show results by counts of players - it shows the actual numbers of players whose activity was logged during the experimental period for the configured Measure, again relative to each experimental Variant that you set up:
 
 ![](img/Experiments/18.png)
 
 * For the current example:
-  * We can see from the *line graph* data that 2 players randomly assigned to the *Coin Variants Low* Variant purchased a Virtual Good at the reduced cost; whereas only 1 player assigned to the *Coin Variants High* Variant purchased a Virtual Good at the increased cost.
-  * The pie-chart presents these results as a percentage distribution over the sum of all players assigned to either of the two Variants who made a Virtual Good purchase.
+  * We can see from the *line graph* data that 3 players randomly assigned to the *Coin Variants Low* Variant purchased a gold or silver coin at the reduced cost; whereas only 2 players assigned to the *Coin Variants High* Variant purchased a gold or silver coin at the increased cost.
 
 <q>**Results Delay!** If you stop an Experiment and try to view results straightaway, you will not get the finalized results. This is because there is a slight delay of approximately ten minutes before the data for the activity being measured in the Experiment becomes available to build the results charts.</q>
+
+## Publishing Experiments
+
+Experiments can always be run in your game's Preview stage. If you want to run your Experiment in your game's Live stage, you must publish your Experiment:
+* You must first publish a game configuration Snapshot to Live.
+* When you publish an Experiment configuration, it is kept separate and distinct from the published game configuration and this separation is very useful:
+  * You can work up the Experiments after you've published your game to Live and launched it.
+  * Using Experiments is not tied to your game publication lifecycle - you can continue to refine your Experiments independently of the published state of the overall game configuration.
+
+*1.* When you have an Experiment ready for the Live stage, in the *Upcoming Experiments* panel, click the publish ![](/img/icons/publishicon.png) icon:
+
+![](img/Experiments/20.png)
+
+A confirmation dialog appears:
+
+![](img/Experiments/22.png)
+
+*2.* Click *Ok*. The Experiment is published to the Live game stage and shows in green on the *Upcoming Experiments* panel:
+
+![](img/Experiments/21.png)
