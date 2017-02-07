@@ -1,9 +1,19 @@
 ---
 nav_sort: 2
-src: /Documentation/Manage/Importing Screens from Library.md
+src: /Documentation/Manage/Importing and Exporting Admin Screens.md
 ---
 
-# Importing Screens from Library
+# Importing/Exporting Admin Screens
+
+From *Manage>Admin Screens*, you can perform several useful import/export tasks to ensure you have just the Admin Screens and assets you need for your managing your game:
+* [Import pre-built management screens](#Importing Screens from Library) from the Screens Library.
+* [Import JSON format files](#Importing JSON Files) for additional Screen, Snippets, and Charts(Queries).
+* [Export](#Exporting Screens) any of your Screens, Snippets, or Charts(Queries).
+
+
+![](img/ImportScreens/14.png)
+
+## Importing Screens from Library
 
 The Gamesparks platform offers several pre-built management Screens, which you can import from a Screen library into your game. The Screens are designed to help you perform your core game management tasks:
 * Player Management
@@ -19,15 +29,11 @@ This topic shows you how to download any of the pre-configured Screens and intro
 
 <q>**Player Profile Screen!** For a detailed account of importing and building a Player Profile Screen, check out this [tutorial](/Tutorials/Analytics, Segmentation and Game Management/Creating a Player Profile Screen.md).</q>
 
-## Importing a Pre-Built Screen
+### Importing a Pre-Built Screen
 
-*1.* Go to *Manage>Admin Screens*. The *Manage* page opens.
+*1.* Go to *Manage>Admin Screens*. The *Manage* page opens with the *Screens* tab selected.
 
-*2.* Click *Import from Library*:
-
-![](img/ImportScreens/1.png)
-
-The *Import from Library* page opens.
+*2.* Click *Import/Export*. The *Import/Export* page opens with the *Import from Library* tab selected.
 
 *3.* Click the *Import* drop-down and select the Screens you want to import:
 
@@ -55,7 +61,7 @@ Here, we've selected to import the *Player Management* and *Leaderboard Manageme
 
 * You'll see the a new *total_requests* Chart also been imported for the *Player Management* Screen.
 
-## The Screens
+### The Screens
 
 When you have imported a Screen from the library, you'll see it available for selection from the *Manage* menu:
 
@@ -63,7 +69,7 @@ When you have imported a Screen from the library, you'll see it available for se
 
 Imported library Screens and their supportive Snippets and Charts are designed for common game management and monitoring tasks and this section introduces each of the Screens. You can also modify and extend imported Screens, Snippets, and Charts to suit your own specific requirements - see [Working with Dynamic Forms](/Documentation/Manage/Working with Dynamic Forms.md).
 
-### Player Management
+#### Player Management
 
 The *Player Management* Screen lets you build a search query for players and then bring up a Screen to show details of a player's profile for reviewing and editing.
 
@@ -79,7 +85,7 @@ The players that satisfy your search query criteria are returned:
 
 <q>**More on this Screen?** For a fuller account of working with the *Player Management* Screen, see the [Player Profile Screen](/Tutorials/Analytics, Segmentation and Game Management/Creating a Player Profile Screen.md) tutorial.</q>
 
-### Leaderboard Management
+#### Leaderboard Management
 
 The *Leaderboard Management* Screen allows you to view the Leaderboards in your game and review the ranking and entries on each Leaderboard.
 
@@ -101,7 +107,7 @@ You can:
 * Click to *Delete All Entries*.
 
 
-### Script Log Viewer
+#### Script Log Viewer
 
 You can use the *Script Log Viewer* Screen to search for and review the logs for your game.
 
@@ -118,3 +124,36 @@ In this example, we've built a query that searches for log entries at the *Debug
 *2.* Click *Submit*. The log entries for your game that satisfy the search query criteria are returned:
 
 ![](img/ImportScreens/12.png)
+
+## Importing JSON Files
+
+You can import Screen, Snippet, or Chart(Query) JSON format files:
+* When you perform the import, the file is recognized as one of these types and placed in the appropriate location.
+
+*1.* Go to *Manage>Admin Screens*. The *Manage* page opens with the *Screens* tab selected.
+
+*2.* Click *Import/Export*. The *Import/Export* page opens with the *Import from Library* tab selected.
+
+*3.* Select the *Import from file* tab.
+
+*4.* Click the *Browse* button:
+
+![](img/ImportScreens/15.png)
+
+A *File Upload* browse dialog appears.
+
+*5.* Navigate to the JSON file you want to import and click *Open*.
+
+*6.* Click *Import*:
+
+![](img/ImportScreens/16.png)
+
+* In this example, we've selected a Snippet file to import.
+
+When the Import completes, you'll find the JSON file in the relevant part of the Manage Screens section.
+
+## Exporting Screens
+
+, Snippets, or Charts
+
+Etc.

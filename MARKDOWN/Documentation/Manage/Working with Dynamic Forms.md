@@ -38,7 +38,7 @@ Whenever you want to create a Dynamic Form, you should start with a Screen:
 
 <q>**Note:** The *Screen Snapshots* you create here are separate and distinct from the *Game Snapshots* you create from the *Overview* page.</q>
 
-<q>**Import from Library?** Several pre-build Screens and their constituent Snippets are available for import from the platform usng the *Import from Library* button on the Screen Builder. For details, see [Importing Screens from Library](/Documentation/Manage/Importing Screens from Library.md).</q>
+<q>**Import from Library?** Several pre-build Screens and their constituent Snippets are available for import from the platform usng the *Import from Library* button on the Screen Builder. For details, see [Importing and Exporting Admin Screens](/Documentation/Manage/Importing and Exporting Admin Screens.md).</q>
 
 *2.* Select the *Screens* tab and click to *Add* a new Screen. The *New Screen* page opens:
 

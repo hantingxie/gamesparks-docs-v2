@@ -9,5 +9,5 @@ src: /Documentation/Manage/README.md
 
 Use Dynamic Forms to build different screens for managing your game, such as Admin, Experiments, Leaderboards, and Player screens:
 * [Working with Dynamic Forms](/Documentation/Manage/Working with Dynamic Forms.md)
-* [Importing Screens from Library](/Documentation/Manage/Importing Screens from Library.md)
+* [Importing/Exporting Admin Screens](/Documentation/Manage/Importing and Exporting Admin Screens.md)
 * [Creating and Managing Screen Snapshots](/Documentation/Manage/Creating and Managing Screen Snapshots.md)

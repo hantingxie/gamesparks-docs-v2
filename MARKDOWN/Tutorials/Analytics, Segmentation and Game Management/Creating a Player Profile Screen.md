@@ -15,7 +15,7 @@ These Screens are easy to use making them very suited to non-technical members o
 
 This tutorial offers a brief introduction to using these Screens and highlights the main features you'll find on the Player Management screen.
 
-<q>**Importing Pre-Built Screens!** Before commencing this tutorial, you must import the *Player Management* Screen from the library. For details on how to import any of the pre-built Screens, see [Importing Screens from Library](/Documentation/Manage/Importing Screens from Library.md).
+<q>**Importing Pre-Built Screens!** Before commencing this tutorial, you must import the *Player Management* Screen from the library. For details on how to import any of the pre-built Screens, see [Importing/Exporting Admin Screens](/Documentation/Manage/Importing and Exporting Admin Screens.md).
 
 ## Searching for Players
 
