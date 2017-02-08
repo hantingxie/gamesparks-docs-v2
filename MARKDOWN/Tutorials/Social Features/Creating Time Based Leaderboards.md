@@ -1,5 +1,5 @@
 ---
-nav_sort: 6
+nav_sort: 7
 src: /Tutorials/Social Features/Creating Time Based Leaderboards.md
 ---
 

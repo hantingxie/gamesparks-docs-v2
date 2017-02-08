@@ -9,6 +9,7 @@ src: /Tutorials/Social Features/README.md
 
 Use these tutorials to learn how to set up and manage the social features you want in your games, such as notifications, messaging, and Leaderboards:
 * [Configuring Android Push Notifications](/Tutorials/Social Features/Configuring Android Push Notifications.md)
+* [Configuring Firebase Cloud Messaging](/Tutorials/Social Features/Configuring Firebase Cloud Messaging.md)
 * [Configuring iOS Push Notifications](/Tutorials/Social Features/Configuring iOS Push Notifications.md)
 * [Configuring Windows Phone Push Notifications](/Tutorials/Social Features/Configuring Windows Phone Push Notifications.md)
 * [Creating a Leaderboard](/Tutorials/Social Features/Creating a Leaderboard.md)

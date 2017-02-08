@@ -1,5 +1,5 @@
 ---
-nav_sort: 3
+nav_sort: 4
 src: /Tutorials/Social Features/Configuring Windows Phone Push Notifications.md
 ---
 

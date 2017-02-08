@@ -3,13 +3,12 @@ nav_sort: 2
 src: /Documentation/Manage/Importing and Exporting Admin Screens.md
 ---
 
-# Importing/Exporting Admin Screens
+# Importing and Exporting Admin Screens
 
 From *Manage>Admin Screens*, you can perform several useful import/export tasks to ensure you have just the Admin Screens and assets you need for your managing your game:
 * [Import pre-built management screens](#Importing Screens from Library) from the Screens Library.
 * [Import JSON format files](#Importing JSON Files) for additional Screen, Snippets, and Charts(Queries).
-* [Export](#Exporting Screens) any of your Screens, Snippets, or Charts(Queries).
-
+* [Export](#Exporting Screens Snippets and Charts) any of your Screens, Snippets, or Charts(Queries):
 
 ![](img/ImportScreens/14.png)
 
@@ -106,7 +105,6 @@ You can:
 * Delete individual entries.
 * Click to *Delete All Entries*.
 
-
 #### Script Log Viewer
 
 You can use the *Script Log Viewer* Screen to search for and review the logs for your game.
@@ -127,8 +125,7 @@ In this example, we've built a query that searches for log entries at the *Debug
 
 ## Importing JSON Files
 
-You can import Screen, Snippet, or Chart(Query) JSON format files:
-* When you perform the import, the file is recognized as one of these types and placed in the appropriate location.
+You can import Screen, Snippet, or Chart(Query) JSON format files. When you import a file, the file's content is unpacked and each part is saved as a Screen, Snippet, or Chart.
 
 *1.* Go to *Manage>Admin Screens*. The *Manage* page opens with the *Screens* tab selected.
 
@@ -148,12 +145,35 @@ A *File Upload* browse dialog appears.
 
 ![](img/ImportScreens/16.png)
 
-* In this example, we've selected a Snippet file to import.
+* In this example, we've selected to import a JSON file for a *Sales Events* Screen and its constituent Snippets. The import process checks the content of the imported file and on the basis of the JSON file's contents, creates the appropriate Screens, Snippets, or Charts.
 
-When the Import completes, you'll find the JSON file in the relevant part of the Manage Screens section.
+*7.* When the Import process completes, you'll find the JSON file's contents in the relevant parts of the *Admin Screens* section. In this example, we find that the imported Sales Events file resulted in:
+* A *Sales Events* Screen:
 
-## Exporting Screens
+![](img/ImportScreens/17.png)
 
-, Snippets, or Charts
+* Several *sales* Snippets:
 
-Etc.
+![](img/ImportScreens/18.png)
+
+* No Charts were found in the imported JSON file.
+
+## Exporting Screens Snippets and Charts
+
+You can export your Screens, Snippets, or Charts and save the exported JSON files in a preferred location.
+
+*1.* Go to *Manage>Admin Screens*. The *Manage* page opens with the *Screens* tab selected.
+
+*2.* Click *Import/Export*. The *Import/Export* page opens with the *Import from Library* tab selected.
+
+*3.* Select the *Export* tab:
+
+![](img/ImportScreens/19.png)
+
+*4.* Use the drop-downs to select which Screens, Snippets, or Charts you want to export from your game:
+
+![](img/ImportScreens/20.png)
+
+In this example, we've selected to export the *Sales Events* Screen but no Snippets or Charts.
+
+*5.* Click *Export*. A dialog opens, which you can use to save the exported JSON file to a preferred location.
