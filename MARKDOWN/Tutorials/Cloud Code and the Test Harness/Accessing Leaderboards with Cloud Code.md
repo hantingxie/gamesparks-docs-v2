@@ -1,5 +1,5 @@
 ---
-nav_sort: 3
+nav_sort: 4
 src: /Tutorials/Cloud Code and the Test Harness/Accessing Leaderboards with Cloud Code.md
 ---
 

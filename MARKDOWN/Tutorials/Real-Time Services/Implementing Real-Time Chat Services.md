@@ -74,6 +74,7 @@ So:
 * Once you've linked these variables to the objects in the editor, we can start coding the toggle button:
 
 ```
+// Class referenced by this code: ChatManager.cs
 
 public GameObject chatWindow;
 public Button chatToogleBttn;
@@ -87,6 +88,8 @@ private bool isChatWindowOpen;
 This method is pretty simple. It simply toggles the *isChatWindowOpen* bool, checks if the bool is true, and then enables the window or disables it. This method will also change the text-element of the button, so that the button has a different message for when the chat window is shown and for when the chat window is hidden.
 
 ```
+// Class referenced by this code: ChatManager.cs
+
 // Use this for initialization
 void Start () {
     chatWindow.SetActive (false); // we don't want the chat window to show at the start of the level, so we disable it here
@@ -108,7 +111,6 @@ private void ToogleChatWindow(){
 }
 
 ```
-**<>** Class referenced by this code: *ChatManager.cs* **<>**
 
 Now that we have the toggle-button hooked up, we'll need a few more variables so that we can continue onto the next section and start sending and receiving messages.
 
@@ -127,6 +129,7 @@ There is one last variable we need to create before we can start and that is the
 For this, we use the *Queue* class, because it allows new messages to be added to a collection in the order we would expect from the chat-log (that is, the last-message at the bottom) without extra programming.
 
 ```
+// Class referenced by this code: ChatManager.cs
 
 public InputField messageInput;
 public Dropdown recipientOption;
@@ -137,7 +140,6 @@ public int elementsInChatLog = 7;
 private Queue<string> chatLog = new Queue<string>();
 
 ```
-**<>** Class referenced by this code: *ChatManager.cs* **<>**
 
 The *ChatManager.cs* script is going to be pretty small, so this is all we need. Once you have linked these public variables to the objects in your editor, we are good to go.
 
@@ -150,6 +152,7 @@ The next step before we start sending messages is to set up the rest of the drop
 We’ll put this code in the Start() method:
 
 ```
+// Class referenced by this code: ChatManager.cs
 
 // Use this for initialization
     void Start () {
@@ -167,7 +170,6 @@ We’ll put this code in the Start() method:
 
 
 ```
-**<>** Class referenced by this code: *ChatManager.cs* **<>**
 
 ### Send-Message Button Listener
 
@@ -178,6 +180,7 @@ While we're working in the Start() method, let's finish up here and create a lis
 The Start() method now looks as follows:
 
 ```
+// Class referenced by this code: ChatManager.cs
 
 // Use this for initialization
 void Start () {
@@ -201,7 +204,6 @@ private void SendMessage(){
 }
 
 ```
-**<>** Class referenced by this code: *ChatManager.cs* **<>**
 
 We are now all-set to start sending our messages!
 
@@ -233,6 +235,7 @@ For all *RTData* we are sending we want to use the one instance of the *RTData* 
 Constructing RTData therefore looks as follows:
 
 ```
+// Class referenced by this code: ChatManager.cs
 
 using (RTData data = RTData.Get()) {
 
@@ -250,7 +253,6 @@ using (RTData data = RTData.Get()) {
 
 
 ```
-**<>** Class referenced by this code: *ChatManager.cs* **<>**
 
 ### Sending Structured Data
 
@@ -268,6 +270,8 @@ The method to send structured data is gameSparksRTUnity.SendData() and it takes 
 So, leading on from the previous RTData example, sending this data would look as follows:
 
 ```
+// Class referenced by this code: ChatManager.cs
+
 
 using (RTData data = RTData.Get()) {
 
@@ -288,7 +292,6 @@ using (RTData data = RTData.Get()) {
 
 
 ```
-**<>** Class referenced by this code: *ChatManager.cs* **<>**
 
 * **RTData Size**. The SendXXXX methods are also set up to return information about the size of the packet you are sending. They will return an int which corresponds to the size of the packet in bytes.
 
@@ -329,8 +332,7 @@ So in our SendMessage() method we will:
 
 
 ```
-
-
+// Class referenced by this code: ChatManager.cs
 
 /// <summary>
 /// This method will check the player the message is being sent to, and then construct an
@@ -373,8 +375,6 @@ private void SendMessage(){
 
 
 ```
-**<>** Class referenced by this code: *ChatManager.cs* **<>**
-
 
 This is a good time to save your scene and load-up the lobby-scene again. We should test that the drop-down menu is creating options for the right players and that our messages are being sent properly.
 
@@ -391,6 +391,7 @@ In order to receive your *RTData*, you will need a reference to the *gameSparksR
 When any packets are received, the *OnPacketRecieved* callback will be called and the details of that packet can be processed.
 
 ```
+// Class referenced by this code: GameSparksManager.cs
 
 gameSparksRTUnity.Configure(response,
             (peerId) =>  {    OnPlayerConnectedToGame(peerId);  },
@@ -404,8 +405,6 @@ private void OnPacketReceived(RTPacket _packet){
     }
 
 ```
-**<>** Class referenced by this code: *GameSparksManager.cs* **<>**
-
 
 The *RTPacket* class contains the following members:
 
@@ -425,6 +424,7 @@ The *RTPacket* class contains the following members:
 Any structured data in the packet received are available in the *Data* parameter. Consult the previous section on Sending Real-Time Data to see what kinds of data-types can be sent. Here's the example from that section to show how data can be parsed back.
 
 ```
+// Class referenced by this code: GameSparksManager.cs
 
 private void OnPacketReceived(RTPacket _packet){
 
@@ -442,7 +442,6 @@ private void OnPacketReceived(RTPacket _packet){
 
 
 ```
-**<>** Class referenced by this code: *GameSparksManager.cs* **<>**
 
 
 ### Receiving Unstructured Data
@@ -451,6 +450,7 @@ Unstructured data are accessible through the Stream parameter of the *RTPacket* 
 
 
 ```
+// Class referenced by this code: GameSparksManager.cs
 
 private void OnPacketReceived(RTPacket _packet){
         StreamReader reader = new StreamReader (_packet.Stream);
@@ -459,28 +459,26 @@ private void OnPacketReceived(RTPacket _packet){
     }
 
 
-
-
 ```
-**<>** Class referenced by this code: *GameSparksManager.cs* **<>**
 
 ## Receiving Chat Messages
 
 In order to receive the chat message, we'll first have to put a reference to the *ChatManager.cs* class in our *GameSparksManager.cs* script.
 
 ```
+// Class referenced by this code: GameSparksManager.cs
 
 private ChatManager chatManager;
 
 
 ```
-**<>** Class referenced by this code: *GameSparksManager.cs* **<>**
 
 Now, in the OnPacketReceived() method we created when we setup the real-time session instance we'll check that the op-code corresponds to the op-code we have chosen for all chat-messages (op-code 1).
 
 We'll also have to check to see if the *ChatManager* reference is initialized yet, and if it isn't, we'll find the ‘Chat Manager’ object and give it that reference. We are then going to send the packet to an *OnMessageReceived()* method in the *ChatManager.cs* class.
 
 ```
+// Class referenced by this code: GameSparksManager.cs
 
 private void OnPacketReceived(RTPacket _packet){
         switch (_packet.OpCode) {
@@ -496,13 +494,12 @@ private void OnPacketReceived(RTPacket _packet){
     }
 
 ```
-**<>** Class referenced by this code: *GameSparksManager.cs* **<>**
-
 
 Then, back in the *ChatManager.cs* class, we can add that new method. We'll put a *Debug.Log* call in this method for the moment, which will print out the message that has just been received while we are testing.
 
 
 ```
+// Class referenced by this code: ChatManager.cs
 
 public void OnMessageReceived(RTPacket _packet){
         Debug.Log (_packet.Data.GetString(1));
@@ -510,7 +507,6 @@ public void OnMessageReceived(RTPacket _packet){
 
 
 ```
-**<>** Class referenced by this code: *ChatManager.cs* **<>**
 
 You should now be able to test messages being sent between players and see the received message being printed out in the console:
 
@@ -554,6 +550,7 @@ The next step is to print these messages to the chat-log:
 Now we need to get this information from the *OnMessageReceived()* method. We can get the date and the message from the packet, but the packet doesn't contain the player-display name. So, we are going to use the Sender parameter of the packet to check the name of the player with the same peerId as the sender.
 
 ```
+// Class referenced by this code: ChatManager.cs
 
 /// <summary>
 /// This is called from the GameSparksManager class.
@@ -572,7 +569,6 @@ public void OnMessageReceived(RTPacket _packet){
 }
 
 ```
-**<>** Class referenced by this code: *ChatManager.cs* **<>**
 
 You should now be able to test sending and receiving chat messages between players.
 
@@ -581,12 +577,12 @@ You should now be able to test sending and receiving chat messages between playe
 There is one last thing we need to do, however. This chat-system does not show the player sending the data what they have just said. In order to fix this, we can add a line to that start of the *SendMessage()* method:
 
 ```
+// Class referenced by this code: ChatManager.cs
 
 UpdateChatLog ("Me", messageInput.text, DateTime.Now.ToString ()); // we will update the chat-log for the current user to display the message they just sent
 
 
 ```
-**<>** Class referenced by this code: *ChatManager.cs* **<>**
 
 This should be put below where we set the *RTData* for the message and date, and above where we clear the *messageInput* text-field.
 

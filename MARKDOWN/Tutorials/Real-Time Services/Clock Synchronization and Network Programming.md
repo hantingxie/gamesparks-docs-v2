@@ -46,6 +46,7 @@ In this example, we'll use the RT-script for our *TANK_BATTLE* match to check wh
 We do this by creating an *OnPlayerConnect()* callback in the RT-script. This callback will simply check an array of players that have joined, and add any new players if they are not in the array. When the list of joined players has reached the max (or min) number of players for that match, it will send an empty packet back to all players:
 
 ```
+// Script referenced by this code: TANK_BATTLE RT-script on GameSparks Portal
 
 var playersJoined = []; // this is only used at the start to make sure each player is connected
 
@@ -71,7 +72,6 @@ function contains(a, obj) { // this is a simple method that just checks if an el
 }
 
 ```
-**<>** Script referenced by this code: *TANK_BATTLE RT-script on GameSparks Portal* **<>**
 
 
 ### Getting the Match Details
@@ -83,6 +83,7 @@ In this case, we can create a new request to get the match-details and from this
 To get the match details we can use the *RTSession.getSessionId()* method to get the session-id/match-id:
 
 ```
+// Script referenced by this code: TANK_BATTLE RT-script on GameSparks Portal
 
 var playersJoined = []; // this is only used at the start to make sure each player is connected
 var totalPlayers = 0;
@@ -113,13 +114,13 @@ RTSession.onPlayerConnect(function(player){
 
 
 ```
-**<>** Script referenced by this code: *TANK_BATTLE RT-script on GameSparks Portal* **<>**
 
 Now back in our Unity3d *GameSparksManager.cs* class we need to make two changes:
 
 *1.*	Remove the line which loads the level in the *OnRTReady()* method.
 
 ```
+// Class referenced by this code: GameSparksManager.cs
 
 private void OnRTReady(bool _isReady){
         if (_isReady) {
@@ -130,11 +131,12 @@ private void OnRTReady(bool _isReady){
 
 
 ```
-**<>** Class referenced by this code: *GameSparksManager.cs* **<>**
 
 *2.*	Add a new case to the switch-case statement in the *OnPacketRecieved()* method which is going to load the level when the op-code marked ‘100’ is received from the server.
 
 ```
+// Class method referenced by this code: GameSparksManager.cs OnPacketReceived()
+
 
 case 100:
             Debug.Log ("GSM| Loading Level...");
@@ -143,8 +145,6 @@ case 100:
 
 
 ```
-**<>** Class method referenced by this code: *GameSparksManager.cs OnPacketReceived()* **<>**
-
 
 You should now be able to test out this new configuration, which will only start the level when all players have been connected.
 
@@ -182,6 +182,7 @@ Even though the clients are running the same code, slight changes between server
 To avoid this, we usually repeat the synchronization procedure every few seconds. You do not want to sync frequently in your game, because it causes unnecessary bottlenecks. Syncing every 1-5 second is standard for an action game, and even longer syncs for turn-based or strategy games.
 
 ```
+// Class referenced by this code: GameController.cs
 
 /// <summary>
     /// Sends a Unix timestamp in milliseconds to the server
@@ -199,18 +200,17 @@ To avoid this, we usually repeat the synchronization procedure every few seconds
 
 
 ```
-**<>** Class referenced by this code: *GameController.cs* **<>**
 
 
 We then call this Coroutine at the bottom of the *GameController.cs* Start() Method:
 
 ```
+// Class referenced by this code: GameController.cs
 
 StartCoroutine (SendTimeStamp ());
 
 
 ```
-**<>** Class referenced by this code: *GameController.cs* **<>**
 
 ### Step 2 – Server Response with Server Time
 
@@ -219,6 +219,7 @@ StartCoroutine (SendTimeStamp ());
 We'll setup a packet intercept callback in our RT-script, which will take the timestamp the client has sent, add it to a new packet along with the server’s local time, and send the packet back to the sender.
 
 ```
+// Class referenced by this code: GameController.cs
 
 // packet 101 is a timestamp from the client for clock-syncing
 RTSession.onPacket(101, function(packet){
@@ -233,7 +234,6 @@ RTSession.onPacket(101, function(packet){
 
 
 ```
-**<>** Class referenced by this code: *GameController.cs* **<>**
 
 
 ### Step 3 to 6 – Receiving the Clock Sync Packet
@@ -241,6 +241,7 @@ RTSession.onPacket(101, function(packet){
 First we'll create a new method in the *GameController.cs* class called ‘CalculateTimeDelta’ which will take an *RTPacket* type. Then we'll create a new case in the *OnPacketReceived()* method of our *GameStateManager.cs* class, which will call this method whenever a 101 packet comes in:
 
 ```
+// Class referenced by this code: GameController.cs
 
 // REGISTER NETWORK INFO //
         case 100:
@@ -252,7 +253,6 @@ First we'll create a new method in the *GameController.cs* class called ‘Calcu
             break;
 
 ```
-**<>** Class referenced by this code: *GameSparksManager.cs* **<>**
 
 We're going to need two variables right now, so we can keep track of the round-trip, latency, and time-delta. Really, we only need to cache the time-delta to be used when syncing the clock, because this is the important result. However, many games show players their round-trip and latency times, so we'll keep them for display.
 
@@ -261,6 +261,7 @@ We'll also be using the latency and time-delta in the next section so we can use
 We've also added in another variable called ‘clock’, which we'll use later to make sure our clock is synced.
 
 ```
+// Class referenced by this code: GameController.cs
 
 DateTime serverClock;
     private int timeDelta, latency, roundTrip;
@@ -279,12 +280,12 @@ DateTime serverClock;
 
 
 ```
-**<>** Class referenced by this code: *GameController.cs* **<>**
 
 
 For this example, we've also added these variables to output to the screen using the *OnGUI()* method.
 
 ```
+// Class referenced by this code: GameController.cs
 
 void OnGUI(){
         GUI.Label (new Rect(10, 50, 400, 30), "Server Time:"+serverClock.TimeOfDay);
@@ -294,7 +295,6 @@ void OnGUI(){
 
 
 ```
-**<>** Class referenced by this code: *GameController.cs* **<>**
 
 ### Sending the Clock Update
 
@@ -307,6 +307,7 @@ All we are going to do is set up an interval of 1000ms, which will send the curr
 We will start this interval in the *onPlayerConnect()* callback, so it begins only when all players have started:
 
 ```
+// Class referenced by this code: GameController.cs
 
 RTSession.onPlayerConnect(function(player){
     // first we check to see if the player has already joined the match
@@ -327,7 +328,6 @@ RTSession.onPlayerConnect(function(player){
 
 
 ```
-**<>** Class referenced by this code: *GameController.cs* **<>**
 
 
 ## Synching Clock Time
@@ -337,6 +337,7 @@ The last thing we need to do to get our clock synced is to set up a method for w
 We are using ‘102’ for the op-code, so in *GameSparksManager.cs OnPacketReceived()* we add another case for that op-code, along with another method called ‘SyncClock’ to our *GameController.cs* class.
 
 ```
+// Class referenced by this code: GameSparksManager.cs
 
 // REGISTER NETWORK INFO //
         case 100:
@@ -352,12 +353,12 @@ We are using ‘102’ for the op-code, so in *GameSparksManager.cs OnPacketRece
 
 
 ```
-**<>** Class referenced by this code: *GameSparksManager.cs* **<>**
 
 
 We're then going to adjust the local time based on the server time we have just received and the time-delta we calculated. The result should be as close to the current time on the server as possible, negating slight changes in latency and time taken to process packets and calculate data.
 
 ```
+// Class referenced by this code: GameController.cs
 
 /// <summary>
     /// Syncs the local clock to server-time
@@ -370,7 +371,6 @@ We're then going to adjust the local time based on the server time we have just 
 
 
 ```
-**<>** Class referenced by this code: *GameController.cs* **<>**
 
 
 If you run the game now, you'll notice that, as the time-delta is updated, the server-time clock gets pretty accurate between clients. Also notice that the longer the time between updates, the more the server-time drifts.
@@ -403,6 +403,7 @@ First, we'll need a few more variables so we can display and check this countdow
 Calculating the time left is simple. In the *SyncClock()* method we'll set the end Time variable to be 60000ms (1 minute) plus our *timeDelta* to keep the countdown in sync.
 
 ```
+// Class referenced by this code: GameController.cs
 
 /// <summary>
 /// Syncs the local clock to server-time
@@ -425,7 +426,6 @@ public void SyncClock(RTPacket _packet){
 }
 
 ```
-**<>** Class referenced by this code: *GameController.cs* **<>**
 
 
 You might notice, if your timer is displaying seconds only, that one of the players could be off by one second. This is due to the seconds reading having been rounded off. However, the total-milliseconds should still be very closely in sync so both clients will disconnect at the same time (+/- a few milliseconds).
@@ -448,6 +448,7 @@ We'll do this in the *GameController.cs* calls. And, once we create our method, 
 
 
 ```
+// Class referenced by this code: GameController.cs
 
 private int packetSize_sent;
 /// <summary>
@@ -472,7 +473,6 @@ public void SendRTData(int _opcode, GameSparksRT.DeliveryIntent _intent,  RTData
 
 
 ```
-**<>** Class referenced by this code: *GameController.cs* **<>**
 
 
 ![](img/ClockSync/3.png)
@@ -484,7 +484,7 @@ We can check the size of any packets that we receive from the server. In our gam
 In this example, we're just going to send the packet size from the incoming packet to the *GameController.cs* class so we can log the incoming packet size:
 
 ```
-
+// Class referenced by this code: GameController.cs
 
     private int packetSize_incoming;
     /// <summary>
@@ -497,12 +497,12 @@ In this example, we're just going to send the packet size from the incoming pack
 
 
 ```
-**<>** Class referenced by this code: *GameController.cs* **<>**
 
 
 And in the *GameSparksManager.cs* class, we add this code to the top of the *OnPacketRecieved()* method:
 
 ```
+// Class referenced by this code: GameSparksManager.cs
 
 if (GameController.Instance () != null) {
            GameController.Instance().PacketReceived(_packet.PacketSize);
@@ -510,7 +510,6 @@ if (GameController.Instance () != null) {
 
 
 ```
-**<>** Class referenced by this code: *GameSparksManager.cs* **<>**
 
 
 ![](img/ClockSync/4.png)

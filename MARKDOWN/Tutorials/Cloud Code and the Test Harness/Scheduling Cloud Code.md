@@ -1,5 +1,5 @@
 ---
-nav_sort: 5
+nav_sort: 6
 src: /Tutorials/Cloud Code and the Test Harness/Scheduling Cloud Code.md
 ---
 

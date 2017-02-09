@@ -1,5 +1,5 @@
 ---
-nav_sort: 7
+nav_sort: 8
 src: /Tutorials/Cloud Code and the Test Harness/Changing Player Passwords.md
 ---
 

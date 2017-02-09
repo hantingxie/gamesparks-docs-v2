@@ -70,7 +70,7 @@ For an authenticated player in the GameSparks Test Harness, send:
 
 ```
 { "@class": ".PushRegistrationRequest",
-"deviceOS": "ANDROID",
+"deviceOS": "fcm",
 "pushId": "DEVICE_REGISTRATION_ID",
 "requestId": "1399640846121" }
 

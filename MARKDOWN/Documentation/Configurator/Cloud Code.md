@@ -18,9 +18,9 @@ The *Scripts* section is split into separate categories, which are [further expl
 There are five main option buttons at the bottom of the *Scripts* panel:
 * ![](/img/icons/scriptsexporticon.png) - Export Cloud Code.
 * ![](/img/icons/scriptsimporticon.png) - Import Cloud Code.
-* ![](/img/icons/scriptsGHimporticon.png) - Import Cloud Code from GitHub.
-* ![](/img/icons/scriptsBBimporticon.png) - Import Cloud Code from BitBucket.
-* ![](/img/icons/scriptshistoryicon.png) - View Cloud Code history and compare the Cloud Code contained in two game Snapshots.
+* ![](/img/icons/scriptsGHimporticon.png) - Import Cloud Code from [GitHub](/Tutorials/Third Party Integrations/Synchronizing Cloud Code with GitHub or Bitbucket.md).
+* ![](/img/icons/scriptsBBimporticon.png) - Import Cloud Code from [BitBucket](/Tutorials/Third Party Integrations/Synchronizing Cloud Code with GitHub or Bitbucket.md).
+* ![](/img/icons/scriptshistoryicon.png) - View [Cloud Code history](/Tutorials/Cloud Code and the Test Harness/Viewing Cloud Code History.md) and compare the Cloud Code contained in two game Snapshots.
 
 ### Accessing Cloud Code
 

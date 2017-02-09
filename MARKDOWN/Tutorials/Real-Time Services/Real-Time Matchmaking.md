@@ -51,10 +51,11 @@ The next step is to create variables for these fields in our *LobbyManager.cs* c
 We will create two public Text variables in the *LobbyManager.cs* class:
 
 ```
+// Class referenced by this code: LobbyManager.cs
+
 public Text userId, connectionStatus;
 
 ```
-**<>** Class referenced by this code: *LobbyManager.cs* **<>**
 
 
 <q>**Note:** If you cannot see the Text object or it is causing a compiling error, you can right-click on the word and select *Resolve-> Using UnityEngine.UI*.</q>
@@ -68,12 +69,12 @@ Next we'll create a larger panel with two input-fields called userNameInput and 
 And in our *LobbyManager.cs* we'll create two public InputField variables and link them to the objects we have just created. We also need one more variable, a public GameObject, that we'll link to the panel so that when GameSparks has logged the player in, we can switch from the login panel to the matchmaking panel.
 
 ```
+// Class referenced by this code: LobbyManager.cs
 
 public InputField userNameInput, passwordInput;
 public GameObject loginPanel;
 
 ```
-**<>** Class referenced by this code: *LobbyManager.cs* **<>**
 
 
 
@@ -86,32 +87,32 @@ For the bottom panel we're going to have several buttons, which will enable/disa
 In our *LobbyManager.cs* script we'll then add three public Button variables and link these three buttons in the editor up to those variables.
 
 ```
+// Class referenced by this code: LobbyManager.cs
 
 public Button loginBttn, matchmakingBttn, startGameBttn;
 
 ```
-**<>** Class referenced by this code: *LobbyManager.cs* **<>**
 
 ### Match Details Panel
 
 The last panel will display the details of the match we have found through the matchmaking. All we need in this case is a text-field, which is where we will print out these details.
 
 ```
+// // Class referenced by this code: LobbyManager.cs
 
 public Text userId, connectionStatus;
 
 ```
-**<>** Class referenced by code: *LobbyManager* **<>**
 
 And in our *LobbyManager.cs* script we will create a public Text variable called matchDetails and a public GameObject, which will act as a reference to this panel so it can be enabled/disabled upon login.
 
 ```
+// Class referenced by this code: LobbyManager.cs
 
 public Text matchDetails;
 public GameObject matchDetailsPanel;
 
 ```
-**<>** Class referenced by this code: *LobbyManager.cs* **<>**
 
 Now we are ready to start logging players in and finding matches for our main game.
 
@@ -135,6 +136,7 @@ If you play the game now you, should see some dialog appear in the console windo
 We're going to make a singleton in this class so that we can access the *GameSparksManager.cs* class from the lobby manager and later from the main-game class.
 
 ```
+// Class referenced by this code: GameSparksManager.cs
 
 /// <summary>The GameSparks Manager singleton</summary>
 private static GameSparksManager instance = null;
@@ -153,7 +155,6 @@ void Awake() {
 }
 
 ```
-**<>** Class referenced by this code: *GameSparksManager.cs* **<>**
 
 ### Authentication
 
@@ -173,6 +174,7 @@ This login method has 4 parts:
 So, we're using a callback to allow the lobby manager to update the user's ID and connection-status only when we have received a valid response. The reason for the two callbacks is that the RegistrationResponse and AuthenticationResponse are slightly different. So we want to pass in separate responses:
 
 ```
+// Class referenced by this code: GameSparksManager.cs
 
 #region Login & Registration
 public delegate void AuthCallback(AuthenticationResponse _authresp2);
@@ -221,7 +223,6 @@ public void AuthenticateUser (string _userName, string _password, RegCall
 #endregion
 
 ```
-**<>** Class referenced by this code: *GameSparksManager.cs* **<>**
 
 <q>**Note:** If AuthenticationResponse or RegistrationResponse are not recognized or are throwing a complier error, you can fix this by right clicking on them and selecting *Resolve-> using GameSparks.Api.Responses*.</q>
 
@@ -232,6 +233,7 @@ Once we have this login method setup we can go back into the LobbyManager.cs scr
 However, the first this we are going to do is to update the connection status to let us know that GameSparks has been connected. For this we are going to use the GameSparksAvailable delegate.
 
 ```
+// Class referenced by this code: LobbyManager.cs
 
     // Use this for initialization
     void Start () {
@@ -249,7 +251,6 @@ However, the first this we are going to do is to update the connection status to
     }
 
 ```
-**<>** Class referenced by this code: *LobbyManager.cs* **<>**
 
 ### Logging into GameSparks
 
@@ -258,6 +259,7 @@ We'll use a listener for our loginBttn variable to call the GameSparksManager au
 We are also going to create two methods, which will be the callback methods for when the player is authenticated or registered. These methods will update the player ID and connection status. Now that we're ready to setup the scene, what we'll also add to the start method is some code to disable the buttons we don't need right now, and the match-details panel.
 
 ```
+// Class referenced by this code: LobbyManager.cs
 
     // Use this for initialization
     void Start () {
@@ -302,7 +304,6 @@ We are also going to create two methods, which will be the callback methods for 
     }
 
 ```
-**<>** Class referenced by this code: *LobbyManager.cs* **<>**
 
 You should now be able to start your game and login as a new player.
 
@@ -313,6 +314,7 @@ There is only one last thing to do before we move onto the next section. Once th
 This code will go in the OnRegistration and OnAuthentication callback methods.
 
 ```
+// Class referenced by this code: LobbyManager.cs
 
     /// <summary>
     /// this is called when a player is registered
@@ -340,8 +342,6 @@ This code will go in the OnRegistration and OnAuthentication callback methods.
     }
 
 ```
-**<>** Class referenced by this code: *LobbyManager.cs* **<>**
-
 
 Now when your player has logged in they will be shown the option to find a match.
 
@@ -365,6 +365,7 @@ So, our matchmaking will have two steps:
 This request will go in our GameSparksManager.cs script.
 
 ```
+// Class referenced by this code: GameSparksManager.cs
 
     #region Matchmaking Request
     /// <summary>
@@ -385,12 +386,12 @@ This request will go in our GameSparksManager.cs script.
     #endregion
 
 ```
-**<>** Class referenced by this code: *GameSparksManager.cs* **<>**
 
 Now, in the *LobbyManager.cs* script we will add a listener to the matchmakingBttn variable, which will call this method when it is clicked. We will also add some updates to the match-details text-field so that we know we are currently looking for a match.
 
 
 ```
+// Class referenced by this code: LobbyManager.cs
 
   matchmakingBttn.onClick.AddListener (() => {
     GameSparksManager.Instance().FindPlayers();
@@ -398,7 +399,6 @@ Now, in the *LobbyManager.cs* script we will add a listener to the matchmakingBt
   });
 
 ```
-**<>** Class referenced by this code: *LobbyManager.cs* **<>**
 
 Now, if you login and hit the ‘Find Match’ button, you should see the player-list text change, and you will also see the console has a log that the request has been sent.
 
@@ -411,6 +411,7 @@ Now there are two things we must do before we can really test this. We need to s
 For this example, we can use the delegates for these two message-listeners, and to get the information we need from the MatchFoundMessage. This code will also go in the Start() method of the *LobbyManager.cs* script.
 
 ```
+// Class referenced by this code: LobbyManager.cs
 
   // this listener will update the text in the player-list field if no match was found //
   GameSparks.Api.Messages.MatchNotFoundMessage.Listener  = (message) => {
@@ -418,7 +419,6 @@ For this example, we can use the delegates for these two message-listeners, and 
   };
 
 ```
-**<>** Class referenced by this code: *LobbyManager.cs* **<>**
 
 Now, when you try to make a match, you should get about 10 seconds (which we set in the match in the game's portal) and then, if no match was found, you will see the match-details text change to “No Match Found...”.
 
@@ -449,15 +449,18 @@ However, there is other information that we can get from this response that is g
 To begin with, we'll hook up the MatchFoundMessage listener to a method of our own.
 
 ```
+// Class referenced by this code: LobbyManager.cs
+
 
   GameSparks.Api.Messages.MatchFoundMessage.Listener += OnMatchFound;
 
 ```
-**<>** Class referenced by this code: *LobbyManager.cs* **<>**
+
 
 Next, we'll setup a StringBuilder object, which we'll use to append the information we want to display onto the match-details field from the message.
 
 ```
+// Class referenced by this code: LobbyManager.cs
 
   private void OnMatchFound(GameSparks.Api.Messages.MatchFoundMessage _message){
         Debug.Log ("Match Found!...");
@@ -477,17 +480,17 @@ Next, we'll setup a StringBuilder object, which we'll use to append the informat
     }
 
 ```
-**<>** Class referenced by this code: *LobbyManager.cs* **<>**
 
 <q>**Note:** You may have to add the following using statements to the top of your class in order for this to compile.</q>
 
 ```
+// Class referenced by this code: LobbyManager.cs
 
 using System.Text;
 using System.Linq;
 
 ```
-**<>** Class referenced by this code: *LobbyManager.cs* **<>**
+
 
 ## Tips for Testing
 
@@ -529,6 +532,7 @@ This object contains details about the current participants of the match and is 
 For this example, the *RTSessionInfo* class goes at the bottom of the *GameSparksManager.cs* script. You can create your own class for this, but it doesn't need to extend Monobehaviour.
 
 ```
+// Class referenced by this code: GameSparksManager.cs
 
 public class RTSessionInfo
 {
@@ -577,7 +581,6 @@ public class RTSessionInfo
 }
 
 ```
-**<>** Class referenced by this code: *GameSparksManager.cs* **<>**
 
 Now, all we need to do is use the MatchFoundMessage to create and store a temporary record of the match instance until the start-game button is clicked. We will also need a private RTSessionInfo variable.
 
@@ -586,6 +589,7 @@ First, we'll create the variable and then add a listener to the startGameBttn in
 We'll also create a method in the *GameSparksManager.cs* class, which we'll use later to create a new Real-Time session instance. In this example, it's called StartNewRTSession().
 
 ```
+// Class referenced by this code: GameSparksManager.cs
 
   private RTSessionInfo tempRTSessionInfo;
 
@@ -595,18 +599,17 @@ We'll also create a method in the *GameSparksManager.cs* class, which we'll use 
   });
 
 ```
-**<>** Class referenced by this code: *GameSparksManager.cs* **<>**
 
 In the OnMatchFound() method we'll use the message details to create a new RTSessionInfo object stored in the tempRTSessionInfo variable. We are going to do one last thing here, which is to disable the ‘Find Match’ button and enable the ‘Start Game’ button.
 
 ```
+// Class referenced by this code: GameSparksManager.cs
 
   tempRTSessionInfo = new RTSessionInfo (_message); // we'll store the match data until we need to create an RT session instance
   matchmakingBttn.gameObject.SetActive(false);
   startGameBttn.gameObject.SetActive(true);
 
 ```
-**<>** Class referenced by this code: *GameSparksManager.cs* **<>**
 
 If you test the game with 4 game instances, you should now notice that, once a new match is found, the button should switch to the ‘Start Game’ button automatically.
 
@@ -615,6 +618,7 @@ If you test the game with 4 game instances, you should now notice that, once a n
 Several things are needed to create a new real-time session. The class we use to create these sessions is the *GameSparksRTUnity.cs* class. So, we'll create a private variable for this, along with a getter, which we can use to access the real-time session when the game is running.
 
 ```
+// Class referenced by this code: GameSparksManager.cs
 
   private GameSparksRTUnity gameSparksRTUnity;
 
@@ -623,13 +627,13 @@ Several things are needed to create a new real-time session. The class we use to
   }
 
 ```
-**<>** Class referenced by this code: *GameSparksManager.cs* **<>**
 
 We also need to add the *GameSparksRTUnity.cs* to the GameSparksManager object in our scene. However, we're going to do this programmatically, when a new instance is being created.
 
 We are also going to create a local private variable, so that we have access to the RTSessionInfo we used to create the session. We'll need this many times to get the right display names for each player.
 
 ```
+// Class referenced by this code: GameSparksManager.cs
 
     private RTSessionInfo sessionInfo;
 
@@ -638,13 +642,13 @@ We are also going to create a local private variable, so that we have access to 
     }
 
 ```
-**<>** Class referenced by this code: *GameSparksManager.cs* **<>**
 
 Now, in the StartNewRTSession() method we can create the new session by passing in the match details. In order to create a new RT session, we need a FindMatchResponse. This would usually come from the server after a successful match. However, in our case we want to create a session on the push of a button. To do this, we need to create a mocked response using the match details and pass this mocked-response to create the RT session.
 
 So, our StartNewRTSession() Method will look like this:
 
 ```
+// Class referenced by this code: GameSparksManager.cs
 
   public void StartNewRTSession(RTSessionInfo _info){
         Debug.Log ("GSM| Creating New RT Session Instance...");
@@ -695,11 +699,11 @@ So, our StartNewRTSession() Method will look like this:
     }
 
 ```
-**<>** Class referenced by this code: *GameSparksManager.cs* **<>**
 
 The last thing we need to do is create a new scene, the game-scene, which we'll load when the real-time session starts:
 
 ```
+// Class referenced by this code: GameSparksManager.cs
 
     private void OnRTReady(bool _isReady){
         if (_isReady) {
@@ -710,7 +714,6 @@ The last thing we need to do is create a new scene, the game-scene, which we'll 
     }
 
 ```
-**<>** Class referenced by this code: *GameSparksManager.cs* **<>**
 
 You'll now be able to setup and test your 4 instances. When a match is found, you will have the option to start a new real-time instance, which will load your main-level once setup.
 
@@ -729,6 +732,7 @@ In order to create a new RT session we need a FindMatchResponse. Thi
 You'll also need to add the *GameSparksRTUnity.cs* script to whatever Game-Manager object you are using in your scene. In order to configure a new RT session instance, you'll need a reference to that class.
 
 ```
+// Class referenced by this code: GameSparksManager.cs
 
   GameSparksRTUnity gameSparksRTUnity = this.gameObject.AddComponent<GameSparksRTUnity>(); 
     GSRequestData mockedResponse = new GSRequestData().AddNumber("port", (double)port).AddString("host", host).AddString("accessToken", accessToken); 
@@ -761,7 +765,6 @@ You'll also need to add the *GameSparksRTUnity.cs* script to whatever Game-Manag
     }
 
 ```
-**<>** Class referenced by this code: *GameSparksManager.cs* **<>**
 
 ### OnPlayerConnected
 
@@ -806,6 +809,7 @@ The last thing we'll do in this tutorial is load the game-scene once the RT-sess
 We will then add a line to the OnRTReady() method of the *GameSparksManager.cs* to load the game-scene.
 
 ```
+// Class referenced by this code: GameSparksManager.cs
 
     private void OnRTReady(bool _isReady){
         if (_isReady) {
@@ -815,7 +819,6 @@ We will then add a line to the OnRTReady() method of the *GameSparksManager.cs* 
     }
 
 ```
-**<>** Class referenced by this code: *GameSparksManager.cs* **<>**
 
 Our game will now start a new level once the RT-session starts.
 

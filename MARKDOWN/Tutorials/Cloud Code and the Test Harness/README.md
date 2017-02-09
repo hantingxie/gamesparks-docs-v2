@@ -9,6 +9,7 @@ src: /Tutorials/Cloud Code and the Test Harness/README.md
 
 Here you can learn more about how to create and work with Cloud Code and use the Test Harness to test out your Cloud Code:
 * [Using Cloud Code](/Tutorials/Cloud Code and the Test Harness/Using Cloud Code.md)
+* [Exporting and Importing Cloud Code](/Tutorials/Cloud Code and the Test Harness/Exporting and Importing Cloud Code.md)
 * [Viewing Cloud Code History](/Tutorials/Cloud Code and the Test Harness/Viewing Cloud Code History.md)
 * [Accessing Leaderboards with Cloud Code](/Tutorials/Cloud Code and the Test Harness/Accessing Leaderboards with Cloud Code.md)
 * [Sending Requests in Cloud Code](/Tutorials/Cloud Code and the Test Harness/Sending Requests in Cloud Code.md)
