@@ -80,6 +80,7 @@ public Button chatToogleBttn;
 private bool isChatWindowOpen;
 
 ```
+**<>** Class referenced by this code: *ChatManager.cs* **<>**
 
 *2.* In the Start() method we'll disable the chat window so that, when the game loads, the chat window will automatically disappear. We'll then add an OnClick listener to the *chatToggleBttn* variable. This will be linked to a method called, for example, ‘ToggleChatWindow’.
 
@@ -107,10 +108,7 @@ private void ToogleChatWindow(){
 }
 
 ```
-
-
-
-
+**<>** Class referenced by this code: *ChatManager.cs* **<>**
 
 Now that we have the toggle-button hooked up, we'll need a few more variables so that we can continue onto the next section and start sending and receiving messages.
 
@@ -139,6 +137,7 @@ public int elementsInChatLog = 7;
 private Queue<string> chatLog = new Queue<string>();
 
 ```
+**<>** Class referenced by this code: *ChatManager.cs* **<>**
 
 The *ChatManager.cs* script is going to be pretty small, so this is all we need. Once you have linked these public variables to the objects in your editor, we are good to go.
 
@@ -168,6 +167,7 @@ We’ll put this code in the Start() method:
 
 
 ```
+**<>** Class referenced by this code: *ChatManager.cs* **<>**
 
 ### Send-Message Button Listener
 
@@ -201,6 +201,7 @@ private void SendMessage(){
 }
 
 ```
+**<>** Class referenced by this code: *ChatManager.cs* **<>**
 
 We are now all-set to start sending our messages!
 
@@ -249,6 +250,7 @@ using (RTData data = RTData.Get()) {
 
 
 ```
+**<>** Class referenced by this code: *ChatManager.cs* **<>**
 
 ### Sending Structured Data
 
@@ -285,11 +287,8 @@ using (RTData data = RTData.Get()) {
         }
 
 
-
 ```
-
-
-
+**<>** Class referenced by this code: *ChatManager.cs* **<>**
 
 * **RTData Size**. The SendXXXX methods are also set up to return information about the size of the packet you are sending. They will return an int which corresponds to the size of the packet in bytes.
 
@@ -373,11 +372,8 @@ private void SendMessage(){
 }
 
 
-
-
-
 ```
-
+**<>** Class referenced by this code: *ChatManager.cs* **<>**
 
 
 This is a good time to save your scene and load-up the lobby-scene again. We should test that the drop-down menu is creating options for the right players and that our messages are being sent properly.
@@ -407,10 +403,8 @@ private void OnPacketReceived(RTPacket _packet){
 
     }
 
-
-
 ```
-
+**<>** Class referenced by this code: *GameSparksManager.cs* **<>**
 
 
 The *RTPacket* class contains the following members:
@@ -448,7 +442,7 @@ private void OnPacketReceived(RTPacket _packet){
 
 
 ```
-
+**<>** Class referenced by this code: *GameSparksManager.cs* **<>**
 
 
 ### Receiving Unstructured Data
@@ -468,7 +462,7 @@ private void OnPacketReceived(RTPacket _packet){
 
 
 ```
-
+**<>** Class referenced by this code: *GameSparksManager.cs* **<>**
 
 ## Receiving Chat Messages
 
@@ -480,6 +474,7 @@ private ChatManager chatManager;
 
 
 ```
+**<>** Class referenced by this code: *GameSparksManager.cs* **<>**
 
 Now, in the OnPacketReceived() method we created when we setup the real-time session instance we'll check that the op-code corresponds to the op-code we have chosen for all chat-messages (op-code 1).
 
@@ -500,8 +495,9 @@ private void OnPacketReceived(RTPacket _packet){
         }
     }
 
-
 ```
+**<>** Class referenced by this code: *GameSparksManager.cs* **<>**
+
 
 Then, back in the *ChatManager.cs* class, we can add that new method. We'll put a *Debug.Log* call in this method for the moment, which will print out the message that has just been received while we are testing.
 
@@ -513,9 +509,8 @@ public void OnMessageReceived(RTPacket _packet){
     }
 
 
-
-
 ```
+**<>** Class referenced by this code: *ChatManager.cs* **<>**
 
 You should now be able to test messages being sent between players and see the received message being printed out in the console:
 
@@ -553,10 +548,6 @@ The next step is to print these messages to the chat-log:
         }
     }
 
-
-
-
-
 ```
 
 
@@ -580,12 +571,8 @@ public void OnMessageReceived(RTPacket _packet){
     }
 }
 
-
-
-
-
 ```
-
+**<>** Class referenced by this code: *ChatManager.cs* **<>**
 
 You should now be able to test sending and receiving chat messages between players.
 
@@ -599,6 +586,7 @@ UpdateChatLog ("Me", messageInput.text, DateTime.Now.ToString ()); // we will up
 
 
 ```
+**<>** Class referenced by this code: *ChatManager.cs* **<>**
 
 This should be put below where we set the *RTData* for the message and date, and above where we clear the *messageInput* text-field.
 

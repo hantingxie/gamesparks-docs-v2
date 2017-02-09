@@ -109,6 +109,7 @@ public class SpawnPoint : MonoBehaviour {
 }
 
 ```
+**<>** Class referenced by this code: *SpawnPoint.cs* **<>**
 
 We then need to set the peer-ID of each player we wish to spawn at each point:
 
@@ -236,9 +237,8 @@ void Awake(){
         instance = this;
 }
 
-
-
 ```
+**<>** Class referenced by this code: *GameController.cs* **<>**
 
 <q>**Note:** If you are averse to using singletons, then feel free to restructure this class. However, a reference to the game-controller will be needed by the tank class to reward points, and by the *GameSparksManager* class to be able to send the right packets to the game-controller.
 
@@ -274,7 +274,7 @@ public static Shell[] GetShellPool(){
 
 
 ```
-
+**<>** Class referenced by this code: *GameController.cs* **<>**
 
 Once you have built the script, head back into Unity and link all of these arrays with the correct objects in the scene hierarchy:
 
@@ -337,7 +337,7 @@ public void OnOpponentDisconnected(int _peerId){
 }
 
 ```
-
+**<>** Class referenced by this code: *GameController.cs* **<>**
 
 ### Hooking Up these Methods to GameSparksManager.cs
 
@@ -382,9 +382,8 @@ private void OnPacketReceived(RTPacket _packet){
     }
 
 
-
 ```
-
+**<>** Class referenced by this code: *GameSparksManager.cs* **<>**
 
 ### Settting Up the Tank Object
 
@@ -409,7 +408,7 @@ To set up the tank we'll need three attributes, which will be stored by each pla
     }
 
 ```
-
+**<>** Class referenced by this code: *GameController.cs* **<>**
 
 For the moment, we'll not do anything in this method, until we are sure that we are passing the right values in.
 
@@ -444,10 +443,8 @@ for (int i = 0; i < shellPool.Length; i++) {
 }
 #endregion
 
-
-
 ```
-
+**<>** Class method referenced by this code: *GameController.cs Start()* **<>**
 
 
 ### Get Spawners
@@ -460,6 +457,8 @@ SpawnPoint[] allSpawners = FindObjectsOfType (typeof(SpawnPoint)) as SpawnPoint[
 
 
 ```
+**<>** Class method referenced by this code: *GameController.cs Start()* **<>**
+
 
 ### Set Up each of the Player Tanks
 
@@ -501,6 +500,7 @@ for (int playerIndex = 0; playerIndex < GameSparksManager.Instance ().GetSession
 
 
 ```
+**<>** Class method referenced by this code: *GameController.cs Start()* **<>**
 
 This code uses the indexes of the player-list to set the correct HUD components. This is because we know that the order of the player-list for everyone running the game is the same. So, if we use that as a constant, we know that each tank will have the right color, and each player’s HUD will be correct in each instance.
 
@@ -517,6 +517,7 @@ Our game example is setup for 4 players. But if there are not 4 players connecte
         }
 
 ```
+**<>** Class method referenced by this code: *GameController.cs Start()* **<>**
 
 <q>**Note:** You could skip this step by having the HUD appear clear when the level starts. However, this would make it harder to setup the HUD in the first place. The choice is yours.</q>
 
@@ -560,6 +561,8 @@ private Transform spawnPos;
 private bool isPlayer;
 
 ```
+**<>** Class referenced by this code: *Tank.cs* **<>**
+
 
 #### Predictive Movement
 
@@ -574,7 +577,7 @@ public float gotoRot;
 
 
 ```
-
+**<>** Class referenced by this code: *Tank.cs* **<>**
 
 #### Firing Shells
 
@@ -588,8 +591,9 @@ private Transform shellSpawnPos;
 private bool playerCanFire = true;
 public Color tankCol;
 
-
 ```
+**<>** Class referenced by this code: *Tank.cs* **<>**
+
 
 #### Player Invincibility
 
@@ -602,6 +606,8 @@ For this we only need two things: a *bool*, which will:
 private bool isInvincible;
 
 ```
+**<>** Class referenced by this code: *Tank.cs* **<>**
+
 
 ### Player Score
 
@@ -616,6 +622,7 @@ private int myScore;
 
 
 ```
+**<>** Class referenced by this code: *Tank.cs* **<>**
 
 Together, these variables are as follows:
 
@@ -657,11 +664,8 @@ Together, these variables are as follows:
     public float gotoRot;
 
 
-
-
-
 ```
-
+**<>** Class referenced by this code: *Tank.cs* **<>**
 
 ### SetUpTank() Method
 
@@ -693,7 +697,7 @@ Setting up the tank is pretty straightforward. We just need to assign those few 
 
 
 ```
-
+**<>** Class referenced by this code: *Tank.cs* **<>**
 
 ### Tank Movement
 
@@ -718,10 +722,8 @@ This of course will only occur for our player tank, so all this code will go ins
         }
     }
 
-
-
 ```
-
+**<>** Class referenced by this code: *Tank.cs* **<>**
 
 
 #### Anti-Cheating Tips
@@ -748,10 +750,8 @@ void Update () {
 }
 
 
-
 ```
-
-
+**<>** Class referenced by this code: *Tank.cs* **<>**
 
 
 ### Broadcasting Tank Movement
@@ -806,9 +806,8 @@ private IEnumerator SendTankMovement(){
 }
 
 
-
 ```
-
+**<>** Class referenced by this code: *Tank.cs* **<>**
 
 
 <q>**Notes: 1.** We are sending the z-angle of the Euler-angles of our tank’s transform. Since this is a 2D object, we don’t need to worry about Quaternions, but we also don’t need to worry about my Vector3 Euler-angles either. Our tank can only rotate on one axis, so we only send one float. **2.** Wherever possible, try to consider attributes that will be empty or zero and try not to send them. This will keep the packet small.</q>
@@ -845,9 +844,8 @@ There are a few more steps we need before this will work. Firstly, we need to se
     }
 
 
-
 ```
-
+**<>** Class referenced by this code: *Tank.cs* **<>**
 
 
 #### Updating Position and Velocity
@@ -883,12 +881,8 @@ void Update () {
 }
 
 
-
-
-
-
 ```
-
+**<>** Class referenced by this code: *Tank.cs* **<>**
 
 
 ### Testing Tank Movement
@@ -900,6 +894,7 @@ So now we should be able to move our player tank. But before we do that, we also
 Debug.Log (_packet.ToString());
 
 ```
+**<>** Class referenced by this code: *GameController.cs* **<>**
 
 We can now build the game and test it out. You'll be able to move your tank around the scene. While controlling the opponent, you'll notice the logs being printed to your editor console:
 
@@ -937,9 +932,8 @@ public void UpdateOpponentTanks(RTPacket _packet){
 }
 
 
-
 ```
-
+**<>** Class referenced by this code: *GameController.cs* **<>**
 
 
 So what are we doing here?
@@ -975,6 +969,7 @@ private int ownerPeerId;
 
 
 ```
+**<>** Class referenced by this code: *Shell.cs* **<>**
 
 * Next we'll create a countdown-timer which will countdown the lifetime of the shell. Once the time is out, we'll disable the game-object and reset the timer:
 
@@ -993,6 +988,8 @@ void Update () {
 
 
 ```
+**<>** Class referenced by this code: *Shell.cs* **<>**
+
 
 ### Resetting Shells
 
@@ -1034,9 +1031,8 @@ public void ResetShell(int _ownerId, string _uid, Color _col, Vector3 _pos, floa
 }
 
 
-
 ```
-
+**<>** Class referenced by this code: *Shell.cs* **<>**
 
 ## Firing Shells
 
@@ -1057,6 +1053,7 @@ private IEnumerator FireShell(){
 
 
 ```
+**<>** Class referenced by this code: *Tank.cs* **<>**
 
 And in the *Update()* method:
 
@@ -1069,6 +1066,7 @@ if (Input.GetKeyDown (KeyCode.Space) && playerCanFire) {
 
 
 ```
+**<>** Class referenced by this code: *Tank.cs* **<>**
 
 You should now be able to test your firing rate in the game. If you want to tweak it, you can create new public variable (float) called *fireRatePerSecond* and play around with the fire-rate until it feels right.
 
@@ -1100,6 +1098,8 @@ public void InstantiateShell(int _ownerPeerId, string _uid){
 
 
 ```
+**<>** Class referenced by this code: *Tank.cs* **<>**
+
 
 * We then add force to the shell to move it. However, there is an important part to this method. It is not only going to be used to fire shells, but in our *FireShell()* method, we'll send off a packet telling the other players that they should recreate the shell we are about to fire. When they receive that packet, they will also use this method to recreate the shell on their side.
 
@@ -1126,8 +1126,9 @@ So the *FireShell()* method becomes:
     }
 
 
-
 ```
+**<>** Class referenced by this code: *Tank.cs* **<>**
+
 
 ### Instantiating Shells for Opponents
 
@@ -1150,9 +1151,8 @@ This code goes in the *InstantiateOpponentShells()* method of the *GameControlle
     }
 
 
-
 ```
-
+**<>** Class referenced by this code: *GameController.cs* **<>**
 
 ### Testing Shells Fire
 
@@ -1208,10 +1208,8 @@ void OnCollisionExit2D(Collision2D _coll) {
 }
 
 
-
 ```
-
-
+**<>** Class referenced by this code: *Tank.cs* **<>**
 
 The steps here are pretty straightforward:
 1.	We check the tag of the object we collided with.
@@ -1251,6 +1249,7 @@ public void UpdateOpponentShells(RTPacket _packet){
 
 
 ```
+**<>** Class referenced by this code: *GameController.cs* **<>**
 
 ### Testing
 
@@ -1301,6 +1300,8 @@ void OnCollisionEnter2D(Collision2D _coll) {
 
 
 ```
+**<>** Class referenced by this code: *Tank.cs* **<>**
+
 
 ### Reset Tank
 
@@ -1330,9 +1331,9 @@ public void ResetTank(){
 }
 
 
-
-
 ```
+**<>** Class referenced by this code: *Tank.cs* **<>**
+
 
 ### Invincibility
 
@@ -1359,7 +1360,7 @@ private IEnumerator invincibility;
 
 
 ```
-
+**<>** Class referenced by this code: *Tank.cs* **<>**
 
 
 ### Flashing Colors to Indicate Invincibility
@@ -1373,9 +1374,8 @@ if (isInvincible) {
             this.GetComponent<SpriteRenderer> ().color = Color.Lerp (Color.white, Color.red, deltaC);
         }
 
-
-
 ```
+**<>** Class methos referenced by this code: *Tank.cs Update()* **<>**
 
 ### Getting Around Latency Issues
 
@@ -1408,7 +1408,7 @@ public void UpdateScore(){
 
 
 ```
-
+**<>** Class referenced by this code: *Tank.cs* **<>**
 
 ### Broadcast Hit
 
@@ -1441,9 +1441,8 @@ public void BroadcastHit(string _tankHitName, string _shellOwnerId, string _shel
 }
 
 
-
 ```
-
+**<>** Class referenced by this code: *GameController.cs* **<>**
 
 ### Register Opponent Collisions
 
@@ -1478,6 +1477,8 @@ public void RegisterOpponentCollision(RTPacket _packet){
 }
 
 ```
+**<>** Class referenced by this code: *GameController.cs* **<>**
+
 
 ### Testing Updates and Scores
 
@@ -1514,6 +1515,7 @@ This will go into the *OnOpponentDisconnected()* method we created earlier in th
 
 
 ```
+**<>** Class referenced by this code: *GameController.cs* **<>**
 
 And next we need to create this *DisableTank()* method in our *Tank.cs* class. This method will change the box-collider to a trigger and reset the color, as we mentioned above. However, it will also need to disable the invincibility of the tank using the *StopCoroutine()* method:
 
@@ -1531,9 +1533,9 @@ public void DisableTank (){
     GetComponent<BoxCollider2D> ().isTrigger = true;
 
 
-
-
 ```
+**<>** Class referenced by this code: *Tank.cs* **<>**
+
 
 ## Summary
 

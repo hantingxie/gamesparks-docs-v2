@@ -171,6 +171,7 @@ function SnippetProcessor(){
 You can see, if you click on the play button in the **JavaScript Editor** panel, that we can see the details of the dummy-event we created earlier in the **JSON Output** panel. Now we know we can use that information in our HTML panel!
 
 ![](img/WeekEvents/12.png)
+* Note that you will have to scroll the **Response JSON** panel to see the entire content.
 
 ### Drawing the Events List
 
@@ -359,6 +360,7 @@ So this editor:
 * For the name and description, all we need is a text input field. The value of this input field is going to be the name and description of our Event. This will allow the user to see the current values of a sale, but also edit them.
 
 ![](img/WeekEvents/20.png)
+* Note that you will have to scroll the **Response JSON** panel to see the entire content.
 
 ```
 <gs-row>
@@ -779,9 +781,8 @@ for(var i = 0; i < events.length; i++){
 ```
 
 
-You can now see your Events being updated if you refresh the *Sales Events* screen:
+You can now see your Events being updated if you refresh the *Sales Events* screen.
 
-![](img/WeekEvents/26.png)
 
 ## Placing Players into Sales Segments
 
