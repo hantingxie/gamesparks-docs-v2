@@ -27,8 +27,8 @@ At any point in your game's development in the GameSparks portal, you can export
 
 ## Importing Cloud Code
 
-If you've exported your game's Cloud Code and edited files, you can re-import your changes in as a compressed archive:
-* At import, the content can be reviewed for differences.
+If you've exported your game's Cloud Code and edited files or if you've written some scripts you want to use for your game's Cloud Code, you can import these scripts as a compressed archive:
+* At import, the content can be reviewed for differences with your game's existing Cloud Code and you can select or reject those changes for import.
 
 *1.*  Go to *Configurator>Cloud Code*.
 
@@ -36,14 +36,32 @@ If you've exported your game's Cloud Code and edited files, you can re-import yo
 
 ![](img/ExpImp/2.png)
 
-The Import page opens where you can browse to select a Zip Archive.
+The Import page opens where you can browse to select a *Zip Archive*.
 
-*3.* Browse to and select the compressed archive folder for the Cloud Code you want to import:
+*3.* Select the compressed archive folder for the Cloud Code you want to import:
 
 ![](img/ExpImp/3.png)
 
-*4.* Click *Preview*. A *Review Import* opens:
+*4.* Click *Preview*. A *Review Import* list opens:
 
 ![](img/ExpImp/4.png)
 
-Etc.
+Where differences with your game's existing Cloud Code scripts are identified, these are shown and you can quickly review these to decide whether or not you want to accept the changes:
+* In this example, we can see that only one difference has been identified - the Cloud Code for the *AUTH_PLAYER* Event has been changed.
+
+*5.* Scroll down the review list and use the checkboxes to accept or reject the scripts for import:
+* By default all scripts are checked and will be imported.
+* You can use the *Toggle All* button to select/unselect all scripts.
+
+*6.* If you want to create a Snapshot of your game before you import the Cloud Code changes, select the *Create Game Snapshot* at the bottom of the page:
+
+![](img/ExpImp/5.png)
+
+* Creating a Snapshot before importing Cloud Code changes will allow you to revert to the current game configuration, should anything go wrong after you import the changes.
+
+*7.* Click *Import* to import the selected Cloud Code scripts.
+* When the import process has successfully completed, you'll see a message:
+
+![](img/ExpImp/6.png)
+
+*8.* Click *Close* to return to the Cloud Code page.
