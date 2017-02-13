@@ -81,10 +81,13 @@ The final step required to actually deliver a push notification is for the GameS
 For an authenticated player in the GameSparks Test Harness, send:
 
 ```
-{ "@class": ".PushRegistrationRequest",
+{
+
+"@class": ".PushRegistrationRequest",
 "deviceOS": "FCM",
-"pushId": "DEVICE_REGISTRATION_ID",
-"requestId": "1399640846121" }
+"pushId": "DEVICE_REGISTRATION_ID"
+
+}
 
 ```
 
@@ -107,13 +110,18 @@ You can quickly test to see if your set up works:
 
 *2.* In your Event's Cloud Code, create a message and send a message. Here's our example:
 
+
 ```
-Spark.sendMessage({"title":"test title","body":"test body"}, [Spark.getPlayer()]);
+var msg = Spark.message(null);
+msg.setPlayerIds([Spark.getPlayer().getPlayerId()]);
+msg.setMessageData({"title":"test title","body":"test body"});
+msg.send();
+
 
 ```
 
 *3.* Head over to the *Messages* section in *Configurator*.
 
-*4.* On the *Standard Messages* tab, edit the *ScriptMessage* and set the *Supress Push On Socket Send* to *Off*. This will allow you receive the notification through push even if you have the game on.
+*4.* On the *Standard Messages* tab, edit the *ScriptMessage* and set the *Send Via Socket* to *Off* and *Send As Push* to *On*. This will allow you receive the notification through push even if you have the game on.
 
 *5.* Run your app on your mobile device and call the Event in app or through the Test Harness. Your message and title should appear as a notification on your phone.
