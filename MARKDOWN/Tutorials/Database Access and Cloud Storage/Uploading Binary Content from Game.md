@@ -98,7 +98,7 @@ The final step is to actually retrieve the content that has been uploaded.
 
 ```
 {
-  "@class": ".GetUploadUrlRequest",
+  "@class": ".GetUploadedRequest",
   "uploadId":"635ec5dda1bc40b9b53e30618e1d8fff"
 }
 

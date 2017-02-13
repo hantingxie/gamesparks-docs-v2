@@ -15,7 +15,7 @@ The GameSparks API is a RESTful API that can be used to access authentication, g
 
 ## Schema
 
-* All API access is over HTTPS, and accessed from the https://portal.gamesparks.net for game management and https://apiKey.{stage}.gamesparks.net for service server.
+* All API access is over HTTPS.
 * All data is sent and received as JSON.
 * All dates and timestamps are returned in ISO 8601 format:
 
@@ -26,6 +26,7 @@ YYYY-MM-DD and YYYY-MM-DDTHH:MM:SSZ
 ```
 
 ## Authentication
+
 Authentication is performed using Basic Authentication (with your portal credentials).
 
 ## HTTP Verbs

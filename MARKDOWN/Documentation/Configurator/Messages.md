@@ -24,7 +24,7 @@ The *Message Configuration* panel contains two tabs:
 
 *2.* To configure a standard message type, click the edit ![](/img/icons/editicon.png) icon for a message. The page adjusts:
 
-![](img/Noti/10.png)
+![](img/Noti/14.png)
 
 In this example, the edit dialog for the *AchievementEarnedMessage* is shown.
 
@@ -50,7 +50,7 @@ In this example, the edit dialog for the *AchievementEarnedMessage* is shown.
 * *Advanced configuration* \- See Step 4 below.
 * *Segment configuration* \- Click the button at the top of the create panel to configure any *Segment* configuration you want to apply to the message. (See [section](#Different Messages for Different Players) below)
 
-*4.* If the standard configuration available for your push notification messages doesn't give you what you want, you can use *Advanced configuration* for 3 supported providers. For each of these, a JSON template editor is provided, for example *iOS for Apple*:
+*4.* If the standard configuration available for your push notification messages doesn't give you what you want, you can use *Advanced configuration* for 4 supported providers. For each of these, a JSON template editor is provided, for example *iOS for Apple*:
 
 ![](img/Noti/11.png)
 
@@ -58,6 +58,7 @@ Here are some examples of the formats you can use for these providers:
 * *iOS for Apple* \- {"aps":{"badge":1,"alert":"${summary}"}}
 * *Kindle for Amazon* \- {"expiresAfter":86400,"data":{"Message":"${Summary}","Title":"${title}", "messageId":"57dbcf149f68b50583cf9ab5","SubTitle":"${subtitle}" ,"MessageCount":21}}
 * *Android for Google* \- {"tickerText" : "${summary}" , "subtitle" : "${subtitle}" , "title" : "${title}" , "messageCount" : "1" , "messageId" : "57dbcfbb9f68b50583cf9ab7"}
+* *Firebase Cloud Messaging* \- {"notification": {{"Title":"${data.title}","body": "${data.body}"}}}
 
 <q>**Provider Documentation!** Please read the relevant provider-side documentation to ensure the message format you use is valid for the receiving device.</q>
 

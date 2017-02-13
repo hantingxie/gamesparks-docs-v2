@@ -177,19 +177,13 @@ Each request type in the platform now has it’s own class. To send an authentic
 9
 ```
 
-There are 3 variants of the Send method. Where “OUT” is the specific response type, the request will return
+There are 4 variants of the Send method. Where “OUT” is the specific response type, the request will return
 
-```
-public OUT Send ()
-
-```
-
-* Blocking send method, the thread will wait for a response.
 
 ```
 public void Send (Action<OUT> callback)
 ```
-* Async send method, the provided action will be invoked when the response is received, the action should check for errors in the response using response.HasErrors.
+* Async send method, the provided action will be invoked when the response is received, the action should check for errors in the response using *response.HasErrors*.
 
 ```
 public void Send (Action<OUT> callback, int timeoutSeconds)
@@ -200,7 +194,7 @@ public void Send (Action<OUT> callback, int timeoutSeconds)
 public void Send (Action<OUT> successCallback, Action<OUT> errorCallback)
 
 ```
-* Async send method, the SDK will invoke the correct action based on the HasErrors property of the reponse.
+* Async send method, the SDK will invoke the correct action based on the *HasErrors* property of the reponse.
 
 ```
 public void Send (Action<OUT> successCallback, Action<OUT> errorCallback, int timeoutSeconds)

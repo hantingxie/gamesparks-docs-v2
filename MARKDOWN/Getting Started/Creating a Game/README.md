@@ -88,6 +88,14 @@ When you create a game, the game is put into *Preview* stage.  There are two st
 
 You should remain in *Preview* as you develop and test your game. When you are happy with the state of your game, you can create a *Snapshot*.  A game *Snapshot* takes a copy of everything you've created up to that point in the game's development.  You can then publish the *Snapshot*.  Publishing the *Snapshot* will copy the game as it was when the *Snapshot* was taken and moves the game from *Preview* stage into *Live* stage.
 
+When you publish one of you game's Snapshots from *Preview* to *Live* for the first time, a confirmation dialog appears. This acts as a reminder, which you can use this to finally decide on the *Primary Region* for your game:
+
+![l](img/CreatingGame/13.png)
+
+* In this example, although we selected the *Americas* as the game's primary region when we created the game, we've changed the *Primary Region* to Asia, since we expect most of our players to be located in this region. If we hadn't changed the region for the published game, players in Asia would have been far more susceptible to possible latency issues when playing the game:
+  * **IMPORTANT!** When you have selected the *Primary Region* on first publication of a Snapshot, you cannot change it on any subsequent Snapshot publication!
+  * **I don't know** If you've not selected for a specific *Primary Region* when you created your game, you can leave this as the selection and publication will not be blocked. However, the region used for your game is unpredictable.
+
 <q>**Going Live Checklist!** Before you attempt to create a Snapshot of your game and publish it to Live, please review the [Going Live Checklist](/Getting Started/Going Live Checklist/README.md) to ensure everything runs smoothly.</q>
 
 ### Managing the Game's Life Cycle
@@ -104,7 +112,7 @@ Page  | Enabled
 -----  | -----------
 NoSQL Explorer   | Only if a game configuration Snapshot has been published.
 Manage Screens    | Only if a game configuration Snapshot has been published.
-Experiment Results    | Only if a game configuration Snapshot has been published.
+Experiment Results    | Only if the Experiment has been published.
 Analytics Overview    | Always.
 Analytics API Stream    | Only if a game configuration Snapshot has been published.
 Test Harness    | Always.

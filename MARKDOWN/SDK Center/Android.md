@@ -109,11 +109,11 @@ Now to initialize the GS module and connect our frontend to our backend!
 
 ```
 
-GSAndroidPlatform.initialise(this, "YOUR KEY", "YOUR SECRET", false, true);
+GSAndroidPlatform.initialise(this, "YOUR KEY", "YOUR SECRET", "YOUR CREDENTIAL", liveMode, autoUpdate);
 
 ```
 
-Now you need an API key and secret, which you are given when you create a game on our platform, click [here](/Getting Started/Creating a Game/README.md) for a quick guide to show you how.
+Now you need an API key and secret, which you are given when you create a game on our platform, click [here](/Getting Started/Creating a Game/README.md) for a quick guide to show you how. You will also need the Credential you are using - if you pass an empty String, then the default *device* Credential will be used.
 
 *7.* Once that's done, you now need to start the connection. To do that, place this code in the activity's code body:
 
@@ -122,12 +122,10 @@ Now you need an API key and secret, which you are given when you create a game o
 	public void onStart()
 	{
 		super.onStart();
-		GSAndroidPlatform.gs().stop();
+
 		GSAndroidPlatform.gs().start();
 	}
 
 ```
-
-The reason we stop the module before we start it is to establish a new connection which works to refresh the connection.
 
 <q>**Done!** After all this is done, you now are ready to use GameSparks API in your Android project. Details of the API can be found [here](/API Documentation/README.md)</q>
