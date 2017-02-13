@@ -94,7 +94,7 @@ When you publish one of you game's Snapshots from *Preview* to *Live* for the fi
 
 * In this example, although we selected the *Americas* as the game's primary region when we created the game, we've changed the *Primary Region* to Asia, since we expect most of our players to be located in this region. If we hadn't changed the region for the published game, players in Asia would have been far more susceptible to possible latency issues when playing the game:
   * **IMPORTANT!** When you have selected the *Primary Region* on first publication of a Snapshot, you cannot change it on any subsequent Snapshot publication!
-  * **I don't know** If you've not selected for a specific *Primary Region* when you created your game, you can leave this as the selection and publication will not be blocked. However, the region used for your game is unpredictable.
+  * **No Region Specified?** If you've not selected for a specific *Primary Region* when you created your game and have left the region as the default: *I don't know*, you can leave this as the selection and publication will not be blocked. However, the region used for your game is unpredictable.
 
 <q>**Going Live Checklist!** Before you attempt to create a Snapshot of your game and publish it to Live, please review the [Going Live Checklist](/Getting Started/Going Live Checklist/README.md) to ensure everything runs smoothly.</q>
 
