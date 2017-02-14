@@ -12,7 +12,7 @@ Here you can learn more about how to create and work with Cloud Code and use the
 * [Exporting and Importing Cloud Code](/Tutorials/Cloud Code and the Test Harness/Exporting and Importing Cloud Code.md)
 * [Viewing Cloud Code History](/Tutorials/Cloud Code and the Test Harness/Viewing Cloud Code History.md)
 * [Accessing Leaderboards with Cloud Code](/Tutorials/Cloud Code and the Test Harness/Accessing Leaderboards with Cloud Code.md)
-* [Sending Requests in Cloud Code](/Tutorials/Cloud Code and the Test Harness/Sending Requests in Cloud Code.md)
+* [Using SparkRequests API to Send Requests in Cloud Code](/Tutorials/Cloud Code and the Test Harness/Using SparkRequests API to Send Requests in Cloud Code.md)
 * [Scheduling Cloud Code](/Tutorials/Cloud Code and the Test Harness/Scheduling Cloud Code.md)
 * [Storing Custom Player Data](/Tutorials/Cloud Code and the Test Harness/Storing Custom Player Data.md)
 * [Changing Player Passwords](/Tutorials/Cloud Code and the Test Harness/Changing Player Passwords.md)

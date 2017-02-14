@@ -28,7 +28,7 @@ This Cloud Code is simple, it takes the message passed in and sends it, together
   2. Declare a variable which is set to the value of the string attribute
   3. Declare a variable which is set to the display name of the sender (Current player)
   4. Declare a JSON with the first keypair value being the message variable and the second being the display name variable
-  5. Using *Spark.sendMessageById(json, PlayerIDs)*, send the message to the list of players.
+  5. Create and send the script message to the list of players.
 
 
 
@@ -43,8 +43,11 @@ This Cloud Code is simple, it takes the message passed in and sends it, together
     //Group the display name and the message in one JSON
     var json = {"displayName":dName, "Message":chatString};
 
-    //Send the message to all the players in the list
-    Spark.sendMessageById(json, ID.pArray);
+    //Message param is null if you're not using a custom extension of scriptMessage
+    var msg = Spark.message(null);
+    msg.setPlayerIds(ID.pArray);
+    msg.setMessageData(json);
+    msg.send();
     ```
 
  

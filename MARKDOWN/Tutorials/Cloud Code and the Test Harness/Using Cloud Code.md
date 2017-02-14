@@ -127,3 +127,21 @@ The response is displayed in the *Inspector* in blue text:
 * The keys are *eventAttr1*, *eventAttr2*, and *eventAttr3*.
 
 ![](img/CreateCloud/28.png)
+
+
+### Constructing a Script Message
+
+Here's an example of how to construct a script message:
+
+```
+//Parameter is kept null if no custom script message is being used
+var msg = Spark.message(null);
+//Include player IDs of players you wish to receive message
+msg.setPlayerIds([Spark.getPlayer().getPlayerId()]);
+//Set the data object for the message
+msg.setMessageData({"title":"I am testing title","body":"I am testing body"});
+//Send message
+msg.send();
+```
+
+To learn more about constructing messages and seeing an example use, please check out the [chat tutorial](/Tutorials/Social Features/Setting Up Chat Messages.md).

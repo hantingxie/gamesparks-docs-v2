@@ -1,13 +1,12 @@
 ---
 nav_sort: 5
-src: /Tutorials/Cloud Code and the Test Harness/Sending Requests in Cloud Code.md
+src: /Tutorials/Cloud Code and the Test Harness/Using SparkRequests API to Send Requests in Cloud Code.md
 ---
 
-# Using the SparkRequests API
+# Sending Requests Using the SparkRequests API
 
 SparkRequest API allows you to send GameSparks Requests from within Cloud Code.
 
-Cloud Code bound to these requests and responses are not executed when sent using this API. If you want to execute Cloud Code on the requests and responses, you can do this by modularizing your code and executing the same module before sending the request and after receiving the response. This restriction is in place to protect from infinite loops that could occur. You can see how this works [here](/Documentation/Key Concepts/Cloud Code.md).
 
 ## Creating a Request
 
@@ -33,7 +32,31 @@ All of the parameters that are available for the particular Request, can be set 
 
 ```
 
-## Sending the Request and grabbing the Response
+## Simply Sending a Request or Sending and Executing Request Cloud Code
+
+When you send a request using the SparkRequest API, you can:
+* Simply send the request and not execute the Cloud Code attached to the request.
+* Send the request and also execute the request's Cloud Code.
+
+Here's an example of how to do this for an *AccountDetailsRequest*:
+
+```
+1
+2 // Create Request
+3 var req = new SparkRequests.AccountDetailsRequest();
+4
+5 // EITHER Send Request without executing
+6 req.Send();
+7
+8 // OR Send Request and execute Cloud Code
+9 req.Execute();
+10
+11
+
+
+```
+
+## Sending the Request and Grabbing the Response
 
 There are a few ways to dispatch the request and they primarily differ by who the request is sent by:
 
