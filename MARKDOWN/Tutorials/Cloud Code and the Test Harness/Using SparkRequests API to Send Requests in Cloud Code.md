@@ -45,7 +45,7 @@ Here's an example of how to do this for an *AccountDetailsRequest*:
 2 // Create Request
 3 var req = new SparkRequests.AccountDetailsRequest();
 4
-5 // EITHER Send Request without executing
+5 // EITHER Send Request without executing Cloud Code
 6 req.Send();
 7
 8 // OR Send Request and execute Cloud Code
