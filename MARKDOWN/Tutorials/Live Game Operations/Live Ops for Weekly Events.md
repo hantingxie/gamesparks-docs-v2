@@ -6,9 +6,9 @@ src: /Tutorials/Live Game Operations/Live Ops for Weekly Events.md
 
 ## Introduction
 
-This tutorial explores how dynamic forms can be used to help support your game after it has gone live, specifically for common live operations uses cases that involve weekly Events. In this example, we'll create a management screen that will allow the user to configure promotions/sales on Virtual Goods between two dates:
+This tutorial explores how dynamic forms can be used to help support your game after it has gone live, specifically for common live operations use cases that involve weekly Events. In this example, we'll create a management screen that will allow the user to configure promotions/sales on Virtual Goods between two dates:
 * When an Event is active, players will be grouped into a particular sale Segment.
-* While the Event is running they can then avail of a different price for any Virtual Goods in that segment.
+* While the Event is running they can then avail of a different price for any Virtual Goods in that Segment.
 
 This kind of example is widely customizable. Past examples include loot-drop distributions, Event-driven Leaderboards, quest-systems, and so on.
 

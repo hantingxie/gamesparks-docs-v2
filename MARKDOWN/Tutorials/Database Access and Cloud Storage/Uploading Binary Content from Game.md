@@ -12,6 +12,8 @@ You can give your players the ability to upload binary content to be hosted on t
 
 In this exercise we'll run through how you complete each of these steps with the GameSparks API and demonstrate this using the [Test Harness](/Documentation/Test Harness/README.md). To finish, there is a brief note on using the GameSparks SDKs to perform these steps (which we've streamlined behind the scenes to make your life easier).
 
+<q>**Upload File Size Limit?** For the file size limit imposed on uploaded content, see [System Limits](/Documentation/Key Concepts/System Limits.md).</q>
+
 ## Get an Upload URL
 
 The first step is to get an upload URL - you need somewhere to post your content. If you're following these steps in the Test Harness, the *GetUploadUrlRequest* is available under the *Upload* category (make sure you've authenticated as a player before making the first request).
