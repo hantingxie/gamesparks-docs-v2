@@ -9,11 +9,11 @@ src: /Documentation/Configurator/Segments.md
 
 Segments allow you to create partitions for different users and apply various rules to different areas of the platform. Segments offer you an extra dimension of flexibility for customizing player experience and behavior.
 
-## Examples
+## Segmentation Use Cases
 
-Here's two example use cases where Segmentation comes in very useful:
+Here's two use cases where Segmentation comes in very useful:
 
-*1.* Let's suppose I have an international blockbuster game with players connecting from different parts of the World. In order to offer a more personalized experience for my players, I might want to segment players by region or country. I can create a Segment based on country, with Segment Values of the countries my players are situated in. When added to such a Segment, the players will receive a different experience. For example, each Segment Value (country in this case) could have assign values for:
+*1.* Let's suppose I have an international blockbuster game with players connecting from different parts of the World. In order to offer a more personalized experience for my players, I might want to segment players by region or country. I can create a Segment based on country, with Segment Values of the countries my players are situated in. When added to such a Segment, the players will receive a different experience. For example, each Segment Value (country in this case) could have its own values assigned for:
 * Virtual Goods.
 * The awards players receive upon obtaining an Achievement.
 * The rates of 6 currencies that spread across their game.
@@ -34,7 +34,7 @@ You can use the following options (highlighted above):
 
 ## Creating a Segment and Adding Segment Values
 
-You can create and assign multiple segments, each with their own set of values.
+You can add multiple Segment and for each Segment you can define multiple values.
 
 *1.* On the *Segments* tab, click *Add*. The page adjusts:
 
@@ -47,23 +47,23 @@ You can create and assign multiple segments, each with their own set of values.
 
 *3.* To add values to the Segment, under *Values* click *Add*.
 
-*4.* Enter a *Short Code*, *Name*, and *Description* for each Segment value that you add:
+*4.* Enter a *Short Code*, *Name*, and *Description* for each Segment Value that you add:
 
 ![](img/Segments/9.png)
 
-In this example, we've added 6 Values to our *Country* Segment:
-* We can now assign different Segment/Value pairs to the players of our game and on the basis of these segment assignments, differentiate player experience.
+In this example, we've added 6 Values for our *Country* Segment:
+* We can now assign different Segment/Value pairs to the players of our game and on the basis of these assignments, differentiate player experience.
 
 ## Building Segment Queries
 
 You can build *Segment Queries* to define rules which determine which player's are subjected to a specific segmentation of a configuration object in your game:
-* For example, you might segment a Virtual Good into three segments and set different currency values for the Virtual Good for each segment. You can then use Segment Queries to determine which players experience which Virtual Good costs, depending on the Segment/Value pair a player has been assigned.
+* For example, you might segment a Virtual Good into three segments and set different currency values for the Virtual Good for each segment. You can then use Segment Queries to determine which players experience which Virtual Good costs, depending on the Segment/Value pair a player has been assigned to.
 
 <<<<< Using Custom Queries >>>>>
 
 ### Setting Segment Query Filters
 
-When you add the Segment Queries you want for segmenting you game's configuration objects, you can select just those filters you want to use when building your queries:
+When you create the Segment Queries you want to use for segmenting your game's configuration objects, you can select just those filters you want to use for building queries:
 
 *1.* Go to *Configurator>Segments* and select the *Segments Queries* tab.
 
@@ -75,7 +75,7 @@ The *Segment Query Filters* panel appears:
 
 ![](img/Segments/15.png)
 
-*3.* Select the *Segment Query Filters* you want to use when building your Segment Query:
+*3.* Select the *Segment Query Filters* you want to use when building your Segment Queries:
 * The filters available will depend on your game's set up and the configuration objects created for your game. By default all are selected.
 * Uncheck any filters you don't want to use when building your Segment Queries.
 * In the current example, we've unchecked 4 Virtual Goods filters.
@@ -88,7 +88,7 @@ The *Segment Query Filters* panel appears:
 
 ### Adding Segment Queries
 
-Now that we've selected our Segment Query Filters, here's how to build a couple of Segment Queries that we'll use [below](#Segmenting Configuration across the Portal) to segment an Achievement:
+Now that we've selected our Segment Query Filters, we can build a couple of Segment Queries that we'll use [below](#Segmenting Configuration across the Portal) to segment an Achievement:
 
 *1.* Go to *Configurator>Segments* and select the *Segment Queries* tab.
 
@@ -104,20 +104,39 @@ Now that we've selected our Segment Query Filters, here's how to build a couple 
 * For the current example, we've set up a single-rule query:
 
 ![](img/Segments/16.png)
-* Here we've used the *Country* Segment to create a Segment Query - only players assigned the Segment/Value pairing *COUNTRY_SEG/JP_COUNTRY_SEGVAL* will be subject to the alternative values of that object we've set for a specific segment.
+* Here we've used the *Country* Segment to create a Segment Query - only players assigned the Segment/Value pairing *COUNTRY_SEG/JP_COUNTRY_SEGVAL* will be subject to the alternative values of a configuration object that we segment using this query.
 
 *5.* Click to *Save and Close* the new Segment Query.
 
 *6.* Repeat the above steps to create a second Segment Query:
 
 ![](img/Segments/18.png)
-* Here we've used the *Country* segment to create a Segment Query - only those players assigned the Segment/Value pairing *COUNTRY_SEG/PL_COUNTRY_SEGVAL* will be subject to the alternative values of that object we've set for a specific segment.
+* Here we've used the *Country* segment to create a Segment Query - only those players assigned the Segment/Value pairing *COUNTRY_SEG/PL_COUNTRY_SEGVAL* will be subject to the alternative values of a configuration object that we segment using this query.
 
-*7.* Click to *Save and Close* this second new Segment Query.
+*7.* Click to *Save and Close* this second new Segment Query:
 
-We now have two Segment Queries we can use when we segment configuration objects in our game and impose different experiences on players assigned different Segment/Value pairs.
+* We now have two Segment Queries we can use when we segment configuration objects in our game and impose different experiences on players assigned different Segment/Value pairs.
+* Before we set about segmenting our game's configuration objects, we'll use Cloud Code to assign Segment/Value pairs to our players.
 
-## Setting Segments Using Cloud Code
+## Assigning Segments Values to Players Using Cloud Code
+
+You can assign Segment Values to your players using [Cloud Code](/Documentation/Configurator/Cloud Code.md):
+* For any Segment with multiple Values, you can assign a single Segment Value to a player as a Segment/Value pair.
+
+Here's an example of how to do this by attaching Cloud Code to AuthenticationResponse. We assign a Country Segment/Value pair to each player when they Authenticate on the portal:
+
+```
+Etc..
+
+
+```
+
+
+![](img/Segments/22.png)
+
+
+<<<< ORIG >>>>
+
 
 Not all Segments have to be set through the Configurator. Segments and their Values can be set on-the-fly using [Cloud Code](/Documentation/Configurator/Cloud Code.md). For any Segment type, a player can have a single Value set, and you can set (or unset) these Values via Cloud Code using _SparkPlayer.setSegmentValue(TYPE, VALUE)_ or find the current Value of a Segment they have, using _myPlayer.getSegmentValue("TYPE")_.
 
@@ -146,18 +165,18 @@ Here, we'll segment an Achievement using the two Segment Queries we built [above
 *7.* Use the drop-down to select the *Segment Query* you want to use to determine which players are put into this segment of the Achievement:
 
 ![](img/Segments/20.png)
-* Here we've selected the *COUNTRY_SEG_QUERY_JP*. This means that only players assigned the *COUNTRY_SEG/JP_COUNTRY_SEGVAL* Segment/Value pair will be subject to the alternative values for this Achievement segment.  
+* Here we've selected the *COUNTRY_SEG_QUERY_JP*. This means that any players assigned the *COUNTRY_SEG/JP_COUNTRY_SEGVAL* Segment/Value pair will be subject to the alternative values for this Achievement segment.  
 
 *8.* Click *Add Segment* again and add a second segment for the Achievement:  
 
 ![](img/Segments/21.png)
-* Here we've selected the *COUNTRY_SEG_QUERY_PL*. This means that only players assigned the *COUNTRY_SEG/PL_COUNTRY_SEGVAL* Segment/Value pair will be subject to the alternative values for this Achievement segment.
+* Here we've selected the *COUNTRY_SEG_QUERY_PL*. This means that any players assigned the *COUNTRY_SEG/PL_COUNTRY_SEGVAL* Segment/Value pair will be subject to the alternative values for this Achievement segment.
 
 *9.* Click to *Save and Close* the Achievement segmentation.
 
 ### Ordering Segment Configuration
 
-Segmented values within the portal can be ordered, where the order is used to find the most appropriate value for the current player. Simply click and hold on the *Reorder* icon and drag-and-drop a Segment to where you want it:
+Segmented values within the portal can be ordered - simply click and hold on the *Reorder* icon and drag-and-drop a Segment to where you want it:
 
 ![](img/Segments/11.png)
 
