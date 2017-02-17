@@ -45,16 +45,17 @@ private static var gs:GS = new GS();
 
 When using the builder methods, you should supply:
 
-* The URL to connect to (you can get your games preview or live url from the test harness).
-* The APi secret of your game.
+* The API Key to connect to (you can get your games API Key from the Overview page).
+* The API secret of your game.
 * A function that should be called once the SDK has become available.
 * An optional logger for debug messages.
 
 ```
 gs.setAvailabilityCallback(availabilityCallback)
     .setLogger(logger)
-    .setUrl("wss://preview.gamesparks.net/ws/290466xUylXa")
+    .setApiKey("YOUR_APIKEY")
     .setApiSecret("YOUR_SECRET")
+    .setApiCredential("Credential")
     .connect();
 ```
 

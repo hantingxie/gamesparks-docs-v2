@@ -21,7 +21,7 @@ This tutorial shows you how to set up your ActionScript project and establish a 
 **Using GameSparks API**
 
   * Import the GameSparks API.
-  * Find your Service URL in the Test Harness and the Secret key in the Overview page of the Portal.
+  * Find your API Key in the Test Harness and the Secret key in the Overview page of the Portal.
   * Make your first function which establishes a connection between the GS module and the Portal.
   * Create the Logger and Availability call back functions. These functions are necessary for debugging.
   * Build your ActionScript interface with a button to make the connection work correctly and a Logger to debug what's happening in the background.
@@ -74,29 +74,26 @@ import flash.utils.setInterval;
 
 ![l](img/AS/6.png)
 
-*2.* The first function you will need to make allows you to connect your game to the Portal. To do this, you must connect using the *API Secret* and *service URL*:
+*2.* The first function you will need to make allows you to connect your game to the Portal. To do this, you must connect using the *API Secret* and *service Key*:
 
-* You can find the *API Secret* on the *Game Overview* page. When you first open the page the *API Secret* is hidden. Click on the field or click *Show* to reveal the secret and then use *Copy*:
+* You can find the *API Secret* and *API Key* on the *Game Overview* page. When you first open the page the *API Secret* and *API Key* are hidden. Click on the field or click *Show* to reveal the values and then use *Copy*:
 
 ![l](img/AS/13.png)
 
-* You can find the *Service URL* in the *Test Harness*:
+*3.* Now you can make your first function. This uses the Key and Secret to connect to the Portal. Name this function *ConnectToPortal* and initiate the connection using:
 
-![l](img/AS/12.png)
-
-*3.* Now you can make your first function. This uses the URL and Key to connect to the Portal. Name this function *ConnectToPortal* and initiate the connection using:
-
-*gs.setAvailabilityCallback().setLogger().setUrl("").setApiSecret("").connect();*
+*gs.setAvailabilityCallback().setLogger().setApiKey("").setApiSecret("")ssetApiCredential("").connect();*
 
   * *setAvailabilityCallback(FunctionNameHere)* calls the given function when the GS module sends feedback from the connection or disconnection to the Portal.
   * *setLogger(FunctionNameHere)* calls the given function when the GS module sends general feedback.
-  * *setUrl("Url")* and *setApiSeret("Secret")* connects the GS module to the given URL using the given Secret key.
+  * *setApiKey("Key")* and *setApiSeret("Secret")* connects the GS module to the given API Key using the given Secret key.
+  * *setApiCredential("Credential")* ensures that the device can only call the requests it is allowed to.
   * *connect()* fires the request to connect the GS module to the Portal as well as calling the Availability call back function set and logging it.
 
 ```
     		private function ConnectToPortal():void
     			{
-    				gs.setAvailabilityCallback(availabilityCallback).setUrl("wss://preview-test.gamesparks.net/ws/debug-web/o358719xvku3").setApiSecret("g5pTDnjTrn6BakxECNlXsR9GTYUALCJD").connect();
+    				gs.setAvailabilityCallback(availabilityCallback).setApiKey("API KEY").setApiSecret("API SECRET").setApiCredential("device").connect();
     			}
 ```
 

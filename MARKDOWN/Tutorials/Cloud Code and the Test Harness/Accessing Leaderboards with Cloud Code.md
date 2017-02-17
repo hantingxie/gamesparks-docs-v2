@@ -9,7 +9,7 @@ There are many scenarios where you might want to access Leaderboard data. For e
 * Determine the position of given player within a Leaderboard.
 * Get the id of a player who is at a given position on the Leaderboard.
 
-You can implement these two features using the Cloud Code [SparkRequests](/Tutorials/Cloud code and the Test Harness/Sending Requests in Cloud Code.md) API. This API allows requests to be sent either as the current player or as any other player within your game.
+You can implement these two features using the Cloud Code [SparkRequests](/Tutorials/Cloud code and the Test Harness/Using SparkRequests API to Send Requests in Cloud Code.md) API. This API allows requests to be sent either as the current player or as any other player within your game.
 
 To find the rank of a given player, you can use a [LeaderboardDataRequest](/API Documentation/Request API/Leaderboards/LeaderboardDataRequest.md), which will return the data associated with the player:
 

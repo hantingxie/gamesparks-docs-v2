@@ -139,7 +139,7 @@ Modules allow you to create your own libraries of JavaScript that can be include
     require("MODULE_SHORT_CODE");
 ```
 
-* Using *require*, you can load a module into the current execution context. This is not common.js require, but a more basic inclusion pattern, where the loaded module is inlined within the current script.
+* You can load a module into the current execution context. This is not common.js require, but a more basic inclusion pattern, where the loaded module is inlined within the current script.
 * If you have circular reference between modules, the *require* method will only load a single module once per *require* invocation. This is to protect from infinite loops and stack overflows.
 * You can conditionally *require* modules based on input parameters and the like, to have a single script that can perform multiple tasks without having a large script:
 

@@ -87,6 +87,8 @@ gs.setLogger(writeText)
 gs.setApiKey("293711ZXWjA9")
 --Set Secret
 gs.setApiSecret("DgnYnPUE2D0RetwKAy5XPUxxxN7pl36e")
+--Set Credential
+gs.setApiCredential("device")
 --Set availability callback function
 gs.setAvailabilityCallback(availabilityCallback)
 --Connect to your game's backend

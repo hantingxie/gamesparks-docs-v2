@@ -86,8 +86,7 @@ That will ensure that the API is ready to be used.
 Now, to initialize the GS module and connect our frontend to our backend! In any of your activity's Java code OnCreate function place the following:
 
 ```
-
-GSAndroidPlatform.initialise(this, "YOUR KEY", "YOUR SECRET", false, true);
+GSAndroidPlatform.initialise(this, "YOUR KEY", "YOUR SECRET", "YOUR CREDENTIAL", liveMode, autoUpdate);
 
 ```
 
