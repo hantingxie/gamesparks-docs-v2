@@ -116,3 +116,228 @@ Code | Description
 403 | Not allowed
 404 | Not found
 500 | Internal server error
+
+## Examples
+
+### Get Access Token
+
+**Request:**
+
+```
+GET https://auth.gamesparks.net/restv2/auth/user
+Authorization: Basic dXNlckBlbWFpbC5jb206cGFzc3dvcmQ=
+Content-Type: application/json
+
+```
+
+**Response:**
+
+```
+
+{
+  "country": "UK",
+  "username": "user@email.com",
+  "expiresAt": 1487345184073,
+  "X-GSAccessToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0ODczNDUxODQsImlkZW50aXR5IjoidXNlckBlbWFpbC5jb20ifQ.neJJnjlpXpYpCi7y6OK43oqELk6BNmKa1cC4JTZy4Z0"
+}
+
+```
+
+### Get JWT Token
+
+**Request:**
+
+```
+
+GET https://auth.gamesparks.net/restv2/auth/game/J3335lNuVXGb/jwt
+X-GSAccessToken: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0ODczNDUxODQsImlkZW50aXR5IjoidXNlckBlbWFpbC5jb20ifQ.neJJnjlpXpYpCi7y6OK43oqELk6BNmKa1cC4JTZy4Z0
+Content-Type: application/json
+
+```
+
+**Response:**
+
+```
+{
+  "username": "user@email.com",
+  "expiresAt": 1487345848710,
+  "X-GS-JWT": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJnYW1lSWQiOjMzMzUsImNvdW50cnkiOiJVSyIsImFwaUtleSI6IkozMzM1bE51VlhHYiIsInBlcm1pc3Npb25zIjp7IkozMzM1bE51VlhHYiI6eyJjb25maWd1cmF0b3IuaW50ZWdyYXRpb25zLnByb3ZpZGVycy5hbWF6b24iOjAsImNvbmZpZ3VyYXRvci5ldmVudHMucnVubmluZ1RvdGFscyI6MiwiY29uZmlndXJhdG9yLmdlb3Jlc3RyaWN0aW9ucyI6MiwiY29uZmlndXJhdG9yLnNjcmlwdHMucmVxdWVzdCI6MiwiYWRtaW4ucGVybWlzc2lvbnMuZ3JvdXBzIjoyLCJjb25maWd1cmF0b3IuYWNoaWV2ZW1lbnRzIjoyLCJhbmFseXRpY3MiOjIsIm1hbmFnZS5zbmFwc2hvdHMiOjIsImFkbWluLnNuYXBzaG90cyI6MiwiY29uZmlndXJhdG9yLmludGVncmF0aW9ucyI6MiwiY29uZmlndXJhdG9yLmdhbWUuZGVsZXRlIjoyLCJhZG1pbi5sb2dTdW1tYXJ5IjoyLCJjb25maWd1cmF0b3IuZ2FtZSI6MiwiY29uZmlndXJhdG9yLmludGVncmF0aW9ucy5wcm92aWRlcnMudHdpdHRlciI6MCwiY29uZmlndXJhdG9yLnNjcmlwdHMuaW1wb3J0IjoyLCJjb25maWd1cmF0b3IuZ2FtZS5jaGFuZ2VPd25lciI6MiwiY29uZmlndXJhdG9yLnNjcmlwdHMuc3lzdGVtTW9kdWxlcyI6MiwiY29uZmlndXJhdG9yLm11bHRpcGxheWVyLm1hdGNoZXMiOjIsImNvbmZpZ3VyYXRvci5zY3JpcHRzLnJ0TW9kdWxlcyI6MiwiY29uZmlndXJhdG9yLmludGVncmF0aW9ucy5wcm92aWRlcnMuYXBwbGUiOjAsIm5vc3FsIjoyLCJhZG1pbi5wdWJsaXNoIjoxLCJjb25maWd1cmF0b3IuaW50ZWdyYXRpb25zLnByb3ZpZGVycy5taWNyb3NvZnQiOjAsImNvbmZpZ3VyYXRvci5ldmVudHMiOjIsImNvbmZpZ3VyYXRvci5pbnRlZ3JhdGlvbnMucHJvdmlkZXJzIjoyLCJjb25maWd1cmF0b3IubWVzc2FnZXMiOjIsImNvbmZpZ3VyYXRvci5zY3JpcHRzLnVzZXJNZXNzYWdlIjoyLCJjb25maWd1cmF0b3Iuc2NyaXB0cy5jaGFsbGVuZ2VFdmVudCI6MiwiY29uZmlndXJhdG9yLmludGVncmF0aW9ucy5wcm92aWRlcnMud2VjaGF0IjowLCJjb25maWd1cmF0b3Iuc2NyaXB0cy5tb2R1bGVzIjoyLCJjb25maWd1cmF0b3IuaW50ZWdyYXRpb25zLnByb3ZpZGVycy5wc24iOjAsImNvbmZpZ3VyYXRvci5pbnRlZ3JhdGlvbnMucHJvdmlkZXJzLnN0ZWFtIjowLCJjb25maWd1cmF0b3IubXVsdGlwbGF5ZXIuY2hhbGxlbmdlcyI6MiwiY29uZmlndXJhdG9yLnNjcmlwdHMucnRTY3JpcHQiOjIsImNvbmZpZ3VyYXRvci5pbnRlZ3JhdGlvbnMucHJvdmlkZXJzLnFxIjowLCJhY2Nlc3MiOjIsImV4cGVyaW1lbnRzIjoyLCJhZG1pbiI6MiwiY29uZmlndXJhdG9yLm11bHRpcGxheWVyIjoyLCJhZG1pbi50ZXN0SGFybmVzcyI6MiwiY29uZmlndXJhdG9yLnRlYW1zIjoyLCJhZG1pbi5wZXJtaXNzaW9ucy5nYW1lIjoyLCJhZG1pbi5wZXJtaXNzaW9ucy5jb2xsYWJvcmF0b3IiOjIsImNvbmZpZ3VyYXRvci5pbnRlZ3JhdGlvbnMucHJvdmlkZXJzLnR3aXRjaCI6MCwiY29uZmlndXJhdG9yLmludGVncmF0aW9ucy5wcm92aWRlcnMua29uZ3JlZ2F0ZSI6MCwiYWRtaW4ubmV3RmVhdHVyZXMiOjIsImNvbmZpZ3VyYXRvci5pbnRlZ3JhdGlvbnMucHVzaFRlc3QiOjIsImNvbmZpZ3VyYXRvci52aXJ0dWFsR29vZHMiOjIsImNvbmZpZ3VyYXRvci5pbnRlZ3JhdGlvbnMucHJvdmlkZXJzLmdvb2dsZSI6MCwiY29uZmlndXJhdG9yLnNjcmlwdHMuZXZlbnQiOjIsImNvbmZpZ3VyYXRvci5jcmVkZW50aWFscyI6MiwiY29uZmlndXJhdG9yLmdhbWUuZGV0YWlscyI6MiwiYWRtaW4ucGVybWlzc2lvbnMiOjIsImNvbmZpZ3VyYXRvci5jdXJyZW5jeTYiOjAsImNvbmZpZ3VyYXRvci5jdXJyZW5jeTUiOjAsImNvbmZpZ3VyYXRvci5jdXJyZW5jeTQiOjAsImNvbmZpZ3VyYXRvci5jdXJyZW5jeTMiOjAsImNvbmZpZ3VyYXRvci5jdXJyZW5jeTIiOjAsImNvbmZpZ3VyYXRvci5jdXJyZW5jeTEiOjAsImNvbmZpZ3VyYXRvci5pbnRlZ3JhdGlvbnMucHJvdmlkZXJzLnZpYmVyIjowLCJjb25maWd1cmF0b3IuaW50ZWdyYXRpb25zLnByb3ZpZGVycy5mYWNlYm9vayI6MCwibWFuYWdlIjoyLCJjb25maWd1cmF0b3IucHJvcGVydGllcyI6MiwiY29uZmlndXJhdG9yIjoyLCJjb25maWd1cmF0b3IuZG93bmxvYWRhYmxlcyI6MiwiY29uZmlndXJhdG9yLnNlZ21lbnRzIjoyLCJjb25maWd1cmF0b3IuZXZlbnRzLmxlYWRlcmJvYXJkcyI6MiwiY29uZmlndXJhdG9yLnNjcmlwdHMubWVzc2FnZSI6MiwiY29uZmlndXJhdG9yLnNjcmlwdHMiOjIsImNvbmZpZ3VyYXRvci5zY3JpcHRzLmNhbGxiYWNrcyI6MiwiY29uZmlndXJhdG9yLnNjcmlwdHMucmVzcG9uc2UiOjJ9fSwicm9sZXMiOiIiLCJncm91cHMiOiJnc3JvbGUuZ2FtZUFkbWluIiwidXNlck5hbWUiOiJ1c2VyQGVtYWlsLmNvbSIsImV4cCI6MTQ4NzM0NTg0OCwidXNlcklkIjozMywiaXNzdWVyIjoibG9jYWxob3N0In0.c60Y9WBr6vV5JKf1yq3rlWsLe15G0QXkCgrevqRoRpI"
+}
+```
+
+### Get Scoped JWT Token
+
+**Request:**
+
+```
+GET https://auth.gamesparks.net/restv2/auth/game/J3335lNuVXGb/jwt/nosql
+X-GSAccessToken: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0ODczNDUxODQsImlkZW50aXR5IjoidXNlckBlbWFpbC5jb20ifQ.neJJnjlpXpYpCi7y6OK43oqELk6BNmKa1cC4JTZy4Z0
+Content-Type: application/json
+```
+
+**Response:**
+
+```
+{
+  "username": "user@email.com",
+  "expiresAt": 1487345917287,
+  "X-GS-JWT": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJnYW1lSWQiOjMzMzUsImNvdW50cnkiOiJVSyIsImFwaUtleSI6IkozMzM1bE51VlhHYiIsInBlcm1pc3Npb25zIjp7IkozMzM1bE51VlhHYiI6eyJub3NxbCI6Mn19LCJyb2xlcyI6IiIsImdyb3VwcyI6Imdzcm9sZS5nYW1lQWRtaW4iLCJ1c2VyTmFtZSI6InVzZXJAZW1haWwuY29tIiwiZXhwIjoxNDg3MzQ1OTE3LCJ1c2VySWQiOjMzLCJpc3N1ZXIiOiJsb2NhbGhvc3QifQ.SUXYd-q2Dt1LLX0f86JjfYje9ihBnQVXH_uCDMuzyp0"
+}
+
+```
+
+
+### Create an Event
+
+**Request:**
+
+```
+POST https://config-beta.gamesparks.net/restv2/game/J3335lNuVXGb/config/~events
+X-GSAccessToken: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0ODczNDUxODQsImlkZW50aXR5IjoidXNlckBlbWFpbC5jb20ifQ.neJJnjlpXpYpCi7y6OK43oqELk6BNmKa1cC4JTZy4Z0
+Content-Type: application/json
+
+{
+  "description": "winRace",
+  "name": "winRace",
+  "shortCode": "winRace",
+  "~attributes": [
+    {
+      "@id": "/~events/winRace/~attributes/SCORE",
+      "dataType": "int",
+      "defaultAggregationType": "MAX",
+      "defaultValue": null,
+      "name": "score",
+      "shortCode": "SCORE"
+    },
+    {
+      "@id": "/~events/winRace/~attributes/CAR",
+      "dataType": "string",
+      "defaultAggregationType": "SCRIPT",
+      "defaultValue": null,
+      "name": "car",
+      "shortCode": "CAR"
+    }
+  ]
+}
+```
+
+**Response:**
+
+```
+{
+  "@id" : "/~events/winRace",
+  "description" : "winRace",
+  "name" : "winRace",
+  "shortCode" : "winRace",
+  "~attributes" : [ {
+    "@id" : "/~events/winRace/~attributes/SCORE",
+    "dataType" : "int",
+    "defaultAggregationType" : "MAX",
+    "defaultValue" : null,
+    "name" : "score",
+    "shortCode" : "SCORE"
+  }, {
+    "@id" : "/~events/winRace/~attributes/CAR",
+    "dataType" : "string",
+    "defaultAggregationType" : "SCRIPT",
+    "defaultValue" : null,
+    "name" : "car",
+    "shortCode" : "CAR"
+  } ]
+}
+```
+
+### Update the Description of an Event
+
+**Request:**
+
+```
+PUT https://config-beta.gamesparks.net/restv2/game/J3335lNuVXGb/config/~events/winRace
+X-GSAccessToken: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0ODczNDUxODQsImlkZW50aXR5IjoidXNlckBlbWFpbC5jb20ifQ.neJJnjlpXpYpCi7y6OK43oqELk6BNmKa1cC4JTZy4Z0
+Content-Type: application/json
+
+{
+  "description": "Event called when you win a race"
+}
+```
+
+**Response:**
+
+```
+{
+  "@id": "/~events/winRace",
+  "description": "Event called when you win a race",
+  "name": "winRace",
+  "shortCode": "winRace",
+  "~attributes": [
+    {
+      "@id": "/~events/winRace/~attributes/SCORE",
+      "dataType": "int",
+      "defaultAggregationType": "MAX",
+      "defaultValue": null,
+      "name": "score",
+      "shortCode": "SCORE"
+    },
+    {
+      "@id": "/~events/winRace/~attributes/CAR",
+      "dataType": "string",
+      "defaultAggregationType": "SCRIPT",
+      "defaultValue": null,
+      "name": "car",
+      "shortCode": "CAR"
+    }
+  ]
+}
+
+```
+
+### Add an Event Attribute
+
+**Request:**
+
+```
+POST https://config-beta.gamesparks.net/restv2/game/J3335lNuVXGb/config/~events/winRace/~attributes
+X-GSAccessToken: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0ODczNDUxODQsImlkZW50aXR5IjoidXNlckBlbWFpbC5jb20ifQ.neJJnjlpXpYpCi7y6OK43oqELk6BNmKa1cC4JTZy4Z0
+Content-Type: application/json
+
+{
+  "dataType": "string",
+  "defaultAggregationType": "SUPPLEMENTAL",
+  "name": "track",
+  "shortCode": "TRACK"
+}
+```
+
+**Response:**
+
+```
+{
+  "@id": "/~events/winRace/~attributes/TRACK",
+  "dataType": "string",
+  "defaultAggregationType": "SUPPLEMENTAL",
+  "defaultValue": null,
+  "name": "track",
+  "shortCode": "TRACK"
+}
+```
+
+### Delete an Event Attribute
+
+**Request:**
+
+```
+DELETE https://config-beta.gamesparks.net/restv2/game/J3335lNuVXGb/config/~events/winRace/~attributes/TRACK
+X-GSAccessToken: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0ODczNDUxODQsImlkZW50aXR5IjoidXNlckBlbWFpbC5jb20ifQ.neJJnjlpXpYpCi7y6OK43oqELk6BNmKa1cC4JTZy4Z0
+Content-Type: application/json
+
+```
+
+**Response:**
+
+```
+
+{
+  "message": "SUCCESS"
+}
+
+```
