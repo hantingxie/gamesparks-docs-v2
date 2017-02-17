@@ -105,14 +105,14 @@ Here, we'll build two Segment Queries that we'll use [below](#Segmenting Configu
 * For the current example, we've set up a single-rule query:
 
 ![](img/Segments/16.png)
-* Here we've used the *Country* Segment to create a Segment Query - only players assigned the Segment/Value pairing *COUNTRY_SEG/JP_COUNTRY_SEGVAL* will be subject to the alternative values of a configuration object that we segment using this query.
+* Here we've used the *Country* Segment to create a Segment Query - only players assigned the Segment/Value pairing: *COUNTRY_SEG/JP_COUNTRY_SEGVAL* will be subject to the alternative values of a configuration object that we segment using this query.
 
 *5.* Click to *Save and Close* the new Segment Query.
 
 *6.* Repeat the above steps to create a second Segment Query:
 
 ![](img/Segments/18.png)
-* Here we've used the *Country* segment to create a Segment Query - only those players assigned the Segment/Value pairing *COUNTRY_SEG/PL_COUNTRY_SEGVAL* will be subject to the alternative values of a configuration object that we segment using this query.
+* Here we've used the *Country* segment to create a Segment Query - only those players assigned the Segment/Value pairing: *COUNTRY_SEG/PL_COUNTRY_SEGVAL* will be subject to the alternative values of a configuration object that we segment using this query.
 
 *7.* Click to *Save and Close* this second new Segment Query:
 
@@ -177,8 +177,8 @@ You can quickly check that the Cloud Code you use to assign Segment/Value pairs 
 ## Segmenting Configuration across the Portal
 
 Within the portal, you can segment your configuration to set different parameters for different Segments. For example, you can have:
-* A different price for a virtual good for a particular Segment.
-* A different virtual good award and currency reward for an Achievement depending on the player's country Segment.
+* A different price for a Virtual Good for a particular Segment.
+* A different Virtual Good award and currency reward for an Achievement depending on the player's country Segment.
 
 Here, we'll segment an Achievement using the two Segment Queries we built [above](#Adding Segment Queries).
 
