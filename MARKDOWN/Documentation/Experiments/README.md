@@ -172,3 +172,4 @@ A confirmation dialog appears:
 *2.* Click *Ok*. The Experiment is published to the Live game stage and shows in green on the *Upcoming Experiments* panel:
 
 ![](img/Experiments/21.png)
+* When you have published an Experiment to your game's Live stage and view the Experiment's results, the *Preview/Live* switch will be enabled on the [Results](#Viewing Experiment Results) page.

@@ -9,7 +9,7 @@ The GameSparks platform delivers a broad range of capabilities, making it a litt
 
 ## Registering an Account
 
-Before getting started as a new user, you'll need to create an account on the Developer Portal. To register, click **Register** on the login screen:
+Before getting started as a new user, you'll need to create an account on the Developer Portal. To register, click *Register* on the login screen:
 
 ![](img/CreatingGame/11.png)
 
