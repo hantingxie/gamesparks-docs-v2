@@ -7,7 +7,7 @@ src: /Documentation/Key Concepts/Snapshots.md
 
 The Snapshots feature allows you to *Create*, *Copy*, *Delete*, *Publish*, *Revert* and *Preview* the configuration of your Game, allowing for in-depth management of each stage of the release.
 
-<q>**Game Snapshots vs. Screen Snapshots!** Game Snapshots *do not contain* any of the Manage section configuration you've built up for your Admin Screens. You can create separate *Screen Snapshots* for the Manage configuration and publish these to the Live environment independently of your game Snapshots. For details, see [Creating and Managing Screen Snapshots](/Documentation/Manage/Creating and Managing Screen Snapshots.md).
+<q>**Game Snapshots vs. Screen Snapshots!** Game Snapshots *do not contain* any of the Manage section configuration you've built up for your Admin Screens. You can create separate *Screen Snapshots* for the Manage configuration and publish these to the Live environment independently of your game Snapshots. For details, see [below](#What is Not Included in Game Snapshots?).
 
 ## Snapshots: Creation and Basics
 
@@ -25,7 +25,7 @@ Click *Create* to create the Snapshot:
 
 You can then use icon button options (highlighted):
 
-  * ![](img/Snapshot/copyicon.png) - Copies the Snapshot to create a new or overwrite an existing game. You can only overwrite a game if you are a game owner or admin for the game. You'll have the option to copy:
+  * ![](/img/icons/copyicon.png) - Copies the Snapshot to create a new or overwrite an existing game. You can only overwrite a game if you are a game owner or admin for the game. You'll have the option to copy:
     * Only the metadata from the original Snapshot.
     * Only the game configuration.
     * Both the metadata and the game configuration.
@@ -33,16 +33,22 @@ You can then use icon button options (highlighted):
     * Collaborators
 
 <q>**Important!** Don't worry about overwriting the target game's configuration. There is a fail-safe - a Snapshot of the target game's previous version is automatically created (called "AUTOSAVE - Pre Copy") before the copy occurs.</q>
-  * ![](img/Snapshot/deleteicon.png) - Deletes the Snapshot.
-  * ![](img/Snapshot/publishicon.png) - Publish the configuration to the LIVE servers. The snapshot that is currently published is highlighted in green. See below for more detail on publishing.
-  * ![](img/Snapshot/reverticon.png) - Revert your workspace with the selected Snapshot version. There is another fail-safe - a Snapshot of the previous version is automatically taken (called "AUTOSAVE - Pre Revert").
-  * ![](img/Snapshot/previewicon.png) - Preview any of the Snapshots without having to revert to them, editing will be disabled when previewing.
+  * ![](/img/icons/deleteicon.png) - Deletes the Snapshot.
+  * ![](/img/icons/publishicon.png) - Publish the configuration to the LIVE servers. The snapshot that is currently published is highlighted in green. See below for more detail on publishing.
+  * ![](/img/icons/reverticon.png) - Revert your workspace with the selected Snapshot version. There is another fail-safe - a Snapshot of the previous version is automatically taken (called "AUTOSAVE - Pre Revert").
+  * ![](/img/icons/previewicon.png) - Preview any of the Snapshots without having to revert to them, editing will be disabled when previewing.
 
 ### Mongo Database Collections for Snapshots
 
 When you take a Snapshot, the platform records all of your game's configuration into a configuration set:
   * This *includes* all Metadata Collections and their content.
   * This *excludes* all Runtime and System Collections and their content. These are created new for the Live stage when you *first publish* a game Snapshot and remain untouched when future Snapshots are published.
+
+### What is Not Included in Game Snapshots?
+
+Two areas of your game are *not included* in a game Snapshot:
+* A game Snapshot does not include anything you set up in the [Manage](/Documentation/Manage/README.md) section for your *Admin Screens* - these are published to Live separately as *Screen Snapshots*. See [Creating and Managing Screen Snapshots](/Documentation/Manage/Creating and Managing Screen Snapshots.md).
+* Secondly, [Experiments](/Documentation/Experiments/README.md) are also published to the game's Live stage separately.
 
 ## Copying a Snapshot
 
@@ -72,7 +78,19 @@ Once you confirm your selection to publish the Snapshot, it will be highlighted 
 
 ![](img/Snapshot/18.png)
 
+* Note that when you publish a Snapshot, you can *unpublish* it - for details see [below](#Unpublishing a Snapshot).
+
 <q>**Going Live Checklist!** Before you publish your Snapshot to Live, please review the [Going Live Checklist](/Getting Started/Going Live Checklist/README.md) to ensure everything runs smoothly.</q>
+
+### Publishing a Snapshot for the First Time
+
+When you publish one of your game's Snapshots from *Preview* to *Live* for the first time, a confirmation dialog appears. This acts as a reminder, which you can use to finally decide on the *Primary Region* for your game:
+
+![l](img/Snapshot/22.png)
+
+* In this example, although we selected the *Americas* as the game's primary region when we created the game, we've changed the *Primary Region* to Asia, since we expect most of our players to be located in this region. If we hadn't changed the region for the published game, players in Asia would have been far more susceptible to possible latency issues when playing the game:
+  * **IMPORTANT!** When you have selected the *Primary Region* on first publication of a Snapshot, you cannot change it on any subsequent Snapshot publication!
+  * **No Region Specified?** If you've not selected for a specific *Primary Region* when you created your game and have left the region as the default: *I don't know*, you can leave this as the selection and publication will not be blocked. However, the region used for your game is unpredictable.
 
 ## Reverting a Snapshot
 
@@ -92,3 +110,24 @@ You can preview a Snapshot and inspect the game configuration of that Snapshot, 
 
 * The Snapshot Preview header tells you what Snapshot you are currently previewing, when it was created, whether it is live or not, and who it was created by.
 * To exit the Snapshot preview, click *Exit Preview*.
+
+## Unpublishing a Snapshot
+
+You might inadvertently publish a Snapshot to the game's Live stage, for example:
+* Before your game development is complete and you are not ready to launch your game.
+* On a game you are using specifically as a *test* game.
+
+In such cases as these you won't want to revert to another Snapshot. However, you can quickly *unpublish* the Snapshot:
+
+*1.* In the *Snapshots* panel, click the unpublish ![](/img/icons/unpublishicon.png) icon on the published Snapshot:
+
+![](img/Snapshot/23.png)
+
+A confirmation dialog appears:
+
+![](img/Snapshot/24.png)
+* Note that any data in the game's MongoDB is held for 30 days after which it is deleted. 
+
+*2.* Click *Ok*. The dialog closes and you will see the Snapshot as unpublished in the *Snapshots* panel and no longer highlighted in green:
+
+![](img/Snapshot/25.png)

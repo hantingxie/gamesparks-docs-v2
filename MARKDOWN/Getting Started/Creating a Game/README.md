@@ -82,19 +82,17 @@ When you create a game, the game is put into *Preview* stage.  There are two st
 * *Preview* is the stage where you develop your game - build up your game configuration, add required Cloud Code, and test out the game using a small number of test players in the Test Harness.
 * *Live* is the stage for a published game and you should only move a game to this stage when it is ready to launch.
 
-<q>**Switching to Live?** As you develop your game in Preview, publish to Live at some point, and then continue to develop the game in Preview, there are several places in the portal where you can switch between the Preview an Live stages of your game. See [below](#Switching between Preview and Live). </q>
+<q>**Switching to Live?** As you develop your game in Preview, publish to Live at some point, and then continue to develop the game in Preview, there are several places in the portal where you can switch between the Preview and Live stages of your game. See [below](#Switching between Preview and Live). </q>
 
 ### Publishing via Snapshots
 
-You should remain in *Preview* as you develop and test your game. When you are happy with the state of your game, you can create a *Snapshot*.  A game *Snapshot* takes a copy of everything you've created up to that point in the game's development.  You can then publish the *Snapshot*.  Publishing the *Snapshot* will copy the game as it was when the *Snapshot* was taken and moves the game from *Preview* stage into *Live* stage.
+You should remain in *Preview* as you develop and test your game. When you are happy with the state of your game, you can create a *Snapshot*.  A game *Snapshot* takes a copy of everything you've created up to that point in developing the game's configuration.  You can then publish the *Snapshot*.  Publishing the *Snapshot* will copy the game as it was when the *Snapshot* was taken and moves the game from *Preview* stage into *Live* stage.
 
-When you publish one of you game's Snapshots from *Preview* to *Live* for the first time, a confirmation dialog appears. This acts as a reminder, which you can use this to finally decide on the *Primary Region* for your game:
-
-![l](img/CreatingGame/13.png)
-
-* In this example, although we selected the *Americas* as the game's primary region when we created the game, we've changed the *Primary Region* to Asia, since we expect most of our players to be located in this region. If we hadn't changed the region for the published game, players in Asia would have been far more susceptible to possible latency issues when playing the game:
-  * **IMPORTANT!** When you have selected the *Primary Region* on first publication of a Snapshot, you cannot change it on any subsequent Snapshot publication!
-  * **No Region Specified?** If you've not selected for a specific *Primary Region* when you created your game and have left the region as the default: *I don't know*, you can leave this as the selection and publication will not be blocked. However, the region used for your game is unpredictable.
+<q>**IMPORTANT!** Here are a few important things to note when working with game Snapshots:</q>
+* **Not Included in Game Snapshots** - Two areas of your game are *not included* in a game Snapshot. A game Snapshot does not include anything you set up in the [Manage](/Documentation/Manage/README.md) section for your *Admin Screens* - these are published to Live separately as *Screen Snapshots*. Secondly, [Experiments](/Documentation/Experiments/README.md) are also published to the game's Live stage separately.
+* **Finalizing Game Region** - When you publish one of your game's Snapshots from *Preview* to *Live* for the *first time*, a confirmation dialog appears. This acts as a reminder, which you can use to finally decide on the *Primary Region* for your game.
+* **Unpublishing Snapshots** - You can quickly *unpublish* a game Snapshot - this is particularly useful if you have inadvertently published your game into the Live stage before it is ready.
+* **More Details?** For more details on working with game Snapshots, see [here](/Documentation/Key Concepts/Snapshots.md).
 
 <q>**Going Live Checklist!** Before you attempt to create a Snapshot of your game and publish it to Live, please review the [Going Live Checklist](/Getting Started/Going Live Checklist/README.md) to ensure everything runs smoothly.</q>
 

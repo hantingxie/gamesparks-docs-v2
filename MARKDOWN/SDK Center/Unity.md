@@ -7,6 +7,12 @@ src: /SDK Center/Unity.md
 
 Download the GameSparks [Unity SDK Package](https://s3-eu-west-1.amazonaws.com/repo.gamesparks.net/unity-sdk/GameSparks_Unity.unitypackage).
 
+## V5.5.3.204
+
+* Updated API
+* Fixed DeviceID (for PS4 and XBox One) and DeviceOS attributes.
+
+
 ## V5.5.1.198
 
 * Fixed a crash that occurred when a user sent requests after a disconnection event on Win8/10
