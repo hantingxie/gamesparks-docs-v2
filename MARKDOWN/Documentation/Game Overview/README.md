@@ -16,6 +16,7 @@ The Game Overview is designed to help you perform your initial game set up and a
 * Publish Snapshots of your game to the live servers.
 * Inspect access secrets for your game connection types.
 * Perform [User Management](#User Management) and create Collaborators for your game and configure their security settings through Groups.
+* Change the [Game Owner](#Changing the Game Owner).
 
 ![](img/GameOverview/7.png)
 
@@ -155,4 +156,25 @@ Click [here](/Documentation/Key Concepts/Snapshots.md) for more information abou
 
 ## User Management
 
-You can use the *User Management* panel to create *Collaborators* and *Groups* for your game. Collaborators are people that can log in with their user credentials and view/edit the game, depending on the security settings you have set for them. An in-depth tutorial can be found [here](/Tutorials/Capabilities/README.md).
+You can use the *User Management* panel to create *Groups* and *Collaborators* for your game:
+* *Groups* - When you create a Group for your game, you define a Read/Write permissions set for Collaborators to control which parts of the portal users assigned to that Group will have. You can create multiple Groups and then assign others to become Collaborators on your game and assign them to one or more of these permissions Groups.
+* *Collaborators* - Collaborators are people that can log in with their user credentials and view/edit your game - just what a Collaborator can see and do when logged into your game depends on the permissions you have given them by assigning them to one or more permissions Groups.
+
+An in-depth tutorial explaining how to create and configure Groups and assign them to your game Collaborators can be found [here](/Tutorials/Capabilities/README.md).
+
+## Changing the Game Owner
+
+You can change the ownership of your game by selecting one of the game's Collaborator's as the new game owner:
+* When you do this, the Collaborator acquires full ownership permissions for the game, regardless of the permissions they had under the Groups assigned to them as a game Collaborator.
+* If you're also a Collaborator on the game when you change the ownership, you'll remain logged into the game.
+* If you're not a Collaborator on the game when you change the ownership:
+  * You'll be switched to the next game in your game's list.
+  * If you don't have any other games, you'll be taken to the Add Game wizard.
+
+
+
+
+
+
+
+Etc.

@@ -24,9 +24,9 @@ When you have completed your game configuration, created a Snapshot, and you are
 
 *3.*	Make sure your Release Candidate Client is pointing to Live?
 * How to point to Live in:
-  * [Unity](#Pointing to Live in Unity).
-  * [Unreal](#Pointing to Live in Unreal).
-  * [Android](#Pointing to Live in Android).
+  * [Unity](#Pointing to Live in Unity)
+  * [Unreal](#Pointing to Live in Unreal)
+  * [Android](#Pointing to Live in Android)
   * [ActionScript](#Pointing to Live in ActionScript)
   * [C++](#Pointing to Live in CPP)
   * [cocos2d-x](#Pointing to Live in cocos2d-x)
