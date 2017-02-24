@@ -164,17 +164,37 @@ An in-depth tutorial explaining how to create and configure Groups and assign th
 
 ## Changing the Game Owner
 
-You can change the ownership of your game by selecting one of the game's Collaborator's as the new game owner:
+As the game owner, you can change the ownership of your game by selecting one of the game's Collaborator's as the new game owner:
 * When you do this, the Collaborator acquires full ownership permissions for the game, regardless of the permissions they had under the Groups assigned to them as a game Collaborator.
-* If you're also a Collaborator on the game when you change the ownership, you'll remain logged into the game.
-* If you're not a Collaborator on the game when you change the ownership:
-  * You'll be switched to the next game in your game's list.
-  * If you don't have any other games, you'll be taken to the Add Game wizard.
+* The Collaborator you give game ownership to remains as a Collaborator on the game.
+* If you're the game owner and also a Collaborator on the game when you change the ownership, you'll remain logged into the game and assume the permissions assigned to you as a Collaborator.
+* If you're the game owner but you're not a Collaborator on the game when you change the ownership:
+  * You'll be switched to the another one of your games.
+  * If you don't have any other games, you'll be taken to Step 1 of the *Add New Game* wizard.
 
+Game Collaborators can also change the ownership of a game, but they must have the *Change Game Owner* permission under the Groups they've been assigned:
+* If you're logged into a game as a Collaborator with *Change Game Owner* permission, you can change the game ownership to yourself:
+  * You'll assume all game ownership permissions for the game and you will remain as a Collaborator on the game.
 
+To change a game's owner:
 
+*1.* Go to the *Game Overview* page and on the *User Management* panel, click *Change*:
 
+![](img/GameOverview/24.png)
+* The *Change* button will appear only if you have added at least one Collaborator to your game.
+* In this example, we are logged in as the game owner and the game owner hasn't also been made a Collaborator on the game.
 
+The *Change Owner* page opens.
 
+*2.* Select the Collaborator you want to change game ownership to from the drop-down and click *Change Owner*
 
-Etc.
+![](img/GameOverview/25.png)
+
+A confirmation dialog appears warning you that the *Change Owner* action cannot be undone:
+![](img/GameOverview/26.png)
+
+*3.* If you want to continue, click *Change Owner*:
+* In this example, because we logged in as the game owner at the outset we remain logged in as that user. Because that user no longer has access to the game - they were not listed as a Collaborator on the game - they are switched to another one of their games or, if that was their last game, they are taken to the *Add New Game* wizard.
+
+*4.* Log in as the Collaborator that was given ownership of the game and open the game. In *User Management* on the *Game Overview* page, this user will now show as the game owner and remain as a Collaborator on the game:
+![](img/GameOverview/27.png)
