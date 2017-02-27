@@ -82,6 +82,14 @@ Once you confirm your selection to publish the Snapshot, it will be highlighted 
 
 <q>**Going Live Checklist!** Before you publish your Snapshot to Live, please review the [Going Live Checklist](/Getting Started/Going Live Checklist/README.md) to ensure everything runs smoothly.</q>
 
+### Publishing Snapshots and Evaluation Users
+
+If you are logged into the platform as an *Evaluation* user, you won't be able to publish your games through to the Live stage for the typical case:
+* Where you have created a game for yourself, developed the game and created Snapshots in Preview, the publish icon button will not be available for your game Snapshots.
+* However, if a user with a full user account has made you a Collaborator on their game and assigned you a permissions Group with Publish Snapshot write permission and you log into their game, you'll see the publish icon button and can publish Snapshots on the game.
+
+See the [Going Live Checklist](/Getting Started/Going Live Checklist/README.md) for information on upgrading your account status.
+
 ### Publishing a Snapshot for the First Time
 
 When you publish one of your game's Snapshots from *Preview* to *Live* for the first time, a confirmation dialog appears. This acts as a reminder, which you can use to finally decide on the *Primary Region* for your game:
@@ -104,12 +112,14 @@ You might want to revert to earlier version of your game configuration or saved 
 
 ## Previewing a Snapshot
 
-You can preview a Snapshot and inspect the game configuration of that Snapshot, which saves you having to fully revert to it then having to revert back to your original state. In Snapshot Preview mode, all editing is disabled and you'll see what's being previewed at the top of the page:
+You can preview a Snapshot and inspect the game configuration of that Snapshot, which saves you having to fully revert to it then having to revert back to your original state. In Snapshot Preview mode, all game configuration editing is disabled and you'll see what's being previewed at the top of the page:
 
 ![](img/Snapshot/21.png)
 
 * The Snapshot Preview header tells you what Snapshot you are currently previewing, when it was created, whether it is live or not, and who it was created by.
 * To exit the Snapshot preview, click *Exit Preview*.
+
+<q>**Game Overview Editing?** Note that in Snapshot Preview mode, you can still perform editing for game details, such as adding Groups for *User Management*.</q>
 
 ## Unpublishing a Snapshot
 
@@ -126,7 +136,7 @@ In such cases as these you won't want to revert to another Snapshot. However, yo
 A confirmation dialog appears:
 
 ![](img/Snapshot/24.png)
-* Note that any data in the game's MongoDB is held for 30 days after which it is deleted. 
+* Note that any data in the game's MongoDB is held for 30 days after which it is deleted.
 
 *2.* Click *Ok*. The dialog closes and you will see the Snapshot as unpublished in the *Snapshots* panel and no longer highlighted in green:
 

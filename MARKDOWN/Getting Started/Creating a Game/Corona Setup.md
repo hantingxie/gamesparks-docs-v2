@@ -7,13 +7,9 @@ src: /Getting Started/Creating a Game/Corona Setup.md
 
 ## Integrating with GameSparks
 
-Integrating Corona with GameSparks is straightforward. There are 3 steps:
+Integrating Corona with GameSparks is straightforward:
 
-*1.* Download the latest SDK from the GameSparks Bitbucket repository from [here](https://bitbucket.org/gamesparks/gamesparks-corona/downloads).
-
-*2.* Copy the folder 'GameSparks' in the example project and place it in your own project.
-
-*3.* Open the Build.settings of your project and add the following:
+* Open the Build.settings of your project and add the following:
 
 ```
   plugins =
@@ -26,6 +22,10 @@ Integrating Corona with GameSparks is straightforward. There are 3 steps:
         {
             publisherId = "com.coronalabs",
         },
+        ["plugin.gamesparks"] =
+        {
+            publisherId = "com.gamesparks",
+        }
     },
 
 ```
@@ -40,11 +40,11 @@ Now you'll have access to the GameSparks SDK for your project.
 
 ```
 
-local GS = require("GameSparks.GS")
-local GSData = require('GameSparks.GSData')
-local GSRequest = require('GameSparks.GSRequest')
-local GSResponse = require('GameSparks.GSResponse')
-local GSUtils = require('GameSparks.GSUtils')
+local GS = require("plugin.gamesparks.GS")
+local GSData = require('plugin.gamesparks.GSData')
+local GSRequest = require('plugin.gamesparks.GSRequest')
+local GSResponse = require('plugin.gamesparks.GSResponse')
+local GSUtils = require('plugin.gamesparks.GSUtils')
 
 ```
 

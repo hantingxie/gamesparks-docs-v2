@@ -150,9 +150,7 @@ You can use icon button options in the Snapshots panel:
   * ![](/img/icons/reverticon.png) - Revert the portal to the version contained in the Snapshot.
   * ![](/img/icons/unpublishicon.png) - Unpublish this Snapshot from the live servers.
 
-
 Click [here](/Documentation/Key Concepts/Snapshots.md) for more information about Snapshots, Versioning and Publishing.
-
 
 ## User Management
 

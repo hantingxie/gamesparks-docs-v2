@@ -11,7 +11,7 @@ src: /Tutorials/Real-Time Services/README.md
 
 Welcome to our series of tutorials on GameSparks Real-Time services SDK:
 * The Real-Time SDK is dependent on the base GameSparks SDK but works differently to it because it allows you to manage packets for Real-Time multiplayer.
-* Currently the Real-Time SDK is only packaged with the Unity and Unreal GameSpark SDKs.  
+* Currently the Real-Time SDK is only packaged with the Unity, Unreal, C++, and the cocos2d-x SDKs.  
 
 These tutorials give you an introduction to our Real-Time SDK, how it works, and provide an example on how our Real-Time might be implemented in a multiplayer game.
 

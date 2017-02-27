@@ -5,6 +5,8 @@ src: /Getting Started/Going Live Checklist/README.md
 
 # Going Live Checklist
 
+This *Going Live Checklist* is written for game owners who have created an account on the GameSparks platform and created and developed a game - it's intended to help you to go Live with your game as quickly as possible.
+
 When you have completed your game configuration, created a Snapshot, and you are ready to publish the Snapshot to Live, follow the steps below.
 
 <q>**Please Let us Know about your Game Launch!** When you're approaching live launch of your game, please let us know with an advance notice email to: <a href="mailto:david.anderson@gamesparks.com;Anthony.mulhall@gamesparks.com?Subject=Going%20Live!">going live</a>. We'd like to make absolutely sure your game launch goes as smoothly as possible!</q>
@@ -13,11 +15,9 @@ When you have completed your game configuration, created a Snapshot, and you are
 * **Yes.**	Go to Step 3.
 * **No.**	Go to Step 2.
 
-*2.*	Do you get the Evaluation Signup message, which stated the following?
+*2.*	Is the *publish* icon button missing from your unpublished Snapshots?
 
-* "Your account is currently for evaluation purposes only. Please either apply for an Indie/Student account or contact us for an Enterprise deal to enable publishing"
-
-* **Yes.** This means you can only work in Preview stage on the platform and to proceed you must upgrade your account. The account package you'll want depends on your game's needs:
+* **Yes.** This means you can only work in Preview stage on the platform with your game and to proceed you must upgrade your account. The account package you'll want depends on your game's needs:
   * **Enterprise packages.** Please [follow this link](https://www.gamesparks.com/enterprise-packages/) to arrange a call with our Sales team – we want to make sure established enterprise developers get the best solution to serve anticipated player volumes through a combination of upfront and ongoing fees, premium support, SLA, configuration support and more.
   * **Indie & Student Program.** We allow free access to the platform to encourage aspirational but resource-constrained developers - [follow this link](https://www.gamesparks.com/indie-student-programme-faq/) for an FAQ page to see if you are eligible for this program. If you are, you can [apply here](https://www.gamesparks.com/indie-student-programme/).
 * **No.**	Go to Step 3.

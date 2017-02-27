@@ -32,8 +32,9 @@ To set up a Team Type:
     * *Social*: If enabled, this means every member of a team of this type is regarded as a friend of the owner.
     * *Extended Social*: If enabled, this means that all team members are regarded as friends with each other.
   4. *Max Members* - How many members are allowed to belong to a Team of this Type team. 0 would declare no limit.
-  5. *Max Membership* - How many Teams of this Type a player can join simultaneously.
-  6. *Max Ownership* - How many Teams of the same Type can the owner have simultaneously.
+  5. *Max Membership Per User* - How many Teams of this Type a player can join simultaneously.
+  6. *Max Ownership Per User* - How many Teams of the same Type can the owner have simultaneously:
+    * If you select *1 (Mandatory)* for this, it means that every player will have a team of this type created for them.
 
 Once you're happy with your configuration, that's all you have to do to create a Team Type for your players to use.
 
