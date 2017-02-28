@@ -33,6 +33,7 @@ When you have completed your game configuration, created a Snapshot, and you are
   * [iOS](#Pointing to Live in iOS)
   * [JavaScript](#Pointing to Live in JavaScript)
   * [Marmalade](#Pointing to Live in Marmalade)
+  * [Corona](#Pointing to Live in Corona)
 
 
 *4.*	Publish the Snapshot to Live.
@@ -207,5 +208,22 @@ To make sure your Marmalade client is pointing to Live, set the 3rd parameter on
 
 MarmaladePlatform gsPlatform("yourApiKey", "yourApiSecret", false);
 GS.Initialise(&gsPlatform);
+
+```
+
+## Pointing to Live in Corona
+
+To make sure your Corona client is pointing to *Live*, call the *setUseLiveServices* method with *true* as its parameter:
+
+```
+gs.setLogger(writeText)
+gs.setApiKey(apiKey)
+gs.setApiSecret(apiSecret)
+gs.setAvailabilityCallback(availabilityCallback)
+
+gs.setUseLiveServices(true)
+
+gs.connect()
+
 
 ```

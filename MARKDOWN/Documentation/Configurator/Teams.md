@@ -36,4 +36,4 @@ Enter the details for your new Team type:
   * *Max Members* \- Maximum number of players that can be in this Team Type.
   * *Max Membership Per User* \- Maximum number of this Team Type a player can be in (Set to 0 for unbounded).
   * *Max Ownership Per User* \- The maximum number of this Team Type a player can own:
-    * If you select *1 (Mandatory)* for this, it means that every player will have a team of this type created for them.
+    * If you select *1 (Mandatory)* for this, every player will have a team of this type created for them.

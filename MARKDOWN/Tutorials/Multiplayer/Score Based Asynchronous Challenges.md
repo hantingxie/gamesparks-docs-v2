@@ -42,24 +42,24 @@ The flow of an Asynchronous Challenge looks like:
 
 *2.* Click to *Save and Close* the new Event.
 
-*4.* Create the *SetScoreAndCalculateOutcome* Event, which should look like:
+*3.* Create the *SetScoreAndCalculateOutcome* Event, which should look like:
 
 ![](img/ScoreBasedAsynchChallenges/2.png)
 
 * This one doesn't take a *challengeInstanceId* attribute because this will only ever be called with a *LogChallengeEvent*, which already includes the *challengeInstanceId*.
 * We don't use *LogChallengeEvent* for the previous Event because it has logic associated with progressing the Challenge.
 
-*5.* Click to *Save and Close* the new Event.
+*4.* Click to *Save and Close* the new Event.
 
-*6.* Create the Challenge:
+*5.* Create the Challenge:
 
 ![](img/ScoreBasedAsynchChallenges/3.png)
 
 <q>**Important!** Two things to take note of here: First, **Turn / Attempt Consumers** which has been set to our *SetScoreAndCalculateOutcome* Event; Second, **Leaderboard** which has been set to *Scripted Outcome* and this means we can run custom logic to determine the victor.</q>
 
-*7.* Click to *Save and Close* the Challenge.
+*6.* Click to *Save and Close* the Challenge.
 
-*8.* Add in your Cloud Code:
+*7.* Add in your Cloud Code:
 
 First, navigate to *Configurator > Cloud Code > Events > SetScoreOnChallenge* and add in the following:
 
@@ -118,7 +118,7 @@ Second, navigate to *Configurator > Cloud Code > Challenge Events > SetScore
 
 <q>**Ready to Test!** With that done we are ready to test.</q>
 
-*5.* Head on over to the [Test Harness](/Documentation/Test Harness/README.md) and follow along:
+*8.* Head on over to the [Test Harness](/Documentation/Test Harness/README.md) and follow along:
 
 Player 1 gets an awesome score and picks a friend to challenge:
 

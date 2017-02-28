@@ -39,7 +39,9 @@ A *Create Game Snapshot* dialog appears.
 
 * ![](/img/icons/previewicon.png) - Preview the Snapshot - allows previewing any of the Snapshots without having to revert to them, editing will be disabled when previewing.
 * ![](/img/icons/copyicon.png) - Copy the Snapshot - copies the Snapshot and then you can choose to use it either to overwrite an existing game or create a new one. If you are overwriting, there is a fail-safe - a Snapshot of the previous version is automatically created (called "AUTOSAVE - Pre Copy") which can then be deleted if all is in order.
-* ![](/img/icons/publishicon.png) - Publish the Snapshot - this will take the Snapshot and publish the configuration to the live servers. The Snapshot that is currently published is highlighted in green. See [below](#Publishing) for more detail on publishing
+* ![](/img/icons/publishicon.png) - Publish the Snapshot - this will take the Snapshot and publish the configuration to the live servers. The Snapshot that is currently published is highlighted in green:
+  * When you've published a Snapshot, you can use the unpublish ![](/img/icons/unpublishicon.png) icon button to unpublish the Snapshot - this is especially useful if you've published a Snapshot too early or inadvertently.
+  * See [below](#Publishing) for more detail on publishing
 * ![](/img/icons/reverticon.png) - Revert the portal to the version contained in the Snapshot - updates your workspace with the Snapshot version. There is a fail-safe - a Snapshot of the previous version is automatically taken (called "AUTOSAVE - Pre Revert") which can then be deleted if all is in order.
 * ![](/img/icons/deleteicon.png) - Delete the Snapshot.
 
@@ -52,10 +54,10 @@ When you take a Snapshot, the platform records all of your game's configuration 
 
 ## Publishing
 
-Once you have configured and tested your game, you will want to make it available to the public! The testing you have done to this point has been on the preview servers. These servers allow you to develop your game but are not suitable for use by a significant number of players - there is a limit of 100 concurrent connections per game.
+Once you have configured and tested your game, you will want to make it available to the public! The testing you have done to this point has been on the preview servers. These servers allow you to develop your game but are not suitable for use by a significant number of players - there's a limit of 100 concurrent connections per game.
 
 <q>**Note:** You should not launch your game using the preview servers because player devices will not be able to connect when concurrency limits are reached.</q>
 
-When you are ready to launch your game you need to save the configuration in a snapshot and then publish it to the live servers. These are designed for massive concurrency and can handle the loads generated when hundreds of thousands of players are using the game at the same time.
+When you are ready to launch your game you need to save the configuration in a Snapshot and then publish it to the live servers. These are designed for massive concurrency and can handle the loads generated when hundreds of thousands of players are using the game at the same time.
 
 <q>**Going Live Checklist!** Before you attempt to create a Snapshot of your game and publish it to Live, please review the [Going Live Checklist](/Getting Started/Going Live Checklist/README.md) to ensure everything runs smoothly.</q>

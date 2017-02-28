@@ -226,7 +226,7 @@ Each condition will trigger a different response, either the challenged winning,
 var chal = Spark.getChallenge(Spark.getData().challenge.challengeId);
 
 //load playerStats
-var playerStats = Spark.getScriptData("playerStats");
+var playerStats = chal.getScriptData("playerStats");
 
 //If challenger reaches 0 or lower health while challenged has more than 0 health, challenged wins
 if(playerStats[chal.getChallengerId()].currentHealth <= 0 && playerStats[chal.getChallengedPlayerIds()[0]].currentHealth > 0){
