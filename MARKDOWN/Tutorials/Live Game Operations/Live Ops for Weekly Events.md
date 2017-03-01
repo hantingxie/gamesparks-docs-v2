@@ -26,7 +26,7 @@ To do this:
 
 ![](img/WeekEvents/2.png)
 
-* We can set up a new Segment called *Sale* and for this segment we can create as many types of sales as we want. These will be used later to set up our Events.
+* We can set up a new Segment called *Sale* and for this Segment we can create as many types of sales as we want. These will be used later to set up our Events.
 
 ## Segmenting Virtual Goods
 
@@ -62,7 +62,7 @@ Before we can start creating our Screen layout, we have to make our initial Scre
 
 This *Sales Events* window will act as a container where we can draw all our content. Therefore, we need to do two things here:
 * Firstly, we'll create a placeholder. This will act like a reference to this window so if we want anything to be re-drawn or updated by this window, we can use that placeholder.
-* The second thing we'll do is call our first Snippet. In this example, our first Snippet will draw a list of all the Events we have and their details.
+* The second thing we'll do is call our first Snippet. In this example, our first Snippet will draw a list of all the Events we have and their details:
 
 ![](img/WeekEvents/7.png)
 
@@ -78,7 +78,9 @@ At the moment we don’t have a Snippet called *sales_view*, so this won’t do 
 
 ## sales_view Snippet
 
-In order to have this window draw something we have to create a Snippet. To do this:
+In order to have this window draw something we have to create a Snippet.
+
+To do this:
 
 *1.* In *Manage>Admin Screens* select the *Snippets* tab.
 
@@ -87,7 +89,7 @@ In order to have this window draw something we have to create a Snippet. To do t
 ![](img/WeekEvents/8.png)
 
 * We’ve called the new Snippet *sales_view* so that it has the same Short Code as the one we referenced from the *Sales Events* screen we just made.
-* It's generally a good idea to keep the names and Short Codes the same for Snippets to avoid confusion, but only the Short Code is important to remember, because that is what we'll be using as reference.
+* It's generally a good idea to keep the names and Short Codes the same for Snippets to avoid confusion, but only the Short Code is important to remember, because that is what we'll be using as a reference for the Snippet.
 
 Now, we can review how this editor works - on the above example you can see the following labels for each panel:
 
@@ -106,7 +108,9 @@ It's useful to think of this editor as a flow of information from panel **1** to
 
 ### Getting Event Details
 
-The first step is to get the Event details from our DB. Now, at the moment we don’t have any Events, so we should create some test Events so that we can make sure our Screens are being drawn correctly. To do this:
+The first step is to get the Event details from our DB. Now, at the moment we don’t have any Events, so we should create some test Events so that we can make sure our Screens are being drawn correctly.
+
+To do this:
 
 *1.* Select *NoSQL* on the portal.
 
@@ -283,7 +287,7 @@ Take note of the *oid* of this test-doc because we're going to use it in the nex
 
 ## sales_edit Snippet
 
-Create a new snippet called *sales_edit*.  Before we start writing any JavaScript or HTML for this Screen, we're going to simulate what we might pass if we went to edit an Event:
+Create a new Snippet called *sales_edit*.  Before we start writing any JavaScript or HTML for this Screen, we're going to simulate what we might pass if we went to edit an Event:
 * If you remember from above, when we want to edit an Event we pass in the *oid* of the Event we want to edit.
 * We also pass in *action=view*:
 
@@ -533,7 +537,7 @@ If we break down the form into just the tags we've added, you can see that we al
 
 ## Saving and Updating Events
 
-Now that our action is set to save, when we click on the *save* button, we can run the code in the *save()* function. Here we'll use the *update()* function of mongoDB so that we can edit our existing Events, and we'll use the *upsert* functionality so that if the Event doesn’t exist (that is, we're creating a new one), we can insert a new Event into the *sales_events* collection.
+Now that our action is set to save, when we click on the *save* button, we can run the code in the *save()* function. Here we'll use the *update()* function of MongoDB so that we can edit our existing Events, and we'll use the *upsert* functionality so that if the Event doesn’t exist (that is, we're creating a new one), we can insert a new Event into the *sales_events* collection.
 
 You can check out more information about the *update()* function [here](/API Documentation/Cloud Code API/Cloud Data/SparkMongoCollectionReadWrite.md).
 
@@ -658,7 +662,7 @@ We can use that to check if we should close the Snippet and then call the *sales
 
 
 
-Now you will be able to go back to your Screen and start creating more Events. You'll also notice that the *Edit* button in the sales-list will also bring up the Event details and allow you to edit them:
+Now you'll be able to go back to your Screen and start creating more Events. You'll also notice that the *Edit* button in the sales-list will also bring up the Event details and allow you to edit them:
 
 ![](img/WeekEvents/23.png)
 
@@ -671,7 +675,7 @@ To begin with, create a new Snippet called *sales_delete*’. This Snippet will 
 
 For the HTML too, it will be similar:
 * We'll have a button for deleting the Event, and a label to show the ID of the Event.
-* We'll also user the *form.updated = true* line to close the Snippet and re-draw the list.
+* We'll also use the *form.updated = true* line to close the Snippet and re-draw the list.
 
 ![](img/WeekEvents/24.png)
 
@@ -809,7 +813,7 @@ if(event){
 
 ## Testing
 
-So the desired behavior here from the Virtual Good we set up earlier, is that when our 10% off sale is running, the health potion will cost 90 instead of the regular 100.
+So the desired behavior here, from the Virtual Good we set up earlier, is that when our 10% off sale is running, the health potion will cost 90 instead of the regular 100.
 
 To test this, we've first commented out the code that assigns a Segment so we can show that without the sale running the health potion costs 100. We're testing this using the *Test Harness*:
 

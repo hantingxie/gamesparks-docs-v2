@@ -9,7 +9,7 @@ If you're using GitHub or Bitbucket for your repositories, Good News! It's possi
 
 In this tutorial, we assume that you already know what [GitHub](http://www.github.com) or [Bitbucket](https://bitbucket.org/dashboard/overview) are and that you have either a GitHub or Bitbucket repository already created.
 
-<q>**GitHub Synchronization for Cloud Code** In this tutorial, we show you how to synchronize with GitHub to import/export your game's Cloud Code. The process for synchronizing with your Bitbucket repositories is essentially the same.</q>
+<q>**GitHub or Bitbucket?** In this tutorial, we show you how to synchronize with GitHub to import/export your game's Cloud Code. The process for synchronizing with your Bitbucket repositories is essentially the same.</q>
 
 ![](img/GitSynch/14.png)
 
@@ -28,9 +28,9 @@ The first thing we can do is export our Cloud Code to our local machine.
 ![](img/GitSynch/20.png)
 
 
-You will only see the directories in which you have created Cloud Code for. For example, if you only have code for *Events*, *User Messages*, and *Modules*, you'll only be able to see those directories in your export.
+You'll only see the directories in which you have created Cloud Code. For example, if you only have code for *Events*, *User Messages*, and *Modules*, you'll only be able to see those directories in your export.
 
-In each directory where Cloud Code exists, you will see a JavaScript (.js) file for every Cloud Code Event, Message, or Module:
+In each directory where Cloud Code exists, you'll see a JavaScript (.js) file for every Cloud Code Event, Message, or Module:
 
 ![](img/GitSynch/21.png)
 
@@ -51,7 +51,7 @@ A *Copy Snapshot* dialog appears:
   * Over an existing game - the game configuration of the Snapshot will be copied over the existing game's configuration.
   * To a *New Game* - a new game will be created using the saved Snapshot configuration and the new game will be named using the convention: *COPY- << name of current game >>*.
 
-*4.* Click *Copy*. When the Snapshot copy process has successfully completed, you'll get a message you can click the *View game* hotlink to be taken straight to the new game you have created:
+*4.* Click *Copy*. When the Snapshot copy process has successfully completed, you'll get a message and you can click the *View game* hotlink to be taken straight to the new game you've created:
 
 ![](img/GitSynch/17.png)
 
@@ -67,7 +67,7 @@ In the following steps, some type of versioning control application will be usef
 
 *3.* Commit and push the changes that include the exported Cloud Code into the remote repository.
 
-*4.* Navigate to your project on [GitHub](http://www.github.com). You will notice that the Cloud Code changes have been successfully pushed to your remote repository.
+*4.* Navigate to your project on [GitHub](http://www.github.com). You'll notice that the Cloud Code changes have been successfully pushed to your remote repository:
 
  ![](img/GitSynch/22.png)
 
@@ -77,7 +77,7 @@ In the following steps, some type of versioning control application will be usef
 
 ![](img/GitSynch/14.png)
 
-The GitHub Import page opens where you can connect the GameSparks platform to your GitHub account:
+The GitHub Import page opens where you can use a hotlink to connect the GameSparks platform to your GitHub account:
 
 ![](img/GitSynch/37.png)
 
@@ -120,7 +120,7 @@ Now that the platform is connected to your GitHub account, you'll be able to sel
 
 ![](img/GitSynch/31.png)
 
-* You'll see that the directory structure from the commit is replicated
+* You'll see that the directory structure from the commit is replicated.
 
 *9.* **Step 3:** Select the **root directory**. The changes are loaded for ALL directories:
 
@@ -142,9 +142,9 @@ Now that the platform is connected to your GitHub account, you'll be able to sel
 
 ![](img/GitSynch/35.png)
 
-<q>**All Changes Selected!** All Cloud Code changes are selected by default for import - unselect the check box for any changes that you don't want import.</q>
+<q>**All Changes Selected!** All Cloud Code changes are selected by default for import - unselect the check box for any changes that you don't want to import.</q>
 
-*11.* If you want to create a Snapshot of your game before you import the Cloud Code changes, select the *Create Game Snapshot* at the bottom of the page:
+*11.* If you want to create a Snapshot of your game before you import the Cloud Code changes, select to *Create Game Snapshot* at the bottom of the page:
 
 ![](img/GitSynch/36.png)
 

@@ -26,14 +26,14 @@ To set up a Team Type:
 
 *3.* Enter the configuration details for the new Team Type:
 
-  1. *Short Code* - The unique reference to this Team Type in code.
-  2. *Name* - The Team Type name of your reference.
-  3. *Social* options:
+  * *Short Code* - The unique reference to this Team Type in code.
+  * *Name* - The Team Type name of your reference.
+  * *Social* options:
     * *Social*: If enabled, this means every member of a team of this type is regarded as a friend of the owner.
     * *Extended Social*: If enabled, this means that all team members are regarded as friends with each other.
-  4. *Max Members* - How many members are allowed to belong to a Team of this Type team. 0 would declare no limit.
-  5. *Max Membership Per User* - How many Teams of this Type a player can join simultaneously.
-  6. *Max Ownership Per User* - How many Teams of the same Type can the owner have simultaneously:
+  * *Max Members* - How many members are allowed to belong to a Team of this Type. 0 would declare no limit.
+  * *Max Membership Per User* - How many Teams of this Type a player can join simultaneously.
+  * *Max Ownership Per User* - How many Teams of the same Type can the owner have simultaneously:
     * If you select *1 (Mandatory)* for this, every player will have a team of this type created for them.
 
 Once you're happy with your configuration, that's all you have to do to create a Team Type for your players to use.
@@ -50,7 +50,7 @@ Once you've created a Team Type, you can allow your players to create Teams as i
 * However, the player can also use the *teamID* parameter in the request to specify a unique ID for their Team, which makes it easier for them to find and search for the Team:
   * If the *teamID* parameter is omitted from the request, then the platform auto-generates a unique string ID for the new Team.
   * If the *teamID* parameter is included in the request but is left empty, then the platform will use an empty string as the unique ID for the Team.
-* The response will come back including data about the owner, the Team ID, Team type and members (Currently only the owner).
+* The response will come back including data about the owner, the Team ID, Team type, and members (when you first create a team, the members returned will contain only the owner).
 
 
 #### Request default:

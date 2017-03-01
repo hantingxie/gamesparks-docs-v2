@@ -5,7 +5,7 @@ src: /Tutorials/Versioning and the Publishing Process/Multi-Stage Publishing.md
 
 # Multi-Stage Publishing
 
-Sometimes it's not enough to have just a Preview and LIVE environment, and you may want some intermediate environment for testing before the configuration is published to LIVE. This tutorial explains how you can achieve this, and make your game more robust. The diagram below shows you how to easily manage your game.
+Sometimes it's not enough to have just PREVIEW and LIVE environments, and you may want some intermediate environment for testing before the configuration is published to LIVE. This tutorial explains how you can achieve this, and make your game more robust. The diagram below shows you how to manage your game's life cycle.
 
 ![](img/MultiStage/1.png)
 
@@ -21,7 +21,7 @@ Sometimes it's not enough to have just a Preview and LIVE environment, and you m
 
  ![](img/MultiStage/7.png)
 
- You will notice that an "AUTOSAVE" Snapshot is automatically created on the *TEST* game which saves the game's state before the copy was done.  However, this is not needed as we only want the exact same state as the *DEV* game.
+ You'll notice that an "AUTOSAVE" Snapshot is automatically created on the *TEST* game, which saves the game's state before the copy was done.  However, this is not needed because we only want the exact same state as the *DEV* game.
 
  *4.*  When testing is complete and you are ready to go *LIVE*, you can repeat the copy process from the *TEST* game to the *LIVE* game then publish the *LIVE* version of the game.
 

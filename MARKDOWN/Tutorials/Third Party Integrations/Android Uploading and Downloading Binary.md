@@ -34,7 +34,7 @@ This method is useful for users uploading their content to the platform and with
 
 ### Creating an uploadRequest
 
-The upload [request](/API Documentation/Request API/Misc/GetUploadUrlRequest.md) returns a URL that you can be use to store binary data. Use a HTTP set function to upload your binary data to this URL.
+The upload [request](/API Documentation/Request API/Misc/GetUploadUrlRequest.md) returns a URL that you can use to store binary data. Use a HTTP set function to upload your binary data to this URL.
 
 ```
 GSAndroidPlatform.gs().getRequestBuilder().createGetUploadUrlRequest()
@@ -51,7 +51,7 @@ GSAndroidPlatform.gs().getRequestBuilder().createGetUploadUrlRequest()
 
 ### Listening for the Upload Complete Message
 
-Once the upload process has taken place, the player will receive a notification in a form of a message. By creating a message handler to listen for these messages, you can intercept and dissect them.
+Once the upload process completes, the player will receive a notification in a form of a message. By creating a message handler to listen for these messages, you can intercept and dissect them.
 
 Here's an example of setting up a listener for an upload [message](/API Documentation/Message API/Misc/UploadCompleteMessage.md):
 

@@ -9,7 +9,7 @@ src: /Tutorials/Third Party Integrations/Node JS Secret.md
 
 Many Clients often ask about how to secure their API Secret when using the SDK's that GameSparks provide. Security is a huge concern for any game that has a potentially large playerbase, and we understand the need for a better approach to initializing Gamesparks with the API Secret as an alternative to directly embedding the key in the application code. This is of most concern to developers using our [JavaScript SDK](/SDK Center/JavaScript SDK.md), where all scripts are publicly available to their users during play.
 
-One such solution is to store your API secret on a Node JS server. If you are not familiar with Node JS, it's a JavaScript environment and utility used primarily to build server-side web applications. One of its main benefits is the ability to get a simple webserver up and running with very little code. Once you have written your Node script, you can run it locally or anywhere else through the "Node" command:
+One such solution is to store your API secret on a Node JS server. If you're not familiar with Node JS, it's a JavaScript environment and utility used primarily to build server-side web applications. One of its main benefits is the ability to get a simple webserver up and running with very little code. Once you have written your Node script, you can run it locally or anywhere else through the "Node" command:
 
 ![](img/Node/1.png)
 
@@ -48,7 +48,7 @@ In JavaScript, you could use XMLHttpRequest to get the token from the server:
 
 ![](img/Node/6.png)
 
-If you are verifying the hmac token being returned by comparing it to a pre-computed nonce though the Test-Harness, be sure to use the "debug" api secret as opposed to the default "device" api secret. This can be found by clicking the padlock in the main screen on the portal. In other cases, use the default secret given on the landing page of the portal.
+If you are verifying the hmac token being returned by comparing it to a pre-computed nonce though the [Test-Harness](/Documentation/Test Harness/README.md), be sure to use the *same* Credential to connect with the platform through the Test Harness as the one you used when generating the nonce.
 
 And that about wraps it up!
 
