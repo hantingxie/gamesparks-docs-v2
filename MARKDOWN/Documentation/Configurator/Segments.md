@@ -199,7 +199,7 @@ Here, we'll segment an Achievement using the two Segment Queries we built [above
 ![](img/Segments/20.png)
 * Here we've selected the *COUNTRY_SEG_QUERY_JP*. This means that any players assigned the Segment/Value pair: *COUNTRY_SEG/JP_COUNTRY_SEGVAL*, will be subject to the alternative values for this Achievement segment.  
 
-*8.* Click *Add Segment* again and add a second segment for the Achievement:  
+*8.* Click *Add Segment* again and add a second Segment for the Achievement:  
 
 ![](img/Segments/21.png)
 * Here we've selected the *COUNTRY_SEG_QUERY_PL*. This means that any players assigned the Segment/Value pair: *COUNTRY_SEG/PL_COUNTRY_SEGVAL*, will be subject to the alternative values for this Achievement segment.

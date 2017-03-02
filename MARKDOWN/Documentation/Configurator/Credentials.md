@@ -38,7 +38,7 @@ You can also configure Credentials for:
 When you create or edit a custom Credential there are three key settings you can use to determine the type of Credential and ensure the Credential suits your purposes:
 * *Player* - If you select this, it means that the Credential will be used against players. For example, you could use a Player Credential to deny a player access to the matchmaking requests without affecting their permissions to other requests available within the API platform
 * *Listener* - If you select this, it means that messages can be passed through to the user.
-* *CB* - If you select this, it means that the Credential will be used exclusively for Callback scripts.
+* *CB* - If you select this, it means that the Credential can be used for Callback scripts.
 
 There are certain rules applied to the combination of Credential types:
 * A Player Credential *MUST* also be a Listener type.
@@ -111,7 +111,20 @@ To edit a System Credential:
 
 *3.* Switch *COPPA Compliant* to *ON*, if you want the Credential to impose [COPPA compliance](#Enabling COPPA Compliance).
 
-*4.* Select any of the four request tabs and check the individual requests under each one for the Credentials you want to allow/disallow. In this example, the first Requests tab is selected and all requests on this tab are checked and therefore allowed.
+*4.* If you don't want to configure the requests that the Credential allows, don't select the *Configure request types* check box:
+* Leaving this unchecked means that the default settings for Credential requests is applied. The default settings for each requests tab are:
+  * *Requests* - All request are allowed.
+  * *LogEvent Requests* - All requests are allowed.
+  * *LogChallengeEvent Requests* - All requests are allowed.
+  * *Admin Requests* - No requests are allowed.
+
+*5.* If you want to configure which requests you want to allow for this Credential, select the *Configure request types* check box. The four requests tabs are shown:
+
+![](img/SecCred/16.png)
+* For the *Request*, *LogEvent Requests*, and *LogChallengeEvent Requests* tabs, all requests will be checked to allow those requests. You can work through these tabs and unselect the requests you don't want to allow for the Credential.
+* For the *Admin Requests* tab, none of the requests will be selected and you must select for any requests on this tab that you want to allow for the Credential.
+
+<q>**Important!** If you simply select the *Configure request types* check box and do not change any of the default settings on any of the four request tabs and perform a save, this will save the *current* default request settings for the Credential. However, if a new request type is added to the platform, that Credential will NOT automatically inherit the default setting for that new request - you'll have to edit the Credential and explicitly select for the setting you want.</q>
 
 *5.* Click to *Save and Close* your editing changes.
 
@@ -141,10 +154,20 @@ In this example, we've selected for a *Player/Listener* custom Credential.
 
 *5.* Switch *COPPA Compliant* to *ON*, if you want the Credential to impose COPPA compliance.
 
+*6.* If you don't want to configure the requests that the Credential allows, don't select the *Configure request types* check box:
+* Leaving this unchecked means that the default settings for Credential requests is applied. The default settings for each requests tab are:
+  * *Requests* - All request are allowed.
+  * *LogEvent Requests* - All requests are allowed.
+  * *LogChallengeEvent Requests* - All requests are allowed.
+  * *Admin Requests* - No requests are allowed.
 
-*6.* Under the *Requests*, *LogEventRequests*, and *LogChallengeRequests* tabs, check for the requests you want to allow for the Credential.
+*7.* If you want to configure which requests you want to allow for this Credential, select the *Configure request types* check box. The four requests tabs are shown:
 
-<q>**AdminRequests.** Remember, *AdminRequests* cannot be selected for a Player Credential!</q>
+![](img/SecCred/17.png)
+* For the *Request*, *LogEvent Requests*, and *LogChallengeEvent Requests* tabs, all requests will be checked to allow those requests. You can work through these tabs and unselect the requests you don't want to allow for the Credential.
+* For the *Admin Requests* tab, none of the requests will be selected and you must select for any requests on this tab that you want to allow for the Credential.
+
+<q>**Important!** If you simply select the *Configure request types* check box and do not change any of the default settings on any of the four request tabs and perform a save, this will save the *current* default request settings for the Credential. However, if a new request type is added to the platform, that Credential will NOT automatically inherit the default setting for that new request - you'll have to edit the Credential and explicitly select for the setting you want.</q>
 
 *7.* Click to *Save and Close* your new Credential.
 
