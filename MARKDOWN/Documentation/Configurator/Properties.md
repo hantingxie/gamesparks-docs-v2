@@ -17,7 +17,7 @@ When you create a Property, you create an arbitrary data set which you can then 
 
 Property Sets allow you to group your Properties together. You can then segment your Property Sets and introduce an extra dimension to your Properties configuration. By segmenting Property Sets, you can ensure that different sets of Properties control game behavior for different player groups.
 
-<q>**Tutorial!** Check out our [Segmented Properties](/Tutorials/Analytics, Segmentation and Game Management/Working with Segmented Properties.md) tutorial for details on how to create and work with Properties and Property Sets and how to add segmented values for Properties.</q>
+<q>**Tutorial!** Check out our [Segmented Properties](/Tutorials/Segmentation/Working with Segmented Properties.md) tutorial for details on how to create and work with Properties and Property Sets and how to add segmented values for Properties.</q>
 
 ## Managing Properties and Property Sets
 

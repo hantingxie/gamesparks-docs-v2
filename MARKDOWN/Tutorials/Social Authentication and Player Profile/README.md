@@ -1,5 +1,5 @@
 ---
-nav_sort: 2
+nav_sort: 3
 no_toc: true
 no_comment: true
 src: /Tutorials/Social Authentication and Player Profile/README.md

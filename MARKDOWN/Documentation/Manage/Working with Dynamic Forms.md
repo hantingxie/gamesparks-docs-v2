@@ -30,7 +30,7 @@ Whenever you want to create a Dynamic Form, you should start with a Screen:
 * A main panel containing the *Screens*, *Snippets*, and *Charts* tabs where you can build your screens:
   * *Screens* - Create and configure Screens for your Dynamic Forms.
   * *Snippets* - Create and configure Snippets for your Screens.
-  * *Charts* - Charts will not be covered here, instead you can find a separate tutorial on them [here](/Tutorials/Analytics, Segmentation and Game Management/Building Custom Analytics Dashboards.md).
+  * *Charts* - Charts will not be covered here, instead you can find a separate tutorial on them [here](/Tutorials/Analytics and Game Management/Building Custom Analytics Dashboards.md).
 
 * A *Screen Snapshots* panel:
   * The *Screen Snapshots* panel works in a similar way to the *Snapshots* feature on the *Game Overview* page - you can use it to backup and restore the state of the Screens and Snippets you've created for your game.

@@ -1,5 +1,5 @@
 ---
-nav_sort: 5
+nav_sort: 6
 no_toc: true
 no_comment: true
 src: /Tutorials/Currencies, Virtual Goods and Achievements/README.md

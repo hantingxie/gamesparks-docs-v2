@@ -1,6 +1,6 @@
 ---
 nav_sort: 1
-src: /Tutorials/Analytics, Segmentation and Game Management/Building Custom Analytics Dashboards.md
+src: /Tutorials/Analytics and Game Management/Building Custom Analytics Dashboards.md
 ---
 
 # Building Custom Analytics Dashboards

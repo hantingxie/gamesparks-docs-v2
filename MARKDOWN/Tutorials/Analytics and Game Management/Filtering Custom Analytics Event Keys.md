@@ -1,6 +1,6 @@
 ---
 nav_sort: 3
-src: /Tutorials/Analytics, Segmentation and Game Management/Filtering Custom Analytics Event Keys.md
+src: /Tutorials/Analytics and Game Management/Filtering Custom Analytics Event Keys.md
 ---
 
 # Filtering Custom Analytics Event Keys
