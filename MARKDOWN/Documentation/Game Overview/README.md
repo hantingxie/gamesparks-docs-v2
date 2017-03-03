@@ -189,10 +189,12 @@ The *Change Owner* page opens.
 ![](img/GameOverview/25.png)
 
 A confirmation dialog appears warning you that the *Change Owner* action cannot be undone:
+
 ![](img/GameOverview/26.png)
 
 *3.* If you want to continue, click *Change Owner*:
 * In this example, because we logged in as the game owner at the outset we remain logged in as that user. Because that user no longer has access to the game - they were not listed as a Collaborator on the game - they are switched to another one of their games or, if that was their last game, they are taken to the *Add New Game* wizard.
 
 *4.* Log in as the Collaborator that was given ownership of the game and open the game. In *User Management* on the *Game Overview* page, this user will now show as the game owner and remain as a Collaborator on the game:
+
 ![](img/GameOverview/27.png)
