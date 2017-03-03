@@ -174,20 +174,19 @@ The page adjusts allowing you to select a segment for the Property Set Key.
 
 The *Segment Configuration* panel adjusts.
 
-*3.* Select the *Segment* you want to apply to the Property Set Key:
+*3.* Use the *Segment Query* drop-down to select the Segment/Value pair you want to use to segment the Property Set Key:
 
 ![](img/SegmentedProperties/17.png)
+* In this example, we've chosen the Country Segment/Value pair of *COUNTRY_SEG/CN_COUNTRY-SEGVAL* to segment the *property2* Property Set Key.
+* This means that any player who is assigned this Segment/Value pair will have the alternative value you select for this Property Set Key applied to them.
+* For more details on how to set up Segments and their values, see the [Segments](/Documentation/Configurator/Segments.md) page.
 
-*4.* Now, to select a specific value for the Property linked to the Property Set Key, click the segment icon on the Property field:
+*4.* Now, use the *Property* drop-down to select the Property value you want to apply to players that fall into the segment:
 
 ![](img/SegmentedProperties/18.png)
 
-The *Segment Property* panel is shown.
+*5.* Click to *Update and Close* the segment configuration for the Property Set Key.
 
-*5.* In the *Segment Property* panel, select the Property *Value* you want to apply for players that will fall under the Segment you've selected:
-
-![](img/SegmentedProperties/19.png)
-
-*6.* Click to *Update and Close* the segment configuration for the selected Property on the Property Set.
+*6.* Click to *Save and Close* the updated Property Set.
 
 Segmenting Properties in this way lets you override the Property value that will be surfaced under each Property Set Key *Name*, depending on the segments of the current player. Now, wherever you access that Property Set, if the Player belongs to a segment, they will see the specific Property value you used to override the normal Property value mapped to the Property Set Key. The obvious example here is delivering language-specific properties to a Player, but the possibilities really are boundless!

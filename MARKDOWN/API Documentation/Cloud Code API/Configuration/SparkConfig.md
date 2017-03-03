@@ -1,3 +1,7 @@
+---
+src: /API Documentation/Cloud Code API/Configuration/SparkConfig.md
+---
+
 # SparkConfig
 
 Contains configuration information for the game
