@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Misc/SocialStatusRequest.md
----
 
 # SocialStatusRequest
 
@@ -27,6 +24,15 @@ statuses | [SocialStatus[]](#socialstatus) | A list of social statuses.
 
 ## Nested types
 
+### ScriptData
+
+A collection of arbitrary data that can be added to a message via a Cloud Code script.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+myKey | string | An arbitrary data key
+myValue | JSON | An arbitrary data value.
+
 ### SocialStatus
 
 A the details of a social connection
@@ -36,15 +42,6 @@ Parameter | Type | Description
 active | boolean | When the token is still active.
 expires | date | When the token expires (if available).
 systemId | string | The identifier of the external platform.
-
-### ScriptData
-
-A collection of arbitrary data that can be added to a message via a Cloud Code script.
-
-Parameter | Type | Description
---------- | ---- | -----------
-myKey | string | An arbitrary data key
-myValue | JSON | An arbitrary data value.
 
 
 ## Code Samples

@@ -1,7 +1,3 @@
----
-src: /API Documentation/Cloud Code API/Cloud Data/SparkMongoCollectionReadWrite.md
----
-
 # SparkMongoCollectionReadWrite
 
 Provides read write access to a mongo collection.

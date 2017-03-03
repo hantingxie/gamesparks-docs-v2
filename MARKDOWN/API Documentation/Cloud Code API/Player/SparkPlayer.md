@@ -1,7 +1,3 @@
----
-src: /API Documentation/Cloud Code API/Player/SparkPlayer.md
----
-
 # SparkPlayer
 
 Provides access to a player details
@@ -37,7 +33,7 @@ _signature_ persist()</p>
 
 _returns_ void</p>
 
-Saves the players data to the DB. By default, changes are persisted after the script executes. This method ensures changes are saved immediately so other scripts running in parallel see the chnges immediately.
+Saves the players data to the DB. By default, changes are persisted after the script executes. This method ensures changes are saved immediately so other scripts running in parallel see the changes immediately.
 
 <b>example</b>
 
@@ -56,7 +52,7 @@ For a player who has only used device authentication this value will be generate
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().getDisplayName();</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().getUserName();</pre>
 
 
 ## getPlayerId
@@ -108,25 +104,6 @@ reason - the reason for the credit
 
 ## debit1
 
-_signature_ debit1(number quantity)</p>
-
-_returns_ boolean</p>
-
-Debits the currency1 balance of the player with the amount specified.
-
-<b>params</b>
-
-quantity - the amount to debit
-
-<b>returns</b>
-
- true if the debit was successful, false if the current balance was not sufficient
-
-<b>example</b>
-
-<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().debit1(5);</pre>
-
-
 _signature_ debit1(number quantity, string reason)</p>
 
 _returns_ boolean</p>
@@ -146,6 +123,25 @@ reason - the reason for the debit
 <b>example</b>
 
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().debit1(5, "Loser Penalty");</pre>
+
+
+_signature_ debit1(number quantity)</p>
+
+_returns_ boolean</p>
+
+Debits the currency1 balance of the player with the amount specified.
+
+<b>params</b>
+
+quantity - the amount to debit
+
+<b>returns</b>
+
+ true if the debit was successful, false if the current balance was not sufficient
+
+<b>example</b>
+
+<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().debit1(5);</pre>
 
 
 ## credit2
@@ -256,6 +252,23 @@ reason - the reason for the credit
 
 ## debit3
 
+_signature_ debit3(number quantity)</p>
+
+_returns_ boolean</p>
+
+Debits the currency3 balance of the player with the amount specified.
+
+Returns true if the debit was successful, false if the current balance was not sufficient.
+
+<b>params</b>
+
+quantity - the amount to debit
+
+<b>example</b>
+
+<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().debit3(5);</pre>
+
+
 _signature_ debit3(number quantity, string reason)</p>
 
 _returns_ boolean</p>
@@ -275,24 +288,22 @@ reason - the reason for the debit
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().debit3(5, "Loser Penalty");</pre>
 
 
-_signature_ debit3(number quantity)</p>
+## credit4
 
-_returns_ boolean</p>
+_signature_ credit4(number quantity)</p>
 
-Debits the currency3 balance of the player with the amount specified.
+_returns_ void</p>
 
-Returns true if the debit was successful, false if the current balance was not sufficient.
+Credits the currency4 balance of the player with the amount specified.
 
 <b>params</b>
 
-quantity - the amount to debit
+quantity - the amount to credit
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().debit3(5);</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().credit4(20);</pre>
 
-
-## credit4
 
 _signature_ credit4(number quantity, string reason)</p>
 
@@ -311,37 +322,7 @@ reason - the reason for the credit
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().credit4(20, "Loyalty Bonus");</pre>
 
 
-_signature_ credit4(number quantity)</p>
-
-_returns_ void</p>
-
-Credits the currency4 balance of the player with the amount specified.
-
-<b>params</b>
-
-quantity - the amount to credit
-
-<b>example</b>
-
-<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().credit4(20);</pre>
-
-
 ## credit5
-
-_signature_ credit5(number quantity)</p>
-
-_returns_ void</p>
-
-Credits the currency5 balance of the player with the amount specified.
-
-<b>params</b>
-
-quantity - the amount to credit
-
-<b>example</b>
-
-<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().credit5(20);</pre>
-
 
 _signature_ credit5(number quantity, string reason)</p>
 
@@ -360,7 +341,37 @@ reason - the reason for the credit
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().credit5(20, "Loyalty Bonus");</pre>
 
 
+_signature_ credit5(number quantity)</p>
+
+_returns_ void</p>
+
+Credits the currency5 balance of the player with the amount specified.
+
+<b>params</b>
+
+quantity - the amount to credit
+
+<b>example</b>
+
+<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().credit5(20);</pre>
+
+
 ## credit6
+
+_signature_ credit6(number quantity)</p>
+
+_returns_ void</p>
+
+Credits the currency6 balance of the player with the amount specified.
+
+<b>params</b>
+
+quantity - the amount to credit
+
+<b>example</b>
+
+<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().credit6(20);</pre>
+
 
 _signature_ credit6(number quantity, string reason)</p>
 
@@ -379,39 +390,7 @@ reason - the reason for the credit
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().credit6(20, "Loyalty Bonus");</pre>
 
 
-_signature_ credit6(number quantity)</p>
-
-_returns_ void</p>
-
-Credits the currency6 balance of the player with the amount specified.
-
-<b>params</b>
-
-quantity - the amount to credit
-
-<b>example</b>
-
-<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().credit6(20);</pre>
-
-
 ## debit4
-
-_signature_ debit4(number quantity)</p>
-
-_returns_ boolean</p>
-
-Debits the currency4 balance of the player with the amount specified.
-
-Returns true if the debit was successful, false if the current balance was not sufficient.
-
-<b>params</b>
-
-quantity - the amount to debit
-
-<b>example</b>
-
-<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().debit4(5);</pre>
-
 
 _signature_ debit4(number quantity, string reason)</p>
 
@@ -430,6 +409,23 @@ reason - the reason for the debit
 <b>example</b>
 
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().debit4(5, "Loser Penalty");</pre>
+
+
+_signature_ debit4(number quantity)</p>
+
+_returns_ boolean</p>
+
+Debits the currency4 balance of the player with the amount specified.
+
+Returns true if the debit was successful, false if the current balance was not sufficient.
+
+<b>params</b>
+
+quantity - the amount to debit
+
+<b>example</b>
+
+<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().debit4(5);</pre>
 
 
 ## debit5
@@ -630,6 +626,25 @@ quantity - the amount to add
 
 ## useVGood
 
+_signature_ useVGood(string shortCode, number quantity)</p>
+
+_returns_ boolean</p>
+
+Removes a quantity of virtual goods from the player.
+
+Returns true if the player had enough of the virtual good specified by short code. If the method returns false, no modification is made.
+
+<b>params</b>
+
+shortCode - the virtual good's short code
+
+quantity - the amount to consume
+
+<b>example</b>
+
+<pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().useVGood(vgShortCode, 34);</pre>
+
+
 _signature_ useVGood(string shortCode, number quantity, string reason)</p>
 
 _returns_ boolean</p>
@@ -649,25 +664,6 @@ reason - the reason for using the virtual good
 <b>example</b>
 
 <pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().useVGood(vgShortCode, 34, "Loser penalty");</pre>
-
-
-_signature_ useVGood(string shortCode, number quantity)</p>
-
-_returns_ boolean</p>
-
-Removes a quantity of virtual goods from the player.
-
-Returns true if the player had enough of the virtual good specified by short code. If the method returns false, no modification is made.
-
-<b>params</b>
-
-shortCode - the virtual good's short code
-
-quantity - the amount to consume
-
-<b>example</b>
-
-<pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().useVGood(vgShortCode, 34);</pre>
 
 
 ## hasVGood

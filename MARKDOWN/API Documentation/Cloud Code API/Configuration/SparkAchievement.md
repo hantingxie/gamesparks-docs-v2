@@ -1,7 +1,3 @@
----
-src: /API Documentation/Cloud Code API/Configuration/SparkAchievement.md
----
-
 # SparkAchievement
 
 Contains configuration information for the achievement

@@ -1,7 +1,3 @@
----
-src: /API Documentation/Cloud Code API/Cloud Data/SparkFiles.md
----
-
 # SparkFiles
 
 Provides access uploaded files along with downloadables

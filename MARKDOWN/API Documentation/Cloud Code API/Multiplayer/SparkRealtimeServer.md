@@ -1,7 +1,3 @@
----
-src: /API Documentation/Cloud Code API/Multiplayer/SparkRealtimeServer.md
----
-
 # SparkRealtimeServer
 
 Provides the details of the realtime server on which a match will be played out

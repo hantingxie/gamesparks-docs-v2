@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Multiplayer/GetChallengeRequest.md
----
 
 # GetChallengeRequest
 
@@ -28,6 +25,15 @@ challenge | [Challenge](#challenge) | A JSON object representing the challenge.
 scriptData | ScriptData | A JSON Map of any data added either to the Request or the Response by your Cloud Code
 
 ## Nested types
+
+### ScriptData
+
+A collection of arbitrary data that can be added to a message via a Cloud Code script.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+myKey | string | An arbitrary data key
+myValue | JSON | An arbitrary data value.
 
 ### PlayerDetail
 
@@ -67,15 +73,6 @@ shortCode | string | The challenge's short code.
 startDate | date | The date when the challenge starts.
 state | string | One of these possible state values: ISSUED, EXPIRED, ACCEPTED, DECLINED, COMPLETE, WITHDRAWN, RUNNING, WAITING, RECEIVED
 turnCount | [PlayerTurnCount[]](#playerturncount) | A collection containing the number of turns taken by each player that has accepted the challenge.
-
-### ScriptData
-
-A collection of arbitrary data that can be added to a message via a Cloud Code script.
-
-Parameter | Type | Description
---------- | ---- | -----------
-myKey | string | An arbitrary data key
-myValue | JSON | An arbitrary data value.
 
 ### PlayerTurnCount
 

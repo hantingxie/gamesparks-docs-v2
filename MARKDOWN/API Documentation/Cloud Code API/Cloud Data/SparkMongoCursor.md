@@ -1,7 +1,3 @@
----
-src: /API Documentation/Cloud Code API/Cloud Data/SparkMongoCursor.md
----
-
 # SparkMongoCursor
 
 An iterator over database results. Doing a find() query on a collection returns a SparkMongoCursor thus:

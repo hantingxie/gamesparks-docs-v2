@@ -1,7 +1,3 @@
----
-src: /API Documentation/Cloud Code API/Multiplayer/SparkMultiplayer.md
----
-
 # SparkMultiplayer
 
 Provides access to the platform's multiplayer capabilities.

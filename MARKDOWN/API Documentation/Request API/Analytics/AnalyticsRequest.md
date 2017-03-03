@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Analytics/AnalyticsRequest.md
----
 
 # AnalyticsRequest
 

@@ -1,7 +1,3 @@
----
-src: /API Documentation/Cloud Code API/Player/SparkPushRegistration.md
----
-
 # SparkPushRegistration
 
 The registration of a device to receive push notifications.

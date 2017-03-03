@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Player/ListMessageDetailRequest.md
----
 
 # ListMessageDetailRequest
 
@@ -33,6 +30,15 @@ scriptData | ScriptData | A JSON Map of any data added either to the Request or 
 
 ## Nested types
 
+### ScriptData
+
+A collection of arbitrary data that can be added to a message via a Cloud Code script.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+myKey | string | An arbitrary data key
+myValue | JSON | An arbitrary data value.
+
 ### PlayerMessage
 
 A nested object that represents a player message.
@@ -44,15 +50,6 @@ message | JSON | The message content
 seen | boolean | Whether the message has been delivered to the client
 status | string | The status of the message
 when | date | The date of the message
-
-### ScriptData
-
-A collection of arbitrary data that can be added to a message via a Cloud Code script.
-
-Parameter | Type | Description
---------- | ---- | -----------
-myKey | string | An arbitrary data key
-myValue | JSON | An arbitrary data value.
 
 
 ## Code Samples

@@ -1,6 +1,3 @@
----
-src: /API Documentation/Message API/Multiplayer/MatchFoundMessage.md
----
 
 # MatchFoundMessage
 

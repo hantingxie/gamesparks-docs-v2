@@ -1,28 +1,30 @@
 
-# GetMyTeamsRequest
+# ListTeamsRequest
 
 
-Get the teams that the player is in. Can be filtered on team type and also on those teams that the player owns.
+Returns a list of teams. Can be filtered on team name or team type.
 
 
-<a href="https://api.gamesparks.net/#getmyteamsrequest" target="_gsapi">View interactive version here</a>
+<a href="https://api.gamesparks.net/#listteamsrequest" target="_gsapi">View interactive version here</a>
 
 ## Request Parameters
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-ownedOnly | No | boolean | Set to true to only get teams owned by the player
-teamTypes | No | string[] | The type of teams to get
+entryCount | No | number | The number of teams to return in a page (default=50)
+offset | No | number | The offset (page number) to start from (default=0)
+teamNameFilter | No | string | An optional filter to return teams with a matching name
+teamTypeFilter | No | string | An optional filter to return teams of a particular type
 
 ## Response Parameters
 
 
-A response containing team data for teams that a player belong to
+A response containing the list of teams for a game.
 
 Parameter | Type | Description
 --------- | ---- | -----------
 scriptData | ScriptData | A JSON Map of any data added either to the Request or the Response by your Cloud Code
-teams | [Team[]](#team) | The team data
+teams | [Team[]](#team) | A list of JSON objects containing team information
 
 ## Nested types
 
@@ -51,11 +53,10 @@ virtualGoods | string[] | The virtual goods of the Player
 
 ### Team
 
-A nested object that represents the team.
+A nested object that represents the team. This object does not contain a list of the members.
 
 Parameter | Type | Description
 --------- | ---- | -----------
-members | [Player[]](#player) | The team members
 owner | [Player](#player) | A summary of the owner
 teamId | string | The Id of the team
 teamName | string | The team name
@@ -70,9 +71,11 @@ teamType | string | The team type
 	using GameSparks.Api.Requests;
 	using GameSparks.Api.Responses;
 	...
-	new GetMyTeamsRequest()
-		.SetOwnedOnly(ownedOnly)
-		.SetTeamTypes(teamTypes)
+	new ListTeamsRequest()
+		.SetEntryCount(entryCount)
+		.SetOffset(offset)
+		.SetTeamNameFilter(teamNameFilter)
+		.SetTeamTypeFilter(teamTypeFilter)
 		.Send((response) => {
 		GSData scriptData = response.ScriptData; 
 		GSEnumerable<var> teams = response.Teams; 
@@ -89,10 +92,12 @@ teamType | string | The team type
 	...
 	
 	gs.getRequestBuilder()
-	    .createGetMyTeamsRequest()
-		.setOwnedOnly(ownedOnly)
-		.setTeamTypes(teamTypes)
-		.send(function(response:com.gamesparks.api.responses.GetMyTeamsResponse):void {
+	    .createListTeamsRequest()
+		.setEntryCount(entryCount)
+		.setOffset(offset)
+		.setTeamNameFilter(teamNameFilter)
+		.setTeamTypeFilter(teamTypeFilter)
+		.send(function(response:com.gamesparks.api.responses.ListTeamsResponse):void {
 		var scriptData:ScriptData = response.getScriptData(); 
 		var teams:Vector.<Team> = response.getTeams(); 
 		});
@@ -104,10 +109,12 @@ teamType | string | The team type
 	#import "GS.h"
 	#import "GSAPI.h"
 	...
-	GSGetMyTeamsRequest* request = [[GSGetMyTeamsRequest alloc] init];
-	[request setOwnedOnly:ownedOnly;
-	[request setTeamTypes:teamTypes;
-	[request setCallback:^ (GSGetMyTeamsResponse* response) {
+	GSListTeamsRequest* request = [[GSListTeamsRequest alloc] init];
+	[request setEntryCount:entryCount;
+	[request setOffset:offset;
+	[request setTeamNameFilter:teamNameFilter;
+	[request setTeamTypeFilter:teamTypeFilter;
+	[request setCallback:^ (GSListTeamsResponse* response) {
 	NSDictionary* scriptData = [response getScriptData]; 
 	NSArray* teams = [response getTeams]; 
 	}];
@@ -124,32 +131,36 @@ teamType | string | The team type
 	using namespace GameSparks::Api::Requests;
 	...
 	
-	void GetMyTeamsRequest_Response(GS& gsInstance, const GetMyTeamsResponse& response) {
+	void ListTeamsRequest_Response(GS& gsInstance, const ListTeamsResponse& response) {
 	GSData scriptData = response.getScriptData(); 
 	gsstl:vector<Types::Team*> teams = response.getTeams(); 
 	}
 	......
 	
-	GetMyTeamsRequest request(gsInstance);
-	request.SetOwnedOnly(ownedOnly)
-	request.SetTeamTypes(teamTypes)
-	request.Send(GetMyTeamsRequest_Response);
+	ListTeamsRequest request(gsInstance);
+	request.SetEntryCount(entryCount)
+	request.SetOffset(offset)
+	request.SetTeamNameFilter(teamNameFilter)
+	request.SetTeamTypeFilter(teamTypeFilter)
+	request.Send(ListTeamsRequest_Response);
 ```
 
 ### Java
 ```java
-import com.gamesparks.sdk.api.autogen.GSRequestBuilder.GetMyTeamsRequest;
-import com.gamesparks.sdk.api.autogen.GSResponseBuilder.GetMyTeamsResponse;
+import com.gamesparks.sdk.api.autogen.GSRequestBuilder.ListTeamsRequest;
+import com.gamesparks.sdk.api.autogen.GSResponseBuilder.ListTeamsResponse;
 import com.gamesparks.sdk.api.autogen.GSTypes.*;
 import com.gamesparks.sdk.api.GSEventListener;
 
 ...
-gs.getRequestBuilder().createGetMyTeamsRequest()
-	.setOwnedOnly(ownedOnly)
-	.setTeamTypes(teamTypes)
-	.send(new GSEventListener<GetMyTeamsResponse>() {
+gs.getRequestBuilder().createListTeamsRequest()
+	.setEntryCount(entryCount)
+	.setOffset(offset)
+	.setTeamNameFilter(teamNameFilter)
+	.setTeamTypeFilter(teamTypeFilter)
+	.send(new GSEventListener<ListTeamsResponse>() {
 		@Override
-		public void onEvent(GetMyTeamsResponse response) {
+		public void onEvent(ListTeamsResponse response) {
 			GSData scriptData = response.getScriptData(); 
 			List<Team> teams = response.getTeams(); 
 		}
@@ -160,9 +171,11 @@ gs.getRequestBuilder().createGetMyTeamsRequest()
 ### Cloud Code
 ```javascript
 
-	var request = new SparkRequests.GetMyTeamsRequest();
-	request.ownedOnly = ...;
-	request.teamTypes = ...;
+	var request = new SparkRequests.ListTeamsRequest();
+	request.entryCount = ...;
+	request.offset = ...;
+	request.teamNameFilter = ...;
+	request.teamTypeFilter = ...;
 	var response = request.Send();
 	
 var scriptData = response.scriptData; 

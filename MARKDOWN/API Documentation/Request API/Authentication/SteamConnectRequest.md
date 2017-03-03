@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Authentication/SteamConnectRequest.md
----
 
 # SteamConnectRequest
 

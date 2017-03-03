@@ -1,7 +1,3 @@
----
-src: /API Documentation/Cloud Code API/Leaderboards/SparkLeaderboards.md
----
-
 # SparkLeaderboards
 
 Provides access to the leaderboards for the current game.
@@ -272,13 +268,13 @@ friendsIds - the ids of the other players to be included in this social leaderbo
 
 ## union
 
-_signature_ union([SparkLeaderboard](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboard.md) lhs, [SparkLeaderboard](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboard.md) rhs)</p>
+_signature_ union([SparkLeaderboardOperations](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboardOperations.md) lhs, [SparkLeaderboardOperations](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboardOperations.md) rhs)</p>
 
 _returns_ [SparkLeaderboardOperations](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboardOperations.md)</p>
 
 <b>validity</b> All Scripts
 
-Performs a union on the set of owners of entries within the first leaderboard and the set of owners of entries within the second.
+Performs a union on the set of owners returned as result of evaluating the first operation and the set of owners returned as result of evaluating the second operation.
 
 Returns a SparkLeaderboardOperations object to allow further operations to be chained before evaluation.
 
@@ -341,13 +337,13 @@ rhs - the the right-hand side of the operation.
 <pre rel="highlighter" code-brush="js" contenteditable="false">var inAny = Spark.getLeaderboards().union(lhs, rhs).evaluate();</pre>
 
 
-_signature_ union([SparkLeaderboardOperations](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboardOperations.md) lhs, [SparkLeaderboardOperations](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboardOperations.md) rhs)</p>
+_signature_ union([SparkLeaderboard](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboard.md) lhs, [SparkLeaderboard](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboard.md) rhs)</p>
 
 _returns_ [SparkLeaderboardOperations](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboardOperations.md)</p>
 
 <b>validity</b> All Scripts
 
-Performs a union on the set of owners returned as result of evaluating the first operation and the set of owners returned as result of evaluating the second operation.
+Performs a union on the set of owners of entries within the first leaderboard and the set of owners of entries within the second.
 
 Returns a SparkLeaderboardOperations object to allow further operations to be chained before evaluation.
 
@@ -504,13 +500,13 @@ rhs - the the right-hand side of the operation.
 <pre rel="highlighter" code-brush="js" contenteditable="false">var inBoth = Spark.getLeaderboards().intersection(lhs, rhs).evaluate();</pre>
 
 
-_signature_ intersection([SparkLeaderboard](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboard.md) lhs, [SparkLeaderboardOperations](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboardOperations.md) rhs)</p>
+_signature_ intersection([SparkLeaderboardOperations](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboardOperations.md) lhs, [SparkLeaderboardOperations](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboardOperations.md) rhs)</p>
 
 _returns_ [SparkLeaderboardOperations](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboardOperations.md)</p>
 
 <b>validity</b> All Scripts
 
-Performs an intersection on the set of owners of entries within the leaderboard and the set of owners returned as result of evaluating the operation.
+Performs an intersection on the set of owners returned as result of evaluating the first operation and the set of owners returned as result of evaluating the second operation.
 
 Returns a SparkLeaderboardOperations object to allow further operations to be chained before evaluation.
 
@@ -527,13 +523,13 @@ rhs - the the right-hand side of the operation.
 <pre rel="highlighter" code-brush="js" contenteditable="false">var inBoth = Spark.getLeaderboards().intersection(lhs, rhs).evaluate();</pre>
 
 
-_signature_ intersection([SparkLeaderboardOperations](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboardOperations.md) lhs, [SparkLeaderboardOperations](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboardOperations.md) rhs)</p>
+_signature_ intersection([SparkLeaderboard](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboard.md) lhs, [SparkLeaderboardOperations](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboardOperations.md) rhs)</p>
 
 _returns_ [SparkLeaderboardOperations](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboardOperations.md)</p>
 
 <b>validity</b> All Scripts
 
-Performs an intersection on the set of owners returned as result of evaluating the first operation and the set of owners returned as result of evaluating the second operation.
+Performs an intersection on the set of owners of entries within the leaderboard and the set of owners returned as result of evaluating the operation.
 
 Returns a SparkLeaderboardOperations object to allow further operations to be chained before evaluation.
 
@@ -621,13 +617,36 @@ teamids - the ids of the teams to be excluded from this social leaderboard
 
 ## difference
 
-_signature_ difference([SparkLeaderboard](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboard.md) lhs, [SparkLeaderboard](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboard.md) rhs)</p>
+_signature_ difference([SparkLeaderboardOperations](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboardOperations.md) lhs, [SparkLeaderboard](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboard.md) rhs)</p>
 
 _returns_ [SparkLeaderboardOperations](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboardOperations.md)</p>
 
 <b>validity</b> All Scripts
 
-Performs a difference on the set of owners of entries within the first leaderboard and the set of owners of entries within the second.
+Performs a difference on the set of owners returned as result of evaluating the operation and the owners of entries within the leaderboard.
+
+Returns a SparkLeaderboardOperations object to allow further operations to be chained before evaluation.
+
+To obtain the result of the operation call evaluate() on the SparkLeaderboardOperations returned.
+
+<b>params</b>
+
+lhs - the left-hand side of the operation.
+
+rhs - the the right-hand side of the operation.
+
+<b>example</b>
+
+<pre rel="highlighter" code-brush="js" contenteditable="false">var onlyInFirst = Spark.getLeaderboards().difference(lhs, rhs).evaluate();</pre>
+
+
+_signature_ difference([SparkLeaderboardOperations](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboardOperations.md) lhs, [SparkLeaderboardOperations](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboardOperations.md) rhs)</p>
+
+_returns_ [SparkLeaderboardOperations](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboardOperations.md)</p>
+
+<b>validity</b> All Scripts
+
+Performs a difference on the set of owners returned as result of evaluating the first operation and the set of owners returned as result of evaluating the second operation.
 
 Returns a SparkLeaderboardOperations object to allow further operations to be chained before evaluation.
 
@@ -667,36 +686,13 @@ rhs - the the right-hand side of the operation.
 <pre rel="highlighter" code-brush="js" contenteditable="false">var onlyInFirst = Spark.getLeaderboards().difference(lhs, rhs).evaluate();</pre>
 
 
-_signature_ difference([SparkLeaderboardOperations](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboardOperations.md) lhs, [SparkLeaderboard](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboard.md) rhs)</p>
+_signature_ difference([SparkLeaderboard](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboard.md) lhs, [SparkLeaderboard](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboard.md) rhs)</p>
 
 _returns_ [SparkLeaderboardOperations](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboardOperations.md)</p>
 
 <b>validity</b> All Scripts
 
-Performs a difference on the set of owners returned as result of evaluating the operation and the owners of entries within the leaderboard.
-
-Returns a SparkLeaderboardOperations object to allow further operations to be chained before evaluation.
-
-To obtain the result of the operation call evaluate() on the SparkLeaderboardOperations returned.
-
-<b>params</b>
-
-lhs - the left-hand side of the operation.
-
-rhs - the the right-hand side of the operation.
-
-<b>example</b>
-
-<pre rel="highlighter" code-brush="js" contenteditable="false">var onlyInFirst = Spark.getLeaderboards().difference(lhs, rhs).evaluate();</pre>
-
-
-_signature_ difference([SparkLeaderboardOperations](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboardOperations.md) lhs, [SparkLeaderboardOperations](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboardOperations.md) rhs)</p>
-
-_returns_ [SparkLeaderboardOperations](/API Documentation/Cloud Code API/Leaderboards/SparkLeaderboardOperations.md)</p>
-
-<b>validity</b> All Scripts
-
-Performs a difference on the set of owners returned as result of evaluating the first operation and the set of owners returned as result of evaluating the second operation.
+Performs a difference on the set of owners of entries within the first leaderboard and the set of owners of entries within the second.
 
 Returns a SparkLeaderboardOperations object to allow further operations to be chained before evaluation.
 

@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Multiplayer/FindPendingMatchesRequest.md
----
 
 # FindPendingMatchesRequest
 
@@ -34,18 +31,6 @@ scriptData | ScriptData | A JSON Map of any data added either to the Request or 
 
 ## Nested types
 
-### PendingMatch
-
-An object that represents a pending match.
-
-Parameter | Type | Description
---------- | ---- | -----------
-id | string | The ID for the pending match
-matchGroup | string | The match group for the pending match
-matchShortCode | string | The match shortCode for the pending match
-matchedPlayers | [MatchedPlayer[]](#matchedplayer) | The players already part of this pending match
-skill | number | The average skill of players in this pending match
-
 ### ScriptData
 
 A collection of arbitrary data that can be added to a message via a Cloud Code script.
@@ -65,6 +50,19 @@ location | DBObject | The Location of the player
 participantData | JSON | A JSON Map of any data that was associated to this user
 playerId | string | The ID for player
 skill | number | The skill of the player in this match
+
+### PendingMatch
+
+An object that represents a pending match.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+id | string | The ID for the pending match
+matchData | JSON | A JSON Map of the matchData associated to this pending match
+matchGroup | string | The match group for the pending match
+matchShortCode | string | The match shortCode for the pending match
+matchedPlayers | [MatchedPlayer[]](#matchedplayer) | The players already part of this pending match
+skill | number | The average skill of players in this pending match
 
 ## Error Codes
 

@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Admin/BatchAdminRequest.md
----
 
 # BatchAdminRequest
 

@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Multiplayer/ChatOnChallengeRequest.md
----
 
 # ChatOnChallengeRequest
 

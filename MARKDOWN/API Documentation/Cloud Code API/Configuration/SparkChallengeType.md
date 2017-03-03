@@ -1,7 +1,3 @@
----
-src: /API Documentation/Cloud Code API/Configuration/SparkChallengeType.md
----
-
 # SparkChallengeType
 
 Contains configuration information for the challenges

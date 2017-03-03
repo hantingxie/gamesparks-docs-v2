@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Player/ListMessageRequest.md
----
 
 # ListMessageRequest
 

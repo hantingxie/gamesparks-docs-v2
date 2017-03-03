@@ -1,6 +1,3 @@
----
-src: /API Documentation/Message API/Leaderboards/NewHighScoreMessage.md
----
 
 # NewHighScoreMessage
 
@@ -36,22 +33,6 @@ Parameter | Type | Description
 myKey | string | An arbitrary data key
 myValue | JSON | An arbitrary data value.
 
-### LeaderboardData
-
-Leaderboard entry data
-
-As well as the parameters below there may be others depending on your game's configuration.
-
-Parameter | Type | Description
---------- | ---- | -----------
-city | string | The city where the player was located when they logged this leaderboard entry.
-country | string | The country code where the player was located when they logged this leaderboard entry.
-externalIds | JSON | The players rank.
-rank | number | The players rank.
-userId | string | The unique player id for this leaderboard entry.
-userName | string | The players display name.
-when | string | The date when this leaderboard entry was created.
-
 ### LeaderboardRankDetails
 
 Ranking information.
@@ -70,6 +51,22 @@ socialFromPercent | number | The old social rank of the player as a percentage o
 socialTo | number | The Social Rank of the player in this leaderboard after the score was submitted.
 socialToPercent | number | The old global rank of the player as a percentage of the total number of friend scores in this leaderboard.
 topNPassed | [LeaderboardData[]](#leaderboarddata) | The leaderboard entries of the global players that were beaten as part of this score submission. Requires Top N to be configured on the leaderboard
+
+### LeaderboardData
+
+Leaderboard entry data
+
+As well as the parameters below there may be others depending on your game's configuration.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+city | string | The city where the player was located when they logged this leaderboard entry.
+country | string | The country code where the player was located when they logged this leaderboard entry.
+externalIds | JSON | The players rank.
+rank | number | The players rank.
+userId | string | The unique player id for this leaderboard entry.
+userName | string | The players display name.
+when | string | The date when this leaderboard entry was created.
 
 
 ## Code Samples

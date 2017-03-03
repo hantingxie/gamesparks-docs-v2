@@ -1,6 +1,5 @@
 ---
 nav_sort: 1
-src: /API Documentation/Cloud Code API/Spark.md
 ---
 
 # Spark
@@ -917,6 +916,8 @@ Sends a Request to the platform, this mimics the process a client uses to send r
 
 The request is sent as the current player, if there is no current player the method will fail.
 
+<b>Cloud code attached to the request/response will not be executed.</b> Use the SparkRequests API if cloud code execution is required.
+
 returns - The response as would be returned to the client
 
 <b>example</b>
@@ -935,6 +936,8 @@ _returns_ JSON</p>
 Sends a Request to the platform, this mimics the process a client uses to send requests
 
 The request is sent as the player identified by playerId, if there playerId is invalid the requst will fail.
+
+<b>Cloud code attached to the request/response will not be executed.</b> Use the SparkRequests API if cloud code execution is required.
 
 returns - The response as would be returned to the client
 

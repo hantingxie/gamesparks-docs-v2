@@ -1,7 +1,3 @@
----
-src: /API Documentation/Cloud Code API/Utilities/SparkDigest.md
----
-
 # SparkDigest
 
 Returns a reference to a SparkDigest object.
@@ -57,6 +53,15 @@ _returns_ string</p>
 Returns a HmacSHA256 Message Authentication Code (MAC) as a base64 encoded string for the given key and value.
 
 
+## hmacSha256Base64WithBase64Key
+
+_signature_ hmacSha256Base64WithBase64Key(string base64Key, string valueToDigest)</p>
+
+_returns_ string</p>
+
+Returns a HmacSHA256 Message Authentication Code (MAC) using a base64 encoded key and returns the value as a base64 encoded string.
+
+
 ## hmacSha256Hex
 
 _signature_ hmacSha256Hex(string key, string valueToDigest)</p>
@@ -64,6 +69,15 @@ _signature_ hmacSha256Hex(string key, string valueToDigest)</p>
 _returns_ string</p>
 
 Returns a HmacSHA256 Message Authentication Code (MAC) as hex string (lowercase) for the given key and value.
+
+
+## hmacSha256HexWithHexKey
+
+_signature_ hmacSha256HexWithHexKey(string hexKey, string valueToDigest)</p>
+
+_returns_ string</p>
+
+Returns a HmacSHA256 Message Authentication Code (MAC) using a hex encoded key and returns the value as a hex encoded string.
 
 
 ## hmacSha384Base64

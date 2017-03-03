@@ -1,7 +1,3 @@
----
-src: /API Documentation/Cloud Code API/Multiplayer/PendingMatch.md
----
-
 # PendingMatch
 
 An object that represents a pending match.
@@ -125,5 +121,20 @@ An array of pending matches suitable for matching with this one.
 <b>example</b>
 
 <pre rel="highlighter" code-brush="js" contenteditable="false">pendingMatch.findPendingMatches();</pre>
+
+
+## getMatchData
+
+_signature_ getMatchData()</p>
+
+_returns_ JSON</p>
+
+<b>validity</b> All Scripts
+
+Returns the matchData for the pending match.
+
+<b>example</b>
+
+<pre rel="highlighter" code-brush="js" contenteditable="false">pendingMatch.getMatchData();</pre>
 
 

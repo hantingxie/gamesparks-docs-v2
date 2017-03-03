@@ -1,7 +1,3 @@
----
-src: /API Documentation/Cloud Code API/Integrations/SendGrid.md
----
-
 # SendGrid
 
 Provides the ability to send emails via <a href="http://sendgrid.com/">SendGrid</a>.
@@ -179,7 +175,7 @@ This SendGrid object
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">mySendGrid.setHtml("<b>Welcome to using SendGrid via GameSparks</b>")</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">mySendGrid.setHtml("&lt;b>Welcome to using SendGrid via GameSparks&lt;/b>")</pre>
 
 
 ## addUploaded

@@ -1,7 +1,3 @@
----
-src: /API Documentation/Cloud Code API/Leaderboards/SparkLeaderboardEntry.md
----
-
 # SparkLeaderboardEntry
 
 An entry within a leaderboard.

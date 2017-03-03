@@ -1,7 +1,3 @@
----
-src: /API Documentation/Cloud Code API/Player/SparkPlayerExperimentSegment.md
----
-
 # SparkPlayerExperimentSegment
 
 An experiment segment that the player is part of.

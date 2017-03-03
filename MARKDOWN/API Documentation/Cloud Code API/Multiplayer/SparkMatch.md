@@ -1,7 +1,3 @@
----
-src: /API Documentation/Cloud Code API/Multiplayer/SparkMatch.md
----
-
 # SparkMatch
 
 Provides access to a match's details.
@@ -125,6 +121,19 @@ Remove the players with the given playerIds from this match.
 
 ## enableRealtime
 
+_signature_ enableRealtime()</p>
+
+_returns_ void</p>
+
+<b>validity</b> All Scripts
+
+If this match is not already realtime enabled, this method will enabled realtime.
+
+<b>example</b>
+
+<pre rel="highlighter" code-brush="js" contenteditable="false">match.enableRealtime();</pre>
+
+
 _signature_ enableRealtime(string script)</p>
 
 _returns_ void</p>
@@ -138,19 +147,6 @@ The realtime servers for this match will be configured to use the realtime scrip
 <b>example</b>
 
 <pre rel="highlighter" code-brush="js" contenteditable="false">match.enableRealtime('MY_RT_SCRIPT');</pre>
-
-
-_signature_ enableRealtime()</p>
-
-_returns_ void</p>
-
-<b>validity</b> All Scripts
-
-If this match is not already realtime enabled, this method will enabled realtime.
-
-<b>example</b>
-
-<pre rel="highlighter" code-brush="js" contenteditable="false">match.enableRealtime();</pre>
 
 
 ## getMatchData

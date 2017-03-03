@@ -1,7 +1,3 @@
----
-src: /API Documentation/Cloud Code API/Cloud Data/SparkRedis.md
----
-
 # SparkRedis
 
 Provides access to the Games Redis Instance.
@@ -25,14 +21,14 @@ See <a href="http://redis.io/commands/append">http://redis.io/commands/append</a
 
 ## bitcount
 
-_signature_ bitcount(string key)</p>
+_signature_ bitcount(string key, number start, number end)</p>
 
 _returns_ number</p>
 
 See <a href="http://redis.io/commands/bitcount">http://redis.io/commands/bitcount</a>
 
 
-_signature_ bitcount(string key, number start, number end)</p>
+_signature_ bitcount(string key)</p>
 
 _returns_ number</p>
 
@@ -543,9 +539,18 @@ _returns_ number</p>
 See <a href="http://redis.io/commands/sdiffstore">http://redis.io/commands/sdiffstore</a>
 
 
+## getSet
+
+_signature_ getSet(string key, string value)</p>
+
+_returns_ string</p>
+
+See <a href="http://redis.io/commands/getSet">http://redis.io/commands/getSet</a>
+
+
 ## set
 
-_signature_ set(string key, string value, string nxxx, string expx, number time)</p>
+_signature_ set(string key, string value)</p>
 
 _returns_ string</p>
 
@@ -566,20 +571,11 @@ _returns_ string</p>
 See <a href="http://redis.io/commands/set">http://redis.io/commands/set</a>
 
 
-_signature_ set(string key, string value)</p>
+_signature_ set(string key, string value, string nxxx, string expx, number time)</p>
 
 _returns_ string</p>
 
 See <a href="http://redis.io/commands/set">http://redis.io/commands/set</a>
-
-
-## getSet
-
-_signature_ getSet(string key, string value)</p>
-
-_returns_ string</p>
-
-See <a href="http://redis.io/commands/getSet">http://redis.io/commands/getSet</a>
 
 
 ## setbit
@@ -690,16 +686,16 @@ See <a href="http://redis.io/commands/spop">http://redis.io/commands/spop</a>
 
 ## srandmember
 
-_signature_ srandmember(string key, number count)</p>
+_signature_ srandmember(string key)</p>
 
-_returns_ string[]</p>
+_returns_ string</p>
 
 See <a href="http://redis.io/commands/srandmember">http://redis.io/commands/srandmember</a>
 
 
-_signature_ srandmember(string key)</p>
+_signature_ srandmember(string key, number count)</p>
 
-_returns_ string</p>
+_returns_ string[]</p>
 
 See <a href="http://redis.io/commands/srandmember">http://redis.io/commands/srandmember</a>
 
@@ -837,7 +833,7 @@ _returns_ string[]</p>
 See <a href="http://redis.io/commands/zrangeByScore">http://redis.io/commands/zrangeByScore</a>
 
 
-_signature_ zrangeByScore(string key, string min, string max)</p>
+_signature_ zrangeByScore(string key, string min, string max, number offset, number count)</p>
 
 _returns_ string[]</p>
 
@@ -851,7 +847,7 @@ _returns_ string[]</p>
 See <a href="http://redis.io/commands/zrangeByScore">http://redis.io/commands/zrangeByScore</a>
 
 
-_signature_ zrangeByScore(string key, string min, string max, number offset, number count)</p>
+_signature_ zrangeByScore(string key, string min, string max)</p>
 
 _returns_ string[]</p>
 
@@ -860,14 +856,14 @@ See <a href="http://redis.io/commands/zrangeByScore">http://redis.io/commands/zr
 
 ## zrangeByScoreWithScores
 
-_signature_ zrangeByScoreWithScores(string key, number min, number max, number offset, number count)</p>
+_signature_ zrangeByScoreWithScores(string key, number min, number max)</p>
 
 _returns_ JSON</p>
 
 See <a href="http://redis.io/commands/zrangeByScoreWithScores">http://redis.io/commands/zrangeByScoreWithScores</a>
 
 
-_signature_ zrangeByScoreWithScores(string key, number min, number max)</p>
+_signature_ zrangeByScoreWithScores(string key, number min, number max, number offset, number count)</p>
 
 _returns_ JSON</p>
 
@@ -958,7 +954,7 @@ _returns_ string[]</p>
 See <a href="http://redis.io/commands/zrevrangeByScore">http://redis.io/commands/zrevrangeByScore</a>
 
 
-_signature_ zrevrangeByScore(string key, string max, string min)</p>
+_signature_ zrevrangeByScore(string key, number max, number min)</p>
 
 _returns_ string[]</p>
 
@@ -972,7 +968,7 @@ _returns_ string[]</p>
 See <a href="http://redis.io/commands/zrevrangeByScore">http://redis.io/commands/zrevrangeByScore</a>
 
 
-_signature_ zrevrangeByScore(string key, number max, number min)</p>
+_signature_ zrevrangeByScore(string key, string max, string min)</p>
 
 _returns_ string[]</p>
 
@@ -980,13 +976,6 @@ See <a href="http://redis.io/commands/zrevrangeByScore">http://redis.io/commands
 
 
 ## zrevrangeByScoreWithScores
-
-_signature_ zrevrangeByScoreWithScores(string key, number max, number min)</p>
-
-_returns_ JSON</p>
-
-See <a href="http://redis.io/commands/zrevrangeByScoreWithScores">http://redis.io/commands/zrevrangeByScoreWithScores</a>
-
 
 _signature_ zrevrangeByScoreWithScores(string key, number max, number min, number offset, number count)</p>
 
@@ -996,6 +985,13 @@ See <a href="http://redis.io/commands/zrevrangeByScoreWithScores">http://redis.i
 
 
 _signature_ zrevrangeByScoreWithScores(string key, string max, string min, number offset, number count)</p>
+
+_returns_ JSON</p>
+
+See <a href="http://redis.io/commands/zrevrangeByScoreWithScores">http://redis.io/commands/zrevrangeByScoreWithScores</a>
+
+
+_signature_ zrevrangeByScoreWithScores(string key, number max, number min)</p>
 
 _returns_ JSON</p>
 

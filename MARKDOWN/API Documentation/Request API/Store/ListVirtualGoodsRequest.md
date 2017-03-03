@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Store/ListVirtualGoodsRequest.md
----
 
 # ListVirtualGoodsRequest
 
@@ -37,6 +34,15 @@ Parameter | Type | Description
 --------- | ---- | -----------
 myKey | string | An arbitrary data key
 myValue | JSON | An arbitrary data value.
+
+### BundledGood
+
+A collection of arbitrary data that can be added to a message via a Cloud Code script.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+qty | number | The number of items bundled
+shortCode | string | The shortCode of the bundled good
 
 ### VirtualGood
 
@@ -78,15 +84,6 @@ steamStoreProductId | string | The Steam Store productId of the item.
 tags | string | The tags of the Virtual Good
 type | string | The type of the virtual good, "VGOOD" or "CURRENCY"
 w8StoreProductId | string | The Windows 8 productId of the item.
-
-### BundledGood
-
-A collection of arbitrary data that can be added to a message via a Cloud Code script.
-
-Parameter | Type | Description
---------- | ---- | -----------
-qty | number | The number of items bundled
-shortCode | string | The shortCode of the bundled good
 
 
 ## Code Samples

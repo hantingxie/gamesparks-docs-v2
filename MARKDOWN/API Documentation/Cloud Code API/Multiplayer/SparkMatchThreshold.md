@@ -1,7 +1,3 @@
----
-src: /API Documentation/Cloud Code API/Multiplayer/SparkMatchThreshold.md
----
-
 # SparkMatchThreshold
 
 Contains configuration information for a match threshold

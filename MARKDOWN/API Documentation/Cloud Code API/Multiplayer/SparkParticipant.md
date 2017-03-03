@@ -1,7 +1,3 @@
----
-src: /API Documentation/Cloud Code API/Multiplayer/SparkParticipant.md
----
-
 # SparkParticipant
 
 Provides the details of a participant in a match

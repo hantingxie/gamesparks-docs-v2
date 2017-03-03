@@ -1,7 +1,3 @@
----
-src: /API Documentation/Cloud Code API/Utilities/SparkLog.md
----
-
 # SparkLog
 
 A Logging interface that can be called from scripts.

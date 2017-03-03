@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Authentication/FacebookConnectRequest.md
----
 
 # FacebookConnectRequest
 

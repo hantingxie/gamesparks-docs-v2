@@ -1,6 +1,3 @@
----
-src: /API Documentation/Request API/Player/ListTransactionsRequest.md
----
 
 # ListTransactionsRequest
 
@@ -41,6 +38,16 @@ Parameter | Type | Description
 myKey | string | An arbitrary data key
 myValue | JSON | An arbitrary data value.
 
+### PlayerTransactionItem
+
+A nested object that represents a single item in a transaction.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+amount | number | The amount of this item given to the player in the transaction
+newValue | number | The quantity the player possesses after the transaction completed
+type | string | The type of item
+
 ### PlayerTransaction
 
 A nested object that represents a player transaction.
@@ -57,16 +64,6 @@ script | string | The specific script in which this transaction occurred
 scriptType | string | The script type in which this transaction occurred (e.g. event)
 transactionId | string | The transaction ID of this purchase, if applicable
 when | date | The date of the transaction
-
-### PlayerTransactionItem
-
-A nested object that represents a single item in a transaction.
-
-Parameter | Type | Description
---------- | ---- | -----------
-amount | number | The amount of this item given to the player in the transaction
-newValue | number | The quantity the player possesses after the transaction completed
-type | string | The type of item
 
 
 ## Code Samples
