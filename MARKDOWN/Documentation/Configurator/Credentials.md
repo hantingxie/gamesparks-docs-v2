@@ -118,7 +118,7 @@ To edit a System Credential:
   * *LogChallengeEvent Requests* - All requests are allowed.
   * *Admin Requests* - No requests are allowed.
 
-*5.* If you want to configure which requests you want to allow for this Credential, select the *Configure request types* check box. The four requests tabs are shown:
+*5.* If you want to configure which requests you want to allow for this Credential, select the *Configure request types* check box. The four *Requests* tabs are shown:
 
 ![](img/SecCred/16.png)
 * For the *Request*, *LogEvent Requests*, and *LogChallengeEvent Requests* tabs, all requests will be checked to allow those requests. You can work through these tabs and unselect the requests you don't want to allow for the Credential.
@@ -161,7 +161,7 @@ In this example, we've selected for a *Player/Listener* custom Credential.
   * *LogChallengeEvent Requests* - All requests are allowed.
   * *Admin Requests* - No requests are allowed.
 
-*7.* If you want to configure which requests you want to allow for this Credential, select the *Configure request types* check box. The four requests tabs are shown:
+*7.* If you want to configure which requests you want to allow for this Credential, select the *Configure request types* check box. The four *Requests* tabs are shown:
 
 ![](img/SecCred/17.png)
 * For the *Request*, *LogEvent Requests*, and *LogChallengeEvent Requests* tabs, all requests will be checked to allow those requests. You can work through these tabs and unselect the requests you don't want to allow for the Credential.

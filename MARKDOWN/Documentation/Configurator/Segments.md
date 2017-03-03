@@ -7,7 +7,7 @@ src: /Documentation/Configurator/Segments.md
 
 ## What are Segments?
 
-Segments allow you to create partitions for different users and apply various rules to different areas of the platform. Segments offer you an extra dimension of flexibility for customizing player experience and behavior.
+Segments allow you to create partitions for different users and apply various rules to different areas of the platform. Segments offer you an extra dimension of flexibility for precisely customizing player experience and behavior.
 
 ## Segmentation Use Cases
 
@@ -20,7 +20,7 @@ Here's two use cases where Segmentation comes in very useful:
 
 *2.* What about language? A much simpler and customizable method than Geo Locations would be to introduce a language Segment. Based on the user's Segment Values for a language Segment, users could receive messages for new high scores, challenges, and team invitations all in their respective native languages, as well as customizing the name and descriptions of Leaderboards, Challenges, Achievements, and so on.
 
-<q>**Segmentation Tutorials?** In addition to the example given in this page, check out the [tutorials](/Tutorials/Segmentation/README.md) showing worked examples of how to set up and apply segmentation.</q>
+<q>**Segmentation Tutorials?** Check out the Segmentation [tutorials](/Tutorials/Segmentation/README.md) where you can find worked examples of how to set up and work with segmentation.</q>
 
 ## Managing Segment Configurations
 

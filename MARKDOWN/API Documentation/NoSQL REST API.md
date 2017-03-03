@@ -13,11 +13,11 @@ All the communication is based on a JSON payload.
 
 ## Authentication
 
-See the [REST API Overview](/API Documentation/REST APIs/README.md) page where authentication is explained.
+See the [REST APIs Overview](/API Documentation/REST APIs/README.md) page where authentication is explained.
 
 ## Discovering the Endpoint
 
-In the system architecture diagram on the [REST API Overview](/API Documentation/REST APIs/README.md) page you can see that there are multiple servers that handle the NoSQL REST requests, one for each cluster. This means that before you can query the system for NoSQL information, you must first find out what server you need to talk to.
+In the system architecture diagram on the [REST APIs Overview](/API Documentation/REST APIs/README.md) page you can see that there are multiple servers that handle the NoSQL REST requests, one for each cluster. This means that before you can query the system for NoSQL information, you must first find out what server you need to talk to.
 
 **Request**
 ```
@@ -38,12 +38,12 @@ You'll use either the *previewNosql* or the *liveNosql* base URLs, depending on 
 
 From now on, we'll refer to the endpoint you choose to query as {stageBaseUrl}.
 
-## Examples
+## Examples Operations
 You can find an exhaustive list of the operations that you can perform using the NoSQL Explorer REST API together with an explanation of their parameters [here](/API Documentation/REST APIs/NoSQL.md).
 
 This section provides a few examples.
 
-### Find all collections
+### Find All Collections
 ```
 GET {stageBaseUrl}/restv2/game/{gameApiKey}/mongo/collections
 ```
@@ -80,13 +80,15 @@ Returns all the available collections and the operations you are allowed to perf
 ]
 ```
 
-### Find data in a collection
+### Find Data in a Collection
 
 ```
 POST: {stageBaseUrl}/restv2/game/{gameApiKey}/mongo/collection/player/find
 ```
 
-This example will return the players that match the parameters you passed
+Returns the players that match the parameters you pass.
+
+Here are the optional parameters:
 
   * *query* : The query you want to execute in JSON form:
     * To find players with displayName "testUser" the following JSON should be used {"displayName" : "testUser"}.
@@ -124,7 +126,7 @@ This example will return the players that match the parameters you passed
   }
 ]
 ```
-### Create a meta collection
+### Create a Meta Collection
 
 You can only create meta collections or runtime collections. The following request will create a meta collection called 'tracks':
 ```
