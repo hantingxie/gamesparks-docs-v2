@@ -260,8 +260,8 @@ For example, we could use the playerID to get a list of all achievements each pl
 var playerZeroID = RTSession.getPlayers()[0].getPlayerId();
 var playerZeroPeerID = RTSession.getPlayers()[0].getPeerId();
 // get the ID of a player who's peerID is known
-var playerID = RTSession.getPlayer(1).getPeerId();
-var playerPeerID = RTSession.getPlayer(1).getPlayerId();
+var playerPeerID = RTSession.getPlayer(1).getPeerId();
+var playerID = RTSession.getPlayer(1).getPlayerId();
 // we can use the playerID to check achievements for each player, for example //
 RTSession.newRequest().createListAchievementsRequest().setPlayerId(playerID).send(function(response){
     var achList = response.achievements; // returns a list of achievements

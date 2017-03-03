@@ -1,3 +1,6 @@
+---
+src: /API Documentation/Request API/Multiplayer/JoinPendingMatchRequest.md
+---
 
 # JoinPendingMatchRequest
 
