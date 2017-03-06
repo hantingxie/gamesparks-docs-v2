@@ -160,7 +160,7 @@ if(Spark.getPlayer() !== null){
 
 ![](img/Segments/22.png)
 
-When users authenticate, this code will ensure that they are assigned the appropriate Segment/Value pair based on their geographical location.
+When users authenticate, this code will execute when the AuthenticationResponse is sent back from the platform and will ensure that they are assigned the appropriate Segment/Value pair based on their geographical location.
 
 ### Checking Segment Assignment
 
@@ -176,7 +176,7 @@ You can quickly check that the Cloud Code you use to assign Segment/Value pairs 
 
 ![](img/Segments/23.png)
 
-## Segmenting Configuration across the Portal
+## Segmenting Configuration Objects across the Portal
 
 Within the portal, you can segment your configuration to set different parameters for different Segments. For example, you can have:
 * A different price for a Virtual Good for a particular Segment.
@@ -194,7 +194,9 @@ Here, we'll segment an Achievement using the two Segment Queries we built [above
 
 *4.* Click *Add Segment*.
 
-*5.* Enter the alternative values you want to use for the segmentable Achievement fields and which will be applied to players put into this Segment.
+*5.* Enter the alternative values you want to use for the segmentable Achievement fields and which will be applied to players put into this Segment:
+* In this example, we'll select for an alternative *Virtual Good Award* and alternative currency awards.
+* Note that for the alternative currency awards values, we can enter calculable amounts against the standard currency awards. For example, if the standard currency 1 award equals 100, instead of entering an absolute value, we can enter *+20%* for the alternative segment currency award and the players who belong to the segment will receive a currency 1 award of 120.
 
 *7.* Use the drop-down to select the *Segment Query* you want to use to determine which players are put into this segment of the Achievement:
 

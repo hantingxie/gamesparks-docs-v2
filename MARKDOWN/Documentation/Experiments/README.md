@@ -62,7 +62,8 @@ You can use this step to configure several aspects of the Experiment:
       * Set the alternative values for the fields we selected when we added each of the Variants to the Experiment in Step 2.
       * In this example:
         * For the *50-60* percentile range of the player pool we've *decreased* both the Gold and Silver coin values for Currencies 1 and 2 (as seen above).
-        * For the *5-15* percentile range of the player pool, we've *increased* both the Gold and Silver coin values for Currencies 1 and 2:
+        * For the *5-15* percentile range of the player pool, we've *increased* both the Gold and Silver coin values for Currencies 1 and 2.
+      * Note that for the alternative coin values, we can enter *calculable* amounts against the standard coin values. For example, if the standard *GOLD_COIN* value equals 100 and we want to increase its value to 120, instead of entering an absolute value, we can enter *+20%* when configuring our Variant values for an Experiment.
 
 ![](img/Experiments/10A.png)
 
