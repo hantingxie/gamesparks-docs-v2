@@ -70,8 +70,13 @@ GameSparks allows you to create custom messages, which you can send from your Cl
 
 ![](img/Noti/12.png)
 
+* The configuration details for a custom message are similar to standard message configuration. (See previous [section](#Message Configuration) )
 * These Messages are uniquely identified using a *Short Code*.
-* The configuration details for a custom message are similar to standard message configuration. (See previous [section](#Message Configuration) )  
+* However the REST address is made up of *"ScriptMessage_"* prefixed to the Short Code you use for your custom message, for example:
+
+![](img/Noti/15.png)
+* Addressing custom messages in this way safeguards against the possibility that the REST address of any standard messages added to the platform in the future will duplicate an existing custom message REST address.
+
 
 ## Different Messages for Different Players
 
