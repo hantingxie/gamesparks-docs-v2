@@ -544,55 +544,45 @@ You can check out more information about the *update()* function [here](/API Doc
 We can use the hidden field name's *event_id* to find the document we want to update:
 
 ```
-<gs-row>
-    <gs-title-block title={{#if form.event}}"Edit Sales Event"{{else}}"Create New Sales Event"{{/if}} padding="10" margin="0">
-<gs-form snippet="sales_edit?action=save" target="sales_events_ph">
-            <gs-row>
-                <gs-col width="3"><h5>Name</h5></gs-col>
-                <gs-col width="9"><h5>Description</h5></gs-col>
-            </gs-row>
-            <gs-row>
-                <gs-col width="3"><input type='text' placeholder="Event Name..." name='event_name' value="{{form.event.event_name}}"/></gs-col>
-                <gs-col width="9"><input type='text' placeholder="Event Description..." name='event_desc' value="{{form.event.event_desc}}"/></gs-col>
-            </gs-row>
-            <gs-row>
-                <gs-col width="6">Start Date<br/>
-                    <input type="text" class="datetimepicker" name="start_date" value="{{form.event.start_date}}" required />
-                </gs-col>
-                <gs-col width="6">End Date<br/>
-                    <input type="text" class="datetimepicker" name="end_date" value="{{form.event.end_date}}" required />
-                </gs-col>
-            </gs-row>
-            <gs-row>
-                <gs-col width="12"><h5>Sale Segment</h5></gs-col>
-            </gs-row>
-            <gs-row>
-                <gs-col width="3"></gs-col>
-                <gs-col width="6">
-                    <select name="segment_name" class="input-block-level" style="margin-bottom:5px">
-                        {{#each form.sales_segments}}
-                            <option value="{{shortCode}}" {{#compare shortCode "===" ../shortCode}}selected{{/compare}}>{{name}}</option>
-                        {{/each}}
-                    </select>
-                </gs-col>
-                <gs-col width="3"></gs-col>
-            </gs-row>
-            <gs-row>
-                <gs-col><gs-submit>Save</gs-submit></gs-col>
-            </gs-row>
-        </gs-form>
-    </gs-title-block>
-</gs-row>
+function save(data){
 
-<script>
-    setTimeout(function(){
-        $( ".datetimepicker" ).datetimepicker({
-            dateFormat: "yy-mm-dd",
-            separator:"T",
-            timeFormat: "HH:mm"
-        });
-    }, 500);
-</script>
+        Spark.metaCollection('sales_events').update(
+            { "event_name" : data.event_name  },
+            {
+                $set : { // all the fields we want to update go here
+                    "event_name" : data.event_name,
+                    "event_desc" : data.event_desc,
+                    "start_date" : dateParse(data.start_date),
+                    "end_date" : dateParse(data.end_date),
+                    "sale_segment" : data.segment_name,
+                    "status" : "INACTIVE"
+                }
+            },
+            true,
+            false
+            );
+
+        form.updated = true;
+
+        return form;    
+    }
+
+
+function dateParse(date){
+
+    var parsedDate = new Date(0);
+    var dateTimeParts = date.split("T");
+    var dateParts = dateTimeParts[0].split("-");
+    var timeParts = dateTimeParts[1].split(":");
+
+    parsedDate.setFullYear(dateParts[0]);
+    parsedDate.setMonth(dateParts[1]-1);
+    parsedDate.setDate(dateParts[2]);
+    parsedDate.setHours(timeParts[0]);
+    parsedDate.setMinutes(timeParts[1]);
+
+    return parsedDate;
+}
 
 
 ```
