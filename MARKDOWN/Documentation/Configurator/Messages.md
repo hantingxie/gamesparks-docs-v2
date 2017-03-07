@@ -84,3 +84,5 @@ You can use segmentation to send players different messages:
 * Click *Segment* to open the *Segment Configuration* panel and then click to *Add Segment*. For example, you can create a segment for French players and send these players French language versions of messages:
 
 ![](img/Noti/13.png)
+
+<q>**More Details on Segmentation?** For more details on how to set up and work with segmentation, click [here](/Documentation/Configurator/Segments.md).</q>
