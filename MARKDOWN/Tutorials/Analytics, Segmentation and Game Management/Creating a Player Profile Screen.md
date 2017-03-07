@@ -1,6 +1,6 @@
 ---
 nav_sort: 2
-src: /Tutorials/Analytics and Game Management/Creating a Player Profile Screen.md
+src: /Tutorials/Analytics, Segmentation and Game Management/Creating a Player Profile Screen.md
 ---
 
 # Player Profile Screen

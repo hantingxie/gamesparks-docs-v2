@@ -1,6 +1,6 @@
 ---
-nav_sort: 5
-src: /Tutorials/Analytics and Game Management/Building a Customer Feedback Screen.md
+nav_sort: 7
+src: /Tutorials/Analytics, Segmentation and Game Management/Building a Customer Feedback Screen.md
 ---
 
 # Building a Customer Feedback Screen

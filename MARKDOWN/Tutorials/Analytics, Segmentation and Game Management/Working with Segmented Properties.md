@@ -1,6 +1,6 @@
 ---
-nav_sort: 2
-src: /Tutorials/Segmentation/Working with Segmented Properties.md
+nav_sort: 5
+src: /Tutorials/Analytics, Segmentation and Game Management/Working with Segmented Properties.md
 ---
 
 # Segmented Properties

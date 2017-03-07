@@ -26,7 +26,7 @@ These Screens have been built with ease of use and convenience very much in mind
 
 This topic shows you how to download any of the pre-configured Screens and introduces you to the functionality each Screen offers.
 
-<q>**Player Profile Screen!** For a detailed account of importing and building a Player Profile Screen, check out this [tutorial](/Tutorials/Analytics and Game Management/Creating a Player Profile Screen.md).</q>
+<q>**Player Profile Screen!** For a detailed account of importing and building a Player Profile Screen, check out this [tutorial](/Tutorials/Analytics, Segmentation and Game Management/Creating a Player Profile Screen.md).</q>
 
 ### Importing a Pre-Built Screen
 
@@ -82,7 +82,7 @@ The players that satisfy your search query criteria are returned:
 
 *2.* Click to view and edit ![](/img/fa/edit.png) a player's details. An *Edit Player* Screen appears where you can review and edit various aspects of the player's profile.
 
-<q>**More on this Screen?** For a fuller account of working with the *Player Management* Screen, see the [Player Profile Screen](/Tutorials/Analytics and Game Management/Creating a Player Profile Screen.md) tutorial.</q>
+<q>**More on this Screen?** For a fuller account of working with the *Player Management* Screen, see the [Player Profile Screen](/Tutorials/Analytics, Segmentation and Game Management/Creating a Player Profile Screen.md) tutorial.</q>
 
 #### Leaderboard Management
 
