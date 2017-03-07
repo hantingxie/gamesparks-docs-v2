@@ -5,11 +5,15 @@ src: /Tutorials/Game Engine Integrations/Setting Up UE4 Facebook Authentication.
 
 # Unreal Engine 4 GameSparks Facebook Authentication
 
+<q>**VERY IMPORTANT!** This tutorial is only valid if you are using up to Unreal version 4.10. If you are using a more recent version, *please ignore* the details given here. An updated tutorial is being prepared and will be available very soon!</q>
+
 ## Introduction
 
 GameSparks allows you to use social authentication to keep track of your players without registering them. This tutorial aims to get you started with Unreal Engine 4's Facebook online subsystem and using it to retrieve an authentication token which allows you to use GameSpark's social authentication.
 
 <q>**Downloadables.** You can download the assets that support this tutorial [here](http://repo.gamesparks.net.s3.amazonaws.com/docs/tutorial-assets/SocialAuthFacebookSubsystem.zip).</q>
+
+
 
 ## Setting up your project
 
