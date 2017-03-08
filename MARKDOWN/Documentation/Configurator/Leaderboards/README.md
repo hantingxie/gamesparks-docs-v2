@@ -63,7 +63,7 @@ In the *Fields* panel, you can click to *Add* fields to a Leaderboard:
   * *Filter Type* \- Select a filter which incoming Event Attribute values will be checked against before being entered into the Leaderboard.
   * *Filter Value* \- Specify a value for the given filter type.
   * *Sort* \- Select how this field affects the ordering of the Leaderboard if at all.
-  * *Group* \- If the chosen Running Total Collector has a default calculation value of *Grouped*, this field allows you to select how the Leaderboard data should be grouped. Available values are:
+  * *Group* \- If the chosen Running Total Collector has a default aggregation Type of *Grouped*, this field allows you to select how the Leaderboard data should be grouped. Available values are:
     * *Minimum* - Lowest entry
     * *Maximum* - Highest entry
     * *Sum* - Sum of the entries

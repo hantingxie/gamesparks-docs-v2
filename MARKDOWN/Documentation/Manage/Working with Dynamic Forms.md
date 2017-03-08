@@ -49,7 +49,7 @@ Enter the details for the new Screen:
 * *Name* - Mandatory field for the name of the Screen.
 * *Groups* - Optional field to assign a pre-configured Group to the Screen to control which users have read/write permissions to the Screen. For more details, see [Capabilities and User Permissions](/Tutorials/Capabilities/README.md)
 
-*3.* Click to *Save and Close* the new Screeen. When you create a new Screen it's added:
+*3.* Click to *Save and Close* the new Screen. When you create a new Screen it's added:
 * To the list of screens on the *Screens* tab.
 * To the *Manage* menu.
 

@@ -144,7 +144,7 @@ There are many techniques to deal with cases like this and they mostly come down
 
 In order to know that your networking is performing efficiently and optimally, you need to keep track of every packet sent back and forth for your game.
 
-Packets should be logged by timestamp and the number of bytes sent and received. Check out the tutorial [here](/Tutorials/Real-Time Services/Clock Synchronization and Network Programming.md) on clock synchronization to see how you can get these data. You can also cache data as they comes in to get average readings per second, which is very useful because UDP packet transmission times can vary.
+Packets should be logged by timestamp and the number of bytes sent and received. Check out the tutorial [here](/Tutorials/Real-Time Services/Clock Synchronization and Network Programming.md) on clock synchronization to see how you can get these data. You can also cache data as they come in to get average readings per second, which is very useful because UDP packet transmission times can vary.
 
 Accompanying these data with details about the category of packet you are sending (such as game-state updates, position updates, collision updates, and so on) will give you a lot of information you can use to monitor your network for problems and see the results of any tweaking you do to improve network performance.
 

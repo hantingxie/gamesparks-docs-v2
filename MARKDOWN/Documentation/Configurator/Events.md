@@ -45,7 +45,7 @@ Add an Attribute by clicking *Add*.  Each Attribute has a number of different c
   * *Name* \- Name of the Attribute, which you can use to identify the Attribute if there are several associated with an Event.
   * *Data Type* \- Each Attribute needs to be defined as either *String*, *Number*, or *JSON*.
   * *Default Value* \- Allows a specific value to be used if the user request does not contain this attribute.
-  * *Default Calculation* \- Select the calculation you want to use for when the Event/Attribute is used as a running total a Leaderboard. Select *Used In Script* if you do not want to make the Event/Attribute available for a Leaderboard running total:
+  * *Default Calculation* \- Select the calculation you want to use for when the Event/Attribute is used as a running total for a Leaderboard. Select *Used In Script* if you do not want to make the Event/Attribute available for a Leaderboard running total:
     * *Maximum* \- A running total will be created to track the maximum value posted.
     * *Minimum* \- A running total will be created to track the minimum value posted.
     * *Sum* \- A running total will be created to add all the values posted together.
