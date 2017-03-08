@@ -1,5 +1,5 @@
 ---
-nav_sort: 4
+nav_sort: 7
 src: /Tutorials/Analytics, Segmentation and Game Management/Using Custom Segment Query Filters.md
 ---
 

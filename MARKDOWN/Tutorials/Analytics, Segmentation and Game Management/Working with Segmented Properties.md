@@ -1,5 +1,5 @@
 ---
-nav_sort: 5
+nav_sort: 8
 src: /Tutorials/Analytics, Segmentation and Game Management/Working with Segmented Properties.md
 ---
 

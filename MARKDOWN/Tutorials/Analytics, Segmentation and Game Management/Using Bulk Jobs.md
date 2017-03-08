@@ -1,5 +1,5 @@
 ---
-nav_sort: 6
+nav_sort: 9
 src: /Tutorials/Analytics, Segmentation and Game Management/Using Bulk Jobs.md
 ---
 

@@ -259,7 +259,7 @@ We can again test this through our [Test Harness](/Documentation/Test Harness/RE
 
 In this section of the tutorial we'll create a management screen where you can list items, update them, and create new ones.
 
-We can do this using Dynamic Forms. Dynamic Forms are very useful in GameSparks for creating your own management screens and they can be used for a variety of things. Dynamic Forms can be a bit complicated so we advise you take a look over how they work. There are tutorials [here](/Tutorials/Analytics. Segmentation and Game Management/README.md) and there is a list of tags you can use through the Dynamic Forms API [here](/API Documentation/Dynamic Forms API.md).
+We can do this using Dynamic Forms. Dynamic Forms are very useful in GameSparks for creating your own management screens and they can be used for a variety of things. Dynamic Forms can be a bit complicated so we advise you take a look over how they work. There are tutorials [here](/Tutorials/Analytics, Segmentation and Game Management/README.md) and there is a list of tags you can use through the Dynamic Forms API [here](/API Documentation/Dynamic Forms API.md).
 
 ### Creating a Management Screen
 
@@ -547,6 +547,6 @@ By following this tutorial you'll be able to create requests for updating and re
 This was a very simple example. There is much more you could add for your own games - for example:
 * Adding new fields to the Item Manager screen would allow you to define statistics for your items such as health, damage, and so on.
 * You could also incorporate item-uses into your request so that items can be used and exhausted as players use them.
-* Another option could be to add prices to the items so that players could purchase items before they are added to their inventory. In this case, you could use [SparkPlayer.debit](API Documentation/Cloud Code API/Player/SparkPlayer.md) to debit the player the price of the item you have set instead of using the built-in Virtual Goods.
+* Another option could be to add prices to the items so that players could purchase items before they are added to their inventory. In this case, you could use [SparkPlayer.debit](/API Documentation/Cloud Code API/Player/SparkPlayer.md) to debit the player the price of the item you have set instead of using the built-in Virtual Goods.
 
 There are many ways to customize this sort of Player Inventory use case to suit your own needs so please let us know if we can help!

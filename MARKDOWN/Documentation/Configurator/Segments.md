@@ -20,6 +20,17 @@ Here's two use cases where Segmentation comes in very useful:
 
 *2.* What about language? A much simpler and customizable method than Geo Locations would be to introduce a language Segment. Based on the user's Segment Values for a language Segment, users could receive messages for new high scores, challenges, and team invitations all in their respective native languages, as well as customizing the name and descriptions of Leaderboards, Challenges, Achievements, and so on.
 
+## Game-Scope and Object-Scope Segmentation
+
+This topic explains how to set up and manage Segments and Segment Queries which you can then use across the platform to impose segmentation across different kinds of configuration objects. For example, you might create a Country Segment, add Segment Values to it, and then create a Segment Query using Country Segment/Value pairings. You could then use that Segment Query to impose segmentation on your players to differentiate their game experience based on their country of registration:
+* For Virtual Goods costs.
+* For Achievements earned.
+* For Messages received.
+
+We can think of this way of imposing differentiated player experience of common configurable objects as *game-scope segmentation*.
+
+However, you can also impose segmentation directly on individual configuration objects and bypass the need to set up any game-scope Segmentation. This *object-scope segmentation* is then confined to differentiating player experience of that specific configuration object.
+
 <q>**Segmentation Tutorials?** Check out the Segmentation [tutorials](/Tutorials/Analytics, Segmentation and Game Management/README.md) where you can find worked examples of how to set up and work with segmentation.</q>
 
 ## Managing Segment Configurations

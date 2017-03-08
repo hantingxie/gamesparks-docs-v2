@@ -47,7 +47,7 @@ These numbers provide key aggregated analytics data metrics about how well your�
   * *Active Players (now)* - The total number of players that are currently connected to your game.
   * *DAUs (since midnight)* - The total number of unique Daily Active Players since midnight.
   * *Avg DAUs (last 30 days)* - A rolling average over the last 30 days for the DAU Big Number.
-  * *MAUs (last month)* - The total number of active players for last month and the current month.
+  * *MAUs (last month)* - The total number of active players for last month.
   * *MAUs (this month)* - The total number of active players for the current month.
   * *Average Session Duration (today)* - The average player session duration for today.
 
