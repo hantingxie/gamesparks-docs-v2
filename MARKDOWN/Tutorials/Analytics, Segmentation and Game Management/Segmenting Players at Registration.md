@@ -37,12 +37,10 @@ The full request:
 
 ```
 
-![](img/SegmentReg/1.png)
-
 
 ## SDK Examples
 
-Lua:
+### Lua
 
 ```
 --Set values
@@ -53,7 +51,7 @@ registerRequest::setSegments("faction","Viking")
 
 ```
 
-Unity:
+### Unity
 
 ```
 new GameSparks.Api.Requests.RegistrationRequest()
@@ -63,3 +61,7 @@ new GameSparks.Api.Requests.RegistrationRequest()
   .SetSegments("faction","Viking")
 
 ```
+
+### Unreal Blueprint
+
+![](img/SegmentReg/1.png)

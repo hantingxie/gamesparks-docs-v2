@@ -4,15 +4,13 @@ src: /Tutorials/Analytics, Segmentation and Game Management/Direct Segmentation 
 ---
 # Direct Segmentation for Configurables
 
-GameSparks now allows you to customize your configuration with segments without having to first create Segments or Segment Queries under *Configurator>Segments*. This feature is especially useful if you want to customize a single configuration object for a very specific segment of players without having to track that segment everywhere across the portal and thereby cluttering your segment drop down list.
+GameSparks allows you to segment your configurables directly without having to first create Segments and Segment Queries under *Configurator>Segments*. This feature is especially useful if you want to customize a single configuration object for a very specific partition of your players without having to track the Segment Query you use to do this everywhere across the portal and thereby cluttering up your Segment Query drop-down list.
 
-When you impose differentiated player experience through direct segmentation in this way the *scope* of the segmentation is restricted to that particular configurable.
+When you impose differentiated player experience through direct segmentation in this way, the *scope* of the segmentation is restricted to that particular configurable.
 
 ## Creating a Direct Segmentation
 
-Configurable objects, integration pages, and message configurations can be customized through the direct segmentation method.
-
-Here are the general steps you must follow to configure direct segmentation on a configurable:
+Configurable objects, integration pages, and message configurations can be customized using the direct segmentation method. Here are the general steps you must follow to configure direct segmentation on a configurable:
 
 *1.* Open the configurable to edit it.
 
@@ -24,12 +22,15 @@ Here are the general steps you must follow to configure direct segmentation on a
 
 *5.* Click the edit ![](/img/icons/editicon.png) icon button next to *Custom Query*. An *Edit Query* dialog appears.
 
-*6.* Create a query for segmenting the configurable and save.
+*6.* Create a query for segmenting the configurable.
+
+*7.* Enter the alternative values for the segmentable fields on the configurable - those with the segment ![](/img/icons/segmenticon.png) icon - that you want to apply to players put into the segment.
+
+*8.* Click to *Save* the segmentation for the configurable.
 
 ## Direct Segmentation Examples
 
 Here's a few examples of direct segmentation on configurables:
-
 
 ### Example 1
 
