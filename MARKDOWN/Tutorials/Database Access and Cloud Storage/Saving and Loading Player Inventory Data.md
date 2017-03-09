@@ -19,8 +19,6 @@ There's plenty of other attributes these items can have. For example:
 * Or, we can use the *type* field to filter only specific inventory items to be displayed in a store-front - that is weapons, potions, or armour.
 * We could add another field which would similarly denote the level of the item, and could be used to only show the user items at their level.
 
-There are plenty of attributes we can add here that could be hooked into your game in various ways.
-
 ### Creating a Collection from Scratch
 
 We can create a collection from scratch through the NoSQL explorer. Later on, in another tutorial, we'll go through how to create items using a CMS screen, but let’s save that for when we have everything working.

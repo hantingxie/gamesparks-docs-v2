@@ -230,7 +230,7 @@ Segmented values within the portal can be ordered - simply click and hold on the
 ### Why Order Segments?
 
 If you apply more than one segment against a configurable and some of your players will fall into more than one segment, order the segments to ensure the correct segment values are applied to these "multi-segment" players:
-* The portal will apply the values defined for the first segment encountered in the segment list to which a player belongs.
+* The values defined for the first segment encountered in the segment list to which a player belongs will be applied.
 
 ## Social Integration with Segments
 
