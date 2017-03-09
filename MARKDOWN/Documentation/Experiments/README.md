@@ -39,6 +39,8 @@ Use this second step to select what you want to vary for the purpose of the Expe
 
 This means that any players who become participants in the Experiment will be charged Currency 1 & 2 amounts that vary from the regular costs when they purchase either a gold or silver coin Virtual Good.
 
+<q>**Have you Segmented your Experiment Variants?** If you've set up segmentation for your Experimental Variants - in this example the *GOLD_COIN* and *SILVER_COIN* Virtual Goods - and defined alternative *calculated* segmented values for the same fields - in this example *Currency 1 and 2* fields - if you then define calculated values for your Experimental Variants, then the calculation for the values experienced by a player placed in a Segment and in the Experiment will be compounded. See [Segments](/Documentation/Configurator/Segments.md). </q>
+
 *3.* Click *Next*. You're taken to *Step 3 - Player Pool and Variant Configuration*:
 
 ![](img/Experiments/10.png)
@@ -92,6 +94,7 @@ This shows the *Start* and *End* date you have configured for the Experiment and
 * ![](/img/icons/copyicon.png) - Copy the Experiment.
 * ![](/img/icons/publishicon.png) - Publish the Experiment.
 * ![](/img/icons/deleteicon.png) - Delete the Experiment.
+
 
 
 ## Running Experiments

@@ -221,14 +221,26 @@ Here, we'll segment an Achievement using the two Segment Queries we built [above
 
 *9.* Click to *Save and Close* the Achievement segmentation.
 
-### Ordering Segment Configuration
+## Ordering Segment Configuration
 
 Segmented values within the portal can be ordered - simply click and hold on the *Reorder* icon and drag-and-drop a Segment to where you want it:
 
 ![](img/Segments/11.png)
+
+### Why Order Segments?
+
+If you apply more than one segment against a configurable and some of your players will fall into more than one segment, order the segments to ensure the correct segment values are applied to these "multi-segment" players:
+* The portal will apply the values defined for the first segment encountered in the segment list to which a player belongs.
 
 ## Social Integration with Segments
 
 One of the most powerful features of Segmentation is that it allows for different segment types to be socially connected to different games or apps. For example, players of different nationalities or language preferences could have segments which would socially connect them to a different version of a developer's app or game on Facebook or Twitter:
 
 ![](img/Segments/12.png)
+
+## Segmentation and Running Experiments
+
+If you have implemented segmentation for some of your configurables and also plan to set up and run [Experiments](/Documentation/Experiments/README.md) where, under an Experiment, you vary the values of those segmented configurables, it's worth remembering that any calculated values under the segmentation might be compounded, if you then set up calculated values for the same configurables under the Experiment:
+* An example here is a segmented Virtual Good where the differentiated currency costs for a segmented player are calculated - say +10% for each currency - against the base currency costs defined for the Virtual Good. That same player might be placed in an Experiment that also varies the same Virtual Good currency costs using calculated values - say +10% for each currency. In this sort of case, if the base currency cost for the Virtual Good is 100, the actual currency costs to the player for the duration of the Experiment will be 121:
+  * Segmentation variance - 100 plus 10% = 110
+  * Experimental variance - 110 plus 10% = 121
