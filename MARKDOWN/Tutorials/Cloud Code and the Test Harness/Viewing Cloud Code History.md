@@ -35,7 +35,7 @@ The Cloud Code History tool is designed to compare the right-hand Snapshot to th
    Default *Workspace* selection in *Base*... | ...shows all other saved Snapshots in *Compare With*
 
 *2.* Click *Compare*.
-* If there are no Cloud Code differences between the two Snapshots, then you'll see a message to tell you this:
+* If there are no Cloud Code differences between the two Snapshots, then you'll see a message telling you this:
 
 ![](img/CloudHistory/18.png)
 

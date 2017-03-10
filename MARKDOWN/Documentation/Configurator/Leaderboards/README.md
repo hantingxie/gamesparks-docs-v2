@@ -63,14 +63,17 @@ In the *Fields* panel, you can click to *Add* fields to a Leaderboard:
   * *Filter Type* \- Select a filter which incoming Event Attribute values will be checked against before being entered into the Leaderboard.
   * *Filter Value* \- Specify a value for the given filter type.
   * *Sort* \- Select how this field affects the ordering of the Leaderboard if at all.
-  * *Group* \- If the chosen Running Total Collector has a default aggregation Type of *Grouped*, this field allows you to select how the Leaderboard data should be grouped. Available values are:
-    * *Minimum* - Lowest entry
-    * *Maximum* - Highest entry
-    * *Sum* - Sum of the entries
-    * *Count* - Number of entries
-    * *Range* - Difference between Minimum and Maximum
-    * *ID* - Lists each Entry on a single Leaderboard.
-    * *Partition* - Partitions the Leaderboard on this Entry, more on that [here](/Tutorials/Social Features/Partitioning Leaderboards.md).
+  * *Group* \- This field is enabled only if:
+    * The Event/Attribute you have selected as the Running Total Collector has its *Default Aggregation Type* set as *Grouped*, OR
+    * Any other Running Total Attribute on the Event has its *Default Aggregation Type* set as *Grouped*. Even though the Event's *Grouped* Attribute is not selected as the Leaderboard's Running Total Collector, you can select how the actual Running Total Collector will be grouped, just in case you do decide to return that *Grouped* Attribute into the Leaderboard and so prevent duplication of the Running Total Attribute values on the Leaderboard.
+    * If enabled, this field allows you to select how the Leaderboard data should be grouped. Available values are:
+      * *Minimum* - Lowest entry.
+      * *Maximum* - Highest entry.
+      * *Sum* - Sum of the entries.
+      * *Count* - Number of entries.
+      * *Range* - Difference between Minimum and Maximum.
+      * *ID* - Lists each Entry on a single Leaderboard.
+      * *Partition* - Partitions the Leaderboard on this Entry, more on that [here](/Tutorials/Social Features/Partitioning Leaderboards.md).
 
 ### Deleting Leaderboard Fields
 

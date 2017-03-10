@@ -45,14 +45,14 @@ Add an Attribute by clicking *Add*.  Each Attribute has a number of different c
   * *Name* \- Name of the Attribute, which you can use to identify the Attribute if there are several associated with an Event.
   * *Data Type* \- Each Attribute needs to be defined as either *String*, *Number*, or *JSON*.
   * *Default Value* \- Allows a specific value to be used if the user request does not contain this attribute.
-  * *Default Calculation* \- Select the calculation you want to use for when the Event/Attribute is used as a running total for a Leaderboard. Select *Used In Script* if you do not want to make the Event/Attribute available for a Leaderboard running total:
-    * *Maximum* \- A running total will be created to track the maximum value posted.
-    * *Minimum* \- A running total will be created to track the minimum value posted.
-    * *Sum* \- A running total will be created to add all the values posted together.
-    * *Count* \- A running total will be created to count the number of times the player has called the event.
-    * *Last* \- A running total will be created using the last value posted.
-    * *Used In Script* \- The Event *will not be used* in a running total.
-    * *Grouped* \- The running total will use this attribute to group other attributes. This will lead to a running total with an entry per attribute/user combination. A typical use case is would be where you want to track each player's highest score relative to each level of your game, not simply each player's highest score across all game levels.
-    * *Supplemental* \- A running total will be created with no value calculated. You can use this when you want to store some extra information within the game context but do not want this to affect on the Leaderboard ranking. (For example, in a racing game you can keep note of weather conditions on the track as well as player lap times but changing weather conditions do not affect the player's Leaderboard ranking.)
+  * *Default Aggregation Type* \- Select the calculation you want to use for when the Event/Attribute is used as a running total for a Leaderboard. Select *Used In Script* if you do not want to make the Event/Attribute available for a Leaderboard running total:
+    * *Maximum* \- A Running Total will be created to track the maximum value posted.
+    * *Minimum* \- A Running Total will be created to track the minimum value posted.
+    * *Sum* \- A Running Total will be created to add all the values posted together.
+    * *Count* \- A Running Total will be created to count the number of times the player has called the event.
+    * *Last* \- A Running Total will be created using the last value posted.
+    * *Used In Script* \- The Event *will not be used* in a Running Total.
+    * *Grouped* \- The Running Total will use this attribute to group other Attributes. This will lead to a Running Total with an entry per Attribute/user combination. A typical use case would be where you want to track each player's highest score relative to each level of your game, not simply each player's highest score across all game levels.
+    * *Supplemental* \- A Running Total will be created with no value calculated. You can use this when you want to store some extra information within the game context but do not want this to affect the Leaderboard ranking. (For example, in a racing game you can keep note of weather conditions on the track as well as player lap times but changing weather conditions do not affect the player's Leaderboard ranking.)
 
 <q>**Attributes for Leaderboard Running Totals!** If you want an Event to be available for selection as a Running Total when you create and configure Leaderboards for your game, two conditions must be met. First, you must add at least one Attribute to the Event. Second, you cannot select *Used in Script* as the *Default Aggregation Type* for the Attribute. Running Totals are more fully explained [here](/Documentation/Configurator/Leaderboards/Running Totals.md).</q>
