@@ -7,13 +7,13 @@ src: /Tutorials/Social Features/Creating Time Based Leaderboards.md
 
 You can use the GameSparks platform to create Leaderboards that are based on time. Examples of these are:
 
-  * Highest Score in the last 30 days
-  * Most improved in the last 7 days
+  * Highest Score in the last 30 days.
+  * Most improved in the last 7 days.
 
 
 To implement time based Leaderboards, you'll need to perform some specific set up tasks.
 
-This tutorial explains how to set up a time based Leaderborad. We'll go through the process of creating a *Highest score in the last 30 days* Leaderboard, one that is built once a month. After following the tutorial, you should be able to create other combinations for time based Leaderboards that meet your own requirements.
+This tutorial explains how to set up a time based Leaderboard. We'll go through the process of creating a *Highest score in the last 30 days* Leaderboard, one that is built once a month. After following the tutorial, you should be able to create other combinations for time based Leaderboards that meet your own requirements.
 
 ## Creating the Event
 
@@ -25,9 +25,9 @@ This tutorial explains how to set up a time based Leaderborad. We'll go through 
 
 Note that we've added a default value to the *DAY* Attribute:
 * Adding this default value means you don't need to pass a *DAY* Attribute as part of the [LogEventRequest](/API Documentation/Request API/Player/LogEventRequest.md) and the platform will calculate it.
-* We're using an expression (starting with a *$* sign). There are a few expressions available that allow you to automatically calculate a value for the default. The one we are using is *${today}*, which will automatically resolve to the epoch time of midnight today.
+* We're using an expression (starting with a *$* sign). There are a few expressions available that allow you to automatically calculate a value for the default. The one we are using is *${now}*, which will automatically resolve to the epoch time of now.
 
-<q>**Expressions?** See [below](#Expressions) for a list of available expressions.</q>
+<q>**Expressions?** See [below](#Expressions) for available expressions.</q>
 
 *2.* Click to *Save and Close* the new Event.
 
@@ -51,20 +51,19 @@ In this Running Total, note that we've included *Day* under *Group By*. This mea
 
 Note that we've configured this Leaderboard:
 * To be built every month by setting *Update Frequency* to *Monthly*.
-* To only consume the last 30 days by adding a *${today:minusDays(30)}* expression under *Filter Value*
+* To only consume the last 30 days by adding under *Filter Value* the expression:
+  * **${now - 30 \* 24 \* 60 \* 60 \* 1000}** - This is now minus 30 days expressed as milliseconds.
 
-With this kind of Leaderboard set up:
-* When the Leaderboard is built, it will have a *Short Code* formatted as *HSL30D.SCHEDULED.YYYY-MM-DD*, where the date components are the date of the Leaderboard build.
+With this kind of Leaderboard setup:
+* When the Leaderboard is built, it will have a *Short Code* formatted as *HSL30D.SCHEDULED.YYYY-MM-DD*, where the date components are the dates of the Leaderboard build.
 * With this process, each previous scheduled Leaderboard is preserved, and you can query for historical data using the date component of the *Short Code*.
 * When you make a [ListLeaderboardsRequest](/API Documentation/Request API/Leaderboards/ListLeaderboardsRequest.md), each of the built Leaderboards will be returned in the Response so you can query which Leaderboards are available.
-
 *6.* Click to *Save and Close* the new Leaderboard.
 
 ## Expressions
 
-The current list of expressions available is
+You can build expressions:
+* *${now}* - Shows the epoch time and is a long.
+* *${format(now, "yyyy-MM-dd")}* - First parameter is a long; the second parameter is a java simple date format date pattern.
 
-  * *${today}* - The epoch time of midnight today.
-  * *${now}* - The current epoch time.
-  * *${today:minusDays(N)}* - The epoch time of midnight N days ago.
-  * *${today:plusDays(N)}* - The epoch time of midnight N days in the future.
+For more formatting options, see [here](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)

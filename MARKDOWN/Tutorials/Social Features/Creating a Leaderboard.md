@@ -58,7 +58,7 @@ In this section we'll create a Leaderboard which arranges all the players' score
 
 <q>**Other Configuration Options?** For our example, you can leave the other Leaderboard options at their default settings.</q>
 
-*4.* In the *Fields* panel, click to *Add* a *Running Total* to the Leaderboard.
+*4.* In the *Fields* panel, click to *Add* a *Running Total* to the Leaderboard:
 
 ![](img/CreateUseLDR/22.png)
 
@@ -116,7 +116,7 @@ Now we'll authorize our first Player: *player_first*.
 
 ![](img/CreateUseLDR/25.png)
 
-Note that as well as the request and response shown in the *Inspector* that there is also an asynchronous [NewHighScoreMessage](/API Documentation/Message API/Leaderboards/NewHighScoreMessage.md) (in orange text):
+Note that as well as the request and response shown in the *Inspector* that there is also an asynchronous [NewHighScoreMessage](/API Documentation/Message API/Leaderboards/NewHighScoreMessage.md) (in yellow text):
 * This message includes the score posted as well as the global rank details.
 * Every time a player beats their previous best they will receive a message of this type.
 * If the first Player logs another score that is 10 or less they will not receive a *NewHighScoreMessage*.
@@ -135,9 +135,10 @@ Note that as well as the request and response shown in the *Inspector* that ther
 
 ![](img/CreateUseLDR/27.png)
 
-To control the number of entries returned by the *LeaderBoardDataRequest*, set the *entryCount* field to the required value. Also, to view a different part of the Leaderboard, set the *offset* field. The offset is relative to the current authorized player's position in the Leaderboard.
+To control the number of entries returned by the *LeaderBoardDataRequest*, set the *entryCount* field to the required value. Also, to view a different part of the Leaderboard, set the *offset* field. The offset is relative to the top-ranked position in the Leaderboard.
 
 ![](img/CreateUseLDR/28.png)
+* In the current example, *player_fifth* is our top-ranked player with a score of 510 which represents: *offset=0*. So the response for this request - *offset=3* - will return 210, that is, the score of the player ranked 4th on the Leaderboard.
 
 If the current authorized player was linked to their Facebook account in the GameSparks platform and they had friends who had logged scores in this game, then setting the social field value to true would return Leaderboard data containing just the player and player's friends:
 
