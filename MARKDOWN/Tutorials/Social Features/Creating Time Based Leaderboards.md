@@ -58,6 +58,7 @@ With this kind of Leaderboard setup:
 * When the Leaderboard is built, it will have a *Short Code* formatted as *HSL30D.SCHEDULED.YYYY-MM-DD*, where the date components are the dates of the Leaderboard build.
 * With this process, each previous scheduled Leaderboard is preserved, and you can query for historical data using the date component of the *Short Code*.
 * When you make a [ListLeaderboardsRequest](/API Documentation/Request API/Leaderboards/ListLeaderboardsRequest.md), each of the built Leaderboards will be returned in the Response so you can query which Leaderboards are available.
+
 *6.* Click to *Save and Close* the new Leaderboard.
 
 ## Expressions
