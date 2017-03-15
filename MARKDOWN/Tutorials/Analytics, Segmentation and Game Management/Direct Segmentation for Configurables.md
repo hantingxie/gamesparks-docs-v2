@@ -4,9 +4,13 @@ src: /Tutorials/Analytics, Segmentation and Game Management/Direct Segmentation 
 ---
 # Direct Segmentation for Configurables
 
-GameSparks allows you to segment your configurables directly without having to first create Segments and Segment Queries under *Configurator>Segments*. This feature is especially useful if you want to customize a single configuration object for a very specific partition of your players without having to track the Segment Query you use to do this everywhere across the portal and thereby cluttering up your Segment Query drop-down list.
+GameSparks allows you to segment your configurable objects in your game directly without having to first create Segments and Segment Queries under *Configurator>Segments*. You can do this by creating a *Custom Query* when you segment the configurable to control which players experience the segmented values.
 
-When you impose differentiated player experience through direct segmentation in this way, the *scope* of the segmentation is restricted to that particular configurable.
+This feature is especially useful if you want to customize a single configuration object for a very specific partition of your players without having to track the Segment Query you use to do this everywhere across the portal and thereby cluttering up your Segment Query drop-down list.
+
+When you impose differentiated player experience through direct segmentation in this way, the *scope* of the segmentation is restricted to that particular configurable because the *Custom Query* you use will not be available to segment other configurable objects.
+
+<q>**Mixed Segmentation?** You can of course segment a configurable object in your game by using both a *Custom Query* and a pre-configured *Segment Query* or use multiple queries of either kind. This affords you maximum flexibility when you segment - if you add multiple segments, the order of segments determines which values any particular player will experience for the configurable. For an example where multiple segment queries are added in this way see [Example 4](#Example 4) below. </q>
 
 ## Creating a Direct Segmentation
 
@@ -54,3 +58,19 @@ For our *Challenge Won* message we're going to segment the message and cater it 
 ![](img/DirectSegment/4.png)
 
 ![](img/DirectSegment/5.png)
+
+### Example 4
+
+In this example, we'll use multiple *Custom Queries* on a *Silver Coin* Virtual Good to achieve staged discounting as players accumulate the Virtual Good:
+
+![](img/DirectSegment/8.png)
+
+* The first applies only to players that have acquired at least ten of the Virtual Good - the cost of the Virtual Good is then reduced as a discounted currency 1 cost:
+
+![](img/DirectSegment/6.png)
+
+* The second applies to players in the UK - they will be charged an increased currency 1 cost for the Virtual Good until they acquire 10 of them:
+
+![](img/DirectSegment/7.png)
+
+By using additional Custom Queries in the correct order for segmenting the Virtual Good, you can easily extend this example for staged discounting to apply as players accumulate more and more of them - at 20, 30, 40, and so on.

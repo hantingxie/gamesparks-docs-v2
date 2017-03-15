@@ -247,6 +247,8 @@ Segmented values within the portal can be ordered - simply click and hold on the
 If you apply more than one segment against a configurable and some of your players will fall into more than one segment, order the segments to ensure the correct segment values are applied to these "multi-segment" players:
 * The values defined for the first segment encountered in the segment list to which a player belongs will be applied.
 
+<q>**Example!** For an example where ordering segments is important to achieve the right experience for your players, see *Example 4* [here](/Tutorials/Analytics, Segmentation and Game Management/Direct Segmentation for Configurables.md).
+
 ## Social Integration with Segments
 
 One of the most powerful features of Segmentation is that it allows for different segment types to be socially connected to different games or apps. For example, players of different nationalities or language preferences could have segments which would socially connect them to a different version of a developer's app or game on Facebook or Twitter:
