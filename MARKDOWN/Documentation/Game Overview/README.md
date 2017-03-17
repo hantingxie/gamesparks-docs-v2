@@ -5,7 +5,7 @@ src: /Documentation/Game Overview/README.md
 
 # Game Overview
 
-The Game Overview is designed to help you perform your initial game set up and any continuing game management tasks through the life of your game - from here you can:
+The Game Overview page is designed to help you perform your initial game set up and any continuing game management tasks throughout the life of your game - from here you can:
 
 * Log out from the portal and manage your GameSparks account.
 * Switch between dark and light UI themes.
@@ -104,16 +104,32 @@ To edit your game's details, click ![](img/GameOverview/19.png). The page adjust
 ![](img/GameOverview/8.png)
 
 * On the this tab, you can edit the following:
-
   * *Name* \- The name of your game, used to identify the game in the portal if you have several games.
   * *Description* \- A description of the game.
-  * *Signup Bonuses* \- The amount of each of the currencies to award a new player when a new account is created:
-    * *Hiding/Showing* - If you clear the checkbox for a currency, it's hidden in the portal. Note that this capability doesn't disable the currency in your game but simply hides it across the portal interface - for example, you will not see the currency when you Create/Edit a Virtual Good.
-    * *Segment Configuration* - On the *Currencies*, click *Segment* at top-right to configure the segmentation for your game's currencies.
+  * *Currencies* \- Configure the [Currencies and Signup Bonuses](#Configuring Game Currencies) for your game.
+  * *Game Settings* \- Define your [Game Settings](#Defining Game Settings)
+
+
+#### Configuring Game Currencies
+
+Under *Currencies* you can configure:
+* *Hiding/Showing Currencies* - If you clear the checkbox for a currency, it's hidden in the portal. Note that this capability doesn't *disable* the currency in your game but simply hides it across the portal interface - for example, you will not see the currency when you Create/Edit a Virtual Good.
+* *Currency Signup Bonuses* \- The amount of each Currency to award a new player when a new account is created.
+* *Currency Segmentation* - If you want to segment your *Currencies* at the game-level, click *Segment* at top-right:
 
 ![](img/GameOverview/15.png)
 
 For more details, see [Segments](/Documentation/Configurator/Segments.md).
+
+
+#### Defining Game Settings
+
+Currently, player sessions are only timed if an [EndSessionRequest](/API Documentation/Request API/Analytics/EndSessionRequest.md) is sent when a player disconnects. If you don’t set things up so that an End Session Request is sent when a player disconnects, their session will not be properly timed. Therefore, your Analytics data will be skewed due to these unended sessions.
+
+Under *Game Settings* you can select to automatically end a player session after a player disconnects from your game:
+* Select the *Automatically end player sessions* check box and enter the period in minutes that you want to elapse before this happens:
+
+![](img/GameOverview/28.png)
 
 ### Selecting Features and Integrations
 

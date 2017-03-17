@@ -24,21 +24,25 @@ You are taken to the [Register](https://auth.gamesparks.net/register.htm) screen
  * If you've used GameSparks before, click *Add Game* from the drop-down menu in the top-right of the screen.
 
 Adding a game is a 3-stage process:
-* *Game Details* - Enter a name and description for your game.
-* *Features & Integrations* - Select the currencies, platform features, and 3rd-party integrations you want for your game.
-* *Geographical Setup* - Configure the Geographical Setup for your game.
+* *Step 1. Game Details* - Enter a name and description for your game. Set a timeout to end player sessions after they disconnect from your game.
+* *Step 2. Features & Integrations* - Select the currencies, platform features, and 3rd-party integrations you want for your game.
+* *Step 3. Geographical Setup* - Configure the Geographical Setup for your game.
 
 <q>**Note!** In this section, we'll assume you've used Gamesparks before and have already created a game.</q>
 
 *1.* Log in to the portal. You'll be taken to the last game you had open.
 
-*2.* Using the *Games Menu* at top-right, select *Add New Game*. The *Add New Game* page opens at the first stage of the game-creation process.
+*2.* Using the *Games Menu* at top-right, select *Add New Game*. The *Add New Game* page opens at **Stage 1** of the game-creation process.
 
 ![](img/CreatingGame/8.png)
 
-*3.* Enter a *Name* and *Description* for your new game and click *Next*. The *Add New Game* page moves you to the second stage of the game-creation process.
+*3.* Enter a *Name* and *Description* for your new game.
 
-*4.* Use this second stage to define some baseline settings for your new game:
+*4.* If you want to set a timeout to end a player's session after they disconnect, under *Game Settings* select the *Automatically end player sessions* check box and enter the timeout period in minutes.
+
+*5.* Click *Next*. The *Add New Game* page moves you to **Stage 2** of the game-creation process.
+
+*6.* Use this second stage to define some baseline settings for your new game:
 
 ![](img/CreatingGame/9.png)
 
@@ -46,12 +50,12 @@ Adding a game is a 3-stage process:
 * Select the *Platform Features* you want for your game - by default, all are selected.
 * Under *Integrations*, select the 3rd-party providers you want to integrate your game with - by default, none are selected.
 
-<q>**Selections are not Final!** You'll be able to edit these settings later after you have created your game.</q>
+<q>**Selections are not Final!** You'll be able to edit these settings later after you have created your game. See [Game Overview](/Documentation/Game Overview/README.md)</q>
 
-*5.* Click *Next*. The *Add New Game* page moves you to the third stage of the game-creation process.
+*7.* Click *Next*. The *Add New Game* page moves you to **Stage 3** of the game-creation process.
 
 
-*6.* You can use this third stage for the *Geographical Setup* of your new game:
+*8.* You can use this third stage for the *Geographical Setup* of your new game:
 
 ![](img/CreatingGame/10.png)
 
@@ -60,7 +64,7 @@ Adding a game is a 3-stage process:
   * Select which countries where you want to players to be allowed access to your game - the default is to allow players in all countries to have access.
   * To block access for players in a country, select the country in the *Allow Access* list and use the arrows to move the country into the *Deny Access* list.
 
-*7.* When you have completed the third stage of the game creation process, click *Create*. You are taken to the *Game Overview* page of your new game:
+*9.* When you have completed **Stage 3** of the game creation process, click *Create*. You are taken to the *Game Overview* page of your new game:
 * Your game is assigned a unique *GameSparks API Key* and *GameSparks API Secret*. You'll need these to set up your SDK.
 * Your game is put into *Preview* stage. This is the stage where you build your game. When you are ready to publish your game, you can push it to the *Live* stage.
 
