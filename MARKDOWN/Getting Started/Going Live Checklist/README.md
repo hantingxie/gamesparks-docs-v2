@@ -15,7 +15,7 @@ When you have completed your game configuration, created a Snapshot, and you are
 * **Yes.**	Go to Step 3.
 * **No.**	Go to Step 2.
 
-*2.*	Is the *publish* icon button missing from your unpublished Snapshots?
+*2.*	Is the *publish* icon ![](/img/icons/publishicon.png) button missing from your unpublished Snapshots?
 
 * **Yes.** This means you can only work in Preview stage on the platform with your game and to proceed you must upgrade your account. The account package you'll want depends on your game's needs:
   * **Enterprise packages.** Please [follow this link](https://www.gamesparks.com/enterprise-packages/) to arrange a call with our Sales team – we want to make sure established enterprise developers get the best solution to serve anticipated player volumes through a combination of upfront and ongoing fees, premium support, SLA, configuration support and more.

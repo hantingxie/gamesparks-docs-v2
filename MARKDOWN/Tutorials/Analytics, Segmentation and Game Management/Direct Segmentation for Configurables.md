@@ -10,7 +10,7 @@ This feature is especially useful if you want to customize a single configuratio
 
 When you impose differentiated player experience through direct segmentation in this way, the *scope* of the segmentation is restricted to that particular configurable because the *Custom Query* you use will not be available to segment other configurable objects.
 
-<q>**Mixed Segmentation?** You can of course segment a configurable object in your game by using both a *Custom Query* and a pre-configured *Segment Query* or use multiple queries of either kind. This affords you maximum flexibility when you segment - if you add multiple segments, the order of segments determines which values any particular player will experience for the configurable. For an example where multiple segment queries are added in this way see [Example 4](#Example 4) below. </q>
+<q>**Mixed Segmentation?** You can segment a configurable object in your game by using both a *Custom Query* and a pre-configured *Segment Query* or use multiple queries of either kind. This affords you maximum flexibility when you segment - if you add multiple segments, the order of segments determines which values any particular player will experience for the configurable. For an example where multiple segment queries are added in this way, see [Example 4](#Example 4) below. </q>
 
 ## Creating a Direct Segmentation
 
@@ -65,11 +65,11 @@ In this example, we'll use multiple *Custom Queries* on a *Silver Coin* Virtual 
 
 ![](img/DirectSegment/8.png)
 
-* The first applies only to players that have acquired at least ten of the Virtual Good - the cost of the Virtual Good is then reduced as a discounted currency 1 cost:
+* The first segment applies only to players that have acquired at least ten of the Virtual Good - the cost of the Virtual Good is then reduced as a discounted currency 1 cost:
 
 ![](img/DirectSegment/6.png)
 
-* The second applies to players in the UK - they will be charged an increased currency 1 cost for the Virtual Good until they acquire 10 of them:
+* The second segment applies to players in the UK - they will be charged an increased currency 1 cost for the Virtual Good until they acquire 10 of them:
 
 ![](img/DirectSegment/7.png)
 

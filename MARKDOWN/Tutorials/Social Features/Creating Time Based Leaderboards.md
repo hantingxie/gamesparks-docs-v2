@@ -67,4 +67,4 @@ You can build expressions:
 * *${now}* - Shows the epoch time and is a long.
 * *${format(now, "yyyy-MM-dd")}* - First parameter is a long; the second parameter is a java simple date format date pattern.
 
-For more formatting options, see [here](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)
+For more formatting options, see [here](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html).
