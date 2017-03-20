@@ -8,7 +8,7 @@ src: /Tutorials/Cloud Code and the Test Harness/Exporting and Importing Cloud Co
 You can export and import your game configuration Cloud Code scripts:
 * [Export Cloud Code](#Exporting Cloud Code)
 * [Import Cloud Code](#Importing Cloud Code)
-
+* [Errors on Import](#Errors on Import)
 
 ## Exporting Cloud Code
 
@@ -49,19 +49,42 @@ The Import page opens where you can browse to select a *Zip Archive*.
 Where differences with your game's existing Cloud Code scripts are identified, these are shown and you can quickly review these to decide whether or not you want to accept the changes:
 * In this example, we can see that only one difference has been identified - the Cloud Code for the *AUTH_PLAYER* Event has been changed.
 
-*5.* Scroll down the review list and use the checkboxes to accept or reject the scripts for import:
+*5.* If the compressed archive you selected to import contains a JavaScript file that contains invalid characters or whose name contain invalid characters, then this file is blocked for reviewing your import and cannot be imported. You will see a *Script error*:
+
+
+
+*6.* Scroll down the review list and use the checkboxes to accept or reject the scripts for import:
 * By default all scripts are checked and will be imported.
 * You can use the *Toggle All* button to select/unselect all scripts.
 
-*6.* If you want to create a Snapshot of your game before you import the Cloud Code changes, select the *Create Game Snapshot* at the bottom of the page:
+*7.* If you want to create a Snapshot of your game before you import the Cloud Code changes, select the *Create Game Snapshot* at the bottom of the page:
 
 ![](img/ExpImp/5.png)
 
 * Creating a Snapshot before importing Cloud Code changes will allow you to revert to the current game configuration, should anything go wrong after you import the changes.
 
-*7.* Click *Import* to import the selected Cloud Code scripts.
+*8.* Click *Import* to import the selected Cloud Code scripts.
 * When the import process has successfully completed, you'll see a message:
 
 ![](img/ExpImp/6.png)
 
-*8.* Click *Close* to return to the Cloud Code page.
+*9.* Click *Close* to return to the Cloud Code page.
+
+## Errors on Import
+
+When you attempt to review your import, errors might be generated.
+
+*1.* If a file contains invalid characters:
+
+![](img/ExpImp/7.png)
+* In this example, a file we're attempting to import - *AUTH_PLAYER2* - contains invalid characters.
+
+*2.* If the file name contains invalid characters:
+
+![](img/ExpImp/8.png)
+* In this example, a file that was exported earlier has been renamed - *ASSIGN_COUNTRY&* - and the new name contains an invalid ampersand character. Consequently, the original file is identified as *DELETED*.
+
+*3.* If you try to import a file that will create a new object, such as a new Event, in the platform:
+![](img/ExpImp/9.png)
+* In this example, a file has been added to the *event* folder - *AUTH_PLAYER3* - and no corresponding Event already exists in the platform.
+* The exceptions to this rule when importing Cloud Code are *Modules* or *Realtime Modules*, both of which you can create directly from the *Scripts* panel on the *Configurator>Cloud Code* page.

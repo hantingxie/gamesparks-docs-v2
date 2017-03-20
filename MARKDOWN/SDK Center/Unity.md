@@ -7,11 +7,12 @@ src: /SDK Center/Unity.md
 
 Download the GameSparks [Unity SDK Package](https://s3-eu-west-1.amazonaws.com/repo.gamesparks.net/unity-sdk/GameSparks_Unity.unitypackage).
 
+<q>**SDK downloaded from Unity Asset Store?** If you've downloaded the GameSparks SDK directly from the Unity Asset Store, please [register for an account](https://auth.gamesparks.net/register.htm) on the GameSparks platform. This is where you'll build and configure your game.</q>
+
 ## V5.5.3.204
 
 * Updated API
 * Fixed DeviceID (for PS4 and XBox One) and DeviceOS attributes.
-
 
 ## V5.5.1.198
 

@@ -152,3 +152,7 @@ Now that the platform is connected to your GitHub account, you'll be able to sel
 
 *12.* Click *Import* to import the selected Cloud Code changes.
 * When the import process has successfully completed, you'll see a message.
+
+## Errors on Import
+
+When you select the repository and commit you want to import from and the commit is loaded for import, errors might be generated. For details of these possible errors on import, check [here](/Tutorials/Cloud Code and the Test Harness/Exporting and Importing Cloud Code.md).

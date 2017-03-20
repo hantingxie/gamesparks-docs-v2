@@ -5,7 +5,7 @@ src: /Tutorials/Cloud Code and the Test Harness/Viewing Cloud Code History.md
 
 # How to View Cloud Code History
 
-You can manage your Cloud Code revisions between Snapshots. This allows you to review and revert to previous versions of the Cloud Code that appears on Events and provides a visual comparison showing the differences in the Cloud Code.
+You can manage your Cloud Code revisions between Snapshots. This allows you to review and revert to previous versions of your Cloud Code and provides a visual comparison showing the differences in the Cloud Code.
 
 ## Accessing Cloud Code History
 
@@ -15,11 +15,25 @@ You can manage your Cloud Code revisions between Snapshots. This allows you to r
 
 This opens the Cloud Code History tool.
 
-*2.* The Cloud Code History tool is designed to allow you to quickly compare the Cloud Code contained in two Snapshots - one you've selected from the *Base* drop-down and one you've selected from the *Compare With* drop-down - and, if there are Cloud Code differences allow you to quickly review the differences:
+*2.* The Cloud Code History tool is designed to allow you to quickly compare the Cloud Code contained in two Snapshots - one you've selected from the *Base* drop-down and one you've selected from the *Compare With* drop-down.
+
+Note that, when you select a Snapshot in the *Base* drop-down, only those Snapshots where Cloud Code differences exist will be available for selection in the *Compare With* drop-down:
 
 ![](img/CloudHistory/15.png)
 
-In this example, we've selected *Workspace* for the *Base*, which is the current game configuration, and an earlier Snapshot, *Test Snapshot 10*, for the *Compare With* selection.
+* In this example, we've selected *Workspace* for the *Base*, which is the current game configuration, and an earlier Snapshot, *Test Snapshot 8*, for the *Compare With* selection.
+
+## Comparing Snapshots using Default Selections
+
+There is the possibility that you might try to compare Snapshots that have no Cloud Code differences:
+
+*1.* Open the Cloud Code History tool and *don't make* a selection in the *Base* drop-down:
+* The *Compare With* list will not yet have been filtered to show only those Snapshots that contain Cloud Code differences with *Workspace*.
+* *Don't make* a selection in the *Compare With* drop-down either - the default selection in this drop-down is the most recent Snapshot taken.
+
+*2.* Now click *Compare*. In this immediate compare case, you might be trying to compare Snapshots where no Cloud Code differences exist and you'll get a message confirming this:
+
+![](img/CloudHistory/18.png)
 
 ## Selecting and Comparing Snapshots
 
@@ -30,22 +44,24 @@ The Cloud Code History tool is designed to compare the right-hand Snapshot to th
 * The right column - *Compare With* - does not show *Workspace* but all your other saved game Snapshots for selection.
 
 **Left Drop-Down**  | **Right Drop-Down**
------  | -----------
+--------  | --------
   ![](img/CloudHistory/16.png)  | ![](img/CloudHistory/17.png)
-   Default *Workspace* selection in *Base*... | ...shows all other saved Snapshots in *Compare With*
+Default *Workspace* selection in the *Base*... | ...shows Snapshots in *Compare With* with Cloud Code differences.
 
-*2.* Click *Compare*.
-* If there are no Cloud Code differences between the two Snapshots, then you'll see a message telling you this:
 
-![](img/CloudHistory/18.png)
+<q>**Green is LIVE!** The currently published Snapshot is flagged in both drop-down lists.</q>
 
-* If there are Cloud Code differences between the two Snapshots, then the differences are listed:
+*2.* If you have a large number of Snapshots, you can search either of the drop-down lists by entering the Snapshot ID in the drop-down search field and clicking *Set*:
+
+![](img/CloudHistory/27.png)
+
+*2.* Click *Compare*. The Cloud Code differences between the Snapshots are listed.
+
+In this example, we see that if we take the right-hand selection - *Version 2* (an earlier Snapshot) - and compare its Cloud Code with the left-hand selection - *Test Snapshot 11* (the most recent Snapshot) - Cloud Code has been added for 6 Events and deleted for 1 since *Version 2* was created:
 
 ![](img/CloudHistory/19.png)
 
-In this example, we see that if we take the right-hand selection - *Test Snapshot 5* (an earlier Snapshot) - and compare its Cloud Code with the left-hand selection - *Test Snapshot 10* (the most recent Snapshot) - Cloud Code has been added for 4 Events since *Test Snapshot 5* was taken.
-
-*3.* On the other hand, if we switch the selections, we see that comparing *Test Snapshot 10* - in right-hand - with *Test Snapshot 5* - in left-hand - and click *Compare*, the differences show as deletions:
+*3.* On the other hand, if we switch the selections, we see that comparing *Test Snapshot 11* - in right-hand - with *Version 2* - in left-hand - and click *Compare*, the differences show as 6 deletions and 1 addition:
 
 ![](img/CloudHistory/20.png)
 
@@ -77,14 +93,11 @@ The example in the [earlier section](#Selecting and Comparing Snapshots) showed 
 
 Editing differences are presented in the Cloud Code History Tool in a way that is designed to help you quickly recognize and understand the changes made:
 
-![](img/CloudHistory/25.png)
-
-Compare in this example shows that there are editing differences between the selected Snapshots for *RACE_EVENT*. When we click to inspect the differences:
+In the following example, performing a Compare shows that there are editing differences between the selected Snapshots for the *CC_EVT*:
 
 ![](img/CloudHistory/26.png)
 
-... we see that the editing differences are clearly pinpointed:
+The editing differences are clearly pinpointed:
 * Each line where a difference is identified is highlighted.
 * Several lines above and below the difference are shown to help you find just where the difference exists.
 * Specific difference for values and terms within a highlighted difference line are strongly highlighted.
-* The values for the currently selected *Base* Snapshot are shown in green on the right and the corresponding values in the currently selected *Compare With* Snapshot are shown in red on the left.
