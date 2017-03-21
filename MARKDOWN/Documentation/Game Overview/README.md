@@ -107,7 +107,7 @@ To edit your game's details, click ![](img/GameOverview/19.png). The page adjust
   * *Name* \- The name of your game, used to identify the game in the portal if you have several games.
   * *Description* \- A description of the game.
   * *Currencies* \- Configure the [Currencies and Signup Bonuses](#Configuring Game Currencies) for your game.
-  * *Game Settings* \- Define your [Game Settings](#Defining Game Settings)
+  * *Game Settings* \- Set an [End Player Session Timeout](#Setting End Player Session Timeout) and define your game's [Base Reporting Currency](#Defining Base Reporting Currency)
 
 
 #### Configuring Game Currencies
@@ -122,7 +122,7 @@ Under *Currencies* you can configure:
 For more details, see [Segments](/Documentation/Configurator/Segments.md).
 
 
-#### Defining Game Settings
+#### Setting End Player Session Timeout
 
 Currently, player sessions are only timed if an [EndSessionRequest](/API Documentation/Request API/Analytics/EndSessionRequest.md) is sent when a player disconnects. If you don’t set things up so that an End Session Request is sent when a player disconnects, their session will not be properly timed. Therefore, your Analytics data will be skewed due to these unended sessions.
 
@@ -130,6 +130,15 @@ Under *Game Settings* you can select to automatically end a player session after
 * Select the *Automatically end player sessions* check box and enter the period in minutes that you want to elapse before this happens:
 
 ![](img/GameOverview/28.png)
+
+#### Defining Base Reporting Currency
+
+You can define a base reporting currency as a property of your game:
+* Any store purchases made by your players will be converted to this currency to be then used as analytics data.
+
+Under *Game Settings* use the *Currency used for analytics data* drop-down to select the base reporting currency you want to use for your game:
+
+![](img/GameOverview/29.png)
 
 ### Selecting Features and Integrations
 
