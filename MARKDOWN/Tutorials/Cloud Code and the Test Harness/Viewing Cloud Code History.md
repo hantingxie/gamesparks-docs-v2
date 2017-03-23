@@ -23,25 +23,14 @@ Note that, when you select a Snapshot in the *Base* drop-down, only those Snapsh
 
 * In this example, we've selected *Workspace* for the *Base*, which is the current game configuration, and an earlier Snapshot, *Test Snapshot 8*, for the *Compare With* selection.
 
-## Comparing Snapshots using Default Selections
-
-There is the possibility that you might try to compare Snapshots that have no Cloud Code differences:
-
-*1.* Open the Cloud Code History tool and *don't make* a selection in the *Base* drop-down:
-* The *Compare With* list will not yet have been filtered to show only those Snapshots that contain Cloud Code differences with *Workspace*.
-* *Don't make* a selection in the *Compare With* drop-down either - the default selection in this drop-down is the most recent Snapshot taken.
-
-*2.* Now click *Compare*. In this immediate compare case, you might be trying to compare Snapshots where no Cloud Code differences exist and you'll get a message confirming this:
-
-![](img/CloudHistory/18.png)
-
 ## Selecting and Comparing Snapshots
 
 *1.* Use the *Base* and *Compare With* drop-downs to select the two Snapshots which you want to compare for Cloud Code differences.
 
 The Cloud Code History tool is designed to compare the right-hand Snapshot to the left-hand Snapshot:
-* The left column - *Base* - shows the current Workspace Configuration - *Workspace* - as the default selection and all your other saved game Snapshots for selection.
-* The right column - *Compare With* - does not show *Workspace* but all your other saved game Snapshots for selection.
+* Left drop-down - *Base* - shows the current Workspace Configuration - *Workspace* - as the default selection and all your other saved game Snapshots for selection.
+* Right drop-down - *Compare With* - does not show *Workspace* but any other saved game Snapshots as available for selection where differences exist between *Workspace* and the Snapshot.
+* Left/Right drop-down dependency - when you select another saved Snapshot in the left drop-down, the right drop-down is filtered to show only those Snapshots where differences with the selected left drop-down Snapshot exist.
 
 **Left Drop-Down**  | **Right Drop-Down**
 --------  | --------
@@ -51,20 +40,19 @@ Default *Workspace* selection in the *Base*... | ...shows Snapshots in *Compare 
 
 <q>**Green is LIVE!** The currently published Snapshot is flagged in both drop-down lists.</q>
 
-*2.* If you have a large number of Snapshots, you can search either of the drop-down lists by entering the Snapshot ID in the drop-down search field and clicking *Set*:
+*2.* If you have a large number of Snapshots, you can search and select either of the drop-down lists by entering the Snapshot ID in the drop-down search field and clicking *Set*:
 
 ![](img/CloudHistory/27.png)
 
-*2.* Click *Compare*. The Cloud Code differences between the Snapshots are listed.
+*3.* Click *Compare*. The Cloud Code differences between the Snapshots are listed.
 
-In this example, we see that if we take the right-hand selection - *Version 2* (an earlier Snapshot) - and compare its Cloud Code with the left-hand selection - *Test Snapshot 11* (the most recent Snapshot) - Cloud Code has been added for 6 Events and deleted for 1 since *Version 2* was created:
+In the following example, we see that if we take the right-hand selection - *Version 2* (an earlier Snapshot) - and compare its Cloud Code with the left-hand selection - *Test Snapshot 11* (the most recent Snapshot) - Cloud Code has been added for 6 Events and deleted for 1 since *Version 2* was created:
 
 ![](img/CloudHistory/19.png)
 
-*3.* On the other hand, if we switch the selections, we see that comparing *Test Snapshot 11* - in right-hand - with *Version 2* - in left-hand - and click *Compare*, the differences show as 6 deletions and 1 addition:
+*4.* On the other hand, if we switch the selections, we see that comparing *Test Snapshot 11* - in right-hand - with *Version 2* - in left-hand - and click *Compare*, the differences show as 6 deletions and 1 addition:
 
 ![](img/CloudHistory/20.png)
-
 
 ## Reviewing Differences
 

@@ -72,19 +72,22 @@ Where differences with your game's existing Cloud Code scripts are identified, t
 
 ## Errors on Import
 
-When you attempt to review your import, errors might be generated.
+When you review your import, errors are shown if you are attempting to import invalid files that cannot be imported.
 
-*1.* If a file contains invalid characters:
+<q>**Errors Block Import!** If all of the files you are attempting to import are invalid, the *Import* button will be disabled.</q>
+
+*1.* If a file contains invalid characters, than a *Script error* is shown:
 
 ![](img/ExpImp/7.png)
 * In this example, a file we're attempting to import - *AUTH_PLAYER2* - contains invalid characters.
 
-*2.* If the file name contains invalid characters:
+*2.* If the file name contains invalid characters, an *Invalid* error shows:
 
 ![](img/ExpImp/8.png)
-* In this example, a file that was exported earlier has been renamed - *ASSIGN_COUNTRY&* - and the new name contains an invalid ampersand character. Consequently, the original file is identified as *DELETED*.
+* In this example, we're attempting to import a file that was exported earlier and that has been copied and renamed - *ASSIGN_COUNTRY&* - and the new name contains an invalid ampersand character.
 
-*3.* If you try to import a file that will create a new object, such as a new Event, in the platform:
+*3.* If you try to import a file that will create a new object, such as a new Event, in the platform, then an *Invalid* error shows:
 ![](img/ExpImp/9.png)
-* In this example, a file has been added to the *event* folder - *AUTH_PLAYER3* - and no corresponding Event already exists in the platform.
-* The exceptions to this rule when importing Cloud Code are *Modules* or *Realtime Modules*, both of which you can create directly from the *Scripts* panel on the *Configurator>Cloud Code* page.
+* In this example, we're attempting to import a file has been added to the *event* folder - *AUTH_PLAYER3* - and no corresponding Event already exists in the platform.
+
+<q>**Exceptions?** The exceptions to this rule blocking the creation of new objects when importing Cloud Code are *Modules* or *Realtime Modules*, both of which you can create directly from the *Scripts* panel on the *Configurator>Cloud Code* page.</q>

@@ -119,11 +119,11 @@ You will then be presented with an Editor pane that allows you to configure the 
 
 Fill the pane with the following settings:
 
-**Api Key** – The “GameSparks Api Key” value from the Overview Menu in the portal Configurator.
+**Api Key** – The *GameSparks API Key* value from the Game Overview page in the portal.
 
-**Api Secret** – The “GameSparks Api Secret” value from the Overview Menu in the portal Configurator.
+**Api Secret** – The *GameSparks API Secret* value from the Game Overview page in the portal - you can click *Show* at the right-hand side of this field to reveal it and then click *Copy*:
 
-![](img/Unity/7_002.png)
+![](img/Unity/9.png)
 
 **Development Build** - Select this option when you want to run the SDK against the unpublished configuration
 

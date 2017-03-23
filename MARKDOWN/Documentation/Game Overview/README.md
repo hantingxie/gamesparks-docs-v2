@@ -131,15 +131,6 @@ Under *Game Settings* you can select to automatically end a player session after
 
 ![](img/GameOverview/28.png)
 
-#### Defining Base Reporting Currency
-
-You can define a base reporting currency as a property of your game:
-* Any store purchases made by your players will be converted to this currency to be then used as analytics data.
-
-Under *Game Settings* use the *Currency used for analytics data* drop-down to select the base reporting currency you want to use for your game:
-
-![](img/GameOverview/29.png)
-
 ### Selecting Features and Integrations
 
 To select the platform features and integrations you want to use for your game, select the *Features & Integrations* tab:

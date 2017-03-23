@@ -74,7 +74,7 @@ Adding a game is a 3-stage process:
 
 ![](img/CreatingGame/6.png)
 
- You should take note of your game's *GameSparks API Key* and *GameSparks API Secret*, because you'll need these when you set up your chosen SDK.
+ You should take note of your game's *GameSparks API Key* and *GameSparks API Secret*, because you'll need these when you set up your chosen SDK. Click *Show* at the right-hand side of the *API Secret* field to reveal it.
 
 ## Working in Preview and Publishing for Launch
 
