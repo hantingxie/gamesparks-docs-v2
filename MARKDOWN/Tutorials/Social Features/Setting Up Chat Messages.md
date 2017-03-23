@@ -1,5 +1,5 @@
 ---
-nav_sort: 11
+nav_sort: 12
 src: /Tutorials/Social Features/Setting Up Chat Messages.md
 ---
 

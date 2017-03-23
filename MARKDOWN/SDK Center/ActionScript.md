@@ -27,7 +27,7 @@ Select "Flex Build Path" or "ActionScript Build Path" (Depending on your project
 
 ![](img/ActionScript/2.png)
 
-## Initialising the SDK
+## Initializing the SDK
 
 All calls to GameSparks are managed through a connection to the server. To create a new connection you can create and initialize a GS object using it's builder methods.
 

@@ -11,7 +11,7 @@ In addition to regular HTML you can use Game Sparks Markup Language (GSML), whi
 
 ## gs-row
 
-gs-row is a HTML row container, by default it's set to width of 12.
+gs-row is a HTML row container.
 
 **Note:** gs-rows and gs-cols can be nested to create your preferred layout.
 
@@ -36,7 +36,7 @@ gs-col is a HTML column.
 
 *Options*
 
-* *width* \- is the width of the column. This can be between 1 and 12. If not defined, the width will be 12.
+* *width* \- is the width of the column. This can be between 1 and 12. There can be up to 12 columns, so the width is in 12ths. For example, setting width = 6 means 6/12ths, so there will be 2 columns each occupying a half of the available screen width. If not defined, there will be 1 column whose width is the entire available screen width.
 * *align* \- is the alignment of the content within the column (left, right). If not defined, the content will be centered.
 
 *Example*
@@ -80,7 +80,7 @@ gs-placeholder is a placeholder within a form. This placeholder can be dynamical
 
 *Options*
 
-* *id* - id should be a unique identifier. This identifier allows links, forms, and snippets to locate and overwrite the placeholder.
+* *id* - id should be a unique identifier across your game. This identifier allows links, forms, and snippets to locate and overwrite the placeholder.
 
 *Example*
 
@@ -254,7 +254,7 @@ gs-query is an elaborate way of building dynamic mongodb queries. gs-query conta
 * *label* \- label that will be visible to the user.
 * *group* \- query grouping.
 * *values* \- predefined values of the query.
-* *operators* \- operators by which to determine queries results, these are: *equal*, *not_equal*, *exists*, *not_exits*, *begins_with*, *not_begins_with*, *between*, *less*, *less_or_equal*, *greater*, and *greater_or_equal*.
+* *operators* \- operators by which to determine queries results, these are: *equal*, *not_equal*, *is_not_null* (exists), *is_null* (does not_exist), *begins_with*, *not_begins_with*, *between*, *less*, *less_or_equal*, *greater*, and *greater_or_equal*.
 
 *Example*
 

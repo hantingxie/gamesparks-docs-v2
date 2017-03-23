@@ -17,6 +17,7 @@ Use this section to integrate the GameSparks platform with your preferred coding
   * [Unity](/SDK Center/Unity.md)
   * [Unreal Engine](https://bitbucket.org/gamesparks/gamesparks-cpp-unreal)
   * [Corona](https://bitbucket.org/gamesparks/gamesparks-corona)
+  * [Construct 2](/SDK Center/Construct 2.md)
 
 </br>
 <q>**Using Node JS to store Secret?** If you plan to use Node JS to store your API secret server-side see [this tutorial](/Tutorials/Third Party Integrations/Node JS Secret.md).

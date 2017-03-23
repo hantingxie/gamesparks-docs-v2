@@ -1,5 +1,5 @@
 ---
-nav_sort: 12
+nav_sort: 13
 src: /Tutorials/Social Features/Setting Up Teams for Chat.md
 ---
 
