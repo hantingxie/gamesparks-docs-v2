@@ -7,11 +7,9 @@ src: /SDK Center/Construct 2.md
 
 The GameSparks Construct 2 SDK allows you to interact with the GameSparks platform from the Construct 2 Game Engine. Since the SDK is based on our existing JavaScript SDK you can expect the same level of functionality when utilizing it in your game.
 
-
-
 ## Getting the SDK
 
-The SDK is available via BitBucket [here](link when it's online)
+The SDK is available via BitBucket [here](https://bitbucket.org/gamesparks/gamesparks-construct2.git)
 
 ## Adding the SDK to Construct 2 Plugins
 
@@ -33,15 +31,17 @@ When the GameSparks object has been added to your project, you can edit the prop
 
 <q>**Where do I get the API Key and Secret?** You can copy the API Key and API Secret from the [Game Overview](/Documentation/Game Overview/README.md) page of your game in the GameSparks portal.</q>
 
-Once this information has been entered, you can initialize the SDK and begin making calls to GameSparks. Before we can make any requests to the platform, we first have to initialize for the stage we are at. There are 2 actions for this: *initPreview* and *initLive*.
+When you've entered your game's API Key and Secret, you can initialize the SDK. Before we can make any requests to the GameSparks platform, we first have to initialize for the stage we are at. There are 2 actions for this: *initPreview* and *initLive*.
 
-An example of initializing the SDK is to initialize at the start of the layout. In the event sheet this would look like the following:
+An example of initializing the SDK is to initialize at the start of the layout. In the event sheet this would look like this:
 
 ![](img/Construct/4.png)
 
-## Using the SDK
+## Sending Requests to GameSparks
 
-Each request to the GameSparks platform can be paired with an event listener that will trigger on response. For example, you can use *onInit* to run additional events once the Initialization to GameSparks has completed. In the example below, we make an *AuthenticationRequest* once the platform has been initialized:
+With the Construct SDK sending a plain request into the GameSparks platform is not feasible - you'll get a response back but you won't be able to interpret the response. Each request to the GameSparks platform should be paired with an event listener that will trigger on response.
+
+For example, you can use *onInit* to run additional events once the Initialization to GameSparks has completed. In the example below, we make an *AuthenticationRequest* once the platform has been initialized:
 
 ![](img/Construct/5.png)
 

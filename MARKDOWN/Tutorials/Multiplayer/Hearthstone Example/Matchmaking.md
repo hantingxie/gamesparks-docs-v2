@@ -63,6 +63,7 @@ Now once the match is found, we need to allow the platform to automatically crea
 We'll edit the Match Found message to contain this:
 
 ```
+
 //If our match is ranked
 if (Spark.getData().matchShortCode === "matchRanked")
 {
@@ -85,6 +86,7 @@ if (Spark.getData().matchShortCode === "matchRanked")
 
     }
 }
+
 ```
 After the challenge request is sent, the second participant will receive a Message issued request. We will automatically accept the challenge request for that player by editing the Challenge Issued Message under the User messages tab.
 
@@ -108,9 +110,11 @@ request.SendAs(chalData.challenge.challenged[0].id);
 
 ```
 
-## Challenge Started Message
+## Challenge Started Global Message
 
-After this, the challenge would have started and both players would receive the ChallengeStarted message. This is the perfect place to initialize the challenge and set it up for both our players. To avoid duplication we will only allow the challenger to set up the challenge.
+After this, the challenge would have started and both players would receive the [ChallengeStartedMessage](/API Documentation/Message API/Multiplayer/ChallengeStartedMessage.md). This is the perfect place to initialize the challenge and set it up for both our players. To avoid duplication we will call the logic in the global message instead of the user message, doing this will also ensure that when our players receive the *ChallengeStartedMessage* they will have the challenge details initialized.
+
+<q>**Global not User!** Make sure this Cloud Code logic is attached to the *ChallengeStartedMessage* under the *Global Messages* section not the *User Messages* section of the *Cloud Code>Scripts* panel.</q>
 
 ```
 //Declare challenge
@@ -120,41 +124,38 @@ var chal = Spark.getChallenge(Spark.getData().challenge.challengeId);
 var challengerId = chal.getChallengerId();
 var challengedId = chal.getChallengedPlayerIds()[0];
 
-//Initiation of the challenge settings through the challenger(similar to host)
-if(Spark.getPlayer().getPlayerId() === challengerId){
+//Construct the play field JSON - Used for the playing field
+var playField = {};
+playField[challengerId] = {};
+playField[challengedId] = {};
 
-    //Construct the play field JSON - Used for the playing field
-    var playField = {};
-    playField[challengerId] = {};
-    playField[challengedId] = {};
+//Construct the current hand JSON - Used for the cards in the player's hands
+var currentHand = {};
+currentHand[challengerId] = {};
+currentHand[challengedId] = {};
 
-    //Construct the current hand JSON - Used for the cards in the player's hands
-    var currentHand = {};
-    currentHand[challengerId] = {};
-    currentHand[challengedId] = {};
-
-    //Construct player details
-    var playerStats = {};
-    playerStats[challengerId] = {"overallMana": 1, "currentMana": 1, "playerHealth": 30, "cardsPulled": 0, "hasPulled": true, "tauntProtection":false }
-    playerStats[challengedId] = {"overallMana": 1, "currentMana": 1, "playerHealth": 30, "cardsPulled": 0, "hasPulled": true, "tauntProtection":false }
+//Construct player details
+var playerStats = {};
+playerStats[challengerId] = {"overallMana": 1, "currentMana": 1, "playerHealth": 30, "cardsPulled": 0, "hasPulled": true, "tauntProtection":false }
+playerStats[challengedId] = {"overallMana": 1, "currentMana": 1, "playerHealth": 30, "cardsPulled": 0, "hasPulled": true, "tauntProtection":false }
 
 
-    //Pull three cards for each player
-    for(var i = 0; i < 3; i++){
-        //First Id
-        var pId = challengerId;
-        require("pullCardModule");
-        //second Id
-        var pId = challengedId;
-        require("pullCardModule");
-    }
-
-
-    //Save the constructed JSONs against the challenge's scriptData
-    chal.setScriptData("playField",playField);
-    chal.setScriptData("currentHand", currentHand);
-    chal.setScriptData("playerStats", playerStats)
+//Pull three cards for each player
+for(var i = 0; i < 3; i++){
+    //First Id
+    var pId = challengerId;
+    require("pullCardModule");
+    //second Id
+    var pId = challengedId;
+    require("pullCardModule");
 }
+
+
+//Save the contructed JSONs against the challenge's scriptData
+chal.setScriptData("playField",playField);
+chal.setScriptData("currentHand", currentHand);
+chal.setScriptData("playerStats", playerStats)
+
 ```
 
 This will construct the game itself with all the details, which contains:
@@ -172,7 +173,7 @@ The pullCardModule used in the ChallengeStarted message contains this code:
 ```
 //Load deck
 var deck = []
-deck = Spark.getPlayer().getPrivateData("deck");
+deck = Spark.loadPlayer(pId).getPrivateData("deck");
 
 //Length and random number depending on length
 var length = deck.length - 1;
@@ -190,7 +191,7 @@ var numPulls = playerStats[pId].cardsPulled;
 //Add the new card to the player hand and give it a unique name
 currentHand[pId]["c" + numPulls.toString()] = randCard;
 
-//Increment amount of cards pulled for future unique card names
+//Increment amount of cards pulled for future unqiue card names
 playerStats[pId].cardsPulled = numPulls + 1;
 
 //Return script with card pulled

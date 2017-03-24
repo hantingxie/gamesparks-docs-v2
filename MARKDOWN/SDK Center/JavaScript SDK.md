@@ -71,7 +71,7 @@ To initialize against the live servers use the following function:
      });
 ```
 
-### Initialization options
+### Initialization Options
 
 *key* : The API Key of your game from the GameSparks developer portal.
 
@@ -102,7 +102,7 @@ To initialize against the live servers use the following function:
     }
 ```
 
-## Sending requests to GameSparks
+## Sending Requests to GameSparks
 
 A number of helper methods exist in the gamesparks object to allow you to make requests. See gamesparks-functions.js for details of each.
 
