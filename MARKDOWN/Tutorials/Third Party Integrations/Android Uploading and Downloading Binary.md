@@ -17,7 +17,7 @@ When you have used GameSparks [downloadables](/Documentation/Configurator/Downlo
 
 ```
 GSAndroidPlatform.gs().getRequestBuilder().createGetDownloadableRequest()
-        .setShortCode("logo").send(new GSEventConsumer() {
+        .setShortCode("logo").send(new GSEventConsumer<GSResponseBuilder.GetDownloadbleResponse>() {
     @Override
     public void onEvent(GSResponseBuilder.GetDownloadableResponse getDownloadableResponse) {
         if (!getDownloadableResponse.hasErrors()) {
@@ -38,7 +38,7 @@ The upload [request](/API Documentation/Request API/Misc/GetUploadUrlRequest.md)
 
 ```
 GSAndroidPlatform.gs().getRequestBuilder().createGetUploadUrlRequest()
-        .send(new GSEventConsumer() {
+        .send(new GSEventConsumer<GSResponseBuilder.GetUploadUrlResponse>() {
             @Override
             public void onEvent(GSResponseBuilder.GetUploadUrlResponse getUploadUrlResponse) {
                 if (!getUploadUrlResponse.hasErrors()) {
@@ -57,7 +57,7 @@ Here's an example of setting up a listener for an upload [message](/API Document
 
 ```
 GSAndroidPlatform.gs().getMessageHandler()
-        .setUploadCompleteMessageListener(new GSEventConsumer() {
+        .setUploadCompleteMessageListener(new GSEventConsumer<GSMessageHandler.UploadCompleteMessage>() {
     @Override
     public void onEvent(GSMessageHandler.UploadCompleteMessage uploadCompleteMessage) {
         if(uploadCompleteMessage.getNotification()){
@@ -75,7 +75,7 @@ Once the binary content has successfully been uploaded and an *uploadId* has bee
 
 ```
 GSAndroidPlatform.gs().getRequestBuilder().createGetUploadedRequest()
-        .setUploadId(uploadId).send(new GSEventConsumer() {
+        .setUploadId(uploadId).send(new GSEventConsumer<GSResponseBuilder.GetUploadUrlResponse>() {
     @Override
     public void onEvent(GSResponseBuilder.GetUploadedResponse getUploadedResponse) {
 

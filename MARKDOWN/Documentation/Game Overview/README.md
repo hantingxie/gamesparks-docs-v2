@@ -107,7 +107,7 @@ To edit your game's details, click ![](img/GameOverview/19.png). The page adjust
   * *Name* \- The name of your game, used to identify the game in the portal if you have several games.
   * *Description* \- A description of the game.
   * *Currencies* \- Configure the [Currencies and Signup Bonuses](#Configuring Game Currencies) for your game.
-  * *Game Settings* \- Set an [End Player Session Timeout](#Setting End Player Session Timeout) and define your game's [Base Reporting Currency](#Defining Base Reporting Currency)
+  * *Game Settings* \- Set an [End Player Session Timeout](#Setting End Player Session Timeout).
 
 
 #### Configuring Game Currencies
@@ -124,7 +124,7 @@ For more details, see [Segments](/Documentation/Configurator/Segments.md).
 
 #### Setting End Player Session Timeout
 
-Currently, player sessions are only timed if an [EndSessionRequest](/API Documentation/Request API/Analytics/EndSessionRequest.md) is sent when a player disconnects. If you don’t set things up so that an End Session Request is sent when a player disconnects, their session will not be properly timed. Therefore, your Analytics data will be skewed due to these unended sessions.
+Currently, player sessions are only timed if an [EndSessionRequest](/API Documentation/Request API/Analytics/EndSessionRequest.md) is sent when a player disconnects. If you don’t set things up so that an End Session Request is sent when a player disconnects, their session will not be properly timed. Therefore, your Analytics data will be distorted due to these unended sessions.
 
 Under *Game Settings* you can select to automatically end a player session after a player disconnects from your game:
 * Select the *Automatically end player sessions* check box and enter the period in minutes that you want to elapse before this happens:

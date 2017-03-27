@@ -62,9 +62,9 @@ Here:
 
 ```
 GSAndroidPlatform.gs().getRequestBuilder().createLogEventRequest().setEventKey("setDetails")
-                            .setStringEventAttribute("name", string)
-                            .setNumberEventAttribute("age", int)
-                            .setStringEventAttribute("gender", string).send(new GSEventConsumer() {
+                            .setEventAttribute("name", string)
+                            .setEventAttribute("age", int)
+                            .setEventAttribute("gender", string).send(new GSEventConsumer<GSResponseBuilder.LogEventResponse>() {
                         @Override
                         public void onEvent(GSResponseBuilder.LogEventResponse logEventResponse) {
                             if(logEventResponse.hasErrors()){
@@ -81,11 +81,17 @@ GSAndroidPlatform.gs().getRequestBuilder().createLogEventRequest().setEventKey("
 This example does not cover passing in objects. But to do that:
 
 ```
-    Map scriptData = new HashMap();
+//Construct a Hashmap
+HashMap<String,Object> scriptData = new HashMap<>();
 
-            scriptData.put("Key", 21);
-            scriptData.put("AnotherKey", "This String");
-            scriptData.put("Yet Another",true);
+//Populate the Hashmap with values
+scriptData.put("test",21);
+
+//Turn the Hashmap into a GSData object
+GSData gsData = new GSData(scriptData);
+
+//Use the gsData object to send a JSON type to the Cloud via event attribute
+.setEventAttribute("object", gsData)
 
 ```
 ### getDetails Event
@@ -109,7 +115,7 @@ Here's the Cloud Code:
     Here's how to retrieve the scriptData from the SDK:
 
     GSAndroidPlatform.gs().getRequestBuilder().createLogEventRequest()
-                    .setEventKey("getDetails").send(new GSEventConsumer() {
+                    .setEventKey("getDetails").send(new GSEventConsumer<GSResponseBuilder.LogEventResponse>(){
             @Override
             public void onEvent(GSResponseBuilder.LogEventResponse logEventResponse) {
                 if(logEventResponse.getScriptData().getAttribute("name") != null){/*Do something*/}
@@ -175,7 +181,7 @@ Map scriptData = new HashMap();
           .setDisplayName(string)
           .setPassword(string)
           .setScriptData(scriptData)
-          .send(new GSEventConsumer() {
+          .send(new GSEventConsumer<GSResponseBuilder.RegistrationResponse>() {
             @Override
             public void onEvent(GSResponseBuilder.RegistrationResponse registrationResponse) {
 

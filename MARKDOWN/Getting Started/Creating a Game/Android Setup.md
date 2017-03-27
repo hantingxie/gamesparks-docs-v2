@@ -1,9 +1,9 @@
 ---
 nav_sort: 2
-src: /SDK Center/Android.md
+src: /Getting Started/Creating a Game/Android Setup.md
 ---
 
-# Android SDK Setup
+# Android Setup
 
 This tutorial walks you through how to integrate GameSparks with your Android project on the Android Builder IDE.
 

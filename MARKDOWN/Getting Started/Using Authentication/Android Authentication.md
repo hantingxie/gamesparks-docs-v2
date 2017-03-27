@@ -20,7 +20,7 @@ Users can register to your game using a username and password. A user registers 
     .setUserName(string)
     .setDisplayName(string)
     .setPassword(string)
-    .send(new GSEventConsumer() {
+    .send(new GSEventConsumer<GSResponseBuilder.RegistrationResponse>() {
          @Override
          public void onEvent(GSResponseBuilder.RegistrationResponse registrationResponse) {
                 if(!registrationResponse.hasErrors()){
@@ -44,7 +44,7 @@ After a player is registered on the platform, they can use the [AuthenticationRe
     GSAndroidPlatform.gs().getRequestBuilder().createAuthenticationRequest()
     .setUserName(usernameTxt.getText().toString())
     .setPassword(passwordTxt.getText().toString())
-    .send(new GSEventConsumer() {
+    .send(new GSEventConsumer<GSResponseBuilder.AuthenticationResponse>()() {
             @Override
             public void onEvent(AuthenticationResponse authenticationResponse) {
                 //Is the response error free?
@@ -68,7 +68,7 @@ You can automatically authenticate devices by simply passing in a unique string 
 ```
 
 GSAndroidPlatform.gs().getRequestBuilder().createDeviceAuthenticationRequest()
-                    .setDeviceId(string).setDeviceOS(string).send(new GSEventConsumer() {
+                    .setDeviceId(string).setDeviceOS(string).send(new GSEventConsumer<GSResponseBuilder.AuthenticationResponse>() {
                 @Override
                 public void onEvent(AuthenticationResponse authenticationResponse) {
 
@@ -99,7 +99,7 @@ All social authentication requests follow a similar method of forwarding an auth
 
 ```
     GSAndroidPlatform.gs().getRequestBuilder().createGooglePlusConnectRequest()
-                    .setAccessToken(String).setDoNotLinkToCurrentPlayer(Bool).send(new GSEventConsumer() {
+                    .setAccessToken(String).setDoNotLinkToCurrentPlayer(Bool).send(new GSEventConsumer<GSResponseBuilder.AuthenticationResponse>() {
                 @Override
                 public void onEvent(AuthenticationResponse authenticationResponse) {
 

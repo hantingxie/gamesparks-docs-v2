@@ -129,16 +129,35 @@ When managing your uploaded files, you can use the [deleteUploadedFile](/API Doc
 
 ## SDK Usage
 
-### Android and Unity
-
 #### Upload
 
-For completeness we expose the method *getUploadUrlRequest* to build the request object to get a URL to post the upload to. However, there's an additional method we provide called *uploadFile* that takes a file, fileName, and optional metadata about the upload. This wraps the request to get an upload URL and the subsequent upload of the file and presents them as a single operation.
+For completeness we expose the method *getUploadUrlRequest* to build the request object to get a URL to post the upload to. However, there's an additional method we provide called *uploadFile* that takes a file, fileName, and optional metadata about the upload. This wraps the request to get an upload URL and the subsequent upload of the file and presents them as a single operation(Unity only).
 
+```
+GSAndroidPlatform.gs().getRequestBuilder().createGetUploadUrlRequest()
+        .send(new GSEventConsumer<GSResponseBuilder.GetUploadUrlResponse>() {
+            @Override
+            public void onEvent(GSResponseBuilder.GetUploadUrlResponse getUploadUrlResponse) {
+                if (!getUploadUrlResponse.hasErrors()) {
+                    System.out.println("upload URL is " + getUploadUrlResponse.getUrl());
+                }
+            }
+        });
+```
 #### Download
 
 As with the upload, we expose the method *getUploadedRequest* to build the request object to get a URL to download the file. However, there's an additional method *getUploadedFile* which takes the *uploadId* and wraps up requesting the download URL and performing the download itself and presents them as a single operation.
 
+```
+GSAndroidPlatform.gs().getRequestBuilder().createGetUploadedRequest()
+        .setUploadId(uploadId).send(new GSEventConsumer<GSResponseBuilder.GetUploadUrlResponse>() {
+    @Override
+    public void onEvent(GSResponseBuilder.GetUploadedResponse getUploadedResponse) {
+
+    }
+});
+
+```
 ### Others
 
 We haven't yet added the above convenience methods for any of the SDKs apart from the Android and Unity SDKs, so for now you'll need to implement the multipart post yourself. We won't go into the details of exactly how to implement this here because there are many great resources already available that cover this. What you do need to know is that the parameter name against which the binary content is posted is *file*.
