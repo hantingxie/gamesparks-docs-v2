@@ -117,9 +117,10 @@ Example:
 
 ```
 GSAndroidPlatform.initialise(this, "key", "secret", "device", false, true);
+
 ```
 
-Now you need an API key and secret, which you are given when you create a game on our platform, click [here](/Getting Started/Creating a Game/README.md) for a quick guide to show you how. You will also need the Credential you are using - if you pass an empty String, then the default *device* Credential will be used. *liveMode* should be kept false unless you want your game to connect to live servers.
+Now you need an API key and secret, which you are given when you create a game on our platform, click [here](/Getting Started/Creating a Game/README.md) for a quick guide to show you how. You will also need the [Credential](/Documentation/Configurator/Credentials.md) you are using - if you pass an empty String, then the default *device* Credential will be used. *liveMode* should be kept false unless you want your game to connect to live servers.
 
 *7.* Add the OnAvailable delegate which will fire when the connection has been established from your App to the backend:
 

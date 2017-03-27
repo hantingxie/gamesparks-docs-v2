@@ -328,10 +328,6 @@ chal.setScriptData("playerStats", playerStats);
 
 var turnCountVar = chal.getScriptData("turnCount");
 
-//turnCountVar[Spark.getPlayer().getPlayerId()] = turnCountVar[Spark.getPlayer().getPlayerId()] + 1;
-
-//chal.setScriptData("turnCount", turnCountVar);
-
 //Finish player turn
 chal.takeTurn(pId);
 //chal.consumeTurn(pId);

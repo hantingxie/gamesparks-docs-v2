@@ -49,9 +49,9 @@ The Import page opens where you can browse to select a *Zip Archive*.
 Where differences with your game's existing Cloud Code scripts are identified, these are shown and you can quickly review these to decide whether or not you want to accept the changes:
 * In this example, we can see that only one difference has been identified - the Cloud Code for the *AUTH_PLAYER* Event has been changed.
 
-*5.* If the compressed archive you selected to import contains a JavaScript file that contains invalid characters or whose name contain invalid characters, then this file is blocked for reviewing your import and cannot be imported. You will see a *Script error*:
+*5.* If the compressed archive you selected to import contains a JavaScript file that contains invalid characters, then this file is blocked for reviewing your import and cannot be imported. You will see a *Script error*.
 
-
+<q>**Other Import Errors?** For details of errors on import, see [below](#Errors on Import).</q>
 
 *6.* Scroll down the review list and use the checkboxes to accept or reject the scripts for import:
 * By default all scripts are checked and will be imported.
