@@ -92,13 +92,15 @@ You can [edit](#Editing a Document) or [delete](#Deleting a Document) individual
 
 ### Editing a Document
 
-*1.* Select a Collection and submit a [Find](#Find) to return results into the *Output* panel:
+*1.* Select a Collection and submit a [Find](#Find) to return results into the *Output* panel.
 
 *2.* Expand the individual Document returned for your query and that you want to edit:
 
 ![](img/25.png)
 
 * In this example, we've submitted a *Find* against the *Runtime>script.playerData* Collection.
+
+<q>**Query Timeout!** If you submit a query against a very large Collection, the query might timeout at 10 seconds. You will see a message but no data will be returned.</q>
 
 *3.* Click to edit ![](/img/icons/editicon.png) the Document you've expanded. An *Edit Document* dialog appears.
 
@@ -137,6 +139,7 @@ Using the *Find* option, you can execute queries against Collections:
 
 * *Query* : The query you want to execute in JSON form:
   * To find players with displayName "testUser" the following valid JSON must be used {"displayName" : "testUser"}
+  * If you submit a query against a very large Collection, then the query might timeout at 10 seconds. You will see a message but no data will be returned. 
 * *Sort* : The JSON representation of the sort for the query:
   * To sort by userName in ascending order the following valid JSON must be used {"userName" : 1}
   * To sort by id, the following valid JSON must be used {"\_id": -1} or {"\_id": 1}
