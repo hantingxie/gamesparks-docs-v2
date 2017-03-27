@@ -92,6 +92,7 @@ The *Responses* list contains an entry for each Response that can be returned 
 The *User Messages* list contains an entry for each Message that can be returned from the GameSparks platform:
 * Before a Message is sent out to each player within a Challenge, the corresponding script is executed allowing you to run custom code on the platform.
 * You can access the current player who received the message using *Spark.getPlayer()*.
+* If you attach Cloud Code to the message, it will be executed *multiple* times - each time it is sent out to a player.
 
 ### Global Messages
 
@@ -100,6 +101,7 @@ The *User Messages* list contains an entry for each Message that can be return
 The *Global Messages* list contains an entry for each Message that can be returned from the GameSparks platform:
 * When a Message is created, the corresponding script is executed allowing you to run custom code on the platform.
 * You **cannot access** the current player in a global message Cloud Code script.
+* If you attach Cloud Code to the message, it will be executed only *once*.
 
 ### System
 

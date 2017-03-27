@@ -39,17 +39,17 @@ An example of initializing the SDK is to initialize at the start of the layout. 
 
 ## Sending Requests to GameSparks
 
-With the Construct SDK sending a plain request into the GameSparks platform is not feasible - you'll get a response back but you won't be able to interpret the response. Each request to the GameSparks platform should be paired with an event listener that will trigger on response.
+With the Construct SDK, sending a plain request into the GameSparks platform is not feasible - you'll get a response back but you won't be able to interpret the response. Each request to the GameSparks platform should be paired with an event listener that will trigger on response.
 
 For example, you can use *onInit* to run additional events once the Initialization to GameSparks has completed. In the example below, we make an *AuthenticationRequest* once the platform has been initialized:
 
 ![](img/Construct/5.png)
 
-Pairing this with an event listener that will run when Authentication completes, we can do a variety of different things. For example, setting the Text of what comes back in the response, setting instance or global variables, or calling additional functions:
+Sending the request will result in the game receiving a response from GameSparks, so we need a way of reacting to when the response comes in and performing some sort of action. The GameSparks object has various event listeners that perform this, such as “onAuthenticationResponse”, which can be used in this respect. With this setup we can do a variety of different things, for example, setting the Text of what comes back in the response, setting instance or global variables, or calling additional functions:
 
 ![](img/Construct/6.png)
 
-Sending requests with additional optional JSON such as LogEventRequests can make use of the “SendWithData” action. Note that the data is in essence a JSON string, but the formatting requires quotes around all keys and values. ( "{ ""eventKey"": ""FINE"" }" )
+Sending requests with additional optional JSON, such as a [LogEventRequest](/API Documentation/Request API/Player/LogEventRequest.md), can make use of the “SendWithData” action. Note that the data is in essence a JSON string, but the formatting requires quotes around all keys and values. ( "{ ""eventKey"": ""FINE"" }" )
 
 ![](img/Construct/7.png)
 

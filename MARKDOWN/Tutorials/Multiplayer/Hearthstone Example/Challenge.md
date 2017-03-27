@@ -14,7 +14,7 @@ Create 4 events:
 * action_playCard
 * action_endTurn
 
-<q>**Important!** Make sure the Cloud Code for these events is edited in the challenge event tab of the Cloud Code section *not the event's tab*.</q>
+<q>**Important!** Make sure the Cloud Code for these events is edited in the *Challenge Events* section of the *Cloud Code>Scripts* panel *NOT* the Events section.</q>
 
 ## action_pullCard
 

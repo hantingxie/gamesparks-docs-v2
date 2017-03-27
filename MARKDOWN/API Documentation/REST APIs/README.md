@@ -17,13 +17,13 @@ The GameSparks REST API is split into 4 components which can be used to configur
 
 ### Game Configuration
 * Provides all endpoints required to manage the game configuration that will be pushed to the runtime servers.
-* The base URL is: https:<nolink>//config-beta.gamesparks.net
+* The base URL is: https:<nolink>//config2.gamesparks.net
 * Try it out [here](/API Documentation/REST APIs/Game Configuration.md)
 
 ### Game Administration
 * Provides REST endpoints to perform actions on a Game that are not part of the game configuration itself.
 * Examples of this sort of action are: managing snapshots, managing admin screens, testing push notifications.
-* The base URL is: https:<nolink>//config-beta.gamesparks.net
+* The base URL is: https:<nolink>//config2.gamesparks.net
 * Try it out [here](/API Documentation/REST APIs/Game Admin.md)
 
 ### NoSQL
@@ -192,7 +192,7 @@ Content-Type: application/json
 **Request:**
 
 ```
-POST https://config-beta.gamesparks.net/restv2/game/J3335lNuVXGb/config/~events
+POST https://config2.gamesparks.net/restv2/game/J3335lNuVXGb/config/~events
 X-GSAccessToken: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0ODczNDUxODQsImlkZW50aXR5IjoidXNlckBlbWFpbC5jb20ifQ.neJJnjlpXpYpCi7y6OK43oqELk6BNmKa1cC4JTZy4Z0
 Content-Type: application/json
 
@@ -252,7 +252,7 @@ Content-Type: application/json
 **Request:**
 
 ```
-PUT https://config-beta.gamesparks.net/restv2/game/J3335lNuVXGb/config/~events/winRace
+PUT https://config2.gamesparks.net/restv2/game/J3335lNuVXGb/config/~events/winRace
 X-GSAccessToken: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0ODczNDUxODQsImlkZW50aXR5IjoidXNlckBlbWFpbC5jb20ifQ.neJJnjlpXpYpCi7y6OK43oqELk6BNmKa1cC4JTZy4Z0
 Content-Type: application/json
 
@@ -296,7 +296,7 @@ Content-Type: application/json
 **Request:**
 
 ```
-POST https://config-beta.gamesparks.net/restv2/game/J3335lNuVXGb/config/~events/winRace/~attributes
+POST https://config2.gamesparks.net/restv2/game/J3335lNuVXGb/config/~events/winRace/~attributes
 X-GSAccessToken: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0ODczNDUxODQsImlkZW50aXR5IjoidXNlckBlbWFpbC5jb20ifQ.neJJnjlpXpYpCi7y6OK43oqELk6BNmKa1cC4JTZy4Z0
 Content-Type: application/json
 
@@ -326,7 +326,7 @@ Content-Type: application/json
 **Request:**
 
 ```
-DELETE https://config-beta.gamesparks.net/restv2/game/J3335lNuVXGb/config/~events/winRace/~attributes/TRACK
+DELETE https://config2.gamesparks.net/restv2/game/J3335lNuVXGb/config/~events/winRace/~attributes/TRACK
 X-GSAccessToken: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0ODczNDUxODQsImlkZW50aXR5IjoidXNlckBlbWFpbC5jb20ifQ.neJJnjlpXpYpCi7y6OK43oqELk6BNmKa1cC4JTZy4Z0
 Content-Type: application/json
 

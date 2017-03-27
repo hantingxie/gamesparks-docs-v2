@@ -15,10 +15,10 @@ This section explains how to set up and configure messages for your game.
 
 Across the platform a general distinction is made between *Global* and *User* messages:
 * Each message has a Global and User version and these are quite distinct messages.
-* The key difference in the way the corresponding versions of messages work lies in the way Cloud Code attached to a message is handled:
+* The key difference between the way Global and User versions of messages work is in the way Cloud Code attached to a message is handled:
   * When you attach Cloud Code to a *Global* message, the code is executed only *once*.
   * When you attach Cloud Code to a *User* Message, the code in executed for each time the message is sent to a User.
-* The reason for this is to cater for differing use cases where you are deploying messages in your game. For example, take the [MatchFoundMessage](/API Documentation/Message API/Multiplayer/MatchFoundMessage.md). Suppose you have 5 players that have entered a request for a Match. When the Match is found, they will each receive a *MatchFoundMessage* that is a *User* message. You could attach some Cloud Code script to this *User* message and this will be executed *5 times*. However, you may also want some other things to happen when the Match is found and you could attach some Cloud Code script to the *Global* version of the *MatchFoundMessage*. This Cloud Code will only be executed *once*.
+* The reason for this is to cater for differing use cases where you are deploying messages in your game. For example, take the [MatchFoundMessage](/API Documentation/Message API/Multiplayer/MatchFoundMessage.md). Suppose you have 5 players that have entered a request for a Match. When the Match is found, each player receives a *MatchFoundMessage* that is a *User* message. You could attach some Cloud Code script to this *User* message and this will be executed *5 times*. However, you may also want some other things to happen when the Match is found and you could attach some Cloud Code script to the *Global* version of the *MatchFoundMessage*. This Cloud Code will only be executed *once*.
 
 ## Message Configuration
 

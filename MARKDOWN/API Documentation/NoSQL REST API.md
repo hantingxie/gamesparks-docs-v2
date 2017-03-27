@@ -21,7 +21,7 @@ In the system architecture diagram on the [REST APIs Overview](/API Documentatio
 
 **Request**
 ```
-GET https://config-beta.gamesparks.net/restv2/game/{gameApiKey}/endpoints
+GET https://config2.gamesparks.net/restv2/game/{gameApiKey}/endpoints
 ```
 
 **Example response**

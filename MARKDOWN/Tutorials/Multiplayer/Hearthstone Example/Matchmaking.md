@@ -114,7 +114,7 @@ request.SendAs(chalData.challenge.challenged[0].id);
 
 After this, the challenge would have started and both players would receive the [ChallengeStartedMessage](/API Documentation/Message API/Multiplayer/ChallengeStartedMessage.md). This is the perfect place to initialize the challenge and set it up for both our players. To avoid duplication we will call the logic in the global message instead of the user message, doing this will also ensure that when our players receive the *ChallengeStartedMessage* they will have the challenge details initialized.
 
-<q>**Global not User!** Make sure this Cloud Code logic is attached to the *ChallengeStartedMessage* under the *Global Messages* section not the *User Messages* section of the *Cloud Code>Scripts* panel.</q>
+<q>**Global not User!** Make sure you attach this Cloud Code logic to the *ChallengeStartedMessage* under the *Global Messages* section *NOT* the *User Messages* section of the *Cloud Code>Scripts* panel.</q>
 
 ```
 //Declare challenge
