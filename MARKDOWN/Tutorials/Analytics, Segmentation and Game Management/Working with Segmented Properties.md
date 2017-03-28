@@ -160,7 +160,7 @@ var propertySet = achievement.getPropertySet();
 
 The last thing to mention, and the thing that we think makes Property Sets really powerful, is segmentation. When you have some [Segments](/Documentation/Configurator/Segments.md) configured within the Portal, whenever you add a Property Set Key to a Property Set you also have the option to add segmented values for the Property you have linked to that Property Set Key. This makes it very easy for you to deliver different Property values to different groups of players.
 
-Make sure you have some Segments configured, and let's go back to the *Property Set* tab.
+Make sure you have some Segments configured, and let's go back to the *Property Sets* tab.
 
 *1.* Open to edit the *Property Set* we created above, and click the segment ![](/img/icons/segmenticon.png) icon next to one of the Property Set Keys you've added to a Property Set and for which you want to configure segmented values:
 
@@ -174,16 +174,17 @@ The page adjusts allowing you to select a segment for the Property Set Key.
 
 The *Segment Configuration* panel adjusts.
 
-*3.* Use the *Segment Query* drop-down to select the Segment/Value pair you want to use to segment the Property Set Key:
+*3.* Use the *Segment / Value* drop-down to select the Segment/Value pair you want to use to segment the Property Set Key:
 
 ![](img/SegmentedProperties/17.png)
-* In this example, we've chosen the Country Segment/Value pair of *COUNTRY_SEG/CN_COUNTRY-SEGVAL* to segment the *property2* Property Set Key.
+* In this example, we've chosen the Country Segment/Value pair of *COUNTRY_SEG/JP_COUNTRY-SEGVAL* to segment the *property2* Property Set Key.
 * This means that any player who is assigned this Segment/Value pair will have the alternative value you select for this Property Set Key applied to them.
 * For more details on how to set up Segments and their values, see the [Segments](/Documentation/Configurator/Segments.md) page.
 
 *4.* Now, use the *Property* drop-down to select the Property value you want to apply to players that fall into the segment:
 
 ![](img/SegmentedProperties/18.png)
+* In this example, we've selected *My Third Property* as the alternative Property value.
 
 *5.* Click to *Update and Close* the segment configuration for the Property Set Key.
 

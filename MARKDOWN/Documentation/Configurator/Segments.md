@@ -238,7 +238,7 @@ Here, we'll segment an Achievement using the two Segment Queries we built [above
 
 ## Ordering Segment Configuration
 
-Segmented values within the portal can be ordered - simply click and hold on the *Reorder* icon and drag-and-drop a Segment to where you want it:
+Segmented values within the portal can be ordered - simply click and hold on the *Reorder* ![](/img/icons/reordericon.png) icon and drag-and-drop a Segment to where you want it:
 
 ![](img/Segments/11.png)
 
