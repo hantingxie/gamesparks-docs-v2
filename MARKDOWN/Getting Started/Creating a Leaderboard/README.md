@@ -26,8 +26,8 @@ In this tutorial, we'll go over the steps required to create an Event, attach 
 
 *3.* Enter the details for the new Event:
 
-  * *Short Code* - This mandatory field is the reference by which we'll identify and call the Event. Short Codes are always unique.
-  * *Name* - This mandatory field is used when representing the Event in the Test Harness as well as [Cloud Code](/Documentation/Configurator/Cloud Code.md).
+  * *Short Code* - This mandatory field is the reference by which we'll identify and call the Event. Short Codes are always unique. This mandatory field is used when representing the Event in [Cloud Code](/Documentation/Configurator/Cloud Code.md).
+  * *Name* - This mandatory field is used when representing the Event in the Test Harness.
   * *Description* - This mandatory field is used to display what the Event is used for. You can use this field for your own benefit by entering a description of the Event's purpose.
 
 *4.* To add an *Attribute* to the Event, under *Attributes*, click *Add*.
@@ -35,7 +35,8 @@ In this tutorial, we'll go over the steps required to create an Event, attach 
 *5.* Enter the details for the Attribute:
   * *Attribute Name* - This field is referenced in the Test Harness and Leaderboards.
   * *Attribute Short Code* - This is the reference we'll be using to pass in an Attribute into the Event.
-  * *Data Type* - The type of data being passed in - String, Number, or JSON. Select *Number*
+  * *Data Type* - The type of data being passed in - String, Number, or JSON.
+    * Select *Number*.
   * *Default Value* - The default value that would be used for this Event Attribute if it's not passed into the [LogEventRequest](/API Documentation/Request API/Player/LogEventRequest.md).
   * *Default Aggregation Type* - This determines how values are tracked in the Running Totals.
 
@@ -64,7 +65,6 @@ In this tutorial, we'll go over the steps required to create an Event, attach 
   * *Collector* - This is the Attribute you have set up in your Event.
   * *Sort* - How do you want your values to be sorted - DESC, ASC, or NONE.
 
-
   ![](img/CreatingALeaderboard/8.png)
 
   <q>**Other Configuration Options?** For this tutorial, all configuration options that are not listed can be left as default.</q>
@@ -89,7 +89,7 @@ When you've created your Leaderboard, navigate to the Test Harness. At this poi
 
 *5.* You can now validate that the Leaderboard has worked correctly, that our sorting has taken place, and that both player scores have been logged by calling a [LeaderboardDataRequest](/API Documentation/Request API/Leaderboards/LeaderboardDataRequest.md), passing in the Leaderboard *Short Code* and the *Entry Count*.
 
-<q>**Note:** You will have additional JSON fields pre-filled, simply remove those as they are not used in this tutorial, all you need is *leaderboardShortCode* and *entryCount*.</q>
+<q>**Note:** You will have additional JSON fields pre-filled. Simply remove those because they are not used in this tutorial. All you need is *leaderboardShortCode* and *entryCount*.</q>
 
 ![](img/CreatingALeaderboard/11.png)
 

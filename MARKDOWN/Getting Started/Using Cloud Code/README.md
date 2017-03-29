@@ -16,7 +16,7 @@ It's easy to see from this very simple example how you can use Cloud Code to ach
 When you build Cloud Code and attach it to a configured component, such as an Event, you can use the Test Harness to try out and check that you will get the behavior you want.
 The Test Harness is an invaluable tool, because it allows you to send API requests to the GameSparks platform in their raw form and check the responses returned by the server.
 
-In this tutorial, you'll learn how to persist some meaningful data in mongoDB using Cloud Code - you'll be storing and retrieving X, Y, and Z player position coordinates. We'll then walk you through using the Test Harness to check your Cloud Code.
+In this tutorial, you'll learn how to persist some meaningful data in mongoDB using Cloud Code - you'll be storing and retrieving X, Y, and Z player-position coordinates. We'll then walk you through using the Test Harness to check your Cloud Code.
 
 <q>**Cross Platform!** Cloud Code is platform independent and is written in JavaScript, meaning that if you wanted to use a different SDK, you wouldn't need to change the Cloud Code you've already written.</q>
 
@@ -24,7 +24,7 @@ In this tutorial, you'll learn how to persist some meaningful data in mongoDB us
 
 ![](img/UsingCloudCode/15.png)
 
-Since you will be Setting data to and Getting data from the database, you should create Events.
+Since you'll be Setting data to and Getting data from the database, you should create Events.
 
 *1.* First, navigate to *Configurator > Events* and click the *Add*. The *Add Event* page opens:
 
@@ -72,7 +72,7 @@ As you can see in this example, all you need to do is *getData* that was sent wi
 
 ```
 
-*4.* Click *Save* to save the Cloud Code script you have attached to the *Set Position* Event.
+*4.* Click to *Save* the Cloud Code script you've attached to the *Set Position* Event.
 
 ### Get Event
 
@@ -86,7 +86,7 @@ To enter the Cloud Code for the *Get Position* Event:
 
 ![](img/UsingCloudCode/19.png)
 
-The *Get Position* Event is essentially a reverse of the *Set Position* Event. Here we get the Player using *getPlayer*, then we retrieve the Script Data that was Set for this player using *getScriptData*. Finally, we use *setScriptData* to Set the Position in the Response of the Event.
+The *Get Position* Event is essentially a reverse of the *Set Position* Event. Here we get the Player using *getPlayer*, then we retrieve the Script Data that was Set for this player using *getScriptData*. Finally, we use *setScriptData* to set the position in the Response of the Event.
 
 
 ```
@@ -96,11 +96,11 @@ The *Get Position* Event is essentially a reverse of the *Set Position* Event. H
 
 ```
 
-*4.* Click *Save* to save the Cloud Code script you have attached to the *Get Position* Event.
+*4.* Click to *Save* the Cloud Code script you've attached to the *Get Position* Event.
 
 ## Test Harness
 
-*1.* Firstly, you will need to Register a new player. This can be achieved by using the [RegistrationRequest](/API Documentation/Request API/Authentication/RegistrationRequest.md). To do so, you will need to navigate to the Test Harness and under *Authentication* select the *RegistrationRequest*, fill in the JSON details, and hit click *Send Request*:
+*1.* Firstly, you will need to Register a new player. This can be achieved by using the [RegistrationRequest](/API Documentation/Request API/Authentication/RegistrationRequest.md). To do so, you'll need to navigate to the Test Harness and under *Authentication* select the *RegistrationRequest*, fill in the JSON details, and click *Send Request*:
 
 ![](img/UsingCloudCode/20.png)
 
@@ -108,11 +108,11 @@ The *Get Position* Event is essentially a reverse of the *Set Position* Event. H
 
 ![](img/UsingCloudCode/21.png)
 
-In this example, you can see that we've submiited an *AuthenticationRequest* with an *AuthenticationResponse* returned after registering the player and before submitting the *LogEventRequest* for *Set_Pos*.
+In this example, you can see that we've submitted an *AuthenticationRequest* with an *AuthenticationResponse* returned after registering the player and before submitting the *LogEventRequest* for *Set_Pos*.
 
 <q>**Note:** If you had the Requests debugger ticked, it will open at this point. This only happens if the Request has some Cloud Code set on it. Either step through the code or stop debugging. You can read more about the debugger [here](/Documentation/Test Harness/Debugger.md) .</q>
 
-*3.* You can now validate that the POS has been set in the players Script Data by Calling an [AccountDetailsRequest](/API Documentation/Request API/Player/AccountDetailsRequest.md).
+*3.* You can now validate that the POS has been set in the players Script Data by calling an [AccountDetailsRequest](/API Documentation/Request API/Player/AccountDetailsRequest.md).
 
 ![](img/UsingCloudCode/22.png)
 

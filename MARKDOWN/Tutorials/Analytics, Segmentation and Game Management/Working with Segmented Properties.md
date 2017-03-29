@@ -166,7 +166,7 @@ Make sure you have some Segments configured, and let's go back to the *Property 
 
 ![](img/SegmentedProperties/15.png)
 
-The page adjusts allowing you to select a segment for the Property Set Key.
+The *Property Sets* tab adjusts allowing you to select a segment for the Property Set Key.
 
 *2.* On the *Segment Configuration* panel, click *Add Segment*
 

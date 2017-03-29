@@ -46,6 +46,7 @@ Adding a game is a 3-stage process:
 
 ![](img/CreatingGame/9.png)
 
+* Use the *Currencies* check boxes to select which currencies you want to use in your game. If you clear a check box, the currency is hidden in the portal. This doesn't mean that the currency is disabled in your game but it will be hidden across the portal interface. For example, you'll not see the currency when you create, configure, and edit your Virtual Goods.
 * Set *Signup Bonuses* for any of six currencies. Each new player will be credited with the currency amounts when they first register for your game.
 * Select the *Platform Features* you want for your game - by default, all are selected.
 * Under *Integrations*, select the 3rd-party providers you want to integrate your game with - by default, none are selected.
@@ -74,7 +75,7 @@ Adding a game is a 3-stage process:
 
 ![](img/CreatingGame/6.png)
 
- You should take note of your game's *GameSparks API Key* and *GameSparks API Secret*, because you'll need these when you set up your chosen SDK. Click *Show* at the right-hand side of the *API Secret* field to reveal it.
+ You should take note of your game's *GameSparks API Key* and *GameSparks API Secret*, because you'll need these when you set up your chosen SDK. Click *Show* at the right-hand side of the *API Secret* field to reveal it - you'll then be able to copy the *API Secret*.
 
 ## Working in Preview and Publishing for Launch
 
@@ -108,7 +109,7 @@ Publishing your game via the use of a *Snapshot* allows you to easily manage you
 
 ### Switching between Preview and Live
 
-Several pages in the portal provide a *Preview/Live* switch for areas where it's useful to be able to view Preview or Live data as you continue to develop your game beyond its publication to Live. On most of these pages, the *Preview/Live* switch will be enabled only if you've already published a game configuration Snapshot to Live:
+Several pages in the portal provide a *Preview/Live* switch for areas where it's useful to be able to view Preview or Live data as you continue to develop your game beyond its publication to Live. On some of these pages, the *Preview/Live* switch will be enabled only if you've already published a game configuration Snapshot to Live:
 
 Page  | Enabled
 -----  | -----------

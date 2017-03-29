@@ -11,7 +11,7 @@ The previous [tutorial](./README.md) taught you how to create a Leaderboard and 
 
 For this tutorial, we've created a sample game that runs for 10 seconds. In those 10 seconds:
 * The player must collect as many points as possible.
-* If the player beats the current high score, they will be notified by a message.
+* If the player beats the current high score, they'll be notified by a message.
 
 
 **Setting up the Event Log Request**
@@ -65,7 +65,7 @@ For this tutorial, we'll be dealing with *NewHighScoreMessage*.
 
 ```
 
-Create the function which deals with the *message*. The parameters of the function would take a variable of type '*NewHighScoreMessage*'. This function allows you to simplify the structure of the *message* and access a number of useful data.
+Create the function which deals with the *message*. The parameters of the function would take a variable of type '*NewHighScoreMessage*'. This function allows you to simplify the structure of the *message* and access some useful data.
 
 In this tutorial, we retrieve the Leaderboard's name to show the highscore *message* as an alert.
 
@@ -80,6 +80,6 @@ In this tutorial, we retrieve the Leaderboard's name to show the highscore *mess
 
 ## Testing the Leaderboard
 
-Run your game and try to beat the high score. If you do, you will receive a message informing you that you have beaten the high score in that Leaderboard.
+Run your game and try to beat the high score. If you do, you'll receive a message informing you that you have beaten the high score in that Leaderboard.
 
 ![l](img/AS/1.jpg)

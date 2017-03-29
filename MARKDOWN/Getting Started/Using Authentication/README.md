@@ -7,7 +7,7 @@ src: /Getting Started/Using Authentication/README.md
 
 ## Introduction
 
-Before a player can perform any operations they need to authenticate with the platform. There are a few authentication options, and some can be used in combination with others. The full list of Authentication Types can be found [here](/Documentation/Key Concepts/Authentication.md), however for this tutorial we'll be using basic username/password Registration and Authentication.
+Before a player can perform any operations they need to authenticate with the platform. There are a few authentication options, and some can be used in combination with others. The full list of Authentication Types can be found [here](/Documentation/Key Concepts/Authentication.md). However, for this tutorial we'll be using basic username/password Registration and Authentication.
 
 ## Registering and Authenticating
 

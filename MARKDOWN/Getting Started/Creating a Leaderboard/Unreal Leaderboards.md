@@ -34,7 +34,7 @@ Here's an overview of what we'll cover in this tutorial:
 
 ![l](img/UR/5.png)
 
-The *GSMessageListeners* component is an extremely useful tool, which will allow you to intercept messages from the Portal to your authenticated player, then break them down and use them in your sequences.
+The *GSMessageListeners* component is an extremely useful tool, which allows you to intercept messages from the Portal to your authenticated player, then break those messages down and use them in your sequences.
 
 *2.* Here we're going to demonstrate the use of one message type interception by using the event *OnNewHighScoreMessage.* This can be dropped into the Event Graph after clicking the *GSMessageListeners* component:
 
@@ -50,10 +50,10 @@ For this tutorial, we'll be retrieving the name of the Leaderboard to inform the
 
 ## Setting up the Event Call
 
-Once the Listener is ready, we can call the *Leaderboard_Score* event from anywhere we wish to upload the final score to. For this tutorial, we've placed it right after our game countdown reaches zero and the points we collected during the game are uploaded to the Leaderboard. If a new High Score is achieved for the currently authenticated player, a message will be sent to notify them.
+Once the Listener is ready, we can call the *Leaderboard_Score* Event from anywhere we wish to upload the final score to. For this tutorial, we've placed it right after our game countdown reaches zero and the points we collected during the game are uploaded to the Leaderboard. If a new High Score is achieved for the currently authenticated player, a message will be sent to notify them.
 
 Now, execute the Event that was previously set up on the Portal using *GS LogEventRequest*:
-* You will have to pass in the *SCORE* attribute into the Event. In this instance, we *Floor* our float score to round it off to the closest int and transform this value into an int. Then use the *Set Number* to set the value for the attribute.
+* You'll have to pass the *SCORE* attribute into the Event. In this instance, we *Floor* our float score to round it off to the closest int and transform this value into an int. Then use the *Set Number* to set the value for the attribute.
 
 ![l](img/UR/2.png)
 

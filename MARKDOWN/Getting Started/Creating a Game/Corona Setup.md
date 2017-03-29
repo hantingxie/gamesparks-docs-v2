@@ -14,18 +14,20 @@ Integrating Corona with GameSparks is straightforward:
 ```
   plugins =
     {
-        ["plugin.bit"] =
-        {
-            publisherId = "com.coronalabs",
-        },
-        ["plugin.openssl"] =
-        {
-            publisherId = "com.coronalabs",
-        },
-        ["plugin.gamesparks"] =
-        {
-            publisherId = "com.gamesparks",
-        }
+      ["plugin.bit"] =
+      {
+          publisherId = "com.coronalabs",
+          supportedPlatforms = { iphone=true, android=true, osx=true, win32=true }
+      },
+      ["plugin.openssl"] =
+      {
+          publisherId = "com.coronalabs",
+          supportedPlatforms = { iphone=true, android=true, osx=true, win32=true }
+      },
+      ["plugin.gamesparks"] =
+      {
+        publisherId = "com.gamesparks",
+      },
     },
 
 ```
@@ -34,17 +36,13 @@ Now you'll have access to the GameSparks SDK for your project.
 
 ## Setting Up and Connecting
 
-*1.* The first step is to connect to your Game's backend. For this step you'll need your *API Key* and *Secret*, which you can get from the *Configurator > Overview* page of the portal.
+*1.* The first step is to connect to your Game's backend. For this step you'll need your *API Key* and *Secret*, which you can get from the *Configurator > Game Overview* page of the portal.
 
-*2.* Begin by requiring the necessary classes, we'll do this in the main.lua file:
+*2.* Begin by requiring the necessary class, we'll do this in the main.lua file:
 
 ```
 
-local GS = require("plugin.gamesparks.GS")
-local GSData = require('plugin.gamesparks.GSData')
-local GSRequest = require('plugin.gamesparks.GSRequest')
-local GSResponse = require('plugin.gamesparks.GSResponse')
-local GSUtils = require('plugin.gamesparks.GSUtils')
+local GS = require("plugin.gamesparks")
 
 ```
 
@@ -73,15 +71,14 @@ end
 
 ```
 
-The function will print the availability condition as well as perform any logic when the result of the condition is true or false. This is useful to determine if the GameSparks API is ready to use or not.
+The function will print the availability condition as well as perform any logic when the result of the condition is true or false. This is useful to determine whether or not the GameSparks API is ready to use.
 
 *5.* For the next step we'll be connecting to our Game's backend using the *API Key* and *Secret*:
 
 ```
-
 --Create GS Instance
 gs = createGS()
---Set the logger for debugging the Responses,Messages and Requests flowning in and out
+--Set the logger for debugging the Responses, Messages and Requests flowing in and out
 gs.setLogger(writeText)
 --Set API Key
 gs.setApiKey("293711ZXWjA9")

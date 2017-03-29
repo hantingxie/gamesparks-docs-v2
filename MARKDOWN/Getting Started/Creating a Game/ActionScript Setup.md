@@ -44,7 +44,7 @@ This tutorial shows you how to set up your ActionScript project and establish a 
 
 ![l](img/AS/3.png)
 
-*4.* Make sure you add the *.SWC* file to the library by right-clicking it and selecting the '*Add to library'* option. This allows you to use the GameSparks library for your game:
+*4.* Make sure you add the *.SWC* file to the library by right-clicking it and selecting the '*Add To Library'* option. This allows you to use the GameSparks library for your game:
 
 ![l](img/AS/4.png)
 
@@ -76,18 +76,18 @@ import flash.utils.setInterval;
 
 *2.* The first function you will need to make allows you to connect your game to the Portal. To do this, you must connect using the *API Secret* and *service Key*:
 
-* You can find the *API Secret* and *API Key* on the *Game Overview* page. When you first open the page the *API Secret* and *API Key* are hidden. Click on the field or click *Show* to reveal the values and then use *Copy*:
+* You can find the *API Secret* and *API Key* on the *Game Overview* page. When you first open the page the *API Secret* is hidden. Click on the field or click *Show* to reveal the value and then use *Copy*:
 
 ![l](img/AS/13.png)
 
 *3.* Now you can make your first function. This uses the Key and Secret to connect to the Portal. Name this function *ConnectToPortal* and initiate the connection using:
 
-*gs.setAvailabilityCallback().setLogger().setApiKey("").setApiSecret("")ssetApiCredential("").connect();*
+*gs.setAvailabilityCallback().setLogger().setApiKey("").setApiSecret("")setApiCredential("").connect();*
 
   * *setAvailabilityCallback(FunctionNameHere)* calls the given function when the GS module sends feedback from the connection or disconnection to the Portal.
   * *setLogger(FunctionNameHere)* calls the given function when the GS module sends general feedback.
   * *setApiKey("Key")* and *setApiSeret("Secret")* connects the GS module to the given API Key using the given Secret key.
-  * *setApiCredential("Credential")* ensures that the device can only call the requests it is allowed to.
+  * *setApiCredential("Credential")* ensures that the device can only call the requests it's allowed to.
   * *connect()* fires the request to connect the GS module to the Portal as well as calling the Availability call back function set and logging it.
 
 ```

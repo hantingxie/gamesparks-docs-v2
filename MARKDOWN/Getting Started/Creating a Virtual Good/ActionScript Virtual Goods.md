@@ -18,9 +18,9 @@ This tutorial shows you how to buy and consume goods using a shop interface:
 
 **Creating the Buy and Consume functions**
 
-  * Create a function to log the *BuyVirtualGoods* request and a function for the *ConsumeVirtualGoods* request.
-  * Create a function to handle the *BuyVirtualGoods* request.
-  * Create a function to handle the *ConsumeVirtualGoods* request which logs an Event to accredit the authenticated player with extra currency.
+  * Create a function to log the *BuyVirtualGoodsRequest* and a function for the *ConsumeVirtualGoodRequest*.
+  * Create a function to handle the *BuyVirtualGoodsRequest*.
+  * Create a function to handle the *ConsumeVirtualGoodRequest*, which logs an Event to accredit the authenticated player with extra currency.
 
 **Keeping track of player details**
 
@@ -28,7 +28,7 @@ This tutorial shows you how to buy and consume goods using a shop interface:
 
 **Testing Virtual Goods**
 
-  * Launch your game, buy and consume Virtual Goods to see your details being updated accordingly.
+  * Launch your game and buy and consume Virtual Goods to see your details being updated accordingly.
 
 </br>
 **Example ActionScript Virtual Goods** code can be downloaded [here](http://repo.gamesparks.net/docs/tutorial-assets/ActionscriptVirtualGoodsMXML.zip)
@@ -47,7 +47,7 @@ You will log this Event whenever the authenticated player *consumes* a Gold Coin
 
 *4.* Save the *Grant currency* Event and navigate to *Configurator > Cloud Code* and under *Scripts* click *Events*.
 
-*5.* Select the *Grant currency* event to open the Cloud Code Editor. In the Cloud Code Editor create a variable that holds the amount being passed in the Event through the *CASH* Attribute, and call it *money*:
+*5.* Select the *GRANT_CURRENCY* Event to open the Cloud Code Editor. In the Cloud Code Editor, create a variable that holds the amount being passed in the Event through the *CASH* Attribute, and call it *money*:
 
 *6.* Next, get the player object using *Spark.getPlayer()* and credit their *currency1* with the *money* value.
 
@@ -56,13 +56,13 @@ You will log this Event whenever the authenticated player *consumes* a Gold Coin
 Here's the Cloud Code:
 
 ```
-var money = Spark.getData().CASH;
+var money = Spark.getData().CASH; // we can get the cash we intend to grant to the player
 
-Spark.getPlayer().credit1(money);
+Spark.getPlayer().credit1(money); // this will credit the player to currency 1
 
 ```
 
-*7.* Click to *Save* the Cloud Code you've added to the *Grant currency* Event.
+*7.* Click to *Save* the Cloud Code you've added to the *GRANT_CURRENCY* Event.
 
 ## Creating the Buy and Consume Functions
 
@@ -89,7 +89,7 @@ Spark.getPlayer().credit1(money);
 
 *10.* Now you can make the *response* *handler* functions for your *consume* and *buy* requests. Both *response handlers* will be similar. For our tutorial, we won't need them to do much:
 * Have the functions check the response for errors.
-* If the response has no errors then send a *string* to the *logger*.
+* If the response has no errors, then send a *string* to the *logger*.
 * For the *consume* *response*, if there are no errors, call the Event which accredits the player with extra *currency*.
 * When either *response handler* reaches the end of their sequence, the shop data will be updated.
 

@@ -7,7 +7,7 @@ src: /Getting Started/Using Cloud Code/Lua Cloud Code.md
 
 We expect you to have followed the Cloud Code getting started [tutorial](/Getting Started/Using Cloud Code/README.md).
 
-This tutorial will demonstrate saving and loading persistent data against players, specifically the XYZ values from the previous tutorial. You can build an X and Y function instead of an XYZ function by simply omitting the Z variable for each of the steps in the tutorial.
+This tutorial will demonstrate saving and loading persistent data against players, specifically the XYZ values from this previous tutorial. You can build an X and Y function instead of an XYZ function by simply omitting the Z variable for each of the steps in the tutorial.
 
 The two main aspects of this tutorial are the *Set* and *Get* functions:
 * We'll start with the *Set* function that will take data from the Corona game and send it to the backend.
@@ -77,6 +77,6 @@ if response:hasErrors() then
 
 ```
 
-These are the basics for data exchange between backend(GameSparks) and frontend(Corona Game) using the GameSparks SDK.
+These are the basics for data exchange between the back end (GameSparks) and the front end (Corona Game) using the GameSparks SDK.
 
 The tutorials in the [next section](/Getting Started/Creating a Leaderboard/README.md) will demonstrate basic Leaderboard creation and use.

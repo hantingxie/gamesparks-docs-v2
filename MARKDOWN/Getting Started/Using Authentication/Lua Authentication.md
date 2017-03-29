@@ -9,7 +9,7 @@ There are three ways to authenticate using GameSparks:
 
 1. GameSparks Authentication - Uses a username/password that players register to.
 2. Device Authentication - Uses a unique string ID (created by the Developer) and an OS identifier.
-3. Social authentication - Requires you to use a token from the social provider to authenticate users using the information gathered from their profiles.
+3. Social Authentication - Requires you to use a token from the social provider to authenticate users using the information gathered from their profiles.
 
 In this tutorial we'll only cover GameSparks and Device authentication because Social authentication is different for every provider and that is beyond the scope of this tutorial.
 

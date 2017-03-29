@@ -129,7 +129,7 @@ Here's the Cloud Code:
 
 ## Android Requests and Responses Extra Functionality
 
-GameSparks conveniently offers you the ability to augment existing calls and responses with extra functionality. In the portal, if you navigate to *Configurator > Cloud Code*, you will see tabs for Requests, Responses, User Messages, and Global Messages. Once expanded, these tabs will allow you to add Cloud Code to any request, response, or message and achieve the extra functionality you want in your game.
+GameSparks conveniently offers you the ability to augment existing calls and responses with extra functionality. In the portal, navigate to *Configurator > Cloud Code*. In the *Scripts* panel, you'll see sections for Requests, Responses, User Messages, and Global Messages. Once expanded, you can use these sections to add Cloud Code to any request, response, or message and achieve the extra functionality you want in your game.
 
 In this tutorial, we'll follow an example of how to do this by adding Cloud Code to the Registration request and response so that:
 * The *RegistrationRequest* will be blocked if the email is not passed in.

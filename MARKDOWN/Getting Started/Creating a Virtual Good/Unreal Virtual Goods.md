@@ -7,18 +7,20 @@ src: /Getting Started/Creating a Virtual Good/Unreal Virtual Goods.md
 
 ## Introduction
 
-After following the tutorial [Creating a Virtual Good](./README.md), you are ready to integrate the same functionality into your Unreal Engine Game - you can now set up the ability for your authenticated players to buy and consume Virtual Goods and retrieve a list of exactly what Virtual Goods your authenticated player have in their inventory.
+After following the tutorial [Creating a Virtual Good](./README.md), you are ready to integrate the same functionality into your Unreal Engine Game. You can now:
+* Set up the ability for your authenticated players to buy and consume Virtual Goods.
+* Retrieve a list of exactly what Virtual Goods your authenticated player have in their inventory.
 
 Here's what we'll cover in this tutorial:
 
 **Setting up the Shop Screen**
 
   * Make a shop screen for the user to buy and consume Virtual Goods.
-  * The shop needs to update the players Currency and the number of owned Virtual Goods.
+  * The shop needs to update a player's Currency amount and the number of Virtual Goods they own.
 
 **Buying a Virtual Good**
 
-  * Use a GS *BuyVirtualGoodRequest* node to purchase Virtual Goods by passing in the Currency type, quantity and the Short Code values.
+  * Use a GS *BuyVirtualGoodsRequest* node to purchase Virtual Goods by passing in the Currency type, quantity and the Short Code values.
   * Immediately update the details of the authenticated player.
 
 **Consuming a Virtual Good**
@@ -51,7 +53,7 @@ This Event will be logged whenever the *authenticated* player *consumes* a Gol
 
 *4.* Save the *Grant currency* Event and navigate to *Configurator > Cloud Code* and under *Scripts* click *Events*.
 
-*5.* Select the *Grant currency* event to open the Cloud Code Editor. In the Cloud Code Editor, create a variable that holds the amount being passed in the Event through the *CASH* Attribute and call it *money*.
+*5.* Select the *GRANT_CURRENCY* Event to open the Cloud Code Editor. In the Cloud Code Editor, create a variable that holds the amount being passed in the Event through the *CASH* Attribute and call it *money*.
 
 *6.* Now get the Player object using *getPlayer* and credit them *currency1* by the *money* value:
 
@@ -67,7 +69,7 @@ This is the Cloud Code:
 
 ```
 
-*7.* Click to *Save* the Cloud Code you've added to the *Grant currency* Event.
+*7.* Click to *Save* the Cloud Code you've added to the *GRANT_CURRENCY* Event.
 
 ### Setting up the Shop Screen
 
@@ -75,11 +77,11 @@ This is the Cloud Code:
 
 ![](img/UR/3.png)
 
-When the player transitions to the shop screen, the values for the player's *Display Name*, *Currency* and the amount of Gold Coins owned need to be updated.
+When the player transitions to the shop screen, the values for the player's *Display Name*, *Currency*, and the amount of Gold Coins owned need to be updated.
 
 *9.* To update the values, request them using *GS AccountDetailsRequest* node.
 
-*10.* To retrieve the amount of gold coins owned, use the node *Get Number* dragged from the *Account DetailsResponseVirtualGoods* port on the *AccountDetailsRequest* node with the *Short code* of the item you're looking for - in this example, it's *Gold_Coin*:
+*10.* To retrieve the amount of Gold Coins owned, use the node *Get Number* dragged from the *Account DetailsResponseVirtualGoods* port on the *AccountDetailsRequest* node with the *Short Code* of the item you're looking for - in this example, it's *Gold_Coin*:
 
 ![](img/UR/4.png)
 

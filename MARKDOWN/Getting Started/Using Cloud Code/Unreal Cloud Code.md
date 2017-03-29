@@ -35,7 +35,7 @@ In this tutorial, the player logs the *Get_Pos* Event which retrieves the locat
 
 ### Default Location
 
-Send the pawns initial spawn location from the editor to the Portal through the *Test Harness* for the authenticated player to simulate a saved default initial spawn location.
+Send the pawn's initial spawn location from the editor to the Portal through the *Test Harness* for the authenticated player to simulate a saved default initial spawn location.
 
 ![](img/UR/1.png)
 
@@ -45,7 +45,7 @@ Use the *Set_Pos* Event to save those three coordinates on the *Test Harness*
 
 ### Get Event
 
-For this example call the *Get_Pos* Event straight after the Player authenticates:
+For this example, call the *Get_Pos* Event straight after the Player authenticates:
 * Once the player is *authenticated*, their location will be set to the values received from *Get_Pos*. This is why it's important to have a default value.
 * The get sequence will take place in the Login Widget, which initiates the player *authentication*.
 * On valid response, the player will teleport to the location retrieved through the saved X, Y, and Z values.

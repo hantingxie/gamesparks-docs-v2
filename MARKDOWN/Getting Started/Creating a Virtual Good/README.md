@@ -11,7 +11,7 @@ In the context of the GameSparks platform, a Virtual Good is any in-game asset t
 * You can set up Virtual Goods to be bought as In-App Purchases (IAPs). This is when you associate the Virtual Goods with the Product IDs of the corresponding items on the stores and when a good is purchased we can reconcile the store receipts with the items.
 * You can define relationships between your Virtual Goods so they can be traded or converted.
 
-There are many ways of awarding Virtual Goods. In this tutorial, we'll award the player with a Virtual Good by "purchasing" it, this is done via [BuyVirtualGoodsRequest](/API Documentation/Request API/Store/BuyVirtualGoodsRequest.md).
+There are many ways of awarding Virtual Goods. In this tutorial, we'll award the player with a Virtual Good by "purchasing" it. This is done via a [BuyVirtualGoodsRequest](/API Documentation/Request API/Store/BuyVirtualGoodsRequest.md).
 
 ## Setting Up a Virtual Good
 
@@ -41,16 +41,16 @@ You can leave the other configuration options as default.
 
 Now everything is set up, you'll need to navigate to the Test Harness and authenticate with one of the players you have [registered](/Getting Started/Using Authentication/README.md) previously. The [previous](/Getting Started/Creating an Achievement/README.md) tutorial showed you how to award your player with some currency via an Achievement. Now you are ready to purchase your first Virtual Good.
 
-*1.* To start, and just to be sure, let's validate that the player has enough of Currency *1* to purchase the Virtual Good using the [AccountDetailsRequest](/API Documentation/Request API/Player/AccountDetailsRequest.md).
+*1.* To start, and just to be sure, let's validate that the player has enough of Currency *1* to purchase the Virtual Good using the [AccountDetailsRequest](/API Documentation/Request API/Player/AccountDetailsRequest.md):
 
 ![](img/Create/12.png)
 
 
 *2.* To get the Virtual Good, under *Requests* click *Store* and select [BuyVirtualGoodsRequest](/API Documentation/Request API/Store/BuyVirtualGoodsRequest.md). To submit this request, you'll have to fill the following values in the JSON builder:
 
-  * *currencyType* - This is the currency you're "paying" with, here it's *1*.
-  * *quantity* - This is the quantity of the given Virtual Good that you wish to purchase, here it's *1*.
-  * *shortCode* - The Short Code of your Virtual Good you'll be using in this request, here it's *"GOLD_COIN"*.
+  * *currencyType* - This is the currency you're "paying" with. Here, it's *1*.
+  * *quantity* - This is the quantity of the given Virtual Good that you wish to purchase. Here, it's *1*.
+  * *shortCode* - The Short Code of your Virtual Good you'll be using in this request. Here, it's *"GOLD_COIN"*.
 
 *3.* Click *Send Request*
 

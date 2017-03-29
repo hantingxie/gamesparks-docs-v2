@@ -7,7 +7,7 @@ src: /Getting Started/Using Cloud Code/Unity Cloud Code.md
 
 ## Introduction
 
-GameSparks offers a lot of useful features out of the box, like Challenges, Leaderboards, and Messaging systems. However, using Cloud Code also allows you to create your own custom Events to pass the data to and from the servers.
+GameSparks offers a lot of useful features out of the box, like Challenges, Leaderboards, and Messaging systems. However, using Cloud Code also allows you to create your own custom Events to pass data to and from the servers.
 
 In this tutorial we're going to use two Events to save and load some basic player information.
 
@@ -26,7 +26,7 @@ Firstly, we'll create an Event that will save some player details.
 * *Short Code* - This is a unique code used to define this Event when it is called.
 * *Name* - This is used to identify the Event within the Portal.
 * *Description* - A few details that explain the purpose of the Event.
-* *Attributes* - These are the values that the Event will take. Effectively the data the Event will take from the client to the server (from Unity to GameSparks).
+* *Attributes* - These are the values that the Event will take. Effectively, the data the Event will take from the client to the server (from Unity to GameSparks).
 
 In this example, we've created the Event and saved it and then opened the Event to edit it and add the required *Attributes* - we'll save the player’s experience points, position, and gold. We'll load these later using another method:
 
@@ -53,7 +53,7 @@ Calling the *LogEventRequest* method works as follows:
 
 ![](img/UT/3.png)
 
-The *LogEventRequest* will execute the custom Event you have created:
+The *LogEventRequest* will execute the custom Event you've created:
 * You'll need to provide the Event *Short Code* that was previously defined when creating the Event to the *LogEventRequest*.
 * You'll also need the Short Codes of the Event Attributes you've set in your Event. In this case, they are **XP** (ExperiencePoints), **POS** (position), and **GOLD** (gold).
 
@@ -141,7 +141,7 @@ By running the Event you should see your Script Data output in the *Inspector* w
 
 ![](img/UT/24.png)
 
-From this set of data you will load the information into a sorted form and output it in Unity. You can call the *LogEventRequest* for *Load Player Details* the same way you did when requesting the *Save Player* Event. In this example, you'll only be interested in the data that comes back from the Portal, specifically the *ScriptData*. There are plenty of ways to extract data from your response. However, this method has the advantage of allowing you to get the data you want using the Attribute keys, and it’s very handy when you have multiple sets of data to extract from the data bundle.
+From this set of data you'll load the information into a sorted form and output it in Unity. You can call the *LogEventRequest* for *Load Player Details* the same way you did when requesting the *Save Player* Event. In this example, you'll only be interested in the data that comes back from the Portal, specifically the *ScriptData*. There are plenty of ways to extract data from your response. However, this method has the advantage of allowing you to get the data you want using the Attribute keys, and it’s very handy when you have multiple sets of data to extract from the data bundle.
 
 ![](img/UT/16.png)
 

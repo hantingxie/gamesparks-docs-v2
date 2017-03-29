@@ -21,7 +21,7 @@ end
 ```
 The message is received and the Leaderboard name is retrieved then used in a print function.
 
-Bind the function you just made to be invoked each time a newHighScore message is received by the game.
+Bind the function you just made to be invoked each time a *newHighScore* message is received by the game.
 
 ```
 gs.getMessageHandler().setNewHighScoreMessageHandler(onNewHighScoreMessage)
@@ -46,9 +46,10 @@ postScoreRequest:setEventAttribute("SCORER", 1201)
 postScoreRequest:send()
 
 end
+
 ```
 
-Once the score has been sent and the highscore has been beaten, your player will receive a message congratulating them on beating the highscore.
+Once the score has been sent and the high score has been beaten, your player will receive a message congratulating them on beating the high score.
 
 To look at the results of the Leaderboard, create a [LeaderboardDataRequest](/API Documentation/Request API/Leaderboards/LeaderboardDataRequest.md) and set the value for entries you want back and the Short Code for the Leaderboard you wish to view:
 
@@ -75,4 +76,9 @@ end
 
 ```
 
-These are the basics to message handlers/listeners and Leaderboard score submission and entry printing. There are a few more requests that deal with Leaderboards, please check our [API documentation](/API Documentation/README.md) for more information.
+These are the basics of:
+* Message handlers/listeners
+* Leaderboard score submission.
+* Entry printing.
+
+There are a few more requests that deal with Leaderboards, please check our [API documentation](/API Documentation/README.md) for more information.

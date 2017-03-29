@@ -53,7 +53,7 @@ Following creation of an Achievement, you'll need to create a new Event. You can
 
 After you've created and configured the *Award Achievement* Event, you'll need to attach some custom Cloud Code to it to award the Achievement when the Event is called.
 
-*1.* Navigate to *Configurator > Cloud Code > Events > Award Achievement*. The *Cloud Code* editor opens for the Event.
+*1.* Navigate to *Configurator > Cloud Code > Events > Award_Achievement*. The *Cloud Code* editor opens for the Event.
 
 *2.* In the *Cloud Code* editor, add your custom Cloud Code for this Event.
 
