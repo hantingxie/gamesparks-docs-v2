@@ -34,6 +34,7 @@ When you have completed your game configuration, created a Snapshot, and you are
   * [JavaScript](#Pointing to Live in JavaScript)
   * [Marmalade](#Pointing to Live in Marmalade)
   * [Corona](#Pointing to Live in Corona)
+  * [Construct 2](#Pointing to Live in Construct 2)
 
 
 *4.*	Publish the Snapshot to Live.
@@ -227,3 +228,11 @@ gs.connect()
 
 
 ```
+
+## Pointing to Live in Construct 2
+
+Pointing to Live in Construct 2 is very straightforward. Simply replace the *InitPreview* action with the *InitLive* action wherever you have initialized GameSparks. Make sure that your API Key and Secret are correct!
+
+![](img/Checklist/4.png)
+
+![](img/Checklist/5.png)

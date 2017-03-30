@@ -45,7 +45,7 @@ For example, you can use *onInit* to run additional events once the Initializati
 
 ![](img/Construct/5.png)
 
-Sending the request will result in the game receiving a response from GameSparks, so we need a way of reacting to when the response comes in and performing some sort of action. The GameSparks object has various event listeners that perform this, such as “onAuthenticationResponse”, which can be used in this respect. With this setup we can do a variety of different things, for example, setting the Text of what comes back in the response, setting instance or global variables, or calling additional functions:
+Sending the request will result in the game receiving a response from GameSparks, so we need a way of reacting to the response when it comes in and performing some sort of action. The GameSparks object has various event listeners that perform this, such as “onAuthenticationResponse”, which can be used in this respect. With this setup we can do a variety of different things. For example, we can set the Text of what comes back in the response, set and instance or global variables, or call additional functions:
 
 ![](img/Construct/6.png)
 

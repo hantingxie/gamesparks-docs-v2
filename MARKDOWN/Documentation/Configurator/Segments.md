@@ -152,7 +152,7 @@ Here, we'll build two Segment Queries that we'll use [below](#Segmenting Configu
 You can assign Segment Values to your players using [Cloud Code](/Documentation/Configurator/Cloud Code.md):
 * For any Segment with multiple Values, you can assign a single Segment Value to a player as a Segment/Value pair.
 
-Here's an example of how to do this by attaching Cloud Code to AuthenticationResponse. We assign a Country Segment/Value pair to each player when they Authenticate on the portal:
+Here's an example of how to do this by attaching Cloud Code to the *AuthenticationResponse*. We assign a Country Segment/Value pair to each player when they Authenticate on the portal:
 
 ```
 if(Spark.getPlayer() !== null){
@@ -186,7 +186,7 @@ if(Spark.getPlayer() !== null){
 
 ![](img/Segments/22.png)
 
-When users authenticate, this code will execute when the AuthenticationResponse is sent back from the platform and will ensure that they are assigned the appropriate Segment/Value pair based on their geographical location.
+When users authenticate by submitting an [AuthenticationRequest](/API Documentation/Request API/Authentication/AuthenticationRequest.md), this code will execute when the *AuthenticationResponse* is sent back from the platform and ensure that they are assigned the appropriate Segment/Value pair based on their geographical location.
 
 ### Checking Segment Assignment
 
@@ -208,7 +208,7 @@ Within the portal, you can segment your configuration to set different parameter
 * A different price for a Virtual Good for a particular Segment.
 * A different Virtual Good award and currency reward for an Achievement depending on the player's country Segment.
 
-Here, we'll segment an Achievement using the two Segment Queries we built [above](#Adding Segment Queries).
+In this example, we'll segment an Achievement using the two Segment Queries we built [above](#Adding Segment Queries).
 
 *1.* Go to *Configurator>Achievement*.
 
@@ -222,7 +222,7 @@ Here, we'll segment an Achievement using the two Segment Queries we built [above
 
 *5.* Enter the alternative values you want to use for the segmentable Achievement fields and which will be applied to players put into this Segment:
 * In this example, we'll select for an alternative *Virtual Good Award* and alternative currency awards.
-* Note that for the alternative currency awards values, we can enter calculable amounts against the standard currency awards. For example, if the standard currency 1 award equals 100, instead of entering an absolute value, we can enter *+20%* for the alternative segment currency award and the players who belong to the segment will receive a currency 1 award of 120.
+* Note that for the alternative currency awards values, you can use amounts that are *calculated* against the standard currency awards. For example, if the standard currency 1 award equals 100, instead of entering an absolute value, we can enter *+20%* for the alternative segment currency award and the players who belong to the segment will receive a currency 1 award of 120.
 
 *7.* Use the drop-down to select the *Segment Query* you want to use to determine which players are put into this segment of the Achievement:
 
@@ -236,9 +236,46 @@ Here, we'll segment an Achievement using the two Segment Queries we built [above
 
 *9.* Click to *Save and Close* the Achievement segmentation.
 
+## Working with Segmented Fields View
+
+When you've segmented a configurable in your game and added segments, you can exploit an alternative view which allows you to view and edit the segmented values by *Field* and add a new Segment directly.
+
+*1.* Open a configurable object to which you've added multiple segments and click the Segment button in the *Edit* page. The *Segment Configuration* panel opens - here, we re-open the Achievement to which we added two Segments [earlier](#Segmenting Configuration Objects across the Portal):
+
+![](img/Segments/24.png)
+
+*2.* Click the Segment ![](/img/icons/segmenticon.png) icon on the *Field* for which you want to view the segmented values. A *Segment Field* panel opens for the Field - here we selected for the Achievement's *Name* Field values:
+
+![](img/Segments/25.png)
+* You can now quickly read-off the values you've set for this Field for each of the segments you've added to the configurable.
+
+*3.* To view the segmented values for other Fields, click the Segment icon. The *Segment Field* panel adjusts to list the segment values for that Field. Here, we've clicked to view the segment values for the *Currency 1 Award* Field:
+
+![](img/Segments/26.png)
+
+*4.* You can edit your Segments from this view and add new ones:
+
+* If you want to remove a Field value, click *Remove Value*:
+
+![](img/Segments/27.png)
+
+* If you want to remove the entire Segment, click *Remove Segment*:
+
+![](img/Segments/28.png)
+
+* If you want to edit a Field value from this view:
+
+![](img/Segments/29.png)
+
+* Lastly, click *Add Segment* if you want to add a new Segment to the configurable:
+
+![](img/Segments/30.png)
+
+*5.* Click to *Save* your changes.
+
 ## Ordering Segment Configuration
 
-Segmented values within the portal can be ordered - simply click and hold on the *Reorder* ![](/img/icons/reordericon.png) icon and drag-and-drop a Segment to where you want it:
+Segmented values within the  portal can be ordered - simply click and hold on the *Reorder* ![](/img/icons/reordericon.png) icon and drag-and-drop a Segment to where you want it:
 
 ![](img/Segments/11.png)
 

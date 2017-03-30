@@ -48,3 +48,4 @@ You have now successfully Registered and Authenticated a player. The next tutori
 * [ActionScript](/Getting Started/Using Authentication/ActionScript Authentication.md)
 * [Android](/Getting Started/Using Authentication/Android Authentication.md)
 * [Lua](/Getting Started/Using Authentication/Lua Authentication.md)
+* [Construct 2](/Getting Started/Using Authentication/Construct 2 Authentication.md)

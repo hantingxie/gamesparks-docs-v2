@@ -128,3 +128,4 @@ Test Harness    | Always.
 * [ActionScript](/Getting Started/Creating a Game/ActionScript Setup.md)
 * [Android](/SDK Center/Android.md)
 * [Corona](/Getting Started/Creating a Game/Corona Setup.md)
+* [Construct 2](/Getting Started/Creating a Game/Construct 2 Setup.md)

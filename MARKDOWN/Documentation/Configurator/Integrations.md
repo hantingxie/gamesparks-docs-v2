@@ -7,6 +7,8 @@ src: /Documentation/Configurator/Integrations.md
 
 The Integrations page allows you to integrate with 3rd-party external providers and configure a multitude of external, social authentications within the GameSparks platform. The set up process for most Integrations is straightforward - you simply enter the *App Id* and the *App Secret* supplied by the external provider for your game.
 
+<q>**3rd-Party Authentication Tutorials!** You'll find detailed tutorials on how to set up authentication with GameSparks through many of the supported 3rd-party external providers [here](/Tutorials/Social Authentication and Player Profile/README.md).
+
 ## Managing External Integrations
 
 *1.* In the portal, go to *Configurator > Integrations*.
@@ -16,6 +18,8 @@ The Integrations page allows you to integrate with 3rd-party external providers 
 ![](img/Integrations/12.png)
 
 *3.* Click *Edit* to change the configuration settings for the external provider.
+
+<q>**Don't See the 3rd-Party Provider?** If you don't see the 3rd-party provider you want to set up in the *Integrations* page, go your [Game Overview](/Documentation/Game overview/README.md) page and click to *Edit* your game. You can select the 3rd-party providers you want in your game on the *Features & Intergrations* tab.</q>
 
 ### Facebook Integration
 
