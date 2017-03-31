@@ -9,16 +9,29 @@ src: /Getting Started/Using Cloud Code/README.md
 
 Cloud Code plays a key role in the GameSparks Services. You can use it to create custom logic and control the behavior of the configurable components you have built into your game.
 
-When an Event, Request, or Response is sent to and from the GameSparks API, you might want some other things to happen at some point. For example, suppose an *AuthenticationRequest* is received and, in sequence, an *AuthenticationResponse* is to be sent back. You might want other things to happen when the response is sent back, such as send a message to the player that submitted the request which shows their display name and welcomes them back into the game. A Cloud Code script attached to the *AuthenticationResponse* is how you would do this.
+### Understanding the Power of Cloud Code
 
-It's easy to see from this very simple example how you can use Cloud Code to achieve just about any behavior you want in your game - it's up to you! In general terms, you can deploy Cloud Code at *key interception points for the execution of scripts* to get just the effect you want when you want. You can read more about this main aspect of working with GameSparks [here](/Documentation/Key Concepts/Cloud Code.md).
+It would be difficult to overstate the power and potential of Cloud Code when developing your game.
 
-When you build Cloud Code and attach it to a configured component, such as an Event, you can use the Test Harness to try out and check that you will get the behavior you want.
+When an Event, Request, or Response is sent to and from the GameSparks API, you might want some other things to happen at some point. For example, suppose an *AuthenticationRequest* is submitted to the platform and, in sequence, an *AuthenticationResponse* is to be sent back. You might want other things to happen when the response is sent back, such as send a message to the player that submitted the request which shows their display name and welcomes them back into the game. A Cloud Code script attached to the *AuthenticationResponse* is how you would do this.
+
+It's easy to see from this very simple example how you can use Cloud Code to achieve just about any behavior you want in your game - it's up to you!
+
+In general terms, you can deploy Cloud Code at *key interception points for the execution of scripts* to get just the effect you want when you want. You can read more about this main aspect of working with GameSparks [here](/Documentation/Key Concepts/Cloud Code.md).
+
+### Testing your Cloud Code
+
+The GameSparks platform lets you test out your Cloud Code as you add it to Events, Requests, Messages, and the like in developing the functionality you want in your game.
+
+When you build Cloud Code and attach it to a configured component, such as an Event, you can use the [Test Harness](/Documentation/Test Harness/README.md) to try out and check that you will get the behavior you want.
 The Test Harness is an invaluable tool, because it allows you to send API requests to the GameSparks platform in their raw form and check the responses returned by the server.
 
-In this tutorial, you'll learn how to persist some meaningful data in mongoDB using Cloud Code - you'll be storing and retrieving X, Y, and Z player-position coordinates. We'll then walk you through using the Test Harness to check your Cloud Code.
+### Getting Started with Cloud Code
+
+In this tutorial, we get you started by taking you straight into building some Cloud Code to achieve a specific purpose. You'll learn how to persist some meaningful data in MongoDB using Cloud Code - you'll be storing and retrieving X, Y, and Z player-position coordinates. We'll then walk you through using the Test Harness to check your Cloud Code.
 
 <q>**Cross Platform!** Cloud Code is platform independent and is written in JavaScript, meaning that if you wanted to use a different SDK, you wouldn't need to change the Cloud Code you've already written.</q>
+
 
 ## Event Creation
 

@@ -45,32 +45,43 @@ Following the search against the Player collection, by changing the collection t
 
 You can also search for Teams and Players in the *Cloud Code*, while your game executes the requests and responses. You can use this powerful capability to allow your users to find each other using events you've set up through Cloud Code.
 
-The following code shows how to use the NoSQL collections to find specific players or teams based on the data we pass in and then using the ID to find references to those players or teams to access the rest of the data:
+We'll need to create a custom collection which keeps track of our user's ID and Username. To create a custom collection that saves your player details, do this:
 
-```    
-    //Player search
+1. Create a Runtime collection.
+2. In your registration response have some Cloud Code which saves the player's ID and Username upon successful registration. Here's our example code:
+
+Registration Response Cloud Code:
+```
+if(Spark.getData().error === null){
+    //Load user details collection, pass in collection name
+    var userCollection = Spark.runtimeCollection("userDetails");
+
+    //Save the the username and ID on the runtime collection
+    emailCollection.insert({"_id":{"$oid":Spark.getPlayer().getPlayerId()},"userName":Spark.getPlayer().getUserName()});
+}
+```
+
+To retain that information in the future, use the function below anywhere in your Cloud Code:
+
+```
+
+    //SEARCHING PLAYERS
     //Getting a player based on Query
-    var players = Spark.systemCollection("player");
+    var players = Spark.runtimeCollection("userDetails");
 
-    var playerData = players.findOne({"displayName" : "Coder"}, {_id : 1, displayName:1}); //Find the display name 'Coder' and return the players that have it.
+    var playerData = players.findOne({"userName" : "Coder"}, {_id : 1, userName:1}); //Find the username 'Coder' and return the players that have it.
 
     //Or you can have the player ID saved
     var playerID = "5602c3dce4b07961f34b68c3" //Manually set the ID
 
     //Finding the player through their ID
-    var playerVar = Spark.loadPlayer(playerData.$oid); //or (playerID) //Make a reference for that player through their ID.
+    var playerVar = Spark.loadPlayer(playerData._id.$oid); //or (playerID) //Make a reference for that player through their ID.
 
-
-    //Team search
-    //Getting a Team based on Query
-    var Teams = Spark.systemCollection("teams");
-
-    var teamData = Teams.findOne({"teamName" : "BlueGang"}, {_id : 1, teamName:1}); //Find the team name 'BlueGang' and return the teams that have it
-
+    //SEARCHING TEAMS
     //Or you can have the player ID saved
     var teamID = "GameSparks Team" //manually set the ID
 
     //Finding the player through their ID
-    var teamVar = Spark.getTeams().getTeam(teamData.$oid); // or (teamID) //Make a reference for that team through the ID
+    var teamVar = Spark.getTeams().getTeam(teamID) //Make a reference for that team through the ID
 
 ```

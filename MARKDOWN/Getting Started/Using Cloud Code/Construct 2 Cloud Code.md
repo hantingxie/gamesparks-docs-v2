@@ -25,14 +25,14 @@ Our *SendWithData* action looks like the following:
 
 <q>**Formatting for JSON!** Note the Double Quotes around our keys and values, this is how Construct 2 interprets a JSON string.</q>
 
-Now, if your Cloud Code is set up correctly, the player will have a position variable saved in their *scriptData* object. You can double-check this by calling an [AccountDetailsRequest](/API Documentation/Request API/Player/AccountDetailsRequest.md):
+Now, if your Cloud Code is set up correctly, the player will have a position variable saved in their *scriptData* object. You can check this by calling an [AccountDetailsRequest](/API Documentation/Request API/Player/AccountDetailsRequest.md):
 
 * Through your game and printing out the value of scriptData's 'POS' field.
 * Through the [Test Harness](/Documentation/Test Harness/README.md) and checking the scriptData object's contents.
 
 ## GetPos
 
-As we did with *SetPos*, for *GetPos* we set up a [LogEventRequest](/API Documentation/Request API/Player/LogEventRequest.md) to GameSparks. This request has no attributes associated with it, so we can use the built-in *LogEventRequest* action:
+As we did with *SetPos*, for *GetPos* we'll set up a [LogEventRequest](/API Documentation/Request API/Player/LogEventRequest.md) to GameSparks. This request has no attributes associated with it, so we can use the built-in *LogEventRequest* action:
 
 ![](img/Con2/3.png)
 

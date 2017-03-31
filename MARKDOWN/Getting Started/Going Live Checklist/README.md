@@ -231,7 +231,7 @@ gs.connect()
 
 ## Pointing to Live in Construct 2
 
-Pointing to Live in Construct 2 is very straightforward. Simply replace the *InitPreview* action with the *InitLive* action wherever you have initialized GameSparks. Make sure that your API Key and Secret are correct!
+Pointing to Live in Construct 2 is straightforward. Simply replace the *InitPreview* action with the *InitLive* action wherever you have initialized GameSparks. Make sure that your API Key and Secret are correct!
 
 ![](img/Checklist/4.png)
 

@@ -11,7 +11,7 @@ Once you’ve downloaded the SDK, unzip the gamesparks folder into the plugins f
 
 * *.../Construct 2/exporters/html5/plugins*
 
-Make sure that the plugins folder contains only file folders, which includes a gamesparks .js files folder, but not the top-level gamesparks folder:
+Make sure that the plugins folder contains only file folders, which includes a gamesparks .js files folder, but *not the top-level gamesparks folder*:
 
 ![l](img/Con2/1.png)
 

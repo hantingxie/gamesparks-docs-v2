@@ -1,42 +1,18 @@
 ---
 nav_sort: 1
-src: /Tutorials/Social Features/Configuring Android Push Notifications.md
-
+src: /Tutorials/Social Features/Configuring Google Cloud Messaging Push Notifications.md
 ---
 
-# How to Configure Android Push Notifications
+# How to Configure Google Cloud Messaging Push Notifications
 
 Google allows push notifications through its Google Cloud Messaging service (GCM). In this tutorial, you'll learn how to set up your application with GCM, enable push notifications, and get your GameSparks game set up to allow it to send notifications to your players on your behalf.
 
-## Setting up your Application with Google
+<q>**Firebase Cloud Messaging!** The GameSparks platform is now enabled for Google's [Firebase Cloud Messaging](/Tutorials/Social Features/Configuring Firebase Cloud Messaging.md), which is the new version of Google's Cloud Messaging.</q>
 
-*1.* Firstly, you need to set up an application with [Google Developers Console](https://console.developers.google.com/):
-* Click *Create Project*, give your project a name, and click *Create*:
-
-![](img/AndroidPush/1.png)
-
-*2.* Once your application has been created, you should be able to click the link to it and be presented with the *Overview* page.
-
-*3.* Next, let's enable GCM for android:
-* Click *APIs & auth* and scroll down until you can see *Google Cloud Messaging for Android*.
-
-*4.* Click the button to turn it on (it'll now move to the top of the list).
-
-![](img/AndroidPush/2.png)
-
-*5.* Now you need to create a server key to authenticate the sender of notifications:
-* Click *Credentials* and under *Public API access* click *Create New Key*.
-* Select *Server key* and then click *Create*.
-
-![](img/AndroidPush/3.png)
-
-You should now have an API key that can be used to send push notifications to an Android client for your game.
-
-![](img/AndroidPush/4.png)
 
 ## Configuring your GameSparks Game
 
-Now that you have the API key, it's time to configure you GameSparks game to enable us to send push notifications on your behalf.
+Now that you have the API key, it's time to configure your GameSparks game to enable us to send push notifications on your behalf.
 
 *1.* Navigate to *Configurator > Integrations* and under *Providers*, select *Google*:
 

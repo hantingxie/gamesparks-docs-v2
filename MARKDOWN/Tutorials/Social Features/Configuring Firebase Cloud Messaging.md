@@ -3,7 +3,7 @@ nav_sort: 2
 src: /Tutorials/Social Features/Configuring Firebase Cloud Messaging.md
 ---
 
-# How to Configure Google Firebase Cloud Messaging service
+# How to Configure Google Firebase Cloud Messaging Service
 
 Google allows push notifications through its Firebase Cloud Messaging service (FCM). FCM is a multi-platform service available on Android, iOS, and Web based applications. In this tutorial, you'll learn how to set up your application with FCM, enable push notifications, and get your GameSparks game set up to allow it to send notifications to your players on your behalf.
 
