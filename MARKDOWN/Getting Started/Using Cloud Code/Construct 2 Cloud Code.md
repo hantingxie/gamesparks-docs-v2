@@ -5,13 +5,13 @@ src: /Getting Started/Using Cloud Code/Construct 2 Cloud Code.md
 
 # Construct 2 Cloud Code
 
-We expect you to have followed the Cloud Code getting started [tutorial](/Getting Started/Using Cloud Code/README.md).
+<q>**Read First!** For understanding this topic, we assume you've followed the Cloud Code getting started [tutorial](/Getting Started/Using Cloud Code/README.md).</q>
 
 We’ve set up our Event in Cloud Code and now we want to be able to get and set the position from our Construct 2 game. You can build an X and Y function instead of an XYZ function by simply omitting the Z variable for each of the steps in the tutorial.
 
 ## SetPos
 
-Because our *SetPos* Cloud Code Event requires a JSON attribute to be attached with it, we’ll need to use a special request called *SendWithData*. Here we'll get the player's position and send it to GameSparks.
+Because our *SetPos* Cloud Code Event requires a JSON attribute to be attached with it, we’ll need to use a special request called *SendWithData*. Here, we'll get the player's position and send it to GameSparks.
 
 Suppose I wanted to set the position every 10 seconds. I would set up my Event like this:
 

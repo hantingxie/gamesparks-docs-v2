@@ -11,13 +11,13 @@ There are three ways to authenticate using GameSparks:
 * *Device Authentication* - Uses a unique string ID (created by the Developer) and an OS identifier.
 * *Social authentication* - Requires you to use a token from the social provider to authenticate users using the information gathered from their profiles.
 
-In this tutorial we'll only cover GameSparks and Device authentication because Social authentication is different for every provider and that is beyond the scope of this tutorial.
+In this tutorial we'll only cover GameSparks and Device authentication because Social authentication is different for every 3rd-party provider and covering authentication for each of these is beyond the scope of this tutorial.
 
 ## GameSparks Authentication
 
 With the Construct SDK, sending a plain request into the GameSparks platform is not feasible - you'll get a response back but you won't be able to interpret the response. Each request to the GameSparks platform should be paired with an event listener that will trigger on response.
 
-Before authenticating on the platform, you must first Register with a UserName and Password. This creates a “player” on GameSparks that can be used to log in. Here's an example of Registering a Player once a Button has been pressed:
+Before authenticating on the platform, you must first register with a UserName and Password. This creates a “player” on GameSparks that can be used to log in. Here's an example of registering a player once a button has been pressed:
 
 ![l](img/Con2/1.png)
 

@@ -21,7 +21,7 @@ You should now be able to insert a GameSparks object into any projects you creat
 
 ## Initializing the SDK
 
-When the GameSparks object has been added to your project, you can edit the properties on the Properties pane. Here you can insert the API Key and Secret for your game configuration on the portal:
+When the GameSparks object has been added to your project, you can edit the properties on the *Properties* pane. Here you can insert the API Key and Secret for your game configuration on the portal:
 
 ![l](img/Con2/3.png)
 

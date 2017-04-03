@@ -43,14 +43,15 @@ Following the search against the Player collection, by changing the collection t
 
 ## Searching with Cloud Code
 
-You can also search for Teams and Players in the *Cloud Code*, while your game executes the requests and responses. You can use this powerful capability to allow your users to find each other using events you've set up through Cloud Code.
+You can also search for Teams and Players in *Cloud Code*, while your game executes the requests and responses. You can use this powerful capability to allow your users to find each other using Events you've set up through Cloud Code.
 
 We'll need to create a custom collection which keeps track of our user's ID and Username. To create a custom collection that saves your player details, do this:
 
 1. Create a Runtime collection.
-2. In your registration response have some Cloud Code which saves the player's ID and Username upon successful registration. Here's our example code:
+2. In your registration response, have some Cloud Code which saves the player's ID and Username upon successful registration. Here's our example code:
 
 Registration Response Cloud Code:
+
 ```
 if(Spark.getData().error === null){
     //Load user details collection, pass in collection name
