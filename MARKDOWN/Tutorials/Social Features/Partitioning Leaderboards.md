@@ -72,6 +72,7 @@ This will automatically create the UK Leaderboard and you'll receive a [NewHighS
     }
 
 ```
+* If you don't get a *NewHighScoreMessage* returned, then make sure you have configured your Leaderboard for *High Score Notifications*.
 
 You'll see the *leaderboardShortCode* value is set to *HSBC.COUNTRY.UK*. Sending a second request with a different country will create a new Leaderboard but will not affect the UK one.
 
