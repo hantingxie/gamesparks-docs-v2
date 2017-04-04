@@ -81,7 +81,7 @@ Returns the body from the response as XML.
 
 <b>returns</b>
 
-A JSON representing the body of the response.
+An XML object representing the body of the response.
 
 <b>example</b>
 
@@ -100,7 +100,7 @@ Returns the body from the response as JSON.
 
 <b>returns</b>
 
-A string representing the body of the response.
+A JSON object representing the body of the response.
 
 <b>example</b>
 

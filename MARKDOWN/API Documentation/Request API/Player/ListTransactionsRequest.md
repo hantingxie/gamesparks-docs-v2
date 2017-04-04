@@ -32,6 +32,23 @@ transactionList | [PlayerTransaction[]](#playertransaction) | A list of JSON obj
 
 ## Nested types
 
+### PlayerTransaction
+
+A nested object that represents a player transaction.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+items | [PlayerTransactionItem[]](#playertransactionitem) | The items (currency or virtual goods) involved in this transaction
+originalRequestId | string | The original request ID for this transaction
+playerId | string | The player ID
+reason | string | The reason for the transaction
+revokeDate | date | Gets the date when this transaction was revoked, if applicable
+revoked | boolean | Is true if the transaction was revoked
+script | string | The specific script in which this transaction occurred
+scriptType | string | The script type in which this transaction occurred (e.g. event)
+transactionId | string | The transaction ID of this purchase, if applicable
+when | date | The date of the transaction
+
 ### ScriptData
 
 A collection of arbitrary data that can be added to a message via a Cloud Code script.
@@ -50,23 +67,6 @@ Parameter | Type | Description
 amount | number | The amount of this item given to the player in the transaction
 newValue | number | The quantity the player possesses after the transaction completed
 type | string | The type of item
-
-### PlayerTransaction
-
-A nested object that represents a player transaction.
-
-Parameter | Type | Description
---------- | ---- | -----------
-items | [PlayerTransactionItem[]](#playertransactionitem) | The items (currency or virtual goods) involved in this transaction
-originalRequestId | string | The original request ID for this transaction
-playerId | string | The player ID
-reason | string | The reason for the transaction
-revokeDate | date | Gets the date when this transaction was revoked, if applicable
-revoked | boolean | Is true if the transaction was revoked
-script | string | The specific script in which this transaction occurred
-scriptType | string | The script type in which this transaction occurred (e.g. event)
-transactionId | string | The transaction ID of this purchase, if applicable
-when | date | The date of the transaction
 
 
 ## Code Samples

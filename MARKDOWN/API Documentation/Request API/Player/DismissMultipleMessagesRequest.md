@@ -50,7 +50,7 @@ myValue | JSON | An arbitrary data value.
 	new DismissMultipleMessagesRequest()
 		.SetMessageIds(messageIds)
 		.Send((response) => {
-		List<string> failedDismissals = response.FailedDismissals; 
+		IList<string> failedDismissals = response.FailedDismissals; 
 		int? messagesDismissed = response.MessagesDismissed; 
 		GSData scriptData = response.ScriptData; 
 		});
@@ -69,7 +69,7 @@ myValue | JSON | An arbitrary data value.
 	    .createDismissMultipleMessagesRequest()
 		.setMessageIds(messageIds)
 		.send(function(response:com.gamesparks.api.responses.DismissMultipleMessagesResponse):void {
-		var failedDismissals:String = response.getFailedDismissals(); 
+		var failedDismissals:Vector.<String> = response.getFailedDismissals(); 
 		var messagesDismissed:Number = response.getMessagesDismissed(); 
 		var scriptData:ScriptData = response.getScriptData(); 
 		});
@@ -102,7 +102,7 @@ myValue | JSON | An arbitrary data value.
 	...
 	
 	void DismissMultipleMessagesRequest_Response(GS& gsInstance, const DismissMultipleMessagesResponse& response) {
-	Types::String[]* failedDismissals = response.getFailedDismissals(); 
+	gsstl:vector<gsstl::string> failedDismissals = response.getFailedDismissals(); 
 	Optional::t_LongOptional messagesDismissed = response.getMessagesDismissed(); 
 	GSData scriptData = response.getScriptData(); 
 	}

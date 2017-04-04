@@ -28,7 +28,7 @@ This may be null for a player who has only used device authentication. Other aut
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().getDisplayName();</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">var displayName = Spark.getPlayer().getDisplayName();</pre>
 
 
 ## persist
@@ -41,7 +41,7 @@ Saves the players data to the DB. By default, changes are persisted after the sc
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().persist();</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().persist();</pre>
 
 
 ## getUserName
@@ -69,25 +69,10 @@ Gets the GameSparks ID of the player
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().getPlayerId();</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">var playerId = Spark.getPlayer().getPlayerId();</pre>
 
 
 ## credit1
-
-_signature_ credit1(number quantity)</p>
-
-_returns_ void</p>
-
-Credits the currency1 balance of the player with the amount specified.
-
-<b>params</b>
-
-quantity - the amount to credit
-
-<b>example</b>
-
-<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().credit1(20);</pre>
-
 
 _signature_ credit1(number quantity, string reason)</p>
 
@@ -106,7 +91,41 @@ reason - the reason for the credit
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().credit1(20, "Loyalty Bonus");</pre>
 
 
+_signature_ credit1(number quantity)</p>
+
+_returns_ void</p>
+
+Credits the currency1 balance of the player with the amount specified.
+
+<b>params</b>
+
+quantity - the amount to credit
+
+<b>example</b>
+
+<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().credit1(20);</pre>
+
+
 ## debit1
+
+_signature_ debit1(number quantity)</p>
+
+_returns_ boolean</p>
+
+Debits the currency1 balance of the player with the amount specified.
+
+<b>params</b>
+
+quantity - the amount to debit
+
+<b>returns</b>
+
+ true if the debit was successful, false if the current balance was not sufficient
+
+<b>example</b>
+
+<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().debit1(5);</pre>
+
 
 _signature_ debit1(number quantity, string reason)</p>
 
@@ -129,41 +148,7 @@ reason - the reason for the debit
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().debit1(5, "Loser Penalty");</pre>
 
 
-_signature_ debit1(number quantity)</p>
-
-_returns_ boolean</p>
-
-Debits the currency1 balance of the player with the amount specified.
-
-<b>params</b>
-
-quantity - the amount to debit
-
-<b>returns</b>
-
- true if the debit was successful, false if the current balance was not sufficient
-
-<b>example</b>
-
-<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().debit1(5);</pre>
-
-
 ## credit2
-
-_signature_ credit2(number quantity)</p>
-
-_returns_ void</p>
-
-Credits the currency2 balance of the player with the amount specified.
-
-<b>params</b>
-
-quantity - the amount to credit
-
-<b>example</b>
-
-<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().credit2(20);</pre>
-
 
 _signature_ credit2(number quantity, string reason)</p>
 
@@ -182,24 +167,22 @@ reason - the reason for the credit
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().credit2(20, "Loyalty Bonus");</pre>
 
 
-## debit2
+_signature_ credit2(number quantity)</p>
 
-_signature_ debit2(number quantity)</p>
+_returns_ void</p>
 
-_returns_ boolean</p>
-
-Debits the currency2 balance of the player with the amount specified.
-
-Returns true if the debit was successful, false if the current balance was not sufficient.
+Credits the currency2 balance of the player with the amount specified.
 
 <b>params</b>
 
-quantity - the amount to debit
+quantity - the amount to credit
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().debit2(5);</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().credit2(20);</pre>
 
+
+## debit2
 
 _signature_ debit2(number quantity, string reason)</p>
 
@@ -220,22 +203,24 @@ reason - the reason for the debit
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().debit2(5, "Loser Penalty");</pre>
 
 
-## credit3
+_signature_ debit2(number quantity)</p>
 
-_signature_ credit3(number quantity)</p>
+_returns_ boolean</p>
 
-_returns_ void</p>
+Debits the currency2 balance of the player with the amount specified.
 
-Credits the currency3 balance of the player with the amount specified.
+Returns true if the debit was successful, false if the current balance was not sufficient.
 
 <b>params</b>
 
-quantity - the amount to credit
+quantity - the amount to debit
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().credit3(20);</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().debit2(5);</pre>
 
+
+## credit3
 
 _signature_ credit3(number quantity, string reason)</p>
 
@@ -252,6 +237,21 @@ reason - the reason for the credit
 <b>example</b>
 
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().credit3(20, "Loyalty Bonus");</pre>
+
+
+_signature_ credit3(number quantity)</p>
+
+_returns_ void</p>
+
+Credits the currency3 balance of the player with the amount specified.
+
+<b>params</b>
+
+quantity - the amount to credit
+
+<b>example</b>
+
+<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().credit3(20);</pre>
 
 
 ## debit3
@@ -362,21 +362,6 @@ quantity - the amount to credit
 
 ## credit6
 
-_signature_ credit6(number quantity)</p>
-
-_returns_ void</p>
-
-Credits the currency6 balance of the player with the amount specified.
-
-<b>params</b>
-
-quantity - the amount to credit
-
-<b>example</b>
-
-<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().credit6(20);</pre>
-
-
 _signature_ credit6(number quantity, string reason)</p>
 
 _returns_ void</p>
@@ -392,6 +377,21 @@ reason - the reason for the credit
 <b>example</b>
 
 <pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().credit6(20, "Loyalty Bonus");</pre>
+
+
+_signature_ credit6(number quantity)</p>
+
+_returns_ void</p>
+
+Credits the currency6 balance of the player with the amount specified.
+
+<b>params</b>
+
+quantity - the amount to credit
+
+<b>example</b>
+
+<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().credit6(20);</pre>
 
 
 ## debit4
@@ -588,6 +588,25 @@ Gets the currency6 balance of the player.
 
 ## addVGood
 
+_signature_ addVGood(string shortCode, number quantity)</p>
+
+_returns_ boolean</p>
+
+Finds a virtual good by short code and adds the quantity specified to the player this SparkPlayer object represents.
+
+Returns true if the add was successful. false if the shortcode does not exist, or the user already has the maximum amount of the specified good.
+
+<b>params</b>
+
+shortCode - the virtual good's short code
+
+quantity - the amount to add
+
+<b>example</b>
+
+<pre rel="highlighter" code-brush="js" contenteditable="false">var goodsAdded = Spark.getPlayer().addVGood(vgShortCode, 42);</pre>
+
+
 _signature_ addVGood(string shortCode, number quantity, string reason)</p>
 
 _returns_ boolean</p>
@@ -606,26 +625,7 @@ reason - the reason for adding the virtual good
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().addVGood(vgShortCode, 42, "Loyalty bonus");</pre>
-
-
-_signature_ addVGood(string shortCode, number quantity)</p>
-
-_returns_ boolean</p>
-
-Finds a virtual good by short code and adds the quantity specified to the player this SparkPlayer object represents.
-
-Returns true if the add was successful. false if the shortcode does not exist, or the user already has the maximum amount of the specified good.
-
-<b>params</b>
-
-shortCode - the virtual good's short code
-
-quantity - the amount to add
-
-<b>example</b>
-
-<pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().addVGood(vgShortCode, 42);</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">var goodsAdded = Spark.getPlayer().addVGood(vgShortCode, 42, "Loyalty bonus");</pre>
 
 
 ## useVGood
@@ -646,7 +646,7 @@ quantity - the amount to consume
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().useVGood(vgShortCode, 34);</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">var goodsUsed = Spark.getPlayer().useVGood(vgShortCode, 34);</pre>
 
 
 _signature_ useVGood(string shortCode, number quantity, string reason)</p>
@@ -667,7 +667,7 @@ reason - the reason for using the virtual good
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().useVGood(vgShortCode, 34, "Loser penalty");</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">var goodsUsed = Spark.getPlayer().useVGood(vgShortCode, 34, "Loser penalty");</pre>
 
 
 ## hasVGood
@@ -686,7 +686,7 @@ shortCode - the virtual good's short code
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().hasVGood(vgShortCode);</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">var hasGood = Spark.getPlayer().hasVGood(vgShortCode);</pre>
 
 
 ## addAchievement
@@ -707,7 +707,7 @@ shortCode - The shortCode of the achievement
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().addAchievement(shortCode);</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">var achievementAdded = Spark.getPlayer().addAchievement(shortCode);</pre>
 
 
 ## removeAchievement
@@ -728,7 +728,7 @@ shortCode the shortCode of the achievement to remove
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().removeAchievement(shortCode);</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">var achievementRemoved = Spark.getPlayer().removeAchievement(shortCode);</pre>
 
 
 ## hasAchievement
@@ -747,7 +747,7 @@ shortCode - The shortCode of the achievement
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().hasAchievement(shortCode);</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">var hasAchievement = Spark.getPlayer().hasAchievement(shortCode);</pre>
 
 
 ## dismissMessage
@@ -766,7 +766,7 @@ messageId
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().dismissMessage(messageId);</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">var messageDismissed = Spark.getPlayer().dismissMessage(messageId);</pre>
 
 
 ## getExternalIds
@@ -783,7 +783,7 @@ Map keys: 'FB' - Indicates the ID is a facebook id
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().getExternalIds();</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">var externalIds = Spark.getPlayer().getExternalIds();</pre>
 
 
 ## getFriendIds
@@ -886,7 +886,7 @@ Show the player on current leaderboards, redisplaying any existing scores.  New 
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().showOnLeaderboards();</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().showOnLeaderboards();</pre>
 
 
 ## getPushRegistrations
@@ -899,7 +899,7 @@ Gets push registrations of the player
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().getPushRegistrations();</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">var pushRegistrations = Spark.getPlayer().getPushRegistrations();</pre>
 
 
 ## removePushRegistration
@@ -951,7 +951,7 @@ Gets all segment values from the player.
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var segmentValue = Spark.getPlayer().getSegmentValues();</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">var segments = Spark.getPlayer().getSegments();</pre>
 
 
 ## disconnect
@@ -1061,7 +1061,7 @@ Gets the creation date of the player.
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().getCreationDate();</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">var creationDate = Spark.getPlayer().getCreationDate();</pre>
 
 
 ## matchesMongoQuery
@@ -1070,11 +1070,11 @@ _signature_ matchesMongoQuery(ScriptableObject mongoQuery)</p>
 
 _returns_ boolean</p>
 
-Gets the creation date of the player.
+Checks if this player would be returned by the given mongo query.
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().getCreationDate();</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">var isMatch = Spark.getPlayer().matchesMongoQuery({});</pre>
 
 
 ## matchesMongoQueryString
@@ -1087,7 +1087,7 @@ Checks if this player would be returned by the given mongo query (as a string).
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().matchesMongoQueryString("");</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">var isMatch = Spark.getPlayer().matchesMongoQueryString("");</pre>
 
 
 ## getExperimentSegments
@@ -1100,7 +1100,7 @@ Returns the current experiment segments of the player.
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().getExperimentSegments();</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">var experiments = Spark.getPlayer().getExperimentSegments();</pre>
 
 
 ## removeExperiment
@@ -1117,7 +1117,7 @@ Removes the player from the given experiment.
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().removeExperiment();</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">var removed = Spark.getPlayer().removeExperiment();</pre>
 
 
 ## setExperimentSegment
@@ -1134,7 +1134,7 @@ Sets the experiment segment for the player.
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().setExperimentSegment(47, "FireSale");</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">var added = Spark.getPlayer().setExperimentSegment(47, "FireSale");</pre>
 
 
 ## deletePlayer
@@ -1172,9 +1172,9 @@ a JSON object
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().getPrivateData("name");</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">var privateData = Spark.getPlayer().getPrivateData("name");</pre>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getChallenge().getPrivateData("name");</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">var privateData = Spark.getChallenge().getPrivateData("name");</pre>
 
 
 ## setPrivateData
@@ -1197,9 +1197,9 @@ value - The value to set in the name value pair
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().setPrivateData("name", "value");</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().setPrivateData("name", "value");</pre>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getChallenge().setPrivateData("name", "value");</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getChallenge().setPrivateData("name", "value");</pre>
 
 
 ## removePrivateData
@@ -1216,9 +1216,9 @@ name - The name in the name value pair
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().removePrivateData("name");</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().removePrivateData("name");</pre>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getChallenge().removePrivateData("name");</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getChallenge().removePrivateData("name");</pre>
 
 
 ## getScriptData
@@ -1239,7 +1239,7 @@ a JSON object
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().getScriptData("name");</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">var value = Spark.getPlayer().getScriptData("name");</pre>
 
 
 ## setScriptData
@@ -1266,7 +1266,7 @@ value - The value to set in the name value pair
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().setScriptData("name", "value");</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().setScriptData("name", "value");</pre>
 
 
 ## removeScriptData
@@ -1283,6 +1283,6 @@ name - The name in the name value pair
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().removeScriptData("name");</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().removeScriptData("name");</pre>
 
 

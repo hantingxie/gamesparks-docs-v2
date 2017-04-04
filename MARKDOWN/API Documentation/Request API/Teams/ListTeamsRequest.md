@@ -40,6 +40,17 @@ Parameter | Type | Description
 myKey | string | An arbitrary data key
 myValue | JSON | An arbitrary data value.
 
+### Team
+
+A nested object that represents the team. This object does not contain a list of the members.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+owner | [Player](#player) | A summary of the owner
+teamId | string | The Id of the team
+teamName | string | The team name
+teamType | string | The team type
+
 ### Player
 
 A nested object that represents a player.
@@ -53,17 +64,6 @@ id | string | The id of the Player
 online | boolean | The online status of the Player
 scriptData | JSON | The script data of the Player
 virtualGoods | string[] | The virtual goods of the Player
-
-### Team
-
-A nested object that represents the team. This object does not contain a list of the members.
-
-Parameter | Type | Description
---------- | ---- | -----------
-owner | [Player](#player) | A summary of the owner
-teamId | string | The Id of the team
-teamName | string | The team name
-teamType | string | The team type
 
 
 ## Code Samples

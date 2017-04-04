@@ -18,7 +18,9 @@ Once verified, the players account will be credited with the Virtual Good, or Vi
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+currencyCode | No | string | The ISO 4217 currency code representing the real-world currency used for this transaction.
 orderId | Yes | string | Unique 64-bit ID for order
+subUnitPrice | No | number | The price of this purchase
 uniqueTransactionByPlayer | No | boolean | If set to true, the transactionId from this receipt will not be globally valdidated, this will mean replays between players are possible.
 
 ## Response Parameters
@@ -79,7 +81,9 @@ verificationError | 4 | The order_id has been processed before
 	using GameSparks.Api.Responses;
 	...
 	new SteamBuyGoodsRequest()
+		.SetCurrencyCode(currencyCode)
 		.SetOrderId(orderId)
+		.SetSubUnitPrice(subUnitPrice)
 		.SetUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 		.Send((response) => {
 		GSEnumerable<var> boughtItems = response.BoughtItems; 
@@ -108,7 +112,9 @@ verificationError | 4 | The order_id has been processed before
 	
 	gs.getRequestBuilder()
 	    .createSteamBuyGoodsRequest()
+		.setCurrencyCode(currencyCode)
 		.setOrderId(orderId)
+		.setSubUnitPrice(subUnitPrice)
 		.setUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 		.send(function(response:com.gamesparks.api.responses.BuyVirtualGoodResponse):void {
 		var boughtItems:Vector.<Boughtitem> = response.getBoughtItems(); 
@@ -133,7 +139,9 @@ verificationError | 4 | The order_id has been processed before
 	#import "GSAPI.h"
 	...
 	GSSteamBuyGoodsRequest* request = [[GSSteamBuyGoodsRequest alloc] init];
+	[request setCurrencyCode:currencyCode;
 	[request setOrderId:orderId;
+	[request setSubUnitPrice:subUnitPrice;
 	[request setUniqueTransactionByPlayer:uniqueTransactionByPlayer;
 	[request setCallback:^ (GSBuyVirtualGoodResponse* response) {
 	NSArray* boughtItems = [response getBoughtItems]; 
@@ -179,7 +187,9 @@ verificationError | 4 | The order_id has been processed before
 	......
 	
 	SteamBuyGoodsRequest request(gsInstance);
+	request.SetCurrencyCode(currencyCode)
 	request.SetOrderId(orderId)
+	request.SetSubUnitPrice(subUnitPrice)
 	request.SetUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 	request.Send(SteamBuyGoodsRequest_Response);
 ```
@@ -193,7 +203,9 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createSteamBuyGoodsRequest()
+	.setCurrencyCode(currencyCode)
 	.setOrderId(orderId)
+	.setSubUnitPrice(subUnitPrice)
 	.setUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 	.send(new GSEventListener<BuyVirtualGoodResponse>() {
 		@Override
@@ -219,7 +231,9 @@ gs.getRequestBuilder().createSteamBuyGoodsRequest()
 ```javascript
 
 	var request = new SparkRequests.SteamBuyGoodsRequest();
+	request.currencyCode = ...;
 	request.orderId = ...;
+	request.subUnitPrice = ...;
 	request.uniqueTransactionByPlayer = ...;
 	var response = request.Send();
 	

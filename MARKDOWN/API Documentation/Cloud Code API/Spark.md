@@ -1143,7 +1143,7 @@ a JSON object
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().getScriptData("name");</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">var value = Spark.getPlayer().getScriptData("name");</pre>
 
 
 ## setScriptData
@@ -1170,7 +1170,7 @@ value - The value to set in the name value pair
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().setScriptData("name", "value");</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().setScriptData("name", "value");</pre>
 
 
 ## removeScriptData
@@ -1187,7 +1187,7 @@ name - The name in the name value pair
 
 <b>example</b>
 
-<pre rel="highlighter" code-brush="js" contenteditable="false">var userName = Spark.getPlayer().removeScriptData("name");</pre>
+<pre rel="highlighter" code-brush="js" contenteditable="false">Spark.getPlayer().removeScriptData("name");</pre>
 
 
 ## removeAllScriptData

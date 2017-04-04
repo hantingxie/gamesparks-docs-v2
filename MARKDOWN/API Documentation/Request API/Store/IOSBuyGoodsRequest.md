@@ -18,8 +18,10 @@ Once verified, the players account will be credited with the Virtual Good, or Vi
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+currencyCode | No | string | The ISO 4217 currency code representing the real-world currency used for this transaction.
 receipt | Yes | string | The receipt obtained from SKPaymentTransaction. transactionReceipt
 sandbox | No | boolean | Should the sandbox account be used
+subUnitPrice | No | number | The price of this purchase
 uniqueTransactionByPlayer | No | boolean | If set to true, the transactionId from this receipt will not be globally valdidated, this will mean replays between players are possible.
 
 ## Response Parameters
@@ -80,8 +82,10 @@ verificationError | 5 | The transaction_id has been processed before
 	using GameSparks.Api.Responses;
 	...
 	new IOSBuyGoodsRequest()
+		.SetCurrencyCode(currencyCode)
 		.SetReceipt(receipt)
 		.SetSandbox(sandbox)
+		.SetSubUnitPrice(subUnitPrice)
 		.SetUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 		.Send((response) => {
 		GSEnumerable<var> boughtItems = response.BoughtItems; 
@@ -110,8 +114,10 @@ verificationError | 5 | The transaction_id has been processed before
 	
 	gs.getRequestBuilder()
 	    .createIOSBuyGoodsRequest()
+		.setCurrencyCode(currencyCode)
 		.setReceipt(receipt)
 		.setSandbox(sandbox)
+		.setSubUnitPrice(subUnitPrice)
 		.setUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 		.send(function(response:com.gamesparks.api.responses.BuyVirtualGoodResponse):void {
 		var boughtItems:Vector.<Boughtitem> = response.getBoughtItems(); 
@@ -136,8 +142,10 @@ verificationError | 5 | The transaction_id has been processed before
 	#import "GSAPI.h"
 	...
 	GSIOSBuyGoodsRequest* request = [[GSIOSBuyGoodsRequest alloc] init];
+	[request setCurrencyCode:currencyCode;
 	[request setReceipt:receipt;
 	[request setSandbox:sandbox;
+	[request setSubUnitPrice:subUnitPrice;
 	[request setUniqueTransactionByPlayer:uniqueTransactionByPlayer;
 	[request setCallback:^ (GSBuyVirtualGoodResponse* response) {
 	NSArray* boughtItems = [response getBoughtItems]; 
@@ -183,8 +191,10 @@ verificationError | 5 | The transaction_id has been processed before
 	......
 	
 	IOSBuyGoodsRequest request(gsInstance);
+	request.SetCurrencyCode(currencyCode)
 	request.SetReceipt(receipt)
 	request.SetSandbox(sandbox)
+	request.SetSubUnitPrice(subUnitPrice)
 	request.SetUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 	request.Send(IOSBuyGoodsRequest_Response);
 ```
@@ -198,8 +208,10 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createIOSBuyGoodsRequest()
+	.setCurrencyCode(currencyCode)
 	.setReceipt(receipt)
 	.setSandbox(sandbox)
+	.setSubUnitPrice(subUnitPrice)
 	.setUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 	.send(new GSEventListener<BuyVirtualGoodResponse>() {
 		@Override
@@ -225,8 +237,10 @@ gs.getRequestBuilder().createIOSBuyGoodsRequest()
 ```javascript
 
 	var request = new SparkRequests.IOSBuyGoodsRequest();
+	request.currencyCode = ...;
 	request.receipt = ...;
 	request.sandbox = ...;
+	request.subUnitPrice = ...;
 	request.uniqueTransactionByPlayer = ...;
 	var response = request.Send();
 	

@@ -39,17 +39,6 @@ Parameter | Type | Description
 myKey | string | An arbitrary data key
 myValue | JSON | An arbitrary data value.
 
-### MatchedPlayer
-
-An object that represents a player in a pending match.
-
-Parameter | Type | Description
---------- | ---- | -----------
-location | DBObject | The Location of the player
-participantData | JSON | A JSON Map of any data that was associated to this user
-playerId | string | The ID for player
-skill | number | The skill of the player in this match
-
 ### PendingMatch
 
 An object that represents a pending match.
@@ -62,6 +51,17 @@ matchGroup | string | The match group for the pending match
 matchShortCode | string | The match shortCode for the pending match
 matchedPlayers | [MatchedPlayer[]](#matchedplayer) | The players already part of this pending match
 skill | number | The average skill of players in this pending match
+
+### MatchedPlayer
+
+An object that represents a player in a pending match.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+location | DBObject | The Location of the player
+participantData | JSON | A JSON Map of any data that was associated to this user
+playerId | string | The ID for player
+skill | number | The skill of the player in this match
 
 ## Error Codes
 

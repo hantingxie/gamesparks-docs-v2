@@ -22,8 +22,10 @@ It is critical that the signedData is sent exactly as it is returned form google
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+currencyCode | No | string | The ISO 4217 currency code representing the real-world currency used for this transaction.
 signature | Yes | string | The value obtained from data.getStringExtra("INAPP_DATA_SIGNATURE");
 signedData | Yes | string | The value obtained from data.getStringExtra("INAPP_PURCHASE_DATA")
+subUnitPrice | No | number | The price of this purchase
 uniqueTransactionByPlayer | No | boolean | If set to true, the transactionId from this receipt will not be globally valdidated, this will mean replays between players are possible.
 
 ## Response Parameters
@@ -85,8 +87,10 @@ verificationError | 1 | No matching virtual good can be found
 	using GameSparks.Api.Responses;
 	...
 	new GooglePlayBuyGoodsRequest()
+		.SetCurrencyCode(currencyCode)
 		.SetSignature(signature)
 		.SetSignedData(signedData)
+		.SetSubUnitPrice(subUnitPrice)
 		.SetUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 		.Send((response) => {
 		GSEnumerable<var> boughtItems = response.BoughtItems; 
@@ -115,8 +119,10 @@ verificationError | 1 | No matching virtual good can be found
 	
 	gs.getRequestBuilder()
 	    .createGooglePlayBuyGoodsRequest()
+		.setCurrencyCode(currencyCode)
 		.setSignature(signature)
 		.setSignedData(signedData)
+		.setSubUnitPrice(subUnitPrice)
 		.setUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 		.send(function(response:com.gamesparks.api.responses.BuyVirtualGoodResponse):void {
 		var boughtItems:Vector.<Boughtitem> = response.getBoughtItems(); 
@@ -141,8 +147,10 @@ verificationError | 1 | No matching virtual good can be found
 	#import "GSAPI.h"
 	...
 	GSGooglePlayBuyGoodsRequest* request = [[GSGooglePlayBuyGoodsRequest alloc] init];
+	[request setCurrencyCode:currencyCode;
 	[request setSignature:signature;
 	[request setSignedData:signedData;
+	[request setSubUnitPrice:subUnitPrice;
 	[request setUniqueTransactionByPlayer:uniqueTransactionByPlayer;
 	[request setCallback:^ (GSBuyVirtualGoodResponse* response) {
 	NSArray* boughtItems = [response getBoughtItems]; 
@@ -188,8 +196,10 @@ verificationError | 1 | No matching virtual good can be found
 	......
 	
 	GooglePlayBuyGoodsRequest request(gsInstance);
+	request.SetCurrencyCode(currencyCode)
 	request.SetSignature(signature)
 	request.SetSignedData(signedData)
+	request.SetSubUnitPrice(subUnitPrice)
 	request.SetUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 	request.Send(GooglePlayBuyGoodsRequest_Response);
 ```
@@ -203,8 +213,10 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createGooglePlayBuyGoodsRequest()
+	.setCurrencyCode(currencyCode)
 	.setSignature(signature)
 	.setSignedData(signedData)
+	.setSubUnitPrice(subUnitPrice)
 	.setUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 	.send(new GSEventListener<BuyVirtualGoodResponse>() {
 		@Override
@@ -230,8 +242,10 @@ gs.getRequestBuilder().createGooglePlayBuyGoodsRequest()
 ```javascript
 
 	var request = new SparkRequests.GooglePlayBuyGoodsRequest();
+	request.currencyCode = ...;
 	request.signature = ...;
 	request.signedData = ...;
+	request.subUnitPrice = ...;
 	request.uniqueTransactionByPlayer = ...;
 	var response = request.Send();
 	

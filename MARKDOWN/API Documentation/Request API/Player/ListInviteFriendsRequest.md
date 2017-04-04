@@ -31,15 +31,6 @@ scriptData | ScriptData | A JSON Map of any data added either to the Request or 
 
 ## Nested types
 
-### ScriptData
-
-A collection of arbitrary data that can be added to a message via a Cloud Code script.
-
-Parameter | Type | Description
---------- | ---- | -----------
-myKey | string | An arbitrary data key
-myValue | JSON | An arbitrary data value.
-
 ### InvitableFriend
 
 A nested object that represents the invitable friend.
@@ -49,6 +40,15 @@ Parameter | Type | Description
 displayName | string | The display name of the External Friend
 id | string | The ID of the External Friend
 profilePic | string | The profile picture URL of the External Friend
+
+### ScriptData
+
+A collection of arbitrary data that can be added to a message via a Cloud Code script.
+
+Parameter | Type | Description
+--------- | ---- | -----------
+myKey | string | An arbitrary data key
+myValue | JSON | An arbitrary data value.
 
 
 ## Code Samples

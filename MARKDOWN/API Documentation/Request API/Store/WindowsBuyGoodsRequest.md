@@ -18,8 +18,10 @@ Once verified, the players account will be credited with the Virtual Good, or Vi
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
+currencyCode | No | string | The ISO 4217 currency code representing the real-world currency used for this transaction.
 platform | No | string | Allows you to specify the platform
 receipt | Yes | string | The xml reciept returned from the windows phone 8 store
+subUnitPrice | No | number | The price of this purchase
 uniqueTransactionByPlayer | No | boolean | If set to true, the transactionId from this receipt will not be globally valdidated, this will mean replays between players are possible.
 
 ## Response Parameters
@@ -79,8 +81,10 @@ verificationError | 5 | The Id in the receipt xml has previously been processed
 	using GameSparks.Api.Responses;
 	...
 	new WindowsBuyGoodsRequest()
+		.SetCurrencyCode(currencyCode)
 		.SetPlatform(platform)
 		.SetReceipt(receipt)
+		.SetSubUnitPrice(subUnitPrice)
 		.SetUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 		.Send((response) => {
 		GSEnumerable<var> boughtItems = response.BoughtItems; 
@@ -109,8 +113,10 @@ verificationError | 5 | The Id in the receipt xml has previously been processed
 	
 	gs.getRequestBuilder()
 	    .createWindowsBuyGoodsRequest()
+		.setCurrencyCode(currencyCode)
 		.setPlatform(platform)
 		.setReceipt(receipt)
+		.setSubUnitPrice(subUnitPrice)
 		.setUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 		.send(function(response:com.gamesparks.api.responses.BuyVirtualGoodResponse):void {
 		var boughtItems:Vector.<Boughtitem> = response.getBoughtItems(); 
@@ -135,8 +141,10 @@ verificationError | 5 | The Id in the receipt xml has previously been processed
 	#import "GSAPI.h"
 	...
 	GSWindowsBuyGoodsRequest* request = [[GSWindowsBuyGoodsRequest alloc] init];
+	[request setCurrencyCode:currencyCode;
 	[request setPlatform:platform;
 	[request setReceipt:receipt;
+	[request setSubUnitPrice:subUnitPrice;
 	[request setUniqueTransactionByPlayer:uniqueTransactionByPlayer;
 	[request setCallback:^ (GSBuyVirtualGoodResponse* response) {
 	NSArray* boughtItems = [response getBoughtItems]; 
@@ -182,8 +190,10 @@ verificationError | 5 | The Id in the receipt xml has previously been processed
 	......
 	
 	WindowsBuyGoodsRequest request(gsInstance);
+	request.SetCurrencyCode(currencyCode)
 	request.SetPlatform(platform)
 	request.SetReceipt(receipt)
+	request.SetSubUnitPrice(subUnitPrice)
 	request.SetUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 	request.Send(WindowsBuyGoodsRequest_Response);
 ```
@@ -197,8 +207,10 @@ import com.gamesparks.sdk.api.GSEventListener;
 
 ...
 gs.getRequestBuilder().createWindowsBuyGoodsRequest()
+	.setCurrencyCode(currencyCode)
 	.setPlatform(platform)
 	.setReceipt(receipt)
+	.setSubUnitPrice(subUnitPrice)
 	.setUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 	.send(new GSEventListener<BuyVirtualGoodResponse>() {
 		@Override
@@ -224,8 +236,10 @@ gs.getRequestBuilder().createWindowsBuyGoodsRequest()
 ```javascript
 
 	var request = new SparkRequests.WindowsBuyGoodsRequest();
+	request.currencyCode = ...;
 	request.platform = ...;
 	request.receipt = ...;
+	request.subUnitPrice = ...;
 	request.uniqueTransactionByPlayer = ...;
 	var response = request.Send();
 	

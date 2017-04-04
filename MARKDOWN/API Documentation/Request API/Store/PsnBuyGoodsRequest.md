@@ -21,8 +21,10 @@ GampSparks platform by default will use internally saved PSN user access token
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
 authorizationCode | No | string | The authorization code obtained from PSN, as described here https://ps4.scedev.net/resources/documents/SDK/latest/NpAuth-Reference/0008.html
+currencyCode | No | string | The ISO 4217 currency code representing the real-world currency used for this transaction.
 entitlementLabel | Yes | string | Specify the entitlement label of the entitlement to update. (Not an entitlement ID).
 redirectUri | No | string | When using the authorization code obtained from PlayStation®4/PlayStation®Vita/PlayStation®3, this is not required.
+subUnitPrice | No | number | The price of this purchase
 uniqueTransactionByPlayer | No | boolean | If set to true, the transactionId from this receipt will not be globally valdidated, this will mean replays between players are possible.
 useCount | No | number | Optional - specify the quantity of the entitlement to use. Default = 1
 
@@ -84,8 +86,10 @@ verificationError | 3 | There was an error connecting to the PSN server
 	...
 	new PsnBuyGoodsRequest()
 		.SetAuthorizationCode(authorizationCode)
+		.SetCurrencyCode(currencyCode)
 		.SetEntitlementLabel(entitlementLabel)
 		.SetRedirectUri(redirectUri)
+		.SetSubUnitPrice(subUnitPrice)
 		.SetUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 		.SetUseCount(useCount)
 		.Send((response) => {
@@ -116,8 +120,10 @@ verificationError | 3 | There was an error connecting to the PSN server
 	gs.getRequestBuilder()
 	    .createPsnBuyGoodsRequest()
 		.setAuthorizationCode(authorizationCode)
+		.setCurrencyCode(currencyCode)
 		.setEntitlementLabel(entitlementLabel)
 		.setRedirectUri(redirectUri)
+		.setSubUnitPrice(subUnitPrice)
 		.setUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 		.setUseCount(useCount)
 		.send(function(response:com.gamesparks.api.responses.BuyVirtualGoodResponse):void {
@@ -144,8 +150,10 @@ verificationError | 3 | There was an error connecting to the PSN server
 	...
 	GSPsnBuyGoodsRequest* request = [[GSPsnBuyGoodsRequest alloc] init];
 	[request setAuthorizationCode:authorizationCode;
+	[request setCurrencyCode:currencyCode;
 	[request setEntitlementLabel:entitlementLabel;
 	[request setRedirectUri:redirectUri;
+	[request setSubUnitPrice:subUnitPrice;
 	[request setUniqueTransactionByPlayer:uniqueTransactionByPlayer;
 	[request setUseCount:useCount;
 	[request setCallback:^ (GSBuyVirtualGoodResponse* response) {
@@ -193,8 +201,10 @@ verificationError | 3 | There was an error connecting to the PSN server
 	
 	PsnBuyGoodsRequest request(gsInstance);
 	request.SetAuthorizationCode(authorizationCode)
+	request.SetCurrencyCode(currencyCode)
 	request.SetEntitlementLabel(entitlementLabel)
 	request.SetRedirectUri(redirectUri)
+	request.SetSubUnitPrice(subUnitPrice)
 	request.SetUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 	request.SetUseCount(useCount)
 	request.Send(PsnBuyGoodsRequest_Response);
@@ -210,8 +220,10 @@ import com.gamesparks.sdk.api.GSEventListener;
 ...
 gs.getRequestBuilder().createPsnBuyGoodsRequest()
 	.setAuthorizationCode(authorizationCode)
+	.setCurrencyCode(currencyCode)
 	.setEntitlementLabel(entitlementLabel)
 	.setRedirectUri(redirectUri)
+	.setSubUnitPrice(subUnitPrice)
 	.setUniqueTransactionByPlayer(uniqueTransactionByPlayer)
 	.setUseCount(useCount)
 	.send(new GSEventListener<BuyVirtualGoodResponse>() {
@@ -239,8 +251,10 @@ gs.getRequestBuilder().createPsnBuyGoodsRequest()
 
 	var request = new SparkRequests.PsnBuyGoodsRequest();
 	request.authorizationCode = ...;
+	request.currencyCode = ...;
 	request.entitlementLabel = ...;
 	request.redirectUri = ...;
+	request.subUnitPrice = ...;
 	request.uniqueTransactionByPlayer = ...;
 	request.useCount = ...;
 	var response = request.Send();
