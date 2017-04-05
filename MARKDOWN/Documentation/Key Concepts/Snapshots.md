@@ -54,9 +54,20 @@ Two areas of your game are *not included* in a game Snapshot:
 
 ![](img/Snapshot/15.png)
 
-The *Copy Snapshot* dialog gives you options for customizing your copy:
+The *Copy Snapshot* dialog gives you options for customizing your copy.
 
-  * *Game* \- from the drop-down, you can choose to copy the Snapshot to a new game or to overwrite an existing game that you have access and permissions to edit.
+### Choosing the Target Game for your Copy
+
+On the *Copy Snapshot* dialog, you can use the *Game* drop-down to choose to copy the Snapshot to a new game or to overwrite an existing game that you have access to and permissions to edit. When the copy completes, a confirmation dialog appears and you can click to view the target game:
+
+![](img/Snapshot/26.png)
+
+  * If you copied the Snapshot to a new game, you'll be taken to a new game that has been named by prefixing "COPY" to the source game's name and you can edit the new game's name from the *Game Overview* page.
+  * If you copied the Snapshot to an existing game, you'll be taken to that game.
+
+### Choosing What to Include in your Copy
+
+You can select just what you what to include in the copy Snapshot using four check boxes:
   * *Include metadata collections* \- choose whether to include the metadata for the copy of the game.
   * *Include game configuration* \- choose whether to copy the game configuration onto an existing game, overwriting any existing configuration. When copying to a new game, this option is disabled because in this case the Snapshot's game configuration is always copied.
   * *Include downloadables* - choose whether to copy the binary data content you have uploaded to the game.

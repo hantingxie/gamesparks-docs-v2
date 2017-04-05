@@ -87,7 +87,13 @@ After you include the modules into your project refresh your C++ files through t
 
  
 
-In your Facebook settings advanced tab flip the button to state that your app is a native one if you're developing or debugging on desktop. For 'Valid OAuth redirect URIs' ensure that you add https://www.facebook.com/connect/login_success.html That is all you need, in the images you can see how we setup our App.
+In your Facebook settings advanced tab flip the button to state that your app is a native one if you're developing or debugging on desktop.
+
+For *Valid OAuth redirect URIs* ensure that you add:
+
+`https://www.facebook.com/connect/login_success.html`
+
+That's all you need! Here's how we set up our App:
 
 ![](img/UE4FB/2.jpg)
 

@@ -22,7 +22,7 @@ To integrate GameSparks into your project:
   * classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.2'
   * classpath "com.github.dcendents:android-maven-gradle-plugin:1.3"
 * Under allproject dependencies:
-  * maven {url "http://repo.gamesparks.net/mvn"}
+  * maven {url `http://repo.gamesparks.net/mvn`}
 
 Our example looks like this:
 

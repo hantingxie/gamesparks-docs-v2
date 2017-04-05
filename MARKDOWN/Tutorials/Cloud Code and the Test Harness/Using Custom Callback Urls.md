@@ -36,7 +36,7 @@ Spark.setScriptData("RESPONSE_RAW", "Hello World!");
 
 *6.* Now that the Callback script is created, we can see this working by using an API Post Request in the following format:
 
-https ://{stage}.gamesparks.net/callback/{apiKey}/{credential}/{credentialSecret}
+`https://{stage}.gamesparks.net/callback/{apiKey}/{credential}/{credentialSecret}`
 
 Response:
 

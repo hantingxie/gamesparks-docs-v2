@@ -9,72 +9,80 @@ Download the GameSparks [Unity SDK Package](https://s3-eu-west-1.amazonaws.com/r
 
 <q>**SDK downloaded from Unity Asset Store?** If you've downloaded the GameSparks SDK directly from the Unity Asset Store, please [register for an account](https://auth.gamesparks.net/register.htm) on the GameSparks platform. This is where you'll build and configure your game.</q>
 
-## V5.5.3.204
+## SDK Versions
+
+### V5.5.4.48
+
+* Added splash screen
+* Updated API
+* Added DeviceStats
+* Fixed several minor bugs
+
+### V5.5.3.204
 
 * Updated API
 * Fixed DeviceID (for PS4 and XBox One) and DeviceOS attributes.
 
-## V5.5.1.198
+### V5.5.1.198
 
 * Fixed a crash that occurred when a user sent requests after a disconnection event on Win8/10
 * Updated API
 * Added pdb files
 
-## V5.5.0.189
+### V5.5.0.189
 
 * Added ApiDomain and ApiCredential support
 * Fixed Plugins folder and its files
 * Fixed the support for Windows 10 plus IL2CPP Scripting Backend
 * Resolved several other minor bugs
 
-## V5.4.0.104
+### V5.4.0.104
 
 * Resolved Meta file issues
 * Restored native code for Xbox one
 * Addressed CultureInfo bug in GSJson file
 
-## V5.4.0.91
+### V5.4.0.91
 
 * Resolved tendency to hang in Windows Unity Editor
 * Fixed IPv6
 * Addressed other minor bugs
 
-
-## V5.4.0
+### V5.4.0
 
 * Remove native plugins for sockets
 * Use TLSv1.2 for all socket connections
 * Add update checker to keep SDK up to date
 * API Updates to V67
 
-## V5.3.3
+### V5.3.3
 
 * Added PS4 Support (Contact customer services for PS4 specific unitypackage).
 * Added XBOX One Support (Contact customer services for XBOX specific unitypackage).
 * Resolved connection pauses with malformed query string.
 * API Updates to include all Server requests for V59
 
-## v5.3
+### v5.3
 
 * Fixed potential deadlock on WP8 devices.
 * Durable queue updates to enforce processing in order.
 * xcodeproj post processing updates for new project version.
 * API Updates to include all Server requests.
 
-## V5.2
+### V5.2
 
 * IL2CPP updates.
 * xcodeproj post processing modified to support append and replace.
 * API Updates to include all Server requests.
 
-## V5.1
+### V5.1
 
 * Per player durable queue, this means a request sent with durable as a player will only ever go as that player.
 * Unity 5.1.0 Support (There is currently a defect in Unity preventing WP8 builds).
 * API Updates to include all Server requests.
 * Ability to have multiple GSInstance objects to aid testing
 
-## V5.0
+### V5.0
 
 * Full Unity 5 support
 * WebGL
@@ -107,7 +115,7 @@ Your project folder should now contain Assets/GameSparks and Assets/Plugins.
 
 ### Configuring the SDK
 
-To configure the SDK for use with your game, select "GameSparks -> Edit Settings" from the menu bar.
+To configure the SDK for use with your game, select *GameSparks -> Edit Settings* from the menu bar.
 
 <q>**GameSparks not Showing?** If the GameSparks menu item is not visible, click another one and it will appear. This is a nuance of menu items in Unity - clicking the other item rebuilds the menu and brings in the GameSparks item.</q>
 

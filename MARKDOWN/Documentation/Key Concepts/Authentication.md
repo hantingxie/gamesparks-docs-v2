@@ -17,6 +17,8 @@ Perhaps you don't want to force your players to actively login. In these instanc
 
 If you use device authentication, each time the device authenticates it will be identified as the same player and you'll be able to view previous high scores, or use the same playerId in your code.
 
+<q>**Device Authentication Persistence!** Please be aware that this persistence of device authentication might cause problems if players are either sharing a device or if a player sells a device after authentication. Even if the seller wipes all data off the device before selling it, if the buyer installs GameSparks again, the device may be recognized as previously authenticated, depending on the specific OS implementation, and could be linked to the *first player as owner of the device when it was first authenticated*.</q>
+
 When using device authentication, there's no display name stored against the player. If you're using Leaderboards, the displayName field of each Leaderboard entry will be blank for these users. You can set a displayName against these anonymous players using *ChangeUserDetailsRequest*, which will set the displayName of the player and also update all Leaderboards to contain the correct displayName.
 
 <q>**Important: Mobile Device Authentication ID!** For mobile device authentication, we strongly recommend that you use an IDFV device ID. Using an IDFA device ID can be unreliable.</q>
