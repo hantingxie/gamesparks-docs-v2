@@ -48,3 +48,5 @@ Our real-time services provide a network communication layer which has the abili
 * [Calling Log Event Requests in RT Scripts](/Tutorials/Real-Time Services/Calling Log Event Requests in RT Scripts.md) - This tutorial explains how to call Log Event Requests in your Real-Time scripts.
 
 * [Unreal Real-Time Guide](/Tutorials/Real-Time Services/Unreal Real-Time Guide.md) - This tutorial is written for game developers working in Unreal and explains how to get the most out of GameSparks Real-Time services.
+
+* [Corona Real-Time Guide](/Tutorials/Real-Time Services/Corona Real-Time Guide.md) - This tutorial is written for game developers working in Corona and explains how to get your Corona project set up for GameSparks Real-Time services.

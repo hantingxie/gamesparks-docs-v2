@@ -76,8 +76,6 @@ The function will print the availability condition as well as perform any logic 
 *5.* For the next step we'll be connecting to our Game's backend using the *API Key* and *Secret*:
 
 ```
---Create GS Instance
-gs = createGS()
 --Set the logger for debugging the Responses, Messages and Requests flowing in and out
 gs.setLogger(writeText)
 --Set API Key

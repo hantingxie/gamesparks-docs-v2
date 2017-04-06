@@ -5,7 +5,7 @@ src: /Documentation/Key Concepts/Snapshots.md
 
 # Snapshots
 
-The Snapshots feature allows you to *Create*, *Copy*, *Delete*, *Publish*, *Revert* and *Preview* the configuration of your Game, allowing for in-depth management of each stage of the release.
+The Snapshots feature allows you to *Create*, *Copy*, *Delete*, *Publish*, *Revert*, *Preview*, and *Unpublish* the configuration of your Game, allowing for in-depth management of each stage of the release.
 
 <q>**Game Snapshots vs. Screen Snapshots!** Game Snapshots *do not contain* any of the Manage section configuration you've built up for your Admin Screens. You can create separate *Screen Snapshots* for the Manage configuration and publish these to the Live environment independently of your game Snapshots. For details, see [below](#What is Not Included in Game Snapshots?).
 
@@ -58,20 +58,30 @@ The *Copy Snapshot* dialog gives you options for customizing your copy.
 
 ### Choosing the Target Game for your Copy
 
-On the *Copy Snapshot* dialog, you can use the *Game* drop-down to choose to copy the Snapshot to a new game or to overwrite an existing game that you have access to and permissions to edit. When the copy completes, a confirmation dialog appears and you can click to view the target game:
+On the *Copy Snapshot* dialog, you can use the *Game* drop-down to choose to copy the Snapshot to a new game or to overwrite an existing game that you have access to and have permissions to edit. When the copy completes, a confirmation dialog appears and you can click to view the target game:
 
 ![](img/Snapshot/26.png)
 
-  * If you copied the Snapshot to a new game, you'll be taken to a new game that has been named by prefixing "COPY" to the source game's name and you can edit the new game's name from the *Game Overview* page.
-  * If you copied the Snapshot to an existing game, you'll be taken to that game.
+* If you copied the Snapshot to a new game, you'll be taken to a new game that has been named by prefixing "COPY" to the source game's name. You can then edit the new game's name from the *Game Overview* page.
+* If you copied the Snapshot to an existing game, you'll be taken to that game.
 
 ### Choosing What to Include in your Copy
 
-You can select just what you what to include in the copy Snapshot using four check boxes:
-  * *Include metadata collections* \- choose whether to include the metadata for the copy of the game.
-  * *Include game configuration* \- choose whether to copy the game configuration onto an existing game, overwriting any existing configuration. When copying to a new game, this option is disabled because in this case the Snapshot's game configuration is always copied.
-  * *Include downloadables* - choose whether to copy the binary data content you have uploaded to the game.
-  * *Include collaborators* - choose whether to copy the game's collaborators.
+When you select what to include when you copy a Snapshot, it's important to be clear about what is and what is not included in a Snapshot:
+* A Snapshot includes:
+  * The game configuration.
+  * Metadata collections.
+  * Downloadables.
+* A Snapshot does not include:
+  * Collaborators added to a game.
+
+On the *Copy Snapshot* dialog, you can select what you want to include in the copy using four check boxes:
+* *Include metadata collections* \- choose whether to include the metadata in the copy.
+* *Include game configuration* \- choose whether to copy the game configuration onto an existing game, overwriting the existing game's configuration:
+  * When copying to a new game, this option is disabled because in this case the Snapshot's game configuration is always copied.
+* *Include downloadables* - choose whether to copy the binary data content you have uploaded to the game.
+* *Include collaborators* - choose whether to copy the source game's collaborators:
+  * Note that if you include the source game's collaborators in the copy, they become collaborators for the target game. However, if you then open the target game after copying a Snapshot and *revert* to a previous Snapshot, the copied collaborators *will not* be removed because they are not included in a Snapshot in the first place.
 
 ## Deleting a Snapshot
 
