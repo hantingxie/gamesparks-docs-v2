@@ -69,7 +69,7 @@ Here's a list of the main functional changes from the original portal:
 
 ### Running Totals
 * The way the naming reference for [Running Totals](/Documentation/Configurator/Leaderboards/Running Totals.md) is built up has been changed to help clarify just which Running Total it is:
-  * For example, in the case of an Achievement triggered by a Leaderboard set up. When you select a Leaderboard for triggering when the Achievement will be earned, you can then select a Trigger or Triggers from what has been set on the Leaderboard as Running Totals. This name of a Trigger is now a two-value composite: the Leaderboard Short Code combined with the Event Attribute Short Code which has been selected as a Running Total on that Leaderboard.
+  * For example, take the case of an Achievement triggered by a Leaderboard set up. When you select a Leaderboard for triggering when the Achievement will be earned, you can then select a Trigger or Triggers from what has been set on the Leaderboard as Running Totals. This name of a Trigger is now a two-value composite: the Leaderboard Short Code combined with the Event Attribute Short Code which has been selected as a Running Total on that Leaderboard.
   * Previously, this naming reference or address was built up using simply the Running Total = Event/Attribute name.
   * In addition, the reference now includes a suffix for the Running Total filter, such as “all” for “all values”, “gt” for “greater than”, and so on.
 

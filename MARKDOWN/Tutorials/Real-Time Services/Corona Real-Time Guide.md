@@ -7,7 +7,7 @@ src: /Tutorials/Real-Time Services/Corona Real-Time Guide.md
 
 This is a guide for getting your Corona project set up for GameSpark's real-time services.
 
-<q>**Read First!** Please ensure you have followed our guide on [real-time services](/Tutorials/Real-Time Services/Understanding GameSparks Real-Time.md) before you attempt to apply it for Corona to learn how our service works and what you should expect from it.</q>
+<q>**Read First!** Please ensure you have followed our general guide on [real-time services](/Tutorials/Real-Time Services/Understanding GameSparks Real-Time.md) before you attempt to apply it for Corona and to learn how our real-time service works and what you should expect from it.</q>
 
 ## Creating the GameSession File
 
@@ -54,7 +54,7 @@ local function sendMatchmakingRequest()
   end)
 end
 ```
-*4.* Add a listener for both Match Found and Match Not Found messages. We will be adding more logic to the Match Found Message regarding packet/data delivery later down the tutorial.
+*4.* Add a listener for both Match Found and Match Not Found messages. We'll be adding more logic to the Match Found Message regarding packet/data delivery later down the tutorial:
 
 ```
 gs.getMessageHandler().setMatchFoundMessageHandler(function(message)

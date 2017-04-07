@@ -93,7 +93,7 @@ In this section, we'll:
 
 *1.* Go to *Test Harness > Authentication* and select [RegistrationRequest](/API Documentation/Request API/Authentication/RegistrationRequest.md).
 
-*2.* Then change the *userName* and *displayName* as shown here:
+*2.* Then change the *displayName*, *password*, and *userName* as shown here:
 
 ![](img/CreateCloud/23.png)
 
