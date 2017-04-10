@@ -39,6 +39,7 @@ If you don't want players to create a userName / password combination, you can d
 * [Viber](/API Documentation/Request API/Authentication/ViberConnectRequest.md)
 * [WeChat](/API Documentation/Request API/Authentication/WeChatConnectRequest.md)
 * [QQ](/API Documentation/Request API/Authentication/QQConnectRequest.md)
+* [Nintendo](/API Documentation/Request API/Authentication/NXConnectRequest.md)
 
 These methods create a player on the platform and also get their list of friends from the provider. You can then use this list of friends to link players with their friends who also play your game.
 

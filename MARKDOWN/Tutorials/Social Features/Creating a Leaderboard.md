@@ -71,8 +71,6 @@ In this section we'll create a Leaderboard which arranges all the players' score
 
 *6.* Click to *Save and Close* the new Leaderboard.
 
-
-
 ## Testing the High Score Leaderboard and Event in the Test Harness
 
 In this section we'll:
