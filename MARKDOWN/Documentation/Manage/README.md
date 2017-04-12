@@ -1,7 +1,7 @@
 ---
 no_toc: true
 no_comment: true
-nav_sort: 5
+nav_sort: 6
 src: /Documentation/Manage/README.md
 ---
 

@@ -245,7 +245,7 @@ This would return the first 10 documents found on the database, and no more.
 
 ### Skipping Documents Returned
 
-Finally, it's possible to skip documents returned by a cursor. If you wanted to skip the first 10 documents, you could use:
+It's possible to skip documents returned by a cursor. If you wanted to skip the first 10 documents, you could use:
 
 ```
 
@@ -265,4 +265,17 @@ var cursor = collection.find( {"age": 35, "_id": {"$gt": {"$oid": "57fe0b4a3a32d
 
 ```
 </br>
-<q>**Note: Perform cursor operations first!** Cursor operations such as *sort()*, *limit()*, and *skip()* should be performed before any data is read from the cursor.
+<q>**Note: Perform cursor operations first!** Cursor operations such as *sort()*, *limit()*, and *skip()* should be performed before any data is read from the cursor.</q>
+
+### Retrieving Dates
+
+Dates in MongoDB are stored as longs, wrapped by a "$date" operator. By default, retrieving a date field from a custom collection will unwrap this date into a simple long.
+If you want dates retrieved from Mongo collections to be passed into your Cloud Code Script as JavaScript date objects, you can do this using a *SparkScriptOption*. Simply add the following to your Cloud Code script:
+
+```
+
+Spark.getSparkScriptOptions().setMaintainDbDates(true);
+
+```
+
+<q>**Don't Mix Date Formats!** We strongly advise that if you use this option, you refrain from mixing the date formats in your Cloud Code - using both longs and JavaScript date objects.</q>

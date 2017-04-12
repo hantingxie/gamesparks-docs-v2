@@ -1,5 +1,5 @@
 ---
-nav_sort: 9
+nav_sort: 10
 src: /Documentation/NoSQL Explorer.md
 
 ---
@@ -139,7 +139,7 @@ Using the *Find* option, you can execute queries against Collections:
 
 * *Query* : The query you want to execute in JSON form:
   * To find players with displayName "testUser" the following valid JSON must be used {"displayName" : "testUser"}
-  * If you submit a query against a very large Collection, then the query might timeout at 10 seconds. You will see a message but no data will be returned. 
+  * If you submit a query against a very large Collection, then the query might timeout at 10 seconds. You will see a message but no data will be returned.
 * *Sort* : The JSON representation of the sort for the query:
   * To sort by userName in ascending order the following valid JSON must be used {"userName" : 1}
   * To sort by id, the following valid JSON must be used {"\_id": -1} or {"\_id": 1}

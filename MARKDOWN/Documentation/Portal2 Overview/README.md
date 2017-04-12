@@ -76,6 +76,8 @@ Here's a list of the main functional changes from the original portal:
 ### REST API
 * There's been some general REST API improvements and you can check out the documentation for these [here](/API Documentation/REST APIs/README.md).
 
+<q>**Upgrading your REST APIs!** There is a new REST API and you must upgrade to this as soon as possible. For details of how to do this, see [here](/Documentation/Upgrading REST APIs/README.md). </q>
+
 ### API Stream Analytics
 * We've added a new [API Stream Analytics](/Documentation/Analytics/API Stream Analytics.md) page, which you can use to make direct queries against the current requests and message API calls stream and then display your query results into three chart formats. This saves you having to first create a chart to carry and deploy the query.
 

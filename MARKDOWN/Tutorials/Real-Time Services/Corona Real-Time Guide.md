@@ -54,7 +54,7 @@ local function sendMatchmakingRequest()
   end)
 end
 ```
-*4.* Add a listener for both Match Found and Match Not Found messages. We'll be adding more logic to the Match Found Message regarding packet/data delivery later down the tutorial:
+*4.* Add a listener for both Match Found and Match Not Found messages. We'll be adding more logic to the Match Found Message regarding packet/data delivery later on in the tutorial:
 
 ```
 gs.getMessageHandler().setMatchFoundMessageHandler(function(message)
@@ -94,7 +94,7 @@ To send packets:
 local data = gs.getRTData().new()
 ```
 
-*2.* If you wish to send data with your packet then populate your RTData object with variables. Starting first with the index of the variable and then the value:
+*2.* If you wish to send data with your packet then populate your RTData object with variables - starting first with the index of the variable and then the value:
 
 ```
 --Set Number

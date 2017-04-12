@@ -11,6 +11,12 @@ Download the GameSparks [Unity SDK Package](https://s3-eu-west-1.amazonaws.com/r
 
 ## SDK Versions
 
+### V5.5.4.49
+
+* Fixed Inspector Window
+* Completed support for floating point numbers in GSJson
+* Fixed other minor bugs
+
 ### V5.5.4.48
 
 * Added splash screen
