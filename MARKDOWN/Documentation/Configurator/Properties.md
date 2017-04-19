@@ -52,7 +52,7 @@ Select the *Properties* tab where you can use the same options to manage your Pr
 *3.* Click to *Save and Close* the new Property.
 
 
-## Creating Property Sets and Adding Properties
+## Creating Property Sets and Adding Property Set Keys
 
 *1.* Select the *Property Sets* tab and click *Add*. The page adjusts:
 
@@ -69,6 +69,9 @@ You can now add *Property Set Keys* to your Property Set and map these to Proper
 
 ![](img/Properties/12.png)
 
-In this example, two Keys have been added and mapped to Properties.
+* To add a Property Set Key, enter a *Name* and then use the *Property* drop-down to select a Property.
+* In this example, two Keys have been added and mapped to Properties.
+
+<q>**Cannot add Property Set Keys?** In order to add a Property Set Key to a Property Set, you must first create at least one Property for your game. If you haven't yet created at least one Property, you'll see a warning on the *Property Set Keys* panel and the *Add* button will not be available when you create and edit Property Sets.</q>
 
 *4.* Click to *Save and Close* the new Property Set.
