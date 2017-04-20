@@ -21,3 +21,4 @@ Use these tutorials to learn how to set up and manage the social features you wa
 * [Pulling Leaderboard Data Using Python and Rest](/Tutorials/Social Features/Pulling Leaderboard Data Using Python and Rest.md)
 * [Setting Up Chat Messages](/Tutorials/Social Features/Setting Up Chat Messages.md)
 * [Setting Up Teams for Chat](/Tutorials/Social Features/Setting Up Teams for Chat.md)
+* [Creating Custom Friends Lists](/Tutorials/Social Features/Creating Custom Friends Lists.md)

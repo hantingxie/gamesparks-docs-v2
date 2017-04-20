@@ -550,24 +550,25 @@ When you click the edit ![](/img/fa/edit.png) link for a found player, the yet-t
 
 ### The player_master Snippet
 
-*14.* Create a new Snippet called *player_master* and enter the following into the JavaScript quadrant:  
+*14.* Create a new Snippet called *player_master* and enter the following into the JavaScript quadrant:
 
 ```
 Spark.setScriptData("form", SnippetProcessor(Spark.getData().scriptData))
 
 function SnippetProcessor(data){
 
-var form = {};
+    var form = {};
 
-return view(data);
+    return view(data);
 
-function view(data){
+    function view(data){
 
-    form.player = Spark.systemCollection("player").findOne({"_id" : {"$oid" : data.playerId}}, {"userName" : 1, "displayName" : 1});
-
-    return form;
+        var players = Spark.findPlayers({"_id" : {"$oid" : data.playerId}}, {"userName" : 1, "displayName" : 1}, 1);
+        form.player = players[0];
+        return form;
+    }
 }
-}
+
 
 ```
 
