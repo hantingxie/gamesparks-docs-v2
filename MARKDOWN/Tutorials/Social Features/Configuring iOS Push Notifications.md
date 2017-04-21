@@ -192,7 +192,8 @@ It is assumed that you are familiar with Xcode and and have an Xcode project alr
         (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
 
     return YES;
-}</pre>
+}
+
 ```
 
 The new call to *registerForRemoteNotificationTypes* tells the OS that this app wants to receive push notifications. When your app registers for push notifications, it will attempt to obtain a device token. This token is a 32-byte number, which uniquely identifies your device.  The token is in an NSData object. For the GameSparks Api call an NSString is required.
@@ -206,16 +207,21 @@ The new call to *registerForRemoteNotificationTypes* tells the OS that this app 
             stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]]
             stringByReplacingOccurrencesOfString:@" "
             withString:@""];
-  }</pre>
+  }
+
 ```
 
 *39.* To enable the use of push notifications from the GameSparks service, we must perform a *Push Registration Request*. An example of this is below:
 
 ```
-NSString *dev = @"iOS";
-NSDictionary *response;
+GSPushRegistrationRequest* req = [[GSPushRegistrationRequest alloc] init];
+[req setPushId:dtoken];
+[req setDeviceOS:@"iOS"];
+[req setCallback:^ (GSPushRegistrationResponse* response) {
+  NSLog(@"%@", [response getRegistrationId]);
+}];
+[gs send:req];
 
-response = [[GSApi gsApi] pushRegistrationRequest:dtoken withDeviceOS:dev];</pre>
 ```
 
 Your App can now receive Push Notifications via the GameSparks service!
