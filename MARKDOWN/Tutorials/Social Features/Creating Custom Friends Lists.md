@@ -12,7 +12,7 @@ In this tutorial, we're going to build a very simple system for creating your ow
 ## Creating a Player List
 
 Before we can start searching for players to add to our list we need to be able to get a collection of player information we can query so that we can filter our search requests. In this example, we'll be storing some of the important player information in this player list so we can search for user-names, countries, and so on.
-To start, we'll create a new player-doc each time a player registers with GameSparks. We will do this in the [RegistrationResponse](/API Documentation/Request API/Authentication/RegistrationRequest.md) script.
+Therfore to start, we'll create a new player-doc each time a player registers with GameSparks and we'll do this in the [RegistrationResponse](/API Documentation/Request API/Authentication/RegistrationRequest.md) script.
 
 *1.* Go to *Configurator>Cloud Code*.
 
@@ -41,7 +41,7 @@ if(Spark.getData().error === undefined)
 
 ### Testing
 
-To test this, we can go the Test Harness and register a new player:
+To test this, we can go to the Test Harness and register a new player:
 
 ![](img/FriendsList/2.png)
 
@@ -68,7 +68,7 @@ In this example, we'll call the Event *updatePlayerInfo* because we're not only 
 
 ![](img/FriendsList/4.png)
 
-Notice that we've given each of these Attributes a *Default Value*. This allows you to leave out the Attributes you don’t want to update. For instance, if you later wish to only update the value for the username Attribute, then you can just use that Attribute in the request. We’ll see an example of this later.
+Notice that we've given each of these Attributes a *Default Value*. This allows you to leave out the Attributes you don’t want to update. For instance, if you later wish to only update the value for the *username* Attribute, then you can just use that Attribute in the request. We’ll see an example of this later.
 
 Now that the *updatePlayerInfo* Event has been created, we need to open it up in the Cloud Code editor and start updating the player docs:
 
@@ -129,7 +129,7 @@ We need to create an Event which will allow us to search for available players t
 
 ![](img/FriendsList/8.png)
 
-In the script that we attach to this Event, we're going to add some code to find all the players matching the query and return them. Later on we'll use the *playerIds* from this request to send friend invites:
+In the script that we attach to this Event, we're going to add some code to find all the players matching the query and return them. Later on, we'll use the *playerIds* from this request to send friend invites:
 
 ![](img/FriendsList/9.png)
 
@@ -147,7 +147,7 @@ We are also including another query in this code, to make sure that we don’t i
 
 ### Testing
 
-At the moment we only have one player registered, so ww're going to have to register a few more players and add information to their documents in order for this to work properly. Once you have some new players registered, we can test this out in the Test Harness. The query field we are going to use here is just the field we want to check and the value we want to search for.
+At the moment, we only have one player registered, so we're going to have to register a few more players and add information to their documents in order for this to work properly. Once you have some new players registered, we can test this out in the Test Harness. The query field we're going to use here is just the field we want to check and the value we want to search for.
 
 For example, if we know our friend’s *userName* or *displayName*, then we put that in directly:
 
@@ -165,11 +165,11 @@ So now that we can get a list of players, it’s time to invite those players to
 1.	We need to check to see if the friend has declined a previous request. We'll track this in the *playerFriends* collection.
 2.	We send a message to the player and create a log in *playerFriends* to track that we’ve a pending friend request with that player.
 
-So we'll need to create a new [ScriptMessage](/API Documentation/Message API/Misc/ScriptMessage.md), and a new Event.
+So we'll need to create a new [ScriptMessage](/API Documentation/Message API/Misc/ScriptMessage.md) and a new Event.
 
 The message is going to be very simple. It’ll have a default title and message, and we’ll use the Short Code to send it from our Event.
 
-To create a new ScriptMessage:
+To create a new *ScriptMessage*:
 
 *1.* Go to the *Configurator>Messages* and select the *ScriptMessage Extensions* tab.
 
@@ -192,7 +192,7 @@ Notice that we've entered *Default Values* for the *group* and *message* Attribu
 
 ### Cloud Code
 
-We have discussed what the Cloud Code for this request is going to look like earlier, so the request will appear as follows:
+We've discussed what the Cloud Code for this request is going to look like earlier, so the request will appear as follows:
 
 ![](img/FriendsList/14.png)
 
@@ -229,7 +229,7 @@ if(!declinedCheck)
     });
     newMessage.send();
 
-    // and return a script message to show the the request was completed successfully //
+    // and return a script message to show that the request was completed successfully //
     Spark.setScriptData("success", "request-sent")
 }
 else // if a request has already been declined then send back an error
@@ -250,7 +250,7 @@ Once you send the request:
 
 ![](img/FriendsList/16.png)
 
-* And that there is a new document in the *playerFriends* collection, with this request marked as "pending". We'll use the *requestId* from the message above to either accept or decline the friend request:
+* You should also see that there is a new document in the *playerFriends* collection, with this request marked as "pending". We'll use the *requestId* from the message above to either accept or decline the friend request:
 
 ![](img/FriendsList/17.png)
 
@@ -275,7 +275,7 @@ var requestId = Spark.getData().request_id;
 var request = Spark.runtimeCollection("playerFriends").findOne({ "_id" : { "$oid" : requestId }, "status" : "pending" });
 if(request)
 {
-    // if the request is valid then we update the friend-list to say there this friend accepted the request
+    // if the request is valid then we update the friend-list to say there that this friend accepted the request
     Spark.runtimeCollection("playerFriends").update({ "_id" : { "$oid" : requestId }},{ $set : { "status" : "accepted" }});
     // and send a message to the original player //
     var newMessage = Spark.message("friendAcceptedMessage");
@@ -297,11 +297,11 @@ Now that we have this request created, we can log back into the Test Harness and
 ![](img/FriendsList/20.png)
 
 
-You'll see that a message is sent to the original player too:
+* You'll see that a message is sent to the original player too:
 
 ![](img/FriendsList/22.png)
 
-And that the document in the *playerFriends* collection has been updated to ‘accepted’:
+* You'll also see that the document in the *playerFriends* collection has been updated to ‘accepted’:
 
 ![](img/FriendsList/21.png)
 
@@ -322,7 +322,7 @@ var requestId = Spark.getData().request_id;
 var request = Spark.runtimeCollection("playerFriends").findOne({ "_id" : { "$oid" : requestId }, "status" : "pending" });
 if(request)
 {
-    // if the request is valid then we update the friend-list to say there this friend accepted the request
+    // if the request is valid then we update the friend-list to say there that this friend declined the request
     Spark.runtimeCollection("playerFriends").update({ "_id" : { "$oid" : requestId }},{ $set : { "status" : "declined" }});
     // and send a message to the original player //
     var newMessage = Spark.message("friendRequestDeclined");
@@ -343,7 +343,7 @@ We can use the same setup as we did for accepting requests to test declining req
 
 ![](img/FriendsList/25.png)
 
-And you will see the declined message appear for the original sender:
+* You'll see the declined message appear for the original sender:
 
 ![](img/FriendsList/26.png)
 
@@ -374,7 +374,7 @@ else
 {
     var friendsCursor = Spark.runtimeCollection("playerFriends").find({ "playerId" : Spark.getPlayer().getPlayerId(), "status" : "accepted", "group" : group  });
 }
-// once we have the cursor, we want to take some data out of the doc, as we only need the name and playerId //
+// once we have the cursor, we want to take some data out of the doc because we only need the name and playerId //
 var friendsList = [];
 while ( friendsCursor.hasNext())
 {
@@ -459,6 +459,6 @@ This tutorial implements a very basic set of features to send and receive friend
 * Add a player's information from the *playerList* collection to the list of data returned when you get your friends. This would allow you to include things like avatars or other personal information about your friends to your game.
 * You can also allow friends to use privacy options to check which details they want you to have access to, or how they appear when you search for them.
 
-The important thing is that, once you have the friends list, you have access to any of your friend’s *playerId*. You can then use this *playerId* throughout the GameSparks APIs to set up Events, Matches, Challenges, or Teams to include your friends.
+The important thing is that, once you have the friends list, you have access to the *playerId* of any of you friends. You can then use this *playerId* throughout the GameSparks APIs to set up Events, Matches, Challenges, or Teams to include your friends.
 
 Try it out for yourself and contact our Customer Support or the forums if you need any help in implementing specific features regarding your players' friends in GameSparks!

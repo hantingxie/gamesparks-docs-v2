@@ -13,7 +13,7 @@ Segments allow you to create partitions for different users and apply various ru
 
 Here's two use cases where Segmentation comes in very useful:
 
-*1.* Let's suppose I have an international blockbuster game with players connecting from different parts of the World. In order to offer a more personalized experience for my players, I might want to segment players by region or country. I can create a Segment based on country, with Segment Values of the countries my players are situated in. When added to such a Segment, the players will receive a different experience. For example, each Segment Value (country in this case) could have its own values assigned for:
+*1.* Let's suppose I have an international blockbuster game with players connecting from different parts of the World. In order to offer a more personalized experience for my players, I might want to segment players by region or country. I can create a Segment based on country and then use different Segment Values for the countries my players are situated in. When added to such a Segment, the players will receive a different experience. For example, each Segment Value (country in this case) could have its own values assigned for:
 * Virtual Goods.
 * The awards players receive upon obtaining an Achievement.
 * The rates of 6 currencies that spread across their game.

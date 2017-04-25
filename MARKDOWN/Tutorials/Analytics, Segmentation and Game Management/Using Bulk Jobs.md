@@ -19,7 +19,7 @@ In this tutorial we'll learn about the two ways you can work with Bulk Jobs:
 
 ## How to Create and Execute a Bulk Job Request
 
-*1.* Before you can use Bulk Operations you'll need to ensure that your credentials have the Admin BulkJob requests enabled. For a refresher, see [Credentials](/Documentation/Configurator/Credentials.md).
+*1.* Before you can use Bulk Operations you'll need to ensure that your credentials have the *Admin Requests>BulkJobs Requests* enabled. For a refresher, see [Credentials](/Documentation/Configurator/Credentials.md).
 
 *2.* In the Portal go to the Test Harness.
 
@@ -255,3 +255,5 @@ Response:
 * The *Player collection* will show how much currency each player has, using the player query created earlier.  You will see that the credit values have increased since the bulk operation.
 
 * The *playerTransactionAudit* collection shows all transactions around currency and Virtual Goods in individual records.  This will show the bulk operation transactions made to credit each affected Player.
+
+<q>**Bulk Jobs for Scheduled Scripts?** Scheduling bulk jobs are available to use with the GameSparks scheduled scripts under System scripts for *Every Day*, *Every Hour*, or *Every Minute*. You can schedule one bulk job per scheduled script.</q>
