@@ -13,7 +13,7 @@ Download the GameSparks [Unity SDK Package](https://s3-eu-west-1.amazonaws.com/r
 
 ### V5.5.4.66
 
-* Fixed issue with debug output on WebGL
+* Fixed an issue with debug output on WebGL
 * Fixed tokens parsing in GSJson
 
 ### V5.5.4.59
