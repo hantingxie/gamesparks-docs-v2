@@ -186,7 +186,7 @@ Next, we need to create the *friendRequest* Event. We'll add 3 Attributes to thi
 * We'll also add a *group* Attribute - so we can group our friends by family, work, college, and so on.
 * Finally, we're going to add a *message* Attribute - to allow us to send a custom message to the player we want to invite.
 
-![](img/FriendsList/13.png)
+![](img/FriendsList/34.png)
 
 Notice that we've entered *Default Values* for the *group* and *message* Attributes. This is because we shouldn’t require these to send a friend request. We can leave these out and just send the basic template of the message.
 
