@@ -182,7 +182,7 @@ To create a new *ScriptMessage*:
 Don’t worry too much about this message at the moment because we'll be setting our data for it later.
 
 Next, we need to create the *friendRequest* Event. We'll add 3 Attributes to this Event:
-* The most important Attribute is the *playerId* - for the friend we are inviting.
+* The most important Attribute is the *player_id* - for the friend we are inviting.
 * We'll also add a *group* Attribute - so we can group our friends by family, work, college, and so on.
 * Finally, we're going to add a *message* Attribute - to allow us to send a custom message to the player we want to invite.
 
@@ -241,7 +241,7 @@ else // if a request has already been declined then send back an error
 
 ### Testing
 
-To test this out, we need to log two players in through the Test Harness. You can get the *playerId* for the player you want to send the request to using the *findPlayers* request. Once you have the player selected, fill in the details of the *friendRequest*:
+To test this out, we need to log two players in through the Test Harness. You can get the *player_id* for the player you want to send the request to using the *findPlayers* request. Once you have the player selected, fill in the details of the *friendRequest*:
 
 ![](img/FriendsList/15.png)
 
