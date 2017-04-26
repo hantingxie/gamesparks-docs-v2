@@ -57,8 +57,6 @@ Here's a list of the main functional changes from the original portal:
 
 ### Cloud Code
 * Bitbucket integration for importing [Cloud Code](/Documentation/Configurator/Cloud Code.md) has been added.
-* The Cloud Code History Tool works in similar way to the old portal but with an important difference:
-  * When a Snapshot is selected in the *Base* drop-down, no initial filtering is done to remove any “No-Cloud-Code-Difference” Snapshots from the *Compare To* drop-down.
 
 ### Segmentation
 * While the [Segmentation](/Documentation/Configurator/Segments.md) itself has not functionally changed, configuring it is more straightforward.

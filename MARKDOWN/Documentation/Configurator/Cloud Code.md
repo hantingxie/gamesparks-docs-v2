@@ -38,6 +38,8 @@ For some Scripts categories, you can use the plus ![](/img/fa/plus-circle.png) i
 
 However, you might be working on your game in several tabs at once or you might be developing your game along with several Collaborators. If you've added a new Event using the plus icon in one tab and switch to another, you must click the refresh ![](/img/icons/refreshicon.png) icon button to see the added Event in the Script list. Similarly, if one of your Collaborators has added an Event, you must refresh the Scripts panel to see that Event.
 
+<q>**Cloud Code Tutorials?** For a rich set of tutorials on how to work with Cloud Code, go [here](/Tutorials/Cloud Code and the Test Harness/README.md).</q>
+
 ## Scripts Categories
 
 Click to expand any of the Scripts categories and select the interception point to which you want to attach your Cloud Code.
