@@ -54,7 +54,7 @@ Click *Add* to create a new Leaderboard.
 
 Each Leaderboard configuration has a list of *Fields*. Each Field refers to an Event Attribute/Running Total Collector.
 
-<q>**Running Totals?** When you start to add fields for your Leaderboard's Running Total Collectors, you can select from straightforward Event/Attributes or custom Running Totals that you've configured for a Leaderboard's specific purpose. For simple ranking Leaderboards an Event/Attribute that uses the required aggregation type will serve; for more complex Leaderboards, such a one that tracks the most improved player at a specific game level or most improved player over the last month, a custom Running Total will be required. See [Running Totals](/Documentation/Configurator/Leaderboards/Running Totals.md).</q>
+<q>**Running Totals?** When you start to add fields for your Leaderboard's Running Total Collectors, you can select from straightforward Event/Attributes or custom Running Totals that you've configured for a Leaderboard's specific purpose. For simple ranking Leaderboards an Event/Attribute that uses the required aggregation type will serve; for more complex Leaderboards, such as one that tracks the most improved player at a specific game level or most improved player over the last month, a custom Running Total will be required. See [Running Totals](/Documentation/Configurator/Leaderboards/Running Totals.md).</q>
 
 In the *Fields* panel, you can click to *Add* fields to a Leaderboard:
 
