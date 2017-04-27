@@ -47,7 +47,7 @@ There are 3 REST API server types:
 
 The rate at which you can submit requests against our REST API is limited as follows:
 * No more than 300 requests per user per minute.
-* No more than 300 requests per game per minute.
+* No more than 600 requests per game per minute.
 
 <q>**Exceeding REST Request Rate Limits?** If you try to exceed these limits you will receive an error: 429 Too many requests.</q>
 
