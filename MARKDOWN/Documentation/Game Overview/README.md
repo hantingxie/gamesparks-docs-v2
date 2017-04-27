@@ -43,7 +43,7 @@ You can use the drop-down *Games* menu at top-right:
 
 ![](img/GameOverview/18.png)
 
-* *Open Game* - Select to open another game from your list of games.
+* *Open Game* - Select another game from your list of games and switch over to that game.
 * *Add Game* - Click to add a new game.
 * *Recycle Bin* - Click to open the game Recycle Bin. When you delete a game it is sent to the *Recycle Bin* but you can restore deleted games from here.
 
