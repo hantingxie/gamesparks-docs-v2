@@ -177,6 +177,8 @@ To test push notifications with your App you will need to create a Provisioning 
 
 ## Using Push Notifications in your Xcode Project
 
+<q>**For Obj-C SDK!** Note that this section of the tutorial applies only if you are using the Obj-C SDK.</q>
+
 It is assumed that you are familiar with Xcode and and have an Xcode project already created. We can now add the Provision Profile we have just created to Xcode by double-clicking it or dragging it onto the Xcode icon.
 
 ![](img/IOSPush/26.png)

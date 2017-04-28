@@ -53,6 +53,8 @@ You can use two main options at the top-right of the page:
 * ![](img/GameOverview/19.png) - Edit your game's details. See section [below](#Editing Top-Level Game Information).
 * ![](img/GameOverview/20.png) - Delete your game and send it to the *Recycle Bin* - you can use the [Games](#Using the Games Menu) menu to access the Recycle Bin and restore games you've deleted.
 
+<q>**Recycle Bin - Game Retrieval Grace Period?** Games you've deleted are held in the Recycle Bin for 10 days before being automatically removed. At this point they become *PERMANENTLY DELETED*  and can no longer be retrieved.</q> 
+
 ## Checking Game Log summaries
 
 The *Notifications* panel contains daily log summaries for both the *Preview* and *Live* stages of your game:
