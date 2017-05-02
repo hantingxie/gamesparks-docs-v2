@@ -120,8 +120,6 @@ You can [edit](#Editing a Document) or [delete](#Deleting a Document) individual
 
 *4.* Click *Delete* again, if you want to continue and delete the Document.
 
-
-
 ## Actions for Selected Collection
 
 When you've selected the database Collection you want to work with, you can select one of the *Actions* available for that Collection: *Find*, *Count*, *Insert*, *Update*, *Remove*, *Index*, *Aggregate*, *Drop*, and *Stats*.
@@ -150,7 +148,7 @@ Using the *Find* option, you can execute queries against Collections:
   * To get the 3rd page of 10 documents per page, use skip=20 and limit=10.
   * The maximum that the limit value can be set to for Finds is 1000.
 * *Explain* button : Enter your query and click this button to get information about the query returned into the *Output* panel. You can review and analyze this information to optimize your query.
-* *Export* button : The *Find* option allows you to export the results to a local file. Set up your query as normal and press the *Export* button. The maximum that the limit value can be set to for exports is 10000.
+* *Export* button : The *Find* option allows you to export the results to a local file. Set up your query as normal and press the *Export* button. The maximum that the limit value can be set to for exports is 1000.
 
 <q>**You Must Use Valid JSON!** If you want to use *Query*, *Sort*, or *Fields*, you must use valid JSON syntax and only valid JSON syntax, as shown in the examples given above. Importantly, JavaScript syntax is *NOT VALID*.</q>
 

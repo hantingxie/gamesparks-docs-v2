@@ -5,8 +5,22 @@ src: /API Documentation/REST APIs/README.md
 
 # REST APIs Overview
 
-## Overview
-The GameSparks REST API is split into 4 components which can be used to configure all aspects of your game, as well as giving you access to your runtime data.
+The GameSparks REST API is composed of two parts:
+* The [Requests REST API](#Requests REST API), which you can use for your game's runtime environment.
+* The [Management REST API](#Management REST API), which you can use to set up all you game configuration and build out your game.
+
+## Requests REST API
+
+* The Request REST API is provided for game's runtime:
+* Unlike the Management REST, this REST API is designed for server-to-server connections.
+
+<q>**Further Details?** For more details on the *Requests REST API*, see [here](/API Documentation/REST APIs/Requests.md).</q>
+
+## Management REST API
+
+The Management REST API is split into 4 components which can be used to configure all aspects of your game, as well as giving you access to your runtime data.
+
+<q>**Important!** The remainder of this page applies to the *Management REST API*.</q>
 
 ### Authentication
 * Acts as an identity provider.
@@ -15,16 +29,16 @@ The GameSparks REST API is split into 4 components which can be used to configur
 * The base URL is: https:<nolink>//auth.gamesparks.net
 * Try it out [here](/API Documentation/REST APIs/Authentication.md)
 
-### Game Configuration
-* Provides all endpoints required to manage the game configuration that will be pushed to the runtime servers.
-* The base URL is: https:<nolink>//config2.gamesparks.net
-* Try it out [here](/API Documentation/REST APIs/Game Configuration.md)
-
 ### Game Administration
 * Provides REST endpoints to perform actions on a Game that are not part of the game configuration itself.
 * Examples of this sort of action are: managing snapshots, managing admin screens, testing push notifications.
 * The base URL is: https:<nolink>//config2.gamesparks.net
 * Try it out [here](/API Documentation/REST APIs/Game Admin.md)
+
+### Game Configuration
+* Provides all endpoints required to manage the game configuration that will be pushed to the runtime servers.
+* The base URL is: https:<nolink>//config2.gamesparks.net
+* Try it out [here](/API Documentation/REST APIs/Game Configuration.md)
 
 ### NoSQL
 * An instance of this application is deployed in each runtime cluster.
@@ -48,6 +62,8 @@ There are 3 REST API server types:
 The rate at which you can submit requests against our REST API is limited as follows:
 * No more than 300 requests per user per minute.
 * No more than 600 requests per game per minute.
+
+<q>**NOT APPLICABLE to Requests REST API!** Note that these limits on request rate do not apply to the [Requests REST API](/API Documentation/REST APIs/Requests.md). The Requests REST API is subject to all the normal limits as stated under our [Fair Usage Policy](https://www.gamesparks.com/fair-usage-policy/).</q>
 
 <q>**Exceeding REST Request Rate Limits?** If you try to exceed these limits you will receive an error: 429 Too many requests.</q>
 

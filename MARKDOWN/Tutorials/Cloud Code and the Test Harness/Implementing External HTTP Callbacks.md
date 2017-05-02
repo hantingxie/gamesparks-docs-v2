@@ -25,6 +25,7 @@ To create a script to handle the request from the Cloud Code page, under *Script
   * *serverSecret* : The server secret of you game, accessible from the *Configurator > Credentials* page.
   * *playerId(optional)* : The ID of the player. If this is supplied, then [Spark.getPlayer()](/API Documentation/Cloud Code API/Spark.md) will be the player specified.
 
+<q>**Trailing Slash Required!** If you don't pass a *playerId*, you still need to include the */* after your *serverSecret*.</q>
 
 ## Adding Parameters
 

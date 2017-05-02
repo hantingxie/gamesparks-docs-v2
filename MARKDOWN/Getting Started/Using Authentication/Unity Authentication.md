@@ -72,11 +72,11 @@ new GameSparks.Api.Requests.RegistrationRequest()
   .SetUserName("Test User 1")
   .Send((response) => {
   	if (!response.HasErrors) {
-  		Debug.Log("Player Registered…”);
+  		Debug.Log("Player Registered");
   	}
   	else
   	{
-  		Debug.Log("Error Registering Player);
+  		Debug.Log("Error Registering Player");
   	}
   }
 );
