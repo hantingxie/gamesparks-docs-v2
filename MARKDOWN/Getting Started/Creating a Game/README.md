@@ -24,9 +24,9 @@ You are taken to the [Register](https://auth.gamesparks.net/register.htm) screen
  * If you've used GameSparks before, click *Add Game* from the drop-down menu in the top-right of the screen.
 
 Adding a game is a 3-stage process:
-* *Step 1. Game Details* - Enter a name and description for your game. Set a timeout to end player sessions after they disconnect from your game.
-* *Step 2. Features & Integrations* - Select the currencies, platform features, and 3rd-party integrations you want for your game.
-* *Step 3. Geographical Setup* - Configure the Geographical Setup for your game.
+* *Stage 1 Game Details* - Enter a name and description for your game. Set a timeout to end player sessions after they disconnect from your game.
+* *Stage 2 Features & Integrations* - Select the currencies, platform features, and 3rd-party integrations you want for your game.
+* *Stage 3 Geographical Setup* - Configure the Geographical Setup for your game.
 
 <q>**Note!** In this section, we'll assume you've used Gamesparks before and have already created a game.</q>
 
