@@ -5,7 +5,7 @@ src: /Documentation/Configurator/Achievements.md
 
 # Achievements
 
-GameSparks Achievements support the rewarding of players for accomplishments within the game. An Achievement is highly configurable with respect to both the reward and the criteria for when it is delivered:
+GameSparks Achievements support the rewarding of players for accomplishments within the game. An Achievement is highly configurable with respect to both the reward and the criteria for when it's delivered:
 * **Task-based.** Traditional Achievements systems are supported where Virtual Goods (for example, badges or items) are won for completion of particular tasks or won for completion of a combination of tasks.
 * **Extended.** Extended Achievement systems are supported, such as level completion or XP progress bonuses, basic 'crafting', and rewards for breaking into the top [x] of a Leaderboard, and so on.
 * **Cross-platform.** Achievements are cross-platform, which affords significant benefits:
@@ -75,7 +75,7 @@ You can use the following options (highlighted above):
   * *Global Rank Change* - The number of places a player has moved in the global Leaderboard.
   * *New Global % Rank* \- The new percentage change in the player's global Leaderboard position.
   * *Old Global % Rank* \- The old percentage change in the player's global Leaderboard position.
-  * *Global Rank % Change* \- The percentage change in the player's global Leaderboard position.
+  * *Global % Rank Change* \- The percentage change in the player's global Leaderboard position.
   * *New Social Rank* \- A new position in the social Leaderboard.
   * *Old Social Rank* \- An old position in the social Leaderboard.
   * *Social Rank Change* \- The number of places a player has moved in the social Leaderboard.
@@ -90,10 +90,10 @@ You can use the following options (highlighted above):
 |  *  | Any Value
 |  =   | Value equal to
 |  !=   | Value not equal to
-|  <  | Value greater than
-|  >   | Value less than
-|  <=   | Value greater than or equal to
-|  >=  | Value less than or equal to
+|  <  | Value less than
+|  >   | Value greater than
+|  <=   | Value less than or equal to
+|  >=  | Value greater than or equal to
 |  %   | Value is divisible by
 
 
